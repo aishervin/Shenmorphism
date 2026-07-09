@@ -1,0 +1,39 @@
+name: 🚀 SHΞN Morphism - Build UI Kit
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:  # اجازه اجرای دستی
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: 📦 Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 🧹 Clean previous build (optional)
+        run: |
+          rm -rf galaxy_source shenmorphism_ui_kit
+
+      - name: 🏗️ Run SHΞN Morphism Builder
+        run: python shenmorphism_builder.py
+
+      - name: 📝 Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add shenmorphism_ui_kit/ index.json 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "🔄 Auto-update UI Kit by SHΞN Morphism [skip ci]"
+          git push
