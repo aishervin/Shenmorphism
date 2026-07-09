@@ -1,15 +1,19 @@
 # SHΞN™ Morphism UI Kit
 
-> The largest Open-Source UI Library! Community-made and free to use.
+> **3802** آماده‌ی استفاده، با مجوز MIT.
 
-**2699** UI components, sourced from Galaxy and rebranded under **SHΞN™ Morphism**.
+## 📁 دسته‌بندی
+- **Buttons**: 1231 قطعه
+- **Cards**: 726 قطعه
+- **Checkboxes**: 171 قطعه
+- **Forms**: 180 قطعه
+- **Inputs**: 226 قطعه
+- **Patterns**: 103 قطعه
+- **Tooltips**: 62 قطعه
+- **Other**: 1103 قطعه
 
-## 📁 Categories
-- Buttons · Cards · Checkboxes · Forms · Inputs
-- Loaders · Patterns · RadioButtons · Switches · Tooltips
+## 🚀 استفاده
+فایل‌های HTML را مستقیماً در پروژه‌های خود استفاده کنید.
 
-## 📄 License
+## 📄 لایسنس
 MIT License
-
-## 🙏 Attribution
-Originally from [Uiverse.io](https://uiverse.io/). Curated by **SHΞN™ Morphism**.
