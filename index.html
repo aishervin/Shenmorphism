@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHΞN™ Morphism · UI Gallery</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHΞN™ Morphism · گالری قطعات</title>
   <style>
+    /* ============================================================
+       RESET & BASE
+       ============================================================ */
     * {
       margin: 0;
       padding: 0;
@@ -12,337 +15,325 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background: #12121a;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0f0f17;
+      color: #e4e8f0;
+      padding: 2rem 1.5rem;
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      padding: 2rem 1.5rem;
-      color: #ecedf0;
     }
 
-    /* ظاهر نئومورفیسم تیره */
-    .gallery-container {
-      max-width: 1400px;
+    .container {
+      max-width: 1440px;
       width: 100%;
     }
 
-    /* هدر */
+    /* ============================================================
+       HEADER
+       ============================================================ */
     .header {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2.5rem;
-      padding: 1.2rem 2rem;
-      background: #1a1a26;
+      padding: 1rem 2rem;
+      background: #181824;
       border-radius: 60px;
       box-shadow:
-        inset 2px 2px 6px rgba(0, 0, 0, 0.6),
-        inset -3px -3px 8px rgba(255, 255, 255, 0.04),
-        6px 6px 16px rgba(0, 0, 0, 0.6),
-        -4px -4px 12px rgba(80, 80, 120, 0.08);
+        inset 2px 2px 6px rgba(0, 0, 0, 0.7),
+        inset -3px -3px 8px rgba(255, 255, 255, 0.03),
+        8px 8px 20px rgba(0, 0, 0, 0.6);
+      margin-bottom: 2rem;
+      border: 1px solid #2a2a42;
     }
 
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
+      font-size: 1.4rem;
       font-weight: 600;
-      font-size: 1.3rem;
-      letter-spacing: 0.02em;
-      background: linear-gradient(135deg, #b7b7e6, #7c8cff);
+      background: linear-gradient(135deg, #b0b8f0, #6a7aff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      letter-spacing: 0.02em;
     }
-
     .brand small {
+      font-size: 0.75rem;
+      -webkit-text-fill-color: #7a8aa8;
+      color: #7a8aa8;
       font-weight: 400;
-      font-size: 0.8rem;
-      background: none;
-      -webkit-text-fill-color: #7f8fa3;
-      color: #7f8fa3;
+      margin-right: 0.5rem;
     }
 
-    .cart-badge {
+    .header-actions {
       display: flex;
       align-items: center;
-      gap: 1.2rem;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
-    .cart-btn {
-      background: #1f1f30;
+    .btn {
+      background: #1f1f32;
       border: none;
-      padding: 0.6rem 1.5rem 0.6rem 1.2rem;
-      border-radius: 40px;
-      color: #ecedf0;
-      font-weight: 500;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      box-shadow:
-        inset 2px 2px 5px rgba(0, 0, 0, 0.6),
-        inset -3px -3px 8px rgba(255, 255, 255, 0.05),
-        5px 5px 12px rgba(0, 0, 0, 0.6),
-        -3px -3px 10px rgba(70, 70, 120, 0.06);
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .cart-btn:hover {
-      background: #26263a;
-      box-shadow:
-        inset 1px 1px 4px rgba(0, 0, 0, 0.8),
-        inset -2px -2px 6px rgba(255, 255, 255, 0.08),
-        4px 4px 10px rgba(0, 0, 0, 0.7);
-    }
-
-    .cart-count {
-      background: #4c5cf0;
-      color: #fff;
-      border-radius: 30px;
-      padding: 0.1rem 0.7rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .export-btn {
-      background: transparent;
-      border: 1px solid #3d3d5a;
       padding: 0.5rem 1.2rem;
       border-radius: 40px;
-      color: #c8d0e0;
-      font-weight: 450;
+      color: #d0d8ec;
+      font-weight: 500;
       font-size: 0.9rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
       cursor: pointer;
-      transition: 0.2s;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      box-shadow:
+        inset 1px 1px 4px rgba(0, 0, 0, 0.7),
+        inset -2px -2px 6px rgba(255, 255, 255, 0.04),
+        4px 4px 12px rgba(0, 0, 0, 0.5);
+      transition: 0.15s;
+      border: 1px solid #2d2d4a;
     }
-
-    .export-btn:hover {
-      background: #26263a;
-      border-color: #6a7aff;
+    .btn:hover {
+      background: #2a2a44;
       color: #fff;
+      border-color: #4a5aff;
     }
 
-    /* فیلتر جستجو */
+    .btn-primary {
+      background: #3f4cdb;
+      color: #fff;
+      border-color: #3f4cdb;
+      box-shadow: 0 4px 14px rgba(50, 60, 200, 0.3);
+    }
+    .btn-primary:hover {
+      background: #5a6aff;
+      border-color: #5a6aff;
+    }
+
+    .cart-badge {
+      background: #3f4cdb;
+      color: #fff;
+      border-radius: 30px;
+      padding: 0.1rem 0.8rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-right: 0.2rem;
+    }
+
+    /* ============================================================
+       جستجو
+       ============================================================ */
     .search-box {
-      width: 100%;
       margin-bottom: 2rem;
     }
-
     .search-box input {
       width: 100%;
       padding: 0.9rem 1.8rem;
       border-radius: 60px;
       border: none;
-      background: #191926;
+      background: #181826;
       color: #e4e8f0;
       font-size: 1rem;
       box-shadow:
-        inset 3px 3px 10px rgba(0, 0, 0, 0.7),
-        inset -4px -4px 12px rgba(255, 255, 255, 0.04),
-        6px 6px 16px rgba(0, 0, 0, 0.5);
-      outline: 1px solid #2d2d44;
+        inset 3px 3px 10px rgba(0, 0, 0, 0.8),
+        inset -4px -4px 12px rgba(255, 255, 255, 0.03),
+        6px 6px 18px rgba(0, 0, 0, 0.5);
+      outline: 1px solid #2d2d48;
       transition: 0.2s;
     }
-
     .search-box input:focus {
       outline: 1px solid #5f70ff;
-      background: #1d1d2e;
+      background: #1e1e32;
     }
-
     .search-box input::placeholder {
-      color: #6b7a92;
+      color: #6a7a96;
       font-weight: 300;
-      letter-spacing: 0.3px;
     }
 
-    /* شبکه گالری */
+    /* ============================================================
+       آمار دسته‌ها
+       ============================================================ */
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.5rem;
+      margin-bottom: 2rem;
+      padding: 0.8rem 1.5rem;
+      background: #141420;
+      border-radius: 40px;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.6);
+    }
+    .stats span {
+      font-size: 0.85rem;
+      color: #a0b0cc;
+    }
+    .stats strong {
+      color: #d0d8ec;
+      font-weight: 500;
+    }
+
+    /* ============================================================
+       GRID
+       ============================================================ */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 1.8rem;
-      margin-top: 1rem;
     }
 
-    /* کارت هر آیتم – نئومرفیسم تیره */
     .card-item {
-      background: #1a1a28;
+      background: #181826;
       border-radius: 28px;
-      padding: 1.2rem 0.8rem 0.8rem;
+      padding: 1rem 0.8rem 0.8rem;
       box-shadow:
         inset 2px 2px 6px rgba(0, 0, 0, 0.7),
-        inset -3px -3px 8px rgba(255, 255, 255, 0.04),
-        8px 8px 20px rgba(0, 0, 0, 0.6),
-        -5px -5px 14px rgba(60, 60, 120, 0.06);
-      transition: all 0.2s ease;
+        inset -3px -3px 8px rgba(255, 255, 255, 0.03),
+        8px 8px 22px rgba(0, 0, 0, 0.6);
+      border: 1px solid #2a2a44;
+      transition: 0.2s;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: stretch;
       cursor: default;
-      position: relative;
-      border: 1px solid #28283d;
     }
-
     .card-item:hover {
       transform: translateY(-4px);
+      border-color: #4a5aff;
       box-shadow:
         inset 1px 1px 4px rgba(0, 0, 0, 0.8),
-        inset -2px -2px 6px rgba(255, 255, 255, 0.08),
-        10px 10px 28px rgba(0, 0, 0, 0.7),
-        -4px -4px 12px rgba(70, 70, 140, 0.08);
-      border-color: #3e3e62;
+        inset -2px -2px 6px rgba(255, 255, 255, 0.06),
+        12px 12px 30px rgba(0, 0, 0, 0.7);
     }
 
-    /* برچسب دسته */
     .category-tag {
       font-size: 0.6rem;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      background: #26263b;
-      padding: 0.2rem 0.9rem;
+      background: #22223e;
+      padding: 0.15rem 0.8rem;
       border-radius: 30px;
-      color: #a6b3d0;
-      box-shadow: inset 0 1px 3px rgba(0,0,0,0.6);
-      margin-bottom: 0.6rem;
+      color: #9aacd0;
       align-self: flex-start;
-      margin-left: 0.3rem;
+      margin-bottom: 0.5rem;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
     }
 
-    /* پیش‌نمایش کوچک (ایفِکت) */
     .preview-box {
       width: 100%;
-      aspect-ratio: 1 / 0.9;
-      background: #12121c;
+      aspect-ratio: 1 / 0.85;
+      background: #0e0e1a;
       border-radius: 18px;
+      overflow: hidden;
+      box-shadow: inset 0 0 0 1px #2a2a48;
+      margin-bottom: 0.5rem;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.7rem;
-      color: #7a88a6;
-      box-shadow: inset 0 0 0 1px #2b2b42;
-      transition: 0.15s;
-      margin-bottom: 0.6rem;
-      overflow: hidden;
-      position: relative;
     }
-
     .preview-box iframe {
       width: 100%;
       height: 100%;
       border: none;
-      border-radius: 18px;
-      background: #12121c;
-      transform: scale(0.7);
+      background: #0e0e1a;
+      transform: scale(0.75);
       transform-origin: 0 0;
-      width: 142%;
-      height: 142%;
+      width: 133%;
+      height: 133%;
       pointer-events: none;
     }
+    .preview-box .fallback {
+      color: #5a6a88;
+      font-size: 0.7rem;
+      text-align: center;
+      padding: 0.5rem;
+    }
 
-    /* نام آیتم */
     .item-name {
       font-size: 0.8rem;
       font-weight: 500;
       color: #cdd6e8;
       text-align: center;
-      margin: 0.3rem 0 0.2rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 100%;
       padding: 0 0.2rem;
+      margin: 0.2rem 0;
     }
 
-    /* دکمه انتخاب (سبد خرید) */
     .pick-btn {
-      background: #22223a;
+      background: #22223e;
       border: none;
       border-radius: 40px;
-      padding: 0.35rem 1.2rem;
-      font-size: 0.75rem;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.7rem;
       font-weight: 500;
-      color: #b9c4de;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-top: 0.4rem;
+      color: #b0c0de;
+      margin-top: 0.3rem;
+      cursor: pointer;
       box-shadow:
         inset 1px 1px 4px rgba(0, 0, 0, 0.7),
-        inset -2px -2px 6px rgba(255, 255, 255, 0.04),
-        3px 3px 8px rgba(0, 0, 0, 0.5);
-      cursor: pointer;
+        inset -2px -2px 6px rgba(255, 255, 255, 0.03),
+        3px 3px 8px rgba(0, 0, 0, 0.4);
       transition: 0.15s;
+      width: 100%;
+      text-align: center;
     }
-
     .pick-btn:hover {
-      background: #2d2d4a;
+      background: #2e2e52;
       color: #fff;
-      box-shadow: inset 1px 1px 3px rgba(0,0,0,0.8), inset -2px -2px 6px rgba(255,255,255,0.08);
     }
-
     .pick-btn.selected {
-      background: #3a3f7a;
+      background: #3a4070;
       color: #fff;
-      box-shadow: inset 1px 1px 4px #0a0a1a, 0 0 8px #4c5cf066;
+      box-shadow: inset 1px 1px 4px #0a0a1a, 0 0 10px #4c5cf066;
     }
 
-    /* سبد خرید – مودال نئومرفیسم */
-    .cart-modal {
+    /* ============================================================
+       مودال سبد خرید
+       ============================================================ */
+    .modal-overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(8, 8, 16, 0.7);
       backdrop-filter: blur(12px);
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 999;
+      z-index: 1000;
       opacity: 0;
       pointer-events: none;
       transition: 0.3s;
     }
-
-    .cart-modal.open {
+    .modal-overlay.open {
       opacity: 1;
       pointer-events: auto;
     }
 
-    .cart-panel {
-      background: #191926;
-      max-width: 600px;
-      width: 90%;
-      max-height: 80vh;
+    .modal-panel {
+      background: #181826;
+      max-width: 640px;
+      width: 92%;
+      max-height: 85vh;
       border-radius: 48px;
-      padding: 2rem 2rem 1.8rem;
+      padding: 2rem;
       box-shadow:
         inset 2px 2px 10px rgba(0, 0, 0, 0.8),
-        inset -4px -4px 14px rgba(255, 255, 255, 0.04),
-        20px 20px 50px rgba(0, 0, 0, 0.7);
+        inset -4px -4px 14px rgba(255, 255, 255, 0.03),
+        24px 24px 60px rgba(0, 0, 0, 0.7);
       overflow-y: auto;
       display: flex;
       flex-direction: column;
+      border: 1px solid #2e2e50;
     }
-
-    .cart-panel h2 {
+    .modal-panel h2 {
       font-weight: 500;
-      font-size: 1.3rem;
-      margin-bottom: 1.2rem;
-      color: #d0d8ec;
+      font-size: 1.2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 1rem;
+      color: #d0d8ec;
     }
-
-    .cart-panel h2 button {
+    .modal-panel h2 button {
       background: transparent;
       border: none;
       color: #8896b8;
@@ -352,8 +343,7 @@
       border-radius: 40px;
       transition: 0.15s;
     }
-
-    .cart-panel h2 button:hover {
+    .modal-panel h2 button:hover {
       background: #2b2b44;
       color: #fff;
     }
@@ -361,203 +351,203 @@
     .cart-list {
       list-style: none;
       padding: 0;
-      margin: 0.5rem 0 1.2rem;
+      margin: 0 0 1rem;
     }
-
     .cart-list li {
-      padding: 0.6rem 0.8rem;
-      background: #12121e;
+      padding: 0.5rem 0.8rem;
+      background: #11111e;
       border-radius: 30px;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       border-left: 3px solid #5f70ff;
       box-shadow: inset 0 1px 4px rgba(0,0,0,0.5);
     }
-
-    .cart-list li span {
-      color: #b3c0db;
-    }
-
     .cart-list li .remove-item {
       background: transparent;
       border: none;
       color: #b07a8a;
       cursor: pointer;
+      padding: 0 0.5rem;
       font-size: 0.8rem;
-      padding: 0.1rem 0.5rem;
       border-radius: 30px;
       transition: 0.1s;
     }
-
     .cart-list li .remove-item:hover {
       background: #2f1f2a;
       color: #ff8a9e;
     }
+    .empty-msg {
+      color: #6a7a96;
+      text-align: center;
+      padding: 1rem 0;
+    }
 
-    .json-output {
-      background: #0e0e1a;
+    .json-box {
+      background: #0b0b16;
       border-radius: 24px;
-      padding: 1rem 1.2rem;
-      font-family: 'JetBrains Mono', 'Fira Code', monospace;
-      font-size: 0.75rem;
+      padding: 0.8rem 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
       color: #a6b8d0;
       white-space: pre-wrap;
       word-break: break-all;
-      max-height: 140px;
+      max-height: 130px;
       overflow-y: auto;
-      box-shadow: inset 0 0 0 1px #2f2f4a;
-      margin-top: 0.4rem;
+      box-shadow: inset 0 0 0 1px #2a2a48;
+      margin: 0.5rem 0 1rem;
     }
 
-    .cart-actions {
+    .modal-actions {
       display: flex;
       gap: 0.8rem;
-      margin-top: 1rem;
       flex-wrap: wrap;
     }
-
-    .cart-actions button {
+    .modal-actions .btn {
       flex: 1;
+      justify-content: center;
       padding: 0.6rem 1rem;
-      border: none;
-      border-radius: 60px;
-      background: #22223e;
-      color: #d0d8ec;
-      font-weight: 500;
-      box-shadow: inset 1px 1px 5px rgba(0,0,0,0.7), inset -2px -2px 6px rgba(255,255,255,0.03);
-      cursor: pointer;
-      transition: 0.15s;
     }
 
-    .cart-actions button:hover {
-      background: #313155;
-      color: #fff;
-    }
+    /* ============================================================
+       SCROLLBAR
+       ============================================================ */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #12121e; }
+    ::-webkit-scrollbar-thumb { background: #3a3a60; border-radius: 20px; }
 
-    .cart-actions .btn-primary {
-      background: #3f4cdb;
-      color: #fff;
-      box-shadow: 0 4px 12px #2e3aa080;
-    }
-
-    .cart-actions .btn-primary:hover {
-      background: #5a6aff;
-    }
-
-    /* اسکرول */
-    ::-webkit-scrollbar {
-      width: 4px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #14141e;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #3b3b60;
-      border-radius: 20px;
-    }
-
-    /* واکنش‌گرایی */
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
     @media (max-width: 640px) {
-      .header { flex-direction: column; align-items: stretch; gap: 1rem; }
-      .cart-badge { justify-content: flex-start; flex-wrap: wrap; }
-      .grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1.2rem; }
-    }
-
-    /* دکمه خالی */
-    .empty-cart-msg {
-      color: #7c8aa8;
-      text-align: center;
-      padding: 1.5rem 0;
+      .header { flex-direction: column; align-items: stretch; gap: 0.8rem; }
+      .header-actions { justify-content: flex-start; flex-wrap: wrap; }
+      .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1.2rem; }
+      .modal-panel { padding: 1.5rem; }
     }
   </style>
 </head>
 <body>
-
-<div class="gallery-container">
+<div class="container">
 
   <!-- HEADER -->
   <header class="header">
     <div class="brand">
-      ⌘ SHΞN™ Morphism
-      <small>· گالری</small>
+      ⌘ SHΞN™ <small>Morphism · گالری</small>
     </div>
-    <div class="cart-badge">
-      <button class="cart-btn" id="openCartBtn">
-        <span>🛒</span> سبد
-        <span class="cart-count" id="cartCount">0</span>
+    <div class="header-actions">
+      <button class="btn" id="openCartBtn">
+        🛒 سبد <span class="cart-badge" id="cartCount">0</span>
       </button>
-      <button class="export-btn" id="exportJsonBtn">
-        <span>⬇️</span> JSON
-      </button>
+      <button class="btn btn-primary" id="exportJsonBtn">⬇ خروجی JSON</button>
     </div>
   </header>
 
   <!-- جستجو -->
   <div class="search-box">
-    <input type="text" id="searchInput" placeholder="جستجوی قطعه · مثل دکمه نئون، کارت تیره، لودر ..." />
+    <input type="text" id="searchInput" placeholder="جستجو در قطعات · مثل دکمه، کارت، لودر..." />
   </div>
 
-  <!-- شبکه گالری -->
+  <!-- آمار دسته‌ها -->
+  <div class="stats" id="statsContainer"></div>
+
+  <!-- گالری -->
   <div class="grid" id="galleryGrid"></div>
 </div>
 
-<!-- مودال سبد خرید -->
-<div class="cart-modal" id="cartModal">
-  <div class="cart-panel">
+<!-- مودال سبد -->
+<div class="modal-overlay" id="cartModal">
+  <div class="modal-panel">
     <h2>
       <span>🛒 سبد انتخاب</span>
       <button id="closeCartBtn">✕</button>
     </h2>
     <ul class="cart-list" id="cartList"></ul>
-    <div class="json-output" id="jsonOutput">خالی</div>
-    <div class="cart-actions">
-      <button id="clearCartBtn">🗑 خالی کن</button>
-      <button class="btn-primary" id="copyJsonBtn">📋 کپی JSON</button>
+    <div class="json-box" id="jsonOutput">[]</div>
+    <div class="modal-actions">
+      <button class="btn" id="clearCartBtn">🗑 خالی کن</button>
+      <button class="btn btn-primary" id="copyJsonBtn">📋 کپی JSON</button>
     </div>
   </div>
 </div>
 
 <script>
   (function() {
-    // --------------------------------------------------------------
-    // دیتای نمونه – ۲۰ قطعه از دسته‌های مختلف (برای نمایش)
-    // شما می‌توانید این آرایه را از index.json واقعی پر کنید
-    // --------------------------------------------------------------
-    const sampleItems = [
-      { id: 'btn-neon-1', name: 'دکمه نئون آبی', category: 'Buttons', path: 'Buttons/Buttons-1.html' },
-      { id: 'btn-3d-2', name: 'دکمه سه‌بعدی', category: 'Buttons', path: 'Buttons/Buttons-2.html' },
-      { id: 'btn-ghost-3', name: 'دکمه شیشه‌ای', category: 'Buttons', path: 'Buttons/Buttons-3.html' },
-      { id: 'card-glass-1', name: 'کارت شیشه‌ای', category: 'Cards', path: 'Cards/Cards-1.html' },
-      { id: 'card-dark-2', name: 'کارت تیره', category: 'Cards', path: 'Cards/Cards-2.html' },
-      { id: 'card-neon-3', name: 'کارت نئون', category: 'Cards', path: 'Cards/Cards-3.html' },
-      { id: 'checkbox-glow-1', name: 'چک‌باکس درخشان', category: 'Checkboxes', path: 'Checkboxes/Checkboxes-1.html' },
-      { id: 'checkbox-min-2', name: 'چک‌باکس مینیمال', category: 'Checkboxes', path: 'Checkboxes/Checkboxes-2.html' },
-      { id: 'input-neon-1', name: 'فیلد نئونی', category: 'Inputs', path: 'Inputs/Inputs-1.html' },
-      { id: 'input-glass-2', name: 'فیلد شیشه‌ای', category: 'Inputs', path: 'Inputs/Inputs-2.html' },
-      { id: 'loader-spin-1', name: 'لودر چرخان', category: 'Loaders', path: 'Loaders/Loaders-1.html' },
-      { id: 'loader-pulse-2', name: 'لودر ضربان‌دار', category: 'Loaders', path: 'Loaders/Loaders-2.html' },
-      { id: 'loader-wave-3', name: 'لودر موجی', category: 'Loaders', path: 'Loaders/Loaders-3.html' },
-      { id: 'switch-neon-1', name: 'سوئیچ نئونی', category: 'Switches', path: 'Switches/Switches-1.html' },
-      { id: 'switch-glass-2', name: 'سوئیچ شیشه‌ای', category: 'Switches', path: 'Switches/Switches-2.html' },
-      { id: 'tooltip-dark-1', name: 'توضیح‌دهنده تیره', category: 'Tooltips', path: 'Tooltips/Tooltips-1.html' },
-      { id: 'tooltip-glow-2', name: 'توضیح‌دهنده درخشان', category: 'Tooltips', path: 'Tooltips/Tooltips-2.html' },
-      { id: 'pattern-grid-1', name: 'الگوی شبکه‌ای', category: 'Patterns', path: 'Patterns/Patterns-1.html' },
-      { id: 'pattern-wave-2', name: 'الگوی موجی', category: 'Patterns', path: 'Patterns/Patterns-2.html' },
-      { id: 'form-dark-1', name: 'فرم تیره', category: 'Forms', path: 'Forms/Forms-1.html' }
-    ];
+    // ============================================================
+    // ۱. بارگذاری دیتا از index.json (واقعی)
+    // ============================================================
+    let allItems = [];
+    let categoryStats = {};
 
-    // ==============================================================
-    // STATE
-    // ==============================================================
-    let cart = [];                    // آرایه‌ای از آیتم‌های انتخاب‌شده (همان شیء)
-    let currentFilter = '';
+    // بارگذاری async
+    async function loadData() {
+      try {
+        const res = await fetch('index.json');
+        if (!res.ok) throw new Error('index.json یافت نشد');
+        const data = await res.json();
+        if (data.components && Array.isArray(data.components)) {
+          allItems = data.components.map(c => ({
+            id: c.id || c.index || Math.random().toString(36).slice(2),
+            name: c.name || c.id || 'بدون نام',
+            category: c.category || 'سایر',
+            path: c.source_file || '',
+            index: c.index || 0
+          }));
+          // محاسبه آمار
+          categoryStats = {};
+          allItems.forEach(item => {
+            categoryStats[item.category] = (categoryStats[item.category] || 0) + 1;
+          });
+        } else {
+          // fallback به دیتای نمونه
+          console.warn('ساختار index.json نامعتبر، از دیتای نمونه استفاده می‌شود.');
+          useSampleData();
+        }
+      } catch (e) {
+        console.warn('بارگذاری index.json失敗:', e);
+        useSampleData();
+      }
+      renderAll();
+    }
+
+    // دیتای نمونه (فقط برای مواقع ضروری)
+    function useSampleData() {
+      const samples = [
+        { id: 'btn-1', name: 'دکمه نئون آبی', category: 'Buttons', path: 'shenmorphism_ui_kit/Buttons/Buttons-1.html' },
+        { id: 'btn-2', name: 'دکمه سه‌بعدی', category: 'Buttons', path: 'shenmorphism_ui_kit/Buttons/Buttons-2.html' },
+        { id: 'btn-3', name: 'دکمه شیشه‌ای', category: 'Buttons', path: 'shenmorphism_ui_kit/Buttons/Buttons-3.html' },
+        { id: 'card-1', name: 'کارت شیشه‌ای', category: 'Cards', path: 'shenmorphism_ui_kit/Cards/Cards-1.html' },
+        { id: 'card-2', name: 'کارت تیره', category: 'Cards', path: 'shenmorphism_ui_kit/Cards/Cards-2.html' },
+        { id: 'chk-1', name: 'چک‌باکس درخشان', category: 'Checkboxes', path: 'shenmorphism_ui_kit/Checkboxes/Checkboxes-1.html' },
+        { id: 'inp-1', name: 'فیلد نئونی', category: 'Inputs', path: 'shenmorphism_ui_kit/Inputs/Inputs-1.html' },
+        { id: 'ldr-1', name: 'لودر چرخان', category: 'Loaders', path: 'shenmorphism_ui_kit/Loaders/Loaders-1.html' },
+        { id: 'ldr-2', name: 'لودر ضربان‌دار', category: 'Loaders', path: 'shenmorphism_ui_kit/Loaders/Loaders-2.html' },
+        { id: 'sw-1', name: 'سوئیچ نئونی', category: 'Switches', path: 'shenmorphism_ui_kit/Switches/Switches-1.html' },
+        { id: 'sw-2', name: 'سوئیچ شیشه‌ای', category: 'Switches', path: 'shenmorphism_ui_kit/Switches/Switches-2.html' },
+        { id: 'tip-1', name: 'توضیح‌دهنده تیره', category: 'Tooltips', path: 'shenmorphism_ui_kit/Tooltips/Tooltips-1.html' },
+        { id: 'pat-1', name: 'الگوی شبکه‌ای', category: 'Patterns', path: 'shenmorphism_ui_kit/Patterns/Patterns-1.html' },
+        { id: 'frm-1', name: 'فرم تیره', category: 'Forms', path: 'shenmorphism_ui_kit/Forms/Forms-1.html' }
+      ];
+      allItems = samples;
+      categoryStats = {};
+      allItems.forEach(item => {
+        categoryStats[item.category] = (categoryStats[item.category] || 0) + 1;
+      });
+      renderAll();
+    }
+
+    // ============================================================
+    // ۲. STATE
+    // ============================================================
+    let cart = [];          // آیتم‌های انتخاب‌شده (همان شیء)
+    let filterText = '';
 
     // عناصر DOM
     const gridEl = document.getElementById('galleryGrid');
     const searchInput = document.getElementById('searchInput');
+    const statsEl = document.getElementById('statsContainer');
     const cartModal = document.getElementById('cartModal');
     const openCartBtn = document.getElementById('openCartBtn');
     const closeCartBtn = document.getElementById('closeCartBtn');
@@ -568,11 +558,11 @@
     const copyJsonBtn = document.getElementById('copyJsonBtn');
     const exportJsonBtn = document.getElementById('exportJsonBtn');
 
-    // ==============================================================
-    // رندر گالری
-    // ==============================================================
+    // ============================================================
+    // ۳. رندر گالری
+    // ============================================================
     function renderGallery(filter = '') {
-      const filtered = sampleItems.filter(item =>
+      const filtered = allItems.filter(item =>
         item.name.toLowerCase().includes(filter.toLowerCase()) ||
         item.category.toLowerCase().includes(filter.toLowerCase())
       );
@@ -584,35 +574,35 @@
 
       let html = '';
       filtered.forEach(item => {
-        const isSelected = cart.some(c => c.id === item.id);
-        // مسیر پیش‌نمایش (برای iframe)
-        const previewSrc = item.path || '';
+        const inCart = cart.some(c => c.id === item.id);
+        const previewPath = item.path ? `./${item.path}` : '';
         html += `
           <div class="card-item" data-id="${item.id}">
             <span class="category-tag">${item.category}</span>
             <div class="preview-box">
-              ${previewSrc ? `<iframe src="${previewSrc}" loading="lazy"></iframe>` : 'پیش‌نمایش'}
+              ${previewPath ? `<iframe src="${previewPath}" loading="lazy"></iframe>` :
+                `<div class="fallback">پیش‌نمایش<br><small style="color:#4a5a78;">فایل موجود نیست</small></div>`}
             </div>
             <div class="item-name">${item.name}</div>
-            <button class="pick-btn ${isSelected ? 'selected' : ''}" data-id="${item.id}">
-              ${isSelected ? '✓ انتخاب شده' : '➕ افزودن'}
+            <button class="pick-btn ${inCart ? 'selected' : ''}" data-id="${item.id}">
+              ${inCart ? '✓ انتخاب شده' : '➕ افزودن'}
             </button>
           </div>
         `;
       });
       gridEl.innerHTML = html;
 
-      // اتصال رویداد به دکمه‌های pick
+      // رویداد دکمه‌های pick
       document.querySelectorAll('.pick-btn').forEach(btn => {
         btn.addEventListener('click', function(e) {
           e.stopPropagation();
           const id = this.dataset.id;
-          const item = sampleItems.find(i => i.id === id);
+          const item = allItems.find(i => i.id === id);
           if (!item) return;
 
-          const already = cart.some(c => c.id === id);
-          if (already) {
-            cart = cart.filter(c => c.id !== id);
+          const idx = cart.findIndex(c => c.id === id);
+          if (idx >= 0) {
+            cart.splice(idx, 1);
             this.textContent = '➕ افزودن';
             this.classList.remove('selected');
           } else {
@@ -625,16 +615,29 @@
       });
     }
 
-    // ==============================================================
-    // به‌روزرسانی سبد + JSON
-    // ==============================================================
+    // ============================================================
+    // ۴. آمار
+    // ============================================================
+    function renderStats() {
+      const entries = Object.entries(categoryStats).sort((a, b) => b[1] - a[1]);
+      if (entries.length === 0) {
+        statsEl.innerHTML = '<span style="color:#6a7a96;">هیچ دسته‌ای یافت نشد</span>';
+        return;
+      }
+      statsEl.innerHTML = entries.map(([cat, count]) =>
+        `<span><strong>${cat}</strong> ${count} قطعه</span>`
+      ).join('');
+    }
+
+    // ============================================================
+    // ۵. سبد خرید
+    // ============================================================
     function updateCartUI() {
-      // شمارنده
       cartCountEl.textContent = cart.length;
 
-      // لیست سبد
+      // لیست
       if (cart.length === 0) {
-        cartListEl.innerHTML = `<li class="empty-cart-msg">سبد خرید خالی است</li>`;
+        cartListEl.innerHTML = `<li class="empty-msg">سبد خرید خالی است</li>`;
       } else {
         cartListEl.innerHTML = cart.map(item =>
           `<li>
@@ -642,13 +645,12 @@
             <button class="remove-item" data-id="${item.id}">✕</button>
           </li>`
         ).join('');
-        // حذف آیتم از سبد
         document.querySelectorAll('.remove-item').forEach(btn => {
           btn.addEventListener('click', function(e) {
             e.stopPropagation();
             const id = this.dataset.id;
             cart = cart.filter(c => c.id !== id);
-            // به‌روزرسانی وضعیت دکمه‌های گالری
+            // همگام‌سازی دکمه‌های گالری
             document.querySelectorAll('.pick-btn').forEach(b => {
               if (b.dataset.id === id) {
                 b.textContent = '➕ افزودن';
@@ -656,65 +658,54 @@
               }
             });
             updateCartUI();
-            renderGallery(currentFilter); // برای هماهنگی نشان‌ها
           });
         });
       }
 
-      // خروجی JSON
+      // JSON
       const jsonData = cart.map(item => ({
         id: item.id,
         name: item.name,
         category: item.category,
         path: item.path
       }));
-      const jsonStr = JSON.stringify(jsonData, null, 2);
-      jsonOutputEl.textContent = jsonStr || '[]';
+      jsonOutputEl.textContent = JSON.stringify(jsonData, null, 2) || '[]';
 
-      // ذخیره در localStorage برای ماندگاری
+      // ذخیره در localStorage
       try {
         localStorage.setItem('shen_cart', JSON.stringify(cart));
       } catch (_) {}
     }
 
-    // ==============================================================
-    // مودال سبد
-    // ==============================================================
-    function openCart() {
-      cartModal.classList.add('open');
-    }
-    function closeCart() {
-      cartModal.classList.remove('open');
-    }
+    // ============================================================
+    // ۶. مودال
+    // ============================================================
+    function openModal() { cartModal.classList.add('open'); }
+    function closeModal() { cartModal.classList.remove('open'); }
 
-    openCartBtn.addEventListener('click', openCart);
-    closeCartBtn.addEventListener('click', closeCart);
+    openCartBtn.addEventListener('click', openModal);
+    closeCartBtn.addEventListener('click', closeModal);
     cartModal.addEventListener('click', function(e) {
-      if (e.target === this) closeCart();
+      if (e.target === this) closeModal();
     });
 
-    // ==============================================================
-    // اکشن‌های سبد
-    // ==============================================================
+    // ============================================================
+    // ۷. اکشن‌های سبد
+    // ============================================================
     clearCartBtn.addEventListener('click', function() {
       cart = [];
-      // به‌روزرسانی دکمه‌های گالری
       document.querySelectorAll('.pick-btn').forEach(b => {
         b.textContent = '➕ افزودن';
         b.classList.remove('selected');
       });
       updateCartUI();
-      renderGallery(currentFilter);
     });
 
     copyJsonBtn.addEventListener('click', function() {
       const text = jsonOutputEl.textContent;
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(() => {
-          alert('✅ JSON کپی شد!');
-        }).catch(() => {
-          fallbackCopy(text);
-        });
+        navigator.clipboard.writeText(text).then(() => alert('✅ JSON کپی شد!'))
+          .catch(() => fallbackCopy(text));
       } else {
         fallbackCopy(text);
       }
@@ -739,8 +730,7 @@
     function fallbackCopy(text) {
       const ta = document.createElement('textarea');
       ta.value = text;
-      ta.style.position = 'fixed';
-      ta.style.left = '-9999px';
+      ta.style.position = 'fixed'; ta.style.left = '-9999px';
       document.body.appendChild(ta);
       ta.select();
       try {
@@ -752,57 +742,49 @@
       document.body.removeChild(ta);
     }
 
-    // ==============================================================
-    // جستجو (فیلتر)
-    // ==============================================================
+    // ============================================================
+    // ۸. جستجو
+    // ============================================================
     searchInput.addEventListener('input', function() {
-      currentFilter = this.value;
-      renderGallery(currentFilter);
+      filterText = this.value;
+      renderGallery(filterText);
     });
 
-    // ==============================================================
-    // بازیابی سبد از localStorage (اختیاری)
-    // ==============================================================
-    try {
-      const saved = localStorage.getItem('shen_cart');
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length) {
-          // فقط آیتم‌هایی که در sampleItems وجود دارند رو نگه می‌داریم
-          const valid = parsed.filter(p => sampleItems.some(s => s.id === p.id));
-          if (valid.length) {
-            cart = valid;
+    // ============================================================
+    // ۹. بازیابی سبد از localStorage
+    // ============================================================
+    function loadCartFromStorage() {
+      try {
+        const saved = localStorage.getItem('shen_cart');
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length) {
+            // فقط آیتم‌های معتبر
+            const valid = parsed.filter(p => allItems.some(i => i.id === p.id));
+            if (valid.length) {
+              cart = valid;
+            }
           }
         }
-      }
-    } catch (_) {}
+      } catch (_) {}
+    }
 
-    // ==============================================================
-    // راه‌اندازی اولیه
-    // ==============================================================
-    renderGallery('');
-    updateCartUI();
+    // ============================================================
+    // ۱۰. رندر کامل
+    // ============================================================
+    function renderAll() {
+      renderStats();
+      loadCartFromStorage();
+      renderGallery(filterText);
+      updateCartUI();
+    }
 
-    // در صورت تغییر سبد، گالری ری‌رندر نمی‌شه (برای حفظ وضعیت دکمه‌ها)
-    // اما بعد از هر تغییری، دکمه‌ها به‌روز می‌شن.
+    // ============================================================
+    // شروع
+    // ============================================================
+    loadData();
 
-    // برای همگام‌سازی دکمه‌ها بعد از تغییر سبد (مثلاً از مودال) 
-    // توی updateCartUI دکمه‌های گالری رو هم به‌روز می‌کنیم.
-    // ولی اگه از مودال خارج شدیم و گالری رو مجدداً رندر کنیم، وضعیت دکمه‌ها درست می‌مونه.
-    // پس یه observer یا event ساده برای همگام‌سازی موقع بستن مودال:
-    closeCartBtn.addEventListener('click', function() {
-      renderGallery(currentFilter);
-    });
-    cartModal.addEventListener('click', function(e) {
-      if (e.target === this) {
-        renderGallery(currentFilter);
-      }
-    });
-
-    // همچنین وقتی سبد از بیرون تغییر می‌کنه (مثلاً clear) گالری رو ری‌رندر می‌کنیم.
-    // در خود clear و remove این کار انجام شده.
   })();
 </script>
-
 </body>
 </html>
