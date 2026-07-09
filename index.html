@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHΞN™ Morphism · UI Gallery</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #12121a;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      color: #ecedf0;
+    }
+
+    /* ظاهر نئومورفیسم تیره */
+    .gallery-container {
+      max-width: 1400px;
+      width: 100%;
+    }
+
+    /* هدر */
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+      padding: 1.2rem 2rem;
+      background: #1a1a26;
+      border-radius: 60px;
+      box-shadow:
+        inset 2px 2px 6px rgba(0, 0, 0, 0.6),
+        inset -3px -3px 8px rgba(255, 255, 255, 0.04),
+        6px 6px 16px rgba(0, 0, 0, 0.6),
+        -4px -4px 12px rgba(80, 80, 120, 0.08);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 600;
+      font-size: 1.3rem;
+      letter-spacing: 0.02em;
+      background: linear-gradient(135deg, #b7b7e6, #7c8cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .brand small {
+      font-weight: 400;
+      font-size: 0.8rem;
+      background: none;
+      -webkit-text-fill-color: #7f8fa3;
+      color: #7f8fa3;
+    }
+
+    .cart-badge {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .cart-btn {
+      background: #1f1f30;
+      border: none;
+      padding: 0.6rem 1.5rem 0.6rem 1.2rem;
+      border-radius: 40px;
+      color: #ecedf0;
+      font-weight: 500;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow:
+        inset 2px 2px 5px rgba(0, 0, 0, 0.6),
+        inset -3px -3px 8px rgba(255, 255, 255, 0.05),
+        5px 5px 12px rgba(0, 0, 0, 0.6),
+        -3px -3px 10px rgba(70, 70, 120, 0.06);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .cart-btn:hover {
+      background: #26263a;
+      box-shadow:
+        inset 1px 1px 4px rgba(0, 0, 0, 0.8),
+        inset -2px -2px 6px rgba(255, 255, 255, 0.08),
+        4px 4px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .cart-count {
+      background: #4c5cf0;
+      color: #fff;
+      border-radius: 30px;
+      padding: 0.1rem 0.7rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .export-btn {
+      background: transparent;
+      border: 1px solid #3d3d5a;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      color: #c8d0e0;
+      font-weight: 450;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .export-btn:hover {
+      background: #26263a;
+      border-color: #6a7aff;
+      color: #fff;
+    }
+
+    /* فیلتر جستجو */
+    .search-box {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.9rem 1.8rem;
+      border-radius: 60px;
+      border: none;
+      background: #191926;
+      color: #e4e8f0;
+      font-size: 1rem;
+      box-shadow:
+        inset 3px 3px 10px rgba(0, 0, 0, 0.7),
+        inset -4px -4px 12px rgba(255, 255, 255, 0.04),
+        6px 6px 16px rgba(0, 0, 0, 0.5);
+      outline: 1px solid #2d2d44;
+      transition: 0.2s;
+    }
+
+    .search-box input:focus {
+      outline: 1px solid #5f70ff;
+      background: #1d1d2e;
+    }
+
+    .search-box input::placeholder {
+      color: #6b7a92;
+      font-weight: 300;
+      letter-spacing: 0.3px;
+    }
+
+    /* شبکه گالری */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.8rem;
+      margin-top: 1rem;
+    }
+
+    /* کارت هر آیتم – نئومرفیسم تیره */
+    .card-item {
+      background: #1a1a28;
+      border-radius: 28px;
+      padding: 1.2rem 0.8rem 0.8rem;
+      box-shadow:
+        inset 2px 2px 6px rgba(0, 0, 0, 0.7),
+        inset -3px -3px 8px rgba(255, 255, 255, 0.04),
+        8px 8px 20px rgba(0, 0, 0, 0.6),
+        -5px -5px 14px rgba(60, 60, 120, 0.06);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: default;
+      position: relative;
+      border: 1px solid #28283d;
+    }
+
+    .card-item:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        inset 1px 1px 4px rgba(0, 0, 0, 0.8),
+        inset -2px -2px 6px rgba(255, 255, 255, 0.08),
+        10px 10px 28px rgba(0, 0, 0, 0.7),
+        -4px -4px 12px rgba(70, 70, 140, 0.08);
+      border-color: #3e3e62;
+    }
+
+    /* برچسب دسته */
+    .category-tag {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: #26263b;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      color: #a6b3d0;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.6);
+      margin-bottom: 0.6rem;
+      align-self: flex-start;
+      margin-left: 0.3rem;
+    }
+
+    /* پیش‌نمایش کوچک (ایفِکت) */
+    .preview-box {
+      width: 100%;
+      aspect-ratio: 1 / 0.9;
+      background: #12121c;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: #7a88a6;
+      box-shadow: inset 0 0 0 1px #2b2b42;
+      transition: 0.15s;
+      margin-bottom: 0.6rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .preview-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 18px;
+      background: #12121c;
+      transform: scale(0.7);
+      transform-origin: 0 0;
+      width: 142%;
+      height: 142%;
+      pointer-events: none;
+    }
+
+    /* نام آیتم */
+    .item-name {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #cdd6e8;
+      text-align: center;
+      margin: 0.3rem 0 0.2rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      padding: 0 0.2rem;
+    }
+
+    /* دکمه انتخاب (سبد خرید) */
+    .pick-btn {
+      background: #22223a;
+      border: none;
+      border-radius: 40px;
+      padding: 0.35rem 1.2rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #b9c4de;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+      box-shadow:
+        inset 1px 1px 4px rgba(0, 0, 0, 0.7),
+        inset -2px -2px 6px rgba(255, 255, 255, 0.04),
+        3px 3px 8px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      transition: 0.15s;
+    }
+
+    .pick-btn:hover {
+      background: #2d2d4a;
+      color: #fff;
+      box-shadow: inset 1px 1px 3px rgba(0,0,0,0.8), inset -2px -2px 6px rgba(255,255,255,0.08);
+    }
+
+    .pick-btn.selected {
+      background: #3a3f7a;
+      color: #fff;
+      box-shadow: inset 1px 1px 4px #0a0a1a, 0 0 8px #4c5cf066;
+    }
+
+    /* سبد خرید – مودال نئومرفیسم */
+    .cart-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(8, 8, 16, 0.7);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+
+    .cart-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .cart-panel {
+      background: #191926;
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      border-radius: 48px;
+      padding: 2rem 2rem 1.8rem;
+      box-shadow:
+        inset 2px 2px 10px rgba(0, 0, 0, 0.8),
+        inset -4px -4px 14px rgba(255, 255, 255, 0.04),
+        20px 20px 50px rgba(0, 0, 0, 0.7);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-panel h2 {
+      font-weight: 500;
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+      color: #d0d8ec;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-panel h2 button {
+      background: transparent;
+      border: none;
+      color: #8896b8;
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      transition: 0.15s;
+    }
+
+    .cart-panel h2 button:hover {
+      background: #2b2b44;
+      color: #fff;
+    }
+
+    .cart-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 1.2rem;
+    }
+
+    .cart-list li {
+      padding: 0.6rem 0.8rem;
+      background: #12121e;
+      border-radius: 30px;
+      margin-bottom: 0.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      border-left: 3px solid #5f70ff;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.5);
+    }
+
+    .cart-list li span {
+      color: #b3c0db;
+    }
+
+    .cart-list li .remove-item {
+      background: transparent;
+      border: none;
+      color: #b07a8a;
+      cursor: pointer;
+      font-size: 0.8rem;
+      padding: 0.1rem 0.5rem;
+      border-radius: 30px;
+      transition: 0.1s;
+    }
+
+    .cart-list li .remove-item:hover {
+      background: #2f1f2a;
+      color: #ff8a9e;
+    }
+
+    .json-output {
+      background: #0e0e1a;
+      border-radius: 24px;
+      padding: 1rem 1.2rem;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 0.75rem;
+      color: #a6b8d0;
+      white-space: pre-wrap;
+      word-break: break-all;
+      max-height: 140px;
+      overflow-y: auto;
+      box-shadow: inset 0 0 0 1px #2f2f4a;
+      margin-top: 0.4rem;
+    }
+
+    .cart-actions {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cart-actions button {
+      flex: 1;
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 60px;
+      background: #22223e;
+      color: #d0d8ec;
+      font-weight: 500;
+      box-shadow: inset 1px 1px 5px rgba(0,0,0,0.7), inset -2px -2px 6px rgba(255,255,255,0.03);
+      cursor: pointer;
+      transition: 0.15s;
+    }
+
+    .cart-actions button:hover {
+      background: #313155;
+      color: #fff;
+    }
+
+    .cart-actions .btn-primary {
+      background: #3f4cdb;
+      color: #fff;
+      box-shadow: 0 4px 12px #2e3aa080;
+    }
+
+    .cart-actions .btn-primary:hover {
+      background: #5a6aff;
+    }
+
+    /* اسکرول */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #14141e;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3b3b60;
+      border-radius: 20px;
+    }
+
+    /* واکنش‌گرایی */
+    @media (max-width: 640px) {
+      .header { flex-direction: column; align-items: stretch; gap: 1rem; }
+      .cart-badge { justify-content: flex-start; flex-wrap: wrap; }
+      .grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1.2rem; }
+    }
+
+    /* دکمه خالی */
+    .empty-cart-msg {
+      color: #7c8aa8;
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="gallery-container">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="brand">
+      ⌘ SHΞN™ Morphism
+      <small>· گالری</small>
+    </div>
+    <div class="cart-badge">
+      <button class="cart-btn" id="openCartBtn">
+        <span>🛒</span> سبد
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="export-btn" id="exportJsonBtn">
+        <span>⬇️</span> JSON
+      </button>
+    </div>
+  </header>
+
+  <!-- جستجو -->
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="جستجوی قطعه · مثل دکمه نئون، کارت تیره، لودر ..." />
+  </div>
+
+  <!-- شبکه گالری -->
+  <div class="grid" id="galleryGrid"></div>
+</div>
+
+<!-- مودال سبد خرید -->
+<div class="cart-modal" id="cartModal">
+  <div class="cart-panel">
+    <h2>
+      <span>🛒 سبد انتخاب</span>
+      <button id="closeCartBtn">✕</button>
+    </h2>
+    <ul class="cart-list" id="cartList"></ul>
+    <div class="json-output" id="jsonOutput">خالی</div>
+    <div class="cart-actions">
+      <button id="clearCartBtn">🗑 خالی کن</button>
+      <button class="btn-primary" id="copyJsonBtn">📋 کپی JSON</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    // --------------------------------------------------------------
+    // دیتای نمونه – ۲۰ قطعه از دسته‌های مختلف (برای نمایش)
+    // شما می‌توانید این آرایه را از index.json واقعی پر کنید
+    // --------------------------------------------------------------
+    const sampleItems = [
+      { id: 'btn-neon-1', name: 'دکمه نئون آبی', category: 'Buttons', path: 'Buttons/Buttons-1.html' },
+      { id: 'btn-3d-2', name: 'دکمه سه‌بعدی', category: 'Buttons', path: 'Buttons/Buttons-2.html' },
+      { id: 'btn-ghost-3', name: 'دکمه شیشه‌ای', category: 'Buttons', path: 'Buttons/Buttons-3.html' },
+      { id: 'card-glass-1', name: 'کارت شیشه‌ای', category: 'Cards', path: 'Cards/Cards-1.html' },
+      { id: 'card-dark-2', name: 'کارت تیره', category: 'Cards', path: 'Cards/Cards-2.html' },
+      { id: 'card-neon-3', name: 'کارت نئون', category: 'Cards', path: 'Cards/Cards-3.html' },
+      { id: 'checkbox-glow-1', name: 'چک‌باکس درخشان', category: 'Checkboxes', path: 'Checkboxes/Checkboxes-1.html' },
+      { id: 'checkbox-min-2', name: 'چک‌باکس مینیمال', category: 'Checkboxes', path: 'Checkboxes/Checkboxes-2.html' },
+      { id: 'input-neon-1', name: 'فیلد نئونی', category: 'Inputs', path: 'Inputs/Inputs-1.html' },
+      { id: 'input-glass-2', name: 'فیلد شیشه‌ای', category: 'Inputs', path: 'Inputs/Inputs-2.html' },
+      { id: 'loader-spin-1', name: 'لودر چرخان', category: 'Loaders', path: 'Loaders/Loaders-1.html' },
+      { id: 'loader-pulse-2', name: 'لودر ضربان‌دار', category: 'Loaders', path: 'Loaders/Loaders-2.html' },
+      { id: 'loader-wave-3', name: 'لودر موجی', category: 'Loaders', path: 'Loaders/Loaders-3.html' },
+      { id: 'switch-neon-1', name: 'سوئیچ نئونی', category: 'Switches', path: 'Switches/Switches-1.html' },
+      { id: 'switch-glass-2', name: 'سوئیچ شیشه‌ای', category: 'Switches', path: 'Switches/Switches-2.html' },
+      { id: 'tooltip-dark-1', name: 'توضیح‌دهنده تیره', category: 'Tooltips', path: 'Tooltips/Tooltips-1.html' },
+      { id: 'tooltip-glow-2', name: 'توضیح‌دهنده درخشان', category: 'Tooltips', path: 'Tooltips/Tooltips-2.html' },
+      { id: 'pattern-grid-1', name: 'الگوی شبکه‌ای', category: 'Patterns', path: 'Patterns/Patterns-1.html' },
+      { id: 'pattern-wave-2', name: 'الگوی موجی', category: 'Patterns', path: 'Patterns/Patterns-2.html' },
+      { id: 'form-dark-1', name: 'فرم تیره', category: 'Forms', path: 'Forms/Forms-1.html' }
+    ];
+
+    // ==============================================================
+    // STATE
+    // ==============================================================
+    let cart = [];                    // آرایه‌ای از آیتم‌های انتخاب‌شده (همان شیء)
+    let currentFilter = '';
+
+    // عناصر DOM
+    const gridEl = document.getElementById('galleryGrid');
+    const searchInput = document.getElementById('searchInput');
+    const cartModal = document.getElementById('cartModal');
+    const openCartBtn = document.getElementById('openCartBtn');
+    const closeCartBtn = document.getElementById('closeCartBtn');
+    const cartListEl = document.getElementById('cartList');
+    const cartCountEl = document.getElementById('cartCount');
+    const jsonOutputEl = document.getElementById('jsonOutput');
+    const clearCartBtn = document.getElementById('clearCartBtn');
+    const copyJsonBtn = document.getElementById('copyJsonBtn');
+    const exportJsonBtn = document.getElementById('exportJsonBtn');
+
+    // ==============================================================
+    // رندر گالری
+    // ==============================================================
+    function renderGallery(filter = '') {
+      const filtered = sampleItems.filter(item =>
+        item.name.toLowerCase().includes(filter.toLowerCase()) ||
+        item.category.toLowerCase().includes(filter.toLowerCase())
+      );
+
+      if (filtered.length === 0) {
+        gridEl.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:3rem 0; color:#6a7a96;">هیچ قطعه‌ای با این جستجو یافت نشد.</div>`;
+        return;
+      }
+
+      let html = '';
+      filtered.forEach(item => {
+        const isSelected = cart.some(c => c.id === item.id);
+        // مسیر پیش‌نمایش (برای iframe)
+        const previewSrc = item.path || '';
+        html += `
+          <div class="card-item" data-id="${item.id}">
+            <span class="category-tag">${item.category}</span>
+            <div class="preview-box">
+              ${previewSrc ? `<iframe src="${previewSrc}" loading="lazy"></iframe>` : 'پیش‌نمایش'}
+            </div>
+            <div class="item-name">${item.name}</div>
+            <button class="pick-btn ${isSelected ? 'selected' : ''}" data-id="${item.id}">
+              ${isSelected ? '✓ انتخاب شده' : '➕ افزودن'}
+            </button>
+          </div>
+        `;
+      });
+      gridEl.innerHTML = html;
+
+      // اتصال رویداد به دکمه‌های pick
+      document.querySelectorAll('.pick-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const id = this.dataset.id;
+          const item = sampleItems.find(i => i.id === id);
+          if (!item) return;
+
+          const already = cart.some(c => c.id === id);
+          if (already) {
+            cart = cart.filter(c => c.id !== id);
+            this.textContent = '➕ افزودن';
+            this.classList.remove('selected');
+          } else {
+            cart.push({ ...item });
+            this.textContent = '✓ انتخاب شده';
+            this.classList.add('selected');
+          }
+          updateCartUI();
+        });
+      });
+    }
+
+    // ==============================================================
+    // به‌روزرسانی سبد + JSON
+    // ==============================================================
+    function updateCartUI() {
+      // شمارنده
+      cartCountEl.textContent = cart.length;
+
+      // لیست سبد
+      if (cart.length === 0) {
+        cartListEl.innerHTML = `<li class="empty-cart-msg">سبد خرید خالی است</li>`;
+      } else {
+        cartListEl.innerHTML = cart.map(item =>
+          `<li>
+            <span>${item.name} <small style="color:#6e7e9a;">(${item.category})</small></span>
+            <button class="remove-item" data-id="${item.id}">✕</button>
+          </li>`
+        ).join('');
+        // حذف آیتم از سبد
+        document.querySelectorAll('.remove-item').forEach(btn => {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const id = this.dataset.id;
+            cart = cart.filter(c => c.id !== id);
+            // به‌روزرسانی وضعیت دکمه‌های گالری
+            document.querySelectorAll('.pick-btn').forEach(b => {
+              if (b.dataset.id === id) {
+                b.textContent = '➕ افزودن';
+                b.classList.remove('selected');
+              }
+            });
+            updateCartUI();
+            renderGallery(currentFilter); // برای هماهنگی نشان‌ها
+          });
+        });
+      }
+
+      // خروجی JSON
+      const jsonData = cart.map(item => ({
+        id: item.id,
+        name: item.name,
+        category: item.category,
+        path: item.path
+      }));
+      const jsonStr = JSON.stringify(jsonData, null, 2);
+      jsonOutputEl.textContent = jsonStr || '[]';
+
+      // ذخیره در localStorage برای ماندگاری
+      try {
+        localStorage.setItem('shen_cart', JSON.stringify(cart));
+      } catch (_) {}
+    }
+
+    // ==============================================================
+    // مودال سبد
+    // ==============================================================
+    function openCart() {
+      cartModal.classList.add('open');
+    }
+    function closeCart() {
+      cartModal.classList.remove('open');
+    }
+
+    openCartBtn.addEventListener('click', openCart);
+    closeCartBtn.addEventListener('click', closeCart);
+    cartModal.addEventListener('click', function(e) {
+      if (e.target === this) closeCart();
+    });
+
+    // ==============================================================
+    // اکشن‌های سبد
+    // ==============================================================
+    clearCartBtn.addEventListener('click', function() {
+      cart = [];
+      // به‌روزرسانی دکمه‌های گالری
+      document.querySelectorAll('.pick-btn').forEach(b => {
+        b.textContent = '➕ افزودن';
+        b.classList.remove('selected');
+      });
+      updateCartUI();
+      renderGallery(currentFilter);
+    });
+
+    copyJsonBtn.addEventListener('click', function() {
+      const text = jsonOutputEl.textContent;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          alert('✅ JSON کپی شد!');
+        }).catch(() => {
+          fallbackCopy(text);
+        });
+      } else {
+        fallbackCopy(text);
+      }
+    });
+
+    exportJsonBtn.addEventListener('click', function() {
+      const jsonData = cart.map(item => ({
+        id: item.id,
+        name: item.name,
+        category: item.category,
+        path: item.path
+      }));
+      const blob = new Blob([JSON.stringify(jsonData, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'shen-cart.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        alert('✅ JSON کپی شد!');
+      } catch (_) {
+        alert('❌ کپی نشد، لطفاً دستی کپی کنید.');
+      }
+      document.body.removeChild(ta);
+    }
+
+    // ==============================================================
+    // جستجو (فیلتر)
+    // ==============================================================
+    searchInput.addEventListener('input', function() {
+      currentFilter = this.value;
+      renderGallery(currentFilter);
+    });
+
+    // ==============================================================
+    // بازیابی سبد از localStorage (اختیاری)
+    // ==============================================================
+    try {
+      const saved = localStorage.getItem('shen_cart');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length) {
+          // فقط آیتم‌هایی که در sampleItems وجود دارند رو نگه می‌داریم
+          const valid = parsed.filter(p => sampleItems.some(s => s.id === p.id));
+          if (valid.length) {
+            cart = valid;
+          }
+        }
+      }
+    } catch (_) {}
+
+    // ==============================================================
+    // راه‌اندازی اولیه
+    // ==============================================================
+    renderGallery('');
+    updateCartUI();
+
+    // در صورت تغییر سبد، گالری ری‌رندر نمی‌شه (برای حفظ وضعیت دکمه‌ها)
+    // اما بعد از هر تغییری، دکمه‌ها به‌روز می‌شن.
+
+    // برای همگام‌سازی دکمه‌ها بعد از تغییر سبد (مثلاً از مودال) 
+    // توی updateCartUI دکمه‌های گالری رو هم به‌روز می‌کنیم.
+    // ولی اگه از مودال خارج شدیم و گالری رو مجدداً رندر کنیم، وضعیت دکمه‌ها درست می‌مونه.
+    // پس یه observer یا event ساده برای همگام‌سازی موقع بستن مودال:
+    closeCartBtn.addEventListener('click', function() {
+      renderGallery(currentFilter);
+    });
+    cartModal.addEventListener('click', function(e) {
+      if (e.target === this) {
+        renderGallery(currentFilter);
+      }
+    });
+
+    // همچنین وقتی سبد از بیرون تغییر می‌کنه (مثلاً clear) گالری رو ری‌رندر می‌کنیم.
+    // در خود clear و remove این کار انجام شده.
+  })();
+</script>
+
+</body>
+</html>
