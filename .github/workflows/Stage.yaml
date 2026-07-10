@@ -1,0 +1,47 @@
+name: Generate UI Kit Catalog
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'shenmorphism_ui_kit/**'
+      - 'generate_ui_kit_json.py'
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate-catalog:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirement.txt ]; then pip install -r requirement.txt; fi
+
+    - name: Generate UI Kit Catalog
+      run: python generate_ui_kit_json.py
+
+    - name: Validate JSON
+      run: python -m json.tool index.json > /dev/null
+
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add index.json
+        git diff --staged --quiet || git commit -m "UI Kit catalog"
+        git push
