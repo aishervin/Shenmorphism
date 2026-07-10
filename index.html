@@ -3,137 +3,873 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رابط کاربری تب‌بندی شده</title>
+    <title>SHΞN™ Morphism UI Kit - Full Catalog</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <style>
-        /* تنظیمات پایه */
-        body { 
-            font-family: Tahoma, Arial, sans-serif; 
-            margin: 0; 
-            background-color: #f4f6f8; 
-            display: flex; 
-            flex-direction: column; 
-            min-height: 100vh; 
-            color: #333;
-        }
-        
-        .container { 
-            flex: 1; 
-            max-width: 700px; 
-            margin: 30px auto; 
-            width: 100%; 
-            padding: 0 15px; 
-            box-sizing: border-box; 
-        }
-        
-        /* استایل تب‌ها */
-        .tabs { 
-            display: flex; 
-            background: #fff; 
-            border-radius: 12px 12px 0 0; 
-            overflow: hidden; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
-        }
-        
-        .tab-btn { 
-            flex: 1; 
-            padding: 16px; 
-            border: none; 
-            background: #eef2f5; 
-            cursor: pointer; 
-            font-size: 15px; 
-            font-weight: bold; 
-            color: #555;
-            transition: all 0.3s ease; 
-        }
-        
-        .tab-btn:hover { 
-            background: #e2e8f0; 
-        }
-        
-        .tab-btn.active { 
-            background: #fff; 
-            color: #007bff; 
-            border-bottom: 3px solid #007bff; 
-        }
-        
-        /* استایل محتوای تب */
-        .tab-content { 
-            display: none; 
-            padding: 25px; 
-            background: #fff; 
-            border-radius: 0 0 12px 12px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
-            line-height: 1.6;
-        }
-        
-        .tab-content.active { 
-            display: block; 
-            animation: fadeIn 0.4s;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
+        :root {
+            --shen-bg: #e0e5ec;
+            --shen-dark: #a3b1c6;
+            --shen-light: #ffffff;
+            --shen-accent: #00d9ff;
+            --shen-accent-glow: rgba(0, 217, 255, 0.4);
+            --shen-text: #2d3748;
+            --shen-shadow-dark: rgba(163, 177, 198, 0.8);
+            --shen-shadow-light: rgba(255, 255, 255, 0.9);
         }
-        
-        /* فوتر */
-        footer { 
-            text-align: center; 
-            padding: 15px; 
-            background: #222; 
-            color: #ddd; 
-            font-size: 13px; 
-            margin-top: auto; 
-            letter-spacing: 1px;
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--shen-bg);
+            color: var(--shen-text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .neu-flat {
+            background: var(--shen-bg);
+            box-shadow: 8px 8px 16px var(--shen-shadow-dark),
+                        -8px -8px 16px var(--shen-shadow-light);
+        }
+
+        .neu-pressed {
+            background: var(--shen-bg);
+            box-shadow: inset 6px 6px 12px var(--shen-shadow-dark),
+                        inset -6px -6px 12px var(--shen-shadow-light);
+        }
+
+        .neu-convex {
+            background: linear-gradient(145deg, #f0f5fc, #d1d9e6);
+            box-shadow: 8px 8px 16px var(--shen-shadow-dark),
+                        -8px -8px 16px var(--shen-shadow-light);
+        }
+
+        .header {
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, var(--shen-accent), #0099cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.7;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            padding: 10px 20px;
+            border-radius: 12px;
+            background: var(--shen-bg);
+            box-shadow: 4px 4px 8px var(--shen-shadow-dark),
+                        -4px -4px 8px var(--shen-shadow-light);
+        }
+
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--shen-accent);
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+
+        .loading-bar {
+            width: 100%;
+            max-width: 600px;
+            height: 8px;
+            border-radius: 4px;
+            background: var(--shen-bg);
+            box-shadow: inset 2px 2px 4px var(--shen-shadow-dark),
+                        inset -2px -2px 4px var(--shen-shadow-light);
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .loading-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--shen-accent), #0099cc);
+            border-radius: 4px;
+            transition: width 0.3s;
+            width: 0%;
+        }
+
+        .loading-text {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 250px 1fr 350px;
+            gap: 20px;
+            padding: 0 30px 30px;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .sidebar {
+            padding: 20px;
+            border-radius: 20px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .category-btn {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+            background: var(--shen-bg);
+            box-shadow: 5px 5px 10px var(--shen-shadow-dark),
+                        -5px -5px 10px var(--shen-shadow-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .category-btn.active {
+            background: linear-gradient(135deg, var(--shen-accent), #0099cc);
+            color: white;
+            box-shadow: 0 0 20px var(--shen-accent-glow);
+        }
+
+        .category-count {
+            background: rgba(255,255,255,0.2);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.85em;
+        }
+
+        .main-content {
+            min-height: 80vh;
+        }
+
+        .search-container {
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1em;
+            background: var(--shen-bg);
+            box-shadow: inset 4px 4px 8px var(--shen-shadow-dark),
+                        inset -4px -4px 8px var(--shen-shadow-light);
+            outline: none;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .component-card {
+            padding: 20px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .component-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .component-card.selected {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(0, 153, 204, 0.1));
+            box-shadow: 0 0 30px var(--shen-accent-glow);
+        }
+
+        .component-preview {
+            width: 100%;
+            height: 200px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            background: white;
+            box-shadow: inset 3px 3px 6px var(--shen-shadow-dark),
+                        inset -3px -3px 6px var(--shen-shadow-light);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .component-preview iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none;
+        }
+
+        .preview-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .component-name {
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .component-category {
+            font-size: 0.9em;
+            opacity: 0.6;
+            margin-bottom: 10px;
+        }
+
+        .component-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.8em;
+            background: var(--shen-bg);
+            box-shadow: 2px 2px 4px var(--shen-shadow-dark),
+                        -2px -2px 4px var(--shen-shadow-light);
+        }
+
+        .select-indicator {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--shen-bg);
+            box-shadow: 3px 3px 6px var(--shen-shadow-dark),
+                        -3px -3px 6px var(--shen-shadow-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .component-card.selected .select-indicator {
+            opacity: 1;
+            background: linear-gradient(135deg, var(--shen-accent), #0099cc);
+            color: white;
+        }
+
+        .cart-panel {
+            padding: 20px;
+            border-radius: 20px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .cart-header h3 {
+            font-size: 1.3em;
+        }
+
+        .cart-count {
+            padding: 5px 15px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--shen-accent), #0099cc);
+            color: white;
+            font-weight: 600;
+        }
+
+        .cart-items {
+            max-height: 500px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--shen-bg);
+            box-shadow: 3px 3px 6px var(--shen-shadow-dark),
+                        -3px -3px 6px var(--shen-shadow-light);
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .cart-item-category {
+            font-size: 0.85em;
+            opacity: 0.6;
+        }
+
+        .remove-btn {
+            width: 30px;
+            height: 30px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background: var(--shen-bg);
+            box-shadow: 2px 2px 4px var(--shen-shadow-dark),
+                        -2px -2px 4px var(--shen-shadow-light);
+            transition: all 0.3s;
+        }
+
+        .remove-btn:hover {
+            background: #ff4444;
+            color: white;
+        }
+
+        .export-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--shen-accent), #0099cc);
+            color: white;
+            box-shadow: 0 0 20px var(--shen-accent-glow);
+            transition: all 0.3s;
+        }
+
+        .export-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 30px var(--shen-accent-glow);
+        }
+
+        .export-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(224, 229, 236, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--shen-bg);
+            box-shadow: 8px 8px 16px var(--shen-shadow-dark),
+                        -8px -8px 16px var(--shen-shadow-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                grid-template-columns: 200px 1fr;
+            }
+            .cart-panel {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--shen-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--shen-accent), #0099cc);
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <!-- دکمه‌های تب -->
-    <div class="tabs">
-        <button class="tab-btn active" onclick="openTab(event, 'main-section')">بخش اصلی</button>
-        <button class="tab-btn" onclick="openTab(event, 'tools-section')">ابزارها</button>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader">
+            <span style="font-size: 2em;">⚡</span>
+        </div>
+        <div style="font-size: 1.2em; font-weight: 600;" id="overlayText">در حال آماده‌سازی...</div>
     </div>
 
-    <!-- محتوای تب‌ها -->
-    <div id="main-section" class="tab-content active">
-        <h3>محتوای بخش اصلی</h3>
-        <p>همان‌طور که خواسته بودی، دکمه جستجو حذف شد و محتوا به این بخش منتقل شد. طراحی کاملاً مینیمال و برای گوشی‌های موبایل بهینه‌سازی شده است.</p>
+    <div class="header">
+        <h1>SHΞN™ Morphism UI Kit</h1>
+        <p>کاتالوگ کامل با پیش‌نمایش واقعی</p>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-value" id="totalLoaded">0</div>
+                <div class="stat-label">بارگذاری شده</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="selectedCount">0</div>
+                <div class="stat-label">انتخاب شده</div>
+            </div>
+        </div>
+        <div class="loading-bar">
+            <div class="loading-progress" id="loadingProgress"></div>
+        </div>
+        <div class="loading-text" id="loadingText">در حال بارگذاری کامپوننت‌ها...</div>
     </div>
-    
-    <div id="tools-section" class="tab-content">
-        <h3>بخش ابزارها و تنظیمات</h3>
-        <p>در این تب می‌توانی سایر امکانات، کانفیگ‌ها یا ابزارهای مرتبط با شبکه رو قرار بدی بدون اینکه صفحه شلوغ بشه.</p>
+
+    <div class="container">
+        <div class="sidebar neu-flat">
+            <h3>📂 دسته‌بندی‌ها</h3>
+            <button class="category-btn active" data-category="all">
+                <span>همه</span>
+                <span class="category-count" id="count-all">0</span>
+            </button>
+            <button class="category-btn" data-category="buttons">
+                <span>دکمه‌ها</span>
+                <span class="category-count" id="count-buttons">0</span>
+            </button>
+            <button class="category-btn" data-category="cards">
+                <span>کارت‌ها</span>
+                <span class="category-count" id="count-cards">0</span>
+            </button>
+            <button class="category-btn" data-category="inputs">
+                <span>ورودی‌ها</span>
+                <span class="category-count" id="count-inputs">0</span>
+            </button>
+            <button class="category-btn" data-category="checkboxes">
+                <span>چک‌باکس‌ها</span>
+                <span class="category-count" id="count-checkboxes">0</span>
+            </button>
+            <button class="category-btn" data-category="forms">
+                <span>فرم‌ها</span>
+                <span class="category-count" id="count-forms">0</span>
+            </button>
+            <button class="category-btn" data-category="patterns">
+                <span>الگوها</span>
+                <span class="category-count" id="count-patterns">0</span>
+            </button>
+            <button class="category-btn" data-category="tooltips">
+                <span>تولتیپ‌ها</span>
+                <span class="category-count" id="count-tooltips">0</span>
+            </button>
+            <button class="category-btn" data-category="other">
+                <span>سایر</span>
+                <span class="category-count" id="count-other">0</span>
+            </button>
+        </div>
+
+        <div class="main-content">
+            <div class="search-container neu-pressed">
+                <input type="text" class="search-input" id="searchInput" placeholder="🔍 جستجو...">
+            </div>
+            <div class="catalog-grid" id="catalogGrid"></div>
+        </div>
+
+        <div class="cart-panel neu-flat">
+            <div class="cart-header">
+                <h3>🛒 سبد طراحی</h3>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+            <button class="export-btn" id="exportBtn" disabled>
+                 دانلود پکیج ZIP
+            </button>
+        </div>
     </div>
-</div>
 
-<footer>
-    Exclusive ☬SHΞN™ made
-</footer>
+    <script>
+        // Component Cache
+        const componentCache = new Map();
+        const componentsDB = [];
+        let selectedComponents = [];
+        let currentCategory = 'all';
+        let searchQuery = '';
 
-<script>
-    // اسکریپت مدیریت تغییر تب‌ها
-    function openTab(evt, tabName) {
-        let i, tabcontent, tablinks;
-        
-        // مخفی کردن تمام محتواها
-        tabcontent = document.getElementsByClassName("tab-content");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].classList.remove("active");
+        // Generate component list
+        function generateComponentList() {
+            const categories = {
+                buttons: 1231,
+                cards: 726,
+                inputs: 226,
+                checkboxes: 171,
+                forms: 180,
+                patterns: 103,
+                tooltips: 62,
+                other: 1103
+            };
+
+            let id = 1;
+            for (const [category, count] of Object.entries(categories)) {
+                for (let i = 1; i <= count; i++) {
+                    componentsDB.push({
+                        id: `${category}-${String(id++).padStart(4, '0')}`,
+                        name: `${getCategoryName(category)} ${i}`,
+                        category: category,
+                        index: i,
+                        raw_url: `https://raw.githubusercontent.com/aishervin/Shenmorphism/main/shenmorphism_ui_kit/${category}/${category}-${i}.html`,
+                        code: null,
+                        loaded: false
+                    });
+                }
+            }
         }
-        
-        // حذف کلاس active از تمام دکمه‌ها
-        tablinks = document.getElementsByClassName("tab-btn");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].classList.remove("active");
+
+        // Load all components in background
+        async function loadAllComponents() {
+            const total = componentsDB.length;
+            let loaded = 0;
+            const batchSize = 50;
+
+            for (let i = 0; i < total; i += batchSize) {
+                const batch = componentsDB.slice(i, i + batchSize);
+                
+                await Promise.all(batch.map(async (comp) => {
+                    try {
+                        const response = await fetch(comp.raw_url);
+                        if (response.ok) {
+                            comp.code = await response.text();
+                            comp.loaded = true;
+                            componentCache.set(comp.id, comp.code);
+                        }
+                    } catch (error) {
+                        console.error(`Failed to load ${comp.id}:`, error);
+                    }
+                    loaded++;
+                    updateLoadingProgress(loaded, total);
+                }));
+
+                // Small delay to prevent overwhelming
+                await new Promise(resolve => setTimeout(resolve, 100));
+            }
+
+            document.getElementById('loadingText').textContent = '✓ بارگذاری کامل شد!';
+            renderCatalog();
         }
-        
-        // نمایش تب انتخاب شده و اضافه کردن کلاس active به دکمه آن
-        document.getElementById(tabName).classList.add("active");
-        evt.currentTarget.classList.add("active");
-    }
-</script>
+
+        function updateLoadingProgress(loaded, total) {
+            const percentage = (loaded / total) * 100;
+            document.getElementById('loadingProgress').style.width = percentage + '%';
+            document.getElementById('totalLoaded').textContent = loaded;
+            document.getElementById('loadingText').textContent = `در حال بارگذاری... ${loaded} از ${total}`;
+        }
+
+        function getCategoryName(category) {
+            const names = {
+                buttons: 'دکمه',
+                cards: 'کارت',
+                inputs: 'ورودی',
+                checkboxes: 'چک‌باکس',
+                forms: 'فرم',
+                patterns: 'الگو',
+                tooltips: 'تولتیپ',
+                other: 'کامپوننت'
+            };
+            return names[category] || category;
+        }
+
+        function renderCatalog() {
+            const grid = document.getElementById('catalogGrid');
+            grid.innerHTML = '';
+
+            const filtered = componentsDB.filter(comp => {
+                const matchCategory = currentCategory === 'all' || comp.category === currentCategory;
+                const matchSearch = !searchQuery || 
+                    comp.name.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchCategory && matchSearch && comp.loaded;
+            });
+
+            // Render first 50 for performance
+            const toRender = filtered.slice(0, 50);
+
+            toRender.forEach(comp => {
+                const card = createComponentCard(comp);
+                grid.appendChild(card);
+            });
+
+            if (filtered.length > 50) {
+                const moreInfo = document.createElement('div');
+                moreInfo.style.gridColumn = '1 / -1';
+                moreInfo.style.textAlign = 'center';
+                moreInfo.style.padding = '20px';
+                moreInfo.style.opacity = '0.6';
+                moreInfo.textContent = `و ${filtered.length - 50} کامپوننت دیگر...`;
+                grid.appendChild(moreInfo);
+            }
+
+            updateCategoryCounts();
+        }
+
+        function createComponentCard(comp) {
+            const card = document.createElement('div');
+            card.className = 'component-card neu-convex';
+            card.dataset.id = comp.id;
+
+            const isSelected = selectedComponents.some(c => c.id === comp.id);
+            if (isSelected) card.classList.add('selected');
+
+            card.innerHTML = `
+                <div class="select-indicator">✓</div>
+                <div class="component-preview">
+                    <iframe srcdoc="${escapeHtml(comp.code || '')}" sandbox="allow-same-origin"></iframe>
+                </div>
+                <div class="component-name">${comp.name}</div>
+                <div class="component-category">${getCategoryName(comp.category)}</div>
+            `;
+
+            card.addEventListener('click', () => toggleComponent(comp));
+            return card;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML.replace(/"/g, '&quot;');
+        }
+
+        function toggleComponent(comp) {
+            const index = selectedComponents.findIndex(c => c.id === comp.id);
+            
+            if (index > -1) {
+                selectedComponents.splice(index, 1);
+            } else {
+                selectedComponents.push(comp);
+            }
+
+            updateCartUI();
+            renderCatalog();
+        }
+
+        function updateCartUI() {
+            const cartItems = document.getElementById('cartItems');
+            const cartCount = document.getElementById('cartCount');
+            const exportBtn = document.getElementById('exportBtn');
+            const selectedCount = document.getElementById('selectedCount');
+
+            cartCount.textContent = selectedComponents.length;
+            selectedCount.textContent = selectedComponents.length;
+            exportBtn.disabled = selectedComponents.length === 0;
+
+            cartItems.innerHTML = selectedComponents.map(comp => `
+                <div class="cart-item">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${comp.name}</div>
+                        <div class="cart-item-category">${getCategoryName(comp.category)}</div>
+                    </div>
+                    <button class="remove-btn" onclick="toggleComponent(componentsDB.find(c => c.id === '${comp.id}'))">✕</button>
+                </div>
+            `).join('');
+        }
+
+        function updateCategoryCounts() {
+            const counts = {all: 0};
+            componentsDB.forEach(comp => {
+                if (comp.loaded) {
+                    counts[comp.category] = (counts[comp.category] || 0) + 1;
+                    counts.all++;
+                }
+            });
+
+            Object.keys(counts).forEach(cat => {
+                const el = document.getElementById(`count-${cat}`);
+                if (el) el.textContent = counts[cat];
+            });
+        }
+
+        async function exportPackage() {
+            const overlay = document.getElementById('loadingOverlay');
+            const overlayText = document.getElementById('overlayText');
+            overlay.classList.add('active');
+            overlayText.textContent = 'در حال ایجاد پکیج...';
+
+            try {
+                const zip = new JSZip();
+                
+                const packageData = {
+                    ai_prompt: generateAIPrompt(),
+                    customization_suggestions: generateCustomizationSuggestions(),
+                    components: []
+                };
+
+                for (const comp of selectedComponents) {
+                    const componentData = {
+                        divider_start: "═══════════════════════════════════════",
+                        component_name: comp.name,
+                        component_id: comp.id,
+                        category: comp.category,
+                        raw_url: comp.raw_url,
+                        divider_code_start: "─────────── CODE START ───────────",
+                        code: comp.code || `// کد در دسترس نیست\n// آدرس: ${comp.raw_url}`,
+                        divider_code_end: "─────────── CODE END ───────────",
+                        divider_end: "═══════════════════════════════════════"
+                    };
+                    packageData.components.push(componentData);
+                }
+
+                zip.file("shen-ui-kit-package.json", JSON.stringify(packageData, null, 2));
+                zip.file("README.md", generateReadme());
+
+                overlayText.textContent = 'در حال فشرده‌سازی...';
+                const content = await zip.generateAsync({type: "blob"});
+                const url = URL.createObjectURL(content);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `shen-ui-kit-${Date.now()}.zip`;
+                a.click();
+                URL.revokeObjectURL(url);
+
+                overlay.classList.remove('active');
+            } catch (error) {
+                alert('خطا: ' + error.message);
+                overlay.classList.remove('active');
+            }
+        }
+
+        function generateAIPrompt() {
+            return `
+╔════════════════════════════════════════════════════════════════╗
+║                    SHΞN™ MORPHISM UI KIT                       ║
+║                    AI DESIGN INSTRUCTIONS                      ║
+╚════════════════════════════════════════════════════════════════╝
+
+📋 OVERVIEW:
+این پکیج شامل ${selectedComponents.length} کامپوننت UI انتخاب شده توسط کاربر است.
+
+🎨 DESIGN STYLE:
+سبک طراحی: SHΞN™ Morphism (نئومورفیسم)
+
+📦 COMPONENTS:
+${selectedComponents.map((comp, i) => `${i + 1}. ${comp.name}`).join('\n')}
+
+💡 CUSTOMIZATION SUGGESTIONS:
+${generateCustomizationSuggestions().join('\n')}
+
+🔧 NOTES:
+- از کدهای بین CODE START/END استفاده کنید
+- اگر کد نبود، از raw_url دریافت کنید
+- کامپوننت‌ها را با هم سینک کنید
+            `.trim();
+        }
+
+        function generateCustomizationSuggestions() {
+            return [
+                "🎨 رنگ‌ها را بر اساس برند تنظیم کنید",
+                "🌑 حالت تاریک اضافه کنید",
+                "📏 ابعاد را scale کنید",
+                "✨ انیمیشن‌ها را کاستومایز کنید",
+                "🔲 سایه‌ها را تنظیم کنید"
+            ];
+        }
+
+        function generateReadme() {
+            return `# SHΞN™ UI Kit Package\n\n${selectedComponents.length} کامپوننت انتخاب شده.`;
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            generateComponentList();
+            loadAllComponents();
+
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                    currentCategory = e.target.dataset.category;
+                    renderCatalog();
+                });
+            });
+
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                searchQuery = e.target.value;
+                renderCatalog();
+            });
+
+            document.getElementById('exportBtn').addEventListener('click', exportPackage);
+        });
+    </script>
 </body>
 </html>
