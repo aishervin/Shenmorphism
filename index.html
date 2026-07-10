@@ -410,7 +410,7 @@
 <body>
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loader"><span style="font-size: 2em;">⚡</span></div>
-        <div style="font-size: 1.2em; font-weight: 600;" id="overlayText">در حال بارگذاری...</div>
+        <div style="font-size: 1.2em; font-weight: 600;" id="overlayText">درحال بارگذاری اطلاعات...</div>
         <div class="loading-bar">
             <div class="loading-progress" id="overlayProgress"></div>
         </div>
@@ -430,14 +430,14 @@
         <div class="sidebar neu-flat">
             <h3>📂 دسته‌بندی</h3>
             <button class="category-btn active" data-category="all"><span>همه</span><span class="category-count" id="count-all">0</span></button>
-            <button class="category-btn" data-category="buttons"><span>دکمه‌ها</span><span class="category-count" id="count-buttons">0</span></button>
-            <button class="category-btn" data-category="cards"><span>کارت‌ها</span><span class="category-count" id="count-cards">0</span></button>
-            <button class="category-btn" data-category="inputs"><span>ورودی‌ها</span><span class="category-count" id="count-inputs">0</span></button>
-            <button class="category-btn" data-category="checkboxes"><span>چک‌باکس</span><span class="category-count" id="count-checkboxes">0</span></button>
-            <button class="category-btn" data-category="forms"><span>فرم‌ها</span><span class="category-count" id="count-forms">0</span></button>
-            <button class="category-btn" data-category="patterns"><span>الگوها</span><span class="category-count" id="count-patterns">0</span></button>
-            <button class="category-btn" data-category="tooltips"><span>تولتیپ</span><span class="category-count" id="count-tooltips">0</span></button>
-            <button class="category-btn" data-category="other"><span>سایر</span><span class="category-count" id="count-other">0</span></button>
+            <button class="category-btn" data-category="Buttons"><span>دکمه‌ها</span><span class="category-count" id="count-Buttons">0</span></button>
+            <button class="category-btn" data-category="Cards"><span>کارت‌ها</span><span class="category-count" id="count-Cards">0</span></button>
+            <button class="category-btn" data-category="Inputs"><span>ورودی‌ها</span><span class="category-count" id="count-Inputs">0</span></button>
+            <button class="category-btn" data-category="Checkboxes"><span>چک‌باکس</span><span class="category-count" id="count-Checkboxes">0</span></button>
+            <button class="category-btn" data-category="Forms"><span>فرم‌ها</span><span class="category-count" id="count-Forms">0</span></button>
+            <button class="category-btn" data-category="Patterns"><span>الگوها</span><span class="category-count" id="count-Patterns">0</span></button>
+            <button class="category-btn" data-category="Tooltips"><span>تولتیپ</span><span class="category-count" id="count-Tooltips">0</span></button>
+            <button class="category-btn" data-category="Other"><span>سایر</span><span class="category-count" id="count-Other">0</span></button>
         </div>
 
         <div class="main-content">
@@ -464,7 +464,7 @@
 
     <script>
         (function() {
-            const ITEMS_PER_PAGE = 20;
+            const ITEMS_PER_PAGE = 50;
             let allComponents = [];
             let filteredComponents = [];
             let selectedComponents = [];
@@ -472,17 +472,6 @@
             let currentCategory = 'all';
             let searchQuery = '';
             let loadedCount = 0;
-
-            const categories = {
-                buttons: 10,
-                cards: 8,
-                inputs: 6,
-                checkboxes: 5,
-                forms: 5,
-                patterns: 4,
-                tooltips: 3,
-                other: 6
-            };
 
             // DOM References
             const totalSpan = document.getElementById('totalComponents');
@@ -500,55 +489,28 @@
             const overlayText = document.getElementById('overlayText');
             const overlayProgress = document.getElementById('overlayProgress');
 
-            // Generate sample HTML for component
-            function generateSampleHTML(category, index) {
-                const samples = {
-                    buttons: `<button style="padding:10px 20px;border:none;border-radius:8px;background:linear-gradient(135deg, #00d9ff, #0099cc);color:white;font-weight:600;cursor:pointer;">دکمه ${index}</button>`,
-                    cards: `<div style="padding:20px;border-radius:12px;background:linear-gradient(145deg, #f0f5fc, #d1d9e6);text-align:center;box-shadow:8px 8px 16px rgba(163,177,198,0.8);">کارت ${index}</div>`,
-                    inputs: `<input type="text" placeholder="ورودی ${index}" style="padding:10px;border:none;border-radius:8px;background:#e0e5ec;width:100%;font-family:inherit;box-shadow:inset 3px 3px 6px rgba(163,177,198,0.5);">`,
-                    checkboxes: `<label style="display:flex;gap:8px;align-items:center;cursor:pointer;"><input type="checkbox" style="width:20px;height:20px;cursor:pointer;"><span>چک‌باکس ${index}</span></label>`,
-                    forms: `<form style="display:flex;flex-direction:column;gap:10px;"><input type="text" placeholder="نام" style="padding:10px;border:none;border-radius:8px;background:#e0e5ec;"><input type="email" placeholder="ایمیل" style="padding:10px;border:none;border-radius:8px;background:#e0e5ec;"><button type="submit" style="padding:10px;border:none;border-radius:8px;background:#00d9ff;color:white;cursor:pointer;font-weight:600;">ارسال</button></form>`,
-                    patterns: `<div style="padding:15px;border-radius:8px;background:#e0e5ec;text-align:center;">الگو ${index}</div>`,
-                    tooltips: `<span style="cursor:help;text-decoration:underline;">تولتیپ ${index}</span>`,
-                    other: `<div style="padding:15px;border-radius:8px;background:rgba(0,217,255,0.1);text-align:center;">کامپوننت ${index}</div>`
-                };
-                return samples[category] || samples.other;
-            }
-
-            function generateComponentHTML(category, index) {
-                const content = generateSampleHTML(category, index);
-                return `<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${category} ${index}</title>
-</head>
-<body style="margin:0;padding:15px;background:#e0e5ec;display:flex;align-items:center;justify-content:center;min-height:100%;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    <div>${content}</div>
-</body>
-</html>`;
-            }
-
-            // Generate components list
-            function generateComponents() {
-                let id = 1;
-                for (const [category, count] of Object.entries(categories)) {
-                    for (let i = 1; i <= count; i++) {
-                        allComponents.push({
-                            id: `${category}-${i}`,
-                            name: `${category} ${i}`,
-                            category: category,
-                            index: i
-                        });
-                    }
+            async function loadComponentsFromJSON() {
+                try {
+                    overlayText.textContent = 'درحال بارگذاری فهرست کامپوننت‌ها...';
+                    const response = await fetch('index.json');
+                    const data = await response.json();
+                    allComponents = data.components || [];
+                    
+                    overlayText.textContent = `${allComponents.length} کامپوننت بارگذاری شد`;
+                    overlayProgress.style.width = '100%';
+                    
+                    return true;
+                } catch (error) {
+                    console.error('خطا در بارگذاری:', error);
+                    overlayText.textContent = '❌ خطا در بارگذاری اطلاعات';
+                    return false;
                 }
             }
 
             function updateCategoryCounts() {
                 const counts = {};
                 allComponents.forEach(comp => {
-                    const cat = comp.category || 'other';
+                    const cat = comp.category || 'Other';
                     counts[cat] = (counts[cat] || 0) + 1;
                 });
                 counts.all = allComponents.length;
@@ -625,21 +587,26 @@
 
             function loadComponentPreview(card, comp) {
                 const preview = card.querySelector('.component-preview');
+                const filePath = `shenmorphism_ui_kit/${comp.category}/${comp.id}.html`;
+                
                 setTimeout(() => {
-                    try {
-                        const html = generateComponentHTML(comp.category, comp.index);
-                        const iframe = document.createElement('iframe');
-                        iframe.sandbox.add('allow-same-origin');
-                        iframe.srcdoc = html;
-                        preview.innerHTML = '';
+                    const iframe = document.createElement('iframe');
+                    iframe.sandbox.add('allow-same-origin');
+                    iframe.src = filePath;
+                    
+                    iframe.onload = () => {
                         preview.classList.remove('loading');
-                        preview.appendChild(iframe);
                         loadedCount++;
                         loadedSpan.textContent = loadedCount;
-                    } catch (error) {
+                    };
+                    
+                    iframe.onerror = () => {
                         preview.innerHTML = '<span>⚠️ خطا</span>';
                         preview.classList.add('error');
-                    }
+                    };
+                    
+                    preview.innerHTML = '';
+                    preview.appendChild(iframe);
                 }, 100);
             }
 
@@ -683,7 +650,7 @@
 
             async function exportPackage() {
                 overlay.classList.add('active');
-                overlayText.textContent = 'در حال ایجاد پکیج...';
+                overlayText.textContent = 'درحال ایجاد پکیج...';
                 overlayProgress.style.width = '0%';
 
                 try {
@@ -691,12 +658,21 @@
                     let processed = 0;
                     const total = selectedComponents.length;
 
-                    selectedComponents.forEach(comp => {
-                        const html = generateComponentHTML(comp.category, comp.index);
-                        zip.file(`${comp.id}.html`, html);
+                    for (const comp of selectedComponents) {
+                        try {
+                            const filePath = `shenmorphism_ui_kit/${comp.category}/${comp.id}.html`;
+                            const response = await fetch(filePath);
+                            if (response.ok) {
+                                const content = await response.text();
+                                zip.file(`${comp.category}/${comp.id}.html`, content);
+                            }
+                        } catch (e) {
+                            console.error(`خطا در دانلود ${comp.id}:`, e);
+                        }
+                        
                         processed++;
                         overlayProgress.style.width = Math.round((processed / total) * 100) + '%';
-                    });
+                    }
 
                     overlayText.textContent = 'درحال فشرده‌سازی...';
                     const content = await zip.generateAsync({ type: 'blob' });
@@ -716,48 +692,51 @@
             }
 
             // Event Listeners
-            document.addEventListener('DOMContentLoaded', () => {
-                generateComponents();
-                totalSpan.textContent = allComponents.length;
-                updateCategoryCounts();
-                filterAndPaginate();
-                renderPage();
-                overlay.classList.remove('active');
+            document.addEventListener('DOMContentLoaded', async () => {
+                const success = await loadComponentsFromJSON();
+                
+                if (success) {
+                    totalSpan.textContent = allComponents.length;
+                    updateCategoryCounts();
+                    filterAndPaginate();
+                    renderPage();
+                    overlay.classList.remove('active');
 
-                document.querySelectorAll('.category-btn').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-                        this.classList.add('active');
-                        currentCategory = this.dataset.category;
+                    document.querySelectorAll('.category-btn').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                            this.classList.add('active');
+                            currentCategory = this.dataset.category;
+                            filterAndPaginate();
+                            renderPage();
+                        });
+                    });
+
+                    searchInput.addEventListener('input', (e) => {
+                        searchQuery = e.target.value;
                         filterAndPaginate();
                         renderPage();
                     });
-                });
 
-                searchInput.addEventListener('input', (e) => {
-                    searchQuery = e.target.value;
-                    filterAndPaginate();
-                    renderPage();
-                });
+                    prevBtn.addEventListener('click', () => {
+                        if (currentPage > 1) {
+                            currentPage--;
+                            renderPage();
+                            catalogGrid.scrollTop = 0;
+                        }
+                    });
 
-                prevBtn.addEventListener('click', () => {
-                    if (currentPage > 1) {
-                        currentPage--;
-                        renderPage();
-                        catalogGrid.scrollTop = 0;
-                    }
-                });
+                    nextBtn.addEventListener('click', () => {
+                        const totalPages = Math.ceil(filteredComponents.length / ITEMS_PER_PAGE);
+                        if (currentPage < totalPages) {
+                            currentPage++;
+                            renderPage();
+                            catalogGrid.scrollTop = 0;
+                        }
+                    });
 
-                nextBtn.addEventListener('click', () => {
-                    const totalPages = Math.ceil(filteredComponents.length / ITEMS_PER_PAGE);
-                    if (currentPage < totalPages) {
-                        currentPage++;
-                        renderPage();
-                        catalogGrid.scrollTop = 0;
-                    }
-                });
-
-                exportBtn.addEventListener('click', exportPackage);
+                    exportBtn.addEventListener('click', exportPackage);
+                }
             });
         })();
     </script>
