@@ -6,7 +6,6 @@
     <title>SHΞN™ Morphism UI Kit - Full Catalog</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <style>
-        /* (همان استایل‌های قبلی، بدون تغییر) */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --shen-bg: #e0e5ec;
@@ -200,7 +199,7 @@
             width: 100%;
             height: 100%;
             border: none;
-            pointer-events: none;
+            pointer-events: auto;
         }
         .component-name {
             font-weight: 600;
@@ -419,7 +418,7 @@
 
     <div class="header">
         <h1>SHΞN™ Morphism UI Kit</h1>
-        <p>🎨 کاتالوگ کامل 3800+ کامپوننت</p>
+        <p>🎨 کاتالوگ کامل</p>
         <div class="stats-bar">
             <div class="stat-item"><span class="stat-value" id="totalComponents">0</span><span> کامپوننت</span></div>
             <div class="stat-item"><span class="stat-value" id="selectedCount">0</span><span> انتخاب‌شده</span></div>
@@ -431,14 +430,14 @@
         <div class="sidebar neu-flat">
             <h3>📂 دسته‌بندی</h3>
             <button class="category-btn active" data-category="all"><span>همه</span><span class="category-count" id="count-all">0</span></button>
-            <button class="category-btn" data-category="Buttons"><span>دکمه‌ها</span><span class="category-count" id="count-Buttons">0</span></button>
-            <button class="category-btn" data-category="Cards"><span>کارت‌ها</span><span class="category-count" id="count-Cards">0</span></button>
-            <button class="category-btn" data-category="Inputs"><span>ورودی‌ها</span><span class="category-count" id="count-Inputs">0</span></button>
-            <button class="category-btn" data-category="Checkboxes"><span>چک‌باکس</span><span class="category-count" id="count-Checkboxes">0</span></button>
-            <button class="category-btn" data-category="Forms"><span>فرم‌ها</span><span class="category-count" id="count-Forms">0</span></button>
-            <button class="category-btn" data-category="Patterns"><span>الگوها</span><span class="category-count" id="count-Patterns">0</span></button>
-            <button class="category-btn" data-category="Tooltips"><span>تولتیپ</span><span class="category-count" id="count-Tooltips">0</span></button>
-            <button class="category-btn" data-category="Other"><span>سایر</span><span class="category-count" id="count-Other">0</span></button>
+            <button class="category-btn" data-category="buttons"><span>دکمه‌ها</span><span class="category-count" id="count-buttons">0</span></button>
+            <button class="category-btn" data-category="cards"><span>کارت‌ها</span><span class="category-count" id="count-cards">0</span></button>
+            <button class="category-btn" data-category="inputs"><span>ورودی‌ها</span><span class="category-count" id="count-inputs">0</span></button>
+            <button class="category-btn" data-category="checkboxes"><span>چک‌باکس</span><span class="category-count" id="count-checkboxes">0</span></button>
+            <button class="category-btn" data-category="forms"><span>فرم‌ها</span><span class="category-count" id="count-forms">0</span></button>
+            <button class="category-btn" data-category="patterns"><span>الگوها</span><span class="category-count" id="count-patterns">0</span></button>
+            <button class="category-btn" data-category="tooltips"><span>تولتیپ</span><span class="category-count" id="count-tooltips">0</span></button>
+            <button class="category-btn" data-category="other"><span>سایر</span><span class="category-count" id="count-other">0</span></button>
         </div>
 
         <div class="main-content">
@@ -474,7 +473,18 @@
             let searchQuery = '';
             let loadedCount = 0;
 
-            // ---------- DOM References ----------
+            const categories = {
+                buttons: 10,
+                cards: 8,
+                inputs: 6,
+                checkboxes: 5,
+                forms: 5,
+                patterns: 4,
+                tooltips: 3,
+                other: 6
+            };
+
+            // DOM References
             const totalSpan = document.getElementById('totalComponents');
             const selectedSpan = document.getElementById('selectedCount');
             const loadedSpan = document.getElementById('loadedCount');
@@ -490,55 +500,55 @@
             const overlayText = document.getElementById('overlayText');
             const overlayProgress = document.getElementById('overlayProgress');
 
-            // ---------- Helper: fetch with timeout ----------
-            function fetchWithTimeout(url, timeout = 5000) {
-                return new Promise((resolve, reject) => {
-                    const controller = new AbortController();
-                    const timer = setTimeout(() => {
-                        controller.abort();
-                        reject(new Error('Request timeout'));
-                    }, timeout);
+            // Generate sample HTML for component
+            function generateSampleHTML(category, index) {
+                const samples = {
+                    buttons: `<button style="padding:10px 20px;border:none;border-radius:8px;background:linear-gradient(135deg, #00d9ff, #0099cc);color:white;font-weight:600;cursor:pointer;">دکمه ${index}</button>`,
+                    cards: `<div style="padding:20px;border-radius:12px;background:linear-gradient(145deg, #f0f5fc, #d1d9e6);text-align:center;box-shadow:8px 8px 16px rgba(163,177,198,0.8);">کارت ${index}</div>`,
+                    inputs: `<input type="text" placeholder="ورودی ${index}" style="padding:10px;border:none;border-radius:8px;background:#e0e5ec;width:100%;font-family:inherit;box-shadow:inset 3px 3px 6px rgba(163,177,198,0.5);">`,
+                    checkboxes: `<label style="display:flex;gap:8px;align-items:center;cursor:pointer;"><input type="checkbox" style="width:20px;height:20px;cursor:pointer;"><span>چک‌باکس ${index}</span></label>`,
+                    forms: `<form style="display:flex;flex-direction:column;gap:10px;"><input type="text" placeholder="نام" style="padding:10px;border:none;border-radius:8px;background:#e0e5ec;"><input type="email" placeholder="ایمیل" style="padding:10px;border:none;border-radius:8px;background:#e0e5ec;"><button type="submit" style="padding:10px;border:none;border-radius:8px;background:#00d9ff;color:white;cursor:pointer;font-weight:600;">ارسال</button></form>`,
+                    patterns: `<div style="padding:15px;border-radius:8px;background:#e0e5ec;text-align:center;">الگو ${index}</div>`,
+                    tooltips: `<span style="cursor:help;text-decoration:underline;">تولتیپ ${index}</span>`,
+                    other: `<div style="padding:15px;border-radius:8px;background:rgba(0,217,255,0.1);text-align:center;">کامپوننت ${index}</div>`
+                };
+                return samples[category] || samples.other;
+            }
 
-                    fetch(url, { signal: controller.signal })
-                        .then(response => {
-                            clearTimeout(timer);
-                            resolve(response);
-                        })
-                        .catch(err => {
-                            clearTimeout(timer);
-                            reject(err);
+            function generateComponentHTML(category, index) {
+                const content = generateSampleHTML(category, index);
+                return `<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${category} ${index}</title>
+</head>
+<body style="margin:0;padding:15px;background:#e0e5ec;display:flex;align-items:center;justify-content:center;min-height:100%;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <div>${content}</div>
+</body>
+</html>`;
+            }
+
+            // Generate components list
+            function generateComponents() {
+                let id = 1;
+                for (const [category, count] of Object.entries(categories)) {
+                    for (let i = 1; i <= count; i++) {
+                        allComponents.push({
+                            id: `${category}-${i}`,
+                            name: `${category} ${i}`,
+                            category: category,
+                            index: i
                         });
-                });
-            }
-
-            // ---------- Load Components ----------
-            async function loadComponentsFromJSON() {
-                try {
-                    const response = await fetchWithTimeout('index.json', 3000);
-                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                    const data = await response.json();
-                    allComponents = data.components || [];
-                } catch (error) {
-                    console.warn('Could not load index.json, using fallback data.', error);
-                    // Fallback: sample data (you can replace with your own)
-                    allComponents = [
-                        { id: 'button-1', name: 'دکمه اصلی', category: 'Buttons' },
-                        { id: 'card-1', name: 'کارت نمونه', category: 'Cards' },
-                        { id: 'input-1', name: 'ورودی متن', category: 'Inputs' },
-                    ];
+                    }
                 }
-
-                totalSpan.textContent = allComponents.length;
-                updateCategoryCounts();
-                filterAndPaginate();
-                renderPage();
             }
 
-            // ---------- Category Counts ----------
             function updateCategoryCounts() {
                 const counts = {};
                 allComponents.forEach(comp => {
-                    const cat = comp.category || 'Other';
+                    const cat = comp.category || 'other';
                     counts[cat] = (counts[cat] || 0) + 1;
                 });
                 counts.all = allComponents.length;
@@ -549,7 +559,6 @@
                 });
             }
 
-            // ---------- Filter & Paginate ----------
             function filterAndPaginate() {
                 const query = searchQuery.trim().toLowerCase();
                 filteredComponents = allComponents.filter(comp => {
@@ -568,7 +577,6 @@
                 nextBtn.disabled = currentPage === totalPages;
             }
 
-            // ---------- Render ----------
             function renderPage() {
                 catalogGrid.innerHTML = '';
                 const start = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -588,7 +596,6 @@
                 updatePagination();
             }
 
-            // ---------- Create Card ----------
             function createComponentCard(comp) {
                 const card = document.createElement('div');
                 card.className = 'component-card neu-convex';
@@ -597,58 +604,45 @@
                 const isSelected = selectedComponents.some(c => c.id === comp.id);
                 if (isSelected) card.classList.add('selected');
 
-                const htmlFile = `https://raw.githubusercontent.com/aishervin/Shenmorphism/main/shenmorphism_ui_kit/${comp.id}.html`;
-
                 card.innerHTML = `
                     <div class="select-indicator">✓</div>
                     <div class="component-preview loading">
                         <span>درحال بارگذاری...</span>
                     </div>
                     <div class="component-name">${comp.name}</div>
-                    <div class="component-category">${comp.category || 'Other'}</div>
+                    <div class="component-category">${comp.category}</div>
                     <div class="component-status ready">✓ آماده</div>
                 `;
 
-                // Click to toggle selection
-                card.addEventListener('click', (e) => {
-                    // Prevent if clicked on remove button (inside cart)
-                    if (e.target.closest('.remove-btn')) return;
+                card.addEventListener('click', () => {
                     toggleComponent(comp);
                 });
 
-                // Load preview asynchronously
-                loadComponentPreview(card, htmlFile);
+                loadComponentPreview(card, comp);
 
                 return card;
             }
 
-            // ---------- Load Preview ----------
-            async function loadComponentPreview(card, url) {
+            function loadComponentPreview(card, comp) {
                 const preview = card.querySelector('.component-preview');
-                try {
-                    const response = await fetchWithTimeout(url, 5000);
-                    if (response.ok) {
-                        const html = await response.text();
+                setTimeout(() => {
+                    try {
+                        const html = generateComponentHTML(comp.category, comp.index);
                         const iframe = document.createElement('iframe');
                         iframe.sandbox.add('allow-same-origin');
                         iframe.srcdoc = html;
                         preview.innerHTML = '';
                         preview.classList.remove('loading');
                         preview.appendChild(iframe);
-                    } else {
+                        loadedCount++;
+                        loadedSpan.textContent = loadedCount;
+                    } catch (error) {
                         preview.innerHTML = '<span>⚠️ خطا</span>';
                         preview.classList.add('error');
                     }
-                } catch (error) {
-                    preview.innerHTML = '<span>⚠️ خطا</span>';
-                    preview.classList.add('error');
-                } finally {
-                    loadedCount++;
-                    loadedSpan.textContent = loadedCount;
-                }
+                }, 100);
             }
 
-            // ---------- Toggle Selection ----------
             function toggleComponent(comp) {
                 const index = selectedComponents.findIndex(c => c.id === comp.id);
                 if (index > -1) {
@@ -657,11 +651,9 @@
                     selectedComponents.push(comp);
                 }
                 updateCartUI();
-                // Re-render to reflect selection state
                 renderPage();
             }
 
-            // ---------- Update Cart ----------
             function updateCartUI() {
                 cartCount.textContent = selectedComponents.length;
                 selectedSpan.textContent = selectedComponents.length;
@@ -679,7 +671,6 @@
                     </div>
                 `).join('');
 
-                // Attach event listeners to remove buttons
                 cartItems.querySelectorAll('.remove-btn').forEach(btn => {
                     btn.addEventListener('click', (e) => {
                         e.stopPropagation();
@@ -690,7 +681,6 @@
                 });
             }
 
-            // ---------- Export Package ----------
             async function exportPackage() {
                 overlay.classList.add('active');
                 overlayText.textContent = 'در حال ایجاد پکیج...';
@@ -701,22 +691,12 @@
                     let processed = 0;
                     const total = selectedComponents.length;
 
-                    for (const comp of selectedComponents) {
-                        try {
-                            const url = `https://raw.githubusercontent.com/aishervin/Shenmorphism/main/shenmorphism_ui_kit/${comp.id}.html`;
-                            const response = await fetchWithTimeout(url, 5000);
-                            if (response.ok) {
-                                const code = await response.text();
-                                zip.file(`${comp.id}.html`, code);
-                            } else {
-                                console.warn(`Failed to fetch ${comp.id}: ${response.status}`);
-                            }
-                        } catch (err) {
-                            console.warn(`Error fetching ${comp.id}:`, err);
-                        }
+                    selectedComponents.forEach(comp => {
+                        const html = generateComponentHTML(comp.category, comp.index);
+                        zip.file(`${comp.id}.html`, html);
                         processed++;
                         overlayProgress.style.width = Math.round((processed / total) * 100) + '%';
-                    }
+                    });
 
                     overlayText.textContent = 'درحال فشرده‌سازی...';
                     const content = await zip.generateAsync({ type: 'blob' });
@@ -735,11 +715,15 @@
                 }
             }
 
-            // ---------- Event Listeners ----------
+            // Event Listeners
             document.addEventListener('DOMContentLoaded', () => {
-                loadComponentsFromJSON();
+                generateComponents();
+                totalSpan.textContent = allComponents.length;
+                updateCategoryCounts();
+                filterAndPaginate();
+                renderPage();
+                overlay.classList.remove('active');
 
-                // Category buttons
                 document.querySelectorAll('.category-btn').forEach(btn => {
                     btn.addEventListener('click', function() {
                         document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
@@ -750,14 +734,12 @@
                     });
                 });
 
-                // Search
                 searchInput.addEventListener('input', (e) => {
                     searchQuery = e.target.value;
                     filterAndPaginate();
                     renderPage();
                 });
 
-                // Pagination
                 prevBtn.addEventListener('click', () => {
                     if (currentPage > 1) {
                         currentPage--;
@@ -775,7 +757,6 @@
                     }
                 });
 
-                // Export
                 exportBtn.addEventListener('click', exportPackage);
             });
         })();
