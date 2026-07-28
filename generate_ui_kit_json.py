@@ -2,6 +2,7 @@
 """
 Generate a comprehensive JSON catalog of all UI components in Shenmorphism UI Kit.
 This script scans all component directories and extracts raw GitHub links with code content.
+Components are labeled with SHΞN™ branding while preserving original content.
 """
 
 import os
@@ -16,6 +17,33 @@ CATEGORIES = ["Buttons", "Cards", "Inputs", "Forms", "Checkboxes", "Patterns", "
 GITHUB_RAW_URL_BASE = "https://raw.githubusercontent.com/aishervin/Shenmorphism/main"
 OUTPUT_FILE = "index.json"
 
+# SHΞN™ Branding mapping for display names
+BRAND_PREFIX = "SHΞN™"
+
+def get_shen_display_name(filename: str, category: str, index: int) -> str:
+    """Generate a SHΞN™ branded display name based on category and index."""
+    # Map categories to SHΞN™ style names
+    category_map = {
+        "Buttons": "Button",
+        "Cards": "Card", 
+        "Inputs": "Input",
+        "Forms": "Form",
+        "Checkboxes": "Checkbox",
+        "Patterns": "Pattern",
+        "Tooltips": "Tooltip",
+        "Other": "Component"
+    }
+    
+    base_name = category_map.get(category, "Component")
+    
+    # Extract number from filename if exists (e.g., Buttons-1 -> 1)
+    num_match = re.search(r'-(\d+)\.html$', filename)
+    if num_match:
+        num = num_match.group(1)
+        return f"{BRAND_PREFIX} {base_name} #{num}"
+    else:
+        return f"{BRAND_PREFIX} {base_name} #{index + 1}"
+
 def get_file_path(category: str, filename: str) -> str:
     """Get the relative path for a component file."""
     return os.path.join(REPO_PATH, category, filename)
@@ -25,21 +53,27 @@ def get_raw_github_url(category: str, filename: str) -> str:
     file_path = get_file_path(category, filename)
     return f"{GITHUB_RAW_URL_BASE}/{file_path}"
 
-def extract_component_info(filename: str, content: str, category: str) -> Dict[str, Any]:
-    """Extract relevant information from HTML component file."""
+def extract_component_info(filename: str, content: str, category: str, index: int) -> Dict[str, Any]:
+    """Extract relevant information from HTML component file with SHΞN™ branding."""
     # Remove excessive whitespace
     cleaned_content = content.strip()
     
-    # Try to extract a meaningful title/description from comments or tags
-    title_match = re.search(r'<!--\s*(.+?)\s*-->', content)
-    title = title_match.group(1) if title_match else filename.replace('.html', '')
+    # Generate SHΞN™ branded display name
+    display_name = get_shen_display_name(filename, category, index)
+    
+    # Try to extract tags/description from comments for metadata
+    tags_match = re.search(r'Tags:\s*(.+?)(?:\s*-|\s*/|\s*\*/)', content)
+    tags = tags_match.group(1).strip() if tags_match else ""
     
     return {
-        "name": filename,
-        "title": title,
+        "id": f"{category}-{index + 1}",
+        "name": display_name,  # SHΞN™ branded display name
+        "original_filename": filename,  # Keep original filename for reference
         "category": category,
+        "tags": tags,
+        "status": "ready",
         "raw_url": get_raw_github_url(category, filename),
-        "code": cleaned_content,
+        "code": cleaned_content,  # Original content preserved
         "size_bytes": len(content)
     }
 
@@ -55,15 +89,15 @@ def scan_directory(category: str) -> List[Dict[str, Any]]:
     # Get all HTML files in the category
     html_files = sorted([f for f in os.listdir(category_path) if f.endswith('.html')])
     
-    for filename in html_files:
+    for index, filename in enumerate(html_files):
         file_path = os.path.join(category_path, filename)
         try:
             with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
                 content = f.read()
             
-            component_info = extract_component_info(filename, content, category)
+            component_info = extract_component_info(filename, content, category, index)
             components.append(component_info)
-            print(f"✓ Processed {category}/{filename}")
+            print(f"✓ Processed {category}/{filename} → {component_info['name']}")
         
         except Exception as e:
             print(f"✗ Error reading {file_path}: {e}")
@@ -81,7 +115,7 @@ def generate_catalog() -> Dict[str, Any]:
             "total_components": 0,
             "categories": []
         },
-        "components": {}
+        "components": []
     }
     
     total_components = 0
@@ -92,7 +126,7 @@ def generate_catalog() -> Dict[str, Any]:
         components = scan_directory(category)
         
         if components:
-            catalog["components"][category] = components
+            catalog["components"].extend(components)
             total_components += len(components)
             catalog["metadata"]["categories"].append({
                 "name": category,
