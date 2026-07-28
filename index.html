@@ -405,6 +405,50 @@
             .sidebar { display: none; }
             .cart-panel { display: none; }
         }
+
+        /* Notification Toast Styles */
+        .notification-toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: linear-gradient(135deg, #2d3748, #1a202c);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .notification-toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .notification-toast.success {
+            background: linear-gradient(135deg, #059669, #047857);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .notification-toast.error {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .checkmark {
+            display: inline-block;
+            margin-left: 6px;
+            font-weight: bold;
+        }
+
+        .btn-copy.success {
+            background: linear-gradient(135deg, #059669, #047857) !important;
+            color: white !important;
+        }
     </style>
 </head>
 <body>
@@ -684,11 +728,134 @@
                     a.click();
                     a.remove();
                     URL.revokeObjectURL(url);
+                    
+                    showNotification('پکیج با موفقیت دانلود شد!', 'success');
                 } catch (error) {
+                    console.error('Export error:', error);
                     alert('خطا در ایجاد پکیج: ' + error.message);
                 } finally {
                     overlay.classList.remove('active');
                 }
+            }
+
+            // --- Utility: Copy to Clipboard (Cross-Browser Compatible) ---
+            async function copyToClipboard(text, btnElement) {
+                if (!text) return;
+
+                const originalText = btnElement.innerHTML;
+                
+                try {
+                    // Method 1: Modern Clipboard API (Chrome, Edge, Firefox, Safari 13+)
+                    if (navigator.clipboard && window.isSecureContext) {
+                        await navigator.clipboard.writeText(text);
+                    } else {
+                        // Method 2: Fallback for older browsers or non-HTTPS contexts
+                        const textArea = document.createElement("textarea");
+                        textArea.value = text;
+                        textArea.style.position = "fixed";
+                        textArea.style.left = "-9999px";
+                        textArea.style.top = "0";
+                        document.body.appendChild(textArea);
+                        textArea.focus();
+                        textArea.select();
+                        
+                        try {
+                            document.execCommand('copy');
+                        } catch (err) {
+                            throw new Error('Fallback failed');
+                        }
+                        
+                        document.body.removeChild(textArea);
+                    }
+
+                    // Success Feedback
+                    btnElement.innerHTML = '<span class="checkmark">✓</span> Copied!';
+                    btnElement.classList.add('success');
+                    setTimeout(() => {
+                        btnElement.innerHTML = originalText;
+                        btnElement.classList.remove('success');
+                    }, 2000);
+
+                } catch (err) {
+                    console.error('Failed to copy: ', err);
+                    // Fallback: Select text in prompt
+                    const tempInput = document.createElement('input');
+                    tempInput.value = text;
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    try {
+                        document.execCommand('copy');
+                        btnElement.innerHTML = '<span class="checkmark">✓</span> Copied!';
+                        btnElement.classList.add('success');
+                    } catch (e) {
+                        btnElement.innerHTML = '✕ Error';
+                    }
+                    document.body.removeChild(tempInput);
+                    setTimeout(() => {
+                        btnElement.innerHTML = originalText;
+                        btnElement.classList.remove('success');
+                    }, 2000);
+                }
+            }
+
+            // --- Utility: Download Code as File (Robust Cross-Browser) ---
+            function downloadCode(code, filename) {
+                if (!code) return;
+
+                try {
+                    // Create a Blob with explicit UTF-8 encoding
+                    const blob = new Blob([code], { type: 'text/html;charset=utf-8' });
+                    
+                    // Create object URL
+                    const url = URL.createObjectURL(blob);
+                    
+                    // Create temporary anchor element
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = filename || 'shen-component.html';
+                    
+                    // Append to body (required for Firefox)
+                    document.body.appendChild(a);
+                    
+                    // Trigger click
+                    a.click();
+                    
+                    // Cleanup
+                    setTimeout(() => {
+                        document.body.removeChild(a);
+                        window.URL.revokeObjectURL(url);
+                    }, 100);
+
+                    // Show toast notification
+                    showNotification(`دانلود شد: ${filename}`, 'success');
+
+                } catch (err) {
+                    console.error('Download failed:', err);
+                    alert('دانلود ناموفق بود. لطفاً کد را کپی کرده و دستی ذخیره کنید.');
+                }
+            }
+
+            // --- Helper: Show Notification (Toast) ---
+            function showNotification(message, type = 'info') {
+                // Remove existing notifications
+                const existing = document.querySelectorAll('.notification-toast');
+                existing.forEach(n => n.remove());
+
+                const toast = document.createElement('div');
+                toast.className = `notification-toast ${type}`;
+                toast.innerHTML = `
+                    <span>${type === 'success' ? '✓' : 'ℹ'} ${message}</span>
+                `;
+                document.body.appendChild(toast);
+                
+                // Trigger reflow for animation
+                void toast.offsetWidth;
+                toast.classList.add('show');
+
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
             }
 
             // Event Listeners
