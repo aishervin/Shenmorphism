@@ -1,58 +1,44 @@
-<div class="spinner">
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-</div>
+<svg viewBox="25 25 50 50">
+  <circle r="20" cy="50" cx="50"></circle>
+</svg>
 <style>
-/* From SHΞN™ Morphism by AqFox - Tags: loader */
-.spinner {
- position: relative;
- width: 16px;
- height: 16px;
+/* From SHΞN™ Morphism by barisdogansutcu - Tags: loader, spinner */
+svg {
+ width: 3.25em;
+ transform-origin: center;
+ animation: rotate4 2s linear infinite;
 }
 
-.spinner div {
- width: 100%;
- height: 100%;
- background-color: #004dff;
- border-radius: 50%;
- animation: spinner-4t3wzl 1.25s infinite backwards;
+circle {
+ fill: none;
+ stroke: hsl(214, 97%, 59%);
+ stroke-width: 2;
+ stroke-dasharray: 1, 200;
+ stroke-dashoffset: 0;
+ stroke-linecap: round;
+ animation: dash4 1.5s ease-in-out infinite;
 }
 
-.spinner div:nth-child(1) {
- animation-delay: 0.15s;
- background-color: rgba(0,77,255,0.9);
+@keyframes rotate4 {
+ 100% {
+  transform: rotate(360deg);
+ }
 }
 
-.spinner div:nth-child(2) {
- animation-delay: 0.3s;
- background-color: rgba(0,77,255,0.8);
-}
-
-.spinner div:nth-child(3) {
- animation-delay: 0.45s;
- background-color: rgba(0,77,255,0.7);
-}
-
-.spinner div:nth-child(4) {
- animation-delay: 0.6s;
- background-color: rgba(0,77,255,0.6);
-}
-
-.spinner div:nth-child(5) {
- animation-delay: 0.75s;
- background-color: rgba(0,77,255,0.5);
-}
-
-@keyframes spinner-4t3wzl {
+@keyframes dash4 {
  0% {
-  transform: rotate(0deg) translateY(-200%);
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
  }
 
- 60%, 100% {
-  transform: rotate(360deg) translateY(-200%);
+ 50% {
+  stroke-dasharray: 90, 200;
+  stroke-dashoffset: -35px;
+ }
+
+ 100% {
+  stroke-dashoffset: -125px;
  }
 }
+
 </style>

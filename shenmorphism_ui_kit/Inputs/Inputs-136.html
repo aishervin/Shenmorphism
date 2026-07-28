@@ -1,25 +1,58 @@
-<input placeholder="Search..." class="input" name="text" type="text">
+<section>
+    <div class="input-group">
+        <input class="input" autocomplete="off" name="text" type="text" required="">
+        <label class="user-label">Full Name</label>
+    </div>
+</section>
 <style>
-/* From SHΞN™ Morphism by laminelawal - Tags: input, html */
+/* From SHΞN™ Morphism by Akshdeep74644 - Tags: input */
+.input-group {
+  position: relative;
+}
+
 .input {
-  padding: 10px;
-  width: 120px;
-  border: none;
+  border: 3px solid #000;
+  background: none;
+  padding: 1rem;
+  font-size: 1rem;
+  color: black;
+}
+
+.user-label {
+  position: absolute;
+  left: 15px;
+  color: #000;
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition: 350ms;
+}
+
+.input:focus,
+input:valid {
   outline: none;
-  border-radius: 5px;
-  box-shadow: 0 1px  gray;
-  font-size: 18px;
-  transition: width 0.3s;
-  font-family: Consolas,monaco,monospace;
+  --angle: 0deg;
+  border-bottom: 3px solid;
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 3s rotate9234 linear infinite;
 }
 
-.input:focus {
-  outline: 1px solid blue;
-  box-shadow: none;
-  width: 230px;
+@keyframes rotate9234 {
+  to {
+    --angle: 360deg;
+  }
 }
 
-.input::placeholder {
-  color: blue;
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.input:focus~label,
+input:valid~label {
+  transform: translateY(235%) scale(1);
+  background-color: #e8e8e8;
+  padding: 0 .2em;
+  color: #2196f3;
 }
 </style>

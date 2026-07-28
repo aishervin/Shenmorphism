@@ -1,59 +1,57 @@
-<label for="checkboxInput" class="bookmark">
-  <input type="checkbox" id="checkboxInput" />
-  <svg
-    width="15"
-    viewBox="0 0 50 70"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    class="svgIcon"
-  >
-    <path
-      d="M46 62.0085L46 3.88139L3.99609 3.88139L3.99609 62.0085L24.5 45.5L46 62.0085Z"
-      stroke="black"
-      stroke-width="7"
-    ></path>
-  </svg>
+<label class="gravity-switch">
+    <input type="checkbox">
+    <span class="slider"></span>
 </label>
-
 <style>
-/* From SHΞN™ Morphism by vinodjangid07  - Tags: animation, switch, toggle, click, save, pin, bookmark */
-#checkboxInput {
-  display: none;
+/* From SHΞN™ Morphism by kamehame-ha - Tags: switch, click effect, gravity, fancy */
+.gravity-switch {
+  width: 4em;
+  height: 2em;
+  border-radius: 22px;
+  position: relative;
+  display: inline-block;
 }
-.bookmark {
+
+.gravity-switch input[type=checkbox] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.gravity-switch .slider {
+  position: absolute;
   cursor: pointer;
-  background-color: teal;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-}
-.svgIcon path {
-  stroke-dasharray: 200 0;
-  stroke-dashoffset: 0;
-  stroke: white;
-  fill: #dddddd00;
-  transition-delay: 0s;
-  transition-duration: 0.5s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition-delay: .4s;
+  transition: .4s;
+  border-radius: 30px;
 }
 
-#checkboxInput:checked ~ .svgIcon path {
-  fill: white;
-  animation: bookmark 0.5s linear;
-  transition-delay: 0.5s;
+.gravity-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: white;
+  transition-delay: .4s;
+  transition: .4s;
 }
 
-@keyframes bookmark {
-  0% {
-    stroke-dasharray: 0 200;
-    stroke-dashoffset: 80;
-  }
-  100% {
-    stroke-dasharray: 200 0;
-  }
+.gravity-switch input:checked + .slider {
+  transform: rotate(90deg);
+  transform-origin: 25% 50%;
+  background-color: #22c55e;
 }
 
+.gravity-switch input:checked+.slider:before {
+  transition-delay: 400ms;
+  transform: translateX(2em)
+}
 </style>
-    

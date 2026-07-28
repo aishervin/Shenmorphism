@@ -1,105 +1,75 @@
-<div class="card">
-  <div class="header">
-    <span class="icon">
-      <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <path clip-rule="evenodd" d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z" fill-rule="evenodd"></path>
-      </svg>
-    </span>
-    <p class="alert">New message!</p>
-  </div>
-
-  <p class="message">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea quo unde
-    vel adipisci blanditiis voluptates eum. Nam, cum minima?
-  </p>
-
-  <div class="actions">
-    <a class="read" href="">
-      Take a Look
-    </a>
-
-    <a class="mark-as-read" href="">
-      Mark as Read
-    </a>
-  </div>
+<div class="ag-courses_item">
+  <a class="ag-courses-item_link" href="#">
+    <div class="ag-courses-item_bg"></div>
+    <div class="ag-courses-item_title">You Welcome In SHΞN™ Morphism</div>
+    <div class="ag-courses-item_date-box">
+      Start:
+      <span class="ag-courses-item_date"> 14.11.2023 </span>
+    </div>
+  </a>
 </div>
 
 <style>
-/* From SHΞN™ Morphism by Yaya12085 - Tags: alert, notification, card */
-.card {
-  max-width: 320px;
-  border-width: 1px;
-  border-color: rgba(219, 234, 254, 1);
-  border-radius: 1rem;
-  background-color: rgba(255, 255, 255, 1);
-  padding: 1rem;
+/* From SHΞN™ Morphism by Bodyhc  - Tags:  */
+.ag-courses_item {
+  margin: auto;
+  overflow: hidden;
+  border-radius: 28px;
 }
-
-.header {
-  display: flex;
-  align-items: center;
-  grid-gap: 1rem;
-  gap: 1rem;
-}
-
-.icon {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  background-color: rgba(96, 165, 250, 1);
-  padding: 0.5rem;
-  color: rgba(255, 255, 255, 1);
-}
-
-.icon svg {
-  height: 1rem;
-  width: 1rem;
-}
-
-.alert {
-  font-weight: 600;
-  color: rgba(107, 114, 128, 1);
-}
-
-.message {
-  margin-top: 1rem;
-  color: rgba(107, 114, 128, 1);
-}
-
-.actions {
-  margin-top: 1.5rem;
-}
-
-.actions a {
+.ag-courses-item_link {
+  display: block;
+  padding: 30px 20px;
+  background-color: #121212;
+  overflow: hidden;
+  position: relative;
   text-decoration: none;
 }
 
-.mark-as-read, .read {
-  display: inline-block;
-  border-radius: 0.5rem;
-  width: 100%;
-  padding: 0.75rem 1.25rem;
-  text-align: center;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 600;
+.ag-courses-item_link:hover,
+.ag-courses-item_link:hover .ag-courses-item_date {
+  color: #121212;
+}
+.ag-courses-item_link:hover .ag-courses-item_bg {
+  -webkit-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(10);
+}
+.ag-courses-item_title {
+  min-height: 57px;
+  margin: 0 0 30px;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  z-index: 2;
+  position: relative;
+}
+.ag-courses-item_date-box {
+  font-size: 18px;
+  color: #fff;
+  z-index: 2;
+  position: relative;
+}
+.ag-courses-item_date {
+  font-weight: bold;
+  color: #f9e534;
+  -webkit-transition: color 0.5s ease;
+  -o-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+.ag-courses-item_bg {
+  height: 130px;
+  width: 100px;
+  background-color: #f9b234;
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
-.read {
-  background-color: rgba(59, 130, 246, 1);
-  color: rgba(255, 255, 255, 1);
-}
-
-.mark-as-read {
-  margin-top: 0.5rem;
-  background-color: rgba(249, 250, 251, 1);
-  color: rgba(107, 114, 128, 1);
-  transition: all .15s ease;
-}
-
-.mark-as-read:hover {
-  background-color: rgb(230, 231, 233);
-}
 </style>
+    

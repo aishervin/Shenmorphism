@@ -1,55 +1,20 @@
-<button class="button">
-  Hover Me!
+<button> MacOS Button
 </button>
 <style>
-/* From SHΞN™ Morphism by KhaledMatalkah - Tags: button, hover, transition, fill up */
-.button {
-  display: inline-block;
-  padding: 15px 32px;
-  font-size: 17px;
-  font-weight: bold;
-  color: rgb(53, 53, 53);
-  background: transparent;
-  border-radius: 50px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  position: relative;
-  border: none;
-  z-index: 1;
-  overflow: hidden;
+/* From SHΞN™ Morphism by mrhyddenn - Tags: button, macOS */
+button {
+ width: 150px;
+ padding: 4px 12px;
+ border: none;
+ border-radius: 7px;
+ background: linear-gradient(#4faefc,#006bff);
+ color: #fff;
+ font-size: 17px;
+ font-family: sans-serif;
 }
 
-.button:before {
-  content: "";
-  position: absolute;
-  top: 0%;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: blanchedalmond;
-  transition: left 0.8s ease-in-out;
-  z-index: -1;
+button:focus {
+ background: linear-gradient(#44aefc,#026bff);
+ outline: 3px solid #4faefc;
 }
-
-.button:hover:before {
-  left: 0%;
-}
-
-.button:after {
-  content: "";
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: background-color 0.8s ease-in-out;
-  z-index: -1;
-}
-
-.button:hover:after {
-  background-color: transparent;
-}
-
 </style>

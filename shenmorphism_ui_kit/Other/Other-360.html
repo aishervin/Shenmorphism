@@ -1,108 +1,132 @@
-<div class="theme-switch">
-  <input type="checkbox" id="theme-checkbox" />
-  <label for="theme-checkbox">
-    <div></div>
-    <span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="w-6 h-6"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
-          clip-rule="evenodd"
-        ></path>
-      </svg>
-    </span>
-    <span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="w-6 h-6"
-      >
-        <path
-          d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
-        ></path>
-      </svg>
-    </span>
-  </label>
+<div class="box">
+  <div class="radio-input">
+    <input name="challenge" value="Option 1" type="radio" id="1id">
+    <label for="1id">Never</label><br>
+    <input name="challenge" value="Option 2" type="radio" id="2id">
+    <label for="2id">Stop</label><br>
+    <input name="challenge" value="Option 3" type="radio" id="3id">
+    <label for="3id">Dreaming </label><br>
+  </div>
 </div>
-
 <style>
-/* From SHΞN™ Morphism by MRez321  - Tags: button, switch, checkbox, theme-switch, toggle switch */
-.theme-switch {
+/* From SHΞN™ Morphism by wizard503 - Tags: radio */
+.box {
   position: relative;
-  display: flex;
-  justify-content: center;
-  direction: rtl;
+  width: 300px;
+  height: 150px;
+  background: tra;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-#theme-checkbox {
-  display: none;
-}
-
-#theme-checkbox + label {
-  /* change the font-size below to change the size of the switch button*/
-  font-size: 2rem;
-  height: 1em;
-  width: 2.5em;
-  border-radius: 0.25em;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  background-color: #cecece;
-  position: relative;
-}
-
-#theme-checkbox:checked + label {
-  background-color: #3a3a3a;
-}
-
-#theme-checkbox + label:active {
-  transform: scale(0.85);
-  transition: transform 0.2s;
-}
-
-#theme-checkbox + label div {
-  width: 0.8em;
-  height: 0.8em;
-  border-radius: inherit;
+.box::before {
+  content: "";
   position: absolute;
-  top: 0.1em;
-  left: 0.1em;
-  z-index: 10;
-  transition: 0.5s cubic-bezier(1, 0.33, 0.11, 1.34);
-  background-color: #f2f2f2;
+  top: -50%;
+  left: -50%;
+  width: 400px;
+  height: 450px;
+  background: linear-gradient(0deg,transparent,transparent,#2df4e9,#2df4e9,#48fb00);
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 5s linear infinite;
 }
 
-#theme-checkbox:checked + label div {
-  /* left: calc(2.5em - .8em - .1em); */
-  left: 1.6em;
-  background-color: #212121;
+.box::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 400px;
+  height: 450px;
+  background: linear-gradient(0deg,transparent,transparent,#f07f90,#f07f90,#c70000);
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 5s linear infinite;
+  animation-delay: -2.5s;
 }
 
-#theme-checkbox + label span {
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.box .radio-input {
+  position: absolute;
+  inset: 4px;
+  background-color: #161616;
+  background-image: radial-gradient(ellipse at center, #eb3be3 0%, #231f55 70%);
+  background-size: 100% 100%;
+  animation: noise 1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+  border-radius: 10px;
+  padding: 50px 0px;
+  z-index: 2;
   display: flex;
 }
 
-#theme-checkbox + label svg {
-  display: inline-block;
-  height: 1em;
-  width: 1em;
-  padding: 0.15em;
-  box-sizing: border-box;
+@keyframes noise {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    background-position: 0 0;
+  }
+
+  10% {
+    background-position: -5px -5px;
+  }
+
+  30% {
+    background-position: 5px -5px;
+  }
+
+  50% {
+    background-position: -5px 5px;
+  }
+
+  70% {
+    background-position: 5px 5px;
+  }
 }
 
-#theme-checkbox + label span:first-of-type {
-  color: #3a3a3a;
+.radio-input input {
+  appearance: none;
+  width: 1.3em;
+  height: 1.3em;
+  margin: 12px;
+  font-size: inherit;
+  color: currentColor;
+  border: 0.2em solid #33f8ff;
+  box-shadow: 2px 2px 1px 0px rgb(7, 15, 63),4px 4px 5px 1px #690253 inset;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+  outline: none;
+  transition: all 0.2s ease-in-out;
 }
 
-#theme-checkbox + label span:last-of-type {
-  color: #cecece;
+.radio-input input:checked {
+  width: 1.2em;
+  height: 1.2em;
+  appearance: none;
+  border-radius: 0%;
+  rotate: 45deg;
+  border: 0.2em solid #ff0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transform: scale(1.4);
+  transition: 120ms transform ease-in-out;
+  box-shadow: 9px 9px 10px 1px #5f0875 inset,12px -12px 10px 1px #2df4e9 inset,0 0 20px #ff0,0 0 20px #ff0;
 }
 
+label {
+  cursor: pointer;
+  padding-top: 5%;
+  font-size: 15px;
+  font-weight: bold;
+  text-shadow: 0 0.1em 0.1em rgba(0, 0, 0, 0.2);
+  transition: color 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
 </style>
-    

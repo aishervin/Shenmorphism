@@ -1,89 +1,83 @@
-<div class="loader"></div>
+<div id="box-outer">
+  <div id="box-inner">
+    <div id="box"></div>
+  </div>
+</div>
 <style>
-/* From SHΞN™ Morphism by JaydipPrajapati1910 - Tags: red, loading, loader */
-.loader {
-  box-sizing: border-box;
-  display: inline-block;
-  width: 50px;
+/* From SHΞN™ Morphism by aadil-01 - Tags: loader */
+#box-outer {
+  width: 80px;
   height: 80px;
-  border-top: 5px solid #fff;
-  border-bottom: 5px solid #fff;
-  position: relative;
-  background: linear-gradient(#FF3D00 30px, transparent 0) no-repeat;
-  background-size: 2px 40px;
-  background-position: 50% 0px;
-  animation: spinx 5s linear infinite;
+  border-radius: 16px;
+  animation: rotate_29 5s infinite;
+  background-color: #5ACEF2;
 }
 
-.loader:before, .loader:after {
-  content: "";
+#box-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  rotate: 45deg;
+  animation: revolve_29 5s infinite;
+  background-color: #FF8062;
+}
+
+#box {
   width: 40px;
-  left: 50%;
-  height: 35px;
-  position: absolute;
-  top: 0;
-  transform: translatex(-50%);
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 0 0 20px 20px;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: 0 0px;
-  animation: lqt 5s linear infinite;
+  height: 40px;
+  border-radius: 8px;
+  animation: rotate_29 5s infinite;
+  background-color: #FEFEFE;
 }
 
-.loader:after {
-  top: auto;
-  bottom: 0;
-  border-radius: 20px 20px 0 0;
-  animation: lqb 5s linear infinite;
-}
+@keyframes revolve_29 {
+  0% {
+    transform: translateX(0);
+  }
 
-@keyframes lqt {
-  0%, 100% {
-    background-image: linear-gradient(#FF3D00 40px, transparent 0);
-    background-position: 0% 0px;
+  25% {
+    transform: translateY(100%);
   }
 
   50% {
-    background-image: linear-gradient(#FF3D00 40px, transparent 0);
-    background-position: 0% 40px;
+    transform: translateX(100%) translateY(100%);
   }
 
-  50.1% {
-    background-image: linear-gradient(#FF3D00 40px, transparent 0);
-    background-position: 0% -40px;
+  75% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
 
-@keyframes lqb {
+@keyframes rotate_29 {
   0% {
-    background-image: linear-gradient(#FF3D00 40px, transparent 0);
-    background-position: 0 40px;
-  }
-
-  100% {
-    background-image: linear-gradient(#FF3D00 40px, transparent 0);
-    background-position: 0 -40px;
-  }
-}
-
-@keyframes spinx {
-  0%, 49% {
     transform: rotate(0deg);
-    background-position: 50% 36px;
   }
 
-  51%, 98% {
+  20% {
+    transform: rotate(90deg);
+  }
+
+  40% {
     transform: rotate(180deg);
-    background-position: 50% 4px;
+  }
+
+  60% {
+    transform: rotate(270deg);
+  }
+
+  80% {
+    transform: rotate(360deg);
   }
 
   100% {
-    transform: rotate(360deg);
-    background-position: 50% 36px;
+    transform: rotate(0deg);
   }
 }
-    
-  
-
 </style>

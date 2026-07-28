@@ -1,84 +1,29 @@
-
-    <button class="buttonDownload">Upload</button>
+<button class="button">
+  ctrl
+</button> 
 <style>
-/* From SHΞN™ Morphism by AkashKobal - Tags: button */
-.buttonDownload {
-  display: inline-block;
-  position: relative;
-  padding: 10px 25px;
-  background-color: #4CC713;
-  color: white;
-  font-family: sans-serif;
-  text-decoration: none;
-  font-size: 0.9em;
-  text-align: center;
-  text-indent: 15px;
+/* From SHΞN™ Morphism by pipic1 - Tags: skeuomorphism, button */
+.button {
+  --key-text-color: #969faf;
+  --docsearch-key-shadow: inset 0 -2px 0 0 #cdcde6,inset 0 0 1px 1px #fff,0 1px 2px 1px rgba(30,35,90,0.4);
+  --docsearch-key-gradient: linear-gradient(-225deg,#d5dbe4,#f8f8f8);
   border: none;
-  border-radius: 2em;
+  background: var(--docsearch-key-gradient);
+  border-radius: 3px;
+  box-shadow: var(--docsearch-key-shadow);
+  color: var(--key-text-color);
+  height: 2.5em;
+  text-align: center;
+  padding: 0.6em;
+  margin: 0 0.6em;
+  display: inline-block;
+  text-transform: uppercase;
   font-weight: bold;
+  font-size: 1em;
+  min-width: 1em;
+  line-height: 1em;
+  user-select: none;
 }
 
-.buttonDownload:hover {
-  background-color: #1a60a2;
-  color: white;
-}
-
-.buttonDownload:before, .buttonDownload:after {
-  content: ' ';
-  display: block;
-  position: absolute;
-  left: 15px;
-  top: 52%;
-}
-
-.buttonDownload:before {
-  width: 10px;
-  height: 2px;
-  border-style: solid;
-  border-width: 0 2px 2px;
-}
-
-.buttonDownload:after {
-  width: 0;
-  height: 0;
-  margin-left: 3px;
-  margin-top: -7px;
-  border-style: solid;
-  border-width: 4px 4px 0 4px;
-  border-color: transparent;
-  border-top-color: inherit;
-  animation: downloadArrow 1s linear infinite;
-  animation-play-state: paused;
-}
-
-.buttonDownload:hover:before {
-  border-color: #bdd3ef;
-}
-
-.buttonDownload:hover:after {
-  border-top-color: #eff1f7;
-  animation-play-state: running;
-}
-
-@keyframes downloadArrow {
-  0% {
-    margin-top: -7px;
-    opacity: 1;
-  }
-
-  0.001% {
-    margin-top: -15px;
-    opacity: 0.4;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    margin-top: 0;
-    opacity: 0.4;
-  }
-}
 
 </style>

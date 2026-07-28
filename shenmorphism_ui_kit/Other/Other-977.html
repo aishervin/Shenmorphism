@@ -1,61 +1,146 @@
-<span class="loader"></span>
+<div class="loader">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+<div class="loader loader--reflect">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
 <style>
-/* From SHΞN™ Morphism by Shoh2008 - Tags: loader */
+/* From SHΞN™ Morphism by Pradeepsaranbishnoi - Tags: loader */
+/* The loader container */
 .loader {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 6rem;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-.loader:before,
-  .loader:after {
-  content: "";
   position: absolute;
-  border-radius: 50%;
-  animation: pulsOut 1.8s ease-in-out infinite;
-  filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.75));
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 100px;
+  margin-top: -100px;
+  margin-left: -100px;
+  perspective: 1000px;
+  transform-style: preserv3d;
 }
 
-.loader:before {
-  width: 100%;
-  padding-bottom: 100%;
-  box-shadow: inset 0 0 0 1rem #fff;
-  animation-name: pulsIn;
+.loader--reflect {
+  margin-top: 0;
 }
 
-.loader:after {
-  width: calc(100% - 2rem);
-  padding-bottom: calc(100% - 2rem);
-  box-shadow: 0 0 0 0 #fff;
+.loader--reflect:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -25%;
+  width: 150%;
+  height: 110%;
+  background: linear-gradient(0deg, rgba(238, 238, 238, 1), rgba(238, 238, 238, 1) 20%, rgba(238, 238, 238, 0.3));
 }
 
-@keyframes pulsIn {
+
+/* The bar */
+.bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: #1e3f57;
+  transform: scaleY(0);
+  transform-style: preserve3d;
+  animation: bar 3s cubic-bezier(.81,.04,.4,.7) infinite;
+}
+
+.bar:nth-child(2) {
+  left: 20px;
+  background-color: #264a63;
+  animation-delay: 50ms;
+}
+
+.bar:nth-child(3) {
+  left: 40px;
+  background-color: #2d566f;
+  animation-delay: 100ms;
+}
+
+.bar:nth-child(4) {
+  left: 60px;
+  background-color: #35617a;
+  animation-delay: 150ms;
+}
+
+.bar:nth-child(5) {
+  left: 80px;
+  background-color: #3d6d86;
+  animation-delay: 200ms;
+}
+
+.bar:nth-child(6) {
+  left: 100px;
+  background-color: #447892;
+  animation-delay: 250ms;
+}
+
+.bar:nth-child(7) {
+  left: 120px;
+  background-color: #4c849e;
+  animation-delay: 300ms;
+}
+
+.bar:nth-child(8) {
+  left: 140px;
+  background-color: #548fa9;
+  animation-delay: 350ms;
+}
+
+.bar:nth-child(9) {
+  left: 160px;
+  background-color: #5c9bb5;
+  animation-delay: 400ms;
+}
+
+.bar:nth-child(10) {
+  left: 180px;
+  background-color: #63a6c1;
+  animation-delay: 450ms;
+}
+
+.loader--reflect .bar {
+  animation-name: bar-reflect;
+}
+
+@keyframes bar {
   0% {
-    box-shadow: inset 0 0 0 1rem #fff;
-    opacity: 1;
+    transform: rotateZ(-180deg) rotateX(-360deg);
   }
 
-  50%, 100% {
-    box-shadow: inset 0 0 0 0 #fff;
-    opacity: 0;
+  75%,100% {
+    transform: rotateZ(0) rotateX(0);
   }
 }
 
-@keyframes pulsOut {
-  0%, 50% {
-    box-shadow: 0 0 0 0 #fff;
-    opacity: 0;
+@keyframes bar-reflect {
+  0% {
+    transform: rotateZ(180deg) rotateX(360deg);
   }
 
-  100% {
-    box-shadow: 0 0 0 1rem #fff;
-    opacity: 1;
+  75%,100% {
+    transform: rotateZ(0) rotateX(0);
   }
 }
-      
 </style>

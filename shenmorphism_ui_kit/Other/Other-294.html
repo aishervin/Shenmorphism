@@ -1,109 +1,66 @@
-<div class="check">
-  <input id="check" type="checkbox">
-  <label for="check"></label>
-</div>
+<label class="radio-button">
+  <input type="radio" name="example-radio" value="option1">
+  <span class="radio"></span>
+  Option 1
+</label>
+
+<label class="radio-button">
+  <input type="radio" name="example-radio" value="option2">
+  <span class="radio"></span>
+  Option 2
+</label>
+
 <style>
-/* From SHΞN™ Morphism by Custyyyy - Tags: switch */
-.check {
- position: relative;
- background: linear-gradient(90deg, #f19af3, #f099b5);
- line-height: 0;
- font-size: 25px;
+/* From SHΞN™ Morphism by Pradeepsaranbishnoi - Tags: radio */
+.radio-button {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 10px;
+  position: relative;
+  align-items: center;
+  color: white;
 }
 
-.check input[type="checkbox"],
-.check label,
-.check label::before,
-.check label::after {
- appearance: none;
- display: inline-block;
- font-size: inherit;
- border-radius: 1em;
- border: 0;
- transition: .35s ease-in-out;
- box-sizing: border-box;
- cursor: pointer;
+.radio-button input[type="radio"] {
+  position: absolute;
+  opacity: 0;
 }
 
-.check {
- appearance: none;
- display: inline-block;
- border-radius: 1em;
- border: 0;
- transition: .35s ease-in-out;
- box-sizing: border-box;
- cursor: pointer;
+.radio {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  transform: translateZ(-25px);
+  transition: all 0.3s ease-in-out;
 }
 
-.check label {
- width: 2.2em;
- height: 1em;
- background: #d7d7d7;
- overflow: hidden;
+.radio::before {
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  top: 5px;
+  left: 5px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
 }
 
-.check input[type="checkbox"] {
- position: absolute;
- z-index: 1;
- width: .8em;
- height: .8em;
- top: .1em;
- left: .1em;
- background: linear-gradient(45deg, #dedede, #ffffff);
- box-shadow: 0 6px 7px rgba(0,0,0,0.3);
- outline: none;
+.radio-button input[type="radio"]:checked + .radio {
+  border-color: #5cb85c;
+  transform: translateZ(0px);
+  background-color: #fff;
 }
 
-.check input[type="checkbox"]:checked {
- left: 1.3em;
-}
-
-.check input[type="checkbox"]:checked + label {
- background: transparent;
-}
-
-.check label::before,
-.check label::after {
- content: "· ·";
- position: absolute;
- overflow: hidden;
- left: .50em;
- top: .5em;
- height: 1em;
- letter-spacing: -.04em;
- color: #9b9b9b;
- font-family: "Times New Roman", serif;
- z-index: 2;
- font-size: .6em;
- border-radius: 0;
- transform-origin: 0 0 -.5em;
- backface-visibility: hidden;
-}
-
-.check label::after {
- content: "?";
- top: .65em;
- left: .6em;
- height: .1em;
- width: .35em;
- font-size: .2em;
- transform-origin: 0 0 -.4em;
-}
-
-.check input[type="checkbox"]:checked + label::before,
-.check input[type="checkbox"]:checked + label::after {
- left: 2.55em;
- top: .4em;
- line-height: .1em;
- transform: rotateY(360deg);
-}
-
-.check input[type="checkbox"]:checked + label::after {
- height: .16em;
- top: .55em;
- left: 2.6em;
- font-size: .6em;
- line-height: 0;
+.radio-button input[type="radio"]:checked + .radio::before {
+  opacity: 1;
 }
 
 </style>

@@ -1,123 +1,152 @@
-<div class="container scroll-1">
-  <div class="card">
-    <div class="card__image"></div>
-    <div class="card__content">
-        <span class="card__title">Hello</span>
-        <p class="card__describe">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
+<div class="card">
+    <p class="text1">Come Deeper
+    </p>
+    <div class="one">
+        <div class="two">
+            <div class="three">
+                <div class="four">
+                    <div class="five">
+
+                        <p class="text2">It's<br>Deep<br>In Here...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="card">
-    <div class="card__image"></div>
-    <div class="card__content">
-        <span class="card__title">Hello</span>
-        <p class="card__describe">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card__image"></div>
-    <div class="card__content">
-        <span class="card__title">Hello</span>
-        <p class="card__describe">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
-    </div>
-  </div>
 </div>
 <style>
-/* From SHΞN™ Morphism by eduardo-amaro-maciel - Tags: card, scroll snap, dynamic */
-.scroll-1::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-.scroll-1::-webkit-scrollbar-thumb {
-  border-radius: 20px;
-  background: #888;
-}
-
-.container * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  color: #fff;
-}
-
-.container {
+/* From SHΞN™ Morphism by Web-Potato - Tags: card */
+.card {
+  width: 190px;
+  height: 254px;
+  background: #d3d3d3;
   display: flex;
-  overflow-x: scroll;
-  padding: 24px;
-  width: 300px;
-  scroll-snap-type: x mandatory;
-  scroll-padding-top: 24px;
-  border-radius: 8px;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
-.container .card {
-  flex: 0 0 100%;
-  overflow: hidden;
-  border-radius: 8px;
-  background-color: #141414;
-  scroll-snap-align: start;
-}
-
-.card .card__image {
-  flex: 1;
-  height: 140px;
-}
-
-.card:nth-child(1) .card__image {
-  background-image: linear-gradient(
-      to right top,
-      #051937, 
-      #004d7a, 
-      #008793, 
-      #00bf72, 
-      #a8eb12
-  );
-}
-
-.card:nth-child(2) .card__image {
-  background-image: linear-gradient(
-    to right top, 
-    #dc09a5, 
-    #ce00b4, 
-    #ba00c5, 
-    #9c00d8, 
-    #6f12eb
-  );
-}
-
-.card:nth-child(3) .card__image {
-  background-image: linear-gradient(
-    to right top, 
-    #dc1009, 
-    #e55f00, 
-    #e49200, 
-    #dac000, 
-    #c7eb12
-  );
-}
-
-.card .card__content {
+.one {
+  width: 90%;
+  height: 95%;
+  background-color: #c0c0c0;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3%;
 }
 
-.card .card__content .card__title {
-  font-size: 32px;
-  color: #fff;
-  text-transform: capitalize;
+.two {
+  width: 90%;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  border-radius: 3%;
+  background-color: #9c9c9c;
+  transition: 1s;
+  transition-delay: 0.2s;
 }
 
-.card .card__content .card__describe {
-  color: #fff;
-  font-size: 16px;
+.three {
+  width: 90%;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  border-radius: 3%;
+  background-color: #797979;
+  transition: 0.9s;
+  transition-delay: 0.2s;
 }
+
+.four {
+  width: 90%;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ececec;
+  opacity: 0;
+  border-radius: 3%;
+  background-color: #5a5a5a;
+  transition: 0.8s;
+  transition-delay: 0.2s;
+}
+
+.five {
+  width: 90%;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ececec;
+  opacity: 0;
+  border-radius: 3%;
+  background-color: #424242;
+  transition: 0.7s;
+  transition-delay: 0.2s;
+}
+
+.six {
+  width: 90%;
+  height: 95%;
+  color: #ececec;
+  text-align: center;
+  opacity: 0;
+  border-radius: 3%;
+  background-color: #302f2f;
+  transition: 0.6s;
+  transition-delay: 0.2s;
+}
+
+.text2 {
+  padding-top: 50%;
+  transform: translateY(-5em);
+  transition: 0.2s;
+  opacity: 0;
+}
+
+.card:hover .two {
+  opacity: 1;
+  transition: 0.4s;
+}
+
+.card:hover .three {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.card:hover .four {
+  opacity: 1;
+  transition: 0.6s;
+}
+
+.card:hover .five {
+  opacity: 1;
+  transition: 0.7s;
+}
+
+.card:hover .six {
+  opacity: 1;
+  transition: 0.8s;
+}
+
+.card:hover .text1 {
+  opacity: 0;
+}
+
+.card:hover .text2 {
+  transform: translateY(2em);
+  transition-delay: 0.5s;
+  opacity: 1;
+}
+
+.text1 {
+  position: absolute;
+  opacity: 1;
+}
+
 </style>

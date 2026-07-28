@@ -1,82 +1,95 @@
-<button class="youtube-button">
-  <div class="svg-wrapper-1">
-    <div class="svg-wrapper">
-      <svg
-        height="24"
-        width="24"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M0 0h24v24H0z" fill="none"></path>
-        <path
-          d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-          fill="currentColor"
-        ></path>
-      </svg>
+<button class="container moon-container">
+  <div class="moon">
+    <div class="mancha2"></div>
     </div>
-  </div>
-  <span>Watch on YouTube</span>
+		 <div class="moon-text">To the Moon</div>
 </button>
 
 <style>
-/* From SHΞN™ Morphism by vikramsinghnegi  - Tags: animation, button, hover me */
-button.youtube-button {
-  font-family: inherit;
-  font-size: 18px;
-  background: linear-gradient(to bottom, #ff0000 0%, #ff5050 100%);
-  color: white;
-  padding: 0.8em 1.2em;
+/* From SHΞN™ Morphism by guilhermeyohan - Tags: button */
+.moon-container {
+  width: 170px;
+  height: 50px;
+  background: linear-gradient(0, #120c56, #000000);
   display: flex;
   align-items: center;
-  justify-content: center;
-  border: none;
-  border-radius: 25px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s;
+  justify-content: space-between;
+  padding: 7px;
+  border-radius: 20px;
+  border-color: transparent;
 }
 
-button.youtube-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+.moon-container:hover {
+  transform: scale(1.2);
+  border-radius: 62px;
+  box-shadow: 1px 0px 100px #ece1bd60;
+  transition: all 1.4s;
 }
 
-button.youtube-button:active {
-  transform: scale(0.95);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+.moon-text {
+  position: relative;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
 }
 
-button.youtube-button span {
-  display: block;
-  margin-left: 0.4em;
-  transition: all 0.3s;
-}
-
-button.youtube-button svg {
-  width: 18px;
-  height: 18px;
-  fill: white;
-  transition: all 0.3s;
-}
-
-button.youtube-button .svg-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
+.moon {
+  position: relative;
+  border-color: transparent;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin-right: 0.5em;
-  transition: all 0.3s;
+  background-color: #F0EAD6;
+  box-shadow: 0px 0px 10px #F0EAD6;
 }
 
-button.youtube-button:hover .svg-wrapper {
-  background-color: rgba(255, 255, 255, 0.5);
+.moon::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 22%;
+  left: 45%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #333;
+  opacity: 0.4;
 }
 
-button.youtube-button:hover svg {
-  transform: rotate(45deg);
+.moon::after {
+  content: "";
+  position: absolute;
+  top: 67%;
+  left: 30%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #333;
+  opacity: 0.3;
+}
+
+.mancha2 {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: rgba(51, 51, 51, 0.583);
+  border-radius: 50%;
+  position: absolute;
+  top: 47%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+}
+
+.moon:hover {
+  box-shadow: 0px 0px 100px #F0EAD6;
+  transition: all 1.4s;
+}
+
+.moon:active {
+  transform: scale(1.5);
+  transition: all 1.4s;
 }
 
 </style>
-    

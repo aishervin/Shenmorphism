@@ -1,82 +1,86 @@
-
-  <div class="subscribe">
-    <p>SUBSCRIBE</p>
-    <input placeholder="Your e-mail" class="subscribe-input" name="email" type="email">
-    <br>
-    <div class="submit-btn">SUBMIT</div>
-  </div>
-
+<form class="form">
+  <span class="input-span">
+  <label for="email" class="label">Email</label>
+  <input type="email" name="email" id="email"></span>
+  <span class="input-span">
+  <label for="password" class="label">Password</label>
+  <input type="password" name="password" id="password"></span>
+  <span class="span"><a href="#">Forgot password?</a></span>
+  <input class="submit" type="submit" value="Log in">
+  <span class="span">Don't have an account? <a href="#">Sign up</a></span>
+</form>
 <style>
-/* From SHΞN™ Morphism by guilhermeyohan - Tags: subscription, form */
-.subscribe {
-  position: relative;
-  height: 140px;
-  width: 240px;
-  padding: 20px;
-  background-color: #FFF;
-  border-radius: 4px;
-  color: #333;
-  box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.4);
+/* From SHΞN™ Morphism by bociKond - Source: https://dribbble.com/shots/21363706-Haze-Website-Log-in-Page - Tags: form, hover, focus, submit, label */
+form {
+  --bg-light: #efefef;
+  --bg-dark: #707070;
+  --clr: #58BC82;
+  --clr-alpha: #9c9c9c60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
 }
 
-.subscribe:after {
-  position: absolute;
-  content: "";
-  right: -10px;
-  bottom: 18px;
-  width: 0;
-  height: 0;
-  border-left: 0px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #1a044e;
+.form .input-span {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
 }
 
-.subscribe p {
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 4px;
-  line-height: 28px;
-}
-
-.subscribe input {
-  position: absolute;
-  bottom: 30px;
+form input[type="email"],
+form input[type="password"] {
+  border-radius: 0.5rem;
+  padding: 1rem 0.75rem;
+  width: 100%;
   border: none;
-  border-bottom: 1px solid #d4d4d4;
-  padding: 10px;
-  width: 82%;
-  background: transparent;
-  transition: all .25s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--clr-alpha);
+  outline: 2px solid var(--bg-dark);
 }
 
-.subscribe input:focus {
-  outline: none;
-  border-bottom: 1px solid #0d095e;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', 'sans-serif';
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+  outline: 2px solid var(--clr);
 }
 
-.subscribe .submit-btn {
-  position: absolute;
-  border-radius: 30px;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-  background-color: #0f0092;
-  color: #FFF;
-  padding: 12px 25px;
-  display: inline-block;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 5px;
-  right: -10px;
-  bottom: -20px;
+.label {
+  align-self: flex-start;
+  color: var(--clr);
+  font-weight: 600;
+}
+
+form .submit {
+  padding: 1rem 0.75rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 3rem;
+  background-color: var(--bg-dark);
+  color: var(--bg-light);
+  border: none;
   cursor: pointer;
-  transition: all .25s ease;
-  box-shadow: -5px 6px 20px 0px rgba(26, 26, 26, 0.4);
+  transition: all 300ms;
+  font-weight: 600;
+  font-size: .9rem;
 }
 
-.subscribe .submit-btn:hover {
-  background-color: #07013d;
-  box-shadow: -5px 6px 20px 0px rgba(88, 88, 88, 0.569);
+form .submit:hover {
+  background-color: var(--clr);
+  color: var(--bg-dark);
+}
+
+.span {
+  text-decoration: none;
+  color: var(--bg-dark);
+}
+
+.span a {
+  color: var(--clr);
 }
 </style>

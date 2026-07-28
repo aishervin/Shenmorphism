@@ -1,54 +1,72 @@
-<form class="subscribe-form">
-    <input type="email" placeholder="example@mail.com" class="subscribe-input">
-    <button class="subscribe-btn">Submit</button>
-</form>
-<style>
-/* From SHΞN™ Morphism by andrew-demchenk0 - Tags: email, form, submit, outlined, subscribe */
-.subscribe-form {
-  --main-focus: #2d8cf0;
-  --font-color: #323232;
-  --font-color-sub: #666;
-  --bg-color: #fff;
-  --main-color: #323232;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  display: flex;
-  flex-direction: row;
-  width: 250px;
-  height: 35px;
-  border-radius: 5px;
-  box-shadow: 4px 4px var(--main-color);
-}
+<!-- From SHΞN™ Morphism by themrsami - Tags: form, tailwind, tailwindcss, themrsami, shipping form, light version -->
+<div class="mt-4 flex flex-col bg-gray-100 rounded-lg p-4 shadow-sm">
+  <h2 class="text-black font-bold text-lg">Shipping Label Address Form</h2>
 
-.subscribe-input {
-  width: 100%;
-  height: 100%;
-  padding: 5px 10px;
-  border: 2px solid var(--main-color);
-  border-right: 0;
-  border-radius: 5px 0 0 5px;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--font-color);
-  background: var(--bg-color);
-}
+  <div class="mt-4">
+    <label class="text-black" for="name">Name</label>
+    <input placeholder="Your name" class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1" type="text">
+  </div>
 
-.subscribe-btn {
-  width: 100px;
-  height: 100%;
-  border: 2px solid var(--main-focus);
-  border-radius: 0 5px 5px 0;
-  background-color: var(--main-focus);
-  font-size: 15px;
-  letter-spacing: 1px;
-  font-weight: 500;
-  color: var(--bg-color);
-  cursor: pointer;
-}
+  <div class="mt-4">
+    <label class="text-black" for="address">Address</label>
+    <textarea placeholder="Your address" class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1" id="address"></textarea>
+  </div>
 
-.subscribe-input:focus {
-  outline: none;
-  border: 2px solid var(--main-focus);
-  border-right: 0;
-}
-    
-</style>
+  <div class="mt-4 flex flex-row space-x-2">
+    <div class="flex-1">
+      <label class="text-black" for="city">City</label>
+      <input placeholder="Your city" class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1" id="city" type="text">
+    </div>
+
+    <div class="flex-1">
+      <label class="text-black" for="state">State</label>
+      <input placeholder="Your state" class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1" id="state" type="text">
+    </div>
+  </div>
+
+  <div class="mt-4 flex flex-row space-x-2">
+    <div class="flex-1">
+      <label class="text-black" for="zip">ZIP</label>
+      <input placeholder="Your ZIP code" class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1" id="zip" type="text">
+    </div>
+
+    <div class="flex-1">
+      <label class="text-black" for="country">Country</label>
+      <select class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1" id="country">
+        <option value="">Select a country</option>
+
+        <optgroup label="Africa">
+          <option value="AF">Afghanistan</option>
+          <option value="DZ">Algeria</option>
+          <option value="AO">Angola</option>
+          ...
+          <option value="ZW">Zimbabwe</option>
+        </optgroup>
+
+        <optgroup label="Asia">
+          <option value="AM">Armenia</option>
+          <option value="AZ">Azerbaijan</option>
+          <option value="BH">Bahrain</option>
+          ...
+          <option value="YE">Yemen</option>
+        </optgroup>
+
+        <optgroup label="South America">
+          <option value="AR">Argentina</option>
+          <option value="BO">Bolivia</option>
+          <option value="BR">Brazil</option>
+          ...
+          <option value="VE">Venezuela</option>
+        </optgroup>
+
+        ...
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-4 flex justify-end">
+    <button class="bg-white text-black rounded-md px-4 py-1 hover:bg-gray-200 hover:text-gray-900" type="submit">Submit</button>
+  </div>
+</div>
+
+

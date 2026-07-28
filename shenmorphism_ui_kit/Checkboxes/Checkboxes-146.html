@@ -1,62 +1,82 @@
-<input id="toggleChecker" type="checkbox">
-<label id="togglerLable" for="toggleChecker">
-  <div class="checkboxtoggler">
-    <div class="line-1"></div>
-    <div class="line-2"></div>
-    <div class="line-3"></div>
-  </div>
-</label>
+<div class="container">
+    <input type="checkbox" id="cbx2" style="display: none;">
+    <label for="cbx2" class="check">
+        <svg width="18px" height="18px" viewBox="0 0 18 18">
+            <path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z"></path>
+            <polyline points="1 9 7 14 15 4"></polyline>
+        </svg>
+    </label>
+</div>
 <style>
-/* From SHΞN™ Morphism by AKAspidey01 - Tags: checkbox, toggle switch, menuicon */
-.checkboxtoggler {
-  width: 3em;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7em;
+/* From SHΞN™ Morphism by WhiteNervosa - Tags: checkbox, radio */
+/* Variation of work by @mrhyddenn for Radios */
+
+
+.check {
   cursor: pointer;
+  position: relative;
+  margin: auto;
+  width: 18px;
+  height: 18px;
+  -webkit-tap-highlight-color: transparent;
+  transform: translate3d(0, 0, 0);
 }
 
-.line-1 {
-  background: #df6447;
-  height: 0.3em;
-  border-radius: 10em;
-  transition-duration: 500ms;
+.check:before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(34, 50, 84, 0.03);
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
-.line-2 {
-  background: #df6447;
-  height: 0.3em;
-  border-radius: 10em;
-  transition-duration: 500ms;
+.check svg {
+  position: relative;
+  z-index: 1;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #c8ccd4;
+  stroke-width: 1.5;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease;
 }
 
-.line-3 {
-  background: #df6447;
-  height: 0.3em;
-  border-radius: 10em;
-  transition-duration: 500ms;
+.check svg path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
 }
 
-#toggleChecker {
-  height: 3em;
-  width: 100%;
-  display: none;
+.check svg polyline {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
 }
 
-#toggleChecker:checked + #togglerLable .checkboxtoggler .line-1 {
-  -webkit-transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
-  -ms-transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
-  transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
+.check:hover:before {
+  opacity: 1;
 }
 
-#toggleChecker:checked + #togglerLable .checkboxtoggler .line-2 {
-  -webkit-transform: rotate(-45deg) translateY(0em) translateX(0.1em);
-  -ms-transform: rotate(-45deg) translateY(0em) translateX(0.1em);
-  transform: rotate(-45deg) translateY(0em) translateX(0.1em);
+.check:hover svg {
+  stroke: var(--accent-color, #a3e583);
 }
 
-#toggleChecker:checked + #togglerLable .checkboxtoggler .line-3 {
-  transform: scaleX(0);
-  transform-origin: left;
+#cbx2:checked + .check svg {
+  stroke: var(--accent-color, #a3e583);
+}
+
+#cbx2:checked + .check svg path {
+  stroke-dashoffset: 60;
+  transition: all 0.3s linear;
+}
+
+#cbx2:checked + .check svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
 }
 </style>

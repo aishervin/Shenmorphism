@@ -1,101 +1,72 @@
-<div class="container">
-    <div class="form_area">
-        <p class="title">SIGN UP</p>
-        <form action="">
-            <div class="form_group">
-                <label class="sub_title" for="name">Name</label>
-                <input placeholder="Enter your full name" class="form_style" type="text">
-            </div>
-            <div class="form_group">
-                <label class="sub_title" for="email">Email</label>
-                <input placeholder="Enter your email" id="email" class="form_style" type="email">
-            </div>
-            <div class="form_group">
-                <label class="sub_title" for="password">Password</label>
-                <input placeholder="Enter your password" id="password" class="form_style" type="password">
-            </div>
-            <div>
-                <button class="btn">SIGN UP</button>
-                <p>Have an Account? <a class="link" href="">Login Here!</a></p><a class="link" href="">
-            </a></div><a class="link" href="">
-        
-    </a></form></div><a class="link" href="">
-</a></div>
+  <div class="card">
+    <div class="chat-header">Chat</div>
+      <div class="chat-window">
+        <ul class="message-list"></ul>
+      </div>
+      <div class="chat-input">
+          <input type="text" class="message-input" placeholder="Type your message here">
+          <button class="send-button">Send</button>
+      </div>
+    </div>
+  
 <style>
-/* From SHΞN™ Morphism by mi-series - Tags: simple, material design, neumorphism, purple, minimalist, form, brutalism */
-.container {
+/* From SHΞN™ Morphism by ahmed150up - Tags: form, chat */
+.card {
+  width: 260px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.chat-window {
+  height: 220px;
+  overflow-y: scroll;
+}
+
+.message-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-input {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
 }
 
-.form_area {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #EDDCD9;
-  height: auto;
-  width: auto;
-  border: 2px solid #264143;
-  border-radius: 20px;
-  box-shadow: 3px 4px 0px 1px #E99F4C;
-}
-
-.title {
-  color: #264143;
-  font-weight: 900;
-  font-size: 1.5em;
-  margin-top: 20px;
-}
-
-.sub_title {
-  font-weight: 600;
-  margin: 5px 0;
-}
-
-.form_group {
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  margin: 10px;
-}
-
-.form_style {
+.message-input {
+  flex: 1;
+  border: none;
   outline: none;
-  border: 2px solid #264143;
-  box-shadow: 3px 4px 0px 1px #E99F4C;
-  width: 290px;
-  padding: 12px 10px;
-  border-radius: 4px;
-  font-size: 15px;
-}
-
-.form_style:focus, .btn:focus {
-  transform: translateY(4px);
-  box-shadow: 1px 2px 0px 0px #E99F4C;
-}
-
-.btn {
-  padding: 15px;
-  margin: 25px 0px;
-  width: 290px;
-  font-size: 15px;
-  background: #DE5499;
-  border-radius: 10px;
-  font-weight: 800;
-  box-shadow: 3px 3px 0px 0px #E99F4C;
-}
-
-.btn:hover {
-  opacity: .9;
-}
-
-.link {
-  font-weight: 800;
-  color: #264143;
   padding: 5px;
+  font-size: 14px;
+}
+
+.send-button {
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }
 </style>

@@ -1,63 +1,43 @@
-<label class="container">
-  <input checked="checked" type="checkbox">
-  <div class="checkmark"></div>
+<label>
+  <input class="input" type="checkbox" />
+  <span class="custom-checkbox"></span>
 </label>
+
 <style>
-/* From SHΞN™ Morphism by mrhyddenn - Tags: checkbox */
-/* Hide the default checkbox */
-.container input {
- position: absolute;
- opacity: 0;
- cursor: pointer;
- height: 0;
- width: 0;
+/* From SHΞN™ Morphism by faxriddin20  - Tags: minimalist, checkbox, dark, cool checkbox, checkmark */
+.input[type="checkbox"] {
+  display: none;
 }
 
-.container {
- display: block;
- position: relative;
- cursor: pointer;
- font-size: 20px;
- user-select: none;
+/* Style for the custom checkbox */
+.custom-checkbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid lime;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
 }
 
-/* Create a custom checkbox */
-.checkmark {
- position: relative;
- top: 0;
- left: 0;
- height: 1.3em;
- width: 1.3em;
- background: #606062;
- border-radius: 7px;
- box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.30), 0px 1px 1px rgba(0,5);
+/* Style for the custom checkmark */
+.custom-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: lime;
+  border-radius: 50%;
+  opacity: 0;
 }
 
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
- background-image: linear-gradient(#255CD2,#1D52C1)
+/* Show the checkmark when checkbox is checked */
+.input[type="checkbox"]:checked + .custom-checkbox::after {
+  opacity: 1;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
- content: "";
- position: absolute;
- display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
- display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
- left: 0.45em;
- top: 0.20em;
- width: 0.24em;
- height: 0.6em;
- border: solid white;
- border-width: 0 0.15em 0.15em 0;
- transform: rotate(45deg);
-}
 </style>
+    

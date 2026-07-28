@@ -1,46 +1,49 @@
-<div class="button">
-  <a href="#" class="anchor">
-    <span>Download CV</span>
-  </a>
-</div>
+<button class="moves-button">Hover me</button>
+
 <style>
-/* From SHΞN™ Morphism by Codecite - Tags: button */
-.anchor {
-  text-decoration: none;
-  color: #fff;
-  display: inline-block;
-  font-family: sans-serif;
-  font-weight: 600;
-  border-radius: 50px;
-  border: 2px solid #ed553b;
-  padding: 14px 40px 13px;
+/* From SHΞN™ Morphism by abbos97 - Tags: gradient, button */
+.moves-button {
+  padding: 10px 20px;
+  color: #000;
+  font-weight: 900;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
   overflow: hidden;
-  position: relative;
+  background-color: #fff;
+  border: 3px solid transparent;
+  border-image: linear-gradient(90deg, #f3f 20%, rgb(49, 18, 187) 60%);
+  border-image-slice: 1;
 }
 
-.anchor:hover {
-  color: #4e484a;
-}
-
-.button a::before {
+.moves-button::after {
+  content: 'Button';
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  content: "";
-  z-index: 0;
-  background-color: #ed553b;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  height: 111%;
-  transition: all .3s ease;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgb(245, 108, 245) 20%, rgb(119, 91, 245) 60%);
+  transition: transform 0.3s ease-out;
+  pointer-events: none;
+  color: #fff;
 }
 
-.button a:hover::before {
-  height: 11%;
+.moves-button:hover::after {
+  transform: translateX(-100%);
 }
 
-.button span {
-  position: relative;
-  z-index: 2;
-  transition: all .3s ease;
+.moves-button:focus {
+  outline: none;
 }
+
+/* Optional styling for the button on click */
+.moves-button:active {
+  transform: translateY(2px);
+}
+
 </style>

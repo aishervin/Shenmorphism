@@ -1,39 +1,50 @@
-<button class="Btn">
-  <svg viewBox="0 0 576 512" height="1em" class="logoIcon"><path d="M309 106c11.4-7 19-19.7 19-34c0-22.1-17.9-40-40-40s-40 17.9-40 40c0 14.4 7.6 27 19 34L209.7 220.6c-9.1 18.2-32.7 23.4-48.6 10.7L72 160c5-6.7 8-15 8-24c0-22.1-17.9-40-40-40S0 113.9 0 136s17.9 40 40 40c.2 0 .5 0 .7 0L86.4 427.4c5.5 30.4 32 52.6 63 52.6H426.6c30.9 0 57.4-22.1 63-52.6L535.3 176c.2 0 .5 0 .7 0c22.1 0 40-17.9 40-40s-17.9-40-40-40s-40 17.9-40 40c0 9 3 17.3 8 24l-89.1 71.3c-15.9 12.7-39.5 7.5-48.6-10.7L309 106z"></path></svg>
-  GO PREMIUM
+<button class="btnCloud">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" class="icon"><path d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z"></path></svg>
 </button>
+
 <style>
-/* From SHΞN™ Morphism by vinodjangid07 - Tags: gradient, button, hover effect, gold, golden effect , subscribe, premium */
-.Btn {
-  width: 200px;
-  height: 40px;
-  border: none;
-  border-radius: 40px;
-  background: linear-gradient(to right,#bf953f,#fcf6ba,#b38728,#fbf5b7,#aa771c);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 0.8em;
-  color: rgb(121, 103, 3);
-  font-weight: 600;
-  cursor: pointer;
+/* From SHΞN™ Morphism by Peary74 - Tags: button, cloud, save */
+.btnCloud {
+  background-color: transparent;
   position: relative;
-  z-index: 2;
-  transition-duration: 3s;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.144);
-  background-size: 200% 200%;
+  fill: rgb(155, 153, 153);
+  border: none;
 }
 
-.logoIcon path {
-  fill: rgb(121, 103, 3);
+.btnCloud::after {
+  content: 'SAVE';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 3px 9px;
+  border-radius: 5px;
+  transition: 200ms linear;
+  transition-delay: 200ms;
+  color: black;
+  font-size: 13px;
+  visibility: hidden;
 }
 
-.Btn:hover {
-  transform: scale(0.95);
-  transition-duration: 3s;
-  animation: gradient 5s ease infinite;
-  background-position: right;
+.icon {
+  transform: scale(1.4);
+  transition: 200ms linear;
+}
+
+.btnCloud:hover > .icon {
+  transform: scale(1.7);
+}
+
+.btnCloud:hover > .icon path {
+  fill: #fff;
+  cursor: pointer;
+}
+
+.btnCloud:hover::after {
+  visibility: visible;
+  opacity: 1;
+  top: -100%;
 }
 
 </style>

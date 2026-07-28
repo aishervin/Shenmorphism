@@ -1,74 +1,67 @@
-<div class="card">
-  <div class="main-content">
-    <div class="header">
-  <span>Article on</span>
-  <span>29-June-2023</span>
-</div>
-<p class="heading">Different ways to use CSS in React</p>
-<div class="categories">
-  <span>React</span>
-  <span>Css</span>
-</div>
-  </div>
-<div class="footer">
-  by Harsh Gupta
-</div>
-</div>
+<div class="card"></div>
 <style>
-/* From SHΞN™ Morphism by gharsh11032000 - Tags: gradient, card, hover, hover effect */
+/* From SHΞN™ Morphism by KhaledMatalkah - Tags: card, hover, animated */
 .card {
-  width: 320px;
-  height: 350px;
-  padding: 20px;
-  color: white;
-  background: linear-gradient(#212121, #212121) padding-box,
-              linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  transform-origin: right bottom;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  width: 254px;
+  height: 300px;
+  background: linear-gradient(180deg, #5b1577, #a52585);
+  border-radius: 10%;
+  box-shadow: -35px 35px 70px #891883, 10px -35px 70px #db26db;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  animation: shadowAnimation 5s infinite ease-in-out;
 }
 
-.card .main-content {
-  flex: 1;
+@keyframes shadowAnimation {
+  0% {
+    box-shadow: -35px 35px 70px #ca21ae, 10px -35px 70px #ca21ae;
+  }
+
+  50% {
+    box-shadow: -20px 10px 50px #bd3fa2, 0 -20px 50px #b9317c;
+  }
+
+  100% {
+    box-shadow: -35px 35px 70px #ca27af, 10px -35px 70px #bd3fa2;
+  }
 }
 
-.card .header span:first-child {
-  font-weight: 600;
-  color: #717171;
-  margin-right: 4px;
+.card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #68057c, #a52574);
+  border-radius: 50%;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
-.card .heading {
-  font-size: 24px;
-  margin: 24px 0 16px;
-  font-weight: 600;
-}
-
-.card .categories {
-  display: flex;
-  gap: 8px;
-}
-
-.card .categories span {
-  background-color: #e81cff;
-  padding: 4px 8px;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 12px;
-  border-radius: 50em;
-}
-
-.card .footer {
-  font-weight: 600;
-  color: #717171;
-  margin-right: 4px;
+.card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #b700ff, #be268b, transparent);
+  border-radius: 50%;
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
 }
 
 .card:hover {
-  rotate: 8deg;
+  transform: scale(1.1);
 }
+
+.card:hover::before,
+.card:hover::after {
+  opacity: 1;
+}
+
 </style>

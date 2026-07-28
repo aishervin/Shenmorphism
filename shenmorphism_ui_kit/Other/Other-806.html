@@ -1,57 +1,66 @@
-<div class="loader"></div>
+<div class="spinner">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div>
 <style>
-/* From SHΞN™ Morphism by FWDJc - Tags: simple, animation, loader, heart, bounce animation, css animation */
-.loader {
-  width: 7em;
-  height: 5em;
+/* From SHΞN™ Morphism by exyreams - Tags: loading, loader, loading animation */
+.spinner {
   position: relative;
-  animation: beat 1s infinite;
+  width: 80px;
+ /* Adjust the width accordingly */
+  height: 16px;
+ /* Keep the height the same */
 }
 
-.loader::before,
-.loader::after {
-  content: "";
+.spinner div {
   position: absolute;
-  top: 0;
-  width: 50px;
-  height: 80px;
-  border-radius: 5em 5em 0 0;
-  animation: coldblue 1s infinite;
+  width: 16px;
+  height: 16px;
+  background-color: #004dff;
+  border-radius: 50%;
+  animation: spinner-4t3wzl 2s infinite linear;
 }
 
-.loader::before {
-  left: 50px;
-  transform: rotate(-45deg);
-  transform-origin: 0 100%;
-}
-
-.loader::after {
+.spinner div:nth-child(1) {
   left: 0;
-  transform: rotate(45deg);
-  transform-origin: 100% 100%;
+  animation-delay: 0.15s;
+  background-color: rgba(0, 77, 255, 0.9);
 }
 
-@keyframes beat {
-  0% {
-    transform: scale(1);
-  }
+.spinner div:nth-child(2) {
+  left: 25%;
+  animation-delay: 0.3s;
+  background-color: rgba(0, 77, 255, 0.8);
+}
 
-  50% {
-    transform: scale(1.2);
+.spinner div:nth-child(3) {
+  left: 50%;
+  animation-delay: 0.45s;
+  background-color: rgba(0, 77, 255, 0.7);
+}
+
+.spinner div:nth-child(4) {
+  left: 75%;
+  animation-delay: 0.6s;
+  background-color: rgba(0, 77, 255, 0.6);
+}
+
+.spinner div:nth-child(5) {
+  left: 100%;
+  animation-delay: 0.75s;
+  background-color: rgba(0, 77, 255, 0.5);
+}
+
+@keyframes spinner-4t3wzl {
+  0% {
+    transform: rotate(0deg) translateX(-100%);
   }
 
   100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes coldblue {
-  0%, 100% {
-    background-color: rgb(255, 255, 255);
-  }
-
-  50% {
-    background-color: rgb(91, 91, 241);
+    transform: rotate(360deg) translateX(-100%);
   }
 }
 </style>

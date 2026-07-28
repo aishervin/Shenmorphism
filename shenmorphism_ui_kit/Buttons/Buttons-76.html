@@ -1,57 +1,97 @@
 <button class="button">
-  <div class="button-overlay"></div>
-  <span>Button <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 53 58" height="58" width="53">
-<path stroke-width="9" stroke="currentColor" d="M44.25 36.3612L17.25 51.9497C11.5833 55.2213 4.5 51.1318 4.50001 44.5885L4.50001 13.4115C4.50001 6.86824 11.5833 2.77868 17.25 6.05033L44.25 21.6388C49.9167 24.9104 49.9167 33.0896 44.25 36.3612Z"></path>
-</svg></span>
-  
+  <svg
+    viewBox="0 0 24 24"
+    height="48"
+    width="48"
+    xmlns="http://www.w3.org/2000/svg"
+    class="send-icon"
+  >
+    <path
+      d="m16.066 10.184l-3.89-1.795c-2.154-.994-3.231-1.491-3.725-.982c-.493.509.038 1.572 1.101 3.698c.22.44.33.659.33.895s-.11.456-.33.895c-1.063 2.126-1.594 3.19-1.1 3.698c.493.51 1.57.012 3.725-.982l3.889-1.795c1.698-.784 2.548-1.176 2.548-1.816c0-.64-.85-1.032-2.549-1.816"
+      fill-opacity="0.4"
+      fill="currentColor"
+    ></path>
+    <path
+      d="M8.895 11.684L8.174 9.52a1 1 0 0 0-.707-.654l-1.78-.445a.8.8 0 0 0-.91 1.134l1.111 2.22a.5.5 0 0 1 0 .448l-1.11 2.22a.8.8 0 0 0 .91 1.134l1.78-.445a1 1 0 0 0 .706-.654l.72-2.163a1 1 0 0 0 0-.632"
+      fill="currentColor"
+    ></path>
+  </svg>
+  Send Message
 </button>
-<style>
-/* From SHΞN™ Morphism by adamgiebl - Tags: icon, button, smooth, dark, luxury, silver */
-/* Inspired by twitter.com/marina_uiux */
 
+<style>
+/* From SHΞN™ Morphism by ChanduOffl  - Tags: icon, animation, white, button, message, btn, buttons, hover button */
 .button {
-  font-size: 17px;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fefefe;
+  border: 1px solid #dcdcdc;
   border-radius: 12px;
-  background: linear-gradient(180deg, rgb(56, 56, 56) 0%, rgb(36, 36, 36) 66%, rgb(41, 41, 41) 100%);
-  color: rgb(218, 218, 218);
-  border: none;
-  padding: 2px;
-  font-weight: 700;
+
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
   cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  z-index: 0;
+  outline: 2px solid #fafafa;
+  box-shadow: 9px 9px 44px #cecece3a, -9px -9px 44px #d3d3d33d,
+    inset 0 0 0 2px rgba(192, 192, 192, 0.25);
 }
 
-.button span {
-  border-radius: 10px;
-  padding: 0.8em 1.3em;
-  padding-right: 1.2em;
-  text-shadow: 0px 0px 20px #4b4b4b;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: inherit;
-  transition: all 0.3s;
-  background-color: rgb(29, 29, 29);
-  background-image: radial-gradient(at 95% 89%, rgb(15, 15, 15) 0px, transparent 50%), radial-gradient(at 0% 100%, rgb(17, 17, 17) 0px, transparent 50%), radial-gradient(at 0% 0%, rgb(29, 29, 29) 0px, transparent 50%);
-}
-
-.button:hover span {
-  background-color: rgb(26, 25, 25);
-}
-
-.button-overlay {
+.button::before {
+  content: "";
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: repeating-conic-gradient(rgb(48, 47, 47) 0.0000001%, rgb(51, 51, 51) 0.000104%) 60% 60%/600% 600%;
-  filter: opacity(10%) contrast(105%);
-  -webkit-filter: opacity(10%) contrast(105%);
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border-radius: 30px;
+  background: linear-gradient(
+    0deg,
+    #fbfbfb 0%,
+    #fafafa 5%,
+    #f7f7f7 72%,
+    #f2f2f2 86%,
+    #f0f0f0 100%
+  );
+  box-shadow: inset 0 2px 7px rgba(143, 143, 143, 0.16);
+  transition: all 0.3s ease;
+  z-index: -1;
+  margin: 2px;
 }
 
-.button svg {
-  width: 15px;
-  height: 15px;
+.button:hover::before {
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+  margin: 5px;
 }
+
+.button:focus {
+  outline: 2px solid #fefefe;
+  box-shadow: 9px 9px 44px #cecece3a, -9px -9px 44px #d3d3d33d,
+    inset 0 0 0 2px rgba(192, 192, 192, 0.5);
+}
+
+.send-icon {
+  margin-right: 5px;
+  transition: transform 0.3s ease;
+}
+
+.button:hover .send-icon {
+  transform: translateX(7px);
+}
+
+.button:focus .send-icon {
+  transform: rotate(-40deg);
+}
+
 </style>
+    

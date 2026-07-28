@@ -1,22 +1,63 @@
-<!-- From SHΞN™ Morphism by Yaya12085 - Source: https://daisyui.com/ - Tags: button, form, card, checkbox, input, switcher, cool checkbox -->
-<div class="w-80 rounded-2xl bg-white">
-  <div class="flex flex-col gap-2 p-8">
-    <input placeholder="Email" class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100">
-    <label class="flex cursor-pointer items-center justify-between p-1">
-      Accept terms of use
-      <div class="relative inline-block">
-        <input type="checkbox" class="peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2">
-        <span class="pointer-events-none absolute left-1 top-1 block h-4 w-4 rounded-full bg-gray-400 transition-all duration-200 peer-checked:left-7 peer-checked:bg-gray-900"></span>
-      </div>
-    </label>
-    <label class="flex cursor-pointer items-center justify-between p-1">
-      Submit to newsletter
-      <div class="relative inline-block">
-        <input type="checkbox" class="peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2">
-        <span class="pointer-events-none absolute left-1 top-1 block h-4 w-4 rounded-full bg-gray-400 transition-all duration-200 peer-checked:left-7 peer-checked:bg-gray-900"></span>
-      </div>
-    </label>
-    <button class="inline-block cursor-pointer rounded-md bg-gray-700 px-4 py-3.5 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95">Save</button>
+  <div class="newsletter-form">
+    <p class="heading"> Subscribe to Our Newsletter</p>
+    <form class="form">
+      <label for="email">Email:</label>
+      <input required="" placeholder="Enter your email address" name="email" id="email" type="email">
+      <input value="Subscribe" type="submit">
+    </form>
   </div>
-</div>
+<style>
+/* From SHΞN™ Morphism by PriyanshuGupta28 - Tags: form, subscriptions card, email card */
+/* Unique styles for the newsletter form */
+.newsletter-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background-color: #f7f7f7;
+  font-family: Arial, sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
 
+.heading {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.newsletter-form h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 24px;
+}
+
+.newsletter-form label {
+  display: block;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.newsletter-form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.newsletter-form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ff6600;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.newsletter-form input[type="submit"]:hover {
+  background-color: #ff8533;
+}
+</style>

@@ -1,105 +1,154 @@
-<input id="inpLock" type="checkbox">
-<label class="btn-lock" for="inpLock">
-    <svg width="36" height="40" viewBox="0 0 36 40">
-        <path class="lockb" d="M27 27C27 34.1797 21.1797 40 14 40C6.8203 40 1 34.1797 1 27C1 19.8203 6.8203 14 14 14C21.1797 14 27 19.8203 27 27ZM15.6298 26.5191C16.4544 25.9845 17 25.056 17 24C17 22.3431 15.6569 21 14 21C12.3431 21 11 22.3431 11 24C11 25.056 11.5456 25.9845 12.3702 26.5191L11 32H17L15.6298 26.5191Z"></path>
-        <path class="lock" d="M6 21V10C6 5.58172 9.58172 2 14 2V2C18.4183 2 22 5.58172 22 10V21"></path>
-        <path class="bling" d="M29 20L31 22"></path>
-        <path class="bling" d="M31.5 15H34.5"></path>
-        <path class="bling" d="M29 10L31 8"></path>
+<div class="checkbox-wrapper-12">
+  <div class="cbx">
+    <input checked="" type="checkbox" id="cbx-12">
+    <label for="cbx-12"></label>
+    <svg fill="none" viewBox="0 0 15 14" height="14" width="15">
+      <path d="M2 8.36364L6.23077 12L13 2"></path>
     </svg>
-</label>
+  </div>
+  
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="goo-12">
+        <feGaussianBlur result="blur" stdDeviation="4" in="SourceGraphic"></feGaussianBlur>
+        <feColorMatrix result="goo-12" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7" mode="matrix" in="blur"></feColorMatrix>
+        <feBlend in2="goo-12" in="SourceGraphic"></feBlend>
+      </filter>
+    </defs>
+  </svg>
+</div>
 <style>
-/* From SHΞN™ Morphism by mobinkakei - Tags: checkbox, lock */
-.btn-lock {
+/* From SHΞN™ Morphism by Shoh2008 - Tags: checkbox */
+.checkbox-wrapper-12 {
+  position: relative;
+}
+
+.checkbox-wrapper-12 > svg {
   position: absolute;
-  top: calc(50% - 32px);
-  left: calc(50% - 32px);
-  display: inline-block;
-  background: #ff5b5b;
-  width: 64px;
-  height: 64px;
+  top: -130%;
+  left: -170%;
+  width: 110px;
+  pointer-events: none;
+}
+
+.checkbox-wrapper-12 * {
   box-sizing: border-box;
-  padding: 12px 0 0 18px;
-  border-radius: 50%;
-  cursor: pointer;
+}
+
+.checkbox-wrapper-12 input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  margin: 0;
 }
 
-.btn-lock svg {
-  fill: none;
-  transform: translate3d(0, 0, 0);
+.checkbox-wrapper-12 input[type="checkbox"]:focus {
+  outline: 0;
 }
 
-.btn-lock svg .bling {
+.checkbox-wrapper-12 .cbx {
+  width: 24px;
+  height: 24px;
+  top: calc(100px - 12px);
+  left: calc(100px - 12px);
+}
+
+.checkbox-wrapper-12 .cbx input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #bfbfc0;
+  border-radius: 50%;
+}
+
+.checkbox-wrapper-12 .cbx label {
+  width: 24px;
+  height: 24px;
+  background: none;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: trasnlate3d(0, 0, 0);
+  pointer-events: none;
+}
+
+.checkbox-wrapper-12 .cbx svg {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.checkbox-wrapper-12 .cbx svg path {
   stroke: #fff;
-  stroke-width: 2.5;
+  stroke-width: 3;
   stroke-linecap: round;
-  stroke-dasharray: 3;
-  stroke-dashoffset: 15;
-  transition: all 0.3s ease;
-}
-
-.btn-lock svg .lock {
-  stroke: #fff;
-  stroke-width: 4;
   stroke-linejoin: round;
-  stroke-linecap: round;
-  stroke-dasharray: 36;
-  transition: all 0.4s ease;
+  stroke-dasharray: 19;
+  stroke-dashoffset: 19;
+  transition: stroke-dashoffset 0.3s ease;
+  transition-delay: 0.2s;
 }
 
-.btn-lock svg .lockb {
-  fill: #fff;
-  fill-rule: evenodd;
-  clip-rule: evenodd;
-  transform: rotate(8deg);
-  transform-origin: 14px 20px;
-  transition: all 0.2s ease;
+.checkbox-wrapper-12 .cbx input:checked + label {
+  animation: splash-12 0.6s ease forwards;
 }
 
-#inpLock {
-  display: none;
+.checkbox-wrapper-12 .cbx input:checked + label + svg path {
+  stroke-dashoffset: 0;
 }
 
-#inpLock:checked + label {
-  background: #20cca5;
-}
-
-#inpLock:checked + label svg {
-  opacity: 1;
-}
-
-#inpLock:checked + label svg .bling {
-  animation: bling6132 0.3s linear forwards;
-  animation-delay: 0.2s;
-}
-
-#inpLock:checked + label svg .lock {
-  stroke-dasharray: 48;
-  animation: locked 0.3s linear forwards;
-}
-
-#inpLock:checked + label svg .lockb {
-  transform: rotate(0);
-  transform-origin: 14px 22px;
-}
-
-@keyframes bling6132 {
-  50% {
-    stroke-dasharray: 3;
-    stroke-dashoffset: 12;
+@-moz-keyframes splash-12 {
+  40% {
+    background: #866efb;
+    box-shadow: 0 -18px 0 -8px #866efb, 16px -8px 0 -8px #866efb, 16px 8px 0 -8px #866efb, 0 18px 0 -8px #866efb, -16px 8px 0 -8px #866efb, -16px -8px 0 -8px #866efb;
   }
 
   100% {
-    stroke-dasharray: 3;
-    stroke-dashoffset: 9;
+    background: #866efb;
+    box-shadow: 0 -36px 0 -10px transparent, 32px -16px 0 -10px transparent, 32px 16px 0 -10px transparent, 0 36px 0 -10px transparent, -32px 16px 0 -10px transparent, -32px -16px 0 -10px transparent;
   }
 }
 
-@keyframes locked {
-  50% {
-    transform: translateY(1px);
+@-webkit-keyframes splash-12 {
+  40% {
+    background: #866efb;
+    box-shadow: 0 -18px 0 -8px #866efb, 16px -8px 0 -8px #866efb, 16px 8px 0 -8px #866efb, 0 18px 0 -8px #866efb, -16px 8px 0 -8px #866efb, -16px -8px 0 -8px #866efb;
+  }
+
+  100% {
+    background: #866efb;
+    box-shadow: 0 -36px 0 -10px transparent, 32px -16px 0 -10px transparent, 32px 16px 0 -10px transparent, 0 36px 0 -10px transparent, -32px 16px 0 -10px transparent, -32px -16px 0 -10px transparent;
   }
 }
 
+@-o-keyframes splash-12 {
+  40% {
+    background: #866efb;
+    box-shadow: 0 -18px 0 -8px #866efb, 16px -8px 0 -8px #866efb, 16px 8px 0 -8px #866efb, 0 18px 0 -8px #866efb, -16px 8px 0 -8px #866efb, -16px -8px 0 -8px #866efb;
+  }
+
+  100% {
+    background: #866efb;
+    box-shadow: 0 -36px 0 -10px transparent, 32px -16px 0 -10px transparent, 32px 16px 0 -10px transparent, 0 36px 0 -10px transparent, -32px 16px 0 -10px transparent, -32px -16px 0 -10px transparent;
+  }
+}
+
+@keyframes splash-12 {
+  40% {
+    background: #866efb;
+    box-shadow: 0 -18px 0 -8px #866efb, 16px -8px 0 -8px #866efb, 16px 8px 0 -8px #866efb, 0 18px 0 -8px #866efb, -16px 8px 0 -8px #866efb, -16px -8px 0 -8px #866efb;
+  }
+
+  100% {
+    background: #866efb;
+    box-shadow: 0 -36px 0 -10px transparent, 32px -16px 0 -10px transparent, 32px 16px 0 -10px transparent, 0 36px 0 -10px transparent, -32px 16px 0 -10px transparent, -32px -16px 0 -10px transparent;
+  }
+}
 </style>

@@ -1,70 +1,20 @@
-<button class="btn">
-  See more 
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15px" width="15px" class="icon">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5" stroke="#292D32" d="M8.91016 19.9201L15.4302 13.4001C16.2002 12.6301 16.2002 11.3701 15.4302 10.6001L8.91016 4.08008"></path>
-</svg>
+<button class="button">
+  <svg xmlns="http://www.w3.org/2000/svg" width="46" viewBox="0 0 46 46" height="46" fill="none" class="svg-icon"><path stroke-width="2" stroke-linecap="round" stroke="#fff" fill-rule="evenodd" d="m14.5037 27.0715c.819-.634 1.7094-1.1699 2.653-1.597.7621-.3521 1.2557-1.1094 1.2699-1.9488-.0073-1.1346.7466-2.1517 1.8673-2.3279 1.7701-.2782 3.5728-.2785 5.3429-.0005 1.1206.1759 1.8744 1.193 1.8669 2.3274.0206.8307.5066 1.5791 1.257 1.9359.981.4173 1.9093.9489 2.7657 1.5838.8765.5876 2.0467.4715 2.791-.2769l2.2507-2.2507c.4294-.4283.6617-1.0157.6414-1.6219-.0308-.5985-.314-1.1559-.7793-1.5337-2.5842-2.0976-5.6309-3.5496-8.888-4.2357-2.9976-.6659-6.1047-.6655-9.1023.0009-3.2453.7041-6.2835 2.1503-8.87655 4.2253l-.12568.1256c-.38501.38-.60996.8929-.62872 1.4334-.02687.6011.20148 1.1854.62847 1.6092l2.25008 2.2501c.7307.7914 1.9343.9202 2.8162.3015z" clip-rule="evenodd"></path></svg>
 </button>
 <style>
-/* From SHΞN™ Morphism by boryanakrasteva - Tags: button */
-.btn {
-  width: 140px;
-  height: 40px;
+/* From SHΞN™ Morphism by andrew-demchenk0 - Tags: red, button, phone, circle, reject, call reject */
+.button {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
   border: none;
-  position: relative;
-  background-color: transparent;
-  transition: .2s cubic-bezier(0.19, 1, 0.22, 1);
-  opacity: 0.6;
+  background-color: #FF2849;
 }
 
-.btn::after {
-  content: '';
-  border-bottom: 3px double rgb(214, 207, 113);
-  width: 0;
-  height: 100%;
-  position: absolute;
-  margin-top: -5px;
-  top: 0;
-  left: 5px;
-  visibility: hidden;
-  opacity: 1;
-  transition: .2s linear;
+.button:hover {
+  background-color: #e52441;
 }
-
-.btn .icon {
-  transform: translateX(0%);
-  transition: .2s linear;
-  animation: attention 1.2s linear infinite;
-}
-
-.btn:hover::after {
-  visibility: visible;
-  opacity: 0.7;
-  width: 90%;
-}
-
-.btn:hover {
-  letter-spacing: 2px;
-  opacity: 1;
-}
-
-.btn:hover > .icon {
-  transform: translateX(30%);
-  animation: none;
-}
-
-@keyframes attention {
-  0% {
-    transform: translateX(0%);
-  }
-
-  50% {
-    transform: translateX(30%);
-  }
-}
-
 </style>

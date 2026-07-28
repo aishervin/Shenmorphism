@@ -1,86 +1,56 @@
-<form class="form">
-  <span class="input-span">
-  <label for="email" class="label">Email</label>
-  <input type="email" name="email" id="email"></span>
-  <span class="input-span">
-  <label for="password" class="label">Password</label>
-  <input type="password" name="password" id="password"></span>
-  <span class="span"><a href="#">Forgot password?</a></span>
-  <input class="submit" type="submit" value="Log in">
-  <span class="span">Don't have an account? <a href="#">Sign up</a></span>
-</form>
+<form class="form"> <div class="title">OTP</div> <div class="title">Verification Code</div> <p class="message">We have sent a verification code to your mobile number</p> <div class="inputs"> <input id="input1" type="text" maxlength="1"> <input id="input2" type="text" maxlength="1"> <input id="input3" type="text" maxlength="1"> <input id="input4" type="text" maxlength="1"> </div> <button class="action">verify me</button> </form>
 <style>
-/* From SHΞN™ Morphism by bociKond - Source: https://dribbble.com/shots/21363706-Haze-Website-Log-in-Page - Tags: form, hover, focus, submit, label */
-form {
-  --bg-light: #efefef;
-  --bg-dark: #707070;
-  --clr: #58BC82;
-  --clr-alpha: #9c9c9c60;
+/* From SHΞN™ Morphism by Yaya12085 - Tags: button, OTP, form, input */
+.form {
   display: flex;
+  align-items: center;
   flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
+  justify-content: space-around;
+  width: 300px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
 }
 
-.form .input-span {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  color: black
 }
 
-form input[type="email"],
-form input[type="password"] {
-  border-radius: 0.5rem;
-  padding: 1rem 0.75rem;
-  width: 100%;
+.message {
+  color: #a3a3a3;
+  font-size: 14px;
+  margin-top: 4px;
+  text-align: center
+}
+
+.inputs {
+  margin-top: 10px
+}
+
+.inputs input {
+  width: 32px;
+  height: 32px;
+  text-align: center;
   border: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: var(--clr-alpha);
-  outline: 2px solid var(--bg-dark);
+  border-bottom: 1.5px solid #d2d2d2;
+  margin: 0 10px;
 }
 
-form input[type="email"]:focus,
-form input[type="password"]:focus {
-  outline: 2px solid var(--clr);
+.inputs input:focus {
+  border-bottom: 1.5px solid royalblue;
+  outline: none;
 }
 
-.label {
-  align-self: flex-start;
-  color: var(--clr);
-  font-weight: 600;
-}
-
-form .submit {
-  padding: 1rem 0.75rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 3rem;
-  background-color: var(--bg-dark);
-  color: var(--bg-light);
+.action {
+  margin-top: 24px;
+  padding: 12px 16px;
+  border-radius: 8px;
   border: none;
+  background-color: royalblue;
+  color: white;
   cursor: pointer;
-  transition: all 300ms;
-  font-weight: 600;
-  font-size: .9rem;
-}
-
-form .submit:hover {
-  background-color: var(--clr);
-  color: var(--bg-dark);
-}
-
-.span {
-  text-decoration: none;
-  color: var(--bg-dark);
-}
-
-.span a {
-  color: var(--clr);
+  align-self: end;
 }
 </style>

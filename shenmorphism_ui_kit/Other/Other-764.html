@@ -1,93 +1,51 @@
-<div class="loader">
-  <div class="loader-circle"></div>
-  <div class="loader-circle"></div>
-  <div class="loader-circle"></div>
-</div>
+<div class="loader"></div>
 <style>
-/* From SHΞN™ Morphism by Rodrypaladin - Tags: animation, loader, animated, colorful, color, multicolor */
+/* From SHΞN™ Morphism by Shoh2008 - Tags: loader */
 .loader {
-  width: 70px;
-  height: 190px;
-  background-image: linear-gradient(to right bottom, #000000, #141414, #202020, #2d2d2d, #3a3a3a);
-  border: 5px solid black;
-  border-radius: 18px;
+  width: 48px;
+  height: 48px;
+  background: #353535;
+  display: block;
+  margin: 20px auto;
   position: relative;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 5px 0;
+  box-sizing: border-box;
+  animation: rotationBack 1s ease-in-out infinite reverse;
 }
 
-.loader:after {
-  content: "";
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  transform: rotate(45deg);
   position: absolute;
-  top: 100%;
-  right: 50%;
-  transform: translate(50%, -50%);
-  width: 10px;
-  height: 200px;
-  background-color: rgb(20, 20, 20);
-  z-index: -1000;
-  border: 5px solid black;
+  width: 48px;
+  height: 48px;
+  background: #2e2e2e;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 
-.loader-circle {
-  width: 50px;
-  height: 50px;
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  position: relative;
-}
-
-.loader-circle::after {
   position: absolute;
-  content: "";
+  left: 50%;
   top: 50%;
-  right: 50%;
-  transform: translate(50%, -50%);
-  height: 80%;
-  width: 80%;
-  background-image: linear-gradient(
-  to right bottom,
-  rgba(255, 255, 255, 0.05),
-  rgba(255, 255, 255, 0.1),
-  rgba(255, 255, 255, 0.2),
-  rgba(255, 255, 255, 0.3),
-  rgba(255, 255, 255, 0.4),
-  rgba(255, 255, 255, 0.5)
-  );
-  border-radius: 50%;
+  background: rgb(0, 0, 0);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 
-.loader-circle:nth-child(1) {
-  background-color: red;
-  animation: changeGrayscale 1s linear infinite;
-  animation-delay: 0.15s;
-}
-
-.loader-circle:nth-child(2) {
-  background-color: rgb(255, 200, 0);
-  animation: changeGrayscale 1s linear infinite;
-  animation-delay: 0.3s;
-}
-
-.loader-circle:nth-child(3) {
-  background-color: rgb(36, 182, 0);
-  animation: changeGrayscale 1s linear infinite;
-  animation-delay: 0.45s;
-}
-
-@keyframes changeGrayscale {
-  0%, 100% {
-    filter: brightness(0);
- /* En grayscale al principio y al final */
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
   }
 
-  50% {
-    filter: grayscale(0);
- /* Sin grayscale en la mitad de la animación */
+  100% {
+    transform: rotate(-360deg);
   }
 }
-
-
 </style>

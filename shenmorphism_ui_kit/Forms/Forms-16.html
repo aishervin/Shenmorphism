@@ -1,129 +1,53 @@
-<form class="otp-Form">
- 
-  <span class="mainHeading">Enter OTP</span>
-  <p class="otpSubheading">We have sent a verification code to your mobile number</p>
-  <div class="inputContainer">
-   <input required="required" maxlength="1" type="text" class="otp-input" id="otp-input1">
-   <input required="required" maxlength="1" type="text" class="otp-input" id="otp-input2">
-   <input required="required" maxlength="1" type="text" class="otp-input" id="otp-input3">
-   <input required="required" maxlength="1" type="text" class="otp-input" id="otp-input4"> 
-   
+<!-- From SHΞN™ Morphism by themrsami - Tags: simple, material design, black, form, dark, tailwind, tailwindbutton -->
+<div class="flex flex-col items-center justify-center h-screen dark">
+  <div class="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-6">
+    <h2 class="text-2xl font-bold text-gray-200 mb-4">Contact Form</h2>
+
+    <form class="flex flex-wrap">
+      <input
+        type="text"
+        class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] mr-[2%]"
+        placeholder="Full Name"
+      />
+      <input
+        type="email"
+        class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] ml-[2%]"
+        placeholder="Email"
+      />
+      <input
+        type="number"
+        class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] mr-[2%]"
+        placeholder="Phone Number"
+      />
+      <input
+        type="text"
+        class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] ml-[2%]"
+        placeholder="Company Name"
+      />
+      <input
+        type="text"
+        class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] mr-[2%]"
+        placeholder="Job Title"
+      />
+      <input
+        type="date"
+        class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] ml-[2%]"
+        placeholder="Date of Birth"
+      />
+      <textarea
+        name="message"
+        class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-auto md:mb-auto md:w-full md:h-auto md:min-h-[100px] md:max-h-[100px] md:flex-grow md:flex-shrink md:flex-auto focus:bg-gray-md:focus:outline-none:focus:ring-blue-md:focus:border-transparent transition ease-in-out duration-fastest"
+        placeholder="Message"
+      ></textarea>
+
+      <button
+        type="submit"
+        class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
+      >
+        Submit
+      </button>
+    </form>
   </div>
-   <button class="verifyButton" type="submit">Verify</button>
-     <button class="exitBtn">×</button>
-     <p class="resendNote">Didn't receive the code? <button class="resendBtn">Resend Code</button></p>
-     
-</form>
+</div>
 
 
-
-<style>
-/* From SHΞN™ Morphism by vinodjangid07 - Tags: button, OTP, form, input */
-.otp-Form {
-  width: 230px;
-  height: 300px;
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 30px;
-  gap: 20px;
-  position: relative;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.082);
-  border-radius: 15px;
-}
-
-.mainHeading {
-  font-size: 1.1em;
-  color: rgb(15, 15, 15);
-  font-weight: 700;
-}
-
-.otpSubheading {
-  font-size: 0.7em;
-  color: black;
-  line-height: 17px;
-  text-align: center;
-}
-
-.inputContainer {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-}
-
-.otp-input {
-  background-color: rgb(228, 228, 228);
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  border: none;
-  border-radius: 7px;
-  caret-color: rgb(127, 129, 255);
-  color: rgb(44, 44, 44);
-  outline: none;
-  font-weight: 600;
-}
-
-.otp-input:focus,
-.otp-input:valid {
-  background-color: rgba(127, 129, 255, 0.199);
-  transition-duration: .3s;
-}
-
-.verifyButton {
-  width: 100%;
-  height: 30px;
-  border: none;
-  background-color: rgb(127, 129, 255);
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  border-radius: 10px;
-  transition-duration: .2s;
-}
-
-.verifyButton:hover {
-  background-color: rgb(144, 145, 255);
-  transition-duration: .2s;
-}
-
-.exitBtn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.171);
-  background-color: rgb(255, 255, 255);
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  border: none;
-  color: black;
-  font-size: 1.1em;
-  cursor: pointer;
-}
-
-.resendNote {
-  font-size: 0.7em;
-  color: black;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-
-.resendBtn {
-  background-color: transparent;
-  border: none;
-  color: rgb(127, 129, 255);
-  cursor: pointer;
-  font-size: 1.1em;
-  font-weight: 700;
-}
-</style>

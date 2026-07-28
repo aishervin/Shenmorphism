@@ -1,58 +1,40 @@
-<button class="cti">
-  <div class="CTI">
-    Code to Infinity
-  </div>
-</button>
+<a>
+  <div class="buuton">HOVER ME</div>
+  <div class="back"></div>
+</a>
+
 <style>
-/* From SHΞN™ Morphism by aadium - Tags: button */
-.cti {
-  background-color: #6019bd;
-  padding: 17px 30px;
-  border: 3px solid transparent;
-  border-radius: 0.6em;
-  transition: 0.2s;
+/* From SHΞN™ Morphism by mouadh-n  - Website: https://youtu.be/b_8fHNIHFk4?si=L-0kb3bKz6VlasUc - Name:  Coding Play - Tags: simple, blue, purple, button, hover, btn, hover effect, css */
+a {
+  color: white;
+  position: relative;
+}
+.buuton {
+  font-weight: 600;
+  border-radius: 2em;
+  padding: 0.75rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.253);
+  backdrop-filter: blur(10px);
+  transform: scale(1.1);
+  transition: 0.2s ease-in-out;
+}
+.back {
+  position: absolute;
+  background: linear-gradient(20deg, rgb(174, 6, 216) 0%, rgb(85, 31, 200));
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: 2em;
+  box-shadow: -5px 0 10px rgb(140, 12, 147), 5px 0 10px rgb(85, 31, 200);
+  transform: translateY(10px);
+}
+.buuton:hover {
+  transform: translateY(10px);
+  box-shadow: -10px 0 50px rgba(241, 0, 108, 0.352),
+    10px 0 50px rgb(85, 31, 200);
 }
 
-.cti:hover {
-  background-color: transparent;
-  border: 3px solid #6019bd;
-  box-shadow: 0px 0px 27px 5px #6019bd;
-}
-
-.CTI {
-  color: #fff;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 17px;
-  font-weight: bold;
-  overflow: hidden;
-  border-right: 4px solid transparent;
-  white-space: nowrap;
-  margin: 0 auto;
-}
-
-.cti:hover .CTI {
-  border-right: 4px solid #6019bd;
-  animation: letters 1.75s steps(22, end),
-    cursor .4s step-end infinite;
-}
-
-@keyframes letters {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes cursor {
-  from {
-    border-color: transparent
-  }
-
-  50% {
-    border-color: #6019bd
-  }
-}
 </style>
+    

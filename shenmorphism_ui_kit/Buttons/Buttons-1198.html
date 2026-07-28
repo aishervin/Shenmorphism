@@ -1,30 +1,67 @@
-<button class="button">Button</button>
-
+<button class="beautiful-button">
+  Click me!
+</button>
 <style>
-/* From SHΞN™ Morphism by speadfreak  - Tags: button */
-.button {
-  background:
-    linear-gradient(140.14deg, #ec540e 15.05%, #d6361f 114.99%) padding-box,
-    linear-gradient(142.51deg, #ff9465 8.65%, #af1905 88.82%) border-box;
-  border-radius: 7px;
-  border: 2px solid transparent;
-
-  text-shadow: 1px 1px 1px #00000040;
-  box-shadow: 8px 8px 20px 0px #45090059;
-
-  padding: 10px 40px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: all 0.3s;
+/* From SHΞN™ Morphism by KlaujonRuamni - Tags: button, html, css, click me */
+.beautiful-button {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to bottom, #1b1c3f, #4a4e91);
+ /* Gradient background */
   color: white;
+ /* White text color */
+  font-family: "Segoe UI", sans-serif;
+ /* Stylish and legible font */
+  font-weight: bold;
   font-size: 18px;
-  font-weight: 500;
+ /* Large font size */
+  border: none;
+ /* No border */
+  border-radius: 30px;
+ /* Rounded corners */
+  padding: 14px 28px;
+ /* Large padding */
+  cursor: pointer;
+ /* Cursor on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+ /* Subtle shadow */
+  animation: button-shimmer 2s infinite;
+  transition: all 0.3s ease-in-out;
+ /* Smooth transition */
 }
 
-.button:hover {
-  box-shadow: none;
-  opacity: 80%;
+/* Hover animation */
+.beautiful-button:hover {
+  background: linear-gradient(to bottom, #2c2f63, #5b67b7);
+  animation: button-particles 1s ease-in-out infinite;
+  transform: translateY(-2px);
 }
 
+/* Click animation */
+.beautiful-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Shimmer animation */
+@keyframes button-shimmer {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
+
+/* Particle animation */
+@keyframes button-particles {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
 </style>
-    

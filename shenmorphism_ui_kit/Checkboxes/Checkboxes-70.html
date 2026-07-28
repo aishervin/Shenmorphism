@@ -1,37 +1,76 @@
 <label class="container">
-  <input type="checkbox">
-  <svg viewBox="0 0 64 64" height="2em" width="2em">
-    <path d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16" pathLength="575.0541381835938" class="path"></path>
-  </svg>
+  <input type="checkbox" checked="checked">
+  <div class="checkmark"></div>
 </label>
 <style>
-/* From SHΞN™ Morphism by SelfMadeSystem - Tags: checkbox */
-.container {
-  cursor: pointer;
-}
-
+/* From SHΞN™ Morphism by sssynk - Tags: checkbox */
+/* Hide the default checkbox */
 .container input {
-  display: none;
+ position: absolute;
+ opacity: 0;
+ cursor: pointer;
+ height: 0;
+ width: 0;
+ border-radius: 5px;
 }
 
-.container svg {
-  overflow: visible;
+.container {
+ display: block;
+ position: relative;
+ cursor: pointer;
+ font-size: 20px;
+ user-select: none;
+ border-radius: 5px;
+ box-shadow: 2px 2px 0px rgb(183, 183, 183);
 }
 
-.path {
-  fill: none;
-  stroke: white;
-  stroke-width: 6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
-  stroke-dasharray: 241 9999999;
-  stroke-dashoffset: 0;
+/* Create a custom checkbox */
+.checkmark {
+ position: relative;
+ top: 0;
+ left: 0;
+ height: 1.3em;
+ width: 1.3em;
+ background-color: #ccc;
+ border-radius: 5px;
 }
 
-.container input:checked ~ svg .path {
-  stroke-dasharray: 70.5096664428711 9999999;
-  stroke-dashoffset: -262.2723388671875;
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+ box-shadow: 3px 3px 0px rgb(183, 183, 183);
+ transition: all 0.2s;
+ opacity: 1;
+ background-image: linear-gradient(45deg, rgb(100, 61, 219) 0%, rgb(217, 21, 239) 100%);
 }
 
+.container input ~ .checkmark {
+ transition: all 0.2s;
+ opacity: 1;
+ box-shadow: 1px 1px 0px rgb(183, 183, 183);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+ content: "";
+ position: absolute;
+ opacity: 0;
+ transition: all 0.2s;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+ opacity: 1;
+ transition: all 0.2s;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+ left: 0.45em;
+ top: 0.25em;
+ width: 0.25em;
+ height: 0.5em;
+ border: solid white;
+ border-width: 0 0.15em 0.15em 0;
+ transform: rotate(45deg);
+}
 </style>

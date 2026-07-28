@@ -1,48 +1,57 @@
- <input type="checkbox" id="checkboxInput">
-    <label for="checkboxInput" class="toggleSwitch">
-    </label>
+<div class="radio-buttons">
+  <label>
+    <input type="radio" name="option" value="1" checked="">
+    <span class="option">Option 1</span>
+  </label>
+  <label>
+    <input type="radio" name="option" value="2">
+    <span class="option">Option 2</span>
+  </label>
+  <label>
+    <input type="radio" name="option" value="3">
+    <span class="option">Option 3</span>
+  </label>
+</div>
+
 <style>
-/* From SHΞN™ Morphism by vinodjangid07 - Tags: switch, toggle, click effect */
-/* To hide the checkbox */
-#checkboxInput {
-  display: none;
-}
-
-.toggleSwitch {
+/* From SHΞN™ Morphism by NlghtM4re - Tags: radio */
+.radio-buttons {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background-color: rgb(164, 215, 246);
+  border-radius: 15px;
+  box-shadow: rgb(71, 175, 239) 0px 5px 29px 5px;
+}
+
+.radio-buttons label {
   position: relative;
-  width: 50px;
-  height: 30px;
-  background-color: rgb(82, 82, 82);
-  border-radius: 20px;
   cursor: pointer;
-  transition-duration: .2s;
 }
 
-.toggleSwitch::after {
-  content: "";
+.radio-buttons input[type="radio"] {
   position: absolute;
-  height: 10px;
-  width: 10px;
-  left: 5px;
-  background-color: transparent;
-  border-radius: 50%;
-  transition-duration: .2s;
-  box-shadow: 5px 2px 7px rgba(8, 8, 8, 0.26);
-  border: 5px solid white;
+  opacity: 0;
+  cursor: pointer;
 }
 
-#checkboxInput:checked+.toggleSwitch::after {
-  transform: translateX(100%);
-  transition-duration: .2s;
-  background-color: white;
-}
-/* Switch background change */
-#checkboxInput:checked+.toggleSwitch {
-  background-color: rgb(148, 118, 255);
-  transition-duration: .2s;
+.option {
+  position: relative;
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  color: black;
+  border-radius: 14px;
+  padding: 10px;
 }
 
+.option:hover {
+  background-color: rgb(137, 207, 251);
+}
+
+.radio-buttons input[type="radio"]:checked + .option {
+  background-color: rgb(71, 175, 239);
+  box-shadow: rgb(11, 70, 107) 0px 5px 29px 5px;
+}
 </style>

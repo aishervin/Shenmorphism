@@ -1,39 +1,74 @@
-<div class="loading">
-  <svg width="64px" height="48px">
-      <polyline points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24" id="back"></polyline>
-    <polyline points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24" id="front"></polyline>
-  </svg>
+<div class="loader">
+  <span class="ball ball1"></span>
+  <span class="ball"></span>
+  <span class="ball"></span>
+  <span class="ball"></span>
+  <span class="ball"></span>
 </div>
+
 <style>
-/* From SHΞN™ Morphism by milley69 - Tags: loader */
-.loading svg polyline {
-  fill: none;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+/* From SHΞN™ Morphism by escannord  - Tags: animation, 3d, loader, light */
+.loader {
+  text-align: center;
+  position: relative;
+  display: flex;
 }
 
-.loading svg polyline#back {
-  fill: none;
-  stroke: #ff4d5033;
+.loader .ball {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.loading svg polyline#front {
-  fill: none;
-  stroke: #ff4d4f;
-  stroke-dasharray: 48, 144;
-  stroke-dashoffset: 192;
-  animation: dash_682 1.4s linear infinite;
+.ball {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 8px 5px, white 5%, black);
+  position: relative;
+  transform-origin: 50% -100px;
 }
 
-@keyframes dash_682 {
-  72.5% {
-    opacity: 0;
+.ball:last-child {
+  animation: balance-right 1.2s infinite linear;
+}
+
+.ball:first-child {
+  animation: balance-left 1.2s infinite linear;
+}
+
+@keyframes balance-right {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: linear;
   }
 
-  to {
-    stroke-dashoffset: 0;
+  50% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-out;
+  }
+
+  75% {
+    transform: rotate(-30deg);
+    animation-timing-function: ease-in;
+  }
+}
+
+@keyframes balance-left {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-out;
+  }
+
+  25% {
+    transform: rotate(30deg);
+    animation-timing-function: ease-in;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    animation-timing-function: linear;
   }
 }
 
 </style>
+    

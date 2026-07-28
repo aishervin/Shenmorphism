@@ -1,66 +1,22 @@
-
 <button>
-    <span class="circle1"></span>
-    <span class="circle2"></span>
-    <span class="circle3"></span>
-    <span class="circle4"></span>
-    <span class="circle5"></span>
-    <span class="text">Submit</span>
+  Button
 </button>
 <style>
-/* From SHΞN™ Morphism by KINGFRESS - Tags: button */
+/* From SHΞN™ Morphism by AnshKaushal - Tags: button */
 button {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  color: white;
-  background-color: #171717;
-  padding: 1em 2em;
-  border: none;
-  border-radius: .6rem;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
+  border: 1.5px solid black;
+  padding: 10px;
+  width: 100px;
+  margin: 15px;
+  color: #f5f0f0;
+  background-color: #101014;
+  box-shadow: 3px 3px 6px #101014;
+  transition: transform 0.3s ease-in-out;
 }
 
-button span:not(:nth-child(6)) {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  height: 30px;
-  width: 30px;
-  background-color: #0c66ed;
-  border-radius: 50%;
-  transition: .6s ease;
+button:hover {
+  background-color: #f5f0f0;
+  color: #101014;
+  transform: scale(1.2);
 }
-
-button span:nth-child(6) {
-  position: relative;
-}
-
-button span:nth-child(1) {
-  transform: translate(-3.3em, -4em);
-}
-
-button span:nth-child(2) {
-  transform: translate(-6em, 1.3em);
-}
-
-button span:nth-child(3) {
-  transform: translate(-.2em, 1.8em);
-}
-
-button span:nth-child(4) {
-  transform: translate(3.5em, 1.4em);
-}
-
-button span:nth-child(5) {
-  transform: translate(3.5em, -3.8em);
-}
-
-button:hover span:not(:nth-child(6)) {
-  transform: translate(-50%, -50%) scale(4);
-  transition: 1.5s ease;
-}
-  
 </style>

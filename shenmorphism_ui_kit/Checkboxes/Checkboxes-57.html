@@ -1,97 +1,95 @@
-<div class="checkbox">
-  <input type="checkbox" id="cbx" />
-  <label for="cbx" class="cbx">
-    <div class="flip">
-      <div class="front"></div>
-      <div class="back">
-        <svg viewBox="0 0 16 14" height="14" width="16">
-          <path d="M2 8.5L6 12.5L14 1.5"></path>
-        </svg>
-      </div>
-    </div>
-  </label>
+<div class="customCheckBoxHolder">
+
+    <input type="checkbox" id="cCB1" class="customCheckBoxInput">
+    <label for="cCB1" class="customCheckBoxWrapper">
+        <div class="customCheckBox">
+            <div class="inner">Toggle Me</div>
+        </div>
+    </label>
+
 </div>
-
 <style>
-/* From SHΞN™ Morphism by elijahgummer  - Tags: simple, animation, blue, checkbox, modern, transition, click effect, click animation */
-.checkbox {
+/* From SHΞN™ Morphism by WhiteNervosa - Tags: neumorphism, checkbox, radio */
+.customCheckBoxHolder {
+  margin: 5px;
+  display: flex;
+}
+
+.customCheckBox {
+  width: fit-content;
   position: relative;
-}
-
-.checkbox input[type="checkbox"] {
-  display: none;
-  visibility: hidden;
-}
-
-.checkbox .cbx {
-  -webkit-perspective: 20;
-  perspective: 20;
-  display: inline-block;
-  border: 2px solid #e8e8eb;
-  background: #e8e8eb;
-  border-radius: 4px;
-  transform: translate3d(0, 0, 0);
+  overflow: hidden;
   cursor: pointer;
-  transition: all 0.3s ease;
+  user-select: none;
+  padding: 2px 8px;
+  background-color: rgba(0, 0, 0, 0.16);
+  border-radius: 0px;
+  color: rgba(255, 255, 255, 0.7);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 300ms;
+  transition-property: color, background-color, box-shadow;
+  display: flex;
+  height: 32px;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px 1px 1px 0px;
+  outline: none;
+  justify-content: center;
+  min-width: 55px;
 }
 
-.checkbox .cbx:hover {
-  border-color: #0b76ef;
+.customCheckBox:hover {
+  background-color: #2c2c2c;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.23) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.17) 0px 2px 4px 1px;
 }
 
-.checkbox .flip {
-  display: block;
-  transition: all 0.4s ease;
-  transform-style: preserve-3d;
-  position: relative;
-  width: 20px;
-  height: 20px;
+.customCheckBox .inner {
+  font-size: 18px;
+  font-weight: 900;
+  pointer-events: none;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 300ms;
+  transition-property: transform;
+  transform: translateY(0px);
 }
 
-.checkbox input[type="checkbox"]:checked + .cbx {
-  border-color: #0b76ef;
+.customCheckBox:hover .inner {
+  transform: translateY(-2px);
 }
 
-.checkbox input[type="checkbox"]:checked + .cbx .flip {
-  transform: rotateY(180deg);
+/* Multiple Checkboxes can be chained together for a radio input */
+.customCheckBoxWrapper:first-of-type .customCheckBox {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-right: 0px;
 }
 
-.checkbox .front,
-.checkbox .back {
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 2px;
+.customCheckBoxWrapper:last-of-type .customCheckBox {
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-left: 0px;
 }
 
-.checkbox .front {
-  background: #fff;
-  z-index: 1;
+.customCheckBoxInput {
+  display: none;
 }
 
-.checkbox .back {
-  transform: rotateY(180deg);
-  background: #0b76ef;
-  text-align: center;
-  color: #fff;
-  line-height: 20px;
-  box-shadow: 0 0 0 1px #0b76ef;
+.customCheckBoxInput:checked + .customCheckBoxWrapper .customCheckBox {
+  background-color: #2d6737;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.23) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.17) 0px 2px 4px 1px;
 }
 
-.checkbox .back svg {
-  margin-top: 3px;
-  fill: none;
+.customCheckBoxInput:checked + .customCheckBoxWrapper .customCheckBox .inner {
+  transform: translateY(-2px);
 }
 
-.checkbox .back svg path {
-  stroke: #fff;
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.customCheckBoxInput:checked + .customCheckBoxWrapper .customCheckBox:hover {
+  background-color: #34723f;
+  box-shadow: rgba(0, 0, 0, 0.26) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.15) 0px 3px 6px 2px;
 }
 
+.customCheckBoxWrapper .customCheckBox:hover .inner {
+  transform: translateY(-2px);
+}
 </style>
-    

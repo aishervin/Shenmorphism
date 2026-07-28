@@ -1,35 +1,56 @@
-<button> Click me
+<button class="button">
+<p class="submit">submit</p>
+
 </button>
 <style>
-/* From SHΞN™ Morphism by TimTrayler - Tags: button */
-button {
- --hover-shadows: 16px 16px 33px #121212,
-                   -16px -16px 33px #303030;
- --accent: fuchsia;
- font-weight: bold;
- letter-spacing: 0.1em;
- border: none;
- border-radius: 1.1em;
- background-color: #212121;
- color: white;
- padding: 1em 2em;
- transition: box-shadow ease-in-out 0.3s,
-             background-color ease-in-out 0.1s,
-             letter-spacing ease-in-out 0.1s,
-             transform ease-in-out 0.1s;
- box-shadow: 13px 13px 10px #1c1c1c,
-             -13px -13px 10px #262626;
+/* From SHΞN™ Morphism by Sujanthapast0 - Source: Sujanthapast0 - Tags: animation, subscription, minimalist, success, button, smooth, submit, 3d button */
+.button {
+  width: 90px;
+  height: 40px;
+  position: relative;
+  font-family: var(--font);
+  color: #3b82f6;
+  font-weight: 600;
+  background-color: #fff;
+  border: none;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  transition: all ease 100ms;
 }
 
 button:hover {
- box-shadow: var(--hover-shadows);
+  background-color: #cbdcf8;
 }
 
-button:active {
- box-shadow: var(--hover-shadows),
-              var(--accent) 0px 0px 30px 5px;
- background-color: var(--accent);
- transform: scale(0.95);
+button:focus {
+  background-color: #cbdcf8;
 }
+
+button::before {
+  content: 'done✅';
+  position: absolute;
+  color: #3b82f6;
+  left: 0;
+  top: -14px;
+  right: 0;
+  transition: all ease 300ms;
+  opacity: 0%;
+}
+
+button:focus::before {
+  opacity: 100%;
+  transform: translatey(26px);
+}
+
+.submit {
+  transition: all ease 100ms;
+  opacity: 100%;
+}
+
+button:focus > .submit {
+  opacity: 0%;
+}
+
 
 </style>

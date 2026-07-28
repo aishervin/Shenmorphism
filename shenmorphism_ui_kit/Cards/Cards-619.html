@@ -1,26 +1,139 @@
-<!-- From SHΞN™ Morphism by EcheverriaJesus - Tags: card, product, card hover, tailwind -->
-<div class="flex flex-col justify-center items-center w-auto h-auto gap-5 p-5 bg-gray-800 rounded-lg md:flex-row">
-<div class="flex justify-center items-center w-28 h-28 p-5 bg-gradient-to-r from-green-400 to-[#002Ff9] rounded-lg hover:-translate-y-10 duration-700 hover:scale-125">
- <svg class="logo-svg" viewBox="0 0 29.667 31.69" xmlns="http://www.w3.org/2000/svg" fill="white">
-      <path transform="translate(0 0)" d="M12.827,1.628A1.561,1.561,0,0,1,14.31,0h2.964a1.561,1.561,0,0,1,1.483,1.628v11.9a9.252,9.252,0,0,1-2.432,6.852q-2.432,2.409-6.963,2.409T2.4,20.452Q0,18.094,0,13.669V1.628A1.561,1.561,0,0,1,1.483,0h2.98A1.561,1.561,0,0,1,5.947,1.628V13.191a5.635,5.635,0,0,0,.85,3.451,3.153,3.153,0,0,0,2.632,1.094,3.032,3.032,0,0,0,2.582-1.076,5.836,5.836,0,0,0,.816-3.486Z" data-name="Path 6" id="Path_6"></path>
-      <path transform="translate(-45.91 0)" d="M75.207,20.857a1.561,1.561,0,0,1-1.483,1.628h-2.98a1.561,1.561,0,0,1-1.483-1.628V1.628A1.561,1.561,0,0,1,70.743,0h2.98a1.561,1.561,0,0,1,1.483,1.628Z" data-name="Path 7" id="Path_7"></path>
-      <path transform="translate(0 -51.963)" d="M0,80.018A1.561,1.561,0,0,1,1.483,78.39h26.7a1.561,1.561,0,0,1,1.483,1.628v2.006a1.561,1.561,0,0,1-1.483,1.628H1.483A1.561,1.561,0,0,1,0,82.025Z" data-name="Path 8" id="Path_8"></path>
-    </svg>
-</div>
-<div class="max-w-sm h-auto space-y-3">
-  <div class="flex justify-center items-center sm:justify-between">
-  <h2 class="text-white text-2xl font-bold tracking-widest">Jesus Echeverria</h2>
-  <svg viewBox="0 0 24 24" height="20" width="20" xmlns="http://www.w3.org/2000/svg" class="hidden sm:flex hover:scale-150 duration-300 fill-white cursor-pointer"><path d="M16 2v17.582l-4-3.512-4 3.512v-17.582h8zm2-2h-12v24l6-5.269 6 5.269v-24z"></path></svg>
-  </div>
-  <p class="text-sm text-gray-200">Description: product information for sale.</p>
-  <div class="flex gap-6 items-center justify-center">
-    <p class="text-white font-bold text-lg">$300.00</p>
-    <p class="text-gray-300 font-semibold text-sm line-through">$320.00</p>
-  </div>
-  <div class="flex justify-around items-center my-2">
-    <button class="px-2 bg-blue-600 p-1 rounded-md text-white font-semibold shadow-xl shadow-blue-500/50 hover:ring-2 ring-blue-400 hover:scale-75 duration-500">Buy Now</button>
-    <button class="px-2 border-2 border-white p-1 rounded-md text-white font-semibold shadow-lg shadow-white hover:scale-75 duration-500">Add to Cart</button>
+<div class="box">
+  <span></span>
+  <div class="content">
+    <h2>Hover me!</h2>
   </div>
 </div>
-</div>
+<style>
+/* From SHΞN™ Morphism by Codewithvinay - Tags: glassmorphism, card */
+.box {
+ position: relative;
+ width: 220px;
+ height: 300px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ transition: 0.5s;
+ z-index: 1;
+}
 
+.box::before {
+ content: ' ';
+ position: absolute;
+ top: 0;
+ left: 50px;
+ width: 50%;
+ height: 100%;
+ text-decoration: none;
+ background: #fff;
+ border-radius: 8px;
+ transform: skewX(15deg);
+ transition: 0.5s;
+}
+
+.box::after {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 50;
+ width: 50%;
+ height: 100%;
+ background: #fff;
+ border-radius: 8px;
+ transform: skewX(15deg);
+ transition: 0.5s;
+ filter: blur(30px);
+}
+
+.box:hover:before,
+.box:hover:after {
+ transform: skewX(0deg) scaleX(1.3);
+}
+
+.box:before,
+.box:after {
+ background: linear-gradient(315deg, #ffbc00, #ff0058)
+}
+
+.box span {
+ display: block;
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ z-index: 5;
+ pointer-events: none;
+}
+
+.box span::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 0;
+ height: 0;
+ border-radius: 8px;
+ background: rgba(255, 255, 255, 0.1);
+ backdrop-filter: blur(10px);
+ opacity: 0;
+ transition: 0.1s;
+ animation: animate 2s ease-in-out infinite;
+ box-shadow: 0 5px 15px rgba(0,0,0,0.08)
+}
+
+.box span::before {
+ top: -40px;
+ left: 40px;
+ width: 50px;
+ height: 50px;
+ opacity: 1;
+}
+
+.box span::after {
+ content: '';
+ position: absolute;
+ bottom: 0;
+ right: 0;
+ width: 100%;
+ height: 100%;
+ border-radius: 8px;
+ background: rgba(255, 255, 255, 0.1);
+ backdrop-filter: blur(10px);
+ opacity: 0;
+ transition: 0.5s;
+ box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+ animation-delay: -1s;
+}
+
+.box span:after {
+ bottom: -40px;
+ right: 40px;
+ width: 50px;
+ height: 50px;
+ opacity: 1;
+}
+
+.box .content {
+ position: relative;
+ width: 190px;
+ height: 254px;
+ padding: 20px 40px;
+ background: rgba(255, 255, 255, 0.05);
+ backdrop-filter: blur(10px);
+ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+ border-radius: 8px;
+ z-index: 1;
+ transform: 0.5s;
+ color: #fff;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.box .content h2 {
+ font-size: 20px;
+ color: #fff;
+ margin-bottom: 10px;
+}
+</style>

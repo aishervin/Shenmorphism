@@ -1,41 +1,76 @@
-<div class="loader">
-  <div class="loader_cube loader_cube--color"></div>
-   <div class="loader_cube loader_cube--glowing"></div>
-</div>
+<svg class="loader" viewBox="0 0 100 100">
+    <circle class="moon moon-back"></circle>
+    <circle class="planet"></circle>
+    <circle class="moon moon-front"></circle>
+</svg>
 <style>
-/* From SHΞN™ Morphism by mobinkakei - Tags: gradient, loader, blur filter */
+/* From SHΞN™ Morphism by Charly-T - Tags: loader */
 .loader {
-  width: 150px;
-  height: 150px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  --moon-r: 0.7em;
+  --planet-r: 1.75em;
+  --planet-stroke-width: 4;
+  --center: 50;
+  --moon-max: 80;
+  --moon-min: 20;
+  --animation-duration: 4000ms;
+  --planet-stroke: black;
+  --planet-fill: white;
+  --moon-fill: #fecb00;
+  width: 7em;
 }
 
-.loader_cube {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 30px;
+.planet {
+  cx: var(--center);
+  cy: var(--center);
+  r: var(--planet-r);
+  fill: var(--planet-fill);
+  stroke: var(--planet-stroke);
+  stroke-width: var(--planet-stroke-width);
 }
 
-.loader_cube--glowing {
-  z-index: 2;
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+.moon {
+  fill: var(--moon-fill);
+  r: var(--moon-r);
 }
 
-.loader_cube--color {
-  z-index: 1;
-  filter: blur(2px);
-  background: linear-gradient(135deg, #1afbf0, #da00ff);
-  animation: loadtwo 2.5s ease-in-out infinite;
+.moon-front {
+  animation: orbit0234 var(--animation-duration) ease-in-out infinite,
+    orbit-front var(--animation-duration) linear infinite;
 }
 
-@keyframes loadtwo {
+.moon-back {
+  animation: orbit0234 var(--animation-duration) ease-in-out infinite;
+}
+
+@keyframes orbit0234 {
+  0% {
+    cx: var(--moon-max);
+    cy: var(--moon-min);
+  }
+
   50% {
-    transform: rotate(-80deg);
+    cx: var(--moon-min);
+    cy: var(--moon-max);
+  }
+
+  100% {
+    cx: var(--moon-max);
+    cy: var(--moon-min);
   }
 }
+
+@keyframes orbit-front {
+  0% {
+    opacity: 0;
+  }
+
+  49% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
 </style>

@@ -1,25 +1,55 @@
-<div class="spinner"></div>
+<div class="coin">
+  <span class="engraving">$</span>
+</div>
+
 <style>
-/* From SHΞN™ Morphism by AHMED-MIT - Tags: loader, about me, accept call */
-.spinner {
-  --d: 24.6px;
-  width: 4.5px;
-  height: 4.5px;
-  border-radius: 50%;
-  color: #474bff;
-  box-shadow: calc(1*var(--d))      calc(0*var(--d))     0 0,
-          calc(0.707*var(--d))  calc(0.707*var(--d)) 0 1.1px,
-          calc(0*var(--d))      calc(1*var(--d))     0 2.2px,
-          calc(-0.707*var(--d)) calc(0.707*var(--d)) 0 3.4px,
-          calc(-1*var(--d))     calc(0*var(--d))     0 4.5px,
-          calc(-0.707*var(--d)) calc(-0.707*var(--d))0 5.6px,
-          calc(0*var(--d))      calc(-1*var(--d))    0 6.7px;
-  animation: spinner-a90wxe 1s infinite steps(8);
+/* From SHΞN™ Morphism by MiniJohan  - Tags: animation, loader, flip, gold */
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin: 0;
+  background-color: #f0f0f0;
 }
 
-@keyframes spinner-a90wxe {
+.coin {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: #d4af37; /* Coin color */
+  border-radius: 50%;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); /* Coin shadow */
+  background-image: radial-gradient(
+    circle at 50% 120%,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0) 80%
+  ); /* Coin texture */
+  animation: flip 1s infinite;
+}
+
+.engraving {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5); /* Engraving color */
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5); /* Engraving shadow */
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
   100% {
-    transform: rotate(1turn);
+    transform: rotateY(360deg);
   }
 }
+
 </style>
+    

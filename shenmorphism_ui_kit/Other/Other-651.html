@@ -1,212 +1,202 @@
-<div class="boxes">
-    <div class="box">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div class="box">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div class="box">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div class="box">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+<div class="cssload-container">
+   <ul class="cssload-flex-container">
+      <li>
+         <span class="cssload-loading cssload-one"></span>
+         <span class="cssload-loading cssload-two"></span>
+         <span class="cssload-loading-center"></span>
+      </li>
+   </ul>
 </div>
 <style>
-/* From SHΞN™ Morphism by Nawsome - Tags: 3d, loader */
-.boxes {
-  --size: 32px;
-  --duration: 800ms;
-  height: calc(var(--size) * 2);
-  width: calc(var(--size) * 3);
+/* From SHΞN™ Morphism by exyreams - Source: MichaelRyanSmith - Tags: loading, loader, loading animation */
+.cssload-container * {
+  box-sizing: border-box;
+}
+
+.cssload-container {
+  margin: 38px auto 0 auto;
+  max-width: 1048px;
+}
+
+.cssload-container ul li {
+  list-style: none;
+}
+
+.cssload-flex-container {
+  display: flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.cssload-flex-container li {
+  padding: 19px;
+  height: 188px;
+  width: 188px;
+  margin: 56px 38px;
   position: relative;
-  transform-style: preserve-3d;
-  transform-origin: 50% 50%;
-  margin-top: calc(var(--size) * 1.5 * -1);
-  transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
+  text-align: center;
 }
 
-.boxes .box {
-  width: var(--size);
-  height: var(--size);
+.cssload-loading-center {
+  display: inline-block;
+  position: absolute;
+    /* The color can be custmized, This color is for center cube.*/
+  background: #ff0000;
+  height: 56px;
+  width: 56px;
+  left: 68px;
+  top: 69px;
+  transform: rotate(45deg);
+  border-radius: 6px;
+  animation: pulse 1.3s ease infinite;
+}
+
+.cssload-loading {
+  display: inline-block;
+  position: relative;
+  width: 141px;
+  height: 141px;
+  margin-top: 6px;
+  transform: rotate(45deg);
+}
+
+.cssload-loading:after, .cssload-loading:before {
+  position: absolute;
+  content: '';
+  height: 19px;
+  width: 19px;
+  display: block;
   top: 0;
-  left: 0;
-  position: absolute;
-  transform-style: preserve-3d;
+    /* The color can be custmized, This color is for 4 cubes.*/
+  background: #ff5252;
+  border-radius: 6px;
 }
 
-.boxes .box:nth-child(1) {
-  transform: translate(100%, 0);
-  -webkit-animation: box1 var(--duration) linear infinite;
-  animation: box1 var(--duration) linear infinite;
+.cssload-loading:after {
+  right: 0;
+  animation: square-tr 2.6s ease infinite;
+  animation-delay: .162.5s;
 }
 
-.boxes .box:nth-child(2) {
-  transform: translate(0, 100%);
-  -webkit-animation: box2 var(--duration) linear infinite;
-  animation: box2 var(--duration) linear infinite;
+.cssload-loading:before {
+  animation: square-tl 2.6s ease infinite;
+  animation-delay: .162.5s;
 }
 
-.boxes .box:nth-child(3) {
-  transform: translate(100%, 100%);
-  -webkit-animation: box3 var(--duration) linear infinite;
-  animation: box3 var(--duration) linear infinite;
+.cssload-loading.cssload-two {
+  position: relative;
+  top: -150px;
 }
 
-.boxes .box:nth-child(4) {
-  transform: translate(200%, 0);
-  -webkit-animation: box4 var(--duration) linear infinite;
-  animation: box4 var(--duration) linear infinite;
+.cssload-loading.cssload-two:after, .cssload-loading.cssload-two:before {
+  bottom: 0;
+  top: initial;
 }
 
-.boxes .box > div {
-  --background: #5C8DF6;
-  --top: auto;
-  --right: auto;
-  --bottom: auto;
-  --left: auto;
-  --translateZ: calc(var(--size) / 2);
-  --rotateY: 0deg;
-  --rotateX: 0deg;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: var(--background);
-  top: var(--top);
-  right: var(--right);
-  bottom: var(--bottom);
-  left: var(--left);
-  transform: rotateY(var(--rotateY)) rotateX(var(--rotateX)) translateZ(var(--translateZ));
+.cssload-loading.cssload-two:after {
+  animation: square-br 2.6s ease infinite;
+  animation-direction: reverse;
 }
 
-.boxes .box > div:nth-child(1) {
-  --top: 0;
-  --left: 0;
+.cssload-loading.cssload-two:before {
+  animation: square-bl 2.6s ease infinite;
+  animation-direction: reverse;
 }
 
-.boxes .box > div:nth-child(2) {
-  --background: #145af2;
-  --right: 0;
-  --rotateY: 90deg;
-}
-
-.boxes .box > div:nth-child(3) {
-  --background: #447cf5;
-  --rotateX: -90deg;
-}
-
-.boxes .box > div:nth-child(4) {
-  --background: #DBE3F4;
-  --top: 0;
-  --left: 0;
-  --translateZ: calc(var(--size) * 3 * -1);
-}
-
-@-webkit-keyframes box1 {
-  0%, 50% {
-    transform: translate(100%, 0);
-  }
-
-  100% {
-    transform: translate(200%, 0);
-  }
-}
-
-@keyframes box1 {
-  0%, 50% {
-    transform: translate(100%, 0);
-  }
-
-  100% {
-    transform: translate(200%, 0);
-  }
-}
-
-@-webkit-keyframes box2 {
+@keyframes square-tl {
   0% {
-    transform: translate(0, 100%);
-  }
-
-  50% {
     transform: translate(0, 0);
   }
 
-  100% {
-    transform: translate(100%, 0);
-  }
-}
-
-@keyframes box2 {
-  0% {
-    transform: translate(0, 100%);
+  25% {
+    transform: translate(0, 117.5px);
   }
 
   50% {
+    transform: translate(117.5px, 117.5px);
+  }
+
+  75% {
+    transform: translate(117.5px, 0);
+  }
+}
+
+@keyframes square-bl {
+  0% {
     transform: translate(0, 0);
   }
 
-  100% {
-    transform: translate(100%, 0);
-  }
-}
-
-@-webkit-keyframes box3 {
-  0%, 50% {
-    transform: translate(100%, 100%);
-  }
-
-  100% {
-    transform: translate(0, 100%);
-  }
-}
-
-@keyframes box3 {
-  0%, 50% {
-    transform: translate(100%, 100%);
-  }
-
-  100% {
-    transform: translate(0, 100%);
-  }
-}
-
-@-webkit-keyframes box4 {
-  0% {
-    transform: translate(200%, 0);
+  25% {
+    transform: translate(0, -117.5px);
   }
 
   50% {
-    transform: translate(200%, 100%);
+    transform: translate(117.5px, -117.5px);
   }
 
-  100% {
-    transform: translate(100%, 100%);
+  75% {
+    transform: translate(117.5px, 0);
   }
 }
 
-@keyframes box4 {
+@keyframes square-tr {
   0% {
-    transform: translate(200%, 0);
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(-117.5px, 0);
   }
 
   50% {
-    transform: translate(200%, 100%);
+    transform: translate(-117.5px, 117.5px);
   }
 
-  100% {
-    transform: translate(100%, 100%);
+  75% {
+    transform: translate(0, 117.5px);
+  }
+}
+
+@keyframes square-br {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(-117.5px, 0);
+  }
+
+  50% {
+    transform: translate(-117.5px, -117.5px);
+  }
+
+  75% {
+    transform: translate(0, -117.5px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(inherit) rotate(45deg);
+  }
+
+  75% {
+    transform: scale(0.25) rotate(45deg);
   }
 }
 </style>

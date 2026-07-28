@@ -1,27 +1,42 @@
-<!-- From SHΞN™ Morphism by LeryLey  - Tags: button, shadow, submit -->
-<button
-  class="cursor-pointer shadow-xl hover:shadow-none duration-300 border-2 border-gray-400 p-1 w-40 h-14 rounded-xl bg-gray-50"
->
-  <div
-    class="h-full flex gap-1 items-center justify-center shadow-inner shadow-black/10 rounded-full"
-  >
-    <svg
-      class="size-4 -rotate-45"
-      stroke="currentColor"
-      stroke-width="1.5"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
-        stroke-linejoin="round"
-        stroke-linecap="round"
-      ></path>
-    </svg>
-    <span class="font-medium"> Send Telegram </span>
-  </div>
-</button>
 
+<button class="custom-btn btn-1">Read More</button>
+<style>
+/* From SHΞN™ Morphism by bandirevanth - Tags: button */
+.custom-btn {
+ width: 130px;
+ height: 40px;
+ color: #fff;
+ border-radius: 5px;
+ padding: 10px 25px;
+ font-family: 'Lato', sans-serif;
+ font-weight: 500;
+ background: transparent;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ position: relative;
+ display: inline-block;
+ box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+ outline: none;
+}
 
-    
+.btn-1 {
+ background: rgb(96,9,240);
+ background: linear-gradient(0deg, rgba(96,9,240,1) 0%, rgba(129,5,240,1) 100%);
+ border: none;
+}
+
+.btn-1:before {
+ height: 0%;
+ width: 2px;
+}
+
+.btn-1:hover {
+ box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
+
+</style>

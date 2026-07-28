@@ -1,74 +1,60 @@
-<div class="container">
-	<form>
-		<label>
-			<input type="radio" name="radio" checked="">
-			<span>HTML</span>
-		</label>
-		<label>
-			<input type="radio" name="radio">
-			<span>CSS</span>
-		</label>
-		<label>
-			<input type="radio" name="radio">
-			<span>Javascript</span>
-		</label>
-	</form>
-</div>
+<label class="switch">
+  <input class="chk" type="checkbox">
+  <span class="slider"></span>
+</label>
 <style>
-/* From SHΞN™ Morphism by Pradeepsaranbishnoi - Tags: radio */
-.container form {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-
-.container label {
-  display: flex;
-  cursor: pointer;
-  font-weight: 500;
+/* From SHΞN™ Morphism by Praashoo7 - Tags: switch, rounded, smooth */
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
   position: relative;
-  overflow: hidden;
-  margin-bottom: 0.375em;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
 }
 
-.container  label input {
+/* Hide default HTML checkbox */
+.switch .chk {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
   position: absolute;
-  left: -9999px;
-}
-
-.container label input:checked + span {
-  background-color: #414181;
-  color: white;
-}
-
-.container label input:checked + span:before {
-  box-shadow: inset 0 0 0 0.4375em #00005c;
-}
-
-.container label span {
-  display: flex;
-  align-items: center;
-  padding: 0.375em 0.75em 0.375em 0.375em;
-  border-radius: 99em;
-  transition: 0.25s ease;
-  color: #414181;
-}
-
-.container label span:hover {
-  background-color: #d6d6e5;
-}
-
-.container label span:before {
-  display: flex;
-  flex-shrink: 0;
-  content: "";
-  background-color: #fff;
-  width: 1.5em;
-  height: 1.5em;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
   border-radius: 50%;
-  margin-right: 0.375em;
-  transition: 0.25s ease;
-  box-shadow: inset 0 0 0 0.125em #00005c;
 }
 
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 2.5px;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: white;
+  transition: .4s;
+  scale: 0;
+}
+
+.chk:checked + .slider {
+  background-color: limegreen;
+  transform: scale(0.7);
+  border-radius: 50%;
+}
+
+.chk:checked + .slider:before {
+  transform: rotateZ(360deg);
+  scale: 1;
+  border-radius: 50%;
+}
 </style>

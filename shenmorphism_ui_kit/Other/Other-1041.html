@@ -1,102 +1,111 @@
-<div class="spinner">
-  <div></div>   
-  <div></div>    
-  <div></div>    
-  <div></div>    
-  <div></div>    
-  <div></div>    
-  <div></div>    
-  <div></div>    
-  <div></div>    
-  <div></div>    
+<div class="space-loader">
+  <div id="stars" class="stars"></div>
+  <div class="orbit"></div>
+  <div class="ring"></div>
+  <div class="planet"></div>
+  <div class="satellite"></div>
 </div>
 
-
 <style>
-/* From SHΞN™ Morphism by AHMED-MIT - Tags: about me, css, 2FA */
-.spinner {
+/* From SHΞN™ Morphism by IsaiahAltDelete  - Tags: loader */
+.space-loader {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  background-color: #000;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.planet {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at 30% 30%, #fff, #888);
+  border-radius: 50%;
   position: absolute;
-  width: 9px;
-  height: 9px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
-.spinner div {
+.ring {
+  width: 120px;
+  height: 120px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
   position: absolute;
-  width: 50%;
-  height: 150%;
-  background: #474bff;
-  transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
-  animation: spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(75deg) rotateY(15deg);
+  animation: rotate 12s linear infinite;
 }
 
-.spinner div:nth-child(1) {
-  --delay: 0.1;
-  --rotation: 36;
-  --translation: 150;
+.orbit {
+  width: 160px;
+  height: 160px;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.spinner div:nth-child(2) {
-  --delay: 0.2;
-  --rotation: 72;
-  --translation: 150;
+.satellite {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit 8s linear infinite;
 }
 
-.spinner div:nth-child(3) {
-  --delay: 0.3;
-  --rotation: 108;
-  --translation: 150;
+.stars {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  animation: twinkle 4s ease-in-out infinite;
 }
 
-.spinner div:nth-child(4) {
-  --delay: 0.4;
-  --rotation: 144;
-  --translation: 150;
+.star {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
 }
 
-.spinner div:nth-child(5) {
-  --delay: 0.5;
-  --rotation: 180;
-  --translation: 150;
-}
-
-.spinner div:nth-child(6) {
-  --delay: 0.6;
-  --rotation: 216;
-  --translation: 150;
-}
-
-.spinner div:nth-child(7) {
-  --delay: 0.7;
-  --rotation: 252;
-  --translation: 150;
-}
-
-.spinner div:nth-child(8) {
-  --delay: 0.8;
-  --rotation: 288;
-  --translation: 150;
-}
-
-.spinner div:nth-child(9) {
-  --delay: 0.9;
-  --rotation: 324;
-  --translation: 150;
-}
-
-.spinner div:nth-child(10) {
-  --delay: 1;
-  --rotation: 360;
-  --translation: 150;
-}
-
-@keyframes spinner-fzua35 {
-  0%, 10%, 20%, 30%, 50%, 60%, 70%, 80%, 90%, 100% {
-    transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateX(75deg) rotateY(15deg) rotate(0deg);
   }
+  100% {
+    transform: translate(-50%, -50%) rotateX(75deg) rotateY(15deg)
+      rotate(360deg);
+  }
+}
 
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(80px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(80px) rotate(-360deg);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
   50% {
-    transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
+    opacity: 0.8;
   }
 }
 
 </style>
+    

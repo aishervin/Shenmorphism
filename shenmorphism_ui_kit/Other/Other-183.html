@@ -1,45 +1,56 @@
- <input id="checkboxInput" type="checkbox">
-    <label class="toggleSwitch" for="checkboxInput">
-    </label>
+<label class="switch">
+  <input type="checkbox">
+  <span class="toggle">
+  </span>
+</label>
 <style>
-/* From SHΞN™ Morphism by vinodjangid07 - Tags: skeuomorphism, switch, metal */
-/* To hide the checkbox */
-#checkboxInput {
-  display: none;
-}
-
-.toggleSwitch {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* From SHΞN™ Morphism by r7chardgh - Tags: switch, lever, mincraft */
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
   position: relative;
-  width: 80px;
-  height: 40px;
-  background-color: rgb(199, 199, 199);
-  border-radius: 20px;
-  cursor: pointer;
-  transition-duration: .3s;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
 }
 
-.toggleSwitch::after {
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle {
+  position: relative;
+  display: flex;
+  width: 2.8em;
+  height: 1em;
+  background-color: rgb(165, 165, 165);
+  justify-content: center;
+}
+
+.toggle::before {
   content: "";
   position: absolute;
-  height: 40px;
-  width: 40px;
-  left: 0px;
-  background: conic-gradient(rgb(104, 104, 104),white,rgb(104, 104, 104),white,rgb(104, 104, 104));
-  border-radius: 50%;
-  transition-duration: .3s;
-  box-shadow: 5px 2px 7px rgba(8, 8, 8, 0.308);
+  z-index: -1;
+  width: .8em;
+  height: 2em;
+  margin-bottom: .5em;
+  bottom: 0;
+  background-color: rgb(153, 104, 39);
+  box-shadow: 0 -1em 0 0 rgb(165, 165, 165);
+  transform-origin: bottom;
+  transform: rotateZ(-30deg);
+  transition: transform 150ms;
 }
 
-#checkboxInput:checked+.toggleSwitch::after {
-  transform: translateX(100%);
-  transition-duration: .3s;
+.switch input:checked + .toggle::before {
+  transform: rotateZ(30deg);
 }
-/* Switch background change */
-#checkboxInput:checked+.toggleSwitch {
-  background-color: rgb(153, 197, 151);
-  transition-duration: .3s;
-}
+
+.switch input:checked + .toggle {
+  box-shadow: 0 -1em 2em 0 rgb(230, 111, 111);
+}     
+
 </style>

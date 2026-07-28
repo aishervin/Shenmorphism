@@ -1,43 +1,30 @@
-<button class="btn">
-  Button
+<button class="button">
+    Fondle ME!
 </button>
 <style>
-/* From SHΞN™ Morphism by eslam-hany - Tags: button */
-.btn {
-  position: relative;
-  padding: 10px 50px;
-  font-size: 20px;
-  border: 1px solid #002B5B;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 15px;
-  transition: all 0.5s;
-  z-index: 1;
-}
-
-.btn:hover {
-  transform: scale(1.1);
+/* From SHΞN™ Morphism by Madflows - Tags: button, animated */
+.button {
+  outline: none;
+  border: none;
+  height: 3.5em;
+  padding: 0 2.5rem;
+  border-radius: 0.375rem;
+  background: #4503dc;
   color: #fff;
-  transition: all 0.5s;
+  -webkit-box-shadow: 0 0.4rem 0 0 #3700b8;
+  box-shadow: 0 0.4rem 0 0 #3700b8;
+  letter-spacing: 1px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-family: sans-serif;
+  font-weight: 700;
 }
 
-.btn::after {
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 50%;
-  width: 0%;
-  height: 100%;
-  border-radius: 15px;
-  background: linear-gradient(#002B5b,#EA5455);
-  transition: all 0.5s;
-  z-index: -1;
-}
-
-.btn:hover::after {
-  top: 0%;
-  left: 0%;
-  width: 100%;
-  transition: all 0.5s;
+.button:active {
+  -webkit-transform: translateY(0.3rem);
+  -ms-transform: translateY(0.3rem);
+  transform: translateY(0.3rem);
+  -webkit-box-shadow: 0 0.2rem 0 0 #3700b8;
+  box-shadow: 0 0.2rem 0 0 #3700b8;
 }
 </style>

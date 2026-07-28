@@ -1,75 +1,32 @@
 <button class="button">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="button-inner">Button</div>
+  <b>
+  Button
+  </b>
 </button>
-
-
 <style>
-/* From SHΞN™ Morphism by JaydipPrajapati1910 - Tags: glassmorphism, animation, blue, button, circle */
+/* From SHΞN™ Morphism by JamesAchiver - Tags: button */
 .button {
-  width: 160px;
-  height: 55px;
-  transition: all 0.2s;
   position: relative;
-  cursor: pointer;
-  background: none;
-  outline: none;
+  padding: 0.5em 1.2em;
+  font-size: 1.8em;
+  font-family: Calibri;
+  background-color: #5b04bf;
   border: none;
-}
-
-.button-inner {
-  width: inherit;
-  height: inherit;
-  background: rgba(255,255,255,.05);
-  box-shadow: 0 0 10px rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-  border-radius: 8px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
+  color: #FFF;
+  cursor: pointer;
   align-items: center;
-  font-size: 20px;
-  font-weight: 900;
-  letter-spacing: .1em;
-  color: blue;
+  box-shadow: inset 0px 38px 25px 0 #5b04bf, inset 0 0px 0px 0px #084748a8, inset 0 69px 0px 0px #d74589af;
+  border-radius: 0.6em;
 }
 
 .button:hover {
-  transform: scale(1.04) rotate(1deg);
+  padding: 0.7em 1.4em;
+  transition: 0.4s ease-in-out;
+  box-shadow: inset 0px 38px 25px 5px #5b04bf, inset 10px 40px 10px 0px #084748a8, inset 0 69px 0px 0px #31b0d7de;
 }
 
-.circle {
-  width: 20px;
-  height: 20px;
-  background: radial-gradient(blue,darkblue);
-  border-radius: 50%;
-  position: absolute;
-  animation: move-up6 2s ease-in infinite alternate-reverse;
+.button:active {
+  box-shadow: 0.2em 0.2em 0.3em rgba(0,0,0,0.3);
+  transform: translate(0.1em , 0.1em);
 }
-
-.circle:nth-child(1) {
-  top: 0px;
-  left: 0px;
-}
-
-.circle:nth-child(2) {
-  bottom: 0px;
-  right: 0px;
-  animation-name: move-down1;
-}
-
-@keyframes move-up6 {
-  to {
-    transform: translateY(-5px);
-  }
-}
-
-@keyframes move-down1 {
-  to {
-    transform: translateY(5px);
-  }
-}
-
-
 </style>

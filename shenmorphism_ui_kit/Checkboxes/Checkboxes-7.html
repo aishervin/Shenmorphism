@@ -1,38 +1,50 @@
-<label>
-    <input checked="" type="checkbox">
-    <span class="checkbox"></span>
-</label>
+<div class="content">
+  <label class="checkBox">
+    <input id="ch1" type="checkbox">
+    <div class="transition"></div>
+  </label>
+</div>
 <style>
-/* From SHΞN™ Morphism by G4b413l - Tags: checkbox */
-label {
+/* From SHΞN™ Morphism by Nawsome - Tags: checkbox */
+.clear {
+  clear: both;
+}
+
+.checkBox {
   display: block;
-  width: 20px;
-  height: 20px;
   cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 2px #fff;
 }
 
-input[type='checkbox'] {
+.checkBox div {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  top: -52px;
+  left: -52px;
   position: absolute;
-  transform: scale(0);
+  transform: rotateZ(45deg);
+  z-index: 100;
 }
 
-input[type='checkbox']:checked ~ .checkbox {
-  transform: rotate(45deg);
-  width: 14px;
-  margin-left: 5px;
-  border-color: #24c78e;
-  border-width: 5px;
-  border-top-color: transparent;
-  border-left-color: transparent;
-  border-radius: 0;
+.checkBox input[type=checkbox]:checked + div {
+  left: -10px;
+  top: -10px;
 }
 
-.checkbox {
-  display: block;
-  width: inherit;
-  height: inherit;
-  border: solid 3px #2a2a2ab7;
-  border-radius: 6px;
-  transition: all 0.375s;
+.checkBox input[type=checkbox] {
+  position: absolute;
+  left: 50px;
+  visibility: hidden;
+}
+
+.transition {
+  transition: 300ms ease;
 }
 </style>

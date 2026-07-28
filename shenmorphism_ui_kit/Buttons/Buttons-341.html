@@ -1,83 +1,43 @@
-<div class="button-options">
-  <div class="content">
-    <input name="boldInput" id="boldInput" hidden="" type="checkbox" />
-    <label class="label-layout" for="boldInput">
-      <b>B</b>
-    </label>
-
-    <input name="italicInput" id="italicInput" hidden="" type="checkbox" />
-    <label class="label-layout" for="italicInput">
-      <i>i</i>
-    </label>
-
-    <input
-      name="underlineInput"
-      id="underlineInput"
-      hidden=""
-      type="checkbox"
-    />
-    <label class="label-layout" for="underlineInput">
-      <u>U</u>
-    </label>
-    <span class="title">L❤VE FRONT-END</span>
-  </div>
-</div>
-
+<button class="submitBtn">
+  Submit
+  <svg fill="white" viewBox="0 0 448 512" height="1em" class="arrow"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg>
+</button>
 <style>
-/* From SHΞN™ Morphism by barisdogansutcu  - Tags: button, checkbox, input, bold, italic, underline */
-.button-options .content {
+/* From SHΞN™ Morphism by vinodjangid07 - Tags: gradient, button, submit, hover effect */
+.submitBtn {
+  width: 120px;
+  height: 40px;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: solid 2px #29429b;
-  border-radius: 4px;
-  position: relative;
-}
-.button-options .content .label-layout {
-  min-width: 45px;
-  height: 45px;
-  display: flexa;
-  align-items: center;
-  justify-content: center;
-}
-.button-options .content .label-layout :is(b, i, u) {
-  display: grid;
-  place-content: center;
-  height: 100%;
-  color: #29429b;
-  font-size: 17px;
-  line-height: 1;
+  gap: 8px;
+  font-weight: 600;
   cursor: pointer;
-}
-.button-options .content .label-layout[for="italicInput"] {
-  border-left: solid 2px #29429b;
-  border-right: solid 2px #29429b;
-  min-width: 49px;
-}
-.button-options .content input[type="checkbox"]:checked + .label-layout {
-  background-color: #29429b34;
-}
-#boldInput:checked ~ .title {
-  font-weight: bold;
-}
-#italicInput:checked ~ .title {
-  font-style: italic;
-}
-#underlineInput:checked ~ .title {
-  text-decoration: underline;
-}
-.button-options .title {
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 5px;
-  position: absolute;
-  bottom: 0;
-  top: 2px;
-  transform: translateY(100%);
-  color: #29429b;
+  color: white;
+  background: linear-gradient(to left,rgb(230, 35, 0),rgb(255, 174, 0));
+  letter-spacing: 0.7px;
 }
 
+.submitBtn:hover .arrow {
+  animation: slide-in-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.submitBtn:active {
+  transform: scale(0.97);
+}
 </style>
-    

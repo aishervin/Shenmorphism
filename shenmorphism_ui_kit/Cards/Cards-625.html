@@ -1,86 +1,104 @@
-<div class="card card-5">
-  <div class="card__icon">🏆</div>
-  <p class="card__exit">※</p>
-  <div class="text">Ut aliquip ex ea commodo consequat. Duis aute irure dolor</div>
-  <p class="card__apply">
-    <a class="card__link" href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
-  </p>
-</div>
+<div class="container">
+   <svg class="svg-icon" height="100" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width="100" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+    <path d="M62.11,53.93c22.582-3.125,22.304-23.471,18.152-29.929-4.166-6.444-10.36-2.153-10.36-2.153v-4.166H30.099v4.166s-6.194-4.291-10.36,2.153c-4.152,6.458-4.43,26.804,18.152,29.929l5.236,7.777v8.249s-.944,4.597-4.833,4.986c-3.903,.389-7.791,4.028-7.791,7.374h38.997c0-3.347-3.889-6.986-7.791-7.374-3.889-.389-4.833-4.986-4.833-4.986v-8.249l5.236-7.777Zm7.388-24.818s2.833-3.097,5.111-1.347c2.292,1.75,2.292,15.86-8.999,18.138l3.889-16.791Zm-44.108-1.347c2.278-1.75,5.111,1.347,5.111,1.347l3.889,16.791c-11.291-2.278-11.291-16.388-8.999-18.138Z">
+    </path>
+  </svg>  
+  <div class="container__star">
+     
+    <div class="star-eight"></div>
+  </div>
+  
+<div></div></div>
 <style>
-/* From SHΞN™ Morphism by Shoh2008 - Tags: card */
-.card {
-  margin: 20px;
-  padding: 20px;
-  width: 300px;
-  min-height: 200px;
-  display: grid;
-  grid-template-rows: 20px 50px 1fr 50px;
-  border-radius: 10px;
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
-  transition: all 0.2s;
-}
-
-.card:hover {
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
-  transform: scale(1.01);
-}
-
-.card__link,
-.card__exit,
-.card__icon {
+/* From SHΞN™ Morphism by Javierrocadev - Tags: card, star, rotate, hover effect, trophy, winner */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 5em;
+  font-weight: 900;
+  color: #e10600;
   position: relative;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.9);
+  transition: all 1s ease;
+  text-align: center;
 }
 
-.card__link::after {
+.container__star {
+  transition: all .7s ease-in-out;
+}
+
+.first {
   position: absolute;
-  top: 25px;
+  top: 20px;
+  left: 50px;
+  transition: all .7s ease-in-out;
+}
+
+.svg-icon {
+  position: absolute;
+  fill: #e94822;
+  z-index: 1;
+}
+
+.star-eight {
+  background: #efd510;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  text-align: center;
+  animation: rot 3s  infinite;
+}
+
+.star-eight::before {
+  content: '';
+  position: absolute;
+  top: 0;
   left: 0;
-  content: "";
-  width: 0%;
-  height: 3px;
-  background-color: rgba(255, 255, 255, 0.6);
-  transition: all 0.5s;
+  height: 150px;
+  width: 150px;
+  background: #efd510;
+  transform: rotate(135deg);
 }
 
-.card__link:hover::after {
-  width: 100%;
+.container:hover .container__star {
+  transform: rotateX(70deg) translateY(250px);
+  box-shadow: 0px 0px 120px -100px #e4e727;
 }
 
-.text {
-  color: white;
+.container:hover .svg-icon {
+  animation: grow 1s linear infinite;
 }
 
-.card__exit {
-  grid-row: 1/2;
-  justify-self: end;
-}
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
 
-.card__icon {
-  grid-row: 2/3;
-  font-size: 30px;
-}
+  50% {
+    transform: rotate(340deg);
+  }
 
-.card__title {
-  grid-row: 3/4;
-  font-weight: 400;
-  color: #ffffff;
-}
-
-.card__apply {
-  grid-row: 4/5;
-  align-self: center;
-}
-
-.card-5 {
-  background: radial-gradient(#f588d8, #c0a3e5);
-}
-
-@media (max-width: 1600px) {
-  .cards {
-    justify-content: center;
+  100% {
+    transform: rotate(0deg);
   }
 }
 
+@keyframes grow {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-5deg);
+  }
+
+  75% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
 </style>

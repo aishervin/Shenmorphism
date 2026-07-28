@@ -1,84 +1,75 @@
-<div class="flip-button">
-  <button class="button button-front">
-    <span class="text-front">Label one</span>
-    <span class="text-back">Back can be longer</span>
-  </button>
-</div>
-
+<button class="swallow__icon">
+  <span></span>
+</button>
 <style>
-/* From SHΞN™ Morphism by roroland - Tags: flat design, button, flip, animated, two side */
-.flip-button {
-  --col1: #4CAF50;
-  --col2: #4f16ac;
-  --col3: #d8d1e4;
-  position: relative;
-  min-width: 10rem;
-  min-height: 3rem;
-  perspective: 500px;
-}
-
-.flip-button .button {
-  appearance: none;
-  position: absolute;
-  inset: 0;
-  height: 100%;
-  border-radius: 30px;
-  font-size: .75em;
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  background-color: var(--col1);
+/* From SHΞN™ Morphism by ArturCodeCraft - Tags: icon, apple, button, menu, menuicon, menu button , hamburger menu */
+/* <reset-style> ============================ */
+button {
   border: none;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 1s ease-out .5s;
-  transform-style: preserve-3d;
-  width: 100%;
-}
-
-.flip-button:hover .button {
-  background-color: var(--col2);
+  background: none;
+  padding: 0;
+  margin: 0;
   cursor: pointer;
-  transform: rotateY(180deg) scale(1.5);
-  transition: all .3s ease-out;
+  font-family: inherit;
+}
+/* <main-style> ============================ */
+.swallow__icon {
+  width: 2rem;
+  height: 2rem;
+  padding: .25rem;
+  background-color: rgb(29, 29, 31, .7);
+  backdrop-filter: saturate(180%) blur(20px);
+  border: solid 1px rgba(66,66,69,0.7);
+  position: relative;
 }
 
-.flip-button:hover .button:active {
-  background-color: rgba(81, 23, 173, 0.75);
-  transform: rotateY(180deg) scale(1.45);
-  outline: 10px solid var(--col3);
-  transition: all .1s ease-out;
-}
-
-.flip-button .button::after {
-  content: '';
-  box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.25);
-  display: block;
-  border-radius: 30px;
-  height: 100%;
-  width: 100%;
-  transition: all .3s ease-out .95s;
-}
-
-.flip-button:hover .button::after {
-  box-shadow: 0px 0px 1px 10px rgba(160, 29, 149, 0.15);
-  transition: all .3s ease-out;
-}
-
-.flip-button .text-front,
-.flip-button .text-back {
-  display: block;
+.swallow__icon span {
+  width: 1.5rem;
+  height: .563rem;
   position: absolute;
-  top: 50%;
+  top: calc(.25rem + .563rem - 1px);
+  left: calc(.25rem - 1px);
+  transition: transform 1s cubic-bezier(.86, 0, .07, 1),
+              transform-origin 1s cubic-bezier(.86, 0, .07, 1);
+}
+
+.swallow__icon span:before,
+.swallow__icon span:after {
+  content: "";
+  width: .75rem;
+  height: .125rem;
+  background-color: rgb(245, 245, 247);
+  position: absolute;
+  bottom: 0;
+  transition: transform 1s cubic-bezier(.86, 0, .07, 1),
+              transform-origin 1s cubic-bezier(.86, 0, .07, 1);
+}
+
+.swallow__icon span:before {
+  right: 50%;
+  border-radius: 2px 0 0 2px;
+  transform-origin: 100% 100%;
+  transform: rotate(40deg);
+}
+
+.swallow__icon span:after {
   left: 50%;
-  padding: 0 1.5em;
-  transform: translate(-50%, -50%);
-  backface-visibility: hidden;
-  width: 100%;
+  border-radius: 0 2px 2px 0;
+  transform-origin: 0 100%;
+  transform: rotate(-40deg);
 }
 
-.flip-button .text-back {
-  transform: translate(-50%, -50%) rotateY(180deg);
+.swallow__icon:hover span {
+  transform: translateY(-8px);
 }
 
+.swallow__icon:hover span:before {
+  transform-origin: 100% 0;
+  transform: rotate(-40deg);
+}
 
+.swallow__icon:hover span:after {
+  transform-origin: 0 0;
+  transform: rotate(40deg);
+}
 </style>

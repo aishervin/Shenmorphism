@@ -1,47 +1,77 @@
-<div class="loader"></div>
+<div class="triangle"></div>
+<div class="triangle-shadow"></div>
 <style>
-/* From SHΞN™ Morphism by bernethe - Tags: loader */
-.loader {
-  width: 2rem;
-  height: 2rem;
-  clear: both;
-  margin: 1rem auto;
-  border: 0.0625rem #000 solid;
-  border-radius: .25rem;
-  overflow: hidden;
-  position: relative;
+/* From SHΞN™ Morphism by JkHuger - Tags: loader */
+.triangle {
+  background-color: transparent;
+  height: 0px;
+  width: 0px;
+  border-style: solid;
+  border-width: 50px 50px 50px 50px;
+  border-radius: 2px;
+  border-color: #00ff83 #00e676 #00cc69 #00e676;
+  animation: animtrgl 3s infinite ease;
 }
 
-.loader:after, .loader:before {
-  content: '';
-  border-radius: 50%;
+.text {
+  font-family: 'Staatliches', cursive;
+  color: white;
+  font-size: 25px;
+  width: 250px;
+  text-align: center;
+  display: block;
+  height: 50px;
   position: absolute;
-  width: inherit;
-  height: inherit;
-  animation: spVortex 2s infinite linear;
+  animation: textload 3s infinite ease;
+  text-shadow: 0 0 4px black;
 }
 
-.loader:before {
-  border-top: 0.375rem #000 solid;
-  top: -0.1875rem;
-  left: calc( -50% - 0.1875rem );
-  transform-origin: right center;
-}
-
-.loader:after {
-  border-bottom: 0.375rem #000 solid;
-  top: 0.1875rem;
-  right: calc( -50% - 0.1875rem );
-  transform-origin: left center;
-}
-
-@keyframes spVortex {
-  from {
-    transform: rotate(0deg);
+@keyframes textload {
+  0% {
+    top: calc(50% + 100px);
   }
 
-  to {
-    transform: rotate(359deg);
+  25% {
+    top: calc(50% + 85px);
+  }
+
+  50% {
+    top: calc(50% + 100px);
+  }
+
+  75% {
+    top: calc(50% + 85px);
+  }
+
+  100% {
+    top: calc(50% + 100px);
+  }
+}
+
+@keyframes animtrgl {
+  0% {
+    border-width: 50px 75px 50px 25px;
+    transform: scale(2);
+  }
+
+  25% {
+    border-width: 25px 50px 75px 50px;
+    transform: scale(1.75);
+  }
+
+  50% {
+    border-width: 50px 25px 50px 75px;
+    transform: scale(2);
+  }
+
+  75% {
+    border-width: 75px 50px 25px 50px;
+    transform: scale(1.75);
+  }
+
+  100% {
+    border-width: 50px 75px 50px 25px;
+    transform: scale(2);
   }
 }
 </style>

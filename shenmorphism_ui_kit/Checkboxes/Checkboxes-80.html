@@ -1,47 +1,63 @@
-<label class="checkbox">
-  <input class="checkbox-input" type="checkbox" />
-  <svg class="checkbox-check" width="28" height="28">
-    <polyline points="20 6 9 17 4 12"></polyline>
+<label class="container">
+  <input type="checkbox" />
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 75 100"
+    class="pin"
+  >
+    <line
+      stroke-width="12"
+      stroke="black"
+      y2="100"
+      x2="37"
+      y1="64"
+      x1="37"
+    ></line>
+    <path
+      stroke-width="10"
+      stroke="black"
+      d="M16.5 36V4.5H58.5V36V53.75V54.9752L59.1862 55.9903L66.9674 67.5H8.03256L15.8138 55.9903L16.5 54.9752V53.75V36Z"
+    ></path>
   </svg>
 </label>
 
 <style>
-/* From SHΞN™ Morphism by elijahgummer  - Tags: checkbox */
-.checkbox {
+/* From SHΞN™ Morphism by vinodjangid07  - Tags: hover, checkbox, toggle, save, hover effect, pin, bookmark */
+.container input {
+  display: none;
+}
+.pin {
+  width: 15px;
+  height: auto;
+  transform: rotate(35deg);
+}
+.container {
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   cursor: pointer;
+  border-radius: 10px;
 }
-
-.checkbox:hover .checkbox-check {
-  background: #ff475425;
+.container input:checked ~ .pin {
+  fill: rgb(179, 139, 255);
+  stroke: white;
 }
-
-.checkbox-input {
-  width: 1px;
-  height: 1px;
-  opacity: 0;
+.container input:checked ~ .pin line {
+  stroke: rgb(179, 139, 255);
 }
-
-.checkbox-input:checked + .checkbox-check {
-  background: #dc143c;
-  stroke-dashoffset: 0;
+.container input:checked ~ .pin path {
+  stroke: rgb(179, 139, 255);
 }
-
-.checkbox-check {
-  border: 0.2rem solid #dc143c;
-  stroke: #f9f9f9;
-  stroke-dasharray: 25;
-  stroke-dashoffset: 25;
-  stroke-linecap: round;
-  stroke-width: 0.2rem;
-  border-radius: 0.2rem;
-  fill: none;
-  transition:
-    background 0.4s,
-    stroke-dashoffset 0.6s;
+.container:hover {
+  background-color: rgb(244, 238, 255);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.041);
+}
+.container:active {
+  transform: scale(0.9);
 }
 
 </style>

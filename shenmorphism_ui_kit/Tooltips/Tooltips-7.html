@@ -1,84 +1,55 @@
-<div class="tooltip">
-  <span>Hover me</span>
-  <div class="tooltip-text">
-    Ceci est un tooltip moderne et animé avec des bulles autour.
-  </div>
-  <div class="tooltip-bubble"></div>
-  <div class="tooltip-bubble"></div>
-  <div class="tooltip-bubble"></div>
+<div class="tooltip-container">
+  <span class="text">Tooltip</span>
+  <span class="tooltip">SHΞN™ Morphism</span>
 </div>
 
 <style>
-/* From SHΞN™ Morphism by Sacha-PDV  - Tags: simple, tooltip, circle */
-.tooltip {
+/* From SHΞN™ Morphism by theleaderofenemy  - Tags: simple, tooltip, action, light */
+.tooltip-container {
   position: relative;
   display: inline-block;
+  margin: 20px;
+}
+
+.text {
+  color: #333;
+  font-size: 18px;
   cursor: pointer;
 }
-.tooltip-text {
-  visibility: hidden;
-  width: 200px;
-  background-color: #3498db;
-  color: #fff;
-  text-align: center;
-  border-radius: 4px;
-  padding: 10px;
-  position: absolute;
-  z-index: 1;
-  top: -65px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s, transform 0.3s;
-}
-.tooltip:hover .tooltip-text {
-  visibility: visible;
-  opacity: 1;
-  transform: translate(-50%, -60px);
-}
-.tooltip-text::after {
-  content: "";
+
+.tooltip {
   position: absolute;
   top: 100%;
   left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #3498db transparent transparent transparent;
-}
-.tooltip:hover .tooltip-bubble {
-  display: block;
-}
-.tooltip-bubble {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: #3498db;
-  border-radius: 50%;
-  display: none;
-}
-.tooltip-bubble:nth-child(3) {
-  bottom: 170px;
-  left: 43%;
-}
-.tooltip-bubble:nth-child(4) {
-  bottom: 170px;
-  left: 90%;
-}
-.tooltip-bubble:nth-child(5) {
-  bottom: 170px;
-  left: -10%;
-}
-.tooltip span {
-  display: inline-block;
-  padding: 5px 10px;
-  background: #3498db;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  background: #0b798a;
   color: #fff;
+  padding: 10px;
   border-radius: 4px;
-  transition: background 0.3s;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-.tooltip:hover span {
-  background: #ff6b6b;
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent #0b798a transparent;
+  transform: translateX(-50%);
+}
+
+.tooltip-container:hover .tooltip {
+  top: 120%;
+  opacity: 1;
+  visibility: visible;
+  background: #0e94a0;
+  transform: translate(-50%, -5px);
 }
 
 </style>

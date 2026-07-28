@@ -1,82 +1,64 @@
-<div class="cube-loader">
-  <div class="cube cube1"></div>
-  <div class="cube cube2"></div>
-  <div class="cube cube3"></div>
-  <div class="cube cube4"></div>
+<div class="loader">
+  <div class="loader__circle"></div>
+  <div class="loader__circle"></div>
+  <div class="loader__circle"></div>
+  <div class="loader__circle"></div>
+  <div class="loader__circle"></div>
 </div>
-
 <style>
-/* From SHΞN™ Morphism by jeremyssocial  - Tags: animation, loader, cube, light&dark, loading animation, 3d loader */
-.cube-loader {
+/* From SHΞN™ Morphism by EddyBel - Tags: loader */
+.loader {
   position: relative;
-  width: 40px;
-  height: 40px;
-  margin: auto;
+  display: flex;
+  gap: 0.3em;
 }
 
-.cube {
+.loader::before {
+  content: "";
   position: absolute;
-  width: 50%;
-  height: 50%;
-  background-color: #333;
-  border: 2px solid #fff;
-  animation: foldCube 2.4s infinite linear;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2em;
+  filter: blur(45px);
+  background-color: #e299ff;
+  background-image: radial-gradient(at 52% 57%, hsla(11,83%,72%,1) 0px, transparent 50%),
+  radial-gradient(at 37% 57%, hsla(175,78%,66%,1) 0px, transparent 50%);
 }
 
-/* Individual cube positioning */
-.cube1 {
-  top: 0;
-  left: 0;
-  transform-origin: 100% 100%;
-}
-.cube2 {
-  top: 0;
-  right: 0;
-  transform-origin: 0 100%;
-}
-.cube3 {
-  bottom: 0;
-  right: 0;
-  transform-origin: 0 0;
-}
-.cube4 {
-  bottom: 0;
-  left: 0;
-  transform-origin: 100% 0;
+.loader__circle {
+  --size__loader: 0.6em;
+  width: var(--size__loader);
+  height: var(--size__loader);
+  border-radius: 50%;
+  animation: loader__circle__jumping 2s infinite;
+  background-color: #b499ff;
 }
 
-/* Keyframes for the folding animation */
-@keyframes foldCube {
-  0%,
-  10% {
-    transform: perspective(140px) rotateX(-180deg);
-    opacity: 0;
+.loader__circle:nth-child(2n) {
+  animation-delay: 300ms;
+  background-color: #e499ff;
+}
+
+.loader__circle:nth-child(3n) {
+  animation-delay: 600ms;
+}
+
+@keyframes loader__circle__jumping {
+  0%, 100% {
+    transform: translateY(0px);
   }
-  25%,
+
+  25% {
+    transform: translateY(-15px) scale(0.5);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+
   75% {
-    transform: perspective(140px) rotateX(0deg);
-    opacity: 1;
-  }
-  90%,
-  100% {
-    transform: perspective(140px) rotateY(180deg);
-    opacity: 0;
+    transform: translateY(5px) scale(0.9);
   }
 }
-
-/* Animation delay for each cube */
-.cube1 {
-  animation-delay: 0.3s;
-}
-.cube2 {
-  animation-delay: 0.6s;
-}
-.cube3 {
-  animation-delay: 0.9s;
-}
-.cube4 {
-  animation-delay: 1.2s;
-}
-
 </style>
-    

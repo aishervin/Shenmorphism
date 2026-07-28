@@ -1,43 +1,22 @@
-<!-- From SHΞN™ Morphism by themrsami - Tags: material design, form, tailwind, tailwindcss, themrsami, Dream form -->
-<div class="mt-4 flex flex-col bg-gray-100 rounded-lg p-4 shadow-sm">
-  <h2 class="ai-story-maker-dream-form text-black font-bold text-2xl">AI Story Maker Dream Form</h2>
-
-  <div class="mt-4">
-    <label class="text-black" for="title">Title</label>
-    <input placeholder="Enter a title for your dream" class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1" type="text">
-  </div>
-
-  <div class="mt-4">
-    <label class="text-black" for="description">Description</label>
-    <textarea placeholder="Describe your dream in detail" class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1" id="description"></textarea>
-  </div>
-
-  <div class="mt-4 flex flex-row space-x-2">
-    <div class="flex-1">
-      <label class="text-black" for="emotions">Emotions</label>
-      <input placeholder="What emotions did you feel during your dream?" class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1" id="emotions" type="text">
-    </div>
-
-    <div class="flex-1">
-      <label class="text-black" for="symbols">Symbols</label>
-      <input placeholder="Did you see any symbols in your dream?" class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1" id="symbols" type="text">
-    </div>
-  </div>
-
-  <div class="mt-4 flex flex-row space-x-2">
-    <div class="flex-1">
-      <label class="text-black" for="themes">Themes</label>
-      <input placeholder="What themes do you think your dream might be about?" class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1" id="themes" type="text">
-    </div>
-  </div>
-
-  <div class="mt-4 flex justify-end">
-    <button class="bg-white text-black rounded-md px-4 py-1 hover:bg-gray-200 hover:text-gray-900" id="generate-button" type="button">Generate</button>
-  </div>
-
-  <div class="mt-4">
-    <textarea placeholder="Your AI-generated story will appear here" class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1 h-48" id="story-output"></textarea>
+<!-- From SHΞN™ Morphism by Yaya12085 - Source: https://daisyui.com/ - Tags: button, form, card, checkbox, input, switcher, cool checkbox -->
+<div class="w-80 rounded-2xl bg-white">
+  <div class="flex flex-col gap-2 p-8">
+    <input placeholder="Email" class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100">
+    <label class="flex cursor-pointer items-center justify-between p-1">
+      Accept terms of use
+      <div class="relative inline-block">
+        <input type="checkbox" class="peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2">
+        <span class="pointer-events-none absolute left-1 top-1 block h-4 w-4 rounded-full bg-gray-400 transition-all duration-200 peer-checked:left-7 peer-checked:bg-gray-900"></span>
+      </div>
+    </label>
+    <label class="flex cursor-pointer items-center justify-between p-1">
+      Submit to newsletter
+      <div class="relative inline-block">
+        <input type="checkbox" class="peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2">
+        <span class="pointer-events-none absolute left-1 top-1 block h-4 w-4 rounded-full bg-gray-400 transition-all duration-200 peer-checked:left-7 peer-checked:bg-gray-900"></span>
+      </div>
+    </label>
+    <button class="inline-block cursor-pointer rounded-md bg-gray-700 px-4 py-3.5 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95">Save</button>
   </div>
 </div>
-
 

@@ -1,59 +1,48 @@
-<label class="switch">
-  <input type="checkbox">
-  <span class="slider"></span>
-</label>
+  <input class="switch" type="checkbox" checked="true">
 <style>
-/* From SHΞN™ Morphism by mrhyddenn - Tags: switch */
-/* The switch - the box around the slider */
+/* From SHΞN™ Morphism by Yaya12085 - Source: https://www.material-tailwind.com/docs/react/switch - Tags: switch, input, toggle, colorful, variations */
 .switch {
- font-size: 17px;
- position: relative;
- display: inline-block;
- width: 3.5em;
- height: 2em;
+  position: relative;
+  height: 1.5rem;
+  width: 3rem;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 9999px;
+  background-color: rgba(100, 116, 139, 0.377);
+  transition: all .3s ease;
 }
 
-/* Hide default HTML checkbox */
-.switch input {
- opacity: 0;
- width: 0;
- height: 0;
+.switch:checked {
+  background-color: rgba(236, 72, 153, 1);
 }
 
-/* The slider */
-.slider {
- position: absolute;
- cursor: pointer;
- top: 0;
- left: 0;
- right: 0;
- bottom: 0;
- background-color: #fff;
- border: 1px solid #99999;
- transition: .4s;
+.switch::before {
+  position: absolute;
+  content: "";
+  left: calc(1.5rem - 1.6rem);
+  top: calc(1.5rem - 1.6rem);
+  display: block;
+  height: 1.6rem;
+  width: 1.6rem;
+  cursor: pointer;
+  border: 1px solid rgba(100, 116, 139, 0.527);
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 3px 10px rgba(100, 116, 139, 0.327);
+  transition: all .3s ease;
 }
 
-.slider:before {
- position: absolute;
- content: "";
- height: 1.5em;
- width: 1.5em;
- left: 0.20em;
- bottom: 0.25em;
- background-color: white;
- transition: .4s;
- box-shadow: 0 0 2px 0px #999999;
+.switch:hover::before {
+  box-shadow: 0 0 0px 8px rgba(0, 0, 0, .15)
 }
 
-input:checked + .slider {
- background-color: #2da54f;
+.switch:checked:hover::before {
+  box-shadow: 0 0 0px 8px rgba(236, 72, 153, .15)
 }
 
-input:focus + .slider {
- box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
- transform: translateX(1.5em);
+.switch:checked:before {
+  transform: translateX(100%);
+  border-color: rgba(236, 72, 153, 1);
 }
 </style>

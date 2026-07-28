@@ -1,99 +1,126 @@
-<div class="card">
-    <span class="title">🍪 Cookie Notice</span>
-    <p class="description">We use cookies to ensure that we give you the best experience on our website. <a href="#">Read cookies policies</a>. </p>
-    <a class="prefs">
-        Manage preferences
-    </a>    
-    <div class="actions">
-        <button class="decline">
-            Decline
-        </button>
-        <button class="valid">
-            Accept
-        </button>
+<div class="container">
+  <div class="card">
+     <div class="card__image-container">
     </div>
+      
+      <svg class="card__svg" viewBox="0 0 800 500">
+
+        <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#333"></path>
+        <path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"></path>
+      </svg>
+    
+     <div class="card__content">
+       <p class="card__title">Lorem ipsum</p>
+     <p>Soluta dolor praesentium at quod autem omnis, amet earum nesciunt porro.</p>
+    </div>
+  </div>
 </div>
 <style>
-/* From SHΞN™ Morphism by NouvelleTechno - Tags: card, claymorphism, shadow */
-.card {
-  width: 370px;
-  background: white;
-  position: relative;
+/* From SHΞN™ Morphism by Shoh2008 - Tags: card */
+.container {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 40px;
-  border-radius: 40px;
-  background-color: hsl(120deg 20% 95%);
-  box-shadow: 17px 17px 34px 0px rgb(124, 134, 124), 
-    inset -8px -8px 16px 0px rgba(117, 133, 117, 0.7), 
-    inset 0px 14px 28px 0px hsl(120deg 20% 95%);
-}
-
-.card .title {
-  color: black;
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.card .description {
-  color: black;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.card .prefs {
-  color: blue;
-  font-size: .8em;
-  margin-bottom: 20px;
-}
-
-.card .actions {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+  height: 350px;
+  background: #444;
+  border-radius: 10px;
 }
 
-.card button {
+.card {
+  position: relative;
+  background: #333;
+  width: 250px;
+  height: 350px;
+  border-radius: 10px;
+  padding: 2rem;
+  color: #aaa;
+  box-shadow: 0 .25rem .25rem rgba(0,0,0,0.2),
+    0 0 1rem rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.card__image-container {
+  margin: -2rem -2rem 1rem -2rem;
+}
+
+.card__line {
+  opacity: 0;
+  animation: LineFadeIn .8s .8s forwards ease-in;
+}
+
+.card__image {
+  opacity: 0;
+  animation: ImageFadeIn .8s 1.4s forwards;
+}
+
+.card__title {
   color: white;
-  border: none;
-  background: none;
-  padding: 20px;
-  border-radius: 15px;
-  cursor: pointer;
-  font-size: 1.2em;
-  font-weight: bold;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
 }
 
-.card .decline {
-  color: rgb(255, 0, 0);
-  box-shadow: 4px 4px 8px 0px rgb(134, 124, 124), 
-    inset -8px -8px 16px 0px rgba(92, 92, 92, 0.7), 
-    inset 0px 14px 28px 0px hsl(120deg 20% 95%);
+.card__content {
+  margin-top: -1rem;
+  opacity: 0;
+  animation: ContentFadeIn .8s 1.6s forwards;
 }
 
-.card .valid {
-  color: rgb(0, 156, 0);
-  box-shadow: 4px 4px 8px 0px rgb(124, 134, 125), 
-    inset -8px -8px 16px 0px rgba(121, 121, 121, 0.7), 
-    inset 0px 14px 28px 0px hsl(120deg 20% 95%);
+.card__svg {
+  position: absolute;
+  left: 0;
+  top: 115px;
 }
 
-.card .decline:hover {
-  color: white;
-  background-color: rgb(255, 0, 0);
-  box-shadow: 4px 4px 8px 0px rgb(134, 124, 124), 
-    inset -8px -8px 16px 0px rgba(134, 20, 20, 0.7), 
-    inset 0px 14px 28px 0px hsl(120deg 20% 95%);
+@keyframes LineFadeIn {
+  0% {
+    opacity: 0;
+    d: path("M 0 300 Q 0 300 0 300 Q 0 300 0 300 C 0 300 0 300 0 300 Q 0 300 0 300 ");
+    stroke: #fff;
+  }
+
+  50% {
+    opacity: 1;
+    d: path("M 0 300 Q 50 300 100 300 Q 250 300 350 300 C 350 300 500 300 650 300 Q 750 300 800 300");
+    stroke: #888BFF;
+  }
+
+  100% {
+    opacity: 1;
+    d: path("M -2 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 802 400");
+    stroke: #545581;
+  }
 }
 
-.card .valid:hover {
-  color: white;
-  background-color: rgb(0, 156, 0);
-  box-shadow: 4px 4px 8px 0px rgb(124, 134, 125), 
-    inset -8px -8px 16px 0px rgba(47, 134, 20, 0.7), 
-    inset 0px 14px 28px 0px hsl(120deg 20% 95%);
+@keyframes ContentFadeIn {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
+@keyframes ImageFadeIn {
+  0% {
+    transform: translate(-.5rem, -.5rem) scale(1.05);
+    opacity: 0;
+    filter: blur(2px);
+  }
+
+  50% {
+    opacity: 1;
+    filter: blur(2px);
+  }
+
+  100% {
+    transform: translateY(0) scale(1.0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
 </style>

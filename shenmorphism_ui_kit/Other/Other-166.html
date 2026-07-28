@@ -1,46 +1,71 @@
-<input class="togglesw" type="checkbox">
+<div class="toggle">
+  <input id="toggle-switch" type="checkbox">
+  <label for="toggle-switch"></label>
+</div>
+
 <style>
-/* From SHΞN™ Morphism by csemszepp - Source: https://codepen.io/t_afif/pen/PoEebrz - Tags: switch, toggle, toggle switch */
-.togglesw {
-  --s: 50px;
- /* adjust this to control the size*/
-  height: calc(var(--s) + var(--s)/5);
-  width: auto;
- /* some browsers need this */
-  aspect-ratio: 2.25;
-  border-radius: var(--s);
-  margin: calc(var(--s)/2);
-  display: grid;
+/* From SHΞN™ Morphism by PriyanshuGupta28 - Tags: switch, theme-switch, advanced */
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 34px;
+}
+
+.toggle input[type="checkbox"] {
+  display: none;
+}
+
+.toggle label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 34px;
+  background-color: #ccc;
+  border-radius: 17px;
   cursor: pointer;
-  background-color: #ff7a7a;
-  box-sizing: content-box;
-  overflow: hidden;
-  transition: .3s .1s;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  transition: background-color 0.3s ease;
 }
 
-.togglesw:before {
+.toggle label::before {
   content: "";
-  padding: calc(var(--s)/10);
-  --_g: radial-gradient(circle closest-side at calc(100% - var(--s)/2) 50%,#000 96%,#0000);
-  background: var(--_g) 0 /var(--_p,var(--s)) 100% no-repeat content-box,
-    var(--_g) var(--_p,0)/var(--s)  100% no-repeat content-box,
-    #fff;
-  mix-blend-mode: darken;
-  filter: blur(calc(var(--s)/12)) contrast(11);
-  transition: .4s, background-position .4s .1s,
-    padding cubic-bezier(0,calc(var(--_i,-1)*200),1,calc(var(--_i,-1)*200)) .25s .1s;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
 }
 
-.togglesw:checked {
-  background-color: #85ff7a;
+.toggle input:checked + label {
+  background-color: #6000df;
 }
 
-.togglesw:checked:before {
-  padding: calc(var(--s)/10 + .05px) calc(var(--s)/10);
-  --_p: 100%;
-  --_i: 1;
+.toggle input:checked + label::before {
+  transform: translateX(26px);
 }
+
+.toggle label:hover {
+  background-color: #999;
+}
+
+.toggle input:checked + label:hover {
+  background-color: rgb(99, 33, 138);
+}
+
+.toggle input:active + label {
+  background-color: #6f4ea3;
+}
+
+.toggle input:checked:active + label {
+  background-color: #009b93;
+}
+
+.toggle input:focus + label {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
 </style>

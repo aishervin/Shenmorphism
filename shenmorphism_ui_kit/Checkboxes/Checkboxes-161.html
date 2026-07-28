@@ -1,57 +1,90 @@
-<label class="checkbox">
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-
+<div class="cntr">
+  <input checked="" type="checkbox" id="cbx" class="hidden-xs-up">
+  <label for="cbx" class="cbx"></label>
+</div>
 <style>
-/* From SHΞN™ Morphism by JkHuger - Tags: checkbox */
-.checkbox {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
+/* From SHΞN™ Morphism by cssbuttons-io - Tags: checkbox, squishy */
+.cbx {
+ position: relative;
+ top: 1px;
+ width: 27px;
+ height: 27px;
+ border: 1px solid #c8ccd4;
+ border-radius: 3px;
+ vertical-align: middle;
+ transition: background 0.1s ease;
+ cursor: pointer;
+ display: block;
 }
 
-.checkbox input[type="checkbox"] {
-  opacity: 0;
-  position: absolute;
+.cbx:after {
+ content: '';
+ position: absolute;
+ top: 2px;
+ left: 8px;
+ width: 7px;
+ height: 14px;
+ opacity: 0;
+ transform: rotate(45deg) scale(0);
+ border-right: 2px solid #fff;
+ border-bottom: 2px solid #fff;
+ transition: all 0.3s ease;
+ transition-delay: 0.15s;
 }
 
-.checkbox .checkmark {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  transition: background-color 0.2s ease;
+.lbl {
+ margin-left: 5px;
+ vertical-align: middle;
+ cursor: pointer;
 }
 
-.checkbox input[type="checkbox"]:checked + .checkmark {
-  background-color: #0078d4;
-  border-color: #0078d4;
+#cbx:checked ~ .cbx {
+ border-color: transparent;
+ background: #6871f1;
+ animation: jelly 0.6s ease;
 }
 
-.checkbox input[type="checkbox"]:checked + .checkmark:after {
-  content: "";
-  display: block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #fff;
-  transition: transform 0.2s ease;
-  transform: scale(1);
+#cbx:checked ~ .cbx:after {
+ opacity: 1;
+ transform: rotate(45deg) scale(1);
 }
 
-.checkbox .checkmark:after {
-  content: "";
-  display: block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: transparent;
-  transform: scale(0);
-  transition: transform 0.2s ease;
+.cntr {
+ position: relative;
+}
+
+@keyframes jelly {
+ from {
+  transform: scale(1, 1);
+ }
+
+ 30% {
+  transform: scale(1.25, 0.75);
+ }
+
+ 40% {
+  transform: scale(0.75, 1.25);
+ }
+
+ 50% {
+  transform: scale(1.15, 0.85);
+ }
+
+ 65% {
+  transform: scale(0.95, 1.05);
+ }
+
+ 75% {
+  transform: scale(1.05, 0.95);
+ }
+
+ to {
+  transform: scale(1, 1);
+ }
+}
+
+.hidden-xs-up {
+ display: none!important;
 }
 
 </style>

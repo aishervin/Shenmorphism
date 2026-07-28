@@ -1,48 +1,70 @@
-<button class="button"><span></span>Bouton</button>
+<button class="button">
+  <span class="bg">
+    Join Today
+    <svg width="1.2em" height="1.2em" viewBox="0 0 48 48">
+      <path
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="4"
+        d="M42 24H6m24-12l12 12l-12 12"
+      ></path>
+    </svg>
+  </span>
+</button>
 
 <style>
-/* From SHΞN™ Morphism by TISEPSE  - Tags: material design, button, active */
+/* From SHΞN™ Morphism by Cobp  - Tags: button */
 .button {
-  background-color: #ff9b82;
+  position: relative;
+  color: white;
+  background-image: linear-gradient(0deg, #8a38cd 0%, #f3b0ff 100%);
+  padding: 0.1rem;
+  border: none;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-15deg);
   cursor: pointer;
-  padding: 1em;
-  width: 10rem;
-  font-size: 17px;
-  box-shadow: 0 0.4rem #ffc8c8;
-  border-radius: 27px;
+  box-shadow:
+    -3px 3px 0px 1px rgb(76, 6, 123),
+    -4px 4px 4px 1px rgb(76, 6, 123),
+    -12px 12px 12px 4px rgb(63, 19, 92, 0.5),
+    -18px 18px 16px 8px rgb(63, 19, 92, 0.1);
+  gap: 0.4rem;
   overflow: hidden;
-  z-index: 2;
-  transition: 0.2s;
-  border: 2px solid black;
+  transition: all 0.3s ease;
+  transform-origin: left;
 }
-
+.bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: larger;
+  padding: 1rem;
+  gap: 0.4rem;
+  border-radius: 0.65rem;
+  background-color: #bd76f6;
+  box-shadow:
+    inset 3px -4px 8px rgb(119, 36, 185, 0.5),
+    inset 0px -2px 2px rgb(119, 36, 185, 0.5);
+  transition: all 0.3s ease;
+}
 .button:hover {
-  transform: translateY(0.2rem);
-  box-shadow: 0 0.25rem #ffc8c8;
-  letter-spacing: 2px;
-  color: #fefefe;
+  transform: rotate(0deg);
+  box-shadow:
+    0px 6px 0px rgb(76, 6, 123),
+    0px 8px 4px rgb(76, 6, 123);
 }
-
 .button:active {
-  transform: translateY(0.6rem);
-  box-shadow: none;
-  transition: 0.1s;
+  transform: translateY(4px);
+  box-shadow: 0px 4px 4px rgb(76, 6, 123);
 }
-
-.button span {
-  background: #e48586;
-  border-radius: 27px;
-  height: 100%;
-  width: 0%;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: -1;
-  transition: 0.2s ease-in-out;
-}
-
-.button:hover span {
-  width: 100%;
+.button:active .bg {
+  background-color: #9c5fce;
 }
 
 </style>

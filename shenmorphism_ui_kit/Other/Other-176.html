@@ -1,73 +1,66 @@
-<div id="menuToggle">
-  <input id="checkbox" type="checkbox">
-  <label class="toggle" for="checkbox">
-    <div class="bar bar--top"></div>
-    <div class="bar bar--middle"></div>
-    <div class="bar bar--bottom"></div>
-  </label>
+<div class="toggle-switcher">
+  <input type="checkbox" id="toggle-switch" class="toggle-input">
+  <label for="toggle-switch" class="toggle-label"></label>
 </div>
+
 <style>
-/* From SHΞN™ Morphism by vk-uiux - Tags: animation, switch, hamburger, bars, toggle, css, toggle switch, css effect, interactive, tornado */
-#checkbox {
+/* From SHΞN™ Morphism by coding-masala - Tags: switch */
+.toggle-switcher {
+  width: 50px;
+  height: 25px;
+  position: relative;
+  margin: 20px auto;
+  background: #000;
+  border-radius: 50px;
+}
+
+.toggle-input {
   display: none;
 }
 
-.toggle {
-  position: relative;
-  width: 40px;
-  cursor: pointer;
-  margin: auto;
-  display: block;
-  height: calc(4px * 3 + 11px * 2);
-}
-
-.bar {
+.toggle-label {
+  width: 100%;
+  height: 100%;
   position: absolute;
+  top: 0;
   left: 0;
-  right: 0;
-  height: 4px;
-  border-radius: calc(4px / 2);
-  background: #7b52b9;
-  color: inherit;
-  opacity: 1;
-  transition: none 0.35s cubic-bezier(.5,-0.35,.35,1.5) 0s;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 #ff0000;
 }
 
-/***** Tornado Animation *****/
-
-.bar--top {
-  bottom: calc(50% + 11px + 4px/ 2);
-  transition-property: bottom,transform;
-  transition-delay: calc(0s + 0.35s) * .6;
+.toggle-label::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: all 0.3s ease;
 }
 
-.bar--middle {
-  top: calc(50% - 4px/ 2);
-  transition-property: opacity,transform;
-  transition-delay: calc(0s + 0.35s * .3);
+.toggle-input:checked + .toggle-label {
+  animation: shadow-animation_5020 10s linear infinite;
 }
 
-.bar--bottom {
-  top: calc(50% + 11px + 4px/ 2);
-  transition-property: top,transform;
-  transition-delay: 0s;
+.toggle-input:checked + .toggle-label::before {
+  transform: translateX(25px);
 }
 
-#checkbox:checked + .toggle .bar--top {
-  transform: rotate(-135deg);
-  transition-delay: 0s;
-  bottom: calc(50% - 4px/ 2);
+@keyframes shadow-animation_5020 {
+  0% {
+    box-shadow: 0 0 0 0 #ff0000;
+  }
+
+  50% {
+    box-shadow: 0 0 25px 25px #ffa500;
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 #ff0000;
+  }
 }
 
-#checkbox:checked + .toggle .bar--middle {
-  opacity: 0;
-  transform: rotate(-135deg);
-  transition-delay: calc(0s + 0.35s * .3);
-}
-
-#checkbox:checked + .toggle .bar--bottom {
-  top: calc(50% - 4px/ 2);
-  transform: rotate(-225deg);
-  transition-delay: calc(0s + 0.35s * .6);
-}
 </style>

@@ -1,38 +1,63 @@
-<button class="button">Button</button>
-
+<button class="button type1">
+</button>
 <style>
-/* From SHΞN™ Morphism by cjnoise  - Tags: blue, button, animated, 3d button */
+/* From SHΞN™ Morphism by Gaurav-WebDev - Tags: button, hover effect, cool btn */
 .button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  text-align: center;
-  text-decoration: none;
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
-  border: 1px solid #3498db;
-  color: #fff;
-  background-color: #3498db;
-  border-radius: 5px;
   position: relative;
   overflow: hidden;
+  transition: all 0.5s ease-in-out;
 }
 
-.button::before {
-  content: "";
+.button:hover {
+  box-shadow: .5px .5px 150px #252525;
+}
+
+.type1::after {
+  content: "Thanks";
+  height: 50px;
+  width: 150px;
+  background-color: #008080;
+  color: #fff;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: perspective(5px) rotateX(2deg) rotateY(2deg);
-  transition: transform 0.3s;
-  pointer-events: none;
+  top: 0%;
+  left: 0%;
+  transform: translateY(50px);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
 }
 
-.button:hover::before {
-  transform: perspective(5px) rotateX(0) rotateY(0);
+.type1::before {
+  content: "Hover Me";
+  height: 50px;
+  width: 150px;
+  background-color: #fff;
+  color: #008080;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(0px) scale(1.2);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
 }
 
+.type1:hover::after {
+  transform: translateY(0) scale(1.2);
+}
+
+.type1:hover::before {
+  transform: translateY(-50px) scale(0) rotate(120deg);
+}
 </style>
-    

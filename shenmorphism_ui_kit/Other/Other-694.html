@@ -1,58 +1,51 @@
-<div class="container">
-  <div class="block"></div>
-  <div class="block"></div>
-  <div class="block"></div>
-  <div class="block"></div>
+<div class="loader">
+  <li class="ball"></li>
+  <li class="ball"></li>
+  <li class="ball"></li>
 </div>
 <style>
-/* From SHΞN™ Morphism by JkHuger - Tags: loader */
-.container {
-  width: 80px;
-  margin: 100px auto;
+/* From SHΞN™ Morphism by ashish-yadv - Tags: animation, loader, loading animation, bouncing animation, bounce animation */
+.loader {
+  width: 60px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.block {
-  position: relative;
-  box-sizing: border-box;
-  float: left;
-  margin: 0 10px 10px 0;
+.ball {
+  list-style: none;
   width: 12px;
   height: 12px;
-  border-radius: 3px;
-  background: #FFF;
+  border-radius: 50%;
+  background-color: #fff;
 }
 
-.block:nth-child(4n+1) {
-  animation: wave_23 2s ease .0s infinite;
+.ball:nth-child(1) {
+  animation: bounce-1 2.1s ease-in-out infinite;
 }
 
-.block:nth-child(4n+2) {
-  animation: wave_23 2s ease .2s infinite;
-}
-
-.block:nth-child(4n+3) {
-  animation: wave_23 2s ease .4s infinite;
-}
-
-.block:nth-child(4n+4) {
-  animation: wave_23 2s ease .6s infinite;
-  margin-right: 0;
-}
-
-@keyframes wave_23 {
-  0% {
-    top: 0;
-    opacity: 1;
-  }
-
+@keyframes bounce-1 {
   50% {
-    top: 30px;
-    opacity: .2;
+    transform: translateY(-18px);
   }
+}
 
-  100% {
-    top: 0;
-    opacity: 1;
+.ball:nth-child(2) {
+  animation: bounce-3 2.1s ease-in-out 0.3s infinite;
+}
+
+@keyframes bounce-2 {
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+.ball:nth-child(3) {
+  animation: bounce-3 2.1s ease-in-out 0.6s infinite;
+}
+
+@keyframes bounce-3 {
+  50% {
+    transform: translateY(-18px);
   }
 }
 </style>

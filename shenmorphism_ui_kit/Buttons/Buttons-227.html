@@ -1,39 +1,54 @@
-<button>
-    <svg class="css-i6dzq1" stroke-linejoin="round" stroke-linecap="round" fill="none" stroke-width="2" stroke="#FFFFFF" height="24" width="24" viewBox="0 0 24 24">
-        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
-    </svg>
-    Edit
+<button class="button">
+  <span>Hover me</span>
 </button>
 <style>
-/* From SHΞN™ Morphism by barisdogansutcu - Tags: button */
-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-  border: solid 3px transparent;
-  background-clip: padding-box;
-  box-shadow: 0px 0px 0px 3px #ffffff00;
+/* From SHΞN™ Morphism by gharsh11032000 - Tags: button, hover effect */
+.button {
+  position: relative;
+  padding: 15px 30px;
+  font-family: inherit;
+  background-color: var(--color-primary);
+  border: 2px solid;
+  font-size: 20px;
+  font-weight: 600;
   color: white;
-  min-height: 43px;
-  padding: 0 13px 0 13px;
-  border-radius: 50px;
+  cursor: pointer;
   text-transform: uppercase;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.button:hover span {
+  background: linear-gradient(135deg, #aefb2a 0%, #57ebde 100% );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  left: -110%;
+  top: -0%;
+  background: #aefb2a;
+  pointer-events: none;
+  margin: auto;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.button:hover {
   letter-spacing: 2px;
-  transition: all .5s ease;
+  border-image: linear-gradient(135deg, #aefb2a 0%, #57ebde 100% );
+  border-image-slice: 1;
 }
 
-button:active {
-  transform: scale(.9);
-  transition: all 100ms ease;
+.button:hover::before {
+  left: 110%;
 }
 
-button:hover {
-  box-shadow: 0px 0px 0px 3px #30a1b8;
-}
-
-button svg {
-  width: 16px;
+.button:active {
+  scale: 0.95;
 }
 </style>

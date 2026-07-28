@@ -1,67 +1,40 @@
- <div class="loader-container">
-    <div class="loader">
-      <div class="face front"></div>
-      <div class="face back"></div>
-      <div class="face left"></div>
-      <div class="face right"></div>
-      <div class="face top"></div>
-      <div class="face bottom"></div>
-    </div>
-  </div>
+<div class="container">
+  <div class="loader"></div>
+</div>
 <style>
-/* From SHΞN™ Morphism by PriyanshuGupta28 - Tags: loader, 3d loader, 3d cude loader */
-.loader-container {
-  perspective: 800px;
-}
-
+/* From SHΞN™ Morphism by NlghtM4re - Tags: green, progress, progress bar, loader, shadow, download, neon, bars */
 .loader {
-  position: relative;
-  width: 80px;
-  height: 80px;
-  transform-style: preserve-3d;
-  animation: spin 3s linear infinite;
-}
-
-.face {
+  width: 60%;
+  height: 10px;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.2);
   position: absolute;
-  width: 100%;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(9, 188, 9);
+  width: 0%;
   height: 100%;
-  background-color: #2196F3;
-  border: 2px solid #1976D2;
+  border-radius: 2px;
+  animation: load 3.5s ease-in-out infinite;
+  box-shadow: rgb(9, 188, 9) 0px 2px 29px 0px;
 }
 
-.front {
-  transform: translateZ(40px);
+.container {
+  display: flex;
+  justify-content: center;
 }
 
-.back {
-  transform: rotateY(180deg) translateZ(40px);
-}
-
-.left {
-  transform: rotateY(-90deg) translateZ(40px);
-}
-
-.right {
-  transform: rotateY(90deg) translateZ(40px);
-}
-
-.top {
-  transform: rotateX(90deg) translateZ(40px);
-}
-
-.bottom {
-  transform: rotateX(-90deg) translateZ(40px);
-}
-
-@keyframes spin {
-  0% {
-    transform: rotateX(0) rotateY(0) rotateZ(0);
+@keyframes load {
+  50% {
+    width: 100%;
   }
 
   100% {
-    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    right: 0;
+    left: unset;
   }
 }
-
 </style>

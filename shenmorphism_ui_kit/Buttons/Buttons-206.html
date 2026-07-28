@@ -1,116 +1,74 @@
-<button class="btn-slice" href="#">
-  <div class="top"><span>Sliced Button</span></div>
-  <div class="bottom"><span>Sliced Button</span></div>
-</button>
+<button class="button">hover me !</button>
+
 <style>
-/* From SHΞN™ Morphism by Wlidha09 - Tags: button */
-.btn-slice {
-  background-color: transparent;
-  padding: 1.2rem 2.5rem;
-  border: 2px solid #ffffff;
-  border-radius: 0rem;
-  color: #ffffff;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.3rem;
+/* From SHΞN™ Morphism by KhaledMatalkah - Tags: button, hover, transition, transform */
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #ff4081;
+  border: none;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
   position: relative;
-  -moz-transition: all 1000ms cubic-bezier(0.890, -0.170, 0.140, 1.225);
-  -o-transition: all 1000ms cubic-bezier(0.890, -0.170, 0.140, 1.225);
-  transition: all 1000ms cubic-bezier(0.890, -0.170, 0.140, 1.225);
- /* custom */
-  -moz-transition-timing-function: cubic-bezier(0.890, -0.170, 0.140, 1.225);
-  -o-transition-timing-function: cubic-bezier(0.890, -0.170, 0.140, 1.225);
-  transition-timing-function: cubic-bezier(0.890, -0.170, 0.140, 1.225);
- /* custom */
+  overflow: hidden;
+  z-index: 1;
 }
 
-.btn-slice .top {
-  position: relative;
-  height: 6px;
-  overflow: hidden;
+.button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: rgba(255, 64, 129, 0.6);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
   top: 0;
-  -moz-transition: all 300ms cubic-bezier(1.000, -0.055, 0.025, 1.040);
-  -o-transition: all 300ms cubic-bezier(1.000, -0.055, 0.025, 1.040);
-  transition: all 300ms cubic-bezier(1.000, -0.055, 0.025, 1.040);
- /* custom */
-  -moz-transition-timing-function: cubic-bezier(1.000, -0.055, 0.025, 1.040);
-  -o-transition-timing-function: cubic-bezier(1.000, -0.055, 0.025, 1.040);
-  transition-timing-function: cubic-bezier(1.000, -0.055, 0.025, 1.040);
- /* custom */
-  -webkit-transition-delay: 0.35s;
-  -moz-transition-delay: 0.35s;
-  -ms-transition-delay: 0.35s;
-  -o-transition-delay: 0.35s;
-  transition-delay: 0.35s;
-}
-
-.btn-slice .bottom {
-  position: relative;
-  height: 6px;
-  overflow: hidden;
-  bottom: 0;
-  -moz-transition: all 300ms cubic-bezier(1.000, -0.055, 0.025, 1.040);
-  -o-transition: all 300ms cubic-bezier(1.000, -0.055, 0.025, 1.040);
-  transition: all 300ms cubic-bezier(1.000, -0.055, 0.025, 1.040);
- /* custom */
-  -moz-transition-timing-function: cubic-bezier(1.000, -0.055, 0.025, 1.040);
-  -o-transition-timing-function: cubic-bezier(1.000, -0.055, 0.025, 1.040);
-  transition-timing-function: cubic-bezier(1.000, -0.055, 0.025, 1.040);
- /* custom */
-  -webkit-transition-delay: 0.35s;
-  -moz-transition-delay: 0.35s;
-  -ms-transition-delay: 0.35s;
-  -o-transition-delay: 0.35s;
-  transition-delay: 0.35s;
-}
-
-.btn-slice .bottom span {
-  top: -6px;
-  position: absolute;
   left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  background-size: 30px 30px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-.btn-slice:hover .top {
-  top: -5px;
-  -webkit-transition-delay: 0.35s;
-  -moz-transition-delay: 0.35s;
-  -ms-transition-delay: 0.35s;
-  -o-transition-delay: 0.35s;
-  transition-delay: 0.35s;
+.button:hover {
+  background-color: #e91e63;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
 }
 
-.btn-slice:hover .bottom {
-  bottom: -5px;
-  -webkit-transition-delay: 0.35s;
-  -moz-transition-delay: 0.35s;
-  -ms-transition-delay: 0.35s;
-  -o-transition-delay: 0.35s;
-  transition-delay: 0.35s;
+.button:hover::before {
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.btn-slice:hover, .btn-slice:focus, .btn-slice:active {
-  margin-left: 10px;
+.button:hover::after {
+  opacity: 1;
 }
 
-.btn-slice:before {
-  content: '';
-  height: 1px;
-  width: 60px;
-  background-color: #ffffff;
-  position: absolute;
-  margin-top: 6px;
-  right: -35px;
-  -moz-transition: all 1000ms cubic-bezier(0.890, -0.170, 0.140, 1.225);
-  -o-transition: all 1000ms cubic-bezier(0.890, -0.170, 0.140, 1.225);
-  transition: all 1000ms cubic-bezier(0.890, -0.170, 0.140, 1.225);
- /* custom */
-  -moz-transition-timing-function: cubic-bezier(0.890, -0.170, 0.140, 1.225);
-  -o-transition-timing-function: cubic-bezier(0.890, -0.170, 0.140, 1.225);
-  transition-timing-function: cubic-bezier(0.890, -0.170, 0.140, 1.225);
- /* custom */
+.button:active {
+  background-color: #e91e63;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transform: translateY(2px);
 }
 
-.btn-slice:hover:before {
-  width: 130%;
-}
 </style>

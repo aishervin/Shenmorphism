@@ -1,36 +1,63 @@
-<button class="button">Button</button>
-
+<button>
+Hover me
+</button>
 <style>
-/* From SHΞN™ Morphism by Remelens  - Tags: button, light, windows11 */
-.button {
-  display: inline-block;
+/* From SHΞN™ Morphism by aboalsim114 - Tags: button */
+button {
+  padding: 0.8em 1.8em;
+  border: 2px solid #fff;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
   text-align: center;
-  border: 0.9px solid #aaa;
-  border-radius: 2.5px;
-  background: #fff;
-  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 18px;
+  transition: .3s;
+  z-index: 1;
+  font-family: inherit;
   color: #000;
-  min-width: 80px;
-  padding: 4px 0;
-  margin: 0 5px;
-  line-height: 20px;
-  transition: all 0.2s;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  font-family: Menlo, Monaco, Consolas, "Lucida Console", "Ubuntu Mono",
-    "Microsoft YaHei UI", "PingFang SC", "Noto Sans CJK SC", "SimHei";
-}
-.button:hover {
-  border-color: #0078d4;
-  background: #e0eef9;
-  transition: all 0.2s;
-}
-.button:active {
-  border-color: #005499;
-  background: #cce4f7;
-  transition: all 0.2s;
+  border-radius: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
+button::after {
+  content: "";
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 800ms ease-in-out;
+  z-index: -1;
+  opacity: 80%;
+}
+
+button::before {
+  content: "";
+  width: 0;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 800ms ease-in-out;
+  z-index: -1;
+  opacity: 60%;
+}
+
+button:hover::after {
+  width: 37.5%;
+}
+
+button:hover::before {
+  width: 37.5%;
+}
 </style>
-    

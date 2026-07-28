@@ -1,44 +1,28 @@
-<div class="loader"></div>
+<div class="custom-loader"></div>
 <style>
-/* From SHΞN™ Morphism by bociKond - Tags: minimalist, loading, loader, animated, color, minimal */
-.loader {
-  /* color of choise */
-  --clr: #05A8AA;
-  /* loading time of choice */
-  --load-time: 2s;
-  outline: 5px solid var(--clr);
-  outline-offset: 5px;
+/* From SHΞN™ Morphism by cohencoo - Tags: loading, loader, download, downloading */
+.custom-loader {
+  width: 120px;
+  height: 22px;
+  border-radius: 20px;
+  color: #F4BF00;
+  border: 2px solid;
   position: relative;
-  overflow: hidden;
-  border-radius: 5rem;
-  /* width: 10rem; */
-  /* height: 2rem; */
-  padding: 1rem 5rem;
-  /* use either padding or width + height*/
-  /* I prefer the padding one */
-  /* rotate: -90deg; */
-  /* rotate if you want/need vertical loader */
 }
 
-.loader::after {
-  content: '';
+.custom-loader::before {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--clr);
-  z-index: 2;
-  animation: loading var(--load-time) ease-in-out infinite;
+  margin: 2px;
+  inset: 0 100% 0 0;
+  border-radius: inherit;
+  background: #F4BF00;
+  animation: p6 2s infinite;
 }
 
-@keyframes loading {
-  0% {
-    width: 0%;
-  }
-
+@keyframes p6 {
   100% {
-    width: 100%;
+    inset: 0
   }
 }
 </style>

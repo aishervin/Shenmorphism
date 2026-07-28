@@ -1,155 +1,23 @@
-<div class="container">
-    <div class="terminal_toolbar">
-        <div class="butt">
-            <button class="btn btn-color"></button>
-            <button class="btn"></button>
-            <button class="btn"></button>
-        </div>
-        <p class="user">johndoe@admin: ~</p>
-        <div class="add_tab">
-            +
-        </div>
-    </div>
-    <div class="terminal_body">
-        <div class="terminal_promt">
-            <span class="terminal_user">johndoe@admin:</span>
-            <span class="terminal_location">~</span>
-            <span class="terminal_bling">$</span>
-            <span class="terminal_cursor"></span>
-        </div>
-    </div>
+<!-- From SHΞN™ Morphism by catraco - Tags: form, card, light&dark, tailwind, feedback -->
+<div class="bg-white border border-slate-200 grid grid-cols-6 gap-2 rounded-xl p-2 text-sm">
+    <h1 class="text-center text-slate-200 text-xl font-bold col-span-6">Send Feedback</h1>
+    <textarea placeholder="Your feedback..." class="bg-slate-100 text-slate-600 h-28 placeholder:text-slate-600 placeholder:opacity-50 border border-slate-200 col-span-6 resize-none outline-none rounded-lg p-2 duration-300 focus:border-slate-600"></textarea>
+    <button class="fill-slate-600 col-span-1 flex justify-center items-center rounded-lg p-2 duration-300 bg-slate-100 hover:border-slate-600 focus:fill-blue-200 focus:bg-blue-400 border border-slate-200">
+<svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 512 512">
+<path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm177.6 62.1C192.8 334.5 218.8 352 256 352s63.2-17.5 78.4-33.9c9-9.7 24.2-10.4 33.9-1.4s10.4 24.2 1.4 33.9c-22 23.8-60 49.4-113.6 49.4s-91.7-25.5-113.6-49.4c-9-9.7-8.4-24.9 1.4-33.9s24.9-8.4 33.9 1.4zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path>
+</svg>
+</button>
+    <button class="fill-slate-600 col-span-1 flex justify-center items-center rounded-lg p-2 duration-300 bg-slate-100 hover:border-slate-600 focus:fill-blue-200 focus:bg-blue-400 border border-slate-200">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 512 512">
+<path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM174.6 384.1c-4.5 12.5-18.2 18.9-30.7 14.4s-18.9-18.2-14.4-30.7C146.9 319.4 198.9 288 256 288s109.1 31.4 126.6 79.9c4.5 12.5-2 26.2-14.4 30.7s-26.2-2-30.7-14.4C328.2 358.5 297.2 336 256 336s-72.2 22.5-81.4 48.1zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path></svg>
+        </button>
+    <span class="col-span-2"></span>
+    <button class="bg-slate-100 stroke-slate-600 border border-slate-200 col-span-2 flex justify-center rounded-lg p-2 duration-300 hover:border-slate-600 hover:text-white focus:stroke-blue-200 focus:bg-blue-400">
+            <svg fill="none" viewBox="0 0 24 24" height="30px" width="30px" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" d="M7.39999 6.32003L15.89 3.49003C19.7 2.22003 21.77 4.30003 20.51 8.11003L17.68 16.6C15.78 22.31 12.66 22.31 10.76 16.6L9.91999 14.08L7.39999 13.24C1.68999 11.34 1.68999 8.23003 7.39999 6.32003Z"></path>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" d="M10.11 13.6501L13.69 10.0601"></path>
+            </svg>
+        </button>
+
 </div>
-<style>
-/* From SHΞN™ Morphism by Kemboi-Dun - Tags: card */
-.container {
-  width: 250px;
-  height: 250px;
-}
 
-.terminal_toolbar {
-  display: flex;
-  height: 30px;
-  align-items: center;
-  padding: 0 8px;
-  box-sizing: border-box;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  background: #212121;
-  justify-content: space-between;
-}
-
-.butt {
-  display: flex;
-  align-items: center;
-}
-
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin-right: 5px;
-  font-size: 8px;
-  height: 12px;
-  width: 12px;
-  box-sizing: border-box;
-  border: none;
-  border-radius: 100%;
-  background: linear-gradient(#7d7871 0%, #595953 100%);
-  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 0px 1px 0px #41403A, 0px 1px 1px 0px #474642;
-}
-
-.btn-color {
-  background: #ee411a;
-}
-
-.btn:hover {
-  cursor: pointer;
-}
-
-.btn:focus {
-  outline: none;
-}
-
-.butt--exit {
-  background: linear-gradient(#f37458 0%, #de4c12 100%);
-}
-
-.add_tab {
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 0 6px;
-  border-radius: 4px 4px 0 0;
-  border-bottom: none;
-  cursor: pointer;
-}
-
-.user {
-  color: #d5d0ce;
-  margin-left: 6px;
-  font-size: 14px;
-  line-height: 15px;
-}
-
-.terminal_body {
-  background: rgba(0, 0, 0, 0.6);
-  height: calc(100% - 30px);
-  padding-top: 2px;
-  margin-top: -1px;
-  font-size: 12px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.terminal_promt {
-  display: flex;
-}
-
-.terminal_promt span {
-  margin-left: 4px;
-}
-
-.terminal_user {
-  color: #1eff8e;
-}
-
-.terminal_location {
-  color: #4878c0;
-}
-
-.terminal_bling {
-  color: #dddddd;
-}
-
-.terminal_cursor {
-  display: block;
-  height: 14px;
-  width: 5px;
-  margin-left: 10px;
-  animation: curbl 1200ms linear infinite;
-}
-
-@keyframes curbl {
-
-  0% {
-    background: #ffffff;
-  }
-
-  49% {
-    background: #ffffff;
-  }
-
-  60% {
-    background: transparent;
-  }
-
-  99% {
-    background: transparent;
-  }
-
-  100% {
-    background: #ffffff;
-  }
-}
-</style>

@@ -1,231 +1,92 @@
-<div class="card">
-  <div class="wrap">
-    <div class="terminal">
-      <hgroup class="head">
-        <p class="title">
-          <svg
-            width="16px"
-            height="16px"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            stroke-linejoin="round"
-            stroke-linecap="round"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-          >
-            <path
-              d="M7 15L10 12L7 9M13 15H17M7.8 21H16.2C17.8802 21 18.7202 21 19.362 20.673C19.9265 20.3854 20.3854 19.9265 20.673 19.362C21 18.7202 21 17.8802 21 16.2V7.8C21 6.11984 21 5.27976 20.673 4.63803C20.3854 4.07354 19.9265 3.6146 19.362 3.32698C18.7202 3 17.8802 3 16.2 3H7.8C6.11984 3 5.27976 3 4.63803 3.32698C4.07354 3.6146 3.6146 4.07354 3.32698 4.63803C3 5.27976 3 6.11984 3 7.8V16.2C3 17.8802 3 18.7202 3.32698 19.362C3.6146 19.9265 4.07354 20.3854 4.63803 20.673C5.27976 21 6.11984 21 7.8 21Z"
-            ></path>
-          </svg>
-          Terminal
-        </p>
-
-        <button class="copy_toggle" tabindex="-1" type="button">
-          <svg
-            width="16px"
-            height="16px"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            stroke-linejoin="round"
-            stroke-linecap="round"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-          >
-            <path
-              d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"
-            ></path>
-            <path
-              d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
-            ></path>
-          </svg>
-        </button>
-      </hgroup>
-
-      <div class="body">
-        <pre class="pre">          <code>-&nbsp;</code>
-          <code>npx&nbsp;</code>
-          <code class="cmd" data-cmd="create-react-app@latest"></code>
-        </pre>
-      </div>
+<div class="cards">
+  <div class="card one">
+    <div class="cardDetails">
+      <div class="cardDetailsHaeder">Card Header</div>
+      <div class="cardDetailsButton">Click me</div>
+    </div>
+  </div>
+  <div class="card two">
+    <div class="cardDetails">
+      <div class="cardDetailsHaeder">Card Header</div>
+      <div class="cardDetailsButton">Click me</div>
+    </div>
+  </div>
+  <div class="card three">
+    <div class="cardDetails">
+      <div class="cardDetailsHaeder">Card Header</div>
+      <div class="cardDetailsButton">Click me</div>
     </div>
   </div>
 </div>
-
 <style>
-/* From SHΞN™ Morphism by ilkhoeri  - Tags: simple, action, card, text animation, text, click effect, terminal */
+/* From SHΞN™ Morphism by shlomo20 - Tags: gradient, card, hover, gradients */
+.cards {
+  position: relative;
+}
+
 .card {
-  padding: 1rem;
+  z-index: 1;
+  position: absolute;
+  width: 254px;
+  height: 190px;
+  border-radius: 10px;
+  transition: all .5s ease-out;
   overflow: hidden;
-  border: 1px solid #c5c5c5;
-  border-radius: 12px;
-  background-color: #d9d9d92f;
-  backdrop-filter: blur(8px);
-  min-width: 344px;
+  transform: translateX(0px) translateY(0px) perspective(905px) rotateX(0deg) rotateY(0deg) rotateZ(-8deg);
 }
-.wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  position: relative;
-  z-index: 10;
-  border: 0.5px solid #525252;
-  border-radius: 8px;
-  overflow: hidden;
-}
-.terminal {
-  display: flex;
-  flex-direction: column;
 
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+.card.one {
+  top: -120px;
+  left: -150px;
+  background: linear-gradient(180deg, #FF0055 0%, #000066 100%);
 }
-.head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  min-height: 40px;
-  padding-inline: 12px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  background-color: #202425;
+
+.card.two {
+  top: -95px;
+  left: -125px;
+  background: linear-gradient(180deg, #fa00ff 0%, #01f998 99%);
 }
-.title {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  height: 2.5rem;
-  user-select: none;
-  font-weight: 600;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: #8e8e8e;
+
+.card.three {
+  top: -70px;
+  left: -100px;
+  background: linear-gradient(180deg, #c0f901 0%, #fa00ff 100%);
 }
-.title > svg {
-  height: 18px;
-  width: 18px;
-  margin-top: 2px;
-  color: #006adc;
+
+.card:hover {
+  z-index: 4;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) !important;
+  transition: all .5s ease-out;
 }
-.copy_toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.25rem;
-  border: 0.65px solid #c1c2c5;
-  margin-left: auto;
-  border-radius: 6px;
-  background-color: #202425;
-  color: #8e8e8e;
-  cursor: pointer;
-}
-.copy_toggle > svg {
-  width: 20px;
-  height: 20px;
-}
-.copy_toggle:active > svg > path,
-.copy_toggle:focus-within > svg > path {
-  animation: clipboard-check 500ms linear forwards;
-}
-.body {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  border-bottom-right-radius: 8px;
-  border-bottom-left-radius: 8px;
-  overflow-x: auto;
-  padding: 1rem;
-  line-height: 19px;
-  color: white;
-  background-color: black;
-  white-space: nowrap;
-}
-.pre {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-wrap: nowrap;
-  white-space: pre;
-  background-color: transparent;
-  overflow: hidden;
-  box-sizing: border-box;
-  font-size: 16px;
-}
-.pre code:nth-child(1) {
-  color: #575757;
-}
-.pre code:nth-child(2) {
-  color: #e34ba9;
-}
-.cmd {
-  height: 19px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-}
-.cmd::before {
-  content: attr(data-cmd);
-  position: relative;
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  background-color: transparent;
-  animation: inputs 8s steps(22) infinite;
-}
-.cmd::after {
-  content: "";
-  position: relative;
-  display: block;
+
+.cardDetails {
+  width: 55%;
   height: 100%;
-  overflow: hidden;
-  background-color: transparent;
-  border-right: 0.15em solid #e34ba9;
-  animation: cursor 0.5s step-end infinite alternate, blinking 0.5s infinite;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: rgba(0,0,0,0.8);
+  transition: .5s;
+  transform-origin: left;
+  transform: perspective(2000px) rotateY(-90deg);
 }
 
-@keyframes blinking {
-  20%,
-  80% {
-    transform: scaleY(1);
-  }
-  50% {
-    transform: scaleY(0);
-  }
-}
-@keyframes cursor {
-  50% {
-    border-right-color: transparent;
-  }
-}
-@keyframes inputs {
-  0%,
-  100% {
-    width: 0;
-  }
-  10%,
-  90% {
-    width: 58px;
-  }
-  30%,
-  70% {
-    width: 215px;
-    max-width: max-content;
-  }
-}
-@keyframes clipboard-check {
-  100% {
-    color: #fff;
-    d: path(
-      "M 9 5 H 7 a 2 2 0 0 0 -2 2 v 12 a 2 2 0 0 0 2 2 h 10 a 2 2 0 0 0 2 -2 V 7 a 2 2 0 0 0 -2 -2 h -2 M 9 5 a 2 2 0 0 0 2 2 h 2 a 2 2 0 0 0 2 -2 M 9 5 a 2 2 0 0 1 2 -2 h 2 a 2 2 0 0 1 2 2 m -6 9 l 2 2 l 4 -4"
-    );
-  }
+.card:hover .cardDetails {
+  transform: perspective(2000px) rotateY(0deg);
 }
 
+.cardDetailsHaeder {
+  font-weight: 600;
+  color: #edb899;
+}
+
+.cardDetailsButton {
+  padding: 3px 6px;
+  border-radius: 25px;
+  background-color: #edb899;
+  color: #000;
+  font-weight: 600;
+}
 </style>
-    

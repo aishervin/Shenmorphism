@@ -1,72 +1,45 @@
-<div class="loader-container">
-  <div class="loader"></div>
-</div>
-
+<div class="loader loader_bubble"></div>
 <style>
-/* From SHΞN™ Morphism by Gautammsharma - Tags: loader */
-.loader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20em;
-}
-
+/* From SHΞN™ Morphism by mrhyddenn - Tags: loader */
 .loader {
   position: relative;
-  width: 3em;
-  height: 3em;
-  border-radius: 50%;
-  background-color: rgb(208, 208, 208);
-  box-shadow: 0 0em 4em rgba(23, 190, 250, 0.5);
-  animation: loader-rotate 1s linear infinite;
+  display: block;
+  width: 44px;
+  height: 44px;
+  font-size: 15px;
+  box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
 }
 
 .loader::before,
 .loader::after {
-  content: "";
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  display: block;
+}
+
+.loader_bubble::before {
+  top: 10px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  background: #fff;
   border-radius: 50%;
-  border: 1em solid rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
 }
 
-.loader::before {
-  animation: loader-pulse 1s ease-out infinite;
+.loader_bubble {
+  background: linear-gradient(180deg, rgb(0, 91, 228) 10%, rgb(75, 127, 240) 100%);
+  border-radius: 50%;
+  transform-origin: 50% 50%;
+  animation: bubble7234 1200ms cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
 }
 
-.loader::after {
-  animation: loader-pulse 1s ease-out infinite 0.5s;
-}
-
-@keyframes loader-rotate {
+@keyframes bubble7234 {
   0% {
-    transform: rotate(0);
+    transform: translate3d(0,0,0) rotate(0);
   }
 
   100% {
-    transform: rotate(360deg);
+    transform: translate3d(0,0,0) rotate(360deg);
   }
 }
-
-@keyframes loader-pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  50% {
-    transform: scale(1.5);
-    opacity: 0.5;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
 </style>

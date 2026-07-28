@@ -1,142 +1,98 @@
-<div class="box">
-  <button class="button">MATRIX</button>
-  <div class="matrix">
-    <span style="--i: 6" class="code-line">
-      <p class="code">z</p><p class="code">6</p><p class="code">0</p><p class="code">z</p>
-    </span>
-    <span style="--i: 8" class="code-line">
-      <p class="code">6</p><p class="code">9</p><p class="code">p</p>
-    </span>
-    <span style="--i: 5" class="code-line">
-      <p class="code">u</p><p class="code">3</p><p class="code">g</p>
-    </span>
-    <span style="--i: 12" class="code-line">
-      <p class="code">a</p><p class="code">t</p><p class="code">7</p><p class="code">2</p><p class="code">g</p><p class="code">h</p><p class="code">0</p><p class="code">k</p>
-    </span>
-    <span style="--i: 9" class="code-line">
-      <p class="code">6</p><p class="code">3</p><p class="code">0</p>
-    </span>
-    <span style="--i: 6" class="code-line">
-      <p class="code">7</p><p class="code">s</p><p class="code">b</p><p class="code">q</p>
-    </span>
-    <span style="--i: 8" class="code-line">
-      <p class="code">m</p><p class="code">2</p><p class="code">5</p><p class="code">4</p><p class="code">l</p><p class="code">1</p>
-    </span>
-    <span style="--i: 12" class="code-line">
-      <p class="code">9</p><p class="code">1</p><p class="code">s</p><p class="code">2</p><p class="code">t</p><p class="code">7</p><p class="code">4</p><p class="code">h</p><p class="code">0</p>
-    </span>
-    <span style="--i: 16" class="code-line">
-      <p class="code">a</p><p class="code">b</p><p class="code">c</p><p class="code">d</p><p class="code">e</p>
-    </span>
-    <span style="--i: 9" class="code-line">
-      <p class="code">f</p><p class="code">g</p><p class="code">h</p><p class="code">i</p><p class="code">j</p>
-    </span>
-    <span style="--i: 6" class="code-line">
-      <p class="code">k</p><p class="code">l</p><p class="code">m</p><p class="code">n</p>
-    </span>
-    <span style="--i: 19" class="code-line">
-      <p class="code">u</p><p class="code">v</p><p class="code">w</p><p class="code">v</p><p class="code">2</p><p class="code">3</p>
-    </span>
-    <span style="--i: 7" class="code-line">
-      <p class="code">p</p><p class="code">q</p><p class="code">r</p><p class="code">s</p><p class="code">t</p>
-    </span>
-    <span style="--i: 12" class="code-line">
-      <p class="code">1</p><p class="code">2</p><p class="code">6</p><p class="code">x</p><p class="code">5</p><p class="code">h</p>
-    </span>
-    <span style="--i: 9" class="code-line">
-      <p class="code">6</p><p class="code">7</p><p class="code">f</p><p class="code">a</p><p class="code">6</p><p class="code">1</p>
-    </span>
-    <span style="--i: 17" class="code-line">
-      <p class="code">j</p><p class="code">f</p><p class="code">0</p><p class="code">x</p><p class="code">6</p><p class="code">0</p>
-    </span>
-    <span style="--i: 10" class="code-line">
-      <p class="code">0</p><p class="code">k</p><p class="code">%</p><p class="code">f</p><p class="code">6</p><p class="code">%</p>
-    </span>
-  </div>
-</div>
+<button class="Btn">
+   <svg class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>
+   <span class="icon2"></span>
+   <span class="tooltip">Download</span>
+</button>
 <style>
-/* From SHΞN™ Morphism by tarantino421 - Tags: button, hover button, matrix */
-.box {
-  --clr-shadow__border: #A8DF8E;
-  --clr-text: #F6F4EB;
-  --clr-code-line: #43ff85;
-  --clr-matrix: #020204;
-  --size: 3rem;
-  position: relative;
-  outline: 1px solid var(--clr-shadow__border);
-}
-
-.button {
-  font-weight: 600;
-  font-size: 1.5rem;
-  letter-spacing: 0.2rem;
-  color: var(--clr-text);
-  padding: calc(var(--size) / 3) var(--size);
-  background: transparent;
+/* From SHΞN™ Morphism by vinodjangid07 - Tags: button, download, hover effect */
+.Btn {
+  width: 50px;
+  height: 50px;
   border: none;
-  cursor: pointer;
-  text-shadow: 2px 0px var(--clr-shadow__border), 0px 2px var(--clr-shadow__border),
-  -2px 0px var(--clr-shadow__border), 0px -2px var(--clr-shadow__border);
-}
-
-.matrix {
-  width: 100%;
-  height: 100%;
-  bottom: 0%;
-  transition: 0.5s ease-in-out;
-  z-index: -1;
-  opacity: 0;
+  border-radius: 50%;
+  background-color: rgb(27, 27, 27);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  overflow: hidden;
-  position: absolute;
-  background: var(--clr-matrix);
-}
-
-.box:hover .matrix {
-  opacity: 1;
-}
-
-.code-line {
+  justify-content: center;
+  cursor: pointer;
   position: relative;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.11);
+}
+
+.svgIcon {
+  fill: rgb(214, 178, 255);
+}
+
+.icon2 {
+  width: 18px;
+  height: 5px;
+  border-bottom: 2px solid rgb(182, 143, 255);
+  border-left: 2px solid rgb(182, 143, 255);
+  border-right: 2px solid rgb(182, 143, 255);
+}
+
+.tooltip {
+  position: absolute;
+  right: -105px;
+  opacity: 0;
+  background-color: rgb(12, 12, 12);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
   display: flex;
-  flex-direction: column-reverse;
-  transition: 0.5s;
-  min-height: 0.6rem;
-  min-width: 0.6rem;
-  animation: matrix-animation calc(.2s * var(--i)) linear infinite;
+  align-items: center;
+  justify-content: center;
+  transition-duration: .2s;
+  pointer-events: none;
+  letter-spacing: 0.5px;
 }
 
-.code {
-  text-shadow: 20px 100px var(--clr-code-line),-20px -50px var(--clr-code-line);
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: var(--clr-code-line);
-  opacity: 0.5;
+.tooltip::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: rgb(12, 12, 12);
+  background-size: 1000%;
+  background-position: center;
+  transform: rotate(45deg);
+  left: -5%;
+  transition-duration: .3s;
 }
 
-.code:first-child {
-  color: var(--clr-text);
+.Btn:hover .tooltip {
   opacity: 1;
+  transition-duration: .3s;
 }
 
-@keyframes matrix-animation {
+.Btn:hover {
+  background-color: rgb(150, 94, 255);
+  transition-duration: .3s;
+}
+
+.Btn:hover .icon2 {
+  border-bottom: 2px solid rgb(235, 235, 235);
+  border-left: 2px solid rgb(235, 235, 235);
+  border-right: 2px solid rgb(235, 235, 235);
+}
+
+.Btn:hover .svgIcon {
+  fill: rgb(255, 255, 255);
+  animation: slide-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-top {
   0% {
-    transform: translateY(calc(-50% * var(--i)));
+    transform: translateY(-10px);
+    opacity: 0;
   }
 
   100% {
-    -webkit-transform: translateY(calc(50% * var(--i)));
-    transform: translateY(calc(50% * var(--i)));
+    transform: translateY(0px);
+    opacity: 1;
   }
 }
-
-
-
-
-
-
-
 
 </style>

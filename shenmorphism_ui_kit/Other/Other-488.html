@@ -1,197 +1,86 @@
-<div class="loader">
-  <div class="loader__balls">
-    <div class="loader__balls__group">
-      <div class="ball item1"></div>
-      <div class="ball item1"></div>
-      <div class="ball item1"></div>
-    </div>
-    <div class="loader__balls__group">
-      <div class="ball item2"></div>
-      <div class="ball item2"></div>
-      <div class="ball item2"></div>
-    </div>
-    <div class="loader__balls__group">
-      <div class="ball item3"></div>
-      <div class="ball item3"></div>
-      <div class="ball item3"></div>
-    </div>
-  </div>
+<div class="main">
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
 </div>
 
 <style>
-/* From SHΞN™ Morphism by lesimpleliott  - Tags: loader, ball, funny, jump */
-.loader__balls {
+/* From SHΞN™ Morphism by Praashoo7  - Tags: arrow, transition, cool checkbox, loader, arrow */
+.main {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  width: 15em;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  gap: 15px;
 }
-.loader__balls__group {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  position: relative;
-  height: 100px;
+
+.card {
   width: 40px;
-}
-.ball {
-  height: 30px;
-  width: 30px;
-  border-radius: 15px;
-  position: absolute;
-  transform-origin: bottom;
-}
-
-/* ANIMATION BALL 1*/
-.loader__balls__group :nth-child(1) {
-  background-color: #99e2d0;
-  animation-name: jumpinBallAnimation1;
-  animation-duration: 1000ms;
-  animation-iteration-count: infinite;
-}
-@keyframes jumpinBallAnimation1 {
-  0% {
-    transform: translateY(0) scale(1, 1);
-  }
-  10% {
-    transform: translateY(0) scale(1.3, 0.8);
-  }
-  11% {
-    transform: translateY(0) scale(0.7, 1.2);
-    animation-timing-function: cubic-bezier(0, 0, 0.5, 1);
-  }
-  39% {
-    transform: translateY(-75px) scale(1);
-    animation-timing-function: cubic-bezier(0, 0, 0.5, 1);
-  }
-  40% {
-    transform: translateY(-75px) scale(1);
-  }
-  41% {
-    transform: translateY(-75px) scale(1);
-    animation-timing-function: cubic-bezier(1, 0, 1, 0);
-  }
-  69% {
-    transform: translateY(0px) scale(1, 1);
-    animation-timing-function: cubic-bezier(1, 0, 1, 0);
-  }
-  70% {
-    transform: translateY(0) scale(1.5, 0.4);
-  }
-  80% {
-    transform: translateY(0) scale(0.8, 1.2);
-  }
-  90% {
-    transform: translateY(0) scale(1.1, 0.8);
-  }
-  100% {
-    transform: translateY(0) scale(1, 1);
-  }
+  height: 40px;
+  border-top-left-radius: 10px;
+  background: lightgrey;
+  transition: 0.4s ease-in-out, 0.2s background-color;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  margin: 0.2em;
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: 2s loading90 infinite;
 }
 
-/* ANIMATION BALL 2*/
-.loader__balls__group :nth-child(2) {
-  background-color: #ff79da;
-  animation-name: jumpinBallAnimation2;
-  animation-duration: 1000ms;
-  animation-iteration-count: infinite;
-}
-@keyframes jumpinBallAnimation2 {
-  0% {
-    transform: translateY(0) scale(1, 1);
-  }
-  10% {
-    transform: translateY(0) scale(1.3, 0.8);
-  }
-  11% {
-    transform: translateY(0) scale(0.7, 1.2);
-    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
-  }
-  39% {
-    transform: translateY(-75px) scale(1);
-    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
-  }
-  40% {
-    transform: translateY(-75px) scale(1);
-  }
-  41% {
-    transform: translateY(-75px) scale(1);
-    animation-timing-function: cubic-bezier(1, 0, 1, 0.5);
-  }
-  69% {
-    transform: translateY(0px) scale(1, 1);
-    animation-timing-function: cubic-bezier(1, 0, 1, 0.5);
-  }
-  70% {
-    transform: translateY(0) scale(1.5, 0.4);
-  }
-  80% {
-    transform: translateY(0) scale(0.8, 1.2);
-  }
-  90% {
-    transform: translateY(0) scale(1.1, 0.8);
-  }
-  100% {
-    transform: translateY(0) scale(1, 1);
-  }
+.card:nth-child(2) {
+  animation-delay: 1s;
 }
 
-/* ANIMATION BALL 3*/
-.loader__balls__group :nth-child(3) {
-  background-color: #9356dc;
-  animation-name: jumpinBallAnimation3;
-  animation-duration: 1000ms;
-  animation-iteration-count: infinite;
+.card:nth-child(4) {
+  animation-delay: 1s;
 }
-@keyframes jumpinBallAnimation3 {
+
+.card:nth-child(6) {
+  animation-delay: 1s;
+}
+
+.card:nth-child(8) {
+  animation-delay: 1s;
+}
+
+.card:nth-child(10) {
+  animation-delay: 1s;
+}
+
+.card:nth-child(12) {
+  animation-delay: 1s;
+}
+
+.card:nth-child(14) {
+  animation-delay: 1s;
+}
+
+@keyframes loading90 {
   0% {
-    transform: translateY(0) scale(1, 1);
+    background: rgba(255, 255, 255, 0.2);
   }
-  10% {
-    transform: translateY(0) scale(1.3, 0.8);
+
+  50% {
+    background: limegreen;
   }
-  11% {
-    transform: translateY(0) scale(0.7, 1.2);
-    animation-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  }
-  39% {
-    transform: translateY(-75px) scale(1);
-    animation-timing-function: cubic-bezier(0, 1, 0.5, 1);
-  }
-  40% {
-    transform: translateY(-75px) scale(1);
-  }
-  41% {
-    transform: translateY(-75px) scale(1);
-    animation-timing-function: cubic-bezier(1, 0, 1, 1);
-  }
-  69% {
-    transform: translateY(0px) scale(1, 1);
-    animation-timing-function: cubic-bezier(1, 0, 1, 1);
-  }
-  70% {
-    transform: translateY(0) scale(1.5, 0.4);
-  }
-  80% {
-    transform: translateY(0) scale(0.8, 1.2);
-  }
-  90% {
-    transform: translateY(0) scale(1.1, 0.8);
-  }
+
   100% {
-    transform: translateY(0) scale(1, 1);
+    background: rgba(255, 255, 255, 0.2);
   }
-}
-.loader__balls__group .item1 {
-  animation-delay: 0ms;
-}
-.loader__balls__group .item2 {
-  animation-delay: 100ms;
-}
-.loader__balls__group .item3 {
-  animation-delay: 200ms;
 }
 
 </style>

@@ -1,63 +1,61 @@
-<label class="container">
-  <input checked="checked" type="checkbox">
-  <div class="checkmark"></div>
+<label class="checkbox" for="checkbox1">
+  <span class="label">Checkbox</span>
+  <input checked="" id="checkbox1" type="checkbox">
+  <span class="checkmark"></span>
 </label>
 <style>
-/* From SHΞN™ Morphism by bimbx - Tags: checkbox */
-/* Hide the default checkbox */
-.container input {
- position: absolute;
- opacity: 0;
- cursor: pointer;
- height: 0;
- width: 0;
+/* From SHΞN™ Morphism by adamgiebl - Tags: neumorphism, skeuomorphism, checkbox */
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  font-family: Arial, sans-serif;
+  color: black;
 }
 
-.container {
- display: block;
- position: relative;
- cursor: pointer;
- font-size: 20px;
- user-select: none;
+.checkbox input {
+  display: none;
 }
 
-/* Create a custom checkbox */
-.checkmark {
- position: relative;
- top: 0;
- left: 0;
- height: 1.3em;
- width: 1.3em;
- background: #606062;
- border-radius: 5px;
- box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.30), 0px 1px 1px rgba(0,5);
+.checkbox .checkmark {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  background-color: #ffffff2b;
+  box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, rgba(0, 0, 0, 0.21) 0px 0px 0px 24px inset,
+        #22cc3f 0px 0px 0px 0px inset, rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
+  cursor: pointer;
+  position: relative;
 }
 
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
- background-image: linear-gradient(#b9e9b3,#a8e4a0)
+.checkbox .checkmark::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background-color: #e3e3e3;
+  box-shadow: transparent 0px 0px 0px 2px, rgba(0, 0, 0, 0.3) 0px 6px 6px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s ease-in-out;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
- content: "";
- position: absolute;
- display: none;
+.checkbox input:checked + .checkmark {
+  background-color: #22cc3f;
+  box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, #22cc3f 0px 0px 0px 2px inset, #22cc3f 0px 0px 0px 24px inset,
+        rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
 }
 
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
- display: block;
+.checkbox input:checked + .checkmark::after {
+  background-color: white;
 }
 
-/* Style the checkmark/indicator */
-.container .checkmark:after {
- left: 0.45em;
- top: 0.25em;
- width: 0.25em;
- height: 0.5em;
- border: solid white;
- border-width: 0 0.15em 0.15em 0;
- transform: rotate(45deg);
+.checkbox .label {
+  margin-right: 10px;
+  user-select: none;
+  font-weight: 700;
+  cursor: pointer;
 }
 </style>

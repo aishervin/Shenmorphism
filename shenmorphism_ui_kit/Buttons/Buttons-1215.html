@@ -1,47 +1,34 @@
-<a id="scroll-up" class="scroll-up" href="#">
-	<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-		<path d="M0 0h24v24H0z" fill="none"></path>
-		<path fill="rgba(255,255,255,1)" d="M11.9997 10.8284L7.04996 15.7782L5.63574 14.364L11.9997 8L18.3637 14.364L16.9495 15.7782L11.9997 10.8284Z">
-		</path>
-	</svg>
-</a>
+<button class="btn"> Hover me
+</button>
 <style>
-/* From SHΞN™ Morphism by ArturCodeCraft - Tags: button, scroll to top, scroll */
-/* <reset-style> ============================ */
-a {
-  text-decoration: none;
-}
-/* <main-style> ============================ */
-.scroll-up {
-	/* position: fixed; */
-  right: 3rem;
-  bottom: -50%;
-  z-index: 10;
-  width: 32px;
-  height: 32px;
-  border-radius: 4px;
-  background-color: rgba(29, 29, 31, 0.7);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition: bottom .4s, transform .4s;
+/* From SHΞN™ Morphism by Shakil-Babu - Tags: button */
+.btn {
+ background-color: #00BFA6;
+ padding: 14px 40px;
+ color: #fff;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ cursor: pointer;
+ border-radius: 10px;
+ border: 2px dashed #00BFA6;
+ box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+ transition: .4s;
 }
 
-.scroll-up:hover {
-  transform: translateY(-.25rem);
+.btn span:last-child {
+ display: none;
 }
 
-/* Show scroll-up */
-._show-scroll {
-  bottom: 3rem;
+.btn:hover {
+ transition: .4s;
+ border: 2px dashed #00BFA6;
+ background-color: #fff;
+ color: #00BFA6;
 }
 
-@media (max-width: 1199.98px) {
-  .scroll-up {
-    right: 1rem;
-  }
+.btn:active {
+ background-color: #87dbd0;
 }
+
+
 </style>

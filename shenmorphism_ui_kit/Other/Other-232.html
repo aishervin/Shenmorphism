@@ -1,154 +1,92 @@
-<label><input value="on" name="dummy" type="checkbox" class="bubble"></label>
+<label class="switch">
+  <input type="checkbox" class="input__check">
+  <span class="slider"></span>
+</label>
 <style>
-/* From SHΞN™ Morphism by Nawsome - Tags: skeuomorphism, checkbox, squishy, bubble */
-label, .bubble {
-  display: block;
-  -webkit-tap-highlight-color: transparent;
-}
-
-label {
-  animation: float74 4s ease-in-out infinite;
-}
-
-.bubble, .bubble:before, .bubble:after {
-  transition-duration: 0.2s;
-}
-
-.bubble, .bubble:after {
-  border-radius: 50%;
-}
-
-.bubble {
-  background-image: radial-gradient(8% 8% at 22% 28%,hsl(0,0%,100%) 45%,hsla(0,0%,100%,0) 50%),
-		radial-gradient(8% 8% at 23% 27%,hsl(0,0%,100%) 45%,hsla(0,0%,100%,0) 50%),
-		radial-gradient(8% 8% at 24% 26%,hsl(0,0%,100%) 45%,hsla(0,0%,100%,0) 50%),
-		radial-gradient(8% 8% at 25% 25%,hsl(0,0%,100%) 45%,hsla(0,0%,100%,0) 50%),
-		radial-gradient(8% 8% at 26% 24%,hsl(0,0%,100%) 45%,hsla(0,0%,100%,0) 50%),
-		radial-gradient(8% 8% at 27% 23%,hsl(0,0%,100%) 45%,hsla(0,0%,100%,0) 50%),
-		radial-gradient(8% 8% at 28% 22%,hsl(0,0%,100%) 45%,hsla(0,0%,100%,0) 50%);
-  box-shadow: 0 -0.06em 0.1em hsl(0,90%,100%) inset,
-		0 -0.15em 0.4em hsl(0,90%,45%) inset,
-		0 0.05em 0.05em hsl(0,90%,45%) inset,
-		0.05em 0 0.1em hsl(0,90%,100%) inset,
-		-0.05em 0 0.1em hsl(0,90%,100%) inset,
-		0 0.1em 0.4em hsl(0,90%,60%) inset;
-  cursor: pointer;
+/* From SHΞN™ Morphism by EddyBel - Tags: switch */
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
   position: relative;
-  width: 3em;
-  height: 3em;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
   transform-style: preserve-3d;
-  transition-property: box-shadow, transform, width, height;
-  transition-timing-function: ease-in-out, ease-in-out, var(--bubbleTiming), var(--bubbleTiming);
-  will-change: transform;
-  -webkit-appearance: none;
-  appearance: none;
-  z-index: 0;
+  perspective: 500px;
+  animation: toggle__animation 3s infinite;
 }
 
-.bubble:before, .bubble:after {
+.switch::before {
   content: "";
-  display: block;
   position: absolute;
-  transition-timing-function: var(--bubbleTiming);
-}
-
-.bubble:before {
-  border-radius: 0.75em;
-  box-shadow: 0 0 0 0.5em hsl(0,0%,100%) inset;
-  filter: drop-shadow(0.6em 0.6em 4px hsla(0,0%,0%,0.2));
-  top: 50%;
-  left: 50%;
-  width: 1.5em;
-  height: 1.5em;
-  transform: translate3d(-50%,-50%,-1px);
-  z-index: -1;
-}
-
-.bubble:after {
-  background: radial-gradient(100% 100% at center,hsla(0,0%,0%,0) 35%,hsla(0,0%,0%,0.2) 48%,hsla(0,0%,0%,0) 50%);
-  filter: blur(4px);
-  top: 0.6em;
-  left: 0.6em;
   width: 100%;
   height: 100%;
-  transform: translate3d(0,0,-1px);
-  z-index: -2;
+  left: 0;
+  top: 0;
+  filter: blur(20px);
+  z-index: -1;
+  border-radius: 50px;
+  background-color: #d8ff99;
+  background-image: radial-gradient(at 21% 46%, hsla(183,65%,60%,1) 0px, transparent 50%),
+radial-gradient(at 23% 25%, hsla(359,74%,70%,1) 0px, transparent 50%),
+radial-gradient(at 20% 1%, hsla(267,83%,75%,1) 0px, transparent 50%),
+radial-gradient(at 86% 87%, hsla(204,69%,68%,1) 0px, transparent 50%),
+radial-gradient(at 99% 41%, hsla(171,72%,77%,1) 0px, transparent 50%),
+radial-gradient(at 55% 24%, hsla(138,60%,62%,1) 0px, transparent 50%);
 }
 
-.bubble:focus, .bubble:hover {
-  transform: scale(1.1);
-  outline: none;
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.bubble:focus:active, .bubble:hover:active {
-  width: 3.6em;
-  height: 2.4em;
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fdfefedc;
+  transition: .4s;
+  border-radius: 30px;
 }
 
-.bubble:focus:before, .bubble:hover:before {
-  filter: drop-shadow(0.75em 0.75em 4px hsla(0,0%,0%,0.2));
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  left: 0.3em;
+  bottom: 0.35em;
+  transition: .4s;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -10px 10px 0px inset,
+     rgba(0, 0, 0, 0.09) 0px -1px 15px -8px;
+  background-color: #ff99fd;
+  background-image: radial-gradient(at 81% 39%, hsla(327,79%,79%,1) 0px, transparent 50%),
+  radial-gradient(at 11% 72%, hsla(264,64%,79%,1) 0px, transparent 50%),
+  radial-gradient(at 23% 20%, hsla(75,98%,71%,1) 0px, transparent 50%);
 }
 
-.bubble:focus:after, .bubble:hover:after {
-  transform: translate3d(0.15em,0.15em,-1px);
+.input__check:checked + .slider {
+  background-color: #17202A;
 }
 
-.bubble:checked {
-  box-shadow: 0 -0.06em 0.1em hsl(120,90%,100%) inset,
-		0 -0.15em 0.4em hsl(120,90%,45%) inset,
-		0 0.05em 0.05em hsl(120,90%,45%) inset,
-		0.05em 0 0.1em hsl(120,90%,100%) inset,
-		-0.05em 0 0.1em hsl(120,90%,100%) inset,
-		0 0.1em 0.4em hsl(120,90%,60%) inset;
+.input__check:checked + .slider:before {
+  transform: translateX(1.5em);
 }
 
-.bubble:checked:before {
-  border-radius: 0.25em;
-  width: 0.5em;
-}
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  label {
-    animation: none;
-  }
-
-  .bubble, .bubble:before, .bubble:after {
-    transition-duration: 0s;
-  }
-
-  .bubble:focus, .bubble:hover {
-    transform: scale(1);
-  }
-
-  .bubble:focus:active, .bubble:hover:active {
-    width: 3em;
-    height: 3em;
-  }
-
-  .bubble:focus:before, .bubble:hover:before {
-    filter: drop-shadow(0.6em 0.6em 4px hsla(0,0%,0%,0.2));
-  }
-
-  .bubble:focus:after, .bubble:hover:after {
-    transform: translate3d(0,0,-1px);
-  }
-}
-/* Animations */
-@keyframes float74 {
-  from, to {
-    transform: translate(0,3%);
-  }
-
-  25% {
-    transform: translate(-3%,0);
+@keyframes toggle__animation {
+  0%, 100% {
+    transform: translateY(-10px) rotateX(15deg) rotateY(-20deg);
   }
 
   50% {
-    transform: translate(0,-3%);
-  }
-
-  75% {
-    transform: translate(3%,0);
+    transform: translateY(0px) rotateX(15deg) rotateY(-20deg);
   }
 }
 </style>

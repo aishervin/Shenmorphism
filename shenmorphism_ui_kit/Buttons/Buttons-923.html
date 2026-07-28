@@ -1,85 +1,58 @@
-<div class="container">
-  <button class="button">
-    <p>PREMIUM</p>
-  </button>
-</div>
+<button><span class="main-text">Next Step<span> <span>→</span> </span></span></button>
 <style>
-/* From SHΞN™ Morphism by KSAplay - Tags: button */
-.container {
-  transition: 200ms ease;
+/* From SHΞN™ Morphism by sabbircoder07 - Tags: button, animated, read more */
+button {
+  font-family: "Lexend Deca", sans-serif;
+  border: none;
+  background-image: linear-gradient(to right top, #5FFBF1,#D16BA5,#86A8E7);
+  color: #ffffff;
+  font-size: 17px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  padding: 13px 26px;
+  cursor: pointer;
+  transform: skew(15deg);
+  transition: all 1s;
 }
 
-.button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 40px;
-  border-width: 0;
-  border-radius: 1em;
-  background-color: #19171C;
-  transition: 500ms ease;
+.main-text {
+  display: inline-block;
+  transform: skew(-15deg);
 }
 
-.button p {
-  font-size: 20px;
-  font-weight: bold;
-  background: rgb(137,60,21);
-  background: linear-gradient(90deg, rgba(137,60,21,1) 0%, rgba(255,222,68,1) 17%, rgba(177,116,30,1) 24%, rgba(255,231,82,1) 40%, rgba(224,147,38,1) 50%, rgba(228,150,42,1) 59%, rgba(176,120,27,1) 70%, rgba(239,179,51,1) 85%, rgba(135,58,26,1) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+button:hover {
+  transform: translateY(-3px);
+  background-image: linear-gradient(to bottom, #D16BA5,#86A8E7,#5FFBF1);
+  border-radius: 26px;
+  animation: pulsate 1s infinite;
 }
 
-.button::before {
-  position: absolute;
-  content: '';
-  width: 190px;
-  height: 50px;
-  border-radius: 1em;
-  background-size: 100%;
-  background: rgb(137,60,21);
-  background: linear-gradient(90deg, rgba(137,60,21,1) 0%, rgba(255,222,68,1) 17%, rgba(177,116,30,1) 24%, rgba(255,231,82,1) 40%, rgba(224,147,38,1) 50%, rgba(228,150,42,1) 59%, rgba(176,120,27,1) 70%, rgba(239,179,51,1) 85%, rgba(135,58,26,1) 100%);
-  z-index: -1;
+button:hover span {
+  display: inline-block;
+  transform: translateX(2px);
+  transition: all 1s;
 }
 
-.container:hover .button::before {
-  animation: golden 5s infinite alternate ease-in-out;
+button:focus {
+  outline: none;
+  border-radius: 26px;
+  animation: pulsate 1s infinite;
 }
 
-.container:hover .button p {
-  animation: golden 5s infinite alternate ease-in-out;
-}
-
-.container:hover {
-  transform: scale(1.1);
-}
-
-.container:active {
-  transform: scale(1);
-}
-
-.container:active .button::before {
-  animation: golden 1s infinite alternate ease-in-out;
-}
-
-.container:active .button p {
-  animation: golden 1s infinite alternate ease-in-out;
-}
-
-@keyframes golden {
+@keyframes pulsate {
   0% {
-    background-size: 100%;
-    background-position: 50%;
+    transform: scale(1);
+    box-shadow: none;
   }
 
   50% {
-    background-size: 500%;
-    background-position: 0%;
+    transform: scale(1.03);
+    box-shadow: 0 16px 16px rgba(0, 0, 0, 0.4);
   }
 
   100% {
-    background-size: 200%;
-    background-position: 100%;
+    transform: scale(1);
+    box-shadow: none;
   }
 }
 </style>

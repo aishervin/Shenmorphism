@@ -1,66 +1,102 @@
-<div class="card">
-  <div class="card-details">
-    <p class="text-title">Card title</p>
-    <p class="text-body">Here are the details of the card</p>
+<div class="cardBox">
+  <div class="card">
+    <span class="text">Hover Me</span>
+    <div class="content">
+      <p>Hi, put your text here</p>
+    </div>
   </div>
-  <button class="card-button">More info</button>
 </div>
 <style>
-/* From SHΞN™ Morphism by alexruix - Tags: card */
+/* From SHΞN™ Morphism by JkHuger - Tags: card */
+.cardBox {
+  width: 270px;
+  height: 300px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 10px 0px,
+    rgba(0, 0, 0, 0.5) 0px 2px 25px 0px;
+}
+
 .card {
- width: 190px;
- height: 254px;
- border-radius: 20px;
- background: #f5f5f5;
- position: relative;
- padding: 1.8rem;
- border: 2px solid #c3c6ce;
- transition: 0.5s ease-out;
- overflow: visible;
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  background: #000814;
+  border-radius: 20px;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: #ffffff;
+  overflow: hidden;
+  padding: 20px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.5) 0px 18px 36px -18px inset;
 }
 
-.card-details {
- color: black;
- height: 100%;
- gap: .5em;
- display: grid;
- place-content: center;
+.card h3, span {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-weight: 800;
+  pointer-events: none;
+  opacity: 0.1;
 }
 
-.card-button {
- transform: translate(-50%, 125%);
- width: 60%;
- border-radius: 1rem;
- border: none;
- background-color: #008bf8;
- color: #fff;
- font-size: 1rem;
- padding: .5rem 1rem;
- position: absolute;
- left: 50%;
- bottom: 0;
- opacity: 0;
- transition: 0.3s ease-out;
+.text {
+  top: 50%;
 }
 
-.text-body {
- color: rgb(134, 134, 134);
+.card .content h3 {
+  font-size: 3rem;
+  padding-bottom: 10px;
 }
 
-/*Text*/
-.text-title {
- font-size: 1.5em;
- font-weight: bold;
+.card .content p {
+  font-size: 1.6rem;
+  line-height: 25px;
 }
 
-/*Hover*/
-.card:hover {
- border-color: #008bf8;
- box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+.card .content {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: 0.3s ease-in-out;
 }
 
-.card:hover .card-button {
- transform: translate(-50%, 50%);
- opacity: 1;
+.card:hover .content {
+  transform: translateY(0);
+  opacity: 1;
 }
+
+.cardBox::before {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 150%;
+  background: #40E0D0;
+  background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+  background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+  animation: glowing01 5s linear infinite;
+  transform-origin: center;
+  animation: glowing 5s linear infinite;
+}
+
+@keyframes glowing {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 </style>

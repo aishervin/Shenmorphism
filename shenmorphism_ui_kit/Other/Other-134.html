@@ -1,59 +1,57 @@
-<label class="switch">
-  <input type="checkbox">
-  <span class="slider"></span>
-</label>
+<div class="container">  
+  <input class="label-check" id="label-check" type="checkbox">
+    <label for="label-check" class="hamburger-label">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    <label></label></label></div>
 <style>
-/* From SHΞN™ Morphism by adamgiebl - Tags: switch */
-/* The switch - the box around the slider */
-.switch {
-  font-size: 17px;
-  position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
+/* From SHΞN™ Morphism by JkHuger - Tags: switch */
+.label-check {
+  display: none;
 }
 
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
+.hamburger-label {
+  width: 70px;
+  height: 58px;
+  display: block;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-  border-radius: 30px;
 }
 
-.slider:before {
+.hamburger-label div {
+  width: 70px;
+  height: 6px;
+  background-color: #fff;
   position: absolute;
-  content: "";
-  height: 1.4em;
-  width: 1.4em;
-  border-radius: 20px;
-  left: 0.3em;
-  bottom: 0.3em;
-  background-color: white;
-  transition: .4s;
 }
 
-input:checked + .slider {
-  background-color: #2196F3;
+.line1 {
+  transition: all .3s;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+.line2 {
+  margin: 18px 0 0 0;
+  transition: 0.3s;
 }
 
-input:checked + .slider:before {
-  transform: translateX(1.5em);
+.line3 {
+  margin: 36px 0 0 0;
+  transition: 0.3s;
+}
+
+#label-check:checked + .hamburger-label .line1 {
+  transform: rotate(35deg) scaleX(.55) translate(39px, -4.5px);
+  border-radius: 50px 50px 50px 0;
+}
+
+#label-check:checked + .hamburger-label .line3 {
+  transform: rotate(-35deg) scaleX(.55) translate(39px, 4.5px);
+  border-radius: 0 50px 50px 50px;
+}
+
+#label-check:checked + .hamburger-label .line2 {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  width: 45px;
 }
 </style>

@@ -1,63 +1,13 @@
-<div class="loader"></div>
-<style>
-/* From SHΞN™ Morphism by Shoh2008 - Tags: loader */
-.loader {
-  width: 16px;
-  height: 16px;
-  position: relative;
-  left: -32px;
-  border-radius: 50%;
-  color: #fff;
-  background: currentColor;
-  box-shadow: 32px 0 , -32px 0 ,  64px 0;
-}
+<!-- From SHΞN™ Morphism by devAaus  - Tags: loading, loader, spinner, colorful, circle loader, spin, multicolor, loading animation -->
+<div class="flex-col gap-4 w-full flex items-center justify-center">
+  <div
+    class="w-20 h-20 border-4 border-transparent text-blue-400 text-4xl animate-spin flex items-center justify-center border-t-blue-400 rounded-full"
+  >
+    <div
+      class="w-16 h-16 border-4 border-transparent text-red-400 text-2xl animate-spin flex items-center justify-center border-t-red-400 rounded-full"
+    ></div>
+  </div>
+</div>
 
-.loader::after {
-  content: '';
-  position: absolute;
-  left: -32px;
-  top: 0;
-  width: 16px;
-  height: 16px;
-  border-radius: 10px;
-  background: #FF3D00;
-  animation: move_351 3s linear infinite alternate;
-}
 
-@keyframes move_351 {
-  0% , 5% {
-    left: -32px;
-    width: 16px;
-  }
-
-  15% , 20% {
-    left: -32px;
-    width: 48px;
-  }
-
-  30% , 35% {
-    left: 0px;
-    width: 16px;
-  }
-
-  45% , 50% {
-    left: 0px;
-    width: 48px;
-  }
-
-  60% , 65% {
-    left: 32px;
-    width: 16px;
-  }
-
-  75% , 80% {
-    left: 32px;
-    width: 48px;
-  }
-
-  95%, 100% {
-    left: 64px;
-    width: 16px;
-  }
-}
-</style>
+    

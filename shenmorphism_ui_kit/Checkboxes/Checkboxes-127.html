@@ -1,42 +1,78 @@
-<label class="lock-checkbox">
-  <input id="lock" type="checkbox">
-  <span class="lock-icon">
-    <svg viewBox="0 0 24 24">
-      <path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM8.9 6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2H8.9V6z"></path>
-    </svg>
-  </span>
-</label>
+<div class="checkbox-wrapper-65">
+  <label for="cbk1-65">
+    <input id="cbk1-65" type="checkbox">
+    <span class="cbx">
+      <svg viewBox="0 0 12 11" height="11px" width="12px">
+        <polyline points="1 6.29411765 4.5 10 11 1"></polyline>
+      </svg>
+    </span>
+    <span>Checkbox</span>
+  </label>
+</div>
+
+
 
 <style>
-/* From SHΞN™ Morphism by ahmed150up - Tags: checkbox, lock */
-.lock-checkbox {
+/* From SHΞN™ Morphism by PriyanshuGupta28 - Tags: checkbox, cool checkbox, circle-checkbox */
+.checkbox-wrapper-65 *,
+  .checkbox-wrapper-65 ::after,
+  .checkbox-wrapper-65 ::before {
+  box-sizing: border-box;
+}
+
+.checkbox-wrapper-65 .cbx {
   position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
+  display: block;
+  float: left;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background-color: #1c4780;
+  background-image: linear-gradient(#0f698d, #1d3c6b);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.15), inset 0 -1px 1px rgba(0,0,0,0.15);
+  transition: all 0.15s ease;
 }
 
-.lock-checkbox input[type="checkbox"] {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.lock-icon {
-  fill: #00ff40;
+.checkbox-wrapper-65 .cbx svg {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 34px;
-  height: 34px;
-  transition: all 0.3s;
+  top: 3px;
+  left: 3px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-dasharray: 17;
+  stroke-dashoffset: 17;
+  transform: translate3d(0, 0, 0);
+}
+
+.checkbox-wrapper-65 .cbx + span {
+  float: left;
+  margin-left: 6px;
+}
+
+.checkbox-wrapper-65 {
+  user-select: none;
+}
+
+.checkbox-wrapper-65 label {
+  display: inline-block;
   cursor: pointer;
 }
 
-.lock-checkbox input[type="checkbox"]:checked + .lock-icon {
-  fill: #ff0000;
+.checkbox-wrapper-65 input[type="checkbox"] {
+  display: none;
+  visibility: hidden;
 }
 
+.checkbox-wrapper-65 input[type="checkbox"]:checked + .cbx {
+  background-color: #606062;
+  background-image: linear-gradient(#2584d2, #1d52c1);
+}
+
+.checkbox-wrapper-65 input[type="checkbox"]:checked + .cbx svg {
+  stroke-dashoffset: 0;
+  transition: all 0.15s ease;
+}
 </style>

@@ -1,35 +1,52 @@
-<button>
-  Button
+<button class="button type1">
+  <span class="btn-txt">Hello</span>
 </button>
+
 <style>
-/* From SHΞN™ Morphism by andrew-demchenk0 - Tags: button */
-button {
-  font-weight: 700;
-  font-size: 17px;
+/* From SHΞN™ Morphism by Gaurav-WebDev  - Tags: black, button, dark, animated, hover effect */
+.button {
+  height: 50px;
   width: 200px;
-  height: 60px;
-  border: none;
-  color: white;
-  background-image: linear-gradient(
-    to top left,
-    hsl(49.04, 100%, 57.06%) 0%,
-    hsl(49.04, 100%, 57.06%) 20%,
-    hsl(58.89, 45.92%, 53.77%) 20%,
-    hsl(58.89, 45.92%, 53.77%) 40%,
-    hsl(124.17, 16.44%, 57.06%) 40%,
-    hsl(124.17, 16.44%, 57.06%) 60%,
-    hsl(200.79, 47.04%, 47.21%) 60%,
-    hsl(200.79, 47.04%, 47.21%) 80%,
-    hsl(210, 100%, 43.92%) 80%,
-    hsl(210, 100%, 43.92%) 100%
-  );
-  transition: 1s all;
-  box-shadow: 0 1px 15px 0 #797f7b;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px solid #252525;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #333;
+  transition: all 0.5s ease-in-out;
 }
 
-button:hover {
-  transform: scale(1.1);
-  box-shadow: -2px 2px 10px #616562,
-             2px -2px 10px #717774;
+.btn-txt {
+  z-index: 1;
+  font-weight: 800;
+  letter-spacing: 4px;
 }
+
+.type1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: #333;
+  border-radius: 30px;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+
+.button:hover {
+  box-shadow: 1px 1px 200px #252525;
+  color: #fff;
+  border: none;
+}
+
+.type1:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
+}
+
 </style>
+    

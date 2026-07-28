@@ -1,117 +1,95 @@
-<div class="radio-input">
-  <label class="label">
-    <input
-      type="radio"
-      id="value-1"
-      checked=""
-      name="value-radio"
-      value="value-1"
-    />
-    <p class="text">Designer</p>
-  </label>
-  <label class="label">
-    <input type="radio" id="value-2" name="value-radio" value="value-2" />
-    <p class="text">Student</p>
-  </label>
-  <label class="label">
-    <input type="radio" id="value-3" name="value-radio" value="value-3" />
-    <p class="text">Teacher</p>
-  </label>
-</div>
-
+<label class="toggle-switch">
+  <input type="checkbox">
+  <span class="toggle-switch__slider"></span>
+</label>
 <style>
-/* From SHΞN™ Morphism by Na3ar-17  - Tags: simple, black, hover, input, radio */
-.radio-input {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.radio-input * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-.radio-input label {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 0px 20px;
-  width: 220px;
-  cursor: pointer;
-  height: 50px;
+/* From SHΞN™ Morphism by KareemTolan - Tags: switch */
+/* Toggle switch styles */
+.toggle-switch {
+  display: inline-block;
   position: relative;
+  width: 60px;
+  height: 34px;
 }
 
-.radio-input label::before {
+.toggle-switch input {
+  display: none;
+}
+
+.toggle-switch__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.toggle-switch__slider:before {
   position: absolute;
   content: "";
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 220px;
-  height: 45px;
-  z-index: -1;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  border-radius: 10px;
-  border: 2px solid transparent;
-}
-.radio-input label:hover::before {
-  transition: all 0.2s ease;
-  background-color: #2a2e3c;
-}
-
-.radio-input .label:has(input:checked)::before {
-  background-color: #2d3750;
-  border-color: #435dd8;
-  height: 50px;
-}
-.radio-input .label .text {
-  color: #fff;
-}
-
-.radio-input .label input[type="radio"] {
-  background-color: #202030;
-  appearance: none;
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.radio-input .label input[type="radio"]:checked {
-  background-color: #435dd8;
-  -webkit-animation: puls 0.7s forwards;
-  animation: pulse 0.7s forwards;
-}
-
-.radio-input .label input[type="radio"]:before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
   background-color: #fff;
-  transform: scale(0);
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
 }
 
-.radio-input .label input[type="radio"]:checked::before {
-  transform: scale(1);
+.toggle-switch input:checked + .toggle-switch__slider {
+  background-color: #2196f3;
+  /* Neon effect */
+  box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #2196f3, 0 0 40px #2196f3, 0 0 50px #2196f3, 0 0 60px #2196f3, 0 0 70px #2196f3;
 }
 
-@keyframes pulse {
+.toggle-switch input:checked + .toggle-switch__slider:before {
+  transform: translateX(26px);
+}
+
+/* Shake animation */
+.toggle-switch input:checked + .toggle-switch__slider:before:hover {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
   0% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    transform: translateX(0);
   }
-  70% {
-    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+
+  25% {
+    transform: translateX(-5px);
   }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+
   100% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    transform: translateX(0);
   }
 }
 
+/* Accessibility styles */
+.toggle-switch input:focus + .toggle-switch__slider {
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.5);
+}
+
+.toggle-switch input:focus:not(:checked) + .toggle-switch__slider:before,
+.toggle-switch input:focus:checked + .toggle-switch__slider:before {
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.5);
+}
+
+.toggle-switch input:not(:checked):disabled + .toggle-switch__slider,
+.toggle-switch input:checked:disabled + .toggle-switch__slider {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 </style>
-    

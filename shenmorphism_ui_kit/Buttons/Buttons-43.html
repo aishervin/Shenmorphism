@@ -1,51 +1,137 @@
-<button class="inbox-btn">
-  <svg viewBox="0 0 512 512" height="16" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
-    ></path>
-  </svg>
-  <span class="msg-count">99</span>
+<button class="btn-1">
+  <div class="original">Signup</div>
+  <div class="letters">
+    <span>S</span>
+    <span>I</span>
+    <span>G</span>
+    <span>N</span>
+    <span>U</span>
+    <span>P</span>
+  </div>
 </button>
 
 <style>
-/* From SHΞN™ Morphism by vinodjangid07  - Tags: black, notification, button, hover effect, inbox */
-.inbox-btn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+/* From SHΞN™ Morphism by nima-mollazadeh  - Tags: button */
+.btn-1,
+.btn-1 *,
+.btn-1 :after,
+.btn-1 :before,
+.btn-1:after,
+.btn-1:before {
   border: none;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.082);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  background-color: #464646;
+  box-sizing: border-box;
+}
+
+.btn-1 {
+  scale: 0.8;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Helvetica Neue,
+    Arial,
+    Noto Sans,
+    sans-serif,
+    Apple Color Emoji,
+    Segoe UI Emoji,
+    Segoe UI Symbol,
+    Noto Color Emoji;
   cursor: pointer;
-  transition: all 0.3s;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  padding: 2;
 }
-.inbox-btn svg path {
-  fill: white;
+
+.btn-1:disabled {
+  cursor: default;
 }
-.inbox-btn svg {
-  height: 17px;
-  transition: all 0.3s;
+
+.btn-1:-moz-focusring {
+  outline: auto;
 }
-.msg-count {
+
+.btn-1 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-1 [hidden] {
+  display: none;
+}
+
+.btn-1 {
+  border: 1px solid;
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 900;
+  overflow: hidden;
+  padding: 1.2rem 3rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.btn-1 .original {
+  background: #ffffff;
+  color: #000;
+  display: grid;
+  inset: 0;
+  place-content: center;
   position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 50%;
-  font-size: 0.7em;
-  color: rgb(0, 0, 0);
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.87, 0, 0.13, 1);
 }
-.inbox-btn:hover {
-  transform: scale(1.1);
+
+.btn-1:hover .original {
+  transform: translateY(100%);
+}
+
+.btn-1 .letters {
+  display: inline-flex;
+}
+
+.btn-1 span {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition:
+    transform 0.3s cubic-bezier(0.87, 0, 0.13, 1),
+    opacity 0.3s;
+}
+
+.btn-1 span:nth-child(2n) {
+  transform: translateY(15px);
+}
+
+.btn-1:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-1:hover span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.btn-1:hover span:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.btn-1:hover span:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.btn-1:hover span:nth-child(5) {
+  transition-delay: 0.4s;
+}
+
+.btn-1:hover span:nth-child(6) {
+  transition-delay: 0.5s;
 }
 
 </style>

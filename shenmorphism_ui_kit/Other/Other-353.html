@@ -1,57 +1,105 @@
-<label class="gravity-switch">
-    <input type="checkbox">
-    <span class="slider"></span>
-</label>
+<div class="radio-input">
+  <input
+    value="value-1"
+    name="value-radio"
+    id="value-1"
+    type="radio"
+    class="star s1"
+  />
+  <input
+    value="value-2"
+    name="value-radio"
+    id="value-2"
+    type="radio"
+    class="star s2"
+  />
+  <input
+    value="value-3"
+    name="value-radio"
+    id="value-3"
+    type="radio"
+    class="star s3"
+  />
+  <input
+    value="value-4"
+    name="value-radio"
+    id="value-4"
+    type="radio"
+    class="star s4"
+  />
+  <input
+    value="value-5"
+    name="value-radio"
+    id="value-5"
+    type="radio"
+    class="star s5"
+  />
+</div>
+
 <style>
-/* From SHΞN™ Morphism by kamehame-ha - Tags: switch, click effect, gravity, fancy */
-.gravity-switch {
-  width: 4em;
-  height: 2em;
-  border-radius: 22px;
-  position: relative;
-  display: inline-block;
+/* From SHΞN™ Morphism by Ratinax  - Tags:  */
+.radio-input {
+  display: flex;
+  scale: 0.15;
+  transform: rotate(180deg);
 }
 
-.gravity-switch input[type=checkbox] {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.gravity-switch .slider {
-  position: absolute;
+.star {
+  margin: 1em;
+  appearance: none;
+  --color: white;
+  border-left: 6.4721359549996em solid transparent;
+  border-right: 6.4721359549996em solid transparent;
+  border-bottom: 4em solid var(--color);
+  transform: rotate(0deg);
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition-delay: .4s;
-  transition: .4s;
-  border-radius: 30px;
 }
 
-.gravity-switch .slider:before {
-  position: absolute;
+.star:before {
   content: "";
-  height: 1.4em;
-  width: 1.4em;
-  border-radius: 20px;
-  left: 0.3em;
-  bottom: 0.3em;
-  background-color: white;
-  transition-delay: .4s;
-  transition: .4s;
+  border-left: 6.4721359549996em solid transparent;
+  border-right: 6.4721359549996em solid transparent;
+  border-top: 4em solid var(--color);
+  position: absolute;
+  left: -6.4721359549996em;
+  transform: rotate(108deg);
 }
 
-.gravity-switch input:checked + .slider {
-  transform: rotate(90deg);
-  transform-origin: 25% 50%;
-  background-color: #22c55e;
+.star:after {
+  content: "";
+  border-left: 6.4721359549996em solid transparent;
+  border-right: 6.4721359549996em solid transparent;
+  border-top: 4em solid var(--color);
+  position: absolute;
+  left: -6.4721359549996em;
+  transform: rotate(253deg);
 }
 
-.gravity-switch input:checked+.slider:before {
-  transition-delay: 400ms;
-  transform: translateX(2em)
+.radio-input > .star:hover ~ .star,
+.radio-input > .star:hover,
+.radio-input > .star:checked ~ .star,
+.radio-input > .star:checked {
+  --color: yellow;
 }
+
+.radio-input > .star:checked ~ .star,
+.radio-input > .star:checked {
+  animation: rotate 0.5s linear forwards;
+  transform: rotate(360deg);
+  transition: transform 0.3s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    scale: 1.5;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 </style>
+    

@@ -1,138 +1,212 @@
-<svg class="loader" viewBox="0 0 384 384" xmlns="http://www.w3.org/2000/svg">
-  <circle
-    class="active"
-    pathLength="360"
-    fill="transparent"
-    stroke-width="32"
-    cx="192"
-    cy="192"
-    r="176"
-  ></circle>
-  <circle
-    class="track"
-    pathLength="360"
-    fill="transparent"
-    stroke-width="32"
-    cx="192"
-    cy="192"
-    r="176"
-  ></circle>
-</svg>
-
+<div class="loader">
+  <div class="head"></div>
+  
+  <div class="flames">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  
+  <div class="eye"></div>
+</div>
 <style>
-/* From SHΞN™ Morphism by SelfMadeSystem  - Tags: material design, loader, spinner, smooth, spin */
-/* Inspired by: m3.material.io/components/progress-indicators/overview */
-
+/* From SHΞN™ Morphism by StealthWorm - Tags: loader, bobby, dead cells */
 .loader {
-  width: 48px;
-  /* Subpixels get cut off */
-  overflow: visible;
-  transform: rotate(-90deg);
-  transform-origin: center;
-
-  --active: #7627a3;
-  --track: #f2d4fe;
-
-  --duration: 8s;
-
-  animation: spin 2s linear infinite;
+  display: flex;
+  width: 8rem;
+  height: 8rem;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes spin {
+.head {
+  width: 100%;
+  height: 100%;
+  background-color: #FA95FB;
+  border-radius: 50%;
+  animation: move 3s linear infinite;
+  box-shadow: 0 1rem 1rem #E220B8;
+  filter: blur(.3rem);
+  z-index: 1;
+}
+
+.eye {
+  display: flex;
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  background-color: #EFFFC8;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 0 1rem #F752F7;
+  animation: move 5s alternate infinite;
+}
+
+.eye::before {
+  content: "";
+  display: flex;
+  width: 1rem;
+  height: 2rem;
+  background-color: #000;
+  border-radius: 50%;
+  animation: blink 4s ease-in-out alternate infinite;
+}
+
+.flames {
+  display: flex;
+  position: absolute;
+  z-index: 0;
+}
+
+.particle {
+  display: flex;
+  position: absolute;
+  background-color: #FA95FB;
+  border-radius: 50%;
+  filter: blur(.3rem);
+  border-top: 5px solid #E220B8;
+  border-left: 5px solid #E220B8;
+}
+
+.flames::before {
+  content: "";
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  background: #f865d8;
+  filter: blur(5rem);
+  opacity: 0.5;
+  border-radius: 50%;
+  top: -8rem;
+  left: -4rem;
+  z-index: 4;
+  animation: pulse 3s linear infinite;
+}
+
+.particle:nth-child(1) {
+  width: 4rem;
+  height: 4rem;
+  top: -6rem;
+  animation: move 7s alternate-reverse infinite;
+}
+
+.particle:nth-child(2) {
+  width: 1.5rem;
+  height: 1.5rem;
+  top: -8rem;
+  left: -5rem;
+  animation: move 1.5s  ease-in-out reverse infinite;
+}
+
+.particle:nth-child(3) {
+  width: 4rem;
+  height: 4rem;
+  top: -5rem;
+  left: -4rem;
+  animation: move 8s alternate-reverse infinite;
+}
+
+.particle:nth-child(4) {
+  width: 3rem;
+  height: 3rem;
+  top: -7.5rem;
+  animation: move 4s alternate-reverse infinite;
+}
+
+.particle:nth-child(5) {
+  width: 2rem;
+  height: 2rem;
+  top: -9rem;
+  left: 1rem;
+  animation: move 2.5s alternate-reverse infinite;
+}
+
+.particle:nth-child(6) {
+  width: 2rem;
+  height: 2rem;
+  top: -6.8rem;
+  left: -1.5rem;
+  animation: move 5s alternate-reverse infinite;
+}
+
+.particle:nth-child(7) {
+  width: 1rem;
+  height: 1rem;
+  top: -10rem;
+  left: -1rem;
+  animation: move 1.2s alternate-reverse infinite;
+}
+
+.particle:nth-child(8) {
+  width: 1.3rem;
+  height: 1.3rem;
+  top: -7.5rem;
+  left: -2rem;
+  animation: move 2.5s alternate-reverse infinite;
+}
+
+@keyframes move {
   0% {
-    rotate: 0deg;
+    transform: translate(0, 0);
   }
 
-  100% {
-    rotate: 360deg;
-  }
-}
-
-.active {
-  stroke: var(--active);
-  stroke-linecap: round;
-  stroke-dashoffset: 360;
-  animation: active-animation var(--duration) ease-in-out infinite;
-}
-
-@keyframes active-animation {
-  0% {
-    stroke-dasharray: 0 0 0 360 0 360;
-  }
-  12.5% {
-    stroke-dasharray: 0 0 270 90 270 90;
-  }
-  25% {
-    stroke-dasharray: 0 270 0 360 0 360;
-  }
-  37.5% {
-    stroke-dasharray: 0 270 270 90 270 90;
-  }
   50% {
-    stroke-dasharray: 0 540 0 360 0 360;
+    transform: translate(4px, 6px);
   }
-  50.001% {
-    stroke-dasharray: 0 180 0 360 0 360;
-  }
-  62.5% {
-    stroke-dasharray: 0 180 270 90 270 90;
-  }
-  75% {
-    stroke-dasharray: 0 450 0 360 0 360;
-  }
-  87.5% {
-    stroke-dasharray: 0 450 270 90 270 90;
-  }
-  87.501% {
-    stroke-dasharray: 0 90 270 90 270 90;
-  }
+
   100% {
-    stroke-dasharray: 0 360 1 360 0 360;
+    transform: translate(0, 0);
   }
 }
 
-.track {
-  stroke: var(--track);
-  stroke-linecap: round;
-  stroke-dashoffset: 360;
-  animation: track-animation var(--duration) ease-in-out infinite;
-}
+@keyframes blink {
+  20% {
+    transform: translate(0, 0);
+    height: 2rem;
+  }
 
-@keyframes track-animation {
-  0% {
-    stroke-dasharray: 0 20 320 40 320 40;
+  30% {
+    height: 0;
   }
-  12.5% {
-    stroke-dasharray: 0 290 50 310 50 310;
+
+  40% {
+    transform: translate(5px, 10px);
+    height: 0;
   }
-  25% {
-    stroke-dasharray: 0 290 320 40 320 40;
-  }
-  37.5% {
-    stroke-dasharray: 0 560 50 310 50 310;
-  }
-  37.501% {
-    stroke-dasharray: 0 200 50 310 50 310;
-  }
+
   50% {
-    stroke-dasharray: 0 200 320 40 320 40;
+    height: 2rem;
   }
-  62.5% {
-    stroke-dasharray: 0 470 50 310 50 310;
+
+  70% {
+    transform: translate(-10px, -10px);
   }
-  62.501% {
-    stroke-dasharray: 0 110 50 310 50 310;
+
+  90% {
+    transform: translate(0, 0);
   }
-  75% {
-    stroke-dasharray: 0 110 320 40 320 40;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
   }
-  87.5% {
-    stroke-dasharray: 0 380 50 310 50 310;
+
+  50% {
+    opacity: 1;
   }
+
   100% {
-    stroke-dasharray: 0 380 320 40 320 40;
+    opacity: 0.5;
   }
 }
 
 </style>
-    

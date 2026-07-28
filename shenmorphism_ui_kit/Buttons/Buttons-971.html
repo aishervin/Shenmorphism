@@ -1,132 +1,101 @@
-
-
- <div class="container">
-    <div class="btn"><a href="#">Read More</a></div>
- </div>
-
-
-
+<div class="button-container">
+  <button class="button-3d">
+    <div class="button-top">
+      <span class="material-icons">❮</span>
+    </div>
+    <div class="button-bottom"></div>
+    <div class="button-base"></div>
+  </button>
+  <button class="button-3d">
+    <div class="button-top">
+      <span class="material-icons">❯</span>
+    </div>
+    <div class="button-bottom"></div>
+    <div class="button-base"></div>
+  </button>
+</div>
 
 <style>
-/* From SHΞN™ Morphism by VashonG - Tags: glassmorphism, button, glow */
-.container {
+/* From SHΞN™ Morphism by Z4drus  - Tags: material design, animation, 3d, blue, purple, minimalist, button, smooth */
+.button-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 200px;
-}
-
-.container .btn {
-  height: 50px;
-  margin: 20px;
-  margin-bottom: 40px;
-  position: relative;
-  width: 155px;
-}
-
-.container .btn a {
-  align-items: center;
-  background: rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 30px;
-  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
-  color: #fff;
-  display: flex;
-  font-size: 18px;
-  font-weight: 700;
-  left: 0;
-  top: 0;
-  position: absolute;
-  height: 100%;
-  width: 100%;
   justify-content: center;
-  letter-spacing: 1px;
-  text-decoration: none;
-  overflow: hidden;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(15px);
+  margin: 20px;
+}
+
+.button-3d {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  border-width: 0;
+  padding: 0 8px;
+  min-width: 4em;
+  min-height: 4em;
+  box-sizing: border-box;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.button-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  padding: 8px 16px;
+  transform: translateY(0);
+  color: #fff;
+  background-image: linear-gradient(145deg, #6a11cb, #2575fc);
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  transition: transform 0.3s, border-radius 0.3s, background 10s;
+}
+
+.button-3d:active .button-top {
+  border-radius: 10px 10px 8px 8px / 8px;
+  transform: translateY(2px);
+  background-image: linear-gradient(145deg, #2575fc, #6a11cb);
+}
+
+.button-bottom {
+  position: absolute;
   z-index: 1;
-  transition: 0.5s;
+  bottom: 4px;
+  left: 4px;
+  border-radius: 20px;
+  padding-top: 6px;
+  width: calc(100% - 8px);
+  height: calc(100% - 10px);
+  background-image: linear-gradient(145deg, #2575fc, #6a11cb);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
+  transition: border-radius 0.2s, padding-top 0.2s;
 }
 
-.container .btn:hover a {
-  letter-spacing: 2px;
-}
-
-.container .btn a::before {
-  content: '';
+.button-base {
   position: absolute;
-  top: 0;
+  z-index: 0;
+  top: 4px;
   left: 0;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(to left,
-                rgba(255,255,255,0.15),
-                transparent);
-  transform: skewX(45deg) translateX(0);
-  transition: 0.5s;
+  border-radius: 20px;
+  width: 100%;
+  height: calc(100% - 4px);
+  background-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.75),
+    inset 0 2px 2px rgba(0, 0, 0, 0.25);
+  transition: border-radius 0.2s, padding-top 0.2s;
 }
 
-.container .btn:hover a::before {
-  transform: skewX(45deg) translateX(200%);
+.button-3d:active .button-bottom {
+  border-radius: 10px 10px 8px 8px / 8px;
+  padding-top: 0;
 }
 
-.container .btn::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -5px;
-  height: 10px;
-  width: 30px;
-  background: rgb(8, 107, 183);
-  border-radius: 10px;
-  transition: 0.5s;
-  transition-delay: 0s;
-}
-
-.container .btn:hover::before {
-  bottom: 0;
-  height: 50%;
-  width: 80%;
-  border-radius: 30px;
-  transition-delay: 0.5s;
-}
-
-.container .btn::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: -5px;
-  height: 10px;
-  width: 30px;
-  background: rgb(7, 95, 189);
-  border-radius: 10px;
-  transition: 0.5s;
-  transition-delay: 0s;
-}
-
-.container .btn:hover::after {
-  top: 0;
-  height: 50%;
-  width: 80%;
-  border-radius: 30px;
-  transition-delay: 0.5s;
-}
-
-.container .btn:nth-child(1):before,
-.container .btn:nth-child(1)::after {
-  background: #2bd2ff;
-  box-shadow: 0 0 5px #2bd2ff,
-    0 0 15px #2bd2ff,
-    0 0 30px #2bd2ff,
-    0 0 60px #2bd2ff;
-}
-
-.container .btn:active a {
-  color: #000;
+.button-3d:active .button-base {
+  border-radius: 10px 10px 8px 8px / 8px;
 }
 
 </style>
+    

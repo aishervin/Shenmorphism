@@ -1,90 +1,129 @@
-<label class="switch">
-  <input type="checkbox">
-  <span class="slider"></span>
-  <span class="text on">On</span>
-  <span class="text off">Off</span>
-</label>
+<div class="checkbox-wrapper-8">
+  <input type="checkbox" id="cb3-8" class="tgl tgl-skewed">
+  <label for="cb3-8" data-tg-on="ON" data-tg-off="OFF" class="tgl-btn"></label>
+</div>
 <style>
-/* From SHΞN™ Morphism by AbanoubMagdy1 - Tags: switch */
-/* The switch - the box around the slider */
-.switch {
-  font-size: 17px;
-  position: relative;
-  display: inline-block;
-  width: 5.2em;
+/* From SHΞN™ Morphism by Shoh2008 - Tags: switch */
+.checkbox-wrapper-8 .tgl {
+  display: none;
+}
+
+.checkbox-wrapper-8 .tgl,
+  .checkbox-wrapper-8 .tgl:after,
+  .checkbox-wrapper-8 .tgl:before,
+  .checkbox-wrapper-8 .tgl *,
+  .checkbox-wrapper-8 .tgl *:after,
+  .checkbox-wrapper-8 .tgl *:before,
+  .checkbox-wrapper-8 .tgl + .tgl-btn {
+  box-sizing: border-box;
+}
+
+.checkbox-wrapper-8 .tgl::-moz-selection,
+  .checkbox-wrapper-8 .tgl:after::-moz-selection,
+  .checkbox-wrapper-8 .tgl:before::-moz-selection,
+  .checkbox-wrapper-8 .tgl *::-moz-selection,
+  .checkbox-wrapper-8 .tgl *:after::-moz-selection,
+  .checkbox-wrapper-8 .tgl *:before::-moz-selection,
+  .checkbox-wrapper-8 .tgl + .tgl-btn::-moz-selection,
+  .checkbox-wrapper-8 .tgl::selection,
+  .checkbox-wrapper-8 .tgl:after::selection,
+  .checkbox-wrapper-8 .tgl:before::selection,
+  .checkbox-wrapper-8 .tgl *::selection,
+  .checkbox-wrapper-8 .tgl *:after::selection,
+  .checkbox-wrapper-8 .tgl *:before::selection,
+  .checkbox-wrapper-8 .tgl + .tgl-btn::selection {
+  background: none;
+}
+
+.checkbox-wrapper-8 .tgl + .tgl-btn {
+  outline: 0;
+  display: block;
+  width: 4em;
   height: 2em;
-  overflow: hidden;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
+  position: relative;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #eee;
-  transition: .4s;
-  border-radius: 30px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.slider:before {
-  position: absolute;
+.checkbox-wrapper-8 .tgl + .tgl-btn:after,
+  .checkbox-wrapper-8 .tgl + .tgl-btn:before {
+  position: relative;
+  display: block;
   content: "";
-  height: 1.4em;
-  width: 1.4em;
-  border-radius: 20px;
-  border: 1px solid #333;
-  left: 0.4em;
-  bottom: 0.2em;
-  background-color: white;
-  transition: .4s;
+  width: 50%;
+  height: 100%;
 }
 
-input:checked + .slider {
-  background-color: #2196F3;
+.checkbox-wrapper-8 .tgl + .tgl-btn:after {
+  left: 0;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+.checkbox-wrapper-8 .tgl + .tgl-btn:before {
+  display: none;
 }
 
-input:checked + .slider:before {
-  transform: translateX(3em);
+.checkbox-wrapper-8 .tgl:checked + .tgl-btn:after {
+  left: 50%;
 }
 
-.switch .text {
+.checkbox-wrapper-8 .tgl-skewed + .tgl-btn {
+  overflow: hidden;
+  transform: skew(-10deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: all 0.2s ease;
+  font-family: sans-serif;
+  background: #888;
+}
+
+.checkbox-wrapper-8 .tgl-skewed + .tgl-btn:after,
+  .checkbox-wrapper-8 .tgl-skewed + .tgl-btn:before {
+  transform: skew(10deg);
+  display: inline-block;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: center;
   position: absolute;
-  top: 50%;
-  pointer-events: none;
-  text-transform: uppercase;
-  transform: translateY(-50%);
-  transition: .4s;
+  line-height: 2em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 
-.switch .text.on {
-  left: .8rem;
-  transform: translateX(-3rem) translateY(-50%);
+.checkbox-wrapper-8 .tgl-skewed + .tgl-btn:after {
+  left: 100%;
+  content: attr(data-tg-on);
 }
 
-.switch .text.off {
-  color: #999;
-  right: .8rem;
+.checkbox-wrapper-8 .tgl-skewed + .tgl-btn:before {
+  left: 0;
+  content: attr(data-tg-off);
 }
 
-input:checked ~ .text.off {
-  transform: translateX(3rem) translateY(-50%);
+.checkbox-wrapper-8 .tgl-skewed + .tgl-btn:active {
+  background: #888;
 }
 
-input:checked ~ .text.on {
-  transform: translateX(0) translateY(-50%);
+.checkbox-wrapper-8 .tgl-skewed + .tgl-btn:active:before {
+  left: -10%;
+}
+
+.checkbox-wrapper-8 .tgl-skewed:checked + .tgl-btn {
+  background: #86d993;
+}
+
+.checkbox-wrapper-8 .tgl-skewed:checked + .tgl-btn:before {
+  left: -100%;
+}
+
+.checkbox-wrapper-8 .tgl-skewed:checked + .tgl-btn:after {
+  left: 0;
+}
+
+.checkbox-wrapper-8 .tgl-skewed:checked + .tgl-btn:active:after {
+  left: 10%;
 }
 </style>

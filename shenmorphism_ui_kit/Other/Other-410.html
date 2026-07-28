@@ -1,75 +1,131 @@
 <div class="loader">
-  <svg
-    viewBox="0 0 256 256"
-    class="star star1"
-    height="32"
-    width="32"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
-    ></path>
-  </svg>
-  <svg
-    viewBox="0 0 256 256"
-    class="star star2"
-    height="32"
-    width="32"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
-    ></path>
-  </svg>
-  <svg
-    viewBox="0 0 256 256"
-    class="star star3"
-    height="32"
-    width="32"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
-    ></path>
-  </svg>
+  <div class="react-star">
+    <div class="nucleus"></div>
+    <div class="electron electron1"></div>
+    <div class="electron electron2"></div>
+    <div class="electron electron3"></div>
+  </div>
 </div>
 
 <style>
-/* From SHΞN™ Morphism by LightAndy1  - Tags: simple, icon, animation, yellow, loader, smooth, dark, stars */
+/* From SHΞN™ Morphism by OMPRABHU8125  - Website: https://codepen.io/rahul-sahni/pen/YzOWmYy - Name: Rahul Sahni - Tags: animation, loader, cool, atom, sc-fi */
 .loader {
-  user-select: none;
+  height: 20rem;
+  width: 20rem;
+  background-color: #212121;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.star {
-  opacity: 0;
-  fill: #f8de7e;
-  animation: loader 2s infinite alternate;
+.react-star {
+  position: relative;
+  width: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15rem;
+  animation: rotate 3s infinite;
 }
 
-.star2 {
-  height: 20px;
-  margin-left: -10px;
-  animation-delay: 0.25s;
+.nucleus {
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: linear-gradient(#0738e8, cyan);
+  height: 2rem;
+  width: 2rem;
+  animation: rotate 1s linear infinite;
 }
 
-.star3 {
-  height: 16px;
-  margin-left: -15px;
-  animation-delay: 0.5s;
+.electron {
+  position: absolute;
+  width: 15rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: 0.3rem solid #00ffff;
+  animation: revolve 1s linear infinite;
 }
 
-@keyframes loader {
-  0% {
-    opacity: 0;
-    transform: translateY(0) translateX(50px) rotate (0deg);
+.electron1::before,
+.electron2::before,
+.electron3::before {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  width: 1rem;
+  height: 1rem;
+  background-color: cyan;
+  border-radius: 50%;
+  animation: moveElectron 1s infinite;
+}
+.electron2 {
+  transform: rotate(60deg);
+  animation-delay: -0.66s;
+}
+.electron2::before {
+  animation-delay: -0.66s;
+}
+
+.electron3 {
+  transform: rotate(-60deg);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
   }
-  10% {
-    opacity: 0;
-    transform: translateY(0) translateX(50px) rotate(0deg);
+  to {
+    transform: rotate(360deg) scale3d(1.1, 1.1, 0);
+  }
+}
+
+@keyframes revolve {
+  0% {
+    border-color: #00ffff9c;
+    border-right: transparent;
+  }
+  25% {
+    border-color: #00ffff9c;
+    border-bottom-color: transparent;
+  }
+  50% {
+    border-color: #00ffff9c;
+    border-left-color: transparent;
+  }
+  75% {
+    border-color: #00ffff9c;
+    border-top-color: transparent;
   }
   100% {
-    opacity: 1;
-    transform: translateY(-20px) translateX(0) rotate(360deg);
+    border-color: #00ffff9c;
+    border-right-color: transparent;
+  }
+}
+
+@keyframes moveElectron {
+  0% {
+    top: 60%;
+    left: 100%;
+  }
+  25% {
+    top: 100%;
+    left: 60%;
+  }
+  50% {
+    top: 60%;
+    left: 0%;
+  }
+  75% {
+    top: 0%;
+    left: 60%;
+  }
+  100% {
+    top: 60%;
+    left: 100%;
   }
 }
 

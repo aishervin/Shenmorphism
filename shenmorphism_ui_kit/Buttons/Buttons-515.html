@@ -1,57 +1,89 @@
-<button class="button">
-  Enter
+<button class="btn-27">
+  <span class="text-container">
+    <span class="text">Button</span>
+  </span>
+  <span class="text-container">
+    <span aria-hidden="" class="text">Button</span>
+  </span>
 </button>
+
 <style>
-/* From SHΞN™ Morphism by r7chardgh - Tags: 3d, button, keyboard style */
-.button {
-  position: relative;
-  padding: 1em 1.5em;
-  transform: rotateX(40deg)rotateZ(40deg);
-  transform-style: preserve-3d;
-  border: .1em solid black;
-  transition: all 150ms;
-  background-color: rgb(233, 211, 184);
+/* From SHΞN™ Morphism by doniaskima - Tags: button */
+.btn-27,
+.btn-27 *,
+.btn-27 :after,
+.btn-27 :before,
+.btn-27:after,
+.btn-27:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-27 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
   cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
 }
 
-.button::before {
-  content: "";
+.btn-27:disabled {
+  cursor: default;
+}
+
+.btn-27:-moz-focusring {
+  outline: auto;
+}
+
+.btn-27 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-27 [hidden] {
+  display: none;
+}
+
+.btn-27 {
+  --tilt: 40deg;
+  background: none;
+  -webkit-mask-image: none;
+  padding: 2rem 5rem;
+  perspective: 500px;
+  transform-style: preserve-3d;
+}
+
+.btn-27 .text-container {
+  background: #fff;
+  display: grid;
+  inset: 0;
+  place-items: center;
   position: absolute;
-  width: 2em;
-  height: 99%;
-  border: .1em solid black;
-  top: -.15em;
-  right: 0;
-  transform-origin: right;
-  transform: rotateY(-90deg);
-  transition: all 150ms;
-  background-color: rgb(155, 139, 120);
+  transform-origin: center center;
+  transition: transform 0.2s;
 }
 
-.button::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2em;
-  border: .1em solid black;
-  bottom: 0;
-  left: -.15em;
-  transform-origin: bottom;
-  transform: rotateX(90deg);
-  transition: all 150ms;
-  background-color: rgb(199, 179, 155);
+.btn-27 .text {
+  color: #000;
 }
 
-.button:active {
-  transform: rotateX(40deg)rotateZ(40deg) translateZ(-1em);
+.btn-27:hover .text-container:first-child {
+  transform: rotateY(var(--tilt));
 }
 
-.button:active::before {
-  width: 0;
-}
-
-.button:active::after {
-  height: 0;
+.btn-27:hover .text-container:nth-child(2) {
+  transform: rotateY(calc(var(--tilt) * -1));
 }
 
 </style>

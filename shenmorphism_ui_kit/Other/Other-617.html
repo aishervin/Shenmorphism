@@ -1,75 +1,60 @@
 <div class="loader">
-  <div></div> 
-  <div></div>
-  <div></div>
-  <div></div>
+  <div class="l"></div>
+  <div class="l"></div>
+  <div class="l"></div>
+  <div class="l"></div>
+  <div class="l"></div>
+  <div class="l"></div>
+  <div class="l"></div>
+  <div class="l"></div>
+  <div class="l"></div>
 </div>
 <style>
-/* From SHΞN™ Morphism by NlghtM4re - Tags: loader, cube, shadow, glow, colorful */
+/* From SHΞN™ Morphism by Nadabasuony - Tags: loader */
 .loader {
-  height: 120px;
-  width: 120px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
 }
 
-.loader div {
-  height: 30px;
-  width: 30px;
-  position: absolute;
-  animation: move 4s infinite;
+.l,.l:nth-child(9) {
+  margin: 0.15em;
+  border-radius: 5em;
+  width: 0.4em;
+  background-color: #f12711;
+  height: 3em;
+  box-shadow: 1px 1px 4px black;
+  animation: load_5186 cubic-bezier(.41,.44,.72,.69) 2s infinite;
 }
 
-.loader div:nth-child(1) {
-  background-color: rgb(158, 136, 246);
-  box-shadow: rgb(158, 136, 246) 0px 7px 29px 0px;
-  transform: translate(-30px,-30px);
-  animation-delay: -1s;
+.l:nth-child(2), 
+.l:nth-child(8) {
+  background-color: #f24e13;
+  animation-delay: .25s;
 }
 
-.loader div:nth-child(2) {
-  background-color: rgb(97, 183, 253);
-  box-shadow: rgb(97, 183, 253) 0px 7px 29px 0px;
-  transform: translate(30px,-30px);
-  animation-delay: -2s;
+.l:nth-child(3), 
+.l:nth-child(7) {
+  background-color: #f36915;
+  animation-delay: .5s;
 }
 
-.loader div:nth-child(3) {
-  background-color: rgb(95, 249, 175);
-  box-shadow: rgb(95, 249, 175) 0px 7px 29px 0px;
-  transform: translate(30px,30px);
-  animation-delay: -3s;
+.l:nth-child(4), 
+.l:nth-child(6) {
+  background-color: #f48c17;
+  animation-delay: .75s;
 }
 
-.loader div:nth-child(4) {
-  background-color: rgb(243, 171, 89);
-  box-shadow: rgb(243, 171, 89) 0px 7px 29px 0px;
-  transform: translate(-30px,30px);
-  animation-delay: -4s;
+.l:nth-child(5) {
+  background-color: #f5af19;
+  animation-delay: 1s;
 }
 
-@keyframes move {
+@keyframes load_5186 {
   0% {
-    transform: translate(-30px, -30px);
-  }
-
-  25% {
-    transform: translate(30px, -30px);
-  }
-
-  50% {
-    transform: translate(30px, 30px);
-  }
-
-  75% {
-    transform: translate(-30px, 30px);
+    transform: scaleY(1);
   }
 
   100% {
-    transform: translate(-30px, -30px);
+    transform: scaleY(-1);
   }
 }
-
 </style>

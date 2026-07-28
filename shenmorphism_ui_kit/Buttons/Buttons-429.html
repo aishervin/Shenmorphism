@@ -1,86 +1,86 @@
 <button class="button">
-  <div class="icon_cont">
-    <span class="icon">🡪</span>
-  </div>
-  <span class="text_button">Hover this button</span>
+  Button
+  <span></span>
+  <span></span>
 </button>
 
 <style>
-/* From SHΞN™ Morphism by MuhammadHasann  - Tags: simple, icon, minimalist, button */
+/* From SHΞN™ Morphism by Dashrath-Sharma  - Tags: button, active, neon, futuristic, animated, border, advanced, transparent */
 .button {
-  --dark: #181818;
-  --light: #d9d9d9;
-  --active: 0;
-
-  cursor: pointer;
   position: relative;
-
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  transform-origin: center;
-
-  background-color: transparent;
-
+  font-size: 17px;
+  font-weight: 800;
+  color: #c77dff;
+  padding: 1em 2em;
   border: none;
-}
-
-.button:hover {
-  --active: 1;
-}
-
-.icon_cont {
-  overflow: clip;
-
+  background: none;
+  clip-path: polygon(0 0, 67% 0, 100% 100%, 33% 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-
-  width: calc(var(--active) * 1.5rem + (1 - var(--active)) * 0.5rem);
-  height: calc(var(--active) * 1.5rem + (1 - var(--active)) * 0.5rem);
-  background-color: hsla(0, 0%, 85%, var(--active));
-
-  border: 1px solid var(--light);
-  border-radius: 9999px;
-  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+  transition: 0.3s 0.3s;
 }
 
-.icon {
-  font-size: 0.75rem;
-  color: var(--dark);
-  line-height: 1rem;
-
-  transform: translateX(calc(-1rem * (1 - var(--active))));
-  transition: transform 0.5s ease-in-out;
+button:hover {
+  text-shadow: 1px 1px 20px #e0aaff, 1px 1px 60px #e0aaff;
 }
 
-.text_button {
-  position: relative;
-
-  display: inline-block;
-
-  padding-block: 0.5rem;
-
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--light);
-
-  text-transform: capitalize;
+button:active {
+  transform: scale(0.89);
 }
-.text_button::before {
+
+.button::before,
+.button::after {
   content: "";
-
   position: absolute;
+  width: 0;
+  height: 2px;
+  background: #c77dff;
+  transition: width 0.3s 0.6s;
+}
+
+.button::before {
+  top: 0;
+  left: 0;
+  transform-origin: top;
+}
+
+.button::after {
   bottom: 0;
   right: 0;
+  transform-origin: bottom;
+}
 
-  width: calc((1 - var(--active)) * 100%);
-  height: 1px;
-  background-color: var(--light);
+.button:hover::before,
+.button:hover::after {
+  width: 65%;
+}
 
-  border-radius: 9999px;
-  transition: width 0.5s ease-in-out;
+.button span {
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #c77dff;
+  transition: width 0.3s, transform 0.3s 0.3s;
+  transform: rotate(22.3deg);
+}
+
+.button span:nth-child(1) {
+  top: 0;
+  left: 0;
+  transform-origin: left;
+}
+
+.button span:nth-child(2) {
+  bottom: 0;
+  right: 0;
+  transform-origin: right;
+}
+
+.button:hover span {
+  width: 55%;
+  transform: rotate(50deg);
 }
 
 </style>

@@ -1,117 +1,135 @@
-<div class="loader">
-  <div class="square">
-    <div class="mini_square sq-1"></div>
-    <div class="mini_square sq-2"></div>
-    <div class="mini_square"></div>
-    <div class="mini_square sq-4"></div>
-  </div>
-</div>
+<figure class="loader">
+    <div class="dot white"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</figure>
 <style>
-/* From SHΞN™ Morphism by csozidev - Tags: simple, animation, loader */
-/* Simple loader made by: csozi | Website: www.csozi.hu*/
-
-.square {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100px;
-  height: 100px;
-  box-sizing: content-box;
-  animation: load-big 4s infinite;
-  transform-origin: 0px 100px;
+/* From SHΞN™ Morphism by Nawsome - Tags: loader */
+.loader {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 6.250em;
+  height: 6.250em;
+  animation: rotate5123 2.4s linear infinite;
 }
 
-.mini_square {
-  box-sizing: border-box;
-  height: 50px;
-  width: 50px;
-  background-color: darkcyan;
+.white {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  animation: flash 2.4s linear infinite;
+  opacity: 0;
 }
 
-.sq-1 {
-  animation: load-left-top 4s infinite;
+.dot {
+  position: absolute;
+  margin: auto;
+  width: 2.4em;
+  height: 2.4em;
+  border-radius: 100%;
+  transition: all 1s ease;
 }
 
-.sq-2 {
-  animation: load-right-top 4s infinite;
+.dot:nth-child(2) {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: #FF4444;
+  animation: dotsY 2.4s linear infinite;
 }
 
-.sq-4 {
-  animation: load-right-bottom 4s infinite;
+.dot:nth-child(3) {
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #FFBB33;
+  animation: dotsX 2.4s linear infinite;
 }
 
-@keyframes load-right-bottom {
+.dot:nth-child(4) {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #99CC00;
+  animation: dotsY 2.4s linear infinite;
+}
+
+.dot:nth-child(5) {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #33B5E5;
+  animation: dotsX 2.4s linear infinite;
+}
+
+@keyframes rotate5123 {
   0% {
-    translate: -50px 0px;
+    transform: rotate( 0 );
   }
 
-  25% {
-    translate: 0px 0px;
+  10% {
+    width: 6.250em;
+    height: 6.250em;
+  }
+
+  66% {
+    width: 2.4em;
+    height: 2.4em;
   }
 
   100% {
-    translate: 0px 0px;
+    transform: rotate(360deg);
+    width: 6.250em;
+    height: 6.250em;
   }
 }
 
-@keyframes load-right-top {
-  0% {
-    translate: -50px 50px;
+@keyframes dotsY {
+  66% {
+    opacity: .1;
+    width: 2.4em;
   }
 
-  25% {
-    translate: 0px 50px;
-  }
-
-  50% {
-    translate: 0px 0px;
-  }
-
-  100% {
-    translate: 0px 0px;
+  77% {
+    opacity: 1;
+    width: 0;
   }
 }
 
-@keyframes load-left-top {
-  0% {
-    translate: 0px 50px;
+@keyframes dotsX {
+  66% {
+    opacity: .1;
+    height: 2.4em;
   }
 
-  25% {
-    translate: 50px 50px;
-  }
-
-  50% {
-    translate: 50px 0px;
-  }
-
-  75% {
-    translate: 0px 0px;
-  }
-
-  100% {
-    translate: 0px 0px;
+  77% {
+    opacity: 1;
+    height: 0;
   }
 }
 
-@keyframes load-big {
-  0% {
-    scale: 1;
-    background-color: rgba(0, 0, 0, 0);
+@keyframes flash {
+  33% {
+    opacity: 0;
+    border-radius: 0%;
   }
 
-  74% {
-    scale: 1;
-    background-color: rgba(0, 0, 0, 0);
+  55% {
+    opacity: .6;
+    border-radius: 100%;
   }
 
-  75% {
-    scale: 1;
-    background-color: darkcyan;
-  }
-
-  100% {
-    scale: 0.5;
-    background-color: darkcyan;
+  66% {
+    opacity: 0;
   }
 }
+
 </style>

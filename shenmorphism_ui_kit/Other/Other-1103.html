@@ -1,213 +1,99 @@
 <div class="notification">
-  <div class="notification-top">
-    <span class="level-up">Level Up!</span>
-  </div>
-  <div class="notification-bottom">
-    <span class="level">Level 5</span>
-    <button class="next-level-button">Next Level</button>
-  </div>
+  <span>L</span>
+  <span>E</span>
+  <span>V</span>
+  <span>E</span>
+  <span>L</span>
+  <span>U</span>
+  <span>P</span>
+  <span>!</span>
 </div>
 <style>
-/* From SHΞN™ Morphism by WittyHydra - Tags: notification */
+/* From SHΞN™ Morphism by newbiners - Tags: notification */
 .notification {
-  --bg-color: #fff;
-  --text-color: #1c1f2b;
-  --highlight-color: #fc9a32;
-  --button-color: #3d3f4e;
-  --button-color-hover: #27282f;
-  position: relative;
-  width: 300px;
-  height: 100px;
-  background-color: var(--bg-color);
-  border-radius: 10px;
-  -webkit-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-}
-
-@media (prefers-color-scheme: dark) {
-  .notification {
-    --bg-color: #1c1f2b;
-    --text-color: #fff;
-    --highlight-color: #fc9a32;
-    --button-color: #3d3f4e;
-    --button-color-hover: #27282f;
-  }
-}
-
-.notification-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background-color: var(--highlight-color);
+  width: 250px;
+  height: 60px;
+  background: rgb(146, 146, 146);
+  border-radius: 14px;
+  font-size: 2.3em;
+  font-weight: 700;
+  color: black;
+  text-shadow: 2px 2px yellow;
+  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  transform: translateY(-100%);
-  -webkit-animation: slide-down 1s ease-out forwards;
-  animation: slide-down 1s ease-out forwards;
-}
-
-.notification-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background-color: var(--bg-color);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 20px;
+  gap: 4px;
 }
 
-.level-up {
-  color: var(--text-color);
-  font-size: 24px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  -webkit-animation: rotate-text 1s ease-in-out;
-  animation: rotate-text 1s ease-in-out;
+.notification span {
+  -webkit-animation: levelup 2s ease infinite;
+  animation: levelup 2s ease infinite;
 }
 
-.level {
-  color: var(--text-color);
-  font-size: 20px;
-  font-weight: bold;
-  margin-right: 10px;
+.notification span:nth-child(2) {
+  -webkit-animation-delay: 0.25s;
+  animation-delay: 0.25s;
 }
 
-.next-level-button {
-  background-color: var(--button-color);
-  color: var(--text-color);
-  border: none;
-  border-radius: 5px;
-  padding: 8px 16px;
-  cursor: pointer;
-  -webkit-transition: background-color 0.3s ease-out;
-  transition: background-color 0.3s ease-out;
+.notification span:nth-child(3) {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
-.next-level-button {
-  background-color: #efefef;
-  color: #000;
-  font-weight: 600;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -webkit-box-shadow: 0px 0px 10px #888888;
-  box-shadow: 0px 0px 10px #888888;
+.notification span:nth-child(4) {
+  -webkit-animation-delay: 0.75s;
+  animation-delay: 0.75s;
 }
 
-@-webkit-keyframes slide-down {
-  from {
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
+.notification span:nth-child(5) {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.notification span:nth-child(6) {
+  -webkit-animation-delay: 1.25s;
+  animation-delay: 1.25s;
+}
+
+.notification span:nth-child(7) {
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}
+
+.notification span:nth-child(8) {
+  -webkit-animation-delay: 1.75s;
+  animation-delay: 1.75s;
+}
+
+@-webkit-keyframes levelup {
+  0%, 100% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
   }
 
-  to {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+  50% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
   }
 }
 
-@keyframes slide-down {
-  from {
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
+@keyframes levelup {
+  0%, 100% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
   }
 
-  to {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
-@-webkit-keyframes rotate-text {
-  0% {
-    -webkit-transform: rotateX(90deg);
-    transform: rotateX(90deg);
-    opacity: 0;
-  }
-
-  100% {
-    -webkit-transform: rotateX(0);
-    transform: rotateX(0);
-    opacity: 1;
+  50% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
   }
 }
 
-@keyframes rotate-text {
-  0% {
-    -webkit-transform: rotateX(90deg);
-    transform: rotateX(90deg);
-    opacity: 0;
-  }
-
-  100% {
-    -webkit-transform: rotateX(0);
-    transform: rotateX(0);
-    opacity: 1;
-  }
-}
-
-.next-level-button:hover {
-  background-color: aqua;
-  color: #000;
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-  -webkit-box-shadow: 0px 0px 15px #888888;
-  box-shadow: 0px 0px 15px #888888;
-}
-
-.notification {
-  background-color: #1e2b3c;
-  color: #c3daf6;
-}
-
-.notification:hover {
-  background-color: #c3daf6;
-  color: #1e2b3c;
-}
-
-.next-level-button:hover {
-  background-color: #1e2b3c;
-  color: #c3daf6;
-}
-
-/* Light Mode */
-.notification {
-  background-color: #c3daf6;
-  color: #1e2b3c;
-}
-
-.notification:hover {
-  background-color: #1e2b3c;
-  color: #c3daf6;
-}
-
-.next-level-button:hover {
-  background-color: #c3daf6;
-  color: #1e2b3c;
-}
 </style>

@@ -1,43 +1,25 @@
-<!-- From SHΞN™ Morphism by themrsami  - Tags: tooltip -->
-<div class="relative group inline-block">
-  <div
-    class="bg-white py-2 rounded-md shadow-lg hover:cursor-pointer flex justify-center items-center gap-4 px-4"
+<!-- From SHΞN™ Morphism by sahilxkhadka  - Tags: simple, tooltip, button, hover effect, tailwind, tailwindbutton -->
+<button
+  class="group relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800"
+>
+  <span
+    class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 18 14"
-      height="25"
-      width="25"
+    Hover For Tooltip
+  </span>
+  <div class="hidden group-hover:block">
+    <div
+      class="group absolute -top-12 left-1/2 z-50 flex -translate-x-1/2 flex-col items-center rounded-sm text-center text-sm text-slate-300 before:-top-2"
     >
-      <path
-        fill="#FFA000"
-        d="M16.2 1.75H8.1L6.3 0H1.8C0.81 0 0 0.7875 0 1.75V12.25C0 13.2125 0.81 14 1.8 14H15.165L18 9.1875V3.5C18 2.5375 17.19 1.75 16.2 1.75Z"
-      ></path>
-      <path
-        fill="#FFCA28"
-        d="M16.2 2H1.8C0.81 2 0 2.77143 0 3.71429V12.2857C0 13.2286 0.81 14 1.8 14H16.2C17.19 14 18 13.2286 18 12.2857V3.71429C18 2.77143 17.19 2 16.2 2Z"
-      ></path>
-    </svg>
-    <p>Project Structure</p>
+      <div class="rounded-sm bg-black py-1 px-2">
+        <p class="whitespace-nowrap">This is a tooltip.</p>
+      </div>
+      <div
+        class="h-0 w-fit border-l-8 border-r-8 border-t-8 border-transparent border-t-black"
+      ></div>
+    </div>
   </div>
-
-  <div
-    class="absolute left-0 mt-2 w-64 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
-  >
-    <ul class="p-4 space-y-1">
-      <li class="py-1">📁 src</li>
-      <li class="pl-4 py-1">📁 app</li>
-      <li class="pl-8 py-1">📄 layout.js</li>
-      <li class="pl-8 py-1">📄 page.js</li>
-      <li class="pl-4 py-1">📁 components</li>
-      <li class="pl-8 py-1">📄 header.js</li>
-      <li class="pl-8 py-1">📄 footer.js</li>
-      <li class="pl-4 py-1">📁 styles</li>
-      <li class="pl-8 py-1">📄 globals.css</li>
-    </ul>
-  </div>
-</div>
+</button>
 
 
     

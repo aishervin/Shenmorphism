@@ -1,63 +1,48 @@
-<div class="div">
-  <button class="button">
-    <span class="span"> HOVER ME </span>
-  </button>
-</div>
-
+<button class="button">
+  Button
+</button>
 <style>
-/* From SHΞN™ Morphism by BurgiSimon  - Tags: flashy, 3d, white, gradient, button, hover, smooth, neon */
+/* From SHΞN™ Morphism by gauravsharmadriveit - Tags: button, active, animated */
 .button {
-  cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 20px;
-  background-color: #e8e8e8;
-  border: 1.6px solid #e2e2e2;
-  box-shadow: 6px 6px 10px #c5c5c5, -6px -6px 12px #ffffff;
-  transform: skewX(-5deg);
+  font-weight: 600;
+  display: inline-block;
   position: relative;
-  overflow: hidden;
+  border: 3px solid #fff;
+  padding: 15px 60px;
+  font-size: 16px;
 }
 
-.button::before {
-  content: "";
+.button::after, .button::before {
   position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  z-index: -1;
-  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
-  background-size: 400%;
-  border-radius: 30px;
-  opacity: 0;
-  transition: opacity 0.5s, filter 0.5s;
+  content: "";
+  width: 0;
+  height: 0;
+  transition: .5s;
 }
 
-.button:hover::before {
-  filter: blur(10px);
-  opacity: 1;
-  animation: animateBorder 8s linear infinite;
-  border: 4px solid rgb(255, 255, 255);
+button::after {
+  top: -3px;
+  left: -3px;
+  border-top: 3px solid transparent;
+  border-left: 3px solid transparent;
 }
 
-@keyframes animateBorder {
-  0% {
-    background-position: 0%;
-  }
-  100% {
-    background-position: 400%;
-  }
+button::before {
+  bottom: -3px;
+  right: -3px;
+  border-bottom: 3px solid transparent;
+  border-right: 3px solid transparent;
 }
 
-.span {
-  color: black;
-  letter-spacing: 3px;
-  font-size: 18px;
+button:hover {
+  color: #0668C9;
+  cursor: pointer;
 }
 
-.button:active {
-  box-shadow: 5px 5px 12px #cfcece, -4px -4px 12px #fcfcfc;
+button:hover::after,
+button:hover::before {
+  width: calc(50% + 3px);
+  height: calc(50% + 3px);
+  border-color: #0668C9;
 }
-
 </style>
-    

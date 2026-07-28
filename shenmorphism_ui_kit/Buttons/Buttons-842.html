@@ -1,31 +1,117 @@
-<!-- From SHΞN™ Morphism by EmaCoto  - Tags: icon, green, button, add -->
-<button
-  class="rounded-lg relative w-36 h-10 cursor-pointer flex items-center border border-green-500 bg-green-500 group hover:bg-green-500 active:bg-green-500 active:border-green-500"
->
-  <span
-    class="text-gray-200 font-semibold ml-8 transform group-hover:translate-x-20 transition-all duration-300"
-    >Add Item</span
-  >
-  <span
-    class="absolute right-0 h-full w-10 rounded-lg bg-green-500 flex items-center justify-center transform group-hover:translate-x-0 group-hover:w-full transition-all duration-300"
-  >
-    <svg
-      class="svg w-8 text-white"
-      fill="none"
-      height="24"
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <line x1="12" x2="12" y1="5" y2="19"></line>
-      <line x1="5" x2="19" y1="12" y2="12"></line>
-    </svg>
-  </span>
-</button>
+<div class="box">
+  <button class="button">LISTEN</button>
+  <div class="music">
+    <span class="soundwave" style="--i: 12"></span>
+    <span class="soundwave" style="--i: 31"></span>
+    <span class="soundwave" style="--i: 25"></span>
+    <span class="soundwave" style="--i: 18"></span>
+    <span class="soundwave" style="--i: 11"></span>
+    <span class="soundwave" style="--i: 23"></span>
+    <span class="soundwave" style="--i: 16"></span>
+    <span class="soundwave" style="--i: 34"></span>
+    <span class="soundwave" style="--i: 19"></span>
+    <span class="soundwave" style="--i: 14"></span>
+  </div>
+</div>
+<style>
+/* From SHΞN™ Morphism by tarantino421 - Tags: button, music, hover button */
+.box {
+  --clr-shadow__border: #3effff;
+  --clr-text: #F6F4EB;
+  --clr-soundwave: #83e4ac;
+  --clr-music: #30858d;
+  --size: 3rem;
+  position: relative;
+  outline: 1px solid var(--clr-shadow__border);
+}
+
+.button {
+  background: transparent;
+  padding: calc(var(--size) / 3) var(--size);
+  font-weight: 600;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  color: var(--clr-text);
+  letter-spacing: 0.2rem;
+  text-shadow: 2px 0px var(--clr-shadow__border), 0px 2px var(--clr-shadow__border),-2px 0px var(--clr-shadow__border), 0px -2px var(--clr-shadow__border);
+}
+
+.music {
+  width: 100%;
+  height: 100%;
+  bottom: 0%;
+  transition: 0.5s ease-in-out;
+  z-index: -1;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: var(--clr-music);
+}
+
+.box:hover .music {
+  opacity: 1;
+}
+
+.soundwave {
+  width: 100%;
+  border: 1px solid var(--clr-music);
+  border-bottom: none;
+  background: linear-gradient(to top, var(--clr-soundwave) 70%, var(--clr-music));
+  animation: music-animation calc(0.03s * var(--i)) linear infinite;
+  opacity: 1;
+}
+
+@keyframes music-animation {
+  0%, 100% {
+    height: calc(0.06rem * var(--i));
+  }
+
+  10% {
+    height: calc(0.04rem * var(--i));
+  }
+
+  20% {
+    height: calc(0.05rem * var(--i));
+  }
+
+  30% {
+    height: calc(0.01rem * var(--i));
+  }
+
+  40% {
+    height: calc(0.07rem * var(--i));
+  }
+
+  50% {
+    height: calc(0.04rem * var(--i));
+  }
+
+  60% {
+    height: calc(0.08rem * var(--i));
+  }
+
+  70% {
+    height: calc(0.06rem * var(--i));
+  }
+
+  80% {
+    height: calc(0.09rem * var(--i));
+  }
+
+  90% {
+    height: calc(0.05rem * var(--i));
+  }
+}
 
 
-    
+
+
+
+
+
+
+</style>

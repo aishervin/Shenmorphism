@@ -1,24 +1,33 @@
-<button class="button">
-  Hover me !
+<button id="btn">
+  Button
 </button>
 <style>
-/* From SHΞN™ Morphism by rrr63 - Tags: button, hover, outlined, bootsrap button */
-.button {
+/* From SHΞN™ Morphism by zjssun - Tags: button, neon */
+button {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
   font-size: 17px;
-  padding: 15px 35px;
-  border-radius: 5px;
-  outline: 2px solid #2835ba;
-  outline-offset: 0px;
-  background: #2835ba;
-  border: 0;
-  font-weight: bolder;
-  color: white;
-  transition: all .1s ease-in-out;
-  cursor: pointer;
+  font-weight: 500;
+  color: #ffffff80;
+  text-shadow: none;
+  background: transparent;
+  box-shadow: transparent;
+  border: 1px solid #ffffff80;
+  transition: 0.5s ease;
+  user-select: none;
 }
 
-.button:hover {
-  outline-offset: 3px;
-  outline: 3px solid #2835ba;
+#btn:hover,:focus {
+  color: #ffffff;
+  background: #008cff;
+  border: 1px solid #008cff;
+  text-shadow: 0 0 5px #ffffff,
+              0 0 10px #ffffff,
+              0 0 20px #ffffff;
+  box-shadow: 0 0 5px #008cff,
+              0 0 20px #008cff,
+              0 0 50px #008cff,
+              0 0 100px #008cff;
 }
 </style>

@@ -1,150 +1,107 @@
-<div class="bannerContainer">
-      
-      <div class="banner">
-        
-        <div class="loader loader1"></div>
-        <div class="loader loader2"></div>
-        <div class="loader loader3"></div>
-        
-
-        
-        <div class="loader mainCard">
-          <svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-            <path fill="#393E41" d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 248c-22.1 0-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40s-17.9 40-40 40zm-24 56c0 22.1-17.9 40-40 40s-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"></path>
-          </svg>
-          <span>Well done</span>
-          <svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-            <path fill="#393E41" d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 248c-22.1 0-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40s-17.9 40-40 40zm-24 56c0 22.1-17.9 40-40 40s-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"></path>
-          </svg>
-
-          
-          <div class="loader secondCard">
-
-            <span>Next Level</span>
-
-          </div>
-          
-        </div>
-      </div>
-      
+<div class="box-avatar">
+  <div class="avatar">
+      <svg class="avatar-icon" viewBox="0 0 17 15">
+        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+      </svg>
     </div>
-    
+</div>
+  <div class="notification">    
+    <div class="notification-info">
+      <p class="notification-text"> <span class="highlight">Player</span> reached <b>level 15!</b> </p>
+    </div>
+  </div>
 <style>
-/* From SHΞN™ Morphism by Santaval - Tags: notification */
-/*Container*/
-
-.bannerContainer {
-  position: relative;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  width: fit-content;
-  height: fit-content;
+/* From SHΞN™ Morphism by alexruix - Tags: notification */
+.notification {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/*Banner */
-
-.bannerContainer .banner {
-  background-color: #e7e5df;
-  height: 70px;
-  width: 250px;
+  width: 0;
+  background: #ddd;
   border-radius: 10px;
-  position: relative;
-  overflow-y: hidden;
+  animation: slideIn 1s ease-in-out 1.25s forwards;
 }
 
-/*Loaders */
-
-.bannerContainer .banner .loader {
-  height: 100%;
+.notification-info {
+  display: inline-flex;
+  overflow: hidden;
+  background-color: #181818;
+  color: #fff;
   width: 100%;
-  border-radius: 10px;
-  position: absolute;
+  border-radius: 12px 8px 8px 12px;
+  padding-left: 16px;
+  align-items: center;
 }
 
-.bannerContainer .banner .loader1 {
-  background-color: #393e41;
-  animation: loader 0.5s linear 0s;
+.notification-text {
+  opacity: 0;
+  padding: 10px 8px;
+  white-space: nowrap;
+  animation: textInfo 1s ease-in-out 1.5s forwards;
 }
 
-.bannerContainer .banner .loader2 {
-  background-color: #44bba4;
-  animation: loader 0.5s linear 0.2s;
+.highlight {
+  color: #ffc300;
 }
 
-.bannerContainer .banner .loader3 {
-  background-color: #e7bb41;
-  animation: loader 0.5s linear 0.3s;
+.box-avatar {
+  background-color: #181818;
+  padding: 6px;
+  width: 4.5em;
+  height: 4.5em;
+  border-radius: 50%;
+  margin-right: -20px;
+  box-shadow: 6.2px 3.1px 38.2px -6px rgba(0, 0, 0, 0.2), 63px 32px 176px -6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
-/*Main card*/
+.avatar {
+  background-color: #FDA203;
+  padding: .6em;
+  border-radius: 50%;
+}
 
-.bannerContainer .banner .mainCard {
+.avatar-icon {
   width: 100%;
-  background-color: #e7e5df;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: #393e41;
-  font-weight: bolder;
-  animation: loader 0.5s linear 0.4s;
-  border-radius: 10px;
-}
-
-.bannerContainer .banner span {
-  font-size: 29px;
-  font-weight: 900;
-  transform: translateY(-120px);
-  animation: appear 0.1s ease-in 0.9s forwards;
-}
-
-.bannerContainer .banner svg {
-  width: 30px;
-  transform: translateY(-100px);
-  animation: appear 0.1s ease-in 0.9s forwards;
-}
-
-.bannerContainer .banner .mainCard:hover > .secondCard {
   height: 100%;
-  color: #e7e5df;
+  fill: white;
+  animation: grow 2s ease-in-out 3;
 }
 
-/* Second card */
-
-.bannerContainer .banner .secondCard {
-  background-color: #393e41;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: transparent;
-  height: 0px;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-/* Animations */
-
-@keyframes loader {
-  from {
-    width: 0%;
+/*Animations*/
+@keyframes slideIn {
+  0% {
+    width: 0;
+    padding: 2px;
   }
 
-  to {
-    width: 100%;
+  100% {
+    width: 250px;
+    padding: 2px;
   }
 }
 
-@keyframes appear {
-  from {
-    transform: translateY(-100px);
+@keyframes textInfo {
+  0% {
+    opacity: 0%;
+    margin-left: -20em;
   }
 
-  to {
-    transform: translateY(0px);
+  100% {
+    opacity: 100%;
+    margin-left: 0;
   }
 }
 
+@keyframes grow {
+  0% {
+    transform: scale(100%) translateY(0%);
+  }
+
+  50% {
+    transform: scale(100%) translateY(-10%);
+  }
+
+  100% {
+    transform: scale(100%) translateY(0%);
+  }
+}
 </style>

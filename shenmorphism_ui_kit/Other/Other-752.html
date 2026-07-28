@@ -1,31 +1,54 @@
-<div class="loader"></div>
+<div class="loader">
+  <div class="book">
+    <div class="page"></div>
+    <div class="page page2"></div>
+  </div>
+</div>
+
 <style>
-/* From SHΞN™ Morphism by doniaskima - Tags: simple, neumorphism, success, loader */
+/* From SHΞN™ Morphism by vinodjangid07  - Tags: animation, loading, loader, book, flip, loading animation */
 .loader {
-  display: inline-flex;
-  gap: 10px;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --book-color: #f1775b;
+  --book-cover-color: #506c86;
 }
-
-.loader:before,
-.loader:after {
-  content: "";
-  height: 20px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(farthest-side,#000 95%,#0000) 35% 35%/6px 6px no-repeat
-    #fff;
-  transform: scaleX(var(--s,1)) rotate(0deg);
-  animation: l6 1s infinite linear;
+.book {
+  width: 150px;
+  height: 13px;
+  background-color: var(--book-color);
+  border-bottom: 2px solid var(--book-cover-color);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: relative;
 }
-
-.loader:after {
-  --s: -1;
-  animation-delay: -0.1s;
+.page {
+  width: 50%;
+  height: 2px;
+  background-color: var(--book-color);
+  animation: paging 0.7s ease-out infinite;
+  transform-origin: left;
 }
-
-@keyframes l6 {
+.page2 {
+  width: 50%;
+  height: 2px;
+  background-color: var(--book-color);
+  animation: paging 0.8s ease-out infinite;
+  transform-origin: left;
+  position: absolute;
+}
+@keyframes paging {
+  10% {
+    transform: rotateZ(0deg);
+  }
   100% {
-    transform: scaleX(var(--s,1)) rotate(360deg);
+    transform: rotateZ(-180deg);
   }
 }
+
 </style>
+    

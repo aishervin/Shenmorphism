@@ -1,116 +1,76 @@
-<div class="radio-input">
-  <input value="value-1" name="value-radio" id="value-1" type="radio" />
-  <label for="value-1">
-    <div class="text">
-      <span class="circle"></span>
-      Monthly
-    </div>
-    <div class="price">
-      <span>$30/mo</span>
-      <span class="small">$30 billed every month</span>
-    </div> </label
-  ><input value="value-2" name="value-radio" id="value-2" type="radio" />
-  <label for="value-2">
-    <div class="text">
-      <span class="circle"></span>
-      Annualy
-    </div>
-    <div class="price">
-      <span>$15/mo</span>
-      <span class="small">$180 billed once a year</span>
-    </div>
-    <span class="info">save up to 50%</span>
-  </label>
-</div>
-
+<input type="checkbox" class="l">
 <style>
-/* From SHΞN™ Morphism by escannord  - Tags: simple, material design, radio, payment */
-.radio-input input {
-  display: none;
+/* From SHΞN™ Morphism by JkHuger - Tags: switch */
+.l {
+  display: block;
+  margin-bottom: 1.5em;
+  font-size: 1em;
 }
 
-.radio-input label {
-  --border-color: #a1b0d8;
-
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  min-width: 5rem;
-  margin: 1rem;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
+.l {
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 0.75em;
+  box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.3) inset;
+  color: #fdea7b;
+  display: inline-flex;
   align-items: center;
+  margin: auto;
+  padding: 0.15em;
+  width: 3em;
+  height: 1.5em;
+  transition: background-color 0.1s 0.3s ease-out, box-shadow 0.1s 0.3s ease-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
-.radio-input input:checked + label {
-  --border-color: #2f64d8;
-  border-color: var(--border-color);
-  border-width: 2px;
-}
-.radio-input label:hover {
-  --border-color: #2f64d8;
-  border-color: var(--border-color);
-}
-
-.radio-input {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-}
-
-.circle {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: rgb(189, 187, 207);
-  margin-right: 0.5rem;
-  position: relative;
-}
-
-.radio-input input:checked + label span.circle::before {
+.l:before, .l:after {
   content: "";
-  display: inline;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #2f64d8;
-  width: 15px;
-  height: 15px;
+  display: block;
+}
+
+.l:before {
+  background-color: #d7d7d7;
   border-radius: 50%;
-}
-.text {
-  display: flex;
-  align-items: center;
-}
-
-.price {
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-  font-weight: bold;
+  width: 1.2em;
+  height: 1.2em;
+  transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+  z-index: 1;
 }
 
-.small {
-  font-size: 10px;
-  color: rgb(136, 138, 139);
-  font-weight: 100;
+.l:after {
+  background: linear-gradient(transparent 50%, rgba(0,0,0,0.15) 0) 0 50% / 50% 100%,
+		repeating-linear-gradient(90deg,#bbb 0,#bbb,#bbb 20%,#999 20%,#999 40%) 0 50% / 50% 100%,
+		radial-gradient(circle at 50% 50%,#888 25%, transparent 26%);
+  background-repeat: no-repeat;
+  border: 0.25em solid transparent;
+  border-left: 0.4em solid #d8d8d8;
+  border-right: 0 solid transparent;
+  transition: border-left-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+  transform: translateX(-22.5%);
+  transform-origin: 25% 50%;
+  width: 1.2em;
+  height: 1em;
+  box-sizing: border-box;
+}
+/* Checked */
+.l:checked {
+  background-color: rgba(0,0,0,0.45);
+  box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.1) inset;
 }
 
-.info {
-  position: absolute;
-  display: inline-block;
-  font-size: 11px;
-  background-color: rgb(31, 236, 123);
-  border-radius: 20px;
-  padding: 1px 9px;
-  top: 0;
-  transform: translateY(-50%);
-  right: 5px;
+.l:checked:before {
+  background-color: currentColor;
+  transform: translateX(125%)
 }
 
+.l:checked:after {
+  border-left-color: currentColor;
+  transform: translateX(-2.5%) rotateY(180deg);
+}
+/* Other States */
+.l:focus {
+	/* Usually an anti-A11Y practice but set to remove an annoyance just for this demo */
+  outline: 0;
+}
 </style>
-    

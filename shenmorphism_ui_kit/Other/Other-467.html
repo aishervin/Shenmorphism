@@ -1,66 +1,97 @@
-<svg style="position: absolute; width: 0; height: 0;">
-  <filter id="goo">
-  <feGaussianBlur in="SourceGraphic" stdDeviation="12"></feGaussianBlur>
-  <feColorMatrix values="0 0 0 0 0 
-            0 0 0 0 0 
-            0 0 0 0 0 
-            0 0 0 48 -7"></feColorMatrix>
-</filter>
-</svg>
+<div class="cell">
+  <div class="card">
+    <span class="flower-loader">Loading…</span>
+  </div>
+</div>
 
-<div class="loader"></div>
 <style>
-/* From SHΞN™ Morphism by SelfMadeSystem - Tags: loader */
-.loader {
-  width: 12em;
-  height: 3em;
-  position: relative;
+/* From SHΞN™ Morphism by Sourcesketch  - Tags: glassmorphism, green, loader, loading animation */
+.flower-loader {
   overflow: hidden;
-  border-bottom: 8px solid #000;
-  filter: url(#goo);
+  position: relative;
+  text-indent: -9999px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #e96;
+  border-radius: 100%;
+  -moz-box-shadow: white 0 0 15px 0, #485 -12px -12px 0 4px,
+    #485 12px -12px 0 4px, #485 12px 12px 0 4px, #485 -12px 12px 0 4px;
+  -webkit-box-shadow: white 0 0 15px 0, #485 -12px -12px 0 4px,
+    #485 12px -12px 0 4px, #485 12px 12px 0 4px, #485 -12px 12px 0 4px;
+  box-shadow: white 0 0 15px 0, #485 -12px -12px 0 4px, #485 12px -12px 0 4px,
+    #485 12px 12px 0 4px, #485 -12px 12px 0 4px;
+  -moz-animation: flower-loader 5s infinite ease-in-out;
+  -webkit-animation: flower-loader 5s infinite ease-in-out;
+  animation: flower-loader 5s infinite ease-in-out;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
 }
 
-.loader::before {
-  content: '';
-  width: 22em;
-  height: 18em;
-  background: #f00;
-  position: absolute;
-  border-radius: 50%;
-  left: -2em;
-  bottom: -18em;
-  animation: wee1 2s linear infinite;
-}
-
-.loader::after {
-  content: '';
-  width: 16em;
-  height: 12em;
-  background: #0ff;
-  position: absolute;
-  border-radius: 50%;
-  left: -4em;
-  bottom: -12em;
-  animation: wee2 2s linear infinite 0.75s;
-}
-
-@keyframes wee1 {
+@-moz-keyframes flower-loader {
   0% {
-    transform: translateX(-10em) rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -moz-box-shadow: white 0 0 15px 0, #485 -12px -12px 0 4px,
+      #485 12px -12px 0 4px, #485 12px 12px 0 4px, #485 -12px 12px 0 4px;
+    box-shadow: white 0 0 15px 0, #485 -12px -12px 0 4px, #485 12px -12px 0 4px,
+      #485 12px 12px 0 4px, #485 -12px 12px 0 4px;
   }
-
-  100% {
-    transform: translateX(7em) rotate(180deg);
+  50% {
+    -moz-transform: rotate(1080deg);
+    transform: rotate(1080deg);
+    -moz-box-shadow: white 0 0 15px 0, #485 12px 12px 0 4px,
+      #485 -12px 12px 0 4px, #485 -12px -12px 0 4px, #485 12px -12px 0 4px;
+    box-shadow: white 0 0 15px 0, #485 12px 12px 0 4px, #485 -12px 12px 0 4px,
+      #485 -12px -12px 0 4px, #485 12px -12px 0 4px;
   }
 }
-
-@keyframes wee2 {
+@-webkit-keyframes flower-loader {
   0% {
-    transform: translateX(-8em) rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-box-shadow: white 0 0 15px 0, #485 -12px -12px 0 4px,
+      #485 12px -12px 0 4px, #485 12px 12px 0 4px, #485 -12px 12px 0 4px;
+    box-shadow: white 0 0 15px 0, #485 -12px -12px 0 4px, #485 12px -12px 0 4px,
+      #485 12px 12px 0 4px, #485 -12px 12px 0 4px;
   }
-
-  100% {
-    transform: translateX(8em) rotate(180deg);
+  50% {
+    -webkit-transform: rotate(1080deg);
+    transform: rotate(1080deg);
+    -webkit-box-shadow: white 0 0 15px 0, #485 12px 12px 0 4px,
+      #485 -12px 12px 0 4px, #485 -12px -12px 0 4px, #485 12px -12px 0 4px;
+    box-shadow: white 0 0 15px 0, #485 12px 12px 0 4px, #485 -12px 12px 0 4px,
+      #485 -12px -12px 0 4px, #485 12px -12px 0 4px;
   }
 }
+@keyframes flower-loader {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -moz-box-shadow: white 0 0 15px 0, #485 -12px -12px 0 4px,
+      #485 12px -12px 0 4px, #485 12px 12px 0 4px, #485 -12px 12px 0 4px;
+    -webkit-box-shadow: white 0 0 15px 0, #485 -12px -12px 0 4px,
+      #485 12px -12px 0 4px, #485 12px 12px 0 4px, #485 -12px 12px 0 4px;
+    box-shadow: white 0 0 15px 0, #485 -12px -12px 0 4px, #485 12px -12px 0 4px,
+      #485 12px 12px 0 4px, #485 -12px 12px 0 4px;
+  }
+  50% {
+    -moz-transform: rotate(1080deg);
+    -ms-transform: rotate(1080deg);
+    -webkit-transform: rotate(1080deg);
+    transform: rotate(1080deg);
+    -moz-box-shadow: white 0 0 15px 0, #485 12px 12px 0 4px,
+      #485 -12px 12px 0 4px, #485 -12px -12px 0 4px, #485 12px -12px 0 4px;
+    -webkit-box-shadow: white 0 0 15px 0, #485 12px 12px 0 4px,
+      #485 -12px 12px 0 4px, #485 -12px -12px 0 4px, #485 12px -12px 0 4px;
+    box-shadow: white 0 0 15px 0, #485 12px 12px 0 4px, #485 -12px 12px 0 4px,
+      #485 -12px -12px 0 4px, #485 12px -12px 0 4px;
+  }
+}
+
 </style>
+    

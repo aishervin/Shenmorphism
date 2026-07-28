@@ -1,68 +1,54 @@
-<button> Button
+<button class="button">
+  glitch
 </button>
 <style>
-/* From SHΞN™ Morphism by cssbuttons-io - Tags: button, duolingo */
-button {
- appearance: button;
- background-color: #1899D6;
- border: solid transparent;
- border-radius: 16px;
- border-width: 0 0 4px;
- box-sizing: border-box;
- color: #FFFFFF;
- cursor: pointer;
- display: inline-block;
- font-size: 15px;
- font-weight: 700;
- letter-spacing: .8px;
- line-height: 20px;
- margin: 0;
- outline: none;
- overflow: visible;
- padding: 13px 19px;
- text-align: center;
- text-transform: uppercase;
- touch-action: manipulation;
- transform: translateZ(0);
- transition: filter .2s;
- user-select: none;
- -webkit-user-select: none;
- vertical-align: middle;
- white-space: nowrap;
+/* From SHΞN™ Morphism by r7chardgh - Tags: button, hover, glitch */
+.button {
+  position: relative;
+  border: 0;
+  padding: 1em 2em;
+  font-weight: 700;
+  cursor: pointer;
+  outline: .5em solid #fff;
+  outline-offset: -.3em;
+  color: #fff;
+  background-color: #333;
+  text-transform: uppercase;
 }
 
-button:after {
- background-clip: padding-box;
- background-color: #1CB0F6;
- border: solid transparent;
- border-radius: 16px;
- border-width: 0 0 4px;
- bottom: -4px;
- content: "";
- left: 0;
- position: absolute;
- right: 0;
- top: 0;
- z-index: -1;
+.button:hover {
+  animation: shake 500ms infinite,glitch 400ms infinite steps(4);
 }
 
-button:main, button:focus {
- user-select: auto;
+@keyframes shake {
+  0% {
+  }
+
+  25% {
+    transform: translate(-.1em,-.1em);
+  }
+
+  50% {
+    transform: translate(.3em,0);
+  }
+
+  75% {
+    transform: translate(0,.3em);
+  }
+
+  100% {
+  }
 }
 
-button:hover:not(:disabled) {
- filter: brightness(1.1);
-}
+@keyframes glitch {
+  from {
+    box-shadow: .8em .8em  rgba(240, 84, 219),
+  -.8em -.8em rgba(84, 240, 232);
+  }
 
-button:disabled {
- cursor: auto;
-}
-
-button:active:after {
- border-width: 0 0 0px;
-}
-
-button:active {
- padding-bottom: 10px;
+  to {
+    text-shadow: .3em .2em  rgba(240, 84, 219),
+  -.3em -.2em rgba(84, 240, 232);
+  }
 }
 </style>

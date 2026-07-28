@@ -1,60 +1,48 @@
-<div class="one-div"></div>
+<div class="scroll-snap-card">
+    <div class="slide red">
+        <p class="tip">Scroll On Me</p>
+    </div>
+    <div class="slide blue">
+        <p class="tip">Scroll On Me</p>
+    </div>
+    <div class="slide green">
+        <p class="tip">Scroll On Me</p>
+    </div>
+</div>
 <style>
-/* From SHΞN™ Morphism by SouravBandyopadhyay - Tags: animation, card, hover, bubble, transition */
-.one-div {
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(135deg, #ff5f6d, #ffc371, #ffd800);
-  position: relative;
-  overflow: hidden;
-  transform: rotate(45deg);
-  animation: rotate 5s infinite linear;
-  border-radius: 1.5rem;
+/* From SHΞN™ Morphism by kamehame-ha - Tags: simple, card, scroll snap, clean */
+.red {
+  background-color: #f43f5e;
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+.blue {
+  background-color: #3b82f6;
 }
 
-.one-div::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 150px;
+.green {
+  background-color: #22c55e;
+}
+
+.scroll-snap-card {
   height: 150px;
-  background: radial-gradient(circle, #ffffff, transparent);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.8;
-  animation: pulse 2s infinite;
+  width: 250px;
+  scroll-snap-type: y mandatory;
+  overflow: auto;
+  border-radius: 10px;
 }
 
-@keyframes pulse {
-  0% {
-    transform: translate(-50%, -50%) scale(0.8);
-    opacity: 0.8;
-  }
-
-  50% {
-    transform: translate(-50%, -50%) scale(1.2);
-    opacity: 0.4;
-  }
-
-  100% {
-    transform: translate(-50%, -50%) scale(0.8);
-    opacity: 0.8;
-  }
+.scroll-snap-card .slide {
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.one-div:hover {
-  animation-play-state: paused;
+.scroll-snap-card .slide p {
+  font-size: 1em;
+  color: white;
+  font-weight: 700;
 }
-
 </style>

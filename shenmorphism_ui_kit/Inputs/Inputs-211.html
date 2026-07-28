@@ -1,66 +1,55 @@
-<!-- From SHΞN™ Morphism by Jules-gitclerc  - Tags: material design, input, creditcard, payment, mastercard -->
-<div
-  class="flex flex-col justify-around bg-gray-800 p-4 border border-white border-opacity-30 rounded-lg shadow-md max-w-xs mx-auto"
->
-  <div class="flex flex-row items-center justify-between mb-3">
-    <input
-      class="w-full h-10 border-none outline-none text-sm bg-gray-800 text-white font-semibold caret-orange-500 pl-2 mb-3 flex-grow"
-      type="text"
-      name="cardName"
-      id="cardName"
-      placeholder="Full Name"
-    />
-    <div
-      class="flex items-center justify-center relative w-14 h-9 bg-gray-800 border border-white border-opacity-20 rounded-md"
-    >
-      <svg
-        class="text-white fill-current"
-        xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        height="30"
-        viewBox="0 0 48 48"
-      >
-        <path
-          fill="#ff9800"
-          d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"
-        ></path>
-        <path
-          fill="#d50000"
-          d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"
-        ></path>
-        <path
-          fill="#ff3d00"
-          d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z"
-        ></path>
-      </svg>
-    </div>
-  </div>
-  <div class="flex flex-col space-y-3">
-    <input
-      class="w-full h-10 border-none outline-none text-sm bg-gray-800 text-white font-semibold caret-orange-500 pl-2"
-      type="text"
-      name="cardNumber"
-      id="cardNumber"
-      placeholder="0000 0000 0000 0000"
-    />
-    <div class="flex flex-row justify-between">
-      <input
-        class="w-full h-10 border-none outline-none text-sm bg-gray-800 text-white font-semibold caret-orange-500 pl-2"
-        type="text"
-        name="expiryDate"
-        id="expiryDate"
-        placeholder="MM/AA"
-      />
-      <input
-        class="w-full h-10 border-none outline-none text-sm bg-gray-800 text-white font-semibold caret-orange-500 pl-2"
-        type="text"
-        name="cvv"
-        id="cvv"
-        placeholder="CVV"
-      />
-    </div>
-  </div>
+<div class="form">
+  <input class="input" placeholder="Type your text" required="" type="text">
+  <span class="input-border"></span>
 </div>
+<style>
+/* From SHΞN™ Morphism by satyamchaudharydev - Tags: input */
+.form {
+ --width-of-input: 200px;
+ --border-height: 1px;
+ --border-before-color: rgba(221, 221, 221, 0.39);
+ --border-after-color: #5891ff;
+ --input-hovered-color: #4985e01f;
+ position: relative;
+ width: var(--width-of-input);
+}
+/* styling of Input */
+.input {
+ color: #fff;
+ font-size: 0.9rem;
+ background-color: transparent;
+ width: 100%;
+ box-sizing: border-box;
+ padding-inline: 0.5em;
+ padding-block: 0.7em;
+ border: none;
+ border-bottom: var(--border-height) solid var(--border-before-color);
+}
+/* styling of animated border */
+.input-border {
+ position: absolute;
+ background: var(--border-after-color);
+ width: 0%;
+ height: 2px;
+ bottom: 0;
+ left: 0;
+ transition: 0.3s;
+}
+/* Hover on Input */
+input:hover {
+ background: var(--input-hovered-color);
+}
 
-
-    
+input:focus {
+ outline: none;
+}
+/* here is code of animated border */
+input:focus ~ .input-border {
+ width: 100%;
+}
+/* === if you want to do animated border on typing === */
+/* remove input:focus code and uncomment below code */
+/* input:valid ~ .input-border{
+  width: 100%;
+} */
+</style>

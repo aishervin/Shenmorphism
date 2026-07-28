@@ -1,128 +1,103 @@
-<div class="lamp">
-  <div class="glass">
-    <div class="lava">
-      <div class="blob"></div>
-      <div class="blob"></div>
-      <div class="blob"></div>
-      <div class="blob top"></div>
-      <div class="blob bottom"></div>
-    </div>
-  </div>
+<div class="loader">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
 </div>
-
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-  <defs>
-    <filter id="goo">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
-      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
-      <feBlend in="SourceGraphic" in2="goo"></feBlend>
-    </filter>
-  </defs>
-</svg>
 <style>
-/* From SHΞN™ Morphism by Iliasman2 - Tags: loader */
-.lamp {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 30em;
-  min-height: 300px;
-  width: 13em;
-  min-width: calc(300px * 3 / 7);
-  background: #2b4353;
-  clip-path: polygon(33% 0, 0 70%, 22% 88%, 0 100%, 100% 100%, 78% 88%, 100% 70%, 67% 0);
+/* From SHΞN™ Morphism by satyamchaudharydev - Tags: loader */
+/* From cssbuttons.io by @satyamchaudharydev */
+.loader {
+ --loader: rgb(221, 65, 226);
+ --loader-size: 3px;
+ position: relative;
+ width: 40px;
+ height: 40px;
+ overflow: hidden;
+ transition: .5s;
+ letter-spacing: 2px
 }
 
-.glass {
-  background: #b6e1e0;
-  width: 100%;
-  height: 60%;
-  position: absolute;
-  bottom: 30%;
-  overflow: hidden;
+.loader span {
+ position: absolute;
 }
 
-.lava {
-  filter: url("#goo");
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
+.loader span:nth-child(1) {
+ top: 0;
+ left: -100%;
+ width: 100%;
+ height: var(--loader-size);
+ background: linear-gradient(90deg, transparent, var(--loader));
+ animation: loader-anim1 1s linear infinite;
 }
 
-.blob {
-  border-radius: 50%;
-  background: #e8630a;
-  position: absolute;
+@keyframes loader-anim1 {
+ 0% {
+  left: -100%;
+ }
+
+ 50%,100% {
+  left: 100%;
+ }
 }
 
-.blob.top {
-  width: 100%;
-  height: 4%;
-  top: -3.7%;
-  left: 0;
+.loader  span:nth-child(2) {
+ top: -100%;
+ right: 0;
+ width: var(--loader-size);
+ height: 100%;
+ background: linear-gradient(180deg, transparent, var(--loader));
+ animation: loader-anim2 1s linear infinite;
+ animation-delay: .25s
 }
 
-.blob.bottom {
-  width: 100%;
-  height: 4%;
-  bottom: -3%;
-  left: 0;
+@keyframes loader-anim2 {
+ 0% {
+  top: -100%;
+ }
+
+ 50%,100% {
+  top: 100%;
+ }
 }
 
-.blob:nth-child(1) {
-  width: calc(15% * 1.4);
-  height: 15%;
-  left: 45%;
-  bottom: -15%;
-  animation: blob-one_2 ease-in-out 7s infinite;
+.loader span:nth-child(3) {
+ bottom: 0;
+ right: -100%;
+ width: 100%;
+ height: var(--loader-size);
+ background: linear-gradient(270deg, transparent, var(--loader));
+ animation: loader-anim3 1s linear infinite;
+ animation-delay: .5s
 }
 
-.blob:nth-child(2) {
-  width: calc(22% * 1.4);
-  height: 22%;
-  right: 14%;
-  bottom: -15%;
-  animation: blob-two_2 ease-in-out 11s infinite;
+@keyframes loader-anim3 {
+ 0% {
+  right: -100%;
+ }
+
+ 50%,100% {
+  right: 100%;
+ }
 }
 
-.blob:nth-child(3) {
-  width: calc(32% * 1.4);
-  height: 32%;
-  bottom: -15%;
-  left: 14%;
-  animation: blob-three_2 ease-in-out 16s infinite;
+.loader span:nth-child(4) {
+ bottom: -100%;
+ left: 0;
+ width: var(--loader-size);
+ height: 100%;
+ background: linear-gradient(360deg, transparent, var(--loader));
+ animation: loader-anim4 1s linear infinite;
+ animation-delay: .75s
 }
 
-@keyframes blob-one_2 {
-  0%, 100% {
-    transform: translatey(0);
-  }
+@keyframes loader-anim4 {
+ 0% {
+  bottom: -100%;
+ }
 
-  50% {
-    transform: translatey(-700%);
-  }
-}
-
-@keyframes blob-two_2 {
-  0%, 100% {
-    transform: translatey(0);
-  }
-
-  50% {
-    transform: translatey(-420%);
-  }
-}
-
-@keyframes blob-three_2 {
-  0%, 100% {
-    transform: translatey(0);
-  }
-
-  50% {
-    transform: translatey(-305%);
-  }
+ 50%,100% {
+  bottom: 100%;
+ }
 }
 </style>

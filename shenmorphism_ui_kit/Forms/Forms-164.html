@@ -1,210 +1,123 @@
-<div class="container">
-  <div class="card cart">
-    <label class="title">CHECKOUT</label>
-    <div class="steps">
-      <div class="step">
-        <div>
-          <span>SHIPPING</span>
-          <p>221B Baker Street, W1U 8ED</p>
-          <p>London, United Kingdom</p>
-        </div>
-        <hr>
-        <div>
-          <span>PAYMENT METHOD</span>
-          <p>Visa</p>
-          <p>**** **** **** 4243</p>
-        </div>
-        <hr>
-        <div class="promo">
-          <span>HAVE A PROMO CODE?</span>
-          <form class="form">
-            <input class="input_field" placeholder="Enter a Promo Code" type="text">
-            <button>Apply</button>
-          </form>
-        </div>
-        <hr>
-        <div class="payments">
-          <span>PAYMENT</span>
-          <div class="details">
-            <span>Subtotal:</span>
-            <span>$240.00</span>
-            <span>Shipping:</span>
-            <span>$10.00</span>
-            <span>Tax:</span>
-            <span>$30.40</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
 
-  <div class="card checkout">
-    <div class="footer">
-      <label class="price">$280.40</label>
-      <button class="checkout-btn">Checkout</button>
-    </div>
-  </div>
-</div>
+			<div class="login">
+				<form class="form">
+					<label for="chk" aria-hidden="true">Log in</label>
+					<input class="input" type="email" name="email" placeholder="Email" required="">
+					<input class="input" type="password" name="pswd" placeholder="Password" required="">
+					<button>Log in</button>
+				</form>
+			</div>
+
+      <div class="register">
+				<form class="form">
+					<label for="chk" aria-hidden="true">Register</label>
+					<input class="input" type="text" name="txt" placeholder="Username" required="">
+					<input class="input" type="email" name="email" placeholder="Email" required="">
+					<input class="input" type="password" name="pswd" placeholder="Password" required="">
+					<button>Register</button>
+				</form>
+			</div>
+	</div>
 <style>
-/* From SHΞN™ Morphism by mi-series - Tags: form, payment card, discount form, payement form, checkout */
-/* Body */
-.container {
-  display: grid;
-  grid-template-columns: auto;
-  gap: 0px;
-}
-
-hr {
-  height: 1px;
-  background-color: #E5C7C5;
-  border: none;
-}
-
-.card {
-  width: 400px;
-  background: #F4E2DE;
-  box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
-}
-
-.title {
-  width: 100%;
-  height: 40px;
+/* From SHΞN™ Morphism by alexruix - Tags: login, form */
+.main {
   position: relative;
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-  border-bottom: 1px solid #E5C7C5;
-  font-weight: 700;
-  font-size: 11px;
-  color: #000000;
-}
-
-/* Cart */
-.cart {
-  border-radius: 19px 19px 0px 0px;
-}
-
-.cart .steps {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  background-color: #240046;
+  max-height: 420px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 7px 7px 10px 3px #24004628;
 }
 
-.cart .steps .step {
-  display: grid;
-  gap: 10px;
-}
-
-.cart .steps .step span {
-  font-size: 13px;
-  font-weight: 600;
-  color: #000000;
-  margin-bottom: 8px;
-  display: block;
-}
-
-.cart .steps .step p {
-  font-size: 11px;
-  font-weight: 600;
-  color: #000000;
-}
-
-/* Promo */
-.promo form {
-  display: grid;
-  grid-template-columns: 1fr 80px;
-  gap: 10px;
-  padding: 0px;
-}
-
-.input_field {
-  width: auto;
-  height: 36px;
-  padding: 0 0 0 12px;
-  border-radius: 5px;
-  outline: none;
-  border: 1px solid #E5C7C5;
-  background-color: #F4E2DE;
-  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
-}
-
-.input_field:focus {
-  border: 1px solid transparent;
-  box-shadow: 0px 0px 0px 2px #F3D2C9;
-  background-color: #F4E2DE;
-}
-
-.promo form button {
+.form {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 18px;
-  gap: 10px;
-  width: 100%;
-  height: 36px;
-  background: #F3D2C9;
-  box-shadow: 0px 0.5px 0.5px #F3D2C9, 0px 1px 0.5px rgba(239, 239, 239, 0.5);
-  border-radius: 5px;
-  border: 0;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 15px;
-  color: #000000;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
 }
 
-/* Checkout */
-.payments .details {
-  display: grid;
-  grid-template-columns: 10fr 1fr;
-  padding: 0px;
-  gap: 5px;
+/*checkbox to switch from sign up to login*/
+#chk {
+  display: none;
 }
 
-.payments .details span:nth-child(odd) {
-  font-size: 12px;
-  font-weight: 600;
-  color: #000000;
-  margin: auto auto auto 0;
-}
-
-.payments .details span:nth-child(even) {
-  font-size: 13px;
-  font-weight: 600;
-  color: #000000;
-  margin: auto 0 auto auto;
-}
-
-.checkout .footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 10px 10px 20px;
-  background-color: #ECC2C0;
-}
-
-.price {
+/*Login*/
+.login {
   position: relative;
-  font-size: 22px;
-  color: #2B2B2F;
-  font-weight: 900;
+  width: 100%;
+  height: 100%;
 }
 
-.checkout .checkout-btn {
-  display: flex;
-  flex-direction: row;
+.login label {
+  margin: 25% 0 5%;
+}
+
+label {
+  color: #fff;
+  font-size: 2rem;
   justify-content: center;
-  align-items: center;
-  width: 150px;
-  height: 36px;
-  background: #F3D2C9;
-  box-shadow: 0px 0.5px 0.5px #E5C7C5, 0px 1px 0.5px rgba(239, 239, 239, 0.5);
-  border-radius: 7px;
-  border: 1px solid #ECC2C0;
-  color: #000000;
-  font-size: 13px;
-  font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+  display: flex;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  background: #e0dede;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+}
+
+/*Register*/
+.register {
+  background: #eee;
+  border-radius: 60% / 10%;
+  transform: translateY(5%);
+  transition: .8s ease-in-out;
+}
+
+.register label {
+  color: #573b8a;
+  transform: scale(.6);
+}
+
+#chk:checked ~ .register {
+  transform: translateY(-60%);
+}
+
+#chk:checked ~ .register label {
+  transform: scale(1);
+  margin: 10% 0 5%;
+}
+
+#chk:checked ~ .login label {
+  transform: scale(.6);
+  margin: 5% 0 5%;
+}   
+/*Button*/
+.form button {
+  width: 85%;
+  height: 40px;
+  margin: 12px auto 10%;
+  color: #fff;
+  background: #573b8a;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: .2s ease-in;
+}
+
+.form button:hover {
+  background-color: #6d44b8;
 }
 </style>

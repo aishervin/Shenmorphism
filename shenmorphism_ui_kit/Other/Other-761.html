@@ -1,54 +1,27 @@
+
 <div class="loader"></div>
 <style>
-/* From SHΞN™ Morphism by Shoh2008 - Tags: loader */
+/* From SHΞN™ Morphism by Clemix37 - Tags: loader */
 .loader {
-  display: block;
-  position: relative;
-  height: 32px;
-  width: 140px;
-  border: 3px solid #fff;
-  border-radius: 20px;
-  box-sizing: border-box;
-  animation: balancing 2s linear infinite alternate;
-  transform-origin: center center;
+ width: 60px;
+ height: 60px;
 }
 
-.loader:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 52px;
-  height: 26px;
-  border-radius: 20px;
-  background: gold;
-  animation: ballbns 2s linear infinite alternate;
+.loader::before {
+ content: "";
+ box-sizing: border-box;
+ position: absolute;
+ width: 60px;
+ height: 60px;
+ border-radius: 50%;
+ border-top: 2px solid #8900FF;
+ border-right: 2px solid transparent;
+ animation: spinner8217 0.8s linear infinite;
 }
 
-@keyframes ballbns {
-  0% {
-    left: 0;
-    transform: translateX(0%);
-  }
-
-  100% {
-    left: 100%;
-    transform: translateX(-100%);
-  }
+@keyframes spinner8217 {
+ to {
+  transform: rotate(360deg);
+ }
 }
-
-@keyframes balancing {
-  0% {
-    transform: rotate(-25deg);
-  }
-
-  50% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(25deg);
-  }
-}
-  
 </style>

@@ -1,54 +1,58 @@
-<div class="loading-container">
-  <div class="loader">
-    <div class="spinner"></div>
-  </div>
+<div class="spinner">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
 </div>
-
 <style>
-/* From SHΞN™ Morphism by BlagaDavid74257  - Tags: tooltip, icon, animation, loader, dark, theme */
-.loading-container {
-  position: relative;
-  width: 100px;
-  height: 100px;
-}
-
-.loader {
-  width: 100px;
-  height: 100px;
-  border: 10px solid transparent;
-  border-top-color: #fff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
+/* From SHΞN™ Morphism by AqFox - Tags: loader */
 .spinner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  background-color: #fff;
-  border-radius: 50%;
-  animation: pulse 1.5s infinite alternate;
+ position: relative;
+ width: 16px;
+ height: 16px;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+.spinner div {
+ width: 100%;
+ height: 100%;
+ background-color: #004dff;
+ border-radius: 50%;
+ animation: spinner-4t3wzl 1.25s infinite backwards;
 }
 
-@keyframes pulse {
-  from {
-    transform: scale(1);
-    opacity: 1;
-  }
-  to {
-    transform: scale(1.2);
-    opacity: 0.5;
-  }
+.spinner div:nth-child(1) {
+ animation-delay: 0.15s;
+ background-color: rgba(0,77,255,0.9);
 }
 
+.spinner div:nth-child(2) {
+ animation-delay: 0.3s;
+ background-color: rgba(0,77,255,0.8);
+}
+
+.spinner div:nth-child(3) {
+ animation-delay: 0.45s;
+ background-color: rgba(0,77,255,0.7);
+}
+
+.spinner div:nth-child(4) {
+ animation-delay: 0.6s;
+ background-color: rgba(0,77,255,0.6);
+}
+
+.spinner div:nth-child(5) {
+ animation-delay: 0.75s;
+ background-color: rgba(0,77,255,0.5);
+}
+
+@keyframes spinner-4t3wzl {
+ 0% {
+  transform: rotate(0deg) translateY(-200%);
+ }
+
+ 60%, 100% {
+  transform: rotate(360deg) translateY(-200%);
+ }
+}
 </style>
-    

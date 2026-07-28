@@ -1,140 +1,64 @@
-<div class="select">
-  <div
-    class="selected"
-    data-default="All"
-    data-one="option-1"
-    data-two="option-2"
-    data-three="option-3"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      height="1em"
-      viewBox="0 0 512 512"
-      class="arrow"
-    >
-      <path
-        d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
-      ></path>
-    </svg>
-  </div>
-  <div class="options">
-    <div title="all">
-      <input id="all" name="option" type="radio" checked="" />
-      <label class="option" for="all" data-txt="All"></label>
-    </div>
-    <div title="option-1">
-      <input id="option-1" name="option" type="radio" />
-      <label class="option" for="option-1" data-txt="option-1"></label>
-    </div>
-    <div title="option-2">
-      <input id="option-2" name="option" type="radio" />
-      <label class="option" for="option-2" data-txt="option-2"></label>
-    </div>
-    <div title="option-3">
-      <input id="option-3" name="option" type="radio" />
-      <label class="option" for="option-3" data-txt="option-3"></label>
-    </div>
-  </div>
-</div>
+<label class="switch">
+  <input type="checkbox" />
+  <span class="slider"></span>
+</label>
 
 <style>
-/* From SHΞN™ Morphism by 3bdel3ziz-T  - Tags: simple, minimalist, input, dark, light, radio, custom, css */
-.select {
-  width: fit-content;
-  cursor: pointer;
+/* From SHΞN™ Morphism by Subaashbala  - Tags: skeuomorphism, switch, on, off, click animation */
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
   position: relative;
-  transition: 300ms;
-  color: white;
-  overflow: hidden;
-}
-
-.selected {
-  background-color: #2a2f3b;
-  padding: 5px;
-  margin-bottom: 3px;
-  border-radius: 5px;
-  position: relative;
-  z-index: 100000;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.arrow {
-  position: relative;
-  right: 0px;
-  height: 10px;
-  transform: rotate(-90deg);
-  width: 25px;
-  fill: white;
-  z-index: 100000;
-  transition: 300ms;
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-  border-radius: 5px;
-  padding: 5px;
-  background-color: #2a2f3b;
-  position: relative;
-  top: -100px;
-  opacity: 0;
-  transition: 300ms;
-}
-
-.select:hover > .options {
-  opacity: 1;
-  top: 0;
-}
-
-.select:hover > .selected .arrow {
-  transform: rotate(0deg);
-}
-
-.option {
-  border-radius: 5px;
-  padding: 5px;
-  transition: 300ms;
-  background-color: #2a2f3b;
-  width: 150px;
-  font-size: 15px;
-}
-.option:hover {
-  background-color: #323741;
-}
-
-.options input[type="radio"] {
-  display: none;
-}
-
-.options label {
   display: inline-block;
-}
-.options label::before {
-  content: attr(data-txt);
-}
-
-.options input[type="radio"]:checked + label {
-  display: none;
+  width: 5em;
+  height: 2.25em;
 }
 
-.options input[type="radio"]#all:checked + label {
-  display: none;
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.select:has(.options input[type="radio"]#all:checked) .selected::before {
-  content: attr(data-default);
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e7eff9;
+  outline: 1px solid #f3f8fe;
+  box-shadow: 0 4px 5px #f3f8fe inset, 0 4px 5px #c8d5e6;
+  transition: 0.4s;
+  border-radius: 30px;
 }
-.select:has(.options input[type="radio"]#option-1:checked) .selected::before {
-  content: attr(data-one);
+
+.slider:before {
+  position: absolute;
+  content: "off";
+  font-size: 0.85em;
+  color: #d2d6d8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 2em;
+  min-width: 2em;
+  border-radius: 20px;
+  left: 0.35em;
+  bottom: 0.3em;
+  background-color: transparent;
+  outline: 2px solid #d2d6d8;
+  transition: 0.4s;
 }
-.select:has(.options input[type="radio"]#option-2:checked) .selected::before {
-  content: attr(data-two);
-}
-.select:has(.options input[type="radio"]#option-3:checked) .selected::before {
-  content: attr(data-three);
+
+.switch input:checked + .slider:before {
+  content: "on";
+  background-color: #d2d6d8;
+  color: white;
+  transform: translateX(3.1em);
 }
 
 </style>

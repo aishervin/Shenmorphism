@@ -1,235 +1,245 @@
-<div class="content">
-   <div class="planet">
-      <div class="ring"></div>
-         <div class="cover-ring"></div>
-      <div class="spots">
-         <span></span>
-         <span></span>
-         <span></span>
-         <span></span>
-         <span></span>
-         <span></span>
-         <span></span>
-
+<section class="loader">
+      <div>
+        <div>
+          <span class="one h6"></span>
+          <span class="two h3"></span>
+        </div>
       </div>
-   </div>
-   <p>loading</p>
-</div>
+
+      <div>
+        <div>
+          <span class="one h1"></span>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <span class="two h2"></span>
+        </div>
+      </div>
+      <div>
+        <div>
+          <span class="one h4"></span>
+        </div>
+      </div>
+    </section>
 <style>
-/* From SHΞN™ Morphism by Admin12121 - Tags: loader, 3d loader */
-.content {
-  width: 300px;
-  height: 300px;
+/* From SHΞN™ Morphism by RafaM-dev - Source: Jaydip Prajapati - https://SHΞN™ Morphism/JaydipPrajapati1910/stale-pug-89 - Tags: loader, mxb, house */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Add these properties to position the loader properly */
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 90px;
+  height: 103px;
+ /* Adjust the height to accommodate the "h4" span */
 }
 
-.content .planet {
-  width: 65%;
-  height: 65%;
-  background-color: #546c8c;
-  border-radius: 100%;
+.loader div {
   position: absolute;
-  display: flex;
-  align-items: center;
-  transform-origin: center center;
-  box-shadow: inset 2px -10px 0px rgba(0, 0, 0, 0.1);
-  animation: planet 5s ease infinite alternate;
-  /* planet ring */
-  /* to cover the back of the ring */
-  /* planet spots */
+  width: 50px;
+  height: 31px;
 }
 
-@keyframes planet {
-  0% {
-    transform: rotate(10deg);
-  }
-
-  100% {
-    transform: rotate(-10deg);
-  }
+.rot {
+  transform: rotate(150deg);
 }
 
-.content .planet .ring {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 100%;
-  background-color: #bacbd9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform-origin: 33% center;
-  box-shadow: 2px -10px 0px rgba(0, 0, 0, 0.1), inset -5px -10px 0px rgba(0, 0, 0, 0.1);
-  animation: ring 3s ease infinite;
-  /* small ball */
-  /* inner ring */
+.rot2 {
+  transform: rotate(20deg);
 }
 
-@keyframes ring {
-  0% {
-    transform: rotateX(110deg) rotateZ(0deg) translate(-50px, 5px);
-  }
-
-  100% {
-    transform: rotateX(110deg) rotateZ(360deg) translate(-50px, 5px);
-  }
+.loader div:nth-of-type(2) {
+  transform: rotate(60deg);
 }
 
-.content .planet .ring:before {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 30px;
-  border-radius: 100%;
-  background-color: #7ea1bf;
-  z-index: 2;
-  left: calc(0px - 5px);
-  box-shadow: inset -3px 3px 0px rgba(0, 0, 0, 0.2);
+.loader div:nth-of-type(3) {
+  transform: rotate(-60deg);
 }
 
-.content .planet .ring:after {
-  content: "";
-  position: absolute;
-  width: 240px;
-  height: 240px;
-  border-radius: 100%;
-  background-color: #7ea1bf;
-  box-shadow: inset 2px -10px 0px rgba(0, 0, 0, 0.1);
-}
-
-.content .planet .cover-ring {
-  position: absolute;
-  width: 100%;
-  height: 50%;
-  border-bottom-left-radius: 80%;
-  border-bottom-right-radius: 80%;
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
-  transform: translate(0px, -17px);
-  background-color: #546c8c;
-  z-index: 2;
-  box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.1);
-}
-
-.content .planet .spots {
+.loader div div {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  z-index: 2;
+  position: relative;
 }
 
-.content .planet .spots span {
-  width: 30px;
-  height: 30px;
-  background-color: #3c4359;
+.loader div div span {
   position: absolute;
-  border-radius: 100%;
-  box-shadow: inset -2px 3px 0px rgba(0, 0, 0, 0.3);
-  animation: dots 5s ease infinite alternate;
+  width: 4px;
+  height: 0%;
+  background: #053146;
+  z-index: 999999;
 }
 
-@keyframes dots {
+.h1 {
+  left: 0;
+  animation: load1 3.2s ease infinite;
+}
+
+.h2 {
+  right: 0;
+  animation: load2 3.2s ease 0.4s infinite;
+}
+
+.h3 {
+  right: 0;
+  animation: load3 3.2s ease 0.8s infinite;
+}
+
+.h4 {
+  top: 10px;
+  left: 23px;
+  animation: load4 3.2s ease 1s infinite;
+  transform: rotate(90deg);
+}
+
+.h5 {
+  bottom: 0;
+  animation: load5 3.2s ease 1.2s infinite;
+}
+
+.h6 {
+  left: 0;
+  animation: load6 3.2s ease 1.3s infinite;
+}
+
+@keyframes load1 {
   0% {
-    box-shadow: inset -3px 3px 0px rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    height: 0;
   }
 
-  100% {
-    box-shadow: inset 3px 3px 0px rgba(0, 0, 0, 0.3);
-  }
-}
-
-.content .planet .spots span:nth-child(1) {
-  top: 20px;
-  right: 50px;
-}
-
-.content .planet .spots span:nth-child(2) {
-  top: 40px;
-  left: 50px;
-  width: 15px;
-  height: 15px;
-}
-
-.content .planet .spots span:nth-child(3) {
-  top: 80px;
-  left: 20px;
-  width: 25px;
-  height: 25px;
-}
-
-.content .planet .spots span:nth-child(4) {
-  top: 80px;
-  left: 90px;
-  width: 40px;
-  height: 40px;
-}
-
-.content .planet .spots span:nth-child(5) {
-  top: 160px;
-  left: 70px;
-  width: 15px;
-  height: 15px;
-}
-
-.content .planet .spots span:nth-child(6) {
-  top: 165px;
-  left: 125px;
-  width: 10px;
-  height: 10px;
-}
-
-.content .planet .spots span:nth-child(7) {
-  top: 90px;
-  left: 150px;
-  width: 15px;
-  height: 15px;
-}
-
-.content p {
-  color: #bacbd9;
-  font-size: 14px;
-  z-index: 2;
-  position: absolute;
-  bottom: -20px;
-  font-family: "Roboto Mono", monospace;
-  animation: text 4s ease infinite;
-  width: 100px;
-  text-align: center;
-}
-
-@keyframes text {
-  0% {
-    transform: translateX(-30px);
-    letter-spacing: 0px;
-    color: #bacbd9;
-  }
-
-  25% {
-    letter-spacing: 3px;
-    color: #7ea1bf;
+  6.944444444% {
+    bottom: 0;
+    height: 100%;
   }
 
   50% {
-    transform: translateX(30px);
-    letter-spacing: 0px;
-    color: #bacbd9;
+    top: 0;
+    height: 100%;
   }
 
-  75% {
-    letter-spacing: 3px;
-    color: #7ea1bf;
+  59.944444433% {
+    top: 0;
+    height: 0;
+  }
+  /*   91.6666667%{top:0;height:0%;} */
+}
+
+@keyframes load2 {
+  0% {
+    top: 0;
+    height: 0;
   }
 
-  100% {
-    transform: translateX(-30px);
-    letter-spacing: 0px;
-    color: #bacbd9;
+  6.944444444% {
+    top: 0;
+    height: 100%;
   }
+
+  50% {
+    bottom: 0;
+    height: 100%;
+  }
+
+  59.944444433% {
+    bottom: 0;
+    height: 0;
+  }
+  /*   91.6666667%{bottom:0;height:0%} */
+}
+
+@keyframes load3 {
+  0% {
+    top: 0;
+    height: 0;
+  }
+
+  6.944444444% {
+    top: 0;
+    height: 100%;
+  }
+
+  50% {
+    bottom: 0;
+    height: 100%;
+  }
+
+  59.94444443% {
+    bottom: 0;
+    height: 0;
+  }
+  /*   91.6666667%{bottom:0;height:0%;} */
+}
+
+@keyframes load4 {
+  0% {
+    top: 37px;
+    left: 23px;
+    height: 134%;
+  }
+
+  6.944444444% {
+    top: 10px;
+    height: 134%;
+  }
+
+  50% {
+    bottom: 10px;
+    height: 134%;
+  }
+
+  59.94444443% {
+    bottom: 0;
+    height: 0;
+  }
+  /*   91.6666667%{bottom:0;height:0%;} */
+}
+
+@keyframes load5 {
+  0% {
+    bottom: 0;
+    height: 0;
+  }
+
+  6.944444444% {
+    bottom: 0;
+    height: 100%;
+  }
+
+  50% {
+    top: 0;
+    height: 100%;
+  }
+
+  59.94444443% {
+    top: 0;
+    height: 0;
+  }
+  /*   91.6666667%{top:0;height:0%;} */
+}
+
+@keyframes load6 {
+  0% {
+    bottom: 0;
+    height: 0;
+  }
+
+  6.944444444% {
+    bottom: 0;
+    height: 100%;
+  }
+
+  50% {
+    top: 0;
+    height: 100%;
+  }
+
+  59.94444443% {
+    top: 0;
+    height: 0;
+  }
+  /*   91.6666667%{top:0;height:0%;} */
 }
 </style>

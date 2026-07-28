@@ -1,81 +1,71 @@
-<div class="newtons-cradle">
-<div class="newtons-cradle__dot"></div>
-<div class="newtons-cradle__dot"></div>
-<div class="newtons-cradle__dot"></div>
-<div class="newtons-cradle__dot"></div>
+<div class="loader">
+  <div class="box"></div>
+  <div class="circle"></div>
+  <div class="triangle"></div>
 </div>
+
+
+
 <style>
-/* From SHΞN™ Morphism by G4b413l - Tags: loader */
-.newtons-cradle {
- --uib-size: 50px;
- --uib-speed: 1.2s;
- --uib-color: #474554;
- position: relative;
- display: flex;
- align-items: center;
- justify-content: center;
- width: var(--uib-size);
- height: var(--uib-size);
+/* From SHΞN™ Morphism by edwardytb - Tags: loader */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-.newtons-cradle__dot {
- position: relative;
- display: flex;
- align-items: center;
- height: 100%;
- width: 25%;
- transform-origin: center top;
+.box {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #3498db;
+  animation: box-expand 1s ease-in-out infinite alternate;
 }
 
-.newtons-cradle__dot::after {
- content: '';
- display: block;
- width: 100%;
- height: 25%;
- border-radius: 50%;
- background-color: var(--uib-color);
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-top-color: #f1c40f;
+  animation: circle-rotate 1s linear infinite;
 }
 
-.newtons-cradle__dot:first-child {
- animation: swing var(--uib-speed) linear infinite;
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid #e74c3c;
+  animation: triangle-expand 1s ease-in-out infinite alternate;
 }
 
-.newtons-cradle__dot:last-child {
- animation: swing2 var(--uib-speed) linear infinite;
+@keyframes box-expand {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
 }
 
-@keyframes swing {
- 0% {
-  transform: rotate(0deg);
-  animation-timing-function: ease-out;
- }
-
- 25% {
-  transform: rotate(70deg);
-  animation-timing-function: ease-in;
- }
-
- 50% {
-  transform: rotate(0deg);
-  animation-timing-function: linear;
- }
+@keyframes circle-rotate {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-@keyframes swing2 {
- 0% {
-  transform: rotate(0deg);
-  animation-timing-function: linear;
- }
+@keyframes triangle-expand {
+  0% {
+    width: 0;
+    height: 0;
+  }
 
- 50% {
-  transform: rotate(0deg);
-  animation-timing-function: ease-out;
- }
-
- 75% {
-  transform: rotate(-70deg);
-  animation-timing-function: ease-in;
- }
+  100% {
+    width: 30px;
+    height: 60px;
+  }
 }
 
 </style>

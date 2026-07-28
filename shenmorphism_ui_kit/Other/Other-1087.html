@@ -1,107 +1,276 @@
-<div class="box-avatar">
-  <div class="avatar">
-      <svg class="avatar-icon" viewBox="0 0 17 15">
-        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
-      </svg>
+<div class="level-up-content">
+    <div class="level-up-content">
+        <div class="level-up">
+            <span class="leyend">Level Up!</span>
+        </div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <span class="world">world 1-1</span>
+
+        
+        <div class="suggestion">
+            <span>Reload or click ↓</span>
+        </div>
+        
     </div>
 </div>
-  <div class="notification">    
-    <div class="notification-info">
-      <p class="notification-text"> <span class="highlight">Player</span> reached <b>level 15!</b> </p>
-    </div>
-  </div>
+
 <style>
-/* From SHΞN™ Morphism by alexruix - Tags: notification */
-.notification {
-  display: flex;
-  width: 0;
-  background: #ddd;
-  border-radius: 10px;
-  animation: slideIn 1s ease-in-out 1.25s forwards;
-}
+/* From SHΞN™ Morphism by MijailVillegas - Tags: notification */
+/*Mijail Villegas - Bear
+Me gusta  la estética retro de los level ups*/
 
-.notification-info {
-  display: inline-flex;
-  overflow: hidden;
-  background-color: #181818;
-  color: #fff;
-  width: 100%;
-  border-radius: 12px 8px 8px 12px;
-  padding-left: 16px;
+.level-up-content {
+  display: grid;
+  width: 200px;
+  height: 70px;
+  padding: 10px;
   align-items: center;
+  justify-items: center;
+  align-content: center;
+  font-weight: bold;
+  font-family: "Lucida Console", "Courier New", monospace;
+  margin: auto;
 }
 
-.notification-text {
-  opacity: 0;
-  padding: 10px 8px;
-  white-space: nowrap;
-  animation: textInfo 1s ease-in-out 1.5s forwards;
+.progress-bar {
+  background-color: #ddd;
+  height: 20px;
+  margin: 10px 0;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  font-size: 1em;
 }
 
-.highlight {
-  color: #ffc300;
-}
-
-.box-avatar {
-  background-color: #181818;
-  padding: 6px;
-  width: 4.5em;
-  height: 4.5em;
-  border-radius: 50%;
-  margin-right: -20px;
-  box-shadow: 6.2px 3.1px 38.2px -6px rgba(0, 0, 0, 0.2), 63px 32px 176px -6px rgba(0, 0, 0, 0.1);
+.progress {
+  animation: progress-animation 2s ease-out forwards;
+  background-color: #000000;
+  height: 100%;
+  width: 0%;
   z-index: 1;
 }
 
-.avatar {
-  background-color: #FDA203;
-  padding: .6em;
-  border-radius: 50%;
+.progress::before {
+  content: "";
+  display: block;
+  color: #ddd;
+  padding-top: 3px;
+  height: 20px;
+  animation: progress-xp 2.1s ease-out forwards;
 }
 
-.avatar-icon {
+.progress::after {
+  content: "+220xp";
+  display: block;
+  color: rgb(0, 255, 0);
+  position: absolute;
+  padding-top: 3px;
+  z-index: 999;
+  opacity: 0;
+  animation: add-xp 2s cubic-bezier(0, 0.92, 0.05, 1.07) forwards;
+}
+
+.span-content::before {
+  display: block;
+  color: #ddd;
+  margin-left: auto;
+  height: 20px;
+}
+
+.level-up {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  fill: white;
-  animation: grow 2s ease-in-out 3;
 }
 
-/*Animations*/
-@keyframes slideIn {
+.level-up .leyend {
+  font-size: 1.2em;
+  animation: level-up-animation 1s cubic-bezier(0, 0.62, 0, 0.97) forwards 2s;
+  opacity: 0;
+  transform: translateY(100%);
+  filter: drop-shadow(4px 4px 0px black);
+}
+
+.level-up-content:hover {
+  cursor: pointer;
+}
+
+.level-up-content:hover .leyend {
+  opacity: 1;
+  transform: translateY(100%);
+  background: #a11a1a;
+  animation: grow-up 1s ease-in-out forwards infinite;
+}
+
+.leyend::before {
+  content: "lvl 5";
+  display: block;
+  color: #ddd;
+  padding-top: 3px;
+  font-size: 0.5em;
+  height: 10px;
+}
+
+.level-up-content .world {
+  font-weight: 900;
+  animation: blink 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+
+@keyframes add-xp {
   0% {
-    width: 0;
-    padding: 2px;
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-230%);
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    color: black;
+  }
+
+  to {
+    color: white;
+  }
+}
+
+@keyframes progress-animation {
+  0% {
+    width: 0%;
+  }
+
+  65% {
+    width: 100%;
   }
 
   100% {
-    width: 250px;
-    padding: 2px;
+    width: 100%;
   }
 }
 
-@keyframes textInfo {
+@keyframes progress-xp {
   0% {
-    opacity: 0%;
-    margin-left: -20em;
+    content: "0xp";
   }
 
-  100% {
-    opacity: 100%;
-    margin-left: 0;
+  5% {
+    content: "+5xp";
   }
-}
 
-@keyframes grow {
-  0% {
-    transform: scale(100%) translateY(0%);
+  10% {
+    content: "+10xp";
+  }
+
+  15% {
+    content: "+35xp";
+  }
+
+  22% {
+    content: "+52xp";
+  }
+
+  25% {
+    content: "+75xp";
+  }
+
+  30% {
+    content: "+90xp";
+  }
+
+  38% {
+    content: "+118xp";
+  }
+
+  40% {
+    content: "+162xp";
+  }
+
+  45% {
+    content: "+195xp";
   }
 
   50% {
-    transform: scale(100%) translateY(-10%);
+    content: "+200xp";
+  }
+
+  65% {
+    content: "+220xp";
+  }
+
+  80% {
+    content: "+220xp";
   }
 
   100% {
-    transform: scale(100%) translateY(0%);
+    content: "NEW LEVEL!";
   }
 }
+
+@keyframes level-up-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+    background: #a11a1a;
+  }
+}
+
+@keyframes grow-up {
+  0% {
+    transform: scale(110%);
+  }
+
+  12% {
+    transform: scale(90%);
+  }
+
+  25% {
+    transform: scale(100%);
+  }
+
+  37% {
+    transform: scale(115%);
+  }
+
+  50% {
+    transform: scale(110%);
+  }
+
+  75% {
+    transform: scale(130%);
+  }
+
+  to {
+    transform: scale(115%);
+  }
+}
+
+/* you can delete this part */
+.suggestion {
+  font-size: 0.7em;
+  position: absolute;
+  color: #9b9b9b;
+  display: block;
+  top: 80%;
+  left: 60%;
+}
+/**/
 </style>

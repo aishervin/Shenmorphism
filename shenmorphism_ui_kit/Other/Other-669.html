@@ -1,104 +1,80 @@
-<div class="loader-container">
-  <div class="loader">
-    <div class="loader-inner"></div>
-    <div class="loader-inner"></div>
-    <div class="loader-inner"></div>
-    <div class="loader-inner"></div>
-    <div class="loader-inner"></div>
-    <div class="loader-inner"></div>
-    <div class="loader-inner"></div>
-    <div class="loader-inner"></div>
-  </div>
-</div>
-
+<div class="loader"></div>
 <style>
-/* From SHΞN™ Morphism by Satwinder04 - Tags: loader */
-.loader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* From SHΞN™ Morphism by Shoh2008 - Tags: loader */
 .loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  transform: rotate(45deg);
+  font-size: 16px;
+  width: 5.5em;
+  height: 5.5em;
 }
 
-.loader-inner {
+.loader:before {
+  content: '';
   position: absolute;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background-color: #db3434;
-  animation: loader_05101 1.2s linear infinite;
+  transform: translate(-50%, -50%) rotate(45deg);
+  height: 100%;
+  width: 4px;
+  background: #fff;
+  left: 50%;
+  top: 50%;
 }
 
-.loader-inner:nth-child(1) {
-  top: 0;
-  left: 0;
-  animation-delay: 0s;
+.loader:after {
+  content: '';
+  position: absolute;
+  left: 0.2em;
+  bottom: 0.18em;
+  width: 1em;
+  height: 1em;
+  background-color: orange;
+  border-radius: 15%;
+  animation: rollingRock 2.5s cubic-bezier(.79, 0, .47, .97) infinite;
 }
 
-.loader-inner:nth-child(2) {
-  top: 0;
-  left: 1.5rem;
-  animation-delay: 0.1s;
-}
-
-.loader-inner:nth-child(3) {
-  top: 0;
-  left: 3rem;
-  animation-delay: 0.2s;
-}
-
-.loader-inner:nth-child(4) {
-  top: 1.5rem;
-  left: 0;
-  animation-delay: 0.3s;
-}
-
-.loader-inner:nth-child(5) {
-  top: 1.5rem;
-  left: 1.5rem;
-  animation-delay: 0.4s;
-}
-
-.loader-inner:nth-child(6) {
-  top: 1.5rem;
-  left: 3rem;
-  animation-delay: 0.5s;
-}
-
-.loader-inner:nth-child(7) {
-  top: 3rem;
-  left: 0;
-  animation-delay: 0.6s;
-}
-
-.loader-inner:nth-child(8) {
-  top: 3rem;
-  left: 1.5rem;
-  animation-delay: 0.7s;
-}
-
-.loader-inner:nth-child(9) {
-  top: 3rem;
-  left: 3rem;
-  animation-delay: 0.8s;
-}
-
-@keyframes loader_05101 {
+@keyframes rollingRock {
   0% {
-    transform: scale(0);
+    transform: translate(0, -1em) rotate(-45deg)
+  }
+
+  5% {
+    transform: translate(0, -1em) rotate(-50deg)
+  }
+
+  20% {
+    transform: translate(1em, -2em) rotate(47deg)
+  }
+
+  25% {
+    transform: translate(1em, -2em) rotate(45deg)
+  }
+
+  30% {
+    transform: translate(1em, -2em) rotate(40deg)
+  }
+
+  45% {
+    transform: translate(2em, -3em) rotate(137deg)
+  }
+
+  50% {
+    transform: translate(2em, -3em) rotate(135deg)
+  }
+
+  55% {
+    transform: translate(2em, -3em) rotate(130deg)
+  }
+
+  70% {
+    transform: translate(3em, -4em) rotate(217deg)
+  }
+
+  75% {
+    transform: translate(3em, -4em) rotate(220deg)
   }
 
   100% {
-    transform: scale(2);
-    opacity: 0;
+    transform: translate(0, -1em) rotate(-225deg)
   }
 }
-
+      
 </style>

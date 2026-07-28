@@ -1,50 +1,52 @@
-<div class="group">
-    <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
-        <g>
-            <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
-        </g>
-    </svg>
-    <input class="input" type="search" placeholder="Search">
+<div class="form-control">
+    <input type="value" required="">
+    <label>
+        <span style="transition-delay:0ms">U</span><span style="transition-delay:50ms">s</span><span style="transition-delay:100ms">e</span><span style="transition-delay:150ms">r</span><span style="transition-delay:200ms">n</span><span style="transition-delay:250ms">a</span><span style="transition-delay:300ms">m</span><span style="transition-delay:350ms">e</span>
+    </label>
 </div>
-
 <style>
-/* From SHΞN™ Morphism by JaydipPrajapati1910 - Tags: input, search, border, search bar */
-.group {
-  display: flex;
-  line-height: 28px;
-  align-items: center;
+/* From SHΞN™ Morphism by liyaxu123 - Tags: input, animated */
+.form-control {
   position: relative;
-  max-width: 190px;
+  margin: 20px 0 40px;
+  width: 190px;
 }
 
-.input {
-  height: 40px;
-  line-height: 28px;
-  padding: 0 1rem;
+.form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #fff solid;
+  display: block;
   width: 100%;
-  padding-left: 2.5rem;
-  outline: none;
-  background: linear-gradient(180deg,     rgb(56, 56, 56) 0%, rgb(36, 36, 36)   66%, rgb(41, 41, 41) 100%);
-  color: #fff;
-  transition: .3s ease;
-  border: 2px solid;
-  border-image: conic-gradient( #00F260, #0575E6,#64f38c) 1;
-}
-
-.input::placeholder {
+  padding: 15px 0;
+  font-size: 18px;
   color: #fff;
 }
 
-.input:focus::placeholder {
-  color: #999;
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom-color: lightblue;
 }
 
-.icon {
+.form-control label {
   position: absolute;
-  left: 1rem;
-  fill: #fff;
-  width: 1rem;
-  height: 1rem;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
 }
 
+.form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  color: #fff;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus+label span,
+.form-control input:valid+label span {
+  color: lightblue;
+  transform: translateY(-30px);
+}
 </style>

@@ -1,102 +1,98 @@
-<div class="jelly-triangle">
-    <div class="jelly-triangle__dot"></div>
-    <div class="jelly-triangle__traveler"></div>
+<div class="loader">
+  <div class="block b_1"></div>
+  <div class="block b_2"></div>
+  <div class="block b_3"></div>
+  <div class="block b_4"></div>
+  <div class="block b_5"></div>
+  <div class="block b_6"></div>
+  <div class="block b_7"></div>
+  <div class="block b_8"></div>
 </div>
-
-<svg width="0" height="0" class="jelly-maker">
-    <defs>
-        <filter id="uib-jelly-triangle-ooze">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="7.3" result="blur"></feGaussianBlur>
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="ooze"></feColorMatrix>
-            <feBlend in="SourceGraphic" in2="ooze"></feBlend>
-        </filter>
-    </defs>
-</svg>
 <style>
-/* From SHΞN™ Morphism by abrahamcalsin - Tags: loader */
-.jelly-triangle {
-  --uib-size: 2.8rem;
-  --uib-speed: 1.75s;
-  --uib-color: #183153;
+/* From SHΞN™ Morphism by csozidev - Tags: simple, black, loader, loop */
+/* Simple loader made by: csozi | Website: www.csozi.hu*/
+
+.loader {
+  height: 50px;
+  width: 50px;
   position: relative;
-  height: var(--uib-size);
-  width: var(--uib-size);
-  filter: url('#uib-jelly-triangle-ooze');
 }
 
-.jelly-triangle__dot,
-.jelly-triangle::before,
-.jelly-triangle::after {
-  content: '';
+.block {
+  height: 10px;
+  width: 10px;
+  background-color: black;
   position: absolute;
-  width: 33%;
-  height: 33%;
-  background: var(--uib-color);
-  border-radius: 100%;
-  box-shadow: 0 0 20px rgba(18, 31, 53, 0.3);
+  opacity: 0;
 }
 
-.jelly-triangle__dot {
-  top: 6%;
-  left: 30%;
-  animation: grow7132 var(--uib-speed) ease infinite;
-}
-
-.jelly-triangle::before {
-  bottom: 6%;
-  right: 0;
-  animation: grow7132 var(--uib-speed) ease calc(var(--uib-speed) * -0.666)
-    infinite;
-}
-
-.jelly-triangle::after {
-  bottom: 6%;
+.b_1 {
+  top: 0;
   left: 0;
-  animation: grow7132 var(--uib-speed) ease calc(var(--uib-speed) * -0.333)
-    infinite;
+  animation: load 2s infinite;
+  animation-delay: 0;
 }
 
-.jelly-triangle__traveler {
-  position: absolute;
-  top: 6%;
-  left: 30%;
-  width: 33%;
-  height: 33%;
-  background: var(--uib-color);
-  border-radius: 100%;
-  animation: triangulate6214 var(--uib-speed) ease infinite;
+.b_2 {
+  top: 0;
+  left: 20px;
+  animation: load 2s infinite;
+  animation-delay: 0.25s;
 }
 
-.jelly-maker {
-  width: 0;
-  height: 0;
-  position: absolute;
+.b_3 {
+  top: 0;
+  right: 0;
+  animation: load 2s infinite;
+  animation-delay: 0.5s;
 }
 
-@keyframes triangulate6214 {
-  0%,
+.b_4 {
+  top: 20px;
+  right: 0;
+  animation: load 2s infinite;
+  animation-delay: 0.75s;
+}
+
+.b_5 {
+  bottom: 0;
+  right: 0;
+  animation: load 2s infinite;
+  animation-delay: 1s;
+}
+
+.b_6 {
+  bottom: 0;
+  left: 20px;
+  animation: load 2s infinite;
+  animation-delay: 1.25s;
+}
+
+.b_7 {
+  bottom: 0;
+  left: 0;
+  animation: load 2s infinite;
+  animation-delay: 1.5s;
+}
+
+.b_8 {
+  top: 20px;
+  left: 0;
+  animation: load 2s infinite;
+  animation-delay: 1.75s;
+}
+
+@keyframes load {
+  0% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 0;
+  }
+
   100% {
-    transform: none;
-  }
-
-  33.333% {
-    transform: translate(120%, 175%);
-  }
-
-  66.666% {
-    transform: translate(-95%, 175%);
-  }
-}
-
-@keyframes grow7132 {
-  0%,
-  100% {
-    transform: scale(1.5);
-  }
-
-  20%,
-  70% {
-    transform: none;
+    opacity: 1;
   }
 }
 </style>

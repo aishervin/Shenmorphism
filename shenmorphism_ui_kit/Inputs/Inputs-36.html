@@ -1,22 +1,31 @@
-<input placeholder="Enter your name" class="input" type="text" />
+    <input type="text" name="search" placeholder="Search For AnyThink.." class="input">
 
 <style>
-/* From SHΞN™ Morphism by danilppzz  - Tags: black, input, dark */
-.input {
-  background-color: #292929;
-  border: 1px solid #3e3e3e;
-  border-radius: 8px;
-  color: #fff;
-  padding: 14px 24px;
-  text-decoration: none;
-  font-size: 16px;
-  margin: 12px 14px;
-  cursor: pointer;
+/* From SHΞN™ Morphism by Bodyhc - Tags: hover, hover effect, input effect  */
+.input[type=text] {
+  max-width: 180px;
+  height: 20px;
+  background-color: #fff;
+  color: #242424;
+  padding: .15rem .5rem;
+  min-height: 40px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 10px 20px -18px blue;
+  border-bottom: 3px solid #0d14e9;
+  transition: .10s ease;
 }
 
-.input:hover {
-  border: 1px solid #fff;
+.input[type=text]:hover {
+  outline: 2px solid #0d14e9;
+  max-width: 200px;
+}
+
+.input[type=text]:focus {
+  border-bottom: 3px solid #0d14e9;
+  border-radius: 5px 5px 2px 2px;
+  transform: scale(1.1);
 }
 
 </style>
-    

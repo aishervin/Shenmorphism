@@ -1,50 +1,43 @@
 <div class="loader">
+  <div class="box-load1"></div>
+  <div class="box-load2"></div>
+  <div class="box-load3"></div>
 </div>
 <style>
-/* From SHΞN™ Morphism by satyamchaudharydev - Tags: loader */
+/* From SHΞN™ Morphism by Lmickk2 - Tags: loader, light, animated */
 .loader {
- --clr: #3498db;
- /* color of spining  */
- width: 50px;
- height: 50px;
- position: relative;
+  display: flex;
+  transition: all 0.4s;
 }
 
-.loader:before, .loader:after {
- content: "";
- position: absolute;
- top: -10px;
- left: -10px;
- width: 100%;
- height: 100%;
- border-radius: 100%;
- border: 10px solid transparent;
- border-top-color: var(--clr);
+.loader div {
+  margin-left: 0.8rem;
+  background-color: transparent;
+  box-shadow: 0px 2px 2px black;
+  border-radius: 3em;
+  height: 1rem;
+  width: 2rem;
 }
 
-.loader:before {
- z-index: 100;
- animation: spin 1s infinite;
+.box-load1 {
+  animation: brighten 1.5s infinite;
 }
 
-.loader:after {
- border: 10px solid #ccc;
+.box-load2 {
+  animation: brighten 1.5s infinite;
+  animation-delay: .3s;
 }
 
-@keyframes spin {
- 0% {
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
- }
+.box-load3 {
+  animation: brighten 1.5s infinite;
+  animation-delay: .6s;
+}
 
- 100% {
-  -webkit-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  transform: rotate(360deg);
- }
+@keyframes brighten {
+  100% {
+    background-color: black;
+    box-shadow: none;
+  }
 }
 
 </style>

@@ -1,110 +1,108 @@
-<div class="code-editor">
-      <div class="header">
-        <span class="title">CSS</span>
-       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="icon"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M6 6L18 18"></path> <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M18 6L6 18"></path> </g></svg>
-      </div>
-      <div class="editor-content">
-        <code class="code">
-          <p><span class="color-0">.code-editor </span> <span>{</span></p>
+<div class="card">
+  <div class="stripe">
+    <div class="text">SHΞN™ Morphism Homepod</div>
+  </div>
+  <div class="frame"></div>
+</div>
 
-          <p class="property">
-            <span class="color-2">max-width</span><span>:</span>
-            <span class="color-1">300px</span>;
-          </p>
-          <p class="property">
-            <span class="color-2">background-color</span><span>:</span>
-            <span class="color-preview-1"></span><span class="">#1d1e22</span>;
-          </p>
-          <p class="property">
-            <span class="color-2"> box-shadow</span><span>:</span>
-            <span class="color-1">0px 4px 30px  <span class="color-preview-2"></span><span class="color-3">rgba(</span>0, 0, 0, 0.5<span class="color-3">)</span></span>;
-          </p>
-          <p class="property">
-            <span class="color-2">border-radius</span><span>:</span>
-            <span class="color-1">8px</span>;
-          </p>
-          <span>}</span>
-        </code>
-      </div>
-    </div>
 <style>
-/* From SHΞN™ Morphism by Yaya12085 - Tags: card, dark, editor, code */
-.code-editor {
-  max-width: 300px;
-  background-color: #1d1e22;
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-  padding: 2px;
+/* From SHΞN™ Morphism by Spacious74  - Tags: neumorphism, skeuomorphism, 3d, card, social media, 3d card */
+.card {
+  position: relative;
+}
+.card .text {
+  text-align: center;
+  background-color: #bebebe;
+  width: 190px;
+  padding: 3px 0;
+  margin: auto;
+  margin-top: 150px;
+  border: solid 2px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #3d3d3d;
+  box-shadow: 0px 1px, inset 0 0 4px #000, 3px 3px 3px #000000a6;
+}
+.stripe {
+  background: repeating-linear-gradient(
+      45deg,
+      rgba(141, 143, 149, 0.35) 0,
+      rgba(141, 143, 149, 0.35) 2px,
+      transparent 2px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      135deg,
+      rgba(141, 143, 149, 0.35) 0,
+      rgba(141, 143, 149, 0.35) 2px,
+      transparent 2px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 2px,
+      rgba(29, 30, 32, 0.35) 2px,
+      rgba(29, 30, 32, 0.35) 4px,
+      transparent 4px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      135deg,
+      transparent 0,
+      transparent 2px,
+      rgba(29, 30, 32, 0.35) 2px,
+      rgba(29, 30, 32, 0.35) 4px,
+      transparent 4px,
+      transparent 6px
+    );
+  border-radius: 80px;
+  box-shadow: inset 0 0 0 2px #36373a, inset 0 0 40px 1px #1d1e20,
+    inset 0 12px 24px 1px #9b9ca1, inset 0 -12px 24px 1px #050505;
+  height: 385px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 5px;
+  width: 320px;
+  z-index: 9;
+  color: #404040;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 10px;
+.frame {
+  background: linear-gradient(
+    to right,
+    #36373a 0,
+    #8d8f95 25%,
+    #1d1e20 60%,
+    #111112 90%,
+    #1d1e20 100%
+  );
+  border-radius: 80px;
+  box-shadow: inset 0 0 0 2px #36373a, inset 0 0 40px 1px #1d1e20,
+    inset 0 12px 40px 1px #fff, inset 0 -24px 40px 1px #000;
+  height: 385px;
+  margin: 5px auto;
+  position: relative;
+  width: 320px;
+}
+.frame::after,
+.frame::before {
+  content: "";
+  position: absolute;
+  border-radius: 50% 50% 8px 8px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 10px;
+  width: 170px;
+  background-color: #404040;
+}
+.frame::after {
+  bottom: 0;
+  border-radius: 0 0 10% 10% / 0 0 8px 8px;
+  transform: translate(-50%, 50%);
+  background-color: #131313;
 }
 
-.title {
-  font-family: Lato, sans-serif;
-  font-weight: 900;
-  font-size: 14px;
-  letter-spacing: 1.57px;
-  color: rgb(212 212 212);
-}
-
-.icon {
-  width: 20px;
-  transition: .2s ease;
-}
-
-.icon:hover {
-  cursor: pointer;
-  border-radius: 50px;
-  background-color: #6e7281;
-}
-
-.editor-content {
-  margin: 0 10px 10px;
-  color: white;
-}
-
-.property {
-  margin-left: 30px;
-}
-
-.property:hover {
-  cursor: text;
-}
-
-.editor-content .color-0 {
-  color: rgb(86 156 214);
-}
-
-.editor-content .color-1 {
-  color: rgb(182 206 168);
-}
-
-.editor-content .color-2 {
-  color: rgb(156 220 254);
-}
-
-.editor-content .color-3 {
-  color: rgb(207 146 120);
-}
-
-.color-preview-1,.color-preview-2 {
-  height: 8px;
-  width: 8px;
-  border: 1px solid #fff;
-  display: inline-block;
-  margin-right: 3px;
-}
-
-.color-preview-1 {
-  background-color: #1d1e22;
-}
-
-.color-preview-1 {
-  background-color: rgba(0, 0, 0, 0.5);
-}
 </style>
+    

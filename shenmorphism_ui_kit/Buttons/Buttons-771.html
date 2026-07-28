@@ -1,50 +1,49 @@
-<div class="main-section">
-  <button class="first-button"> Hover Me </button>
-  <button class="second-button"> <svg viewBox="0 0 24 24" width="20" height="20" stroke="#ffd300" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg> Add To Cart</button>
-</div>
-
+<button class="button">
+  <span>Add to cart</span>
+  <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+</button>
 <style>
-/* From SHΞN™ Morphism by AKAspidey01 - Tags: button, add */
-.first-button {
-  background: rgb(115, 15, 209);
-  color: #fff;
-  border: none;
-  font-weight: 700;
-  font-size: 1em;
-  min-height: 60px;
-  width: 200px;
-  gap: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition-duration: 0.6s;
-}
-
-.main-section {
-  display: flex;
-  flex-direction: column;
+/* From SHΞN™ Morphism by Df12345677 - Tags: button, animated, add */
+.button {
   height: 60px;
-  overflow: hidden;
-  align-items: flex-start;
-}
-
-.main-section:hover .second-button , .main-section:hover .first-button {
-  transform: translateY(-60px);
-}
-
-.second-button {
-  background: rgb(209, 15, 57);
-  color: #fff;
-  border: none;
-  font-weight: 700;
-  font-size: 1em;
-  min-height: 60px;
   width: 200px;
-  gap: 20px;
+  background-color: #132233;
+  border: 2px solid rgb(182, 128, 128);
+  color: #eee;
+  transition: .6s;
+  font-size: 15px;
+  border-radius: 50px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  transition-duration: 0.6s;
+  align-items: center;
+  /* padding: 20px; */
+  overflow: hidden;
 }
 
+.button span {
+  transform: translateX(10px);
+  transition: .5s;
+}
+
+.button svg {
+  transform: translateX(-300px);
+  transition: .6s;
+  z-index: 3;
+  height: 20px;
+}
+
+.button:hover {
+  width: 60px;
+  background-color: rgba(51, 34, 51, 0.815);
+  box-shadow: 20px 20px 96px #bebebe,-20px -20px 96px #ffffff;
+}
+
+.button:hover svg {
+  transform: translateX(-5px);
+}
+
+.button:hover span {
+  transform: translateY(70px);
+  font-size: .1rem;
+}
 </style>

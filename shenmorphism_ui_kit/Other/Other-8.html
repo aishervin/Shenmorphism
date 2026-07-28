@@ -1,49 +1,84 @@
-<div class="btn-group">
-  <button class="btn left" type="button">Left</button>
-  <button class="btn middle" type="button">Middle</button>
-  <button class="btn right" type="button">Right</button>
-</div>
-
+<label class="switch">
+  <input type="checkbox">
+  <span class="slider"></span>
+</label>
 <style>
-/* From SHΞN™ Morphism by elijahgummer  - Tags: simple, animation, jelly, shadow, modern, radio, stretch, alignment */
-.btn {
-  font: inherit;
-  background-color: #f0f0f0;
-  border: 0;
-  color: #242424;
-  font-size: 1.15rem;
-  padding: 0.375em 1em;
-  text-shadow: 0 0.0625em 0 #fff;
-  box-shadow: inset 0 0.0625em 0 0 #f4f4f4, 0 0.0625em 0 0 #efefef,
-    0 0.125em 0 0 #ececec, 0 0.25em 0 0 #e0e0e0, 0 0.3125em 0 0 #dedede,
-    0 0.375em 0 0 #dcdcdc, 0 0.425em 0 0 #cacaca, 0 0.425em 0.5em 0 #cecece;
-  transition: 0.23s ease;
-  cursor: pointer;
-  font-weight: bold;
-  margin: -1px;
-}
-.middle {
-  border-radius: 0px;
-}
-.right {
-  border-top-right-radius: 0.5em;
-  border-bottom-right-radius: 0.5em;
-}
-.left {
-  border-top-left-radius: 0.5em;
-  border-bottom-left-radius: 0.5em;
-}
-.btn:active {
-  translate: 0 0.225em;
-  box-shadow: inset 0 0.03em 0 0 #f4f4f4, 0 0.03em 0 0 #efefef,
-    0 0.0625em 0 0 #ececec, 0 0.125em 0 0 #e0e0e0, 0 0.125em 0 0 #dedede,
-    0 0.2em 0 0 #dcdcdc, 0 0.225em 0 0 #cacaca, 0 0.225em 0.375em 0 #cecece;
-  letter-spacing: 0.1em;
-  color: skyblue;
-}
-.btn:focus {
-  color: skyblue;
+/* From SHΞN™ Morphism by Voxybuns - Tags: minimalist, switch */
+/* The switch - the box around the slider */
+.switch {
+  /* Variables */
+ --switch_width: 2em;
+ --switch_height: 1em;
+ --thumb_color: #e8e8e8;
+ --track_color: #e8e8e8;
+ --track_active_color: #888;
+ --outline_color: #000;
+ font-size: 17px;
+ position: relative;
+ display: inline-block;
+ width: var(--switch_width);
+ height: var(--switch_height);
 }
 
+/* Hide default HTML checkbox */
+.switch input {
+ opacity: 0;
+ width: 0;
+ height: 0;
+}
+
+/* The slider */
+.slider {
+ box-sizing: border-box;
+ border: 2px solid var(--outline_color);
+ position: absolute;
+ cursor: pointer;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: var(--track_color);
+ transition: .15s;
+ border-radius: var(--switch_height);
+}
+
+.slider:before {
+ box-sizing: border-box;
+ position: absolute;
+ content: "";
+ height: var(--switch_height);
+ width: var(--switch_height);
+ border: 2px solid var(--outline_color);
+ border-radius: 100%;
+ left: -2px;
+ bottom: -2px;
+ background-color: var(--thumb_color);
+ transform: translateY(-0.2em);
+ box-shadow: 0 0.2em 0 var(--outline_color);
+ transition: .15s;
+}
+
+input:checked + .slider {
+ background-color: var(--track_active_color);
+}
+
+input:focus-visible + .slider {
+ box-shadow: 0 0 0 2px var(--track_active_color);
+}
+
+/* Raise thumb when hovered */
+input:hover + .slider:before {
+ transform: translateY(-0.3em);
+ box-shadow: 0 0.3em 0 var(--outline_color);
+}
+
+input:checked + .slider:before {
+ transform: translateX(calc(var(--switch_width) - var(--switch_height))) translateY(-0.2em);
+}
+
+/* Raise thumb when hovered & checked */
+input:hover:checked + .slider:before {
+ transform: translateX(calc(var(--switch_width) - var(--switch_height))) translateY(-0.3em);
+ box-shadow: 0 0.3em 0 var(--outline_color);
+}
 </style>
-    

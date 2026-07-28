@@ -1,72 +1,38 @@
-
-<button class="button" role="button">Hover Me</button>
-
+<button>
+  Hover Me!
+</button>
 <style>
-/* From SHΞN™ Morphism by Coderlab05 - Source: Coderlab05 - Tags: button, #button */
-.button {
-  all: unset;
-  width: 100px;
-  height: 30px;
-  font-size: 16px;
-  background: transparent;
-  border: none;
+/* From SHΞN™ Morphism by sunnyshaikh - Tags: button */
+button {
   position: relative;
-  color: #f0f0f0;
+  background: #FBD148;
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  padding: 1rem 3rem;
+  font-size: 1em;
   cursor: pointer;
-  z-index: 1;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  transition: .25s ease;
 }
 
-.button::after,
-.button::before {
-  content: '';
+button::before {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: -99999;
-  transition: all .4s;
-}
-
-.button::before {
-  transform: translate(0%, 0%);
+  content: '';
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  transform: translate(-5px, -5px);
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,#ff0e5e,rgb(15, 159, 255));
-  border-radius: 10px;
+  border: 1px solid rgb(84, 84, 84);
+  transition: .25s ease;
 }
 
-.button::after {
-  transform: translate(10px, 10px);
-  width: 35px;
-  height: 35px;
-  background: #ffffff15;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border-radius: 50px;
+button:hover {
+  transform: translate(-5px, -5px);
 }
 
-.button:hover::before {
-  transform: translate(5%, 20%);
-  width: 110%;
-  height: 110%;
-}
-
-.button:hover::after {
-  border-radius: 10px;
-  transform: translate(0, 0);
-  width: 100%;
-  height: 100%;
-}
-
-.button:active::after {
-  transition: 0s;
-  transform: translate(0, 5%);
+button:hover::before {
+  transform: translate(5px, 5px);
 }
 </style>

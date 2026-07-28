@@ -1,58 +1,164 @@
-<div class="loading-bar">
-    Loading
-</div>
+<div class="cube">
+                <div class="cube__face" id="cube__face--front">
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                </div>
+
+                <div class="cube__face" id="cube__face--back">
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                </div>
+
+                <div class="cube__face" id="cube__face--right">
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                </div>
+
+                <div class="cube__face" id="cube__face--left">
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                </div>
+
+                <div class="cube__face" id="cube__face--top">
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                </div>
+
+                <div class="cube__face" id="cube__face--bottom">
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                    <span class="faceBox"></span>
+                </div>
+            </div>
 <style>
-/* From SHΞN™ Morphism by fanishah - Tags: loading, loader */
-.loading-bar {
-  position: absolute;
-  transform: translate(-50%,-50%);
-  width: 110px;
-  height: 110px;
-  background: transparent;
-  border: px solid #3c3c3c;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 111px;
-  font-family: sans-serif;
-  font-size: 15px;
-  color: #fff000;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  text-shadow: 0 0 20px #fff000;
-  box-shadow: 0 0 20px rgba(0,0,0,.5);
+/* From SHΞN™ Morphism by htwarriors108 - Tags: animation, 3d, loader, cube, rotate, animated, color, hover effect, css effect, rubik's cube */
+.cube {
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  animation: animate 4s linear infinite;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
-.loading-bar:before {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  width: 100%;
-  height: 100%;
-  border: 3px solid transparent;
-  border-top: 5px solid #fff000;
-  border-right: 5px solid #fff000;
-  border-radius: 50%;
-  animation: animateC 2s linear infinite;
+.cube:hover {
+  scale: 1.2;
+  animation: animate 3s linear infinite;
 }
 
-@keyframes animateC {
-  0% {
-    transform: rotate(0deg);
-  }
+.cube__face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
-  100% {
-    transform: rotate(360deg);
-  }
+.faceBox {
+  border: calc(100px / 1000) solid rgba(0, 0, 0, 0.8);
+  width: calc(100px / 3);
+  height: calc(100px / 3);
+  opacity: 1;
+}
+
+#cube__face--front span {
+  background-color: #FF4949;
+}
+
+#cube__face--right span {
+  background-color: #13CE66;
+}
+
+#cube__face--left span {
+  background-color: #2D8EFF;
+}
+
+#cube__face--top span {
+  background-color: #FFCC3D;
+}
+
+#cube__face--bottom span {
+  background-color: #fefefe;
+}
+
+#cube__face--back span {
+  background-color: #f1f03e;
+}
+
+#cube__face--front {
+  transform: rotateY(0deg) translateZ(calc(100px / 2));
+}
+
+#cube__face--right {
+  transform: rotateY(90deg) translateZ(calc(100px / 2));
+}
+
+#cube__face--back {
+  transform: rotateY(180deg) translateZ(calc(100px / 2));
+}
+
+#cube__face--left {
+  transform: rotateY(-90deg) translateZ(calc(100px / 2));
+}
+
+#cube__face--top {
+  transform: rotateX(90deg) translateZ(calc(100px / 2));
+}
+
+#cube__face--bottom {
+  transform: rotateX(-90deg) translateZ(calc(100px / 2));
 }
 
 @keyframes animate {
   0% {
-    transform: rotate(45deg);
+    transform: rotateX(-30deg) rotateY(0deg) rotateZ(0deg);
   }
 
   100% {
-    transform: rotate(405deg);
+    transform: rotateX(-30deg) rotateY(360deg) rotateZ(360deg);
   }
 }
 </style>

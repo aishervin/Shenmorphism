@@ -1,25 +1,69 @@
-<!-- From SHΞN™ Morphism by sahilxkhadka  - Tags: simple, tooltip, button, hover effect, tailwind, tailwindbutton -->
-<button
-  class="group relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800"
->
-  <span
-    class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
-  >
-    Hover For Tooltip
-  </span>
-  <div class="hidden group-hover:block">
-    <div
-      class="group absolute -top-12 left-1/2 z-50 flex -translate-x-1/2 flex-col items-center rounded-sm text-center text-sm text-slate-300 before:-top-2"
-    >
-      <div class="rounded-sm bg-black py-1 px-2">
-        <p class="whitespace-nowrap">This is a tooltip.</p>
-      </div>
-      <div
-        class="h-0 w-fit border-l-8 border-r-8 border-t-8 border-transparent border-t-black"
-      ></div>
-    </div>
-  </div>
-</button>
+<div class="payment-button">
+  <span class="label">Pay Now</span>
+  <span class="price">$49.99</span>
+</div>
 
+<style>
+/* From SHΞN™ Morphism by SouravBandyopadhyay  - Tags: simple, tooltip, animation, text animation, animated, transition, hover effect, hover button */
+.payment-button {
+  --background: #007bff;
+  --text-color: #fff;
+  --hover-background: #0056b3;
+  --hover-text-color: #fff;
+  --border-radius: 4px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
+  display: inline-block;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0.5em 1.5em;
+  background: var(--background);
+  color: var(--text-color);
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.2s ease-in-out, background 0.3s ease-in-out,
+    color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-transform: uppercase;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.label {
+  z-index: 1;
+}
+
+.price {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  transform-origin: 100%;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out,
+    background 0.3s ease-in-out;
+  color: var(--background);
+  background: var(--text-color);
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.payment-button:hover {
+  transform: scale(1.05);
+  background: var(--hover-background);
+  color: var(--hover-text-color);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.payment-button:hover .price {
+  transform: scale(0);
+}
+
+</style>
     

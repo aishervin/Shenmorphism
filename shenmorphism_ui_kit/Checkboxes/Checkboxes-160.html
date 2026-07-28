@@ -1,72 +1,55 @@
-<label class="container">
-  <input type="checkbox" checked="checked">
-    <svg class="bell-regular" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
-      <path d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"></path>
-    </svg>
-    <svg class="bell-solid" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
-      <path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"></path>
-    </svg></label>
-<style>
-/* From SHΞN™ Morphism by catraco - Tags: icon, notification, checkbox, animated, light&dark, variables */
-/*------ Settings ------*/
-.container {
-  --color: #a5a5b0;
-  --size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  cursor: pointer;
-  font-size: var(--size);
-  user-select: none;
-  fill: var(--color);
-}
+<!-- From SHΞN™ Morphism by Javierrocadev  - Tags: simple, icon, hover, checkbox, dark, light, light&dark, tailwind -->
+<input
+  type="checkbox"
+  id="react-option"
+  value=""
+  class="hidden peer"
+  required=""
+/>
 
-.container .bell-regular {
-  position: absolute;
-  animation: keyframes-fill .5s;
-}
+<label
+  for="react-option"
+  class="flex z-10 items-center peer relative justify-center w-14 h-14 shadow-lg duration-300 [box-shadow:1px_1px_0px_1px_#eab92d] border-2 border-gray-800 peer-checked:border-2 peer-checked:border-gray-800 rounded-lg cursor-pointer text-neutral-50 peer-checked:[box-shadow:1px_1px_0px_1px_#075985] peer-checked:hover:[box-shadow:1px_1px_0px_1px_#1e1e1e] hover:[box-shadow:1px_1px_0px_1px_#1e1e1e]"
+>
+</label>
+<svg
+  class="absolute stroke-sky-800 w-12 h-23 duration-300 peer-checked:opacity-100 opacity-0"
+  height="100"
+  preserveAspectRatio="xMidYMid meet"
+  viewBox="0 0 100 100"
+  width="100"
+  x="0"
+  xmlns="http://www.w3.org/2000/svg"
+  y="0"
+>
+  <path
+    class="svg-stroke-primary"
+    d="M82.1,61.2a31.9,31.9,0,0,1-12.4,2.4A33.3,33.3,0,0,1,36.4,30.3a31.9,31.9,0,0,1,2.4-12.4A33.3,33.3,0,1,0,82.1,61.2Z"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="8"
+  ></path>
+</svg>
+<svg
+  class="absolute stroke-yellow-500 w-12 h-23 duration-300 peer-checked:opacity-0 opacity-100"
+  height="100"
+  preserveAspectRatio="xMidYMid meet"
+  viewBox="0 0 100 100"
+  width="100"
+  x="0"
+  xmlns="http://www.w3.org/2000/svg"
+  y="0"
+>
+  <path
+    class="svg-stroke-primary"
+    d="M50,18v3.6m0,56.8V82M82,50H78.4M21.6,50H18M72.6,72.6l-2.5-2.5M29.9,29.9l-2.5-2.5m45.2,0-2.5,2.5M29.9,70.1l-2.5,2.5M64.2,50A14.2,14.2,0,1,1,50,35.8,14.3,14.3,0,0,1,64.2,50Z"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="8"
+  ></path>
+</svg>
 
-.container .bell-solid {
-  position: absolute;
-  display: none;
-  animation: keyframes-fill .5s;
-}
 
-/* ------ On check event ------ */
-.container input:checked ~ .bell-regular {
-  display: none;
-}
-
-.container input:checked ~ .bell-solid {
-  display: block;
-}
-
-/* ------ Hide the default checkbox ------ */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* ------ Animation ------ */
-@keyframes keyframes-fill {
-  0% {
-    opacity: 0;
-  }
-
-  25% {
-    transform: rotate(25deg);
-  }
-
-  50% {
-    transform: rotate(-20deg) scale(1.2);
-  }
-
-  75% {
-    transform: rotate(15deg);
-  }
-}
-</style>
+    

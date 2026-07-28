@@ -1,41 +1,42 @@
 <div class="loader">
-  <div class="leaf"></div>
-  <div class="leaf"></div>
-  <div class="leaf"></div>
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
 </div>
 <style>
-/* From SHΞN™ Morphism by r7chardgh - Tags: loading, loader, adidas */
+/* From SHΞN™ Morphism by aryamitra06 - Tags: loader */
 .loader {
   display: flex;
-  gap: .5em;
+  align-items: center;
 }
 
-.leaf {
-  width: 1em;
-  height: 3em;
-  background-color: rgb(0, 0, 0,.3);
-  clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 81%);
-  transform: rotate(-30deg);
-  animation: color 1200ms infinite;
-  animation-delay: 800ms;
+.bar {
+  display: inline-block;
+  width: 3px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 10px;
+  animation: scale-up4 1s linear infinite;
 }
 
-.leaf:nth-child(2) {
-  clip-path: polygon(0% 35%,100% 35%,100% 100%,0% 81%);
-  animation-delay: 400ms;
+.bar:nth-child(2) {
+  height: 35px;
+  margin: 0 5px;
+  animation-delay: .25s;
 }
 
-.leaf:nth-child(1) {
-  clip-path: polygon(0% 70%,100% 70%,100% 100%,0% 81%);
-  animation-delay: 0ms;
+.bar:nth-child(3) {
+  animation-delay: .5s;
 }
 
-@keyframes color {
-  from {
-    background-color: lightblue;
+@keyframes scale-up4 {
+  20% {
+    background-color: #ffff;
+    transform: scaleY(1.5);
   }
 
-  to {
+  40% {
+    transform: scaleY(1);
   }
 }
 </style>

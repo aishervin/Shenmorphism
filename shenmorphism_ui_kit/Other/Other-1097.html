@@ -1,195 +1,213 @@
 <div class="notification">
-  <span class="star star1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#ffa710" d="m22 9.8c0 .2-.104.4-.312.6l-4.363 4.2 1.033 6.1c.008 0 .012.1.012.2 0 .2-.044.3-.132.4-.08.1-.2.2-.361.2-.152 0-.312 0-.48-.1l-5.397-2.9-5.397 2.9c-.176.1-.336.1-.48.1-.169 0-.297-.1-.385-.2-.08-.1-.12-.2-.12-.4 0 0 .008-.1.024-.2l1.033-6.1-4.375-4.2c-.2-.2-.3-.4-.3-.6 0-.3.224-.5.673-.5l6.034-.9 2.704-5.5c.152-.3.349-.5.589-.5s.437.2.589.5l2.704 5.5 6.034.9c.449 0 .673.2.673.5"></path><path fill="#fdd921" d="m22 8.8c0 .2-.104.4-.312.6l-4.363 4.2 1.033 6.1c.008 0 .012.1.012.2 0 .2-.044.3-.132.4-.08.1-.2.2-.361.2-.152 0-.312 0-.48-.1l-5.397-2.9-5.397 2.9c-.176.1-.336.1-.48.1-.169 0-.297-.1-.385-.2-.08-.1-.12-.2-.12-.4 0 0 .008-.1.024-.2l1.033-6.1-4.375-4.2c-.2-.2-.3-.4-.3-.6 0-.3.224-.5.673-.5l6.034-.9 2.704-5.5c.152-.3.349-.5.589-.5s.437.2.589.5l2.704 5.5 6.034.9c.449 0 .673.2.673.5"></path></svg></span>    
-  <span class="star star2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#ffa710" d="m22 9.8c0 .2-.104.4-.312.6l-4.363 4.2 1.033 6.1c.008 0 .012.1.012.2 0 .2-.044.3-.132.4-.08.1-.2.2-.361.2-.152 0-.312 0-.48-.1l-5.397-2.9-5.397 2.9c-.176.1-.336.1-.48.1-.169 0-.297-.1-.385-.2-.08-.1-.12-.2-.12-.4 0 0 .008-.1.024-.2l1.033-6.1-4.375-4.2c-.2-.2-.3-.4-.3-.6 0-.3.224-.5.673-.5l6.034-.9 2.704-5.5c.152-.3.349-.5.589-.5s.437.2.589.5l2.704 5.5 6.034.9c.449 0 .673.2.673.5"></path><path fill="#fdd921" d="m22 8.8c0 .2-.104.4-.312.6l-4.363 4.2 1.033 6.1c.008 0 .012.1.012.2 0 .2-.044.3-.132.4-.08.1-.2.2-.361.2-.152 0-.312 0-.48-.1l-5.397-2.9-5.397 2.9c-.176.1-.336.1-.48.1-.169 0-.297-.1-.385-.2-.08-.1-.12-.2-.12-.4 0 0 .008-.1.024-.2l1.033-6.1-4.375-4.2c-.2-.2-.3-.4-.3-.6 0-.3.224-.5.673-.5l6.034-.9 2.704-5.5c.152-.3.349-.5.589-.5s.437.2.589.5l2.704 5.5 6.034.9c.449 0 .673.2.673.5"></path></svg></span>
-  <span class="star star3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#ffa710" d="m22 9.8c0 .2-.104.4-.312.6l-4.363 4.2 1.033 6.1c.008 0 .012.1.012.2 0 .2-.044.3-.132.4-.08.1-.2.2-.361.2-.152 0-.312 0-.48-.1l-5.397-2.9-5.397 2.9c-.176.1-.336.1-.48.1-.169 0-.297-.1-.385-.2-.08-.1-.12-.2-.12-.4 0 0 .008-.1.024-.2l1.033-6.1-4.375-4.2c-.2-.2-.3-.4-.3-.6 0-.3.224-.5.673-.5l6.034-.9 2.704-5.5c.152-.3.349-.5.589-.5s.437.2.589.5l2.704 5.5 6.034.9c.449 0 .673.2.673.5"></path><path fill="#fdd921" d="m22 8.8c0 .2-.104.4-.312.6l-4.363 4.2 1.033 6.1c.008 0 .012.1.012.2 0 .2-.044.3-.132.4-.08.1-.2.2-.361.2-.152 0-.312 0-.48-.1l-5.397-2.9-5.397 2.9c-.176.1-.336.1-.48.1-.169 0-.297-.1-.385-.2-.08-.1-.12-.2-.12-.4 0 0 .008-.1.024-.2l1.033-6.1-4.375-4.2c-.2-.2-.3-.4-.3-.6 0-.3.224-.5.673-.5l6.034-.9 2.704-5.5c.152-.3.349-.5.589-.5s.437.2.589.5l2.704 5.5 6.034.9c.449 0 .673.2.673.5"></path></svg></span>   
-  <div class="ribbon">
-  <div class="ribbon-content">Level up!</div>
-  <div class="start"> press start</div>
-</div>
+  <div class="notification-top">
+    <span class="level-up">Level Up!</span>
+  </div>
+  <div class="notification-bottom">
+    <span class="level">Level 5</span>
+    <button class="next-level-button">Next Level</button>
+  </div>
 </div>
 <style>
-/* From SHΞN™ Morphism by andrew-demchenk0 - Tags: notification */
+/* From SHΞN™ Morphism by WittyHydra - Tags: notification */
 .notification {
-  position: relative;
-  font-family: "Lucida Console", "Courier New", monospace;
-  font-weight: 900;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-}
-
-.start {
-  font-size: 20px;
-  letter-spacing: 3px;
-  text-shadow: 1px 1px 0 #000,
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000;
-  animation: animate4 5s forwards infinite ease-in-out;
-}
-
-.ribbon-content {
-  font-size: 35px;
-  text-shadow: 1.5px 1.5px 0 #680638,
-    -1.5px -1.5px 0 #680638,
-    1.5px -1.5px 0 #680638,
-    -1.5px 1.5px 0 #680638;
-}
-
-.ribbon {
+  --bg-color: #fff;
+  --text-color: #1c1f2b;
+  --highlight-color: #fc9a32;
+  --button-color: #3d3f4e;
+  --button-color-hover: #27282f;
   position: relative;
   width: 300px;
-  height: 50px;
-  line-height: 50px;
-  background-color: #CC014D;
-  color: #fff;
-  text-align: center;
-  font-size: 20px;
-}
-
-.ribbon::before, .ribbon::after {
-  content: '';
-  position: absolute;
-  top: 20px;
-  border: 25px solid #DB0F5A;
-  z-index: -1;
-}
-
-.ribbon::before {
-  left: -30px;
-  border-left-color: transparent;
-}
-
-.ribbon::after {
-  right: -30px;
-  border-right-color: transparent;
-}
-
-.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
-  content: '';
-  position: absolute;
-  border-style: solid;
-  bottom: -20px;
-}
-
-.ribbon .ribbon-content:before {
-  left: 0;
-  border-width: 0 20px 20px 0;
-  border-color: transparent #6B043A transparent transparent;
-}
-
-.ribbon .ribbon-content:after {
-  right: 0;
-  border-width: 20px 20px 0 0;
-  border-color: #6B043A transparent transparent transparent;
-}
-
-.star svg {
-  width: 100px;
   height: 100px;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  -webkit-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
-.star {
+@media (prefers-color-scheme: dark) {
+  .notification {
+    --bg-color: #1c1f2b;
+    --text-color: #fff;
+    --highlight-color: #fc9a32;
+    --button-color: #3d3f4e;
+    --button-color-hover: #27282f;
+  }
+}
+
+.notification-top {
   position: absolute;
-}
-
-.star1 {
-  top: -85px;
+  top: 0;
   left: 0;
-  transform: rotate(-15deg);
-  animation: animate1 5s forwards infinite ease-in-out;
+  width: 100%;
+  height: 50%;
+  background-color: var(--highlight-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-animation: slide-down 1s ease-out forwards;
+  animation: slide-down 1s ease-out forwards;
 }
 
-.star2 {
-  top: -100px;
-  left: 50%;
-  transform: translate(-50%);
-  animation: animate2 5s forwards infinite ease-in-out;
+.notification-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: var(--bg-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 20px;
 }
 
-.star3 {
-  top: -85px;
-  left: 100%;
-  transform: translateX(-100%) rotate(15deg);
-  animation: animate3 5s forwards infinite ease-in-out;
+.level-up {
+  color: var(--text-color);
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-animation: rotate-text 1s ease-in-out;
+  animation: rotate-text 1s ease-in-out;
 }
 
-@keyframes animate1 {
+.level {
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.next-level-button {
+  background-color: var(--button-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
+}
+
+.next-level-button {
+  background-color: #efefef;
+  color: #000;
+  font-weight: 600;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-box-shadow: 0px 0px 10px #888888;
+  box-shadow: 0px 0px 10px #888888;
+}
+
+@-webkit-keyframes slide-down {
+  from {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes rotate-text {
   0% {
-    transform: rotate(-15deg) translateY(0);
-  }
-
-  25% {
-    transform: rotate(-15deg) translateY(10px);
-  }
-
-  50% {
-    transform: rotate(-15deg) translateY(0px);
-  }
-
-  75% {
-    transform: rotate(-5deg);
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    opacity: 0;
   }
 
   100% {
-    transform: rotate(-15deg);
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+    opacity: 1;
   }
 }
 
-@keyframes animate3 {
+@keyframes rotate-text {
   0% {
-    transform: translateX(-100%) translateY(0) rotate(15deg);
-  }
-
-  25% {
-    transform: translateX(-100%) translateY(10px) rotate(15deg);
-  }
-
-  50% {
-    transform: translateX(-100%) translateY(0) rotate(15deg);
-  }
-
-  75% {
-    transform: translateX(-100%) rotate(5deg);
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    opacity: 0;
   }
 
   100% {
-    transform: translateX(-100%) rotate(15deg);
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+    opacity: 1;
   }
 }
 
-@keyframes animate2 {
-  0% {
-    transform: translate(-50%) translateY(0);
-  }
-
-  25% {
-    transform: translate(-50%) translateY(10px);
-  }
-
-  50% {
-    transform: translate(-50%) translateY(0px) scale(1);
-  }
-
-  75% {
-    transform: translate(-50%) scale(1.1);
-  }
-
-  100% {
-    transform: translate(-50%) scale(1);
-  }
+.next-level-button:hover {
+  background-color: aqua;
+  color: #000;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-box-shadow: 0px 0px 15px #888888;
+  box-shadow: 0px 0px 15px #888888;
 }
 
-@keyframes animate4 {
-  50% {
-    transform: scale(1);
-  }
+.notification {
+  background-color: #1e2b3c;
+  color: #c3daf6;
+}
 
-  75% {
-    transform: scale(1.1);
-  }
+.notification:hover {
+  background-color: #c3daf6;
+  color: #1e2b3c;
+}
 
-  100% {
-    transform: scale(1);
-  }
+.next-level-button:hover {
+  background-color: #1e2b3c;
+  color: #c3daf6;
+}
+
+/* Light Mode */
+.notification {
+  background-color: #c3daf6;
+  color: #1e2b3c;
+}
+
+.notification:hover {
+  background-color: #1e2b3c;
+  color: #c3daf6;
+}
+
+.next-level-button:hover {
+  background-color: #c3daf6;
+  color: #1e2b3c;
 }
 </style>

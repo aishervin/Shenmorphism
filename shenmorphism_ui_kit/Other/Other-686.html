@@ -1,43 +1,50 @@
 
-<div class="loader"></div>
+   <svg class="svg">
+      <path class="path"></path>
+   </svg>
+   <svg>
+      <path></path>
+   </svg>
+
+
 <style>
-/* From SHΞN™ Morphism by gagan-gv - Tags: loader */
-.loader {
- border: 0 solid transparent;
- border-radius: 50%;
- width: 100px;
- height: 100px;
+/* From SHΞN™ Morphism by isfan4ik - Tags: red, green, pink, loader, effect loader, loading animation */
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.loader::before,
-.loader::after {
- content: '';
- border: 7px solid #ccc;
- border-radius: 50%;
- width: inherit;
- height: inherit;
- position: absolute;
- animation: loader 2s linear infinite;
- opacity: 0;
+.svg {
+  position: absolute;
+  width: 400px;
+  fill: none;
 }
 
-.loader::before {
- animation-delay: 1s;
+.svg:nth-child(2) {
+  filter: blur(40px);
 }
 
-@keyframes loader {
- 0% {
-  transform: scale(1);
-  opacity: 0;
- }
+.svg path {
+  d: path("M0,25 C150,110 150, -60 300,25");
+  stroke: #ff0092;
+  stroke-width: 50;
+  stroke-linecap: round;
+  transform: translate(50px,50%);
+  animation: animate 2s ease-in-out infinite;
+}
 
- 50% {
-  opacity: 1;
- }
+@keyframes animate {
+  0% {
+    stroke: greenyellow;
+    stroke: #ff0092;
+    d: path("M0,25 C150,110 150, -60 300,25");
+  }
 
- 100% {
-  transform: scale(0);
-  opacity: 0;
- }
+  50% {
+    stroke: dodgerblue;
+    stroke: #00ff00;
+    d: path("M0,25 C160,-50 140, 110 300,25");
+  }
 }
 </style>

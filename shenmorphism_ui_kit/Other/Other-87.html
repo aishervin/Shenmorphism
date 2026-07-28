@@ -1,51 +1,59 @@
-<div class="rating">
-  <input value="5" name="rate" id="star5" type="radio">
-  <label title="text" for="star5"></label>
-  <input value="4" name="rate" id="star4" type="radio">
-  <label title="text" for="star4"></label>
-  <input value="3" name="rate" id="star3" type="radio" checked="">
-  <label title="text" for="star3"></label>
-  <input value="2" name="rate" id="star2" type="radio">
-  <label title="text" for="star2"></label>
-  <input value="1" name="rate" id="star1" type="radio">
-  <label title="text" for="star1"></label>
-</div>
+<label class="switch">
+  <input type="checkbox" class="input">
+  <span class="slider"></span>
+</label>
 <style>
-/* From SHΞN™ Morphism by andrew-demchenk0 - Tags: radio, stars, rating */
-.rating:not(:checked) > input {
+/* From SHΞN™ Morphism by Shoh2008 - Tags: switch */
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch .input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
   position: absolute;
-  appearance: none;
-}
-
-.rating:not(:checked) > label {
-  float: right;
   cursor: pointer;
-  font-size: 30px;
-  color: #666;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2e2e2e;
+  transition: .4s;
+  border-radius: 30px;
 }
 
-.rating:not(:checked) > label:before {
-  content: '★';
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: #4e4;
+  transition: .4s;
 }
 
-.rating > input:checked + label:hover,
-.rating > input:checked + label:hover ~ label,
-.rating > input:checked ~ label:hover,
-.rating > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label {
-  color: #e58e09;
+.input:checked + .slider {
+  background-color: #000;
 }
 
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
-  color: #ff9e0b;
+.input:focus + .slider {
+  box-shadow: 0 0 1px #000;
 }
 
-.rating > input:checked ~ label {
-  color: #ffa723;
+.input:checked + .slider:before {
+  transform: translateX(1.5em);
 }
-
-
-
-
 </style>

@@ -1,71 +1,71 @@
-<button class="button">
-  Button
-</button>
+<a class="btn-shine" href="https://check.so">Get early access</a>
+
 <style>
-/* From SHΞN™ Morphism by JaydipPrajapati1910 - Tags: button, water, transparent */
-button {
-  appearance: button;
-  outline: none;
-  border: none;
-  border-radius: 16px;
-  box-sizing: border-box;
-  color: #222;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: .8px;
-  line-height: 20px;
-  margin: 0;
-  outline: none;
-  overflow: visible;
-  padding: 13px 19px;
-  text-align: center;
-  text-transform: uppercase;
-  touch-action: manipulation;
-  transform: translateZ(0);
-  transition: filter .2s;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-}
-
-button:after {
-  background-clip: padding-box;
-  box-shadow: inset 4px 4px 4px rgba(15, 15, 15, 0.315),
-    4px 4px 4px rgba(28, 28, 28, 0.13);
-  border: none;
-  border-radius: 16px;
-  outline: none;
-  bottom: -4px;
-  content: "";
-  left: 0;
+/* From SHΞN™ Morphism by neerajbaniwal  - Tags: button, transition, text, btn, hover effect, html, css, #button */
+.btn-shine {
   position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 48px;
+  color: #fff;
+  background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: "Poppins", sans-serif;
 }
-
-button:main, button:focus {
-  user-select: auto;
+@-moz-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
 }
-
-button:hover:not(:disabled) {
-  filter: brightness(1.1);
+@-webkit-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
 }
-
-button:disabled {
-  cursor: auto;
+@-o-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
 }
-
-button:active:after {
-  border-width: 0 0 0px;
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
 }
-
-button:active {
-  padding-bottom: 10px;
-}
-
 
 </style>
+    

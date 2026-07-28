@@ -1,52 +1,104 @@
-<div class="spinner">
-  <span class="spinner-part-0"></span>
-  <span class="spinner-part-1"></span>
-  <span class="spinner-part-2"></span>
-  <span class="spinner-part-3"></span>
-  <span class="spinner-part-0"></span>
-  <span class="spinner-part-1"></span>
-  <span class="spinner-part-2"></span>
-  <span class="spinner-part-3"></span>
+<div class="spinner-box">
+  <div class="circle-border">
+    <div class="circle-core"></div>
+  </div>  
 </div>
 <style>
-/* From SHΞN™ Morphism by TimTrayler - Tags: loader */
-.spinner {
- --accent: fuchsia;
- --max-scale: 4;
- --speed: 0.2;
- display: flex;
- gap: 0.3em;
- transform: skew(15deg, 10deg);
+/* From SHΞN™ Morphism by DevPTG - Tags: loader */
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
 }
 
-.spinner span {
- display: block;
- background-color: var(--accent);
- box-shadow: 1px 1px 5px 0.2px var(--accent);
- width: 0.7px;
- height: 0.6em;
+@keyframes spin3D {
+  from {
+    transform: rotate3d(.5,.5,.5, 360deg);
+  }
+
+  to {
+    transform: rotate3d(0deg);
+  }
 }
 
-.spinner .spinner-part-0 {
- animation: load432 calc(1s/var(--speed)) linear infinite;
+@keyframes configure-clockwise {
+  0% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(90deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(270deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.spinner .spinner-part-1 {
- animation: load432 calc(0.16s/var(--speed)) linear infinite;
+@keyframes configure-xclockwise {
+  0% {
+    transform: rotate(45deg);
+  }
+
+  25% {
+    transform: rotate(-45deg);
+  }
+
+  50% {
+    transform: rotate(-135deg);
+  }
+
+  75% {
+    transform: rotate(-225deg);
+  }
+
+  100% {
+    transform: rotate(-315deg);
+  }
 }
 
-.spinner .spinner-part-2 {
- animation: load432 calc(0.4s/var(--speed)) linear infinite;
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: .25;
+    transform: scale(.75);
+  }
 }
 
-.spinner .spinner-part-3 {
- animation: load432 calc(0.5s/var(--speed)) linear infinite;
+.circle-border {
+  width: 150px;
+  height: 150px;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgb(63,249,220);
+  background: linear-gradient(0deg, rgba(63,249,220,0.1) 33%, rgb(5, 255, 138) 100%);
+  animation: spin .8s linear 0s infinite;
 }
 
-@keyframes load432 {
- 50% {
-  transform: scaleY(var(--max-scale));
- }
+.circle-core {
+  width: 100%;
+  height: 100%;
+  background-color: #04090e00;
+  border-radius: 50%;
 }
 
 </style>

@@ -1,67 +1,42 @@
-<button class="button">
+<button>
   Button
 </button>
 <style>
-/* From SHΞN™ Morphism by KhaledMatalkah - Tags: button, hover, transition */
-.button {
-  display: inline-block;
-  padding: 15px 32px;
-  font-size: 17px;
+/* From SHΞN™ Morphism by ramdaniAli - Tags: button */
+button {
+  color: #4181f098;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  /* border: none; */
   font-weight: bold;
-  color: #fff;
-  background: linear-gradient(130deg, #ff6b6b, #c94d4d, #8e3636);
-  border-radius: 50px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  border: none;
-  border-style: solid;
-  border-width: 2px;
+  font-size: 17px;
+  padding: 1rem 2rem;
+  border: 1px solid #ffffff1f;
+  border-radius: 20px;
+  background: #ebebeb;
+  -webkit-box-shadow: 5px 5px 15px #cccccc,
+              -5px -5px 15px #ffffff;
+  box-shadow: 5px 5px 15px #cccccc,
+              -5px -5px 15px #ffffff;
+  -webkit-transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
-.button:before,
-.button:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.3;
-  pointer-events: none;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+button:hover {
+  color: #357af0;
+  background: linear-gradient(145deg, #d4d4d4, #fbfbfb);
+  -webkit-box-shadow: 5px 5px 15px #cccccc,
+              -5px -5px 15px #ffffff;
+  box-shadow: 5px 5px 15px #cccccc,
+              -5px -5px 15px #ffffff;
 }
 
-.button:before {
-  left: 100%;
-  background: linear-gradient(130deg, #ff6b6b, #c94d4d, #8e3636);
-  z-index: -1;
+button:active {
+  color: #357af0;
+  background: #ebebeb;
+  -webkit-box-shadow: inset 5px 5px 15px #cccccc,
+              inset -5px -5px 15px #ffffff;
+  box-shadow: inset 5px 5px 15px #cccccc,
+              inset -5px -5px 15px #ffffff;
 }
-
-.button:hover:before {
-  transform: translateX(-50%);
-  opacity: 1;
-}
-
-.button:after {
-  right: 100%;
-  background: linear-gradient(130deg, #ff6b6b, #c94d4d, #8e3636);
-  z-index: -1;
-}
-
-.button:hover:after {
-  transform: translateX(50%);
-  opacity: 1;
-}
-
-.button:hover .button-text {
-  transform: translateY(-3px);
-}
-
-.button-text {
-  transition: transform 0.3s ease-in-out;
-}
-
 </style>

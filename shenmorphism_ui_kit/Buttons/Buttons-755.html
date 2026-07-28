@@ -1,52 +1,33 @@
 <button class="button">
-  Button
 </button>
 <style>
-/* From SHΞN™ Morphism by ilyas-hadi - Tags: button, accessibility, 3d button, 3d form , 3d hover */
+/* From SHΞN™ Morphism by r7chardgh - Tags: button, reload, f5 */
 .button {
-  padding: 1.1rem 2.2rem;
-  font-size: 1rem;
-  color: #fff;
-  font-weight: 600;
-  transition: all .2s;
   position: relative;
-  border: none;
-  background: #000;
+  width: 3em;
+  height: 3em;
+  transform: rotateX(30deg);
+  border-radius: .2em;
+  border: 1px solid #3f3f3f;
+  box-shadow: 0 .3em 0 .1em #3f3f3f;
+  ;
+  transition: all 150ms;
 }
 
-.button:before,.button:after {
-  content: "";
+.button::after {
   position: absolute;
-  top: 50%;
-  background: #ff3d00;
-  height: 108%;
-  width: 0;
-  z-index: -1;
-  transition: all .7s;
-  transform: translateY(-50%);
+  content: "f5";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: .2em;
+  text-align: end;
+  color: #3f3f3f;
 }
 
-.button:before {
-  left: 0%;
-}
-
-.button:after {
-  right: 0%;
-}
-
-.button:hover {
-  color: #fff;
-  box-shadow: #f51a1a7f 0 30px 60px -12px inset, #ff00007f 0 18px 36px -18px inset;
-  z-index: 2;
-}
-
-.button:hover::before {
-  width: 50%;
-  left: 50%;
-}
-
-.button:hover::after {
-  width: 50%;
-  right: 50%;
+.button:active {
+  transform: rotateX(30deg) translateY(.3em);
+  box-shadow: 0 0 0 0 #3f3f3f;
 }
 </style>

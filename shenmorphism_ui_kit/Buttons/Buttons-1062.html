@@ -1,42 +1,46 @@
-<div class="button">EXPLORE shenmorphism-kit</div>
+<div>
+    <button class="btn"><i class="animation"></i>BUTTON<i class="animation"></i>
+    </button>
+</div>
 <style>
-/* From SHΞN™ Morphism by n-jaisabai - Tags: button */
-.button {
-  background: radial-gradient(ellipse at top, white, blue, black, black);
-  color: white;
-  position: relative;
-  background-size: 130% 130%;
-  background-position: center center;
-  padding: 15px 30px;
+/* From SHΞN™ Morphism by mi-series - Tags: simple, material design, flashy, animation, purple, minimalist, button, animated */
+.btn {
+  outline: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #40B3A2;
+  min-width: 200px;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+  box-sizing: border-box;
+  padding: 16px 20px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.button:hover {
-  background: radial-gradient(ellipse at top, white, blue, black, black);
-  animation: gradient 4s;
-  animation-fill-mode: forwards;
-  /* background-position: center center; */
+.btn:hover {
+  opacity: .95;
 }
 
-.button:hover:after {
-  content: "";
-  position: absolute;
-  inset: -.625em;
-  background: radial-gradient(ellipse at top, white, blue, black, black);
-  /* background-position: center center; */
-  filter: blur(1.5em);
-  z-index: -1;
-  animation: gradient 4s;
-  animation-fill-mode: forwards;
+.btn .animation {
+  border-radius: 100%;
+  animation: ripple 0.6s linear infinite;
 }
 
-@keyframes gradient {
+@keyframes ripple {
   0% {
-    background-size: 130% 130%;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
   }
 
   100% {
-    background-size: 200% 200%;
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
   }
 }
-
 </style>

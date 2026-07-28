@@ -1,165 +1,115 @@
 <div class="card">
-  <span class="title"
-    >Pro
-    <p class="pricing">$8 <span class="pricing-time">/ month</span></p>
-    <span class="sub-title"
-      >Everything on Basic plus:
-      <ul class="list">
-        <li class="list-item"><span class="check">✓</span> Feature</li>
-        <li class="list-item"><span class="check">✓</span> Feature</li>
-        <li class="list-item"><span class="check">✓</span> Feature</li>
-        <li class="list-item"><span class="check">✓</span> Feature</li>
-        <li class="list-item"><span class="check">✓</span> Feature</li>
-      </ul>
-      <button class="button">
-        <span class="text-button">Get pro now</span>
-      </button>
-    </span></span
-  >
+  <div class="bar"></div>
+  <div class="card_form"></div>
+  <div class="card_data">
+    <div class="data">
+      <div class="text">
+        <label class="text_m">Main Title</label>
+        <div class="cube text_s">
+          <label class="side front">Access the list (Topic)</label>
+          <label class="side top">Username-id</label>
+        </div>
+        <label class="text_d"
+          >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Unum nescio,
+          quo modo possit, si luxuriosus sit, finitas cupiditates habere.
+        </label>
+      </div>
+    </div>
+    <span title="Acceder a la lista (Temas)">Access</span>
+  </div>
 </div>
 
 <style>
-/* From SHΞN™ Morphism by MuhammadHasann  - Tags: subscription, purple, minimalist, card, rounded, smooth */
+/* From SHΞN™ Morphism by Cobp  - Tags: material design, animation, card, modern */
 .card {
-  overflow: hidden;
   position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding: 1rem;
-  width: 14rem;
-  height: auto;
-  background-color: rgb(122, 48, 143);
-  background-image: radial-gradient(
-      circle at 0% 0%,
-      rgb(37, 7, 44) 15%,
-      rgba(0, 0, 0, 0) 75%
-    ),
-    radial-gradient(
-      circle at 100% 100%,
-      rgb(25, 2, 31, 0.9) 15%,
-      rgba(0, 0, 0, 0) 150%
-    ),
-    linear-gradient(
-      135deg,
-      rgba(24, 8, 28, 0) 0%,
-      rgb(122, 48, 143) 50%,
-      rgba(24, 8, 28, 0) 100%
-    );
-  border-radius: 0.5rem;
+  width: 350px;
+  background-color: #242824;
+  padding: 10px;
+  border-radius: 6px;
+  gap: 0.5rem;
+  height: max-content;
 }
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 2rem;
-  height: 2rem;
-  background-color: rgb(122, 48, 143);
-  background-image: linear-gradient(
-    0deg,
-    rgba(118, 42, 180, 1) 0%,
-    rgb(199, 95, 228) 75%
-  );
-  border-radius: 9999px;
-  box-shadow: 0 1px 5px 3px rgb(199, 95, 228), 0 0 30px 5px rgb(199, 95, 228);
+.bar {
+  width: 10px;
+  border-radius: 5px;
+  background-color: #9147ff;
+  transition: all 0.5s ease-in-out;
 }
-
-.card .title {
-  font-size: 1rem;
-  color: white;
-  font-weight: 600;
+.card:hover .bar {
+  margin-right: 5px;
 }
-
-.card .pricing {
-  font-size: 1.5rem;
-  color: white;
-  font-weight: 600;
-}
-
-.card .pricing .pricing-time,
-.card .sub-title {
-  font-size: 0.75rem;
-  color: rgb(184, 132, 199);
-  font-weight: 500;
-}
-
-.card .list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  font-size: 0.75rem;
-  color: white;
-  font-weight: 500;
-  list-style: none;
-}
-
-.card .list .list-item .check {
-  margin-right: 0.25rem;
-  font-size: 1rem;
-  color: rgb(199, 95, 228);
-  font-weight: 900;
-}
-
-.card .button {
+.card_form {
+  position: relative;
+  min-width: 5em;
+  min-height: 5em;
+  border-radius: 4px;
+  background-color: #9147ff;
+  transition: 0.2s ease-in-out;
   overflow: hidden;
+}
+.card_data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card_data span {
+  color: #9147ff;
+  margin-top: auto;
+  font-size: 0.9em;
+  transition: 0.2s ease-in-out;
   cursor: pointer;
-  position: relative;
-  margin-top: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  width: 100%;
-  height: fit-content;
-  background-color: rgb(122, 48, 143);
-  font-size: 0.75rem;
+}
+.card_data span:hover {
+  color: #28aea5;
+  text-decoration: underline;
+}
+.text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 0.5em;
   color: white;
-  border: none;
-  border-radius: 0.5rem;
-  box-shadow: 0px 0px 2px 1px rgb(122, 48, 143);
-  transition: all 0.3s cubic-bezier(1, 0, 0, 1);
 }
-
-.card .button .text-button {
-  position: relative;
-  z-index: 10;
+.text_m {
+  font-size: 0.9em;
 }
-
-.card .button::before,
-.card .button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  transition: all 0.3s ease-in-out;
+.text_s {
+  color: #9147ff;
+  font-size: 0.6em;
 }
-.card .button::before {
-  left: 0;
-  background-image: radial-gradient(
-    circle at 0% 45%,
-    rgba(16, 5, 36, 1) 19%,
-    rgba(16, 5, 36, 0.26) 46%,
-    rgba(16, 5, 36, 0) 100%
-  );
+.text_d {
+  font-size: 0.7em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
-.card .button::after {
-  right: 0;
-  background-image: radial-gradient(
-    circle at 100% 45%,
-    rgba(16, 5, 36, 1) 19%,
-    rgba(16, 5, 36, 0.26) 46%,
-    rgba(16, 5, 36, 0) 100%
-  );
+.cube {
+  width: max-content;
+  height: 10px;
+  transition: all 0.2s;
+  transform-style: preserve-3d;
 }
-
-.card .button:hover {
-  box-shadow: 0px 0px 20px 0 rgb(122, 48, 143);
+.card:hover .cube {
+  transform: rotateX(90deg);
 }
-
-.card .button:hover::before,
-.card .button:hover::after {
-  width: 0;
-  opacity: 0;
+.side {
+  width: max-content;
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+.top {
+  transform: rotateX(-90deg) translate3d(0, 0, 0em);
+}
+.front {
+  transform: translate3d(0, 0, 1em);
 }
 
 </style>

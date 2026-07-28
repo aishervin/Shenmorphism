@@ -1,83 +1,62 @@
-<div class="flipswitch">
-    <input checked="" id="fs" class="flipswitch-cb" name="flipswitch" type="checkbox">
-    <label for="fs" class="flipswitch-label">
-        <div class="flipswitch-inner"></div>
-        <div class="flipswitch-switch"></div>
-    </label>
+<div class="theme_switcher">
+  <label id="switch" class="switch">
+    <input type="checkbox"><span class="slider round"></span>
+  </label>
 </div>
-
 <style>
-/* From SHΞN™ Morphism by PriyanshuGupta28 - Tags: switch, 3d switch, cool switch, creative switch */
-.flipswitch {
+/* From SHΞN™ Morphism by YaroslavFilipenko - Tags: slider, input, toggle switch */
+.switch {
   position: relative;
-  width: 86px;
+  display: inline-block;
+  width: 60px;
+  height: 20px;
 }
 
-.flipswitch input[type=checkbox] {
-  display: none;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.flipswitch-label {
-  display: block;
-  overflow: hidden;
-  cursor: pointer;
-  border: 1px solid #999999;
-  border-radius: 8px;
-}
-
-.flipswitch-inner {
-  width: 200%;
-  margin-left: -100%;
-  transition: margin 0.3s ease-in 0s;
-}
-
-.flipswitch-inner:before, .flipswitch-inner:after {
-  float: left;
-  width: 50%;
-  height: 24px;
-  padding: 0;
-  line-height: 24px;
-  font-size: 18px;
-  color: white;
-  font-family: Trebuchet, Arial, sans-serif;
-  font-weight: bold;
-  box-sizing: border-box;
-}
-
-.flipswitch-inner:before {
-  content: "ON";
-  padding-left: 12px;
-  background-color: #256799;
-  color: #FFFFFF;
-}
-
-.flipswitch-inner:after {
-  content: "OFF";
-  padding-right: 12px;
-  background-color: #EBEBEB;
-  color: #888888;
-  text-align: right;
-}
-
-.flipswitch-switch {
-  width: 31px;
-  margin: -3.5px;
-  background: #FFFFFF;
-  border: 1px solid #999999;
-  border-radius: 8px;
+.slider {
   position: absolute;
+  cursor: pointer;
   top: 0;
-  bottom: 0;
-  right: 59px;
-  transition: all 0.3s ease-in 0s;
-}
-
-.flipswitch-cb:checked + .flipswitch-label .flipswitch-inner {
-  margin-left: 0;
-}
-
-.flipswitch-cb:checked + .flipswitch-label .flipswitch-switch {
+  left: 0;
   right: 0;
+  bottom: 0;
+  background-color: #b1b9c3;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 30px;
+  width: 30px;
+  bottom: -5px;
+  background: #18333E;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #b1b9c3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(35px);
+  -ms-transform: translateX(35px);
+  transform: translateX(35px);
+  background: #F2F8FD;
+}
 </style>

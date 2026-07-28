@@ -1,78 +1,79 @@
-<div class="radio-input">
-  <label class="container">
-    <svg>
-      <rect class="hi" pathLength="800"></rect>
-    </svg>
-    <input type="radio" id="value-1" name="value-radio" checked="" value="value-1">
-  </label>
-  <label class="container">
-    <svg>
-      <rect class="hi" pathLength="600"></rect>
-    </svg>
-    <input type="radio" id="value-2" name="value-radio" value="value-2">
-  </label>
-  <label class="container">
-    <svg>
-      <rect class="hi" pathLength="700"></rect>
-    </svg>
-    <input type="radio" id="value-3" name="value-radio" value="value-3">
-  </label>
-</div>
+<label class="switch">
+  <input type="checkbox">
+  <span class="slider">
+   <svg class="slider-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"><path fill="none" d="m4 16.5 8 8 16-16"></path></svg> 
+  </span>
+</label>
 <style>
-/* From SHΞN™ Morphism by SelfMadeSystem - Tags: radio */
-.radio-input {
-  --c: rgb(74, 156, 233);
-}
-
-.radio-input label {
+/* From SHΞN™ Morphism by alexruix - Tags: switch */
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
   position: relative;
   display: inline-block;
-  border-radius: 99999px;
-  appearance: unset;
-  margin: 8px;
-  width: 3em;
-  height: 3em;
+  width: 3.5em;
+  height: 2em;
 }
 
-.radio-input input {
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
   position: absolute;
-  border-radius: 99999px;
-  appearance: unset;
-  inset: 0.75em;
-  margin: 0;
-  transition: background-color 0.5s;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #B0B0B0;
+  border: 1px solid #B0B0B0;
+  transition: .4s;
+  border-radius: 32px;
+  outline: none;
 }
 
-.radio-input input:checked {
-  background-color: var(--c);
-  filter: drop-shadow(0 0 10px var(--c));
-}
-
-.radio-input svg {
+.slider:before {
   position: absolute;
-  pointer-events: none;
-  overflow: visible;
-  filter: drop-shadow(0 0 4px var(--c));
+  content: "";
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  outline: 2px solid #B0B0B0;
+  left: -1px;
+  bottom: -1px;
+  background-color: #fff;
+  transition: transform .25s ease-in-out 0s;
 }
 
-.radio-input svg .hi {
-  width: 3em;
-  height: 3em;
-  rx: 1.5em;
-  fill: transparent;
-  stroke: var(--c);
-  stroke-width: 0.25em;
-  stroke-dasharray: 70 30;
-  animation: strokeWee 32s linear infinite;
+.slider-icon {
+  opacity: 0;
+  height: 12px;
+  width: 12px;
+  stroke-width: 8;
+  position: absolute;
+  z-index: 999;
+  stroke: #222222;
+  right: 60%;
+  top: 30%;
+  transition: right ease-in-out .3s, opacity ease-in-out .15s;
 }
 
-@keyframes strokeWee {
-  0% {
-    stroke-dashoffset: 0;
-  }
+input:checked + .slider {
+  background-color: #222222;
+}
 
-  100% {
-    stroke-dashoffset: 1000;
-  }
+input:checked + .slider .slider-icon {
+  opacity: 1;
+  right: 20%;
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.5em);
+  outline-color: #181818;
 }
 </style>

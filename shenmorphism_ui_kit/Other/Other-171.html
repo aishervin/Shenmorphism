@@ -1,20 +1,24 @@
 <label class="switch">
-  <input type="checkbox" class="input">
+  <input type="checkbox" />
   <span class="slider"></span>
 </label>
+
 <style>
-/* From SHΞN™ Morphism by Shoh2008 - Tags: switch */
+/* From SHΞN™ Morphism by Subaashbala  - Tags: switch */
 /* The switch - the box around the slider */
 .switch {
+  --INITIAL-SWITCH-TRACK-COLOR: #fffbeb;
+  --INITIAL-THUMB-COLOR: #ff5722;
+  --OVERALL-TRANSITION-DURATION: 500ms; /* Overall transition speed */
   font-size: 17px;
   position: relative;
   display: inline-block;
-  width: 3.5em;
+  width: 3.75em;
   height: 2em;
 }
 
 /* Hide default HTML checkbox */
-.switch .input {
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -28,32 +32,68 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #2e2e2e;
-  transition: .4s;
+  background-color: var(--INITIAL-SWITCH-TRACK-COLOR);
+  transition: var(--OVERALL-TRANSITION-DURATION);
   border-radius: 30px;
+  overflow: hidden;
 }
 
+/* Thumb */
 .slider:before {
   position: absolute;
   content: "";
-  height: 1.4em;
-  width: 1.4em;
+  height: 100%;
+  aspect-ratio: 1;
   border-radius: 20px;
-  left: 0.3em;
-  bottom: 0.3em;
-  background-color: #4e4;
-  transition: .4s;
+  left: 0;
+  bottom: 0;
+  background-color: var(--INITIAL-THUMB-COLOR);
+  transition: var(--OVERALL-TRANSITION-DURATION);
 }
 
-.input:checked + .slider {
-  background-color: #000;
+.switch input:checked + .slider {
+  background-color: var(--INITIAL-THUMB-COLOR);
 }
 
-.input:focus + .slider {
-  box-shadow: 0 0 1px #000;
+/* Actions to be performed when the switch is TOGGLED ON */
+.switch input:checked + .slider::before {
+  transform-origin: left;
+  background-color: var(--INITIAL-SWITCH-TRACK-COLOR);
+  animation: wobble var(--OVERALL-TRANSITION-DURATION)
+    cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: scale(1, 1) translateX(2rem);
 }
 
-.input:checked + .slider:before {
-  transform: translateX(1.5em);
+/* Actions to be performed when the switch is TOGGLED OFF */
+.switch input:not(:checked) + .slider::before {
+  transform-origin: right;
+  animation: reverse-wobble var(--OVERALL-TRANSITION-DURATION)
+    cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
+@keyframes wobble {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(3, 1);
+  }
+  100% {
+    transform: scale(1, 1) translateX(2rem);
+  }
+}
+
+@keyframes reverse-wobble {
+  0% {
+    transform: scale(1, 1) translateX(2rem);
+  }
+  50% {
+    transform: scale(3, 1);
+  }
+  100% {
+    transform: scale(1, 1) translateX(0);
+  }
+}
+
 </style>
+    

@@ -1,30 +1,66 @@
 <button class="button">
-    Fondle ME!
+  Button
 </button>
 <style>
-/* From SHΞN™ Morphism by Madflows - Tags: button, animated */
+/* From SHΞN™ Morphism by KhaledMatalkah - Tags: button, gradients */
 .button {
-  outline: none;
+  display: inline-block;
+  padding: 15px 32px;
+  font-size: 17px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
   border: none;
-  height: 3.5em;
-  padding: 0 2.5rem;
-  border-radius: 0.375rem;
-  background: #4503dc;
-  color: #fff;
-  -webkit-box-shadow: 0 0.4rem 0 0 #3700b8;
-  box-shadow: 0 0.4rem 0 0 #3700b8;
-  letter-spacing: 1px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  font-family: sans-serif;
-  font-weight: 700;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.button:before,
+.button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  opacity: 0.3;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:before {
+  left: -100%;
+  background: linear-gradient(90deg, rgba(0, 136, 255, 0.8), rgba(255, 0, 170, 0.8), rgba(0, 136, 255, 0.8));
+  z-index: -1;
+}
+
+.button:hover:before {
+  left: 0;
+}
+
+.button:after {
+  right: -100%;
+  background: linear-gradient(270deg, rgba(0, 136, 255, 0.8), rgba(255, 0, 170, 0.8), rgba(0, 136, 255, 0.8));
+  z-index: -1;
+}
+
+.button:hover:after {
+  right: 0;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .button:active {
-  -webkit-transform: translateY(0.3rem);
-  -ms-transform: translateY(0.3rem);
-  transform: translateY(0.3rem);
-  -webkit-box-shadow: 0 0.2rem 0 0 #3700b8;
-  box-shadow: 0 0.2rem 0 0 #3700b8;
+  transform: translateY(1px);
+  box-shadow: none;
 }
+
 </style>

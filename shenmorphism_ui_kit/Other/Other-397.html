@@ -1,98 +1,39 @@
-<div class="loader">
-  <div class="block b_1"></div>
-  <div class="block b_2"></div>
-  <div class="block b_3"></div>
-  <div class="block b_4"></div>
-  <div class="block b_5"></div>
-  <div class="block b_6"></div>
-  <div class="block b_7"></div>
-  <div class="block b_8"></div>
-</div>
+<div class="spinner"></div>
+
 <style>
-/* From SHΞN™ Morphism by csozidev - Tags: simple, black, loader, loop */
-/* Simple loader made by: csozi | Website: www.csozi.hu*/
-
-.loader {
-  height: 50px;
-  width: 50px;
+/* From SHΞN™ Morphism by AHMED-MIT - Tags: loader */
+.spinner {
   position: relative;
+  width: 35.2px;
+  height: 35.2px;
 }
 
-.block {
-  height: 10px;
-  width: 10px;
-  background-color: black;
+.spinner::before,
+.spinner::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  display: block;
+  animation: spinner-b4c8mmhg 0.5s backwards, spinner-49opz7hg 1.25s 0.5s infinite ease;
+  border: 8.8px solid #000000;
+  border-radius: 50%;
+  box-shadow: 0 -52.8px 0 -8.8px #000000;
   position: absolute;
-  opacity: 0;
 }
 
-.b_1 {
-  top: 0;
-  left: 0;
-  animation: load 2s infinite;
-  animation-delay: 0;
+.spinner::after {
+  animation-delay: 0s, 1.25s;
 }
 
-.b_2 {
-  top: 0;
-  left: 20px;
-  animation: load 2s infinite;
-  animation-delay: 0.25s;
-}
-
-.b_3 {
-  top: 0;
-  right: 0;
-  animation: load 2s infinite;
-  animation-delay: 0.5s;
-}
-
-.b_4 {
-  top: 20px;
-  right: 0;
-  animation: load 2s infinite;
-  animation-delay: 0.75s;
-}
-
-.b_5 {
-  bottom: 0;
-  right: 0;
-  animation: load 2s infinite;
-  animation-delay: 1s;
-}
-
-.b_6 {
-  bottom: 0;
-  left: 20px;
-  animation: load 2s infinite;
-  animation-delay: 1.25s;
-}
-
-.b_7 {
-  bottom: 0;
-  left: 0;
-  animation: load 2s infinite;
-  animation-delay: 1.5s;
-}
-
-.b_8 {
-  top: 20px;
-  left: 0;
-  animation: load 2s infinite;
-  animation-delay: 1.75s;
-}
-
-@keyframes load {
-  0% {
-    opacity: 1;
+@keyframes spinner-b4c8mmhg {
+  from {
+    box-shadow: 0 0 0 -8.8px #000000;
   }
+}
 
-  85% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
+@keyframes spinner-49opz7hg {
+  to {
+    transform: rotate(360deg);
   }
 }
 </style>

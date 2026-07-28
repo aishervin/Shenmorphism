@@ -1,106 +1,64 @@
-<div class="checkbox-wrapper">
-  <input id="cbtest-19" type="checkbox">
-  <label class="check-box" for="cbtest-19">
-</label></div>
-
-
-  
-
-
+<label class="container">
+  <input type="checkbox" checked="checked">
+  <span class="checkmark"></span>
+</label>
 <style>
-/* From SHΞN™ Morphism by PriyanshuGupta28 - Tags: checkbox, cool checkbox, checkmark, tick switchbox */
-.checkbox-wrapper {
-  box-sizing: border-box;
-  --background-color: #fff;
-  --checkbox-height: 25px;
+/* From SHΞN™ Morphism by adamgiebl - Tags: checkbox */
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
 }
 
-.checkbox-wrapper input[type=checkbox] {
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
   display: none;
 }
 
-.checkbox-wrapper .check-box {
-  height: var(--checkbox-height);
-  width: var(--checkbox-height);
-  background-color: transparent;
-  border: calc(var(--checkbox-height) * .1) solid #000;
-  border-radius: 5px;
-  position: relative;
-  display: inline-block;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -moz-transition: border-color ease 0.2s;
-  -o-transition: border-color ease 0.2s;
-  -webkit-transition: border-color ease 0.2s;
-  transition: border-color ease 0.2s;
-  cursor: pointer;
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
 }
 
-.checkbox-wrapper .check-box::before,
-  .checkbox-wrapper .check-box::after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  position: absolute;
-  height: 0;
-  width: calc(var(--checkbox-height) * .2);
-  background-color: #4158D0;
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-  display: inline-block;
-  -moz-transform-origin: left top;
-  -ms-transform-origin: left top;
-  -o-transform-origin: left top;
-  -webkit-transform-origin: left top;
-  transform-origin: left top;
-  border-radius: 5px;
-  content: " ";
-  -webkit-transition: opacity ease 0.5;
-  -moz-transition: opacity ease 0.5;
-  transition: opacity ease 0.5;
-}
-
-.checkbox-wrapper .check-box::before {
-  top: calc(var(--checkbox-height) * .72);
-  left: calc(var(--checkbox-height) * .41);
-  box-shadow: 0 0 0 calc(var(--checkbox-height) * .05) var(--background-color);
-  -moz-transform: rotate(-135deg);
-  -ms-transform: rotate(-135deg);
-  -o-transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-  transform: rotate(-135deg);
-}
-
-.checkbox-wrapper .check-box::after {
-  top: calc(var(--checkbox-height) * .37);
-  left: calc(var(--checkbox-height) * .05);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-.checkbox-wrapper input[type=checkbox]:checked + .check-box,
-  .checkbox-wrapper .check-box.checked {
-  border-color: #5900ff;
-}
-
-.checkbox-wrapper input[type=checkbox]:checked + .check-box::after,
-  .checkbox-wrapper .check-box.checked::after {
-  height: calc(var(--checkbox-height) / 2);
-  -moz-animation: dothabottomcheck-19 0.2s ease 0s forwards;
-  -o-animation: dothabottomcheck-19 0.2s ease 0s forwards;
-  -webkit-animation: dothabottomcheck-19 0.2s ease 0s forwards;
-  animation: dothabottomcheck-19 0.2s ease 0s forwards;
-}
-
-.checkbox-wrapper input[type=checkbox]:checked + .check-box::before,
-  .checkbox-wrapper .check-box.checked::before {
-  height: calc(var(--checkbox-height) * 1.2);
-  -moz-animation: dothatopcheck-19 0.4s ease 0s forwards;
-  -o-animation: dothatopcheck-19 0.4s ease 0s forwards;
-  -webkit-animation: dothatopcheck-19 0.4s ease 0s forwards;
-  animation: dothatopcheck-19 0.4s ease 0s forwards;
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }
 </style>

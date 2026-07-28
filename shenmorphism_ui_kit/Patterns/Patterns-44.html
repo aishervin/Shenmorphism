@@ -1,25 +1,31 @@
 <div class="container"></div>
 
 <style>
-/* From SHΞN™ Morphism by Efrain2112  - Tags: circle, css, multicolor, pattern */
+/* From SHΞN™ Morphism by csemszepp - Source: https://github.com/Afif13 - Website: https://github.com/Afif13  - Name: Afif13  - Tags: simple, material design, pattern */
 .container {
   width: 100%;
   height: 100%;
-  --size: 80px; /* control the size */
-  --color1: #f29c9c;
-  --color2: #ffd700;
-  --color3: #7ec8e3;
-  --cone: #8b4513;
+  --s: 150px; /* control the size */
+  --c1: #ff847c;
+  --c2: #e84a5f;
+  --c3: #fecea8;
+  --c4: #99b898;
 
-  background: radial-gradient(
-      circle at 50% 30%,
-      transparent 30%,
-      var(--color1) 31%
+  background: conic-gradient(
+      from 45deg at 75% 75%,
+      var(--c3) 90deg,
+      var(--c1) 0 180deg,
+      #0000 0
     ),
-    radial-gradient(circle at 30% 70%, transparent 30%, var(--color2) 31%),
-    radial-gradient(circle at 70% 70%, transparent 30%, var(--color3) 31%),
-    linear-gradient(to bottom, var(--cone) 50%, transparent 50%);
-  background-size: var(--size) var(--size);
+    conic-gradient(from -45deg at 25% 25%, var(--c3) 90deg, #0000 0),
+    conic-gradient(from -45deg at 50% 100%, #0000 180deg, var(--c3) 0),
+    conic-gradient(
+      from -45deg,
+      var(--c1) 90deg,
+      var(--c2) 0 225deg,
+      var(--c4) 0
+    );
+  background-size: var(--s) var(--s);
 }
 
 </style>

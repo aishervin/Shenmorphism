@@ -1,93 +1,135 @@
-<div class="loader-container">
-  <div class="loader"></div>
-  <div class="loader-text">Loading...</div>
-</div>
-
+<svg viewBox="0 0 100 100" class="loader">
+<g class="points"> 
+  <circle fill="#fff" r="50" cy="50" cx="50" class="ciw"></circle>
+<circle r="4" cy="50" cx="5" class="ci2"></circle>
+<circle r="4" cy="50" cx="95" class="ci1"></circle>
+</g>
+</svg>
 <style>
-/* From SHΞN™ Morphism by Abrar-Hussain1  - Tags: animation, loading, loader, spinner, modern, circle, animated, circle loader */
-.loader-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
+/* From SHΞN™ Morphism by csemszepp - Source: https://codepen.io/uchardon/pen/VEBbdw - Tags: loader, animated */
 .loader {
-  width: 70px;
-  height: 70px;
-  position: relative;
+  width: 200px;
+  max-height: 900px;
+  transform-origin: 50% 50%;
+  overflow: visible;
 }
 
-.loader:before {
-  content: "";
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: 6px solid #007bff;
-  position: absolute;
-  top: 0;
-  left: 0;
-  animation: pulse 1s ease-in-out infinite;
+.ci1 {
+  fill: var(--higru);
+  animation: toBig 3s infinite -1.5s;
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
 }
 
-.loader:after {
-  content: "";
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: 6px solid transparent;
-  border-top-color: #007bff;
-  position: absolute;
-  top: 0;
-  left: 0;
-  animation: spin 2s linear infinite;
+.ciw {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: breath 3s infinite;
 }
 
-.loader-text {
-  font-size: 24px;
-  margin-top: 20px;
-  color: #007bff;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  text-transform: uppercase;
+.ci2 {
+  fill: var(--higru);
+  animation: toBig2 3s infinite;
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(0.6);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(0.6);
-    opacity: 1;
-  }
+.points {
+  animation: rot 3s infinite;
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
 }
 
-@keyframes spin {
+@keyframes rot {
   0% {
     transform: rotate(0deg);
   }
-  100% {
+
+  30% {
     transform: rotate(360deg);
+  }
+
+  50% {
+    transform: rotate(360deg);
+  }
+
+  80% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
   }
 }
 
-.content {
-  display: none;
+@keyframes toBig {
+  0% {
+    transform: scale(1) translateX(0px);
+  }
+
+  30% {
+    transform: scale(1) translateX(0px);
+  }
+
+  50% {
+    transform: scale(10) translateX(-4.5px);
+  }
+
+  80% {
+    transform: scale(10) translateX(-4.5px);
+  }
+
+  100% {
+    transform: scale(1) translateX(0px);
+  }
 }
 
-.loaded .loader-container {
-  display: none;
+@keyframes toBig2 {
+  0% {
+    transform: scale(1) translateX(0px);
+  }
+
+  30% {
+    transform: scale(1) translateX(0px);
+  }
+
+  50% {
+    transform: scale(10) translateX(4.5px);
+  }
+
+  80% {
+    transform: scale(10) translateX(4.5px);
+  }
+
+  100% {
+    transform: scale(1) translateX(0px);
+  }
 }
 
-.loaded .content {
-  display: block;
+@keyframes breath {
+  15% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.1);
+  }
+
+  65% {
+    transform: scale(1);
+  }
+
+  90% {
+    transform: scale(1.1);
+  }
 }
 
+.dwf, .share {
+  position: fixed;
+  bottom: 4px;
+  right: 10px;
+  background-color: #0003;
+  padding: 3px;
+  border-radius: 3px;
+}
 </style>
-    

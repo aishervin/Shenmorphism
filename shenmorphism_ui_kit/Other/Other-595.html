@@ -1,86 +1,39 @@
-<div class="loader">
-	<div></div>
-	<div></div>
-	<div></div>
-	<div></div>
-	<div></div>
+<div class="loading">
+ <svg viewBox="0 0 187.3 93.7" height="200px" width="300px" class="svgbox">
+  <defs>
+    <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="gradient">
+      <stop stop-color="pink" offset="0%"></stop>
+      
+         <stop stop-color="blue" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+
+  <path stroke="url(#gradient)" d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"></path>
+</svg>
+
 </div>
 <style>
-/* From SHΞN™ Morphism by JaydipPrajapati1910 - Tags: loader, circle, gold, golden effect  */
-.loader {
-  height: 30px;
-  display: inline-block;
+/* From SHΞN™ Morphism by shadowfax29 - Tags: loader, infinitity, Infinite Spin */
+.svgbox {
+  --blue: rgb(148, 66, 63);
+  stroke: var(--blue);
+  stroke-width: 5;
+  fill: none;
+  stroke-dasharray: 50, 14;
+  stroke-dashoffset: 192;
+  animation: dash_682 1.4s linear infinite;
 }
 
-.loader > div {
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-  box-shadow: 0 0 10px orange;
-  background: #FFECBA;
-  float: left;
-  margin: 5px;
-  transform: scale(2);
-}
+@keyframes dash_682 {
+  72.5% {
+    opacity: 1;
+  }
 
-.loader > div:nth-child(1) {
-  animation: anm-BL-53-move1 1s infinite linear;
-}
-
-.loader > div:nth-child(2) {
-  animation: anm-BL-53-move2 1s infinite linear;
-  animation-delay: 0.2s;
-}
-
-.loader > div:nth-child(3) {
-  animation: anm-BL-53-move3 1s infinite linear;
-  animation-delay: 0.3s;
-}
-
-.loader > div:nth-child(4) {
-  animation: anm-BL-53-move4 1s infinite linear;
-  animation-delay: 0.4s;
-}
-
-.loader > div:nth-child(5) {
-  animation: anm-BL-53-move5 1s infinite linear;
-  animation-delay: 0.5s;
-}
-
-@keyframes anm-BL-53-move1 {
-  50% {
-    background: #FFBB00;
-    transform: scale(1);
+  to {
+    stroke-dashoffset: 1;
   }
 }
 
-@keyframes anm-BL-53-move2 {
-  50% {
-    background: #FFBB00;
-    transform: scale(1);
-  }
-}
 
-@keyframes anm-BL-53-move3 {
-  50% {
-    background: #FFBB00;
-    transform: scale(1);
-  }
-}
-
-@keyframes anm-BL-53-move4 {
-  50% {
-    background: #FFBB00;
-    transform: scale(1);
-  }
-}
-
-@keyframes anm-BL-53-move5 {
-  50% {
-    background: #FFBB00;
-    transform: scale(1);
-  }
-}
-  
 
 </style>

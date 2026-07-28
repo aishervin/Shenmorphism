@@ -1,84 +1,56 @@
-<div class="toggle-switch">
-  <input class="toggle-input" id="toggle" type="checkbox">
-  <label class="toggle-label" for="toggle"></label>
-</div>
-
+<label class="switch">
+  <input type="checkbox">
+  <span class="slider"></span>
+</label>
 <style>
-/* From SHΞN™ Morphism by ClawHack1 - Tags: apple, switch */
-/* Genel stil */
-.toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 24px;
-  margin: 10px;
+/* From SHΞN™ Morphism by aasisodiya - Tags: minimalist, switch */
+/* The switch - the box around the slider */
+.switch {
+ font-size: 1rem;
+ position: relative;
+ display: inline-block;
+ width: 4em;
+ height: 2em;
 }
 
-/* Giriş stil */
-.toggle-switch .toggle-input {
-  display: none;
+/* Hide default HTML checkbox */
+.switch input {
+ opacity: 0;
+ width: 0;
+ height: 0;
 }
 
-/* Anahtarın stilinin etrafındaki etiketin stil */
-.toggle-switch .toggle-label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 24px;
-  background-color: #2196F3;
-  border-radius: 34px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+/* The slider */
+.slider {
+ position: absolute;
+ cursor: pointer;
+ inset: 0;
+ background-color: #eee;
+ transition: 0.4s;
+ border-radius: 0.5em;
+ box-shadow: 0 0.2em #dfd9d9;
 }
 
-/* Anahtarın yuvarlak kısmının stil */
-.toggle-switch .toggle-label::before {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  top: 2px;
-  left: 2px;
-  background-color: #fff;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s;
+.slider:before {
+ position: absolute;
+ content: "";
+ height: 1.5em;
+ width: 1.4em;
+ border-radius: 0.3em;
+ left: 0.3em;
+ bottom: 0.7em;
+ background-color: lightsalmon;
+ transition: 0.4s;
+ box-shadow: 0 0.4em #bcb4b4;
 }
 
-/* Anahtarın etkin hale gelmesindeki stil değişiklikleri */
-.toggle-switch .toggle-input:checked + .toggle-label {
-  background-color: #4CAF50;
+.slider:hover::before {
+ box-shadow: 0 0.2em #bcb4b4;
+ bottom: 0.5em;
 }
 
-.toggle-switch .toggle-input:checked + .toggle-label::before {
-  transform: translateX(16px);
+input:checked+.slider:before {
+ transform: translateX(2em);
+ background: lightgreen;
 }
-
-/* Light tema */
-.toggle-switch.light .toggle-label {
-  background-color: #BEBEBE;
-}
-
-.toggle-switch.light .toggle-input:checked + .toggle-label {
-  background-color: #9B9B9B;
-}
-
-.toggle-switch.light .toggle-input:checked + .toggle-label::before {
-  transform: translateX(6px);
-}
-
-/* Dark tema */
-.toggle-switch.dark .toggle-label {
-  background-color: #4B4B4B;
-}
-
-.toggle-switch.dark .toggle-input:checked + .toggle-label {
-  background-color: #717171;
-}
-
-.toggle-switch.dark .toggle-input:checked + .toggle-label::before {
-  transform: translateX(16px);
-}
-
 </style>

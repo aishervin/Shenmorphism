@@ -1,60 +1,47 @@
-<div class="container">
-  <span></span>
-  <span></span>
-  <span></span>
+<div class="arrow">
+    <span></span>
+    <span></span>
+    <span></span>
 </div>
 <style>
-/* From SHΞN™ Morphism by terenceodonoghue - Tags: loader */
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: flex;
-  gap: 0.625em;
-  transform: translate(-50%, -50%);
+/* From SHΞN™ Morphism by david-mohseni - Tags: loader */
+.arrow {
+  transform: rotate(90deg);
+  cursor: pointer;
 }
 
-.container span {
-  border-radius: 50%;
-  height: 1.5em;
-  width: 1.5em;
-}
-
-.container span::before {
-  content: "";
+.arrow span {
   display: block;
-  border-radius: inherit;
-  height: inherit;
-  width: inherit;
-  background-color: inherit;
-  animation: ripple 1.8s ease-out infinite;
-  animation-delay: inherit;
-  z-index: -1;
+  width: 15px;
+  height: 15px;
+  border-bottom: 5px solid red;
+  border-right: 5px solid red;
+  transform: rotate(45deg);
+  margin: -15px;
+  animation: animate28797 2s infinite;
 }
 
-.container span:nth-of-type(1) {
-  background-color: #84cdfa;
+.arrow span:nth-child(2) {
+  animation-delay: -0.2s;
 }
 
-.container span:nth-of-type(2) {
-  background-color: #5ad1cd;
-  animation-delay: 0.2s;
+.arrow span:nth-child(3) {
+  animation-delay: -0.4s;
 }
 
-.container span:nth-of-type(3) {
-  background-color: #9b59b6;
-  animation-delay: 0.4s;
-}
-
-@keyframes ripple {
-  from {
-    opacity: 1;
-    transform: scale(0);
+@keyframes animate28797 {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px);
   }
 
-  to {
+  50% {
+    opacity: 1;
+  }
+
+  100% {
     opacity: 0;
-    transform: scale(3);
+    transform: rotate(45deg) translate(20px, 20px);
   }
 }
 </style>

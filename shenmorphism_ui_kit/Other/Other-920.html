@@ -1,81 +1,39 @@
-<div class="loader-container">
-  <div class="loader-cube">
-    <div class="loader-side front"></div>
-    <div class="loader-side back"></div>
-    <div class="loader-side left"></div>
-    <div class="loader-side right"></div>
-    <div class="loader-side top"></div>
-    <div class="loader-side bottom"></div>
-  </div>
-</div>
-
+<div class="loader"></div>
 <style>
-/* From SHΞN™ Morphism by jeremyssocial  - Tags: 3d, hover, loader, cube, click, hover effect, click effect, 3d loader */
-.loader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10em;
-  perspective: 800px;
-}
-
-.loader-cube {
+/* From SHΞN™ Morphism by doniaskima - Tags: simple, material design, loader */
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 80px;
+  height: 40px;
+  border-radius: 100px 100px 0 0;
   position: relative;
-  width: 5em;
-  height: 5em;
-  transform-style: preserve-3d;
-  animation: rotateCube 2s infinite linear;
+  overflow: hidden;
 }
 
-.loader-side {
+.loader:before {
+  content: "";
   position: absolute;
-  width: 5em;
-  height: 5em;
-  background: #333; /* Custom property for theming */
-  border: 0.1em solid #fff; /* Relative sizing for border */
+  inset: 0 0 -100%;
+  background: radial-gradient(farthest-side,#ffd738 80%,#0000) left 70% top    20%/15px 15px,
+    radial-gradient(farthest-side,#020308 92%,#0000) left 65% bottom 19%/12px 12px,
+    radial-gradient(farthest-side,#ecfefe 92%,#0000) left 70% bottom 20%/15px 15px,
+    linear-gradient(#9eddfe 50%,#020308 0);
+  background-repeat: no-repeat;
+  animation: l5 2s infinite;
 }
 
-.front {
-  transform: translateZ(2.5em);
-}
-.back {
-  transform: rotateY(180deg) translateZ(2.5em);
-}
-.right {
-  transform: rotateY(90deg) translateZ(2.5em);
-}
-.left {
-  transform: rotateY(-90deg) translateZ(2.5em);
-}
-.top {
-  transform: rotateX(90deg) translateZ(2.5em);
-}
-.bottom {
-  transform: rotateX(-90deg) translateZ(2.5em);
-}
-
-/* Keyframes for continuous rotation */
-@keyframes rotateCube {
-  from {
-    transform: rotateX(0deg) rotateY(0deg);
+@keyframes l5 {
+  0%,20% {
+    transform: rotate(0)
   }
-  to {
-    transform: rotateX(360deg) rotateY(360deg);
+
+  40%,60% {
+    transform: rotate(.5turn)
   }
-}
 
-/* Interactive states using pseudo-classes */
-.loader-side:hover {
-  background: #555; /* Darker shade on hover */
-}
-
-.loader-side:focus {
-  border: 0.1em solid #999; /* Different border color on focus */
-}
-
-.loader-side:active {
-  opacity: 0.8; /* Slight transparency on active */
+  80%,100% {
+    transform: rotate(1turn)
+  }
 }
 
 </style>
-    

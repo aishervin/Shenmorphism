@@ -1,69 +1,82 @@
 <div class="card">
-  <div class="lc cavity"></div>
-  <div class="lc line"></div>
-  <div class="led"></div>
-  <div class="text">SHΞN™ Morphism</div>
+  <button class="red-btn">OPS TEAM</button>
+
+  <button class="blue-btn">START-UP</button>
 </div>
 
 <style>
-/* From SHΞN™ Morphism by Spacious74  - Tags: 3d, social, card, social media, 3d card, airpods, case */
+/* From SHΞN™ Morphism by abhusha08  - Tags: flashy, gradient, button, card, hover, hover effect, buttons */
 .card {
-  width: 270px;
-  height: 220px;
-  background-color: #e8e9eb;
-  border-radius: 70px;
-  box-shadow: inset 0px 35px 25px #ffffffe0, inset 10px 0px 25px #0000004b,
-    inset 40px 0px 20px #ffffff, inset -10px 0px 25px #0000004b,
-    inset -40px 0px 20px #fff, inset 0px 10px 10px #000000e0,
-    inset 0px -15px 25px #00000036, 10px 25px 40px -10px #00000060;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: lightgrey;
 }
 
-.card .line {
-  width: 100%;
-  height: 2px;
-  background-color: #b4b2b2;
-  margin-top: 30%;
+.red-btn {
+  width: 300px;
+  height: 150px;
+  margin: 15px;
+  background: rgb(255, 0, 0);
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  color: white;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
   position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
-.line::after,
-.line::before {
+.blue-btn {
+  width: 300px;
+  height: 150px;
+  margin: 15px;
+  background: rgb(0, 8, 144);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 8, 144, 1) 0%,
+    rgba(16, 0, 255, 1) 22%,
+    rgba(86, 255, 247, 1) 100%
+  );
+  color: white;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+button:hover {
+  color: rgb(0, 0, 0);
+}
+
+button:after {
   content: "";
+  background: white;
   position: absolute;
-  width: 5%;
-  height: 2px;
-  background-color: #fff;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
 }
-.line::before {
-  right: 0;
-}
-.card .cavity {
-  width: 150px;
-  height: 20px;
-  background: linear-gradient(180deg, #d6d6d6, #fff);
-  border-radius: 200px;
-  margin: auto;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, 30%);
-}
-.card .led {
-  width: 7px;
-  aspect-ratio: 1;
-  background-color: #66f66f;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 30%);
-  border-radius: 100px;
-  box-shadow: 0 0 6px #3eff4b;
-}
-.card .text {
-  text-align: center;
-  margin-top: 70px;
-  color: #00000036;
-  font-weight: bolder;
+
+button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 </style>

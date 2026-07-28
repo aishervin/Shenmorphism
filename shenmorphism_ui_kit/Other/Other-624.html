@@ -1,165 +1,221 @@
 <div class="loader">
-  <div class="blackhole">
-    <div class="blackhole-circle"></div>
-    <div class="blackhole-disc"></div>
-  </div>
-
-  <div class="curve">
-    <svg viewBox="0 0 500 500">
-      <path id="loading" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97"></path>
-      <text width="500">
-        <textPath xlink:href="#loading">
-          loading...
-        </textPath>
-      </text>
-    </svg>
+  <svg width="200" height="200">
+    <circle
+      class="traco"
+      cx="100"
+      cy="100"
+      r="70"
+      fill="transparent"
+      stroke="#ffe71c"
+      stroke-width="9"
+      stroke-dasharray="35 20"
+      transform="rotate(31 100 100)"
+    ></circle>
+  </svg>
+  <div class="p1"></div>
+  <div class="p2"></div>
+  <div class="p3"></div>
+  <div class="p4"></div>
+  <div class="p5"></div>
+  <div class="p6"></div>
+  <div class="p7"></div>
+  <div class="p8"></div>
+  <div class="circle">
+    <div class="content">
+      <div class="eyes">
+        <div class="eye-left"></div>
+        <div class="eye-right"></div>
+      </div>
+      <div class="nouse"></div>
+      <div class="mouth"></div>
+      <div class="teeth">
+        <div class="tooth"></div>
+        <div class="tooth"></div>
+        <div class="tooth"></div>
+        <div class="tooth"></div>
+      </div>
+    </div>
   </div>
 </div>
+
 <style>
-/* From SHΞN™ Morphism by StealthWorm - Tags: loading, interstellar, black hole */
+/* From SHΞN™ Morphism by Tsiangana  - Tags: animation, loader, loading animation, anime */
 .loader {
+  width: 200px;
+  height: 200px;
   display: flex;
-  width: 8rem;
-  height: 8rem;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  flex-direction: column;
-}
-
-.curve {
-  width: 180%;
-  height: 180%;
-  position: absolute;
-  animation: rotate 8s linear infinite;
-  fill: transparent;
-}
-
-.curve text {
-  letter-spacing: 20px;
-  text-transform: uppercase;
-  font: 1.5em "Fira Sans", sans-serif;
-  fill: white;
-  filter: drop-shadow(0 2px 8px black);
-}
-
-.blackhole {
-  z-index: -1;
-  display: flex;
-  position: absolute;
-  width: 8rem;
-  height: 8rem;
   align-items: center;
   justify-content: center;
+  animation: float 2s ease-in-out infinite;
 }
 
-.blackhole-circle {
-  z-index: 0;
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.loader:before {
+  content: "";
+  width: 10px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  bottom: -9px;
+  animation: shadow046 2s alternate infinite ease;
+}
+@keyframes shadow046 {
+  0% {
+    transform: scaleX(1);
+  }
+  40% {
+    transform: scaleX(15);
+    opacity: 0.7;
+  }
+}
+
+.circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
   display: flex;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+.loader .p1 {
+  height: 20px;
+  width: 7px;
+  background-color: #ffe71c;
+  position: absolute;
+  margin-top: -118px;
+  margin-left: 3px;
+}
+.loader .p2 {
+  height: 20px;
+  width: 7px;
+  background-color: #ffe71c;
+  position: absolute;
+  margin-top: 118px;
+  margin-left: 3px;
+}
+
+.loader .p3 {
+  height: 20px;
+  width: 7px;
+  background-color: #ffe71c;
+  position: absolute;
+  transform: rotate(90deg);
+  margin-right: -120px;
+}
+.loader .p4 {
+  height: 20px;
+  width: 7px;
+  background-color: #ffe71c;
+  position: absolute;
+  transform: rotate(90deg);
+  margin-right: 119px;
+}
+.loader .p5 {
+  height: 25px;
+  width: 7px;
+  background-color: #ffe71c;
+  position: absolute;
+  margin-top: -84px;
+  margin-right: -89px;
+  transform: rotate(45deg);
+}
+.loader .p6 {
+  height: 23px;
+  width: 7px;
+  background-color: #ffe71c;
+  position: absolute;
+  margin-top: 88px;
+  margin-right: 84px;
+  transform: rotate(45deg);
+}
+.loader .p7 {
+  height: 23px;
+  width: 7px;
+  background-color: #ffe71c;
+  position: absolute;
+  margin-top: -86px;
+  margin-right: 80px;
+  transform: rotate(-45deg);
+}
+.loader .p8 {
+  height: 23px;
+  width: 7px;
+  background-color: #ffe71c;
+  position: absolute;
+  margin-top: 80px;
+  margin-right: -83px;
+  transform: rotate(-45deg);
+}
+.circle .traco {
+  position: absolute;
+  z-index: -99;
+}
+.loader .content {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #ffe71c;
+  overflow: hidden;
+}
+.content .eyes {
+  width: 80px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 18px auto 0px;
+  padding: 3.5px 10px;
+}
+.eyes .eye-left {
+  width: 22px;
   height: 100%;
+  background-color: #ffe71c;
   border-radius: 50%;
-  background: radial-gradient(circle at center, black 25%, white 35%, white 100%);
-  box-shadow: 0px 0px 2rem #c2babb;
-  align-items: center;
-  justify-content: center;
 }
-
-.blackhole-circle::after {
-  z-index: 0;
-  position: absolute;
-  content: "";
-  display: flex;
-  width: 100%;
+.eyes .eye-right {
+  width: 22px;
   height: 100%;
+  background-color: #ffe71c;
   border-radius: 50%;
-  border: 4px solid white;
-  background: radial-gradient(circle at center, black 35%, white 60%, white 100%);
-  box-shadow: 0px 0px 5rem #c2babb;
+}
+
+.content .nouse {
+  margin: -4px auto;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: #ffe71c;
+}
+.content .mouth {
+  margin: 9px auto 0;
+  height: 3px;
+  width: 100%;
+  background-color: #ffe71c;
+}
+.content .teeth {
+  margin: 0 auto;
+  height: 37px;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  filter: blur(4px);
-  animation: pulseAnimation linear infinite 2s alternate-reverse;
+  justify-content: space-between;
+  padding: 0 12px;
 }
-
-.blackhole-circle::before {
-  z-index: 1;
-  content: "";
-  display: flex;
-  width: 4rem;
-  height: 4rem;
-  border: 2px solid #ffffff;
-  box-shadow: 3px 3px 10px #c2babb, inset 0 0 1rem #ffffff;
-  border-radius: 50%;
-  top: 5rem;
-  filter: blur(0.5px);
-  animation: rotate linear infinite 3s;
-}
-
-.blackhole-disc {
-  position: absolute;
-  z-index: 0;
-  display: flex;
-  width: 5rem;
-  height: 10rem;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, #ffffff 80%, #353535 90%, white 100%);
-  filter: blur(1rem) brightness(130%);
-  border: 1rem solid white;
-  box-shadow: 0px 0px 3rem #d7c4be;
-  transform: rotate3d(1, 1, 1, 220deg);
-  animation: pulseAnimation2 linear infinite 2s alternate-reverse;
-  justify-content: center;
-  align-items: center;
-}
-
-.blackhole-disc::before {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  display: flex;
-  width: 5rem;
-  height: 10rem;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, #ffffff 80%, #353535 90%, white 100%);
-  filter: blur(3rem);
-  border: 1rem solid white;
-  box-shadow: 0px 0px 6rem #d7c4be;
-  animation: pulseAnimation linear infinite 2s alternate-reverse;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes pulseAnimation {
-  0% {
-    box-shadow: 0px 0px 3rem #c2babb;
-    transform: scale(1);
-  }
-
-  100% {
-    box-shadow: 0px 0px 5rem #c2babb;
-    transform: scale(1.09);
-  }
-}
-
-@keyframes pulseAnimation2 {
-  0% {
-    box-shadow: 0px 0px 3rem #c2babb;
-    transform: rotate3d(1, 1, 1, 220deg) scale(1);
-  }
-
-  100% {
-    box-shadow: 0px 0px 5rem #c2babb;
-    transform: rotate3d(1, 1, 1, 220deg)  scale(.95);
-  }
+.teeth .tooth {
+  height: 100%;
+  width: 4px;
+  background-color: #ffe71c;
 }
 
 </style>
+    

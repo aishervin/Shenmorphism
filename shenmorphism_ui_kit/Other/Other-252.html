@@ -1,15 +1,11 @@
 <label class="switch">
   <input type="checkbox">
-  <div class="slider"></div>
-  <div class="slider-card">
-    <div class="slider-card-face slider-card-front"></div>
-    <div class="slider-card-face slider-card-back"></div>
-  </div>
+  <span class="slider"></span>
 </label>
 <style>
-/* From SHΞN™ Morphism by AbanoubMagdy1 - Tags: switch, flip */
+/* From SHΞN™ Morphism by RaspberryBee - Tags: active, switch, on/off */
+/* The switch - the box around the slider */
 .switch {
-  --circle-dim: 1.4em;
   font-size: 17px;
   position: relative;
   display: inline-block;
@@ -32,54 +28,33 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #f5aeae;
+  background-color: rgb(182, 182, 182);
   transition: .4s;
-  border-radius: 30px;
+  border-radius: 10px;
 }
 
-.slider-card {
+.slider:before {
   position: absolute;
   content: "";
-  height: var(--circle-dim);
-  width: var(--circle-dim);
-  border-radius: 20px;
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 8px;
   left: 0.3em;
   bottom: 0.3em;
+  transform: rotate(270deg);
+  background-color: rgb(255, 255, 255);
   transition: .4s;
-  pointer-events: none;
 }
 
-.slider-card-face {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  perspective: 1000px;
-  border-radius: 50%;
-  transition: .4s transform;
+.switch input:checked + .slider {
+  background-color: #21cc4c;
 }
 
-.slider-card-front {
-  background-color: #DC3535;
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
 }
 
-.slider-card-back {
-  background-color: #379237;
-  transform: rotateY(180deg);
-}
-
-input:checked ~ .slider-card .slider-card-back {
-  transform: rotateY(0);
-}
-
-input:checked ~ .slider-card .slider-card-front {
-  transform: rotateY(-180deg);
-}
-
-input:checked ~ .slider-card {
+.switch input:checked + .slider:before {
   transform: translateX(1.5em);
-}
-
-input:checked ~ .slider {
-  background-color: #9ed99c;
 }
 </style>

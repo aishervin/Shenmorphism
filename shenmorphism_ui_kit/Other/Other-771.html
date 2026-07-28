@@ -1,47 +1,35 @@
-<div class="arrow">
-    <span></span>
-    <span></span>
-    <span></span>
+<div class="loader">
+  <div class="inner_loader"></div>
 </div>
 <style>
-/* From SHΞN™ Morphism by david-mohseni - Tags: loader */
-.arrow {
-  transform: rotate(90deg);
-  cursor: pointer;
+/* From SHΞN™ Morphism by benjimich - Tags: loader, color */
+.loader {
+  width: 200px;
+  height: 10px;
+  background: #004643;
+  border-radius: 50px;
+  overflow: hidden;
 }
 
-.arrow span {
-  display: block;
-  width: 15px;
-  height: 15px;
-  border-bottom: 5px solid red;
-  border-right: 5px solid red;
-  transform: rotate(45deg);
-  margin: -15px;
-  animation: animate28797 2s infinite;
+.inner_loader {
+  width: 60%;
+  height: 100%;
+  background: #f9bc60;
+  border-radius: 50px;
+  animation: moveLeftRight 3s ease-in-out infinite;
 }
 
-.arrow span:nth-child(2) {
-  animation-delay: -0.2s;
-}
-
-.arrow span:nth-child(3) {
-  animation-delay: -0.4s;
-}
-
-@keyframes animate28797 {
+@keyframes moveLeftRight {
   0% {
-    opacity: 0;
-    transform: rotate(45deg) translate(-20px, -20px);
+    transform: translateX(calc(-100% + 10px));
   }
 
   50% {
-    opacity: 1;
+    transform: translateX(calc(200px - 10px));
   }
 
   100% {
-    opacity: 0;
-    transform: rotate(45deg) translate(20px, 20px);
+    transform: translateX(calc(-100% + 10px));
   }
 }
 </style>

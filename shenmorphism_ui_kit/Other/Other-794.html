@@ -1,37 +1,67 @@
-<div class="custom-loader"></div>
+<div class="spinner">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div>
 <style>
-/* From SHΞN™ Morphism by PriyanshuGupta28 - Tags: loader, simple loader */
-.custom-loader {
-  width: 50px;
-  height: 50px;
-  display: grid;
+/* From SHΞN™ Morphism by AqFox - Tags: 3d, loader, cube */
+.spinner {
+ width: 44px;
+ height: 44px;
+ animation: spinner-y0fdc1 2s infinite ease;
+ transform-style: preserve-3d;
 }
 
-.custom-loader::before,
-.custom-loader::after {
-  content: "";
-  grid-area: 1/1;
-  --c: radial-gradient(farthest-side,#1692f8 92%,rgba(179, 53, 53, 0));
-  background: var(--c) 50%  0, 
-      var(--c) 50%  100%, 
-      var(--c) 100% 50%, 
-      var(--c) 0    50%;
-  background-size: 12px 12px;
-  background-repeat: no-repeat;
-  animation: s2 1s infinite;
+.spinner > div {
+ background-color: rgba(0,77,255,0.2);
+ height: 100%;
+ position: absolute;
+ width: 100%;
+ border: 2px solid #004dff;
 }
 
-.custom-loader::before {
-  margin: 4px;
-  filter: hue-rotate(45deg);
-  background-size: 8px 8px;
-  animation-timing-function: linear
+.spinner div:nth-of-type(1) {
+ transform: translateZ(-22px) rotateY(180deg);
 }
 
-@keyframes s2 {
- 
-  100% {
-    transform: rotate(.5turn)
-  }
+.spinner div:nth-of-type(2) {
+ transform: rotateY(-270deg) translateX(50%);
+ transform-origin: top right;
+}
+
+.spinner div:nth-of-type(3) {
+ transform: rotateY(270deg) translateX(-50%);
+ transform-origin: center left;
+}
+
+.spinner div:nth-of-type(4) {
+ transform: rotateX(90deg) translateY(-50%);
+ transform-origin: top center;
+}
+
+.spinner div:nth-of-type(5) {
+ transform: rotateX(-90deg) translateY(50%);
+ transform-origin: bottom center;
+}
+
+.spinner div:nth-of-type(6) {
+ transform: translateZ(22px);
+}
+
+@keyframes spinner-y0fdc1 {
+ 0% {
+  transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+ }
+
+ 50% {
+  transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+ }
+
+ 100% {
+  transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+ }
 }
 </style>

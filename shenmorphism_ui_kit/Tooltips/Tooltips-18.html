@@ -1,63 +1,63 @@
-<div class="tooltip-container">
-  <span class="tooltip">SHΞN™ Morphism</span>
-  <span class="text">Tooltip</span>
+<div class="tooltip">
+  <button>Hover Me!</button>
+  <div class="tooltiptext">You Hovered Me!</div>
 </div>
 
 <style>
-/* From SHΞN™ Morphism by Yassin6up  - Tags: simple, material design, tooltip, subscription, 3d, action, black */
-/* This is an example, feel free to delete this code */
-.tooltip-container {
-  --background: #22d3ee;
-  position: relative;
-  background: var(--background);
-  cursor: pointer;
-  transition: all 0.2s;
-  font-size: 17px;
-  padding: 0.7em 1.8em;
-  border-radius: 10px;
-  color: white;
-  box-shadow: 0 0 10px var(--background);
-}
-
+/* From SHΞN™ Morphism by gouthamnetha02  - Tags: tooltip, red, hover, color, hover effect, css, css effect */
 .tooltip {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 0.3em 0.6em;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s;
-  background: var(--background);
-  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
 }
 
-.tooltip::before {
-  position: absolute;
-  content: "";
-  height: 0.6em;
-  width: 0.6em;
-  bottom: -0.2em;
-  left: 50%;
-  transform: translate(-50%) rotate(45deg);
-  background: var(--background);
+.tooltip button {
+  background-color: #db3434;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease-out;
 }
 
-.tooltip-container:hover .tooltip {
-  top: -100%;
-  opacity: 1;
+.tooltip button:hover {
+  background-color: #b92929;
+  transform: scale(1.05);
+}
+
+.tooltip:hover .tooltiptext {
   visibility: visible;
-  pointer-events: auto;
-  animation: 1s animated infinite alternate;
+  opacity: 1;
 }
 
-@keyframes animated {
-  from {
-    transform: translate(0) translateY(10px);
-  }
-  to {
-    transform: translate(-100%) translateY(0);
-  }
+.tooltiptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
 }
 
 </style>

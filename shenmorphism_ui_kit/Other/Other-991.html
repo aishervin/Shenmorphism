@@ -1,53 +1,27 @@
 <div class="loader"></div>
 <style>
-/* From SHΞN™ Morphism by kerolos23 - Tags: loader */
+/* From SHΞN™ Morphism by doniaskima - Tags: neumorphism, skeuomorphism, loader */
 .loader {
-  width: 53px;
-  height: 53px;
-  border: 5px dotted #000;
-  border-style: solid solid dotted dotted;
-  border-radius: 50%;
+  width: fit-content;
+  font-weight: bold;
+  font-family: monospace;
+  white-space: pre;
+  font-size: 30px;
+  line-height: 1.2em;
+  height: 1.2em;
+  overflow: hidden;
+}
+
+.loader:before {
+  content: "Loading...\A⌰oading...\A⌰⍜ading...\A⌰⍜⏃ding...\A⌰⍜⏃⎅ing...\A⌰⍜⏃⎅⟟ng...\A⌰⍜⏃⎅⟟⋏g...\A⌰⍜⏃⎅⟟⋏☌...\A⌰⍜⏃⎅⟟⋏☌⟒..\A⌰⍜⏃⎅⟟⋏☌⟒⏁.\A⌰⍜⏃⎅⟟⋏☌⟒⏁⋔";
+  white-space: pre;
   display: inline-block;
-  position: relative;
-  box-sizing: border-box;
-  animation: rotation 2s linear infinite;
+  animation: l39 1s infinite steps(11) alternate;
 }
 
-.loader::after {
-  content: '';
-  box-sizing: border-box;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  border: 4px dotted #F00;
-  border-style: solid solid dotted;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  animation: rotationBack 1s linear infinite;
-  transform-origin: center center;
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-
+@keyframes l39 {
   100% {
-    transform: rotate(360deg);
+    transform: translateY(-100%)
   }
 }
-
-@keyframes rotationBack {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(-360deg);
-  }
-} 
 </style>

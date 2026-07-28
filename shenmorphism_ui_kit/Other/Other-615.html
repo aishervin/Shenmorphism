@@ -1,66 +1,52 @@
-<div class="spinner">
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
+<div class="loader">
+  <div class="shape"></div>
 </div>
 <style>
-/* From SHΞN™ Morphism by exyreams - Tags: loading, loader, loading animation */
-.spinner {
+/* From SHΞN™ Morphism by shadowmurphy - Tags: gradient, loader, animated */
+.loader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 200px;
+  height: 15px;
+  background-color: rgb(2, 2, 17);
+  border-radius: 10px;
+  overflow: hidden;
   position: relative;
-  width: 80px;
- /* Adjust the width accordingly */
-  height: 16px;
- /* Keep the height the same */
+  margin-top: 15px;
 }
 
-.spinner div {
+.shape {
+  width: 50px;
+  height: 15px;
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  border-radius: 25px;
   position: absolute;
-  width: 16px;
-  height: 16px;
-  background-color: #004dff;
-  border-radius: 50%;
-  animation: spinner-4t3wzl 2s infinite linear;
+  animation: slide 1.9s linear infinite;
+  background-size: 200%;
 }
 
-.spinner div:nth-child(1) {
-  left: 0;
-  animation-delay: 0.15s;
-  background-color: rgba(0, 77, 255, 0.9);
-}
-
-.spinner div:nth-child(2) {
-  left: 25%;
-  animation-delay: 0.3s;
-  background-color: rgba(0, 77, 255, 0.8);
-}
-
-.spinner div:nth-child(3) {
-  left: 50%;
-  animation-delay: 0.45s;
-  background-color: rgba(0, 77, 255, 0.7);
-}
-
-.spinner div:nth-child(4) {
-  left: 75%;
-  animation-delay: 0.6s;
-  background-color: rgba(0, 77, 255, 0.6);
-}
-
-.spinner div:nth-child(5) {
-  left: 100%;
-  animation-delay: 0.75s;
-  background-color: rgba(0, 77, 255, 0.5);
-}
-
-@keyframes spinner-4t3wzl {
+@keyframes slide {
   0% {
-    transform: rotate(0deg) translateX(-100%);
+    left: 0;
+  }
+
+  50% {
+    left: calc(100% - 50px);
   }
 
   100% {
-    transform: rotate(360deg) translateX(-100%);
+    left: 0;
+  }
+}
+
+@keyframes gradientChange {
+  0%, 100% {
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  }
+
+  50% {
+    background-image: linear-gradient(144deg, #00DDEB, #5B42F3 50%, #AF40FF);
   }
 }
 </style>

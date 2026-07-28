@@ -1,39 +1,42 @@
 <div class="loader"></div>
 <style>
-/* From SHΞN™ Morphism by doniaskima - Tags: simple, material design, loader */
-/* HTML: <div class="loader"></div> */
+/* From SHΞN™ Morphism by bociKond - Source: https://10015.io/ - Tags: simple, flashy, loader */
 .loader {
-  width: 80px;
-  height: 40px;
-  border-radius: 100px 100px 0 0;
+  width: 44.8px;
+  height: 44.8px;
+  color: #554cb5;
   position: relative;
-  overflow: hidden;
+  background: radial-gradient(11.2px,currentColor 94%,#0000);
 }
 
 .loader:before {
-  content: "";
+  content: '';
   position: absolute;
-  inset: 0 0 -100%;
-  background: radial-gradient(farthest-side,#ffd738 80%,#0000) left 70% top    20%/15px 15px,
-    radial-gradient(farthest-side,#020308 92%,#0000) left 65% bottom 19%/12px 12px,
-    radial-gradient(farthest-side,#ecfefe 92%,#0000) left 70% bottom 20%/15px 15px,
-    linear-gradient(#9eddfe 50%,#020308 0);
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(10.08px at bottom right,#0000 94%,currentColor) top    left,
+          radial-gradient(10.08px at bottom left ,#0000 94%,currentColor) top    right,
+          radial-gradient(10.08px at top    right,#0000 94%,currentColor) bottom left,
+          radial-gradient(10.08px at top    left ,#0000 94%,currentColor) bottom right;
+  background-size: 22.4px 22.4px;
   background-repeat: no-repeat;
-  animation: l5 2s infinite;
+  animation: loader 1.5s infinite cubic-bezier(0.3,1,0,1);
 }
 
-@keyframes l5 {
-  0%,20% {
-    transform: rotate(0)
+@keyframes loader {
+  33% {
+    inset: -11.2px;
+    transform: rotate(0deg);
   }
 
-  40%,60% {
-    transform: rotate(.5turn)
+  66% {
+    inset: -11.2px;
+    transform: rotate(90deg);
   }
 
-  80%,100% {
-    transform: rotate(1turn)
+  100% {
+    inset: 0;
+    transform: rotate(90deg);
   }
 }
-
 </style>

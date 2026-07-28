@@ -1,75 +1,121 @@
-<form class="form">
-    <p class="heading">LOGIN</p>
-    <input placeholder="Username" class="input" type="text">
-    <input placeholder="Password" class="input" type="password">
-    <button class="btn">Submit</button>
-</form>
+<div class="form-container">
+      <div class="logo-container">
+        Forgot Password
+      </div>
+
+      <form class="form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" placeholder="Enter your email" required="">
+        </div>
+
+        <button class="form-submit-btn" type="submit">Send Email</button>
+      </form>
+
+      <p class="signup-link">
+        Don't have an account?
+        <a href="#" class="signup-link link"> Sign up now</a>
+      </p>
+    </div>
 <style>
-/* From SHΞN™ Morphism by Praashoo7 - Tags: login, form, stitched */
-.form {
+/* From SHΞN™ Morphism by gharsh11032000 - Tags: form, password, simple form, forgot password */
+.form-container {
+  max-width: 400px;
+  background-color: #fff;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #212121;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-top: 3em;
-  padding-left: 2.8em;
-  padding-right: 2.8em;
-  padding-bottom: 2.1em;
-  border: 2px dashed #DAA06D;
-  border-radius: 15px;
-  background-color: #EADDCA;
-  box-shadow: 0 0 0 4px #EADDCA, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
-  transition: .4s ease-in-out;
-}
-
-::placeholder {
-  color: #DAA06D;
-  text-align: center;
-}
-
-.form .heading {
-  padding-left: 0.8em;
-  color: #DAA06D;
-  background-color: transparent;
-  letter-spacing: .5em;
-  text-align: center;
-  padding-top: 1em;
-  padding-bottom: 3em;
-  text-shadow: inset -1px -1px 1px #DAA06D;
-}
-
-.form .input {
-  outline: none;
-  padding: 0.5em;
-  border: 1px solid #DAA06D;
-  color: #DAA06D;
-  width: 14em;
-  height: 3em;
+  gap: 20px;
+  box-sizing: border-box;
   border-radius: 10px;
-  background-color: #EADDCA;
-  text-align: center;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168);
 }
 
-.form .btn {
-  align-self: center;
-  margin-top: 2em;
-  border-radius: 10px;
+.form-container button:active {
+  scale: 0.95;
+}
+
+.form-container .logo-container {
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.form-container .form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.form-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-container .form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-family: inherit;
+  border: 1px solid #ccc;
+}
+
+.form-container .form-group input::placeholder {
+  opacity: 0.5;
+}
+
+.form-container .form-group input:focus {
   outline: none;
+  border-color: #1778f2;
+}
+
+.form-container .form-submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  color: #fff;
+  background-color: #212121;
   border: none;
-  color: white;
-  background-color: #E5AA70;
-  font-weight: bold;
-  letter-spacing: 0.1em;
-  transition: .4s ease-in-out opacity,.1s ease-in-out active;
-  padding: 1em;
-  box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 12px 16px;
+  font-size: inherit;
+  gap: 8px;
+  margin: 12px 0;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168);
 }
 
-.form .btn:hover {
-  opacity: 0.8;
+.form-container .form-submit-btn:hover {
+  background-color: #313131;
 }
 
-.form .btn:active {
-  transform: translateX(0.1em) translateY(0.1em);
-  box-shadow: none;
+.form-container .link {
+  color: #1778f2;
+  text-decoration: none;
 }
+
+.form-container .signup-link {
+  align-self: center;
+  font-weight: 500;
+}
+
+.form-container .signup-link .link {
+  font-weight: 400;
+}
+
+.form-container .link:hover {
+  text-decoration: underline;
+}
+
+
 </style>

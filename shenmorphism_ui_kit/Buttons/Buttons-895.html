@@ -1,53 +1,58 @@
-<button class="button">
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    height="24"
-    width="24"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-    class="icon"
-  >
-    <path
-      d="M5 12h14m-7 7V5"
-      stroke-width="2"
-      stroke-linejoin="round"
-      stroke-linecap="round"
-      stroke="currentColor"
-    ></path>
-  </svg>
-
-  Create Task
+<button>
+  <span class="transition"></span>
+  <span class="gradient"></span>
+  <span class="label">Button</span>
 </button>
-
 <style>
-/* From SHΞN™ Morphism by Na3ar-17  - Tags: simple, icon, animation, button */
-.button {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
+/* From SHΞN™ Morphism by cssbuttons-io - Tags: button, ripple */
+button {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 17px;
+  padding: 1em 2.7em;
   font-weight: 500;
-  background-color: #268bff;
+  background: #1F2937;
   color: white;
   border: none;
-  gap: 2px;
-  border-radius: 8px;
-  padding: 4px 8px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.6em;
 }
 
-.button .icon {
-  width: 20px;
+.gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 0.6em;
+  margin-top: -0.25em;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
 }
 
-.button:hover {
-  background-color: #268bffaf;
-}
-.button:active {
-  transform: translateY(2px);
+.label {
+  position: relative;
+  top: -1px;
 }
 
+.transition {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 500ms;
+  background-color: rgba(16, 185, 129, 0.6);
+  border-radius: 9999px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button:hover .transition {
+  width: 14em;
+  height: 14em;
+}
+
+button:active {
+  transform: scale(0.97);
+}
 </style>
-    

@@ -1,90 +1,39 @@
-<div class="loader">
-  <div class="magnetism"></div>
-</div>
+<div class="loader"></div>
 
 <style>
-/* From SHΞN™ Morphism by Cybercom682  - Tags: animation, loader, magnet */
+/* From SHΞN™ Morphism by elijahgummer  - Tags: loader */
 .loader {
+  width: 35px;
+  height: 80px;
   position: relative;
-  background-color: red;
-  height: 40px;
-  width: 10px;
-  border-radius: 6px 0px 0px 6px;
-  animation: rotate 5s infinite;
 }
-.magnetism {
-  position: absolute;
-  color: rgb(0, 151, 252);
-  bottom: 0;
-  width: 80px;
-  left: 0%;
-  height: 40px;
-  border: solid 2px currentColor;
-  border-color: currentColor transparent transparent transparent;
-  border-radius: 50%;
-  transform: rotate(90deg);
-  animation: go 0.5s ease-in-out infinite;
-}
-
-.loader::before {
+.loader:after {
   content: "";
-  left: 10px;
   position: absolute;
-  background: rgb(255, 0, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 0, 0, 1) 0%,
-    rgba(255, 0, 0, 1) 50%,
-    rgba(158, 158, 158, 1) 50%,
-    rgba(184, 184, 184, 1) 100%
-  );
-  height: 10px;
-  width: 20px;
+  inset: 0;
+  padding: 3px 5px;
+  border-top: 1px solid #bbb6aa;
+  border-bottom: 4px solid #bbb6aa;
+  background:
+    linear-gradient(#77d4d4 0 0) bottom no-repeat content-box,
+    #e4e0d7;
+  mix-blend-mode: darken;
+  animation: drink 1.5s infinite linear;
 }
-.loader::after {
+.loader:before {
   content: "";
-  left: 10px;
   position: absolute;
-  bottom: 0;
-  background: rgb(255, 0, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 0, 0, 1) 0%,
-    rgba(255, 0, 0, 1) 50%,
-    rgba(158, 158, 158, 1) 50%,
-    rgba(184, 184, 184, 1) 100%
-  );
-  height: 10px;
-  width: 20px;
+  inset: -18px calc(50% - 2px) 8px;
+  background: #eb6b3e;
+  transform-origin: bottom;
+  transform: rotate(8deg);
 }
-
-@keyframes rotate {
+@keyframes drink {
   0% {
-    transform: rotate(-30deg);
-  }
-  50% {
-    transform: rotate(30deg);
+    background-size: 100% 100%;
   }
   100% {
-    transform: rotate(-30deg);
-  }
-}
-
-@keyframes go {
-  0% {
-    left: 0%;
-    width: 30px;
-    opacity: 1;
-  }
-  50% {
-    left: 100%;
-    width: 60px;
-    opacity: 0.5;
-  }
-  100% {
-    width: 90px;
-    left: 200%;
-    opacity: 0;
+    background-size: 100% 5%;
   }
 }
 

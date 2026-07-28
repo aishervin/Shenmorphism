@@ -1,44 +1,46 @@
-<div class="spinner">
+<div class="loading">
+    <div class="i"></div>
+    <div class="a"></div>
+    <div class="u"></div>
 </div>
 <style>
-/* From SHΞN™ Morphism by satyamchaudharydev - Tags: loader */
-.spinner {
- --size-of-spinner: 50px;
- --spinner-border-width: 4px;
- --spinner-color: #08c18a;
- --circle-color: #8bc34a24;
- --speed-of-animation: 2s;
- --scale: 1.3;
- width: var(--size-of-spinner);
- height: var(--size-of-spinner);
- background: var(--circle-color);
- border-radius: 50%;
- position: relative;
+/* From SHΞN™ Morphism by omar-alghaish - Tags: loader */
+.loading {
+  background-color: rgba(255, 0, 0, 0);
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
-.spinner::after {
- content: "";
- display: block;
- position: absolute;
- border-radius: 50%;
- inset: 0;
- border: var(--spinner-border-width) solid var(--spinner-color);
- border-left-color: transparent;
- border-right-color: transparent;
- animation: spinny var(--speed-of-animation) linear infinite;
+.loading div {
+  background-color: rgb(255, 217, 0);
+  width: 20px;
+  height: 20px;
+  margin: 20px;
+  border-radius: 50px;
+  animation-name: load912355;
+  animation-duration: .9s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  text-align: center;
+  justify-content: center;
 }
 
-@keyframes spinny {
- 0% {
-  transform: rotate(0deg) scale(1)
- }
+.loading .a {
+  animation-delay: .3s;
+}
 
- 50% {
-  transform: rotate(45deg) scale(var(--scale))
- }
+.loading .u {
+  animation-delay: .6s;
+}
 
- 100% {
-  transform: rotate(360deg) scale(1)
- }
+@keyframes load912355 {
+  0% {
+    transform: translateY(50px) scale(1);
+  }
+
+  100% {
+    transform: translateY(10px) scale(1.8) rotate(360deg);
+  }
 }
 </style>

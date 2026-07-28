@@ -1,66 +1,43 @@
-<label class="bar" for="check">
-    <input type="checkbox" id="check">
-
-    <span class="top"></span>
-    <span class="middle"></span>
-    <span class="bottom"></span>
+<label class="container">
+  <input type="checkbox" checked="checked">
+  <div class="checkmark"></div>
 </label>
 <style>
-/* From SHΞN™ Morphism by Ali-Tahmazi99 - Tags: hamburger */
-input[type = "checkbox"] {
-  -webkit-appearance: none;
-  display: none;
-  visibility: hidden;
+/* From SHΞN™ Morphism by csozidev - Tags: checkbox */
+/* Green glow checkbox made by: csozi | Website: www.csozi.hu*/
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
-.bar {
+.container {
   display: block;
   position: relative;
   cursor: pointer;
-  width: 50px;
-  height: 40px;
+  font-size: 20px;
+  user-select: none;
+  background-color: #676767;
+  padding: 4px;
+  border-radius: 25px;
 }
 
-.bar span {
-  position: absolute;
-  width: 45px;
-  height: 7px;
-  background: #f1faee;
-  border-radius: 100px;
-  display: inline-block;
-  transition: 0.3s ease;
-  left: 0;
-}
-
-.bar span.top {
+.checkmark {
+  position: relative;
   top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  border-radius: 1rem;
+  background-color: #004000;
+  transition: 0.1s;
 }
 
-.bar span.middle {
-  top: 17px;
-}
-
-.bar span.bottom {
-  bottom: 0;
-}
-
-input[type]:checked ~ span.top {
-  transform: rotate(45deg);
-  transform-origin: top left;
-  width: 48px;
-  left: 5px;
-}
-
-input[type]:checked ~ span.bottom {
-  transform: rotate(-45deg);
-  transform-origin: top left;
-  width: 48px;
-  bottom: -1px;
-  box-shadow: 0 0 10px #495057;
-}
-
-input[type]:checked ~ span.middle {
-  transform: translateX(-20px);
-  opacity: 0;
+.container input:checked ~ .checkmark {
+  background-color: #00de00;
+  box-shadow: 0 0 10px #00ff00;
 }
 </style>

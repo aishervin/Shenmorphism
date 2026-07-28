@@ -1,70 +1,66 @@
-<div class="radio-input">
-  <input value="value-1" name="value-radio" id="value-1" type="radio">
-  <div class="plus1">
-    <div class="plus2"></div>
-  </div>
-  <input value="value-2" name="value-radio" id="value-2" type="radio" checked="">
-  <div class="plus1">
-    <div class="plus2"></div>
-  </div>
-  <input value="value-3" name="value-radio" id="value-3" type="radio">
-  <div class="plus1">
-    <div class="plus2"></div>
-  </div>
-</div>
+<label class="switch">
+  <input type="checkbox">
+  <span class="slider"></span>
+</label>
 <style>
-/* From SHΞN™ Morphism by Praashoo7 - Tags: neumorphism, red, realistic, radio, cross */
-.radio-input {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* From SHΞN™ Morphism by G4b413l - Tags: switch */
+.switch input {
+ display: none;
 }
 
-.radio-input input {
-  appearance: none;
-  width: 2em;
-  height: 2em;
-  background-color: #171717;
-  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-  border-radius: 5px;
-  transition: .4s ease-in-out;
+.switch {
+ width: 60px;
+ height: 30px;
+ position: relative;
 }
 
-.radio-input input:hover {
-  scale: 1.2;
-  cursor: pointer;
-  box-shadow: none;
+.slider {
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ border-radius: 30px;
+ box-shadow: 0 0 0 2px #777, 0 0 4px #777;
+ cursor: pointer;
+ border: 4px solid transparent;
+ overflow: hidden;
+ transition: 0.2s;
 }
 
-.radio-input .plus1 {
-  position: relative;
-  top: 0.01em;
-  left: -1.45em;
-  width: 1.3em;
-  height: 0.2em;
-  background-color: red;
-  rotate: 45deg;
-  scale: 0;
-  border-radius: 5px;
-  transition: .4s ease-in-out;
+.slider:before {
+ position: absolute;
+ content: "";
+ width: 100%;
+ height: 100%;
+ background-color: #777;
+ border-radius: 30px;
+ transform: translateX(-30px);
+ /*translateX(-(w-h))*/
+ transition: 0.2s;
 }
 
-.radio-input .plus2 {
-  position: relative;
-  width: 1.3em;
-  height: 0.2em;
-  background-color: red;
-  transform: rotate(90deg);
-  border-radius: 5px;
-  transition: .4s ease-in-out;
+input:checked + .slider:before {
+ transform: translateX(30px);
+ /*translateX(w-h)*/
+ background-color: limeGreen;
 }
 
-.radio-input input:checked {
-  box-shadow: none;
+input:checked + .slider {
+ box-shadow: 0 0 0 2px limeGreen, 0 0 8px limeGreen;
 }
 
-.radio-input input:checked + .plus1 {
-  transform: rotate(180deg);
-  scale: 1;
+.switch200 .slider:before {
+ width: 200%;
+ transform: translateX(-82px);
+ /*translateX(-(w-h))*/
+}
+
+.switch200 input:checked + .slider:before {
+ background-color: red;
+}
+
+.switch200 input:checked + .slider {
+ box-shadow: 0 0 0 2px red, 0 0 8px red;
 }
 </style>

@@ -1,58 +1,55 @@
-<div class="loader">
-  <div class="square-1 square"></div>
-  <div class="square-2 square"></div>
-</div>
+<div class="loader"></div>
 <style>
-/* From SHΞN™ Morphism by csozidev - Tags: loader */
-/* Discord loader made by: csozi | Website: www.csozi.hu*/
-
+/* From SHΞN™ Morphism by Cornerstone-04 - Tags: loader */
 .loader {
-  position: relative;
-  height: 60px;
-  width: 60px;
-  box-sizing: content-box;
-  padding: 10px;
+  width: 150px;
+  height: 150px;
+  border-left: 5px solid #38ff8e;
+  border-radius: 50%;
+  animation: right5231 0.9s linear infinite;
 }
 
-.square {
-  background-color: #7289DA;
-  height: 20px;
-  width: 20px;
+.loader::before,
+  .loader::after {
+  content: "";
+  width: 120px;
+  height: 120px;
+  display: block;
   position: absolute;
+  top: calc(50% - 60px);
+  left: calc(50% - 60px);
+  border-right: 5px solid #ffbe0b;
+  border-radius: 50%;
+  animation: left036 0.9s linear infinite;
 }
 
-.square-1 {
-  animation: load 2s infinite;
+.loader::after {
+  width: 90px;
+  height: 90px;
+  top: calc(50% - 45px);
+  left: calc(50% - 45px);
+  border: 0;
+  border-top: 5px solid #ff086e;
+  animation: none;
 }
 
-.square-2 {
-  animation: load 2s infinite;
-  animation-delay: 1s;
+@keyframes right5231 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-@keyframes load {
-  0% {
-    translate: 0px 0px;
-    scale: 1;
-    rotate: 0deg;
+@keyframes left036 {
+  from {
+    transform: rotate(720deg);
   }
 
-  25% {
-    translate: 40px 0px;
-    scale: 0.5;
-    rotate: -90deg;
-  }
-
-  50% {
-    translate: 40px 40px;
-    scale: 1;
-    rotate: 180deg;
-  }
-
-  75% {
-    translate: 0px 40px;
-    scale: 0.5;
-    rotate: 90deg;
+  to {
+    transform: rotate(0deg);
   }
 }
 </style>

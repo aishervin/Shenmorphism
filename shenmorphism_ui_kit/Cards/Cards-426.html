@@ -1,215 +1,144 @@
-<div class="one-div"></div>
+<div class="card">
+  <div class="title-1">Card 1</div>
+  <div class="content">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the
+    1500s.
+  </div>
+  <button class="btn">Learn more</button>
+  <div class="bar">
+    <div class="emptybar"></div>
+    <div class="filledbar"></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="title-1">Card 2</div>
+  <div class="content">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the
+    1500s.
+  </div>
+  <button class="btn">Learn more</button>
+  <div class="bar">
+    <div class="emptybar"></div>
+    <div class="filledbar"></div>
+  </div>
+</div>
+
 <style>
-/* From SHΞN™ Morphism by Galahhad - Tags: card, gold, ticket */
-.one-div {
-  --circle-color: #212121;
-  width: 300px;
-  height: 150px;
+/* From SHΞN™ Morphism by Sourcesketch  - Tags: neumorphism, animation, card, shadow, futuristic, blur filter, card hover, 3d card */
+.card {
+  display: flex;
+  height: 280px;
+  width: 200px;
+  background-color: #2b223f;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #00000044;
+  margin-left: -80px;
+  transition: 0.4s ease-out;
   position: relative;
+  left: 0px;
 }
 
-.one-div::before {
-  content: "Golden Ticket";
-  color: transparent;
-  text-shadow: -55px 0 #2E2205;
-  text-transform: uppercase;
-  font-family: "Anton", Impact, sans-serif;
-  font-size: 1.6rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+.card:not(:first-child) {
+  margin-left: -50px;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+  text-shadow: 2px 2px 8px #6e5b94;
+}
+
+.card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transform: rotateX(-15deg) rotateY(10deg);
+  transition: 0.4s ease-out;
+}
+
+.title-1 {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 800;
   position: absolute;
-  inset: 0;
-  background-image: -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 18px, transparent 18px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-radial-gradient(circle, var(--circle-color) 15%, transparent 15.5%),
-      -o-radial-gradient(circle, var(--circle-color) 15%, transparent 15.5%),
-      -o-radial-gradient(circle, var(--circle-color) 35%, transparent 35.5%),
-      -o-radial-gradient(circle, var(--circle-color) 35%, transparent 35.5%),
-      -o-radial-gradient(right bottom, ellipse farthest-corner, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-      -o-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
-  background-image: linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 18px, transparent 18px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      radial-gradient(circle, var(--circle-color) 15%, transparent 15.5%),
-      radial-gradient(circle, var(--circle-color) 15%, transparent 15.5%),
-      radial-gradient(circle, var(--circle-color) 35%, transparent 35.5%),
-      radial-gradient(circle, var(--circle-color) 35%, transparent 35.5%),
-      radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-      radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
-  background-size: 55%, 55%, 1%, 1%, 1%, 1%, 1%, 1%, 1%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 100%, 100%, 100%, 100%, 100%, 100%;
-  background-position: 8px -6px, 8px 125px, 198px 3px, 198px 20px, 198px 37px, 198px 54px, 198px 71px, 198px 88px, 198px 105px, 235px 15px, 235px 20px, 235px 27px, 235px 31px, 235px 39px, 235px 43px, 235px 50px, 235px 54px, 235px 58px, 235px 65px, 235px 69px, 235px 76px, 235px 80px, 235px 87px, 235px 91px, 235px 95px, 235px 103px, 235px 106px, 50px -90px, 50px 90px, 200px, -200px, 0, 0;
-  background-repeat: no-repeat;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: .8s;
-  -o-transition: .8s;
-  transition: .8s;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+  left: 20px;
+  top: 15px;
 }
 
-.one-div::after {
-  content: "This golden ticket\A ensures admittance";
-  white-space: pre;
-  color: transparent;
-  text-shadow: 55px 0 #2E2205;
-  font-family: "Anton", Impact, sans-serif;
-  text-align: center;
-  font-size: 14px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+.btn {
   position: absolute;
-  inset: 0;
-  background-image: -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 18px, transparent 18px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      -o-radial-gradient(circle, var(--circle-color) 15%, transparent 15.5%),
-      -o-radial-gradient(circle, var(--circle-color) 15%, transparent 15.5%),
-      -o-radial-gradient(circle, var(--circle-color) 35%, transparent 35.5%),
-      -o-radial-gradient(circle, var(--circle-color) 35%, transparent 35.5%),
-      -o-radial-gradient(left bottom, ellipse farthest-corner, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-      -o-radial-gradient(right top, ellipse farthest-corner, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
-  background-image: linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 27px, transparent 27px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 18px, transparent 18px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 20px, transparent 20px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      linear-gradient(transparent, transparent 15px, #2E2205 15px, #2E2205 17px, transparent 17px),
-      radial-gradient(circle, var(--circle-color) 15%, transparent 15.5%),
-      radial-gradient(circle, var(--circle-color) 15%, transparent 15.5%),
-      radial-gradient(circle, var(--circle-color) 35%, transparent 35.5%),
-      radial-gradient(circle, var(--circle-color) 35%, transparent 35.5%),
-      radial-gradient(ellipse farthest-corner at left bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-      radial-gradient(ellipse farthest-corner at right top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
-  background-size: 55%, 55%, 1%, 1%, 1%, 1%, 1%, 1%, 1%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 15%, 100%, 100%, 100%, 100%, 100%, 100%;
-  background-position: 126px -6px, 126px 125px, 98px 3px, 98px 20px, 98px 37px, 98px 54px, 98px 71px, 98px 88px, 98px 105px, 20px 15px, 20px 20px, 20px 27px, 20px 31px, 20px 39px, 20px 43px, 20px 50px, 20px 54px, 20px 58px, 20px 65px, 20px 69px, 20px 76px, 20px 80px, 20px 87px, 20px 91px, 20px 95px, 20px 103px, 20px 106px, -50px -90px, -50px 90px, 200px, -200px, 0, 0;
-  background-repeat: no-repeat;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: .8s;
-  -o-transition: .8s;
-  transition: .8s;
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+  top: 195px;
+  margin: 0 20px;
+  width: 120px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background-color: #4a2f7c;
+  color: #fff;
+  transition: 0.4s ease-out;
 }
 
-.one-div:hover::before {
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
+.btn:hover {
+  transition: 0.4s ease-out;
+  background-color: #8a4ff8;
+  color: #ffffff;
+  box-shadow: 0px 0px 20px rgba(157, 71, 255, 0.5),
+    0px 5px 5px -1px rgba(163, 58, 233, 0.25),
+    inset 4px 4px 8px rgba(219, 175, 255, 0.5),
+    inset -4px -4px 8px rgba(137, 19, 216, 0.35);
 }
 
-.one-div:hover::after {
-  -webkit-transform: rotateY(0);
-  transform: rotateY(0);
+.bar {
+  position: relative;
+  top: 250px;
+
+  height: 5px;
+  width: 100%;
 }
+
+.emptybar {
+  background-color: #201c29;
+  width: 100%;
+  height: 100%;
+}
+
+.filledbar {
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+  width: 0px;
+  height: 100%;
+  background: #d059ff;
+  background: linear-gradient(90deg, #6831cfab, #a777ff 100%);
+  transition: 0.6s ease-out;
+}
+
+.card:hover .filledbar {
+  width: 100%;
+  transition: 0.4s ease-out;
+}
+
+.content {
+  position: absolute;
+  padding: 20px;
+  top: 60px;
+  color: #eae0fd;
+  font-size: 0.7rem;
+}
+
+.stroke {
+  stroke: white;
+  stroke-dasharray: 360;
+  stroke-dashoffset: 360;
+  transition: 0.6s ease-out;
+}
+
+.card:hover .stroke {
+  stroke-dashoffset: 100;
+  transition: 0.6s ease-out;
+}
+
 </style>
+    

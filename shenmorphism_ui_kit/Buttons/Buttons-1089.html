@@ -1,40 +1,60 @@
-<button>
-  Hover Me <span>⟶</span>
+<button class="btn"> Button
 </button>
 <style>
-/* From SHΞN™ Morphism by mi-series - Tags: button */
-button {
-  width: 170px;
-  height: 60px;
-  color: #fff;
-  background: #000;
-  font-size: 17px;
-  text-decoration: none;
-  margin: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0px 0px 0 #000;
-  transition: 0.5s;
-  position: relative;
+/* From SHΞN™ Morphism by nikk7007 - Tags: button */
+.btn {
+ --color: #00A97F;
+ --color2: rgb(10, 25, 30);
+ padding: 0.8em 1.75em;
+ background-color: transparent;
+ border-radius: 6px;
+ border: .3px solid var(--color);
+ transition: .5s;
+ position: relative;
+ overflow: hidden;
+ cursor: pointer;
+ z-index: 1;
+ font-weight: 300;
+ font-size: 17px;
+ font-family: 'Roboto', 'Segoe UI', sans-serif;
+ text-transform: uppercase;
+ color: var(--color);
 }
 
-button:hover {
-  box-shadow: 8px 10px 0 #000;
-  background: transparent;
-  border: 2px solid #000;
-  color: #000;
-  margin-top: 5px;
+.btn::after, .btn::before {
+ content: '';
+ display: block;
+ height: 100%;
+ width: 100%;
+ transform: skew(90deg) translate(-50%, -50%);
+ position: absolute;
+ inset: 50%;
+ left: 25%;
+ z-index: -1;
+ transition: .5s ease-out;
+ background-color: var(--color);
 }
 
-button span {
-  margin-left: 10px;
-  width: 0;
-  overflow: hidden;
-  transition: 0.4s;
+.btn::before {
+ top: -50%;
+ left: -25%;
+ transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
 }
 
-button:hover span {
-  width: 30px;
+.btn:hover::before {
+ transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::after {
+ transform: skew(45deg) translate(-50%, -50%);
+}
+
+.btn:hover {
+ color: var(--color2);
+}
+
+.btn:active {
+ filter: brightness(.7);
+ transform: scale(.98);
 }
 </style>

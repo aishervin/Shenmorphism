@@ -1,47 +1,50 @@
- <input id="checkboxInput" type="checkbox">
-    <label class="toggleSwitch" for="checkboxInput">
-    </label>
+<label class="container">
+  <input type="checkbox">
+  <div class="checkmark">
+    <div class="switch"></div>
+  </div>
+</label>
 <style>
-/* From SHΞN™ Morphism by vinodjangid07 - Tags: switch, neon, toggle switch */
-/* To hide the checkbox */
-#checkboxInput {
-  display: none;
-}
-
-.toggleSwitch {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 50px;
-  height: 17px;
-  background-color: rgb(82, 82, 82);
-  border-radius: 20px;
-  cursor: pointer;
-  transition-duration: .2s;
-}
-
-.toggleSwitch::after {
-  content: "";
+/* From SHΞN™ Morphism by Praashoo7 - Tags: switch, on, off, light, realistic */
+/* Hide the default checkbox */
+.container input {
   position: absolute;
-  height: 22px;
-  width: 22px;
-  left: 0px;
-  background-color: rgb(41, 41, 41);
-  border-radius: 50%;
-  transition-duration: .2s;
-  border: 2px solid rgb(82, 82, 82);
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
-#checkboxInput:checked+.toggleSwitch::after {
-  transform: translateX(100%);
-  transition-duration: .2s;
-  border: 2px solid rgb(165, 255, 105);
-}
-/* Switch background change */
-#checkboxInput:checked+.toggleSwitch {
-  background-color: rgb(165, 255, 105);
-  transition-duration: .2s;
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
 }
 
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 6em;
+  width: 3em;
+  background-color: #ccc;
+}
+
+.switch {
+  position: relative;
+  height: 5.4em;
+  width: 2.4em;
+  top: .3em;
+  left: .3em;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 2px, rgba(0, 0, 0, 0.3) 0px 0px 0px -3px, rgba(0, 0, 0, 0.2) 0px -8px 0px inset;
+}
+
+.container input:checked ~ .checkmark .switch {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 2px, rgba(0, 0, 0, 0.3) 0px 0px 0px -3px, rgba(0, 0, 0, 0.2) 0px -6px 0px inset;
+  transform: rotateX(180deg);
+}
 </style>

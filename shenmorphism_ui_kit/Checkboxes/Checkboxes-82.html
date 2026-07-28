@@ -1,52 +1,63 @@
-<label for="menu-icon" class="menu-icon">
-  <input id="menu-icon" type="checkbox" />
-  <span></span>
-  <span></span>
-  <span></span>
+<label class="container">
+  <input type="checkbox" checked="checked">
+  <div class="checkmark"></div>
 </label>
-
 <style>
-/* From SHΞN™ Morphism by david-mohseni  - Tags: checkbox, hamburger, menu */
-.menu-icon {
-  position: relative;
-  width: 60px;
-  height: 50px;
-  background: rgb(0, 0, 0);
-  padding: 10px;
+/* From SHΞN™ Morphism by WrongCodeU - Tags: green, checkbox, shadow */
+/* Hide the default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
   cursor: pointer;
+  height: 0;
+  width: 0;
 }
-.menu-icon input {
-  display: none;
-}
-.menu-icon span {
+
+.container {
   display: block;
   position: relative;
-  height: 3px;
-  width: 100%;
-  background: rgb(255, 255, 255);
-  border-radius: 10px;
-  opacity: 1;
-  left: 0;
-  margin-bottom: 24%;
-  transition: 0.3s ease-in-out;
-}
-.menu-icon span {
-  transform-origin: left center;
-}
-.menu-icon input:checked ~ span {
-  background: red;
-  left: 5px;
-  margin-bottom: 28%;
-}
-.menu-icon input:checked ~ span:nth-of-type(1) {
-  transform: rotate(45deg);
-}
-.menu-icon input:checked ~ span:nth-of-type(2) {
-  opacity: 0;
-}
-.menu-icon input:checked ~ span:nth-of-type(3) {
-  transform: rotate(-45deg);
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
 }
 
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  background-color: #ccc;
+  border-radius: 0.2pc;
+  box-shadow: 3px 3px grey;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #5ee429;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 0.45em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
 </style>
-    

@@ -1,74 +1,56 @@
-<div class="card">
-      <div class="content">
-        <div class="title">Personal edition</div>
-        <div class="price">$39.99</div>
-        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at posuere eros. Interdum et malesuada fames ac ante ipsum primis in faucibus.</div>
-      </div>
-        <button>
-          Buy now
-        </button>
+<div class="container">
+  <div class="card">
+    <p class="title">
+      Rick Sanchez
+    </p>
   </div>
+  <div class="card">
+    <p class="title">
+      Morty Smith
+    </p>
+  </div>
+  <div class="card">
+    <p class="title">
+      Summer Smith
+    </p>
+  </div>
+
+  <div class="card">
+    <p class="title">
+      Beth Smith
+    </p>
+  </div>
+</div>
 <style>
-/* From SHΞN™ Morphism by Yaya12085 - Tags: card, sub, plan */
-.card {
+/* From SHΞN™ Morphism by JesusRafaelNavaCruz - Tags: slider, sliding, slide */
+.container {
+  overflow: auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  width: 260px;
-  padding: 20px 1px;
-  margin: 10px 0;
-  text-align: center;
-  position: relative;
-  cursor: pointer;
-  box-shadow: 0 10px 15px -3px rgba(33,150,243,.4),0 4px 6px -4px rgba(33,150,243,.4);
-  border-radius: 10px;
-  background-color: #6B6ECC;
-  background: linear-gradient(45deg, #04051dea 0%, #2b566e 100%);
-}
-
-.content {
-  padding: 20px;
-}
-
-.content .price {
-  color: white;
-  font-weight: 800;
-  font-size: 50px;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
-}
-
-.content .description {
-  color: rgba(255, 255, 255, 0.6);
-  margin-top: 10px;
-  font-size: 14px;
-}
-
-.content .title {
-  font-weight: 800;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.64);
-  margin-top: 10px;
-  font-size: 25px;
-  letter-spacing: 1px;
-}
-
-button {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  border: none;
-  outline: none;
-  color: rgb(255 255 255);
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: .75rem;
-  padding: 0.75rem 1.5rem;
-  background-color: rgb(33 150 243);
-  border-radius: 0.5rem;
+  scroll-snap-type: x mandatory;
   width: 90%;
-  text-shadow: 0px 4px 18px #2c3442;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
+.card {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 1rem;
+  width: 100%;
+}
 
+.title {
+  width: 100%;
+  display: inline-block;
+  word-break: break-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  margin: 1rem auto;
+}
 </style>

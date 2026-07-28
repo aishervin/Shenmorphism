@@ -1,122 +1,138 @@
-<div class="outer">
-  <div class="dot"></div>
-  <div class="card">
-    <div class="ray"></div>
-    <div class="text">750k</div>
-    <div>Views</div>
-    <div class="line topl"></div>
-    <div class="line leftl"></div>
-    <div class="line bottoml"></div>
-    <div class="line rightl"></div>
-  </div>
-</div>
-
+ <div class="card-2">
+        <span id="card-2-h1">Welcome</span>
+        <div class="h1-circle">
+             <ul id="h1-circle-ul-1">
+            <li>Easer</li>
+            <li>Cheaper</li>
+            <li>World Wild</li>
+             </ul>
+             <ul id="h1-circle-ul-2">
+            <li>Secrets</li>
+            <li>Expensive</li>
+            <li>World Wild</li>
+             </ul>
+        </div>
+    </div>
 <style>
-/* From SHΞN™ Morphism by Spacious74  - Tags: neumorphism, animation, 3d, card, realistic, social media */
-.outer {
+/* From SHΞN™ Morphism by NotReal22 - Tags: card, stylish */
+.card-2 {
+  position: relative;
   width: 300px;
-  height: 250px;
-  border-radius: 10px;
-  padding: 1px;
-  background: radial-gradient(circle 230px at 0% 0%, #ffffff, #0c0d0d);
-  position: relative;
+  height: 400px;
+  background-image: linear-gradient(to top,rgb(117, 117, 197),#67be96);
+  border-radius: 30px;
+  border: 2px solid white;
+  overflow: hidden;
 }
 
-.dot {
-  width: 5px;
-  aspect-ratio: 1;
+.h1-circle {
   position: absolute;
-  background-color: #fff;
-  box-shadow: 0 0 10px #ffffff;
-  border-radius: 100px;
-  z-index: 2;
-  right: 10%;
-  top: 10%;
-  animation: moveDot 6s linear infinite;
+  right: 70px;
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  background-image: radial-gradient(circle at center, #8798c5, #494fa1);
+  opacity: .8;
 }
 
-@keyframes moveDot {
-  0%,
-  100% {
-    top: 10%;
-    right: 10%;
+.card-2:hover .h1-circle,
+.h1-circle:hover {
+  animation: moving-weel 1s linear;
+  animation-fill-mode: forwards;
+}
+
+.h1-circle:not(:hover) {
+  animation: moving-weel-2 1s linear;
+  animation-fill-mode: backwards;
+}
+
+@keyframes moving-weel-2 {
+  0% {
+    rotate: 160deg;
+    right: -170px;
   }
-  25% {
-    top: 10%;
-    right: calc(100% - 35px);
-  }
+
   50% {
-    top: calc(100% - 30px);
-    right: calc(100% - 35px);
+    right: 20px;
+    rotate: 75deg;
   }
-  75% {
-    top: calc(100% - 30px);
-    right: 10%;
+
+  100% {
+    rotate: 0deg;
   }
 }
 
-.card {
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  border-radius: 9px;
-  border: solid 1px #202222;
-  background-size: 20px 20px;
-  background: radial-gradient(circle 280px at 0% 0%, #444444, #0c0d0d);
+@keyframes moving-weel {
+  0% {
+    rotate: 0deg;
+  }
+
+  50% {
+    right: 20px;
+    rotate: 90deg;
+  }
+
+  100% {
+    rotate: 180deg;
+    right: -170px;
+  }
+}
+
+.h1-circle ul li {
+  list-style: none;
+  color: white;
+  font-size: 20px;
+  margin: 20px;
+}
+
+#h1-circle-ul-1 {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  flex: 1;
   flex-direction: column;
-  color: #fff;
-}
-.ray {
-  width: 220px;
-  height: 45px;
-  border-radius: 100px;
   position: absolute;
-  background-color: #c7c7c7;
-  opacity: 0.4;
-  box-shadow: 0 0 50px #fff;
-  filter: blur(10px);
-  transform-origin: 10%;
-  top: 0%;
-  left: 0;
-  transform: rotate(40deg);
+  top: 100px;
+  left: 200px;
+  transition: 500ms ease-in;
 }
 
-.card .text {
-  font-weight: bolder;
-  font-size: 4rem;
-  background: linear-gradient(45deg, #000000 4%, #fff, #000);
-  background-clip: text;
+#h1-circle-ul-2 {
+  opacity: 0;
+  flex: 1;
+  flex-direction: column;
+  position: absolute;
+  top: 100px;
+  left: 200px;
+  transition: 1s ease-in;
+}
+
+#h1-circle-ul-2 li {
+  transform: rotate(180deg);
+  font-size: 20px;
+  margin: 30px;
+}
+
+#card-2-h1 {
+  position: absolute;
+  left: 60px;
+  top: 10px;
   color: transparent;
+  font-size: 40px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  z-index: 700;
+  background: linear-gradient(to bottom right, transparent, white 90%),rgb(117, 190, 117);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-transform: uppercase;
+  transition: 1s ease-in;
 }
 
-.line {
-  width: 100%;
-  height: 1px;
-  position: absolute;
-  background-color: #2c2c2c;
-}
-.topl {
-  top: 10%;
-  background: linear-gradient(90deg, #888888 30%, #1d1f1f 70%);
-}
-.bottoml {
-  bottom: 10%;
-}
-.leftl {
-  left: 10%;
-  width: 1px;
-  height: 100%;
-  background: linear-gradient(180deg, #747474 30%, #222424 70%);
-}
-.rightl {
-  right: 10%;
-  width: 1px;
-  height: 100%;
+.card-2:hover #h1-circle-ul-2 {
+  opacity: 1;
+  transition: 1s ease-in;
 }
 
+.card-2:hover #h1-circle-ul-1 {
+  opacity: 0;
+  transition: 500ms ease-in;
+}
 </style>
-    

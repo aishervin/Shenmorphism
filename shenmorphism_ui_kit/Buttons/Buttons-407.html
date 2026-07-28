@@ -1,74 +1,53 @@
-<button type="button" class="glow-on-hover">
-  HOVER AND CLICK ME!
-</button>
+<span><a href="#"></a></span>
+
 <style>
-/* From SHΞN™ Morphism by GetYourCode8605 - Tags: button */
-.glow-on-hover {
-  width: 220px;
-  height: 50px;
-  border: none;
-  outline: none;
-  color: #fff;
-  background: rgb(17, 17, 17);
-  cursor: pointer;
+/* From SHΞN™ Morphism by Manish-Tamang  - Tags: button, hover effect, html, css, 3d button, button hover effect  */
+a {
   position: relative;
-  z-index: 0;
-  border-radius: 10px;
-  font-weight: 600;
+  display: inline-flex;
+  width: 180px;
+  height: 55px;
+  margin: 0 15px;
+  perspective: 1000px;
+  text-decoration: none;
 }
 
-.glow-on-hover:before {
-  content: '';
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+a:before,
+a:after {
   position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing_54134 20s linear infinite;
-  opacity: 0;
-  transition: opacity .3s ease-in-out;
-  border-radius: 10px;
+  content: "3D HOVER";
+  height: 55px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid black;
+  box-sizing: border-box;
+  font-size: 19px;
+  letter-spacing: 1px;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  transition: transform 0.25s;
 }
 
-.glow-on-hover:active {
-  color: #000
+a:before {
+  color: #fff;
+  background: #000;
+  transform: rotateY(0deg) translateZ(25px);
 }
 
-.glow-on-hover:active:after {
-  background: transparent;
+a:after {
+  color: #000;
+  transform: rotateX(90deg) translateZ(25px);
 }
 
-.glow-on-hover:hover:before {
-  opacity: 1;
+a:hover:before {
+  transform: translateZ(-25px) rotateX(-90deg);
 }
 
-.glow-on-hover:after {
-  z-index: -1;
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #111;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
+a:hover:after {
+  transform: rotateY(0deg) translateZ(25px);
 }
 
-@keyframes glowing_54134 {
-  0% {
-    background-position: 0 0;
-  }
-
-  50% {
-    background-position: 400% 0;
-  }
-
-  100% {
-    background-position: 0 0;
-  }
-}
 </style>
+    

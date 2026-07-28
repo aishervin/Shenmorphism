@@ -1,63 +1,61 @@
-<label class="container">
-    <input type="checkbox" checked="checked">
-    <div class="checkmark"></div>
-</label>
+<div class="checkbox-wrapper-23">
+  <input type="checkbox" id="check-23">
+  <label for="check-23" style="--size: 30px">
+    <svg viewBox="0,0,50,50">
+      <path d="M5 30 L 20 45 L 45 5"></path>
+    </svg>
+  </label>
+</div>
 <style>
-/* From SHΞN™ Morphism by shreyasm-dev - Tags: neumorphism, checkbox */
-/* Hide the default checkbox */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+/* From SHΞN™ Morphism by talhaabu1 - Tags: checkbox */
+.checkbox-wrapper-23 *,
+  .checkbox-wrapper-23 *:after,
+  .checkbox-wrapper-23 *:before {
+  box-sizing: border-box;
 }
 
-.container {
+.checkbox-wrapper-23 input {
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox-wrapper-23 input:checked + label svg path {
+  stroke-dashoffset: 0;
+}
+
+.checkbox-wrapper-23 input:focus + label {
+  transform: scale(1.03);
+}
+
+.checkbox-wrapper-23 input + label {
   display: block;
-  position: relative;
+  border: 2px solid rgb(253, 237, 237);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 20px;
-  user-select: none;
+  transition: all .2s ease;
 }
 
-/* Create a custom checkbox */
-.checkmark {
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 1.3em;
-  width: 1.3em;
-  background-color: #ccc;
-  border-radius: 100%;
-  background: #e8e8e8;
-  box-shadow: 3px 3px 5px #c5c5c5,
-              -3px -3px 5px #ffffff;
-  transition-duration: 0.5s;
+.checkbox-wrapper-23 input + label:active {
+  transform: scale(1.05);
+  border-radius: 12px;
 }
 
-.container input:checked ~ .checkmark {
-  box-shadow: inset 3px 3px 5px #c5c5c5,
-              inset -3px -3px 5px #ffffff;
+.checkbox-wrapper-23 input + label svg {
+  pointer-events: none;
+  padding: 5%;
 }
 
-.checkmark:after {
-  content: "";
-  position: absolute;
-  opacity: 0;
+.checkbox-wrapper-23 input + label svg path {
+  fill: none;
+  stroke: rgb(247, 247, 247);
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 101;
+  transition: all 250ms cubic-bezier(1,0,.37,.91);
 }
 
-.container input:checked ~ .checkmark:after {
-  opacity: 1;
-}
-
-.container .checkmark:after {
-  left: 0.45em;
-  top: 0.25em;
-  width: 0.25em;
-  height: 0.5em;
-  border: solid darkgray;
-  border-width: 0 0.15em 0.15em 0;
-  transform: rotate(45deg);
-}
 </style>

@@ -1,41 +1,53 @@
-<button>
-  Button
-</button>
+<div class="frame">
+  <div class="center">
+		<button>Hover me</button>
+  </div>
+</div>
 <style>
-/* From SHΞN™ Morphism by portseif - Tags: button */
+/* From SHΞN™ Morphism by laminelawal - Tags: alert, button, 2d button */
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
 button {
-  background-color: #FFFFFF;
-  border: 1px solid rgb(209,213,219);
-  border-radius: .5rem;
-  color: #111827;
-  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  font-size: .875rem;
-  font-weight: 600;
-  line-height: 1.25rem;
-  padding: .75rem 1rem;
-  text-align: center;
-  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  padding: 15px 15px;
+  border: none;
+  width: 170px;
+  height: 55px;
+  box-shadow: 15px 15px darkblue;
   cursor: pointer;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-user-select: none;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
+  transition: 0.5s ease;
+  background: lightgray;
+  font-size: 18px;
+  font-weight: bolder;
+  text-transform: uppercase;
 }
 
 button:hover {
-  background-color: #f9fafb;
-}
-
-button:focus {
-  outline: 2px solid rgba(0,0,0,0.1);
-  outline-offset: 2px;
-}
-
-button:focus-visible {
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  box-shadow: -15px -15px lightgray;
+  transform: translate(15px, 15px);
+  background: darkblue;
+  color: white;
 }
 </style>

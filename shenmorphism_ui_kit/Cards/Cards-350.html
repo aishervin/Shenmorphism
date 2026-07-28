@@ -1,99 +1,20 @@
-<div class="card">
-  <div>
-    <p class="heading">Popular this month</p>
-    <p>Powered By</p>
-    <p>SHΞN™ Morphism</p>
+<!-- From SHΞN™ Morphism by SouravBandyopadhyay - Tags: card, profilecard, business card, portfolio, tailwind -->
+<div class="flex min-h-screen items-center justify-center">
+  <div class="w-64 rounded-lg border-2 border-indigo-500 bg-transparent p-4 text-center shadow-lg dark:bg-gray-800">
+    <figure class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-indigo-500 dark:bg-indigo-600">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-person-fill text-white dark:text-indigo-300" viewBox="0 0 16 16">
+        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+      </svg>
+      <figcaption class="sr-only">John Doe, Web Developer</figcaption>
+    </figure>
+    <h2 class="mt-4 text-xl font-bold text-indigo-600 dark:text-indigo-400">John Doe</h2>
+    <p class="mb-4 text-gray-600 dark:text-gray-300">Web Developer</p>
+    <div class="flex items-center justify-center">
+      <a href="#" class="rounded-full bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 dark:bg-indigo-400 dark:hover:bg-indigo-500">Contact</a>
+      <a href="#" class="ml-4 rounded-full bg-gray-300 px-4 py-2 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600">Portfolio</a>
+    </div>
   </div>
-
-  <button class="card-button">More Info</button>
 </div>
 
-<style>
-/* From SHΞN™ Morphism by Aryan-81  - Tags: card, black, square, gradient, minimalistic, card, neon, glow, monthly, popular, SHΞN™ Morphism */
-.card {
-  position: relative;
-  width: 190px;
-  height: 190px;
-  background-color: #000;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  padding: 12px;
-  gap: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  color: rgb(255, 255, 255);
-}
-.card > div {
-  margin: auto auto;
-}
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  left: -5px;
-  margin: auto;
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
-  background: linear-gradient(-45deg, #fff01c 0%, #40c9ff 100%);
-  z-index: -10;
-  pointer-events: none;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
 
-.card::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(-45deg, #fff01c 0%, #40c9ff 100%);
-  transform: translate3d(0, 0, 0) scale(0.95);
-  filter: blur(20px);
-}
-
-.heading {
-  font-size: 20px;
-  text-transform: capitalize;
-  font-weight: 700;
-}
-
-.card p:not(.heading) {
-  font-size: 14px;
-}
-
-.card p:last-child {
-  color: #e81cff;
-  font-weight: 600;
-}
-
-.card:hover::after {
-  filter: blur(30px);
-}
-
-.card:hover::before {
-  transform: rotate(-90deg) scaleX(1) scaleY(1);
-}
-
-.card:hover .card-button {
-  transform: translate(-50%, 50%);
-  opacity: 1;
-}
-.card-button {
-  transform: translate(-50%, 125%);
-  width: 60%;
-  border-radius: 1rem;
-  border: none;
-  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
-  color: #fff;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  opacity: 0;
-  transition: 0.3s ease-out;
-}
-
-</style>
-    

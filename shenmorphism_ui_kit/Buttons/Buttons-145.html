@@ -1,72 +1,110 @@
-<button class="btn">
-  <div>GET STARTED</div>
-  <svg fill="none" viewBox="0 0 24 24" height="25px" width="25px" xmlns="http://www.w3.org/2000/svg">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" stroke="white" d="M11.6801 14.62L14.2401 12.06L11.6801 9.5"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" stroke="white" d="M4 12.0601H14.17"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" stroke="white" d="M12 4C16.42 4 20 7 20 12C20 17 16.42 20 12 20"></path>
-</svg>
+<button>
+  GLITCH
 </button>
 <style>
-/* From SHΞN™ Morphism by catraco - Tags: button, click, light&dark, startbutton  */
-.btn {
-  --color: #de5c9d;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all .5s;
+/* From SHΞN™ Morphism by 212004ALJI - Tags: button, glitch */
+button,button::after {
+  padding: 10px 50px;
+  font-size: 20px;
   border: none;
-  background-color: transparent;
-}
-
-.btn div {
-  letter-spacing: 2px;
-  font-weight: bold;
-  background: var(--color);
-  border-radius: 2rem;
+  border-radius: 5px;
   color: white;
-  padding: 1rem;
+  background-color: transparent;
+  position: relative;
 }
 
-.btn::before {
-  content: '';
-  z-index: -1;
-  background-color: var(--color);
-  border: 2px solid white;
-  border-radius: 2rem;
-  width: 110%;
-  height: 100%;
+button::after {
+  --move1: inset(50% 50% 50% 50%);
+  --move2: inset(31% 0 40% 0);
+  --move3: inset(39% 0 15% 0);
+  --move4: inset(45% 0 40% 0);
+  --move5: inset(45% 0 6% 0);
+  --move6: inset(14% 0 61% 0);
+  clip-path: var(--move1);
+  content: 'GLITCH';
   position: absolute;
-  transform: rotate(10deg);
-  transition: .5s;
-  opacity: 0.2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
 }
 
-.btn:hover {
-  cursor: pointer;
-  filter: brightness(1.2);
-  transform: scale(1.1);
+button:hover::after {
+  animation: glitch_4011 1s;
+  text-shadow: 10 10px 10px black;
+  animation-timing-function: steps(2, end);
+  text-shadow: -3px -3px 0px #1df2f0, 3px 3px 0px #E94BE8;
+  background-color: transparent;
+  border: 3px solid rgb(0, 255, 213);
 }
 
-.btn:hover::before {
-  transform: rotate(0deg);
-  opacity: 1;
+button:hover {
+  text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #E94BE8;
 }
 
-.btn svg {
-  transform: translateX(-200%);
-  transition: .5s;
-  width: 0;
-  opacity: 0;
+button:hover {
+  background-color: transparent;
+  border: 1px solid rgb(0, 255, 213);
+  box-shadow: 0px 10px 10px -10px rgb(0, 255, 213);
 }
 
-.btn:hover svg {
-  width: 25px;
-  transform: translateX(0%);
-  opacity: 1;
+@keyframes glitch_4011 {
+  0% {
+    clip-path: var(--move1);
+    transform: translate(0px,-10px);
+  }
+
+  10% {
+    clip-path: var(--move2);
+    transform: translate(-10px,10px);
+  }
+
+  20% {
+    clip-path: var(--move3);
+    transform: translate(10px,0px);
+  }
+
+  30% {
+    clip-path: var(--move4);
+    transform: translate(-10px,10px);
+  }
+
+  40% {
+    clip-path: var(--move5);
+    transform: translate(10px,-10px);
+  }
+
+  50% {
+    clip-path: var(--move6);
+    transform: translate(-10px,10px);
+  }
+
+  60% {
+    clip-path: var(--move1);
+    transform: translate(10px,-10px);
+  }
+
+  70% {
+    clip-path: var(--move3);
+    transform: translate(-10px,10px);
+  }
+
+  80% {
+    clip-path: var(--move2);
+    transform: translate(10px,-10px);
+  }
+
+  90% {
+    clip-path: var(--move4);
+    transform: translate(-10px,10px);
+  }
+
+  100% {
+    clip-path: var(--move1);
+    transform: translate(0);
+  }
 }
 
-.btn:active {
-  filter: brightness(1.4);
-}
+
 </style>

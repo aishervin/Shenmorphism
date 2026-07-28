@@ -1,52 +1,23 @@
-<button class="btn"> Button
-</button>
-<style>
-/* From SHΞN™ Morphism by cssbuttons-io - Tags: button */
-.btn {
- position: relative;
- font-size: 17px;
- text-transform: uppercase;
- text-decoration: none;
- padding: 1em 2.5em;
- display: inline-block;
- border-radius: 6em;
- transition: all .2s;
- border: none;
- font-family: inherit;
- font-weight: 500;
- color: black;
- background-color: white;
-}
+<!-- From SHΞN™ Morphism by pruthivithejan  - Tags: button -->
+<div class="w-screen h-screen bg-[#fafafa]">
+  <div class="flex justify-center items-center gap-12 h-full">
+    <div
+      class="bg-gradient-to-b from-stone-300/40 to-transparent p-[4px] rounded-[16px]"
+    >
+      <button
+        class="group p-[4px] rounded-[12px] bg-gradient-to-b from-white to-stone-200/40 shadow-[0_1px_3px_rgba(0,0,0,0.5)] active:shadow-[0_0px_1px_rgba(0,0,0,0.5)] active:scale-[0.995]"
+      >
+        <div
+          class="bg-gradient-to-b from-stone-200/40 to-white/80 rounded-[8px] px-2 py-2"
+        >
+          <div class="flex gap-2 items-center font-sans">
+            <span class="font-semibold">Get Started</span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
 
-.btn:hover {
- transform: translateY(-3px);
- box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
 
-.btn:active {
- transform: translateY(-1px);
- box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.btn::after {
- content: "";
- display: inline-block;
- height: 100%;
- width: 100%;
- border-radius: 100px;
- position: absolute;
- top: 0;
- left: 0;
- z-index: -1;
- transition: all .4s;
-}
-
-.btn::after {
- background-color: #fff;
-}
-
-.btn:hover::after {
- transform: scaleX(1.4) scaleY(1.6);
- opacity: 0;
-}
-</style>
+    

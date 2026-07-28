@@ -1,120 +1,120 @@
-<label class="switch">
-  <input type="checkbox" class="cb">
-  <span class="toggle">
-    <span class="left">OFF</span>  
-    <span class="right">ON</span>  
-  </span>
-</label>
+<div class="cl-toggle-switch">
+  <label class="cl-switch">
+    <input type="checkbox">
+    <span></span>
+  </label>
+</div>
 <style>
-/* From SHΞN™ Morphism by BernardoCuevas - Source: Ricardo Tsang - Tags: 3d switch, damper, on&off */
-.switch {
-  font-size: 20px;
-  position: relative;
-  display: inline-block;
-  width: 6em;
-  height: 3em;
+/* From SHΞN™ Morphism by lenin55 - Tags: material design, switch */
+.cl-toggle-switch {
+ position: relative;
 }
 
-.switch .cb {
-  opacity: 0;
-  width: 0;
-  height: 0;
+.cl-switch {
+ position: relative;
+ display: inline-block;
+}
+/* Input */
+.cl-switch > input {
+ appearance: none;
+ -moz-appearance: none;
+ -webkit-appearance: none;
+ z-index: -1;
+ position: absolute;
+ right: 6px;
+ top: -8px;
+ display: block;
+ margin: 0;
+ border-radius: 50%;
+ width: 40px;
+ height: 40px;
+ background-color: rgb(0, 0, 0, 0.38);
+ outline: none;
+ opacity: 0;
+ transform: scale(1);
+ pointer-events: none;
+ transition: opacity 0.3s 0.1s, transform 0.2s 0.1s;
+}
+/* Track */
+.cl-switch > span::before {
+ content: "";
+ float: right;
+ display: inline-block;
+ margin: 5px 0 5px 10px;
+ border-radius: 7px;
+ width: 36px;
+ height: 14px;
+ background-color: rgb(0, 0, 0, 0.38);
+ vertical-align: top;
+ transition: background-color 0.2s, opacity 0.2s;
+}
+/* Thumb */
+.cl-switch > span::after {
+ content: "";
+ position: absolute;
+ top: 2px;
+ right: 16px;
+ border-radius: 50%;
+ width: 20px;
+ height: 20px;
+ background-color: #fff;
+ box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+ transition: background-color 0.2s, transform 0.2s;
+}
+/* Checked */
+.cl-switch > input:checked {
+ right: -10px;
+ background-color: #85b8b7;
 }
 
-.toggle {
-  position: absolute;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  background-color: #3d3d3d;
-  border-radius: .1em;
-  transition: 10s;
-  font-weight: 700;
-  overflow: hidden;
-  box-shadow: -.3em 0 0 0 #3d3d3d,-.3em .3em 0 0 #3d3d3d,.3em 0 0 0 #3d3d3d,.3em .3em 0 0 #3d3d3d,0 .3em 0 0 #3d3d3d;
+.cl-switch > input:checked + span::before {
+ background-color: #85b8b7;
 }
 
-.toggle > .left {
-  position: absolute;
-  display: flex;
-  width: 50%;
-  height: 88%;
-  background-color: #ffffffcc;
-  color: #ff0000da;
-  left: 0;
-  bottom: 0;
-  align-items: center;
-  justify-content: center;
-  transform-origin: right;
-  transform: rotateX(10deg);
-  transform-style: preserve-3d;
-  transition: all 150ms;
+.cl-switch > input:checked + span::after {
+ background-color: #018786;
+ transform: translateX(16px);
+}
+/* Hover, Focus */
+.cl-switch:hover > input {
+ opacity: 0.04;
 }
 
-.left::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: rgb(112, 112, 112);
-  transform-origin: center left;
-  transform: rotateY(90deg);
+.cl-switch > input:focus {
+ opacity: 0.12;
 }
 
-.left::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: rgb(112, 112, 112);
-  transform-origin: center bottom;
-  transform: rotateX(90deg);
+.cl-switch:hover > input:focus {
+ opacity: 0.16;
+}
+/* Active */
+.cl-switch > input:active {
+ opacity: 1;
+ transform: scale(0);
+ transition: transform 0s, opacity 0s;
 }
 
-.toggle > .right {
-  position: absolute;
-  display: flex;
-  width: 50%;
-  height: 88%;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: rgb(206, 206, 206);
-  right: 1px;
-  bottom: 0;
-  align-items: center;
-  justify-content: center;
-  transform-origin: left;
-  transform: rotateX(10deg) rotateY(-30deg);
-  transform-style: preserve-3d;
-  transition: all 150ms;
+.cl-switch > input:active + span::before {
+ background-color: #8f8f8f;
 }
 
-.right::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: rgb(112, 112, 112);
-  transform-origin: center right;
-  transform: rotateY(-90deg);
+.cl-switch > input:checked:active + span::before {
+ background-color: #85b8b7;
+}
+/* Disabled */
+.cl-switch > input:disabled {
+ opacity: 0;
 }
 
-.right::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: rgb(112, 112, 112);
-  transform-origin: center bottom;
-  transform: rotateX(90deg);
+.cl-switch > input:disabled + span::before {
+ background-color: #ddd;
 }
 
-.switch input:checked + .toggle > .left {
-  transform: rotateX(10deg) rotateY(30deg);
-  color: rgb(206, 206, 206);
+.cl-switch > input:checked:disabled + span::before {
+ background-color: #bfdbda;
 }
 
-.switch input:checked + .toggle > .right {
-  transform: rotateX(10deg) rotateY(0deg);
-  color: #33b833;
+.cl-switch > input:checked:disabled + span::after {
+ background-color: #61b5b4;
 }
 </style>

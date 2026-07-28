@@ -1,78 +1,63 @@
-<div class="checkbox-wrapper-65">
-  <label for="cbk1-65">
-    <input id="cbk1-65" type="checkbox">
-    <span class="cbx">
-      <svg viewBox="0 0 12 11" height="11px" width="12px">
-        <polyline points="1 6.29411765 4.5 10 11 1"></polyline>
-      </svg>
-    </span>
-    <span>Checkbox</span>
-  </label>
+<div class="days-btn-container">
+  <input class="day-btn" id="monday" type="checkbox" checked="true" />
+  <label class="day-label" for="monday">M</label>
+
+  <input class="day-btn" id="tuesday" type="checkbox" checked="true" />
+  <label class="day-label" for="tuesday">T</label>
+
+  <input class="day-btn" id="wednesday" type="checkbox" checked="true" />
+  <label class="day-label" for="wednesday">W</label>
+
+  <input class="day-btn" id="thursday" type="checkbox" checked="true" />
+  <label class="day-label" for="thursday">T</label>
+
+  <input class="day-btn" id="friday" type="checkbox" checked="true" />
+  <label class="day-label" for="friday">F</label>
+
+  <input class="day-btn" id="saturday" type="checkbox" checked="true" />
+  <label class="day-label" for="saturday">S</label>
+
+  <input class="day-btn" id="sunday" type="checkbox" checked="true" />
+  <label class="day-label" for="sunday">S</label>
 </div>
 
-
-
 <style>
-/* From SHΞN™ Morphism by PriyanshuGupta28 - Tags: checkbox, cool checkbox, circle-checkbox */
-.checkbox-wrapper-65 *,
-  .checkbox-wrapper-65 ::after,
-  .checkbox-wrapper-65 ::before {
-  box-sizing: border-box;
+/* From SHΞN™ Morphism by hayyangovinda  - Tags: flashy, checkbox, clock, days, alarm */
+.days-btn-container {
+  display: flex;
+  width: 300px;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 34px;
 }
 
-.checkbox-wrapper-65 .cbx {
-  position: relative;
-  display: block;
-  float: left;
-  width: 18px;
-  height: 18px;
-  border-radius: 4px;
-  background-color: #1c4780;
-  background-image: linear-gradient(#0f698d, #1d3c6b);
-  box-shadow: inset 0 1px 1px rgba(255,255,255,0.15), inset 0 -1px 1px rgba(0,0,0,0.15);
-  transition: all 0.15s ease;
+.day-btn {
+  display: none; /* Hide the original checkbox */
 }
 
-.checkbox-wrapper-65 .cbx svg {
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke: #fff;
-  stroke-width: 2;
-  stroke-dasharray: 17;
-  stroke-dashoffset: 17;
-  transform: translate3d(0, 0, 0);
-}
-
-.checkbox-wrapper-65 .cbx + span {
-  float: left;
-  margin-left: 6px;
-}
-
-.checkbox-wrapper-65 {
-  user-select: none;
-}
-
-.checkbox-wrapper-65 label {
-  display: inline-block;
+.day-label {
+  background-color: transparent;
+  font-size: 11px;
+  font-weight: 600;
+  color: #ff5b22;
   cursor: pointer;
+  border: 2px solid #ff5b22;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
 }
 
-.checkbox-wrapper-65 input[type="checkbox"] {
-  display: none;
-  visibility: hidden;
+/* Apply styles for the selected state */
+.day-btn:checked + .day-label {
+  background-color: #ffe53b;
+  background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
+  border: none;
+  color: white;
 }
 
-.checkbox-wrapper-65 input[type="checkbox"]:checked + .cbx {
-  background-color: #606062;
-  background-image: linear-gradient(#2584d2, #1d52c1);
-}
-
-.checkbox-wrapper-65 input[type="checkbox"]:checked + .cbx svg {
-  stroke-dashoffset: 0;
-  transition: all 0.15s ease;
-}
 </style>
+    

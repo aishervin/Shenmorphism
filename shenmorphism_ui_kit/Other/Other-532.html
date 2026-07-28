@@ -1,74 +1,72 @@
-<div class="spinner">
-  <div class="outer">
-    <div class="inner tl"></div>
-    <div class="inner tr"></div>
-    <div class="inner br"></div>
-    <div class="inner bl"></div>
-  </div>
+<div class="loader-container">
+  <div class="loader"></div>
 </div>
+
 <style>
-/* From SHΞN™ Morphism by JaydipPrajapati1910 - Tags: animation, loading, loader, animated, circle loader, loader circle */
-.spinner {
-  position: absolute;
-  width: 128px;
-  height: 128px;
-  top: calc(50% - 64px);
-  left: calc(50% - 64px);
-  transform: perspective(206px) rotateX(45deg);
+/* From SHΞN™ Morphism by Gautammsharma - Tags: loader */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20em;
 }
 
-.outer {
-  box-sizing: border-box;
-  animation: spin 3s linear infinite;
-  height: 100%;
-}
-
-.inner {
-  position: absolute;
+.loader {
+  position: relative;
+  width: 3em;
+  height: 3em;
   border-radius: 50%;
-  width: 64px;
-  height: 64px;
+  background-color: rgb(208, 208, 208);
+  box-shadow: 0 0em 4em rgba(23, 190, 250, 0.5);
+  animation: loader-rotate 1s linear infinite;
 }
 
-.tl {
+.loader::before,
+.loader::after {
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
-  border-top: 8px solid red;
-  border-left: 10px solid red;
-  animation: spin 1s ease-in-out infinite;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1em solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
-.tr {
-  top: 0;
-  right: 0;
-  border-top: 8px solid #0575E6;
-  border-right: 10px solid #0575E6;
-  animation: spin 1s ease-in-out infinite;
+.loader::before {
+  animation: loader-pulse 1s ease-out infinite;
 }
 
-.br {
-  bottom: 0;
-  right: 0;
-  border-bottom: 8px solid  #00F260;
-  border-right: 10px solid  #00F260;
-  animation: spin 1s ease-in-out infinite;
+.loader::after {
+  animation: loader-pulse 1s ease-out infinite 0.5s;
 }
 
-.bl {
-  bottom: 0;
-  left: 0;
-  border-bottom: 8px solid  #e9e93e;
-  border-left: 10x solid #e9e93e;
-  animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
+@keyframes loader-rotate {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(0);
   }
 
   100% {
     transform: rotate(360deg);
   }
 }
+
+@keyframes loader-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 </style>

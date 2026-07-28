@@ -1,76 +1,147 @@
-<label class="switch">
-  <input type="checkbox">
-  <span class="slider"></span>
-</label>
+<div class="radioContainer">
+
+    <input class="radioButton" type="radio" id="value-1" name="value-radio" value="value-1" checked="">
+    <label class="container" for="value-1">
+      <div class="border"></div>
+      <div class="border2"></div>
+      <div class="circle"></div>
+    </label>
+
+    <input class="radioButton" type="radio" id="value-2" name="value-radio" value="value-2">
+    <label class="container" for="value-2">
+      <div class="border"></div>
+      <div class="border2"></div>
+      <div class="circle"></div>
+    </label>
+
+    <input class="radioButton" type="radio" id="value-3" name="value-radio" value="value-3">
+    <label class="container" for="value-3">
+      <div class="border"></div>
+      <div class="border2"></div>
+      <div class="circle"></div>
+    </label>
+
+
+</div>
 <style>
-/* From SHΞN™ Morphism by victoryamaykin - Tags: switch */
-.switch {
- position: relative;
- display: inline-block;
- width: 120px;
- height: 34px;
+/* From SHΞN™ Morphism by Navarog21 - Tags:  */
+.radioContainer {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 220px;
 }
 
-.switch input {
- display: none;
+.radioButton {
+  display: none;
 }
 
-.slider {
- position: absolute;
- cursor: pointer;
- top: 0;
- left: 0;
- right: 0;
- bottom: 0;
- background-color: #3C3C3C;
- -webkit-transition: .4s;
- transition: .4s;
- border-radius: 34px;
+.radioContainer .container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: 0.8s;
+  cursor: pointer;
+  width: 65px;
+  height: 65px;
+  background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  box-shadow: 0 0 5px inset white;
 }
 
-.slider:before {
- position: absolute;
- content: "";
- height: 26px;
- width: 26px;
- left: 4px;
- bottom: 4px;
- background-color: white;
- -webkit-transition: .4s;
- transition: .4s;
- border-radius: 50%;
+.border {
+  position: absolute;
+  background-color: #212121;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.7) rotate(30deg);
+  transition: 0.3s;
+  clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
 }
 
-input:checked + .slider {
- background-color: #0E6EB8;
+.border2 {
+  position: absolute;
+  background-color: #212121;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.45);
+  transition: 0.2s;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
-input:focus + .slider {
- box-shadow: 0 0 1px #2196F3;
+.radioContainer input[type="radio"]:checked + .container {
+  filter: hue-rotate(330deg);
+  animation: 2s linear checked;
 }
 
-input:checked + .slider:before {
- -webkit-transform: translateX(26px);
- -ms-transform: translateX(26px);
- transform: translateX(85px);
+.radioContainer input[type="radio"]:checked + .container .circle {
+  transform: scale(0.8);
 }
 
-/*------ ADDED CSS ---------*/
-.slider:after {
- content: 'DISABLED';
- color: white;
- display: block;
- position: absolute;
- transform: translate(-50%,-50%);
- top: 50%;
- left: 50%;
- font-size: 10px;
- font-family: Verdana, sans-serif;
+.radioContainer input[type="radio"]:checked + .container .border {
+  animation: 4s linear infinite reverse rotateBorder;
 }
 
-input:checked + .slider:after {
- content: 'ENABLED';
+.radioContainer input[type="radio"]:checked + .container .border2 {
+  animation: 2s linear reverse rotateBorder2;
 }
 
-/*--------- END --------*/
+.circle {
+  background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+  border-radius: 100%;
+  width: 22%;
+  height: 22%;
+  transition: 0.25s;
+  z-index: 2;
+  transform: scale(0);
+}
+
+.radioContainer .container:hover .circle {
+  transform: scale(0.8);
+  box-shadow: 0 20px 20px #00c6fb;
+}
+
+@keyframes checked {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(0deg) scale(1.07);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes rotateBorder {
+  0% {
+    transform: scale(0.7) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(0.7) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(0.7)rotate(360deg);
+  }
+}
+
+@keyframes rotateBorder2 {
+  0% {
+    transform: scale(0.51) rotate(30deg);
+  }
+
+  50% {
+    transform: scale(0.51) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(0.51) rotate(360deg);
+  }
+}
+
 </style>

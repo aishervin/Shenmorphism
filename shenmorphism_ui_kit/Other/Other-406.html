@@ -1,139 +1,128 @@
-<div class="loader JS_on">
-	<span class="binary"></span>
-	<span class="binary"></span>
-	<span class="getting-there">LOADING STUFF...</span>
+<div class="lamp">
+  <div class="glass">
+    <div class="lava">
+      <div class="blob"></div>
+      <div class="blob"></div>
+      <div class="blob"></div>
+      <div class="blob top"></div>
+      <div class="blob bottom"></div>
+    </div>
+  </div>
 </div>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+      <feBlend in="SourceGraphic" in2="goo"></feBlend>
+    </filter>
+  </defs>
+</svg>
 <style>
-/* From SHΞN™ Morphism by Nawsome - Tags: loader */
-.loader {
-  width: 130px;
-  height: 170px;
-  position: relative;
-  font-family: inherit;
-}
-
-.loader::before, .loader::after {
-  content: "";
-  width: 0;
-  height: 0;
+/* From SHΞN™ Morphism by Iliasman2 - Tags: loader */
+.lamp {
   position: absolute;
-  bottom: 30px;
-  left: 15px;
-  z-index: 1;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-bottom: 20px solid #1b2a33;
-  transform: scale(0);
-  transition: all 0.2s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 30em;
+  min-height: 300px;
+  width: 13em;
+  min-width: calc(300px * 3 / 7);
+  background: #2b4353;
+  clip-path: polygon(33% 0, 0 70%, 22% 88%, 0 100%, 100% 100%, 78% 88%, 100% 70%, 67% 0);
 }
 
-.loader::after {
-  border-right: 15px solid transparent;
-  border-bottom: 20px solid #162229;
-}
-
-.loader .getting-there {
-  width: 120%;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  left: -7%;
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: white;
-}
-
-.loader .binary {
+.glass {
+  background: #b6e1e0;
   width: 100%;
-  height: 140px;
-  display: block;
-  color: white;
+  height: 60%;
   position: absolute;
-  top: 0;
-  left: 15px;
-  z-index: 2;
+  bottom: 30%;
   overflow: hidden;
 }
 
-.loader .binary::before, .loader .binary::after {
-  font-family: "Lato";
-  font-size: 24px;
+.lava {
+  filter: url("#goo");
   position: absolute;
+  height: 100%;
+  width: 100%;
   top: 0;
   left: 0;
-  opacity: 0;
 }
 
-.loader .binary:nth-child(1)::before {
-  content: "0";
-  animation: a 1.1s linear infinite;
+.blob {
+  border-radius: 50%;
+  background: #e8630a;
+  position: absolute;
 }
 
-.loader .binary:nth-child(1)::after {
-  content: "0";
-  animation: b 1.3s linear infinite;
+.blob.top {
+  width: 100%;
+  height: 4%;
+  top: -3.7%;
+  left: 0;
 }
 
-.loader .binary:nth-child(2)::before {
-  content: "1";
-  animation: c 0.9s linear infinite;
+.blob.bottom {
+  width: 100%;
+  height: 4%;
+  bottom: -3%;
+  left: 0;
 }
 
-.loader .binary:nth-child(2)::after {
-  content: "1";
-  animation: d 0.7s linear infinite;
+.blob:nth-child(1) {
+  width: calc(15% * 1.4);
+  height: 15%;
+  left: 45%;
+  bottom: -15%;
+  animation: blob-one_2 ease-in-out 7s infinite;
 }
 
-.loader.JS_on::before, .loader.JS_on::after {
-  transform: scale(1);
+.blob:nth-child(2) {
+  width: calc(22% * 1.4);
+  height: 22%;
+  right: 14%;
+  bottom: -15%;
+  animation: blob-two_2 ease-in-out 11s infinite;
 }
 
-@keyframes a {
-  0% {
-    transform: translate(30px, 0) rotate(30deg);
-    opacity: 0;
+.blob:nth-child(3) {
+  width: calc(32% * 1.4);
+  height: 32%;
+  bottom: -15%;
+  left: 14%;
+  animation: blob-three_2 ease-in-out 16s infinite;
+}
+
+@keyframes blob-one_2 {
+  0%, 100% {
+    transform: translatey(0);
   }
 
-  100% {
-    transform: translate(30px, 150px) rotate(-50deg);
-    opacity: 1;
-  }
-}
-
-@keyframes b {
-  0% {
-    transform: translate(50px, 0) rotate(-40deg);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translate(40px, 150px) rotate(80deg);
-    opacity: 1;
-  }
-}
-
-@keyframes c {
-  0% {
-    transform: translate(70px, 0) rotate(10deg);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translate(60px, 150px) rotate(70deg);
-    opacity: 1;
+  50% {
+    transform: translatey(-700%);
   }
 }
 
-@keyframes d {
-  0% {
-    transform: translate(30px, 0) rotate(-50deg);
-    opacity: 0;
+@keyframes blob-two_2 {
+  0%, 100% {
+    transform: translatey(0);
   }
 
-  100% {
-    transform: translate(45px, 150px) rotate(30deg);
-    opacity: 1;
+  50% {
+    transform: translatey(-420%);
   }
 }
 
+@keyframes blob-three_2 {
+  0%, 100% {
+    transform: translatey(0);
+  }
+
+  50% {
+    transform: translatey(-305%);
+  }
+}
 </style>

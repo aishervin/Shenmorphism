@@ -1,68 +1,106 @@
-<div class="box">
-  <div class="arrow right"></div>
-  <div class="text">Learn More</div>
-</div>
+<button class="btn-9"><span>Button</span></button>
+
 <style>
-/* From SHΞN™ Morphism by AmIt-DasIT - Tags: button */
-.box {
-  width: 45px;
-  height: 45px;
-  background: #5cda5c;
-  border-radius: 25px;
-  display: flex;
-  justify-items: center;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s;
+/* From SHΞN™ Morphism by doniaskima - Tags: button, animated bar loader, DoubleTriangle  */
+.btn-9,
+.btn-9 *,
+.btn-9 :after,
+.btn-9 :before,
+.btn-9:after,
+.btn-9:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-9 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
   cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.btn-9:disabled {
+  cursor: default;
+}
+
+.btn-9:-moz-focusring {
+  outline: auto;
+}
+
+.btn-9 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-9 [hidden] {
+  display: none;
+}
+
+.btn-9 {
+  border-radius: 99rem;
+  border-width: 2px;
+  overflow: hidden;
+  padding: 0.8rem 3rem;
   position: relative;
 }
 
-.arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
+.btn-9 span {
+  mix-blend-mode: difference;
 }
 
-.right {
-  transform: rotate(-45deg);
+.btn-9:after,
+.btn-9:before {
+  --tilt: 1.2rem;
+  background: #fff;
+  -webkit-clip-path: polygon(
+    0 0,
+    calc(100% - var(--tilt)) 0,
+    100% 50%,
+    calc(100% - var(--tilt)) 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--tilt)) 0,
+    100% 50%,
+    calc(100% - var(--tilt)) 100%,
+    0 100%
+  );
+  content: "";
+  display: block;
+  height: 100%;
+  left: calc(-100% - var(--tilt));
+  position: absolute;
+  top: 0;
+  transform: translateX(var(--progress, 0));
+  transition: transform 0.2s ease;
+  width: calc(100% + var(--tilt));
 }
 
-.box:hover {
-  width: 160px;
-  background: linear-gradient(to right, #26d526, yellow);
+.btn-9:after {
+  left: 100%;
+  transform: translateX(var(--progress, 0)) rotate(180deg);
+  z-index: -1;
 }
 
-.box:hover .arrow {
-  display: none;
+.btn-9:hover:before {
+  --progress: 100%;
 }
 
-.box .text {
-  display: none;
-}
-
-.box:hover .text {
-  display: flex;
-  font-size: 16px;
-  font-weight: 550;
-  color: black;
-  letter-spacing: 0.6px;
-  animation: anima 0.6s ease;
-}
-
-@keyframes anima {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.box:active {
-  background: linear-gradient(to right, rgb(38, 213, 38, 0.8), rgba(255, 255, 0, 0.8));
+.btn-9:hover:after {
+  --progress: -100%;
 }
 
 </style>

@@ -1,50 +1,74 @@
-<button class="button">Button</button>
+<button class="bookmarkBtn">
+  <span class="IconContainer">
+    <svg viewBox="0 0 384 512" height="0.9em" class="icon">
+      <path
+        d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"
+      ></path>
+    </svg>
+  </span>
+  <p class="text">Save</p>
+</button>
 
 <style>
-/* From SHΞN™ Morphism by pranav0s  - Tags: button */
-.button {
-  width: fit-content;
+/* From SHΞN™ Morphism by vinodjangid07  - Tags: button, save, hover effect, click effect, bookmark */
+.bookmarkBtn {
+  width: 100px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.349);
+  background-color: rgb(12, 12, 12);
   display: flex;
-  padding: 1.2em 1rem;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  gap: 0.4rem;
-  font-weight: bold;
-  border-radius: 30px;
-  text-shadow: 2px 2px 3px rgb(136 0 136 / 50%);
-  background: linear-gradient(
-      15deg,
-      #880088,
-      #aa2068,
-      #cc3f47,
-      #de6f3d,
-      #f09f33,
-      #de6f3d,
-      #cc3f47,
-      #aa2068,
-      #880088
-    )
-    no-repeat;
-  background-size: 300%;
-  color: #fff;
-  border: none;
-  background-position: left center;
-  box-shadow: 0 30px 10px -20px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease;
+  transition-duration: 0.3s;
+  overflow: hidden;
 }
 
-.button:hover {
-  background-size: 320%;
-  background-position: right center;
+.IconContainer {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to bottom, rgb(255, 136, 255), rgb(172, 70, 255));
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: 0.3s;
 }
 
-.button:hover svg {
-  fill: #fff;
+.icon {
+  border-radius: 1px;
 }
 
-.button svg {
-  width: 23px;
-  fill: #f09f33;
-  transition: 0.3s ease;
+.text {
+  height: 100%;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1;
+  transition-duration: 0.3s;
+  font-size: 1.04em;
+}
+
+.bookmarkBtn:hover .IconContainer {
+  width: 90px;
+  transition-duration: 0.3s;
+}
+
+.bookmarkBtn:hover .text {
+  transform: translate(10px);
+  width: 0;
+  font-size: 0;
+  transition-duration: 0.3s;
+}
+
+.bookmarkBtn:active {
+  transform: scale(0.95);
+  transition-duration: 0.3s;
 }
 
 </style>

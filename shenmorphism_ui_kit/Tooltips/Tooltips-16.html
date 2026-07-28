@@ -1,63 +1,59 @@
 <div class="tooltip-container">
-  <span class="tooltip">SHΞN™ Morphism</span>
-  <span class="text">Tooltip</span>
+  <span class="tooltip">
+    <p class="title">Title</p>
+    <p class="content">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+  </span>
+  <span class="text">Material Design Tooltip</span>
 </div>
 
 <style>
-/* From SHΞN™ Morphism by piolho123  - Tags: simple, tooltip, pink */
-/* This is an example, feel free to delete this code */
+/* From SHΞN™ Morphism by SteveBloX  - Tags: material design, tooltip, shadow, md, md3 */
+/* Material Design 3 tooltip */
 .tooltip-container {
-  border-radius: 20px;
-  --background: #f1f;
   position: relative;
-  background: var(--background);
+  background: #e8def8;
+  color: #1d192b;
   cursor: pointer;
   transition: all 0.2s;
   font-size: 17px;
   padding: 0.7em 1.8em;
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  font-family: Montserrat, sans-serif;
+  border-radius: 50px;
+}
+.tooltip-container .text {
+  font-weight: bold;
 }
 
 .tooltip {
-  border: 1px solid #f1f;
-  border-radius: 20px;
+  transform-origin: center left;
+  scale: 0;
   position: absolute;
-  top: 0;
-  left: 10%;
-  transform: translateX(-50%);
-  padding: 0.3em 0.6em;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s;
-  background: transparente;
-  color: #f1f;
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-}
-
-.tooltip::before {
-  position: absolute;
-  content: "";
-  height: 0.6em;
-  width: 0.6em;
-  bottom: -0.2em;
+  top: 130%;
   left: 50%;
-  transform: translate(-50%) rotate(45deg);
-  background: var(--background);
+  transform: translate(-50%, -10px);
+  transition: all 0.25s;
+  background: #f3edf7;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+  padding: 17px;
+  border-radius: 12px;
+  color: #49454f;
+  min-width: 312px;
 }
 
 .tooltip-container:hover .tooltip {
-  top: -100%;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+  scale: 1;
+}
+
+.tooltip .title {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.tooltip .content {
+  font-size: 0.85em;
+  font-weight: semibold;
 }
 
 </style>

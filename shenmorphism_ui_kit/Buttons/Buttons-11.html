@@ -1,44 +1,94 @@
-  <div class="button">
-    <div class="button__front">rocket</div>
-    <div class="button__back">roll</div>
-  </div>
+<button>
+  <span>Hover</span>
+</button>
 <style>
-/* From SHΞN™ Morphism by vishalparajuli - Tags: button, 3d button, 3d card */
-.button {
-  width: 100px;
-  height: 50px;
-  position: relative;
-  perspective: 800px;
+/* From SHΞN™ Morphism by learnMyHobby - Tags: button */
+button {
+ position: relative;
+ text-decoration: none;
+ font-size: 15px;
+ text-transform: uppercase;
+ letter-spacing: 5px;
+ line-height: 48px;
+ width: 160px;
+ font-weight: bold;
+ height: 55px;
+ -webkit-box-reflect: bottom 1px linear-gradient(transparent, #0004);
 }
 
-.button__front,
-  .button__back {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #fff;
-  background-color: #3498db;
-  border-radius: 5px;
-  position: absolute;
-  backface-visibility: hidden;
-  transition: transform 0.5s ease;
+button span {
+ position: absolute;
+ display: flex;
+ justify-content: center;
+ top: 4px;
+ right: 4px;
+ bottom: 4px;
+ left: 4px;
+ text-align: center;
+ background: #2E2E2E;
+ color: rgba(255, 255, 255, 0.781);
+ transition: 0.5s;
+ z-index: 1;
 }
 
-.button__back {
-  background-color: #e74c3c;
-  transform: rotateY(180deg);
+button:hover span {
+ color: rgba(255,255,255,1);
 }
 
-.button:hover .button__front {
-  transform: rotateY(-180deg);
+button::before {
+ content: '';
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ top: 0;
+ left: 0;
+ background-size: 400%;
+ opacity: 0;
+ transition: 0.5s;
+ background: linear-gradient(45deg,#91155d,#525296,#0f0,#ff0,#fb0094,#00f,#0f0,#ff0);
+ animation: animate123 20% linear infinte;
 }
 
-.button:hover .button__back {
-  transform: rotateY(0);
+button::after {
+ content: '';
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ top: 0;
+ left: 0;
+ background-size: 400%;
+ filter: blur(20px);
+ transition: 0.5s;
+ background: linear-gradient(45deg,#91155d,#525296,#0f0,#ff0,#fb0094,#00f,#0f0,#ff0);
+ animation: animate123 20% linear infinte;
+}
+
+button:hover::before,
+button:hover::after {
+ opacity: 1;
+}
+
+@keyframes animate123 {
+ 0% {
+  background-position: 0 0;
+ }
+
+ 50% {
+  background-position: 300% 0;
+ }
+
+ 100% {
+  background-position: 0 0;
+ }
+}
+
+button span::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 50%;
+ background: rgba(255,255,255,0.1);
 }
 </style>

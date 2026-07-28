@@ -1,69 +1,18 @@
-<label for="check" class="menuButton">
-    <input id="check" type="checkbox">
-    <span class="top"></span>
-    <span class="mid"></span>
-    <span class="bot"></span>
+<!-- From SHΞN™ Morphism by Shubh0408  - Tags: checkbox, toggle, play, tailwind, tailwindcss -->
+<label
+  class="w-9 h-10 cursor-pointer flex flex-col items-center justify-center"
+>
+  <input class="hidden peer" type="checkbox" />
+  <div
+    class="w-[50%] h-[2px] bg-white rounded-sm transition-all duration-300 origin-center rotate-90 -translate-x-[0.3rem] translate-y-[0.1rem] peer-checked:translate-y-[0.1rem]"
+  ></div>
+  <div
+    class="w-[50%] h-[2px] bg-white rounded-md transition-all duration-300 origin-center rotate-90 translate-x-[0.3rem] -translate-y-[0.05rem] peer-checked:rotate-[-30deg] peer-checked:translate-y-[0.22rem] peer-checked:translate-x-[0.15rem]"
+  ></div>
+  <div
+    class="w-[50%] h-[2px] bg-white rounded-md transition-all duration-300 origin-center rotate-90 translate-x-[0.3rem] -translate-y-[0.16rem] peer-checked:rotate-[30deg] peer-checked:translate-y-[-0.4rem] peer-checked:translate-x-[0.15rem]"
+  ></div>
 </label>
-<style>
-/* From SHΞN™ Morphism by Jack17432 - Tags: glassmorphism, checkbox, hamburger, shadow */
-/* 
-Button insperation by @ke1221
-Menu icon transofmation insperation by @Ali-Tahmazi99
-*/
-.menuButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 13%;
-  color: #090909;
-  width: 3.5em;
-  height: 3.5em;
-  border-radius: 0.5em;
-  background: #e8e8e8;
-  border: 1px solid #e8e8e8;
-  transition: all .3s;
-  box-shadow: 6px 6px 12px #c5c5c5,
-             -6px -6px 12px #ffffff;
-}
 
-.menuButton:hover {
-  border: 1px solid white;
-}
 
-.menuButton:active {
-  color: #666;
-  box-shadow: inset 4px 4px 12px #c5c5c5,
-             inset -4px -4px 12px #ffffff;
-}
-
-input[type = "checkbox"] {
-  -webkit-appearance: none;
-  display: none;
-  visibility: hidden;
-}
-
-.menuButton span {
-  width: 30px;
-  height: 4px;
-  background: #131313;
-  border-radius: 100px;
-  transition: 0.3s ease;
-}
-
-input[type]:checked ~ span.top {
-  transform: translateY(290%)rotate(45deg);
-  width: 40px;
-}
-
-input[type]:checked ~ span.bot {
-  transform: translateY(-270%) rotate(-45deg);
-  width: 40px;
-  box-shadow: 0 0 10px #495057;
-}
-
-input[type]:checked ~ span.mid {
-  transform: translateX(-20px);
-  opacity: 0;
-}
-</style>
+    

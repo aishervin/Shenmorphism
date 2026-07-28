@@ -1,126 +1,59 @@
-<div class="container">
-  <label class="switch">
-    <input type="checkbox" />
-    <span class="slider">
-      <span class="title">Play</span>
-      <span class="ball">
-        <span class="icon">
-          <svg
-            class="w-6 h-6 text-gray-800 dark:text-white"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="25"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 18V6l8 6-8 6Z"
-            ></path>
-          </svg>
-        </span>
-      </span>
-    </span>
-  </label>
-</div>
+<label class="toggle">
+  <input class="input" type="checkbox">
+  <span class="slider"></span>
+</label>
 
 <style>
-/* From SHΞN™ Morphism by Na3ar-17  - Tags: simple, material design, switch */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #fff;
-}
-
-.switch {
-  font-size: 0.875rem;
+/* From SHΞN™ Morphism by PriyanshuGupta28 - Tags: switch, light, 3d switch */
+.toggle {
   position: relative;
   display: inline-block;
-  width: 9em;
-  height: 2.6em;
+  width: 60px;
+  height: 34px;
 }
 
-.switch input {
-  display: none;
+.toggle input {
   opacity: 0;
   width: 0;
   height: 0;
+  transition: transform 0.2s ease-in-out;
 }
 
-.switch input:checked + .slider .ball {
-  box-shadow: 10px 10px 100px #7f8996;
-}
-
-.switch input:checked + .slider .title {
-  left: 40%;
-}
-
-.switch input:checked + .slider {
-  background-color: #8a5cd4;
-}
-
-.switch input:focus + .slider {
-  box-shadow: 10px 10px 100px #7f8996;
-}
-
-.switch input:checked + .slider .ball {
-  left: 72%;
-  transform: rotate(360deg);
-  box-shadow: none;
-  outline: 6px solid rgba(255, 255, 255, 0.278);
-}
-
-.switch .slider {
+.slider {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   position: absolute;
   cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #313033;
-  transition: all 0.4s;
-  border-radius: 30px;
+  background-color: #FF3CAC;
+  background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+  transition: 0.2 ease-in-out;
+  border-radius: 34px;
 }
 
-.switch .slider .title {
+.slider:before {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: 600;
-  transition: all 0.4s;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.switch .slider .ball {
-  background-color: #fff;
-  height: 36px;
-  width: 36px;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  transition: transform 0.3s ease-in-out;
   border-radius: 50%;
-  position: absolute;
-  left: -1px;
-  transition: 0.4s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.switch .slider .ball .icon {
-  position: absolute;
-  top: 58%;
-  left: 53%;
-  transform: translate(-50%, -50%);
-  color: #313033;
-  font-size: 12px;
+.input:checked + .slider {
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+}
+
+.input:checked + .slider:before {
+  transform: translateX(26px);
 }
 
 </style>
-    

@@ -1,85 +1,81 @@
-<button>
-  <div class="svg-name-con">
-    <div class="svg-wrapper-1">
-      <div class="svg-wrapper">
-        <svg
-          height="24"
-          width="24"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M0 0h24v24H0z" fill="none"></path>
-          <path
-            d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-            fill="currentColor"
-          ></path>
-        </svg>
-      </div>
-    </div>
-    <span>Send Message</span>
-  </div>
+<button class="send-message-button">
+  <span class="icon">✈️</span> <span class="text">Send Message</span>
 </button>
 
 <style>
-/* From SHΞN™ Morphism by Github-Suriya  - Tags: material design, white, button, smooth, message */
-button {
-  font-family: inherit;
-  font-size: 20px;
-  background: #eef0ee;
-  padding: 0.3em;
-  border: none;
-  border-radius: 15px;
-  overflow: hidden;
-  transition: all 0.2s;
-  cursor: pointer;
-  box-shadow: 0px 0px 6px #c5c5c5;
-}
-
-button span {
-  display: block;
-  margin-left: 0.3em;
-  font-weight: 600;
-  transition: all 0.3s ease-in-out;
-}
-
-button svg {
-  display: block;
-  transform-origin: center center;
-  transition: transform 0.3s ease-in-out;
-}
-
-button .svg-name-con {
-  background: #fcfdfc;
-  border-radius: 25px;
+/* From SHΞN™ Morphism by CaptainToy  - Tags: button, buttons, simple button, hover button, bounce animation */
+.send-message-button {
+  background: #fff;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
   display: flex;
   align-items: center;
-  padding: 0.7em 1em;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-button:hover .svg-wrapper {
-  animation: fly-1 0.6s ease-in-out infinite alternate;
+.send-message-button .icon {
+  font-size: 20px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  position: relative;
+  left: 0;
 }
 
-button:hover svg {
-  transform: translateX(4.2em) rotate(45deg) scale(1.1);
+.send-message-button .text {
+  transition: opacity 0.3s ease;
 }
 
-button:hover span {
-  transform: translateX(9em);
+.send-message-button:hover .icon {
+  transform: translateX(200%);
 }
 
-button:active {
-  transform: scale(0.95);
+.send-message-button:hover .text {
+  opacity: 0;
 }
 
-@keyframes fly-1 {
-  from {
-    transform: translateY(0.1em);
-  }
+.send-message-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
 
-  to {
-    transform: translateY(-0.1em);
-  }
+.send-message-button::after {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.send-message-button:hover::after {
+  opacity: 1;
+}
+
+.send-message-button::before {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: 50%;
+  left: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.send-message-button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 </style>

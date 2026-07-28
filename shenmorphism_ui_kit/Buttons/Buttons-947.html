@@ -1,71 +1,69 @@
-<button class="button">
-  <span class="inner-circle"></span>
-  <span class="text">Button</span>
+<button class="btn-white" href="#">
+  Discover
 </button>
 <style>
-/* From SHΞN™ Morphism by shadowmurphy - Tags: button, active, animated */
-.button * {
-  cursor: pointer;
-}
-
-.button {
-  position: relative;
-  width: 160px;
-  height: 50px;
-  background: none;
-  border-radius: 8px;
-  outline: none;
-  font-size: 19px;
-  font-family: "Montserrat", sans-serif;
-  overflow: hidden;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-  text-decoration: none;
-  border: none;
-  display: flex;
-  justify-content: center;
+/* From SHΞN™ Morphism by Wlidha09 - Tags: button */
+.btn-white {
+  display: inline-flex;
   align-items: center;
-  transition: all 0.4s;
+  color: #fff;
+  border: 1px solid #fff;
+  min-height: 50px;
+  padding: 0 20px;
+  font-size: 17px;
+  text-transform: uppercase;
+  z-index: 1;
+  position: relative;
+  background-color: transparent;
 }
 
-.button::before {
-  content: '';
-  position: absolute;
-  width: 200%;
+.btn-white::before {
+  content: "";
+  background-color: #fff;
+  display: block;
+  width: 45px;
+  height: 1px;
+  margin-right: 20px;
+}
+
+.btn-white::after {
+  content: "";
+  background-color: #fff;
+  display: block;
+  width: 0%;
   height: 100%;
-  background-image: linear-gradient(to right, #AF40FF, #5B42F3, #006eeb, #42a0f3, #AF40FF);
-  background-size: 200% 100%;
-  background-position: 100% 0;
-  animation: moveGradient 3s linear infinite;
-  z-index: -1;
-}
-
-.inner-circle {
+  right: 0;
+  top: 0;
   position: absolute;
-  width: 94%;
-  height: 84%;
-  background-color: rgb(2, 3, 20);
-  border-radius: 6px;
-  opacity: 1;
-  transition: opacity 0.2s;
+  z-index: -1;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
-.text {
-  z-index: 3;
-  color: white;
-  cursor: pointer;
+.btn-white:hover {
+  color: #232963;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
-@keyframes moveGradient {
-  0% {
-    background-position: 100% 0;
-  }
-
-  100% {
-    background-position: -100% 0;
-  }
+.btn-white:hover::after {
+  width: 100%;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
-.button:active {
-  transform: scale(0.9);
+.btn-white:hover::before {
+  background-color: #232963;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 </style>

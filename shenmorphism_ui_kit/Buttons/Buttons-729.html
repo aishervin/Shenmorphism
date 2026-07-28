@@ -1,78 +1,67 @@
 <button class="button">
-  <span>Subscribe</span>
+  Button
 </button>
 <style>
-/* From SHΞN™ Morphism by pradipkaityuiux - Tags: button, Oval button, desined Button, bootsrap button */
+/* From SHΞN™ Morphism by KhaledMatalkah - Tags: button, hover, transition */
 .button {
-  background-color: #000fdb;
-  border: none;
-  padding: 20px 48px;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 40px;
-  position: relative;
-  z-index: 10;
-  overflow: hidden;
-}
-
-.button span {
-  font-size: 24px;
+  display: inline-block;
+  padding: 15px 32px;
+  font-size: 17px;
   font-weight: bold;
+  color: #fff;
+  background: linear-gradient(130deg, #ff6b6b, #c94d4d, #8e3636);
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+  border-style: solid;
+  border-width: 2px;
 }
 
-.button::before,
-.button::after {
+.button:before,
+.button:after {
   content: "";
   position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  pointer-events: none;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.button:before {
+  left: 100%;
+  background: linear-gradient(130deg, #ff6b6b, #c94d4d, #8e3636);
   z-index: -1;
-  background-color: #535fff;
-  transition: all 0.3s 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
-.button::after {
-  right: -30px;
-  transform: translateX(30px) translateY(-110px) rotate(30deg);
+.button:hover:before {
+  transform: translateX(-50%);
+  opacity: 1;
 }
 
-.button::before {
-  left: -20px;
-  transform: translateX(-10px) translateY(50px) rotate(30deg);
+.button:after {
+  right: 100%;
+  background: linear-gradient(130deg, #ff6b6b, #c94d4d, #8e3636);
+  z-index: -1;
 }
 
-.button:hover::before {
-  transform: rotate(30deg) translateY(10px) translateX(-15px);
+.button:hover:after {
+  transform: translateX(50%);
+  opacity: 1;
 }
 
-.button:hover::after {
-  transform: rotate(30deg) translateY(-70px) translateX(-30px);
+.button:hover .button-text {
+  transform: translateY(-3px);
 }
 
-.button:hover {
-  animation: wobel 0.3s ease-in-out;
+.button-text {
+  transition: transform 0.3s ease-in-out;
 }
 
-@keyframes wobel {
-  0% {
-    transform: scale(1);
-  }
-
-  20% {
-    transform: scale(1.1);
-  }
-
-  60% {
-    transform: scale(1.05);
-  }
-
-  80% {
-    transform: scale(0.85);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
 </style>

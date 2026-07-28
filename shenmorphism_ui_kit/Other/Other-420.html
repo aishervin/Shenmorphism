@@ -1,76 +1,81 @@
-<div class="loader">
-    <span></span>
+<div class="newtons-cradle">
+<div class="newtons-cradle__dot"></div>
+<div class="newtons-cradle__dot"></div>
+<div class="newtons-cradle__dot"></div>
+<div class="newtons-cradle__dot"></div>
 </div>
 <style>
-/* From SHΞN™ Morphism by mrhyddenn - Tags: loader */
-.loader {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  background: transparent;
-  border-radius: 50%;
-  box-shadow: 25px 25px 75px rgba(0,0,0,0.55);
-  border: 1px solid #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+/* From SHΞN™ Morphism by G4b413l - Tags: loader */
+.newtons-cradle {
+ --uib-size: 50px;
+ --uib-speed: 1.2s;
+ --uib-color: #474554;
+ position: relative;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: var(--uib-size);
+ height: var(--uib-size);
 }
 
-.loader::before {
-  content: '';
-  position: absolute;
-  inset: 20px;
-  background: transparent;
-  border: 1px dashed#444;
-  border-radius: 50%;
-  box-shadow: inset -5px -5px 25px rgba(0,0,0,0.25),
-  inset 5px 5px 35px rgba(0,0,0,0.25);
+.newtons-cradle__dot {
+ position: relative;
+ display: flex;
+ align-items: center;
+ height: 100%;
+ width: 25%;
+ transform-origin: center top;
 }
 
-.loader::after {
-  content: '';
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px dashed#444;
-  box-shadow: inset -5px -5px 25px rgba(0,0,0,0.25),
-  inset 5px 5px 35px rgba(0,0,0,0.25);
+.newtons-cradle__dot::after {
+ content: '';
+ display: block;
+ width: 100%;
+ height: 25%;
+ border-radius: 50%;
+ background-color: var(--uib-color);
 }
 
-.loader span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50%;
-  height: 100%;
-  background: transparent;
-  transform-origin: top left;
-  animation: radar81 2s linear infinite;
-  border-top: 1px dashed #fff;
+.newtons-cradle__dot:first-child {
+ animation: swing var(--uib-speed) linear infinite;
 }
 
-.loader span::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: seagreen;
-  transform-origin: top left;
-  transform: rotate(-55deg);
-  filter: blur(30px) drop-shadow(20px 20px 20px seagreen);
+.newtons-cradle__dot:last-child {
+ animation: swing2 var(--uib-speed) linear infinite;
 }
 
-@keyframes radar81 {
-  0% {
-    transform: rotate(0deg);
-  }
+@keyframes swing {
+ 0% {
+  transform: rotate(0deg);
+  animation-timing-function: ease-out;
+ }
 
-  100% {
-    transform: rotate(360deg);
-  }
+ 25% {
+  transform: rotate(70deg);
+  animation-timing-function: ease-in;
+ }
+
+ 50% {
+  transform: rotate(0deg);
+  animation-timing-function: linear;
+ }
 }
+
+@keyframes swing2 {
+ 0% {
+  transform: rotate(0deg);
+  animation-timing-function: linear;
+ }
+
+ 50% {
+  transform: rotate(0deg);
+  animation-timing-function: ease-out;
+ }
+
+ 75% {
+  transform: rotate(-70deg);
+  animation-timing-function: ease-in;
+ }
+}
+
 </style>

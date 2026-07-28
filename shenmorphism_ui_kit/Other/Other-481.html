@@ -1,136 +1,157 @@
-<div class="loader">
-  <div class="box-1"></div>
-  <div class="box-2"></div>
-  <div class="box-3"></div>
-</div>
+
+<div class="chaotic-orbit"></div>
 <style>
-/* From SHΞN™ Morphism by akshat-patel28 - Tags: animation, loader, animated, box */
-.loader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
+/* From SHΞN™ Morphism by G4b413l - Tags: loader */
+.chaotic-orbit {
+ --uib-size: 25px;
+ --uib-speed: 1.5s;
+ --uib-color: black;
+ position: relative;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: var(--uib-size);
+ width: var(--uib-size);
+ animation: rotate936 calc(var(--uib-speed) * 1.667) infinite linear;
 }
 
-.box-1,.box-2,.box-3 {
-  width: 1px;
-  height: 115px;
-  border: 1px solid #e9e9e9;
-  background-color: transparent;
-  box-sizing: border-box;
+.chaotic-orbit::before,
+.chaotic-orbit::after {
+ content: '';
+ position: absolute;
+ height: 60%;
+ width: 60%;
+ border-radius: 50%;
+ background-color: var(--uib-color);
+ will-change: transform;
+ flex-shrink: 0;
 }
 
-.box-1 {
-  animation: box1animation 4s  forwards ease-in-out infinite;
+.chaotic-orbit::before {
+ animation: orbit var(--uib-speed) linear infinite;
 }
 
-@keyframes box1animation {
-  0% {
-    width: 1px;
-  }
-
-  12.5% {
-    width: 60px;
-  }
-
-  25% {
-    width: 60px;
-  }
-
-  37.5% {
-    width: 1px;
-  }
-
-  50% {
-    width: 1px;
-  }
-
-  62.5% {
-    width: 1px;
-  }
-
-  75% {
-    width: 1px;
-  }
-
-  100% {
-    width: 1px;
-  }
+.chaotic-orbit::after {
+ animation: orbit var(--uib-speed) linear calc(var(--uib-speed) / -2)
+    infinite;
 }
 
-.box-2 {
-  animation: box2animation 4s forwards ease-in-out infinite;
+@keyframes rotate936 {
+ 0% {
+  transform: rotate(0deg);
+ }
+
+ 100% {
+  transform: rotate(360deg);
+ }
 }
 
-@keyframes box2animation {
-  0% {
-    width: 1px;
-  }
+@keyframes orbit {
+ 0% {
+  transform: translate(calc(var(--uib-size) * 0.5)) scale(0.73684);
+  opacity: 0.65;
+ }
 
-  12.5% {
-    width: 1px;
-  }
+ 5% {
+  transform: translate(calc(var(--uib-size) * 0.4)) scale(0.684208);
+  opacity: 0.58;
+ }
 
-  25% {
-    width: 1px;
-  }
+ 10% {
+  transform: translate(calc(var(--uib-size) * 0.3)) scale(0.631576);
+  opacity: 0.51;
+ }
 
-  37.5% {
-    width: 60px;
-  }
+ 15% {
+  transform: translate(calc(var(--uib-size) * 0.2)) scale(0.578944);
+  opacity: 0.44;
+ }
 
-  50% {
-    width: 60px;
-  }
+ 20% {
+  transform: translate(calc(var(--uib-size) * 0.1)) scale(0.526312);
+  opacity: 0.37;
+ }
 
-  62.5% {
-    width: 1px;
-  }
+ 25% {
+  transform: translate(0%) scale(0.47368);
+  opacity: 0.3;
+ }
 
-  75% {
-    width: 1px;
-  }
+ 30% {
+  transform: translate(calc(var(--uib-size) * -0.1)) scale(0.526312);
+  opacity: 0.37;
+ }
 
-  100% {
-    width: 1px;
-  }
+ 35% {
+  transform: translate(calc(var(--uib-size) * -0.2)) scale(0.578944);
+  opacity: 0.44;
+ }
+
+ 40% {
+  transform: translate(calc(var(--uib-size) * -0.3)) scale(0.631576);
+  opacity: 0.51;
+ }
+
+ 45% {
+  transform: translate(calc(var(--uib-size) * -0.4)) scale(0.684208);
+  opacity: 0.58;
+ }
+
+ 50% {
+  transform: translate(calc(var(--uib-size) * -0.5)) scale(0.73684);
+  opacity: 0.65;
+ }
+
+ 55% {
+  transform: translate(calc(var(--uib-size) * -0.4)) scale(0.789472);
+  opacity: 0.72;
+ }
+
+ 60% {
+  transform: translate(calc(var(--uib-size) * -0.3)) scale(0.842104);
+  opacity: 0.79;
+ }
+
+ 65% {
+  transform: translate(calc(var(--uib-size) * -0.2)) scale(0.894736);
+  opacity: 0.86;
+ }
+
+ 70% {
+  transform: translate(calc(var(--uib-size) * -0.1)) scale(0.947368);
+  opacity: 0.93;
+ }
+
+ 75% {
+  transform: translate(0%) scale(1);
+  opacity: 1;
+ }
+
+ 80% {
+  transform: translate(calc(var(--uib-size) * 0.1)) scale(0.947368);
+  opacity: 0.93;
+ }
+
+ 85% {
+  transform: translate(calc(var(--uib-size) * 0.2)) scale(0.894736);
+  opacity: 0.86;
+ }
+
+ 90% {
+  transform: translate(calc(var(--uib-size) * 0.3)) scale(0.842104);
+  opacity: 0.79;
+ }
+
+ 95% {
+  transform: translate(calc(var(--uib-size) * 0.4)) scale(0.789472);
+  opacity: 0.72;
+ }
+
+ 100% {
+  transform: translate(calc(var(--uib-size) * 0.5)) scale(0.73684);
+  opacity: 0.65;
+ }
 }
 
-.box-3 {
-  animation: box3animation 4s  forwards ease-in-out infinite;
-}
 
-@keyframes box3animation {
-  0% {
-    width: 1px;
-  }
-
-  12.5% {
-    width: 1px;
-  }
-
-  25% {
-    width: 1px;
-  }
-
-  37.5% {
-    width: 1px;
-  }
-
-  50% {
-    width: 1px;
-  }
-
-  62.5% {
-    width: 60px;
-  }
-
-  75% {
-    width: 60px;
-  }
-
-  100% {
-    width: 1px;
-  }
-}
 </style>

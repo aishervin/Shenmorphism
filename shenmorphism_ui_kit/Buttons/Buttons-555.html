@@ -1,67 +1,67 @@
-<button>
-  <span>BUTTON</span>
-</button>
+    <button class="button">
+      I'm a Button
+    </button>
+
 <style>
-/* From SHΞN™ Morphism by abrahamcalsin - Tags: button */
-button {
- position: relative;
- display: flex;
- justify-content: center;
- align-items: center;
- border-radius: 5px;
- background: #183153;
- font-family: "Montserrat", sans-serif;
- box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
- overflow: hidden;
- border: none;
+/* From SHΞN™ Morphism by AnthonyPreite - Tags: gradient, button */
+.button {
+  position: relative;
+  height: 50px;
+  width: 130px;
+  border: none;
+  outline: none;
+  color: white;
+  background: #0f0f0f;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Gruppo', sans-serif;
+  transition: all .2s ease-out;
 }
 
-button:after {
- content: " ";
- width: 0%;
- height: 100%;
- background: #FFD401;
- position: absolute;
- transition: all 0.4s ease-in-out;
- right: 0;
+.button:before {
+  position: absolute;
+  content: '';
+  top: -4px;
+  left: -4px;
+  height: calc(100% + 8px);
+  width: calc(100% + 8px);
+  border-radius: 6px;
+  z-index: -1;
+  opacity: 1;
+  background: linear-gradient(90deg, hsla(141, 54%, 86%, 1) 0%, hsla(333, 73%, 85%, 1) 25%, hsla(141, 54%, 86%, 1)50%);
+  background-size: 400%;
+  transition: opacity 1s ease-in-out;
+  animation: animate 20s linear infinite;
 }
 
-button:hover::after {
- right: auto;
- left: 0;
- width: 100%;
+.button:hover {
+  transform: scale(1.1);
+  color: #0f0f0f;
+  opacity: 1;
+  transition: all .3s ease-in-out;
 }
 
-button span {
- text-align: center;
- text-decoration: none;
- width: 100%;
- padding: 18px 25px;
- color: #fff;
- font-size: 1.125em;
- font-weight: 700;
- letter-spacing: 0.3em;
- z-index: 20;
- transition: all 0.3s ease-in-out;
-}
-
-button:hover span {
- color: #183153;
- animation: scaleUp 0.3s ease-in-out;
-}
-
-@keyframes scaleUp {
- 0% {
+.button:active {
+  background: none;
+  color: #000000;
   transform: scale(1);
- }
+  transition: all .3s ease-in-out;
+}
 
- 50% {
-  transform: scale(0.95);
- }
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
 
- 100% {
-  transform: scale(1);
- }
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
 }
 
 </style>

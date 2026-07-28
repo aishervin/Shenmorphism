@@ -1,104 +1,128 @@
-<div class="container">
-   <svg class="svg-icon" height="100" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width="100" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
-    <path d="M62.11,53.93c22.582-3.125,22.304-23.471,18.152-29.929-4.166-6.444-10.36-2.153-10.36-2.153v-4.166H30.099v4.166s-6.194-4.291-10.36,2.153c-4.152,6.458-4.43,26.804,18.152,29.929l5.236,7.777v8.249s-.944,4.597-4.833,4.986c-3.903,.389-7.791,4.028-7.791,7.374h38.997c0-3.347-3.889-6.986-7.791-7.374-3.889-.389-4.833-4.986-4.833-4.986v-8.249l5.236-7.777Zm7.388-24.818s2.833-3.097,5.111-1.347c2.292,1.75,2.292,15.86-8.999,18.138l3.889-16.791Zm-44.108-1.347c2.278-1.75,5.111,1.347,5.111,1.347l3.889,16.791c-11.291-2.278-11.291-16.388-8.999-18.138Z">
-    </path>
-  </svg>  
-  <div class="container__star">
-     
-    <div class="star-eight"></div>
+<div class="parent">
+  <div class="card">
+      <div class="content-box">
+          <span class="card-title">3D Card</span>
+          <p class="card-content">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          </p>
+          <span class="see-more">See More</span>
+      </div>
+      <div class="date-box">
+          <span class="month">JUNE</span>
+          <span class="date">29</span>
+      </div>
   </div>
-  
-<div></div></div>
+</div>
 <style>
-/* From SHΞN™ Morphism by Javierrocadev - Tags: card, star, rotate, hover effect, trophy, winner */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 5em;
+/* From SHΞN™ Morphism by Smit-Prajapati - Tags: card, card hover, 3d card */
+.parent {
+  width: 300px;
+  padding: 20px;
+  perspective: 1000px;
+}
+
+.card {
+  padding-top: 50px;
+  /* border-radius: 10px; */
+  border: 3px solid rgb(255, 255, 255);
+  transform-style: preserve-3d;
+  background: linear-gradient(135deg,#0000 18.75%,#f3f3f3 0 31.25%,#0000 0),
+      repeating-linear-gradient(45deg,#f3f3f3 -6.25% 6.25%,#ffffff 0 18.75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 0 0;
+  background-color: #f0f0f0;
+  width: 100%;
+  box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.card:hover {
+  background-position: -100px 100px, -100px 100px;
+  transform: rotate3d(0.5, 1, 0, 30deg);
+}
+
+.content-box {
+  background: rgba(4, 193, 250, 0.732);
+  /* border-radius: 10px 100px 10px 10px; */
+  transition: all 0.5s ease-in-out;
+  padding: 60px 25px 25px 25px;
+  transform-style: preserve-3d;
+}
+
+.content-box .card-title {
+  display: inline-block;
+  color: white;
+  font-size: 25px;
   font-weight: 900;
-  color: #e10600;
-  position: relative;
-  transition: all 1s ease;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 50px);
+}
+
+.content-box .card-title:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .card-content {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #f2f2f2;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 30px);
+}
+
+.content-box .card-content:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .see-more {
+  cursor: pointer;
+  margin-top: 1rem;
+  display: inline-block;
+  font-weight: 900;
+  font-size: 9px;
+  text-transform: uppercase;
+  color: rgb(7, 185, 255);
+  /* border-radius: 5px; */
+  background: white;
+  padding: 0.5rem 0.7rem;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 20px);
+}
+
+.content-box .see-more:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.date-box {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 60px;
+  width: 60px;
+  background: white;
+  border: 1px solid rgb(7, 185, 255);
+  /* border-radius: 10px; */
+  padding: 10px;
+  transform: translate3d(0px, 0px, 80px);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
+}
+
+.date-box span {
+  display: block;
   text-align: center;
 }
 
-.container__star {
-  transition: all .7s ease-in-out;
+.date-box .month {
+  color: rgb(4, 193, 250);
+  font-size: 9px;
+  font-weight: 700;
 }
 
-.first {
-  position: absolute;
-  top: 20px;
-  left: 50px;
-  transition: all .7s ease-in-out;
+.date-box .date {
+  font-size: 20px;
+  font-weight: 900;
+  color: rgb(4, 193, 250);
 }
-
-.svg-icon {
-  position: absolute;
-  fill: #e94822;
-  z-index: 1;
-}
-
-.star-eight {
-  background: #efd510;
-  width: 150px;
-  height: 150px;
-  position: relative;
-  text-align: center;
-  animation: rot 3s  infinite;
-}
-
-.star-eight::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 150px;
-  width: 150px;
-  background: #efd510;
-  transform: rotate(135deg);
-}
-
-.container:hover .container__star {
-  transform: rotateX(70deg) translateY(250px);
-  box-shadow: 0px 0px 120px -100px #e4e727;
-}
-
-.container:hover .svg-icon {
-  animation: grow 1s linear infinite;
-}
-
-@keyframes rot {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  50% {
-    transform: rotate(340deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes grow {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  25% {
-    transform: rotate(-5deg);
-  }
-
-  75% {
-    transform: rotate(5deg);
-  }
-
-  100% {
-    transform: scale(1) rotate(0deg);
-  }
-}
+ 
 </style>

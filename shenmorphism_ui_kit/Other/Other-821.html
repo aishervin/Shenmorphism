@@ -1,162 +1,587 @@
-<div class="container">
-  <div class="lds-spinner">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+<div id="timer">
+  <div id="div1"></div>
+  <div id="div2"></div>
+  <div id="div3"></div>
+  <div id="div4"></div>
+  <div id="div5"></div>
+  <div id="div6"></div>
+  <div id="div7"></div>
+  <div id="div8"></div>
+  <div id="div9"></div>
+  <div id="div10"></div>
+  <div id="div11"></div>
+  <div id="div12"></div>
+  <div id="div13"></div>
+  <div id="div14"></div>
+  <div id="div15"></div>
 </div>
+
 <style>
-/* From SHΞN™ Morphism by zombie223 - Tags: loader */
-.lds-spinner {
-  height: 250px;
-  width: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-right: 50px;
-  padding-bottom: 20px;
-}
-
-.lds-spinner div {
-  transform-origin: 30px 20px;
-}
-
-.lds-spinner div:after {
-  content: " ";
-  display: block;
+/* From SHΞN™ Morphism by BlackisPlay  - Tags: simple, animation, white, loading, loader, smooth, light */
+#timer {
+  display: grid;
+  grid-template-columns: repeat(3, 25px);
+  grid-template-rows: repeat(5, 25px);
+  gap: 10px;
   position: absolute;
-  top: 2px;
-  left: 37px;
-  width: 6px;
-  height: 19px;
-  border-radius: 20%;
-  animation: color 1.2s ease-in-out infinite;
+  grid-template-areas:
+    "div1 div2 div3"
+    "div4 div5 div6"
+    "div7 div8 div9"
+    "div10 div11 div12"
+    "div13 div14 div15";
 }
 
-.lds-spinner div:nth-child(1) {
-  transform: rotate(0deg);
-  animation-delay: -1.1s;
+#div1,
+#div2,
+#div3,
+#div4,
+#div5,
+#div6,
+#div7,
+#div8,
+#div9,
+#div10,
+#div11,
+#div12,
+#div13,
+#div14,
+#div15 {
+  background-color: rgb(243, 243, 243);
+  border-radius: 5px;
 }
 
-.lds-spinner div:nth-child(2) {
-  transform: rotate(30deg);
-  animation-delay: -1s;
+#div1 {
+  grid-area: div1;
+  animation: div1 10s both infinite;
 }
 
-.lds-spinner div:nth-child(3) {
-  transform: rotate(60deg);
-  animation-delay: -0.9s;
-}
-
-.lds-spinner div:nth-child(4) {
-  transform: rotate(90deg);
-  animation-delay: -0.8s;
-}
-
-.lds-spinner div:nth-child(5) {
-  transform: rotate(120deg);
-  animation-delay: -0.7s;
-}
-
-.lds-spinner div:nth-child(6) {
-  transform: rotate(150deg);
-  animation-delay: -0.6s;
-}
-
-.lds-spinner div:nth-child(7) {
-  transform: rotate(180deg);
-  animation-delay: -0.5s;
-}
-
-.lds-spinner div:nth-child(8) {
-  transform: rotate(210deg);
-  animation-delay: -0.4s;
-}
-
-.lds-spinner div:nth-child(9) {
-  transform: rotate(240deg);
-  animation-delay: -0.3s;
-}
-
-.lds-spinner div:nth-child(10) {
-  transform: rotate(270deg);
-  animation-delay: -0.2s;
-}
-
-.lds-spinner div:nth-child(11) {
-  transform: rotate(300deg);
-  animation-delay: -0.1s;
-}
-
-.lds-spinner div:nth-child(12) {
-  transform: rotate(330deg);
-  animation-delay: 0s;
-}
-
-.lds-spinner div:nth-child(12)::after {
-  animation-delay: 0s;
-}
-
-.lds-spinner div:nth-child(1)::after {
-  animation-delay: -1.1s;
-}
-
-.lds-spinner div:nth-child(2)::after {
-  animation-delay: -1s;
-}
-
-.lds-spinner div:nth-child(3)::after {
-  animation-delay: -0.9s;
-}
-
-.lds-spinner div:nth-child(4)::after {
-  animation-delay: -0.8s;
-}
-
-.lds-spinner div:nth-child(5)::after {
-  animation-delay: -0.7s;
-}
-
-.lds-spinner div:nth-child(6)::after {
-  animation-delay: -0.6s;
-}
-
-.lds-spinner div:nth-child(7)::after {
-  animation-delay: -0.5s;
-}
-
-.lds-spinner div:nth-child(8)::after {
-  animation-delay: -0.4s;
-}
-
-.lds-spinner div:nth-child(9)::after {
-  animation-delay: -0.3s;
-}
-
-.lds-spinner div:nth-child(10)::after {
-  animation-delay: -0.2s;
-}
-
-.lds-spinner div:nth-child(11)::after {
-  animation-delay: -0.1s;
-}
-
-@keyframes color {
+@keyframes div1 {
   0% {
-    background-color: darkcyan;
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(70px);
+  }
+
+  20% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(0);
+  }
+
+  40% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  60% {
+    transform: translateX(0);
+  }
+
+  70% {
+    transform: translateX(0);
+  }
+
+  80% {
+    transform: translateX(0);
+  }
+
+  90% {
+    transform: translateX(0);
   }
 
   100% {
-    background-color: white;
+    transform: translateX(0);
   }
 }
+
+#div2 {
+  grid-area: div2;
+  animation: div2 10s both infinite;
+}
+
+@keyframes div2 {
+  0% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(35px);
+  }
+
+  20% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(0);
+  }
+
+  40% {
+    transform: translateX(35px);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  60% {
+    transform: translateX(0);
+  }
+
+  70% {
+    transform: translateX(0);
+  }
+
+  80% {
+    transform: translateX(0);
+  }
+
+  90% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#div3 {
+  grid-area: div3;
+}
+
+#div4 {
+  grid-area: div4;
+  animation: div4 10s both infinite;
+}
+
+@keyframes div4 {
+  0% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(70px);
+  }
+
+  20% {
+    transform: translateX(70px);
+  }
+
+  30% {
+    transform: translateX(70px);
+  }
+
+  40% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  60% {
+    transform: translateX(70px);
+  }
+
+  70% {
+    transform: translateX(70px);
+  }
+
+  80% {
+    transform: translateX(0);
+  }
+
+  90% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#div5 {
+  grid-area: div5;
+  display: none;
+}
+
+#div6 {
+  grid-area: div6;
+  animation: div6 10s both infinite;
+}
+
+@keyframes div6 {
+  0% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(0);
+  }
+
+  40% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-70px);
+  }
+
+  60% {
+    transform: translateX(0);
+  }
+
+  70% {
+    transform: translateX(0);
+  }
+
+  80% {
+    transform: translateX(0);
+  }
+
+  90% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#div7 {
+  grid-area: div7;
+  animation: div7 10s both infinite;
+}
+
+@keyframes div7 {
+  0% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(70px);
+  }
+
+  20% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(0);
+  }
+
+  40% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  60% {
+    transform: translateX(0);
+  }
+
+  70% {
+    transform: translateX(70px);
+  }
+
+  80% {
+    transform: translateX(0);
+  }
+
+  90% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#div8 {
+  grid-area: div8;
+  animation: div8 10s both infinite;
+}
+
+@keyframes div8 {
+  0% {
+    transform: translateX(35px);
+  }
+
+  10% {
+    transform: translateX(35px);
+  }
+
+  20% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(0);
+  }
+
+  40% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  60% {
+    transform: translateX(0);
+  }
+
+  70% {
+    transform: translateX(35px);
+  }
+
+  80% {
+    transform: translateX(0);
+  }
+
+  90% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(35px);
+  }
+}
+
+#div9 {
+  grid-area: div9;
+}
+
+#div10 {
+  grid-area: div10;
+  animation: div10 10s both infinite;
+}
+
+@keyframes div10 {
+  0% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(70px);
+  }
+
+  20% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(70px);
+  }
+
+  40% {
+    transform: translateX(70px);
+  }
+
+  50% {
+    transform: translateX(70px);
+  }
+
+  60% {
+    transform: translateX(0);
+  }
+
+  70% {
+    transform: translateX(70px);
+  }
+
+  80% {
+    transform: translateX(0);
+  }
+
+  90% {
+    transform: translateX(70px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#div11 {
+  grid-area: div11;
+  display: none;
+}
+
+#div12 {
+  grid-area: div12;
+  animation: div12 10s both infinite;
+}
+
+@keyframes div12 {
+  0% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-70px);
+  }
+
+  30% {
+    transform: translateX(0);
+  }
+
+  40% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  60% {
+    transform: translateX(0);
+  }
+
+  70% {
+    transform: translateX(0);
+  }
+
+  80% {
+    transform: translateX(0);
+  }
+
+  90% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#div13 {
+  grid-area: div13;
+  animation: div13 10s both infinite;
+}
+
+@keyframes div13 {
+  0% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(70px);
+  }
+
+  20% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(0);
+  }
+
+  40% {
+    transform: translateX(70px);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  60% {
+    transform: translateX(0);
+  }
+
+  70% {
+    transform: translateX(70px);
+  }
+
+  80% {
+    transform: translateX(0);
+  }
+
+  90% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#div14 {
+  grid-area: div14;
+  animation: div14 10s both infinite;
+}
+
+@keyframes div14 {
+  0% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(35px);
+  }
+
+  20% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(0);
+  }
+
+  40% {
+    transform: translateX(35px);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  60% {
+    transform: translateX(0);
+  }
+
+  70% {
+    transform: translateX(35px);
+  }
+
+  80% {
+    transform: translateX(0);
+  }
+
+  90% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#div15 {
+  grid-area: div15;
+}
+
 </style>
+    

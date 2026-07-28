@@ -1,60 +1,49 @@
-<div class="form-control">
-  <input class="input input-alt" placeholder="Type something intelligent" required="" type="text">
-  <span class="input-border input-border-alt"></span>
+<div class="group">
+  <svg stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon">
+  <path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" stroke-linejoin="round" stroke-linecap="round"></path>
+</svg>
+<input class="input" type="password" placeholder="password">
 </div>
-
 <style>
-/* From SHΞN™ Morphism by adamgiebl - Tags: gradient, input, modern, animated */
-.input {
-  color: #fff;
-  font-size: 0.9rem;
-  background-color: transparent;
-  width: 100%;
-  box-sizing: border-box;
-  padding-inline: 0.5em;
-  padding-block: 0.7em;
-  border: none;
-  border-bottom: var(--border-height) solid var(--border-before-color);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.input-border {
-  position: absolute;
-  background: var(--border-after-color);
-  width: 0%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-}
-
-.input:focus {
-  outline: none;
-}
-
-.input:focus + .input-border {
-  width: 100%;
-}
-
-.form-control {
+/* From SHΞN™ Morphism by ozgeozkaraa01 - Tags: input, input effect , hover input  */
+.group {
+  display: flex;
+  line-height: 30px;
+  align-items: center;
   position: relative;
-  --width-of-input: 300px;
+  max-width: 200px;
 }
 
-.input-alt {
-  font-size: 1.2rem;
-  padding-inline: 1em;
-  padding-block: 0.8em;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.input-border-alt {
-  height: 3px;
-  background: linear-gradient(90deg, #FF6464 0%, #FFBF59 50%, #47C9FF 100%);
-  transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1.00);
-}
-
-.input-alt:focus + .input-border-alt {
+.input {
   width: 100%;
+  height: 45px;
+  line-height: 30px;
+  padding: 0 5rem;
+  padding-left: 3rem;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  outline: none;
+  background-color: #f8fafc;
+  color: #0d0c22;
+  transition: .5s ease;
+}
+
+.input::placeholder {
+  color: #94a3b8;
+}
+
+.input:focus, input:hover {
+  outline: none;
+  border-color: rgba(129, 140, 248);
+  background-color: #fff;
+  box-shadow: 0 0 0 5px rgb(129 140 248 / 30%);
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  fill: none;
+  width: 1rem;
+  height: 1rem;
 }
 </style>

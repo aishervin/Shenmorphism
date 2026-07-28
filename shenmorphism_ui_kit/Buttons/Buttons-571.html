@@ -1,104 +1,17 @@
-<button>
-  Button
+<!-- From SHΞN™ Morphism by andrew-demchenk0 - Tags: button, send, hover effect, click effect, click animation, tailwind -->
+<button class="group relative z-1 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br flex items-center font-medium text-white transition-all duration-200 ease-in-out rounded-lg px-4 py-2 active:scale-95 active:shadow-inner">
+  <div class="absolute -z-10 -inset-0.5 bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-xl group-hover:opacity-100 animate-pulse group-hover:inset-10"></div>
+  <div class="svg-wrapper transform group-hover:translate-x-5 group-hover:rotate-45 transition-all duration-400">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="">
+      <path fill="none" d="M0 0h24v24H0z"></path>
+      <path fill="#fff" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+    </svg>
+  </div>
+  <span class="ml-1 text-white transition-all duration-300 group-hover:text-transparent">Send</span>
 </button>
-<style>
-/* From SHΞN™ Morphism by linkb15 - Tags: button */
-button {
-  --min-width: 180px;
-  --min-height: 42px;
-  --ring-min-size: 20px;
-  --ring-max-size: 150px;
-  --ring-width: 3px;
-  --main-bg-color: #814fd1;
-  --gradient-bg-color-1: rgb(222, 203, 226);
-  --gradient-bg-color-2: rgb(79, 131, 209);
-  --ring-color: #6f00ff;
-  --shadow-color: rgba(79, 99, 209, 0.64);
-  --hover-shadow-color: rgba(79, 99, 209, 0.64);
-  --main-fg-color: #313133;
-  --hover-fg-color: rgb(38, 11, 53);
-  min-width: var(--min-width);
-  min-height: var(--min-height);
-  font-size: 17px;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: var(--main-fg-color);
-  background: var(--main-bg-color);
-  background: linear-gradient(66deg, var(--gradient-bg-color-1) 0%, var(--gradient-bg-color-2) 100%);
-  border: none;
-  border-radius: 999px;
-  box-shadow: 12px 2px 24px var(--shadow-color);
-  transition: all 0.3s ease-in-out 0s;
-  cursor: pointer;
-  outline: none;
-  position: relative;
-  padding: 10px;
-}
 
-button::before {
-  content: '';
-  border-radius: 999px;
-  min-width: calc(var(--min-width) + 12px);
-  min-height: calc(var(--min-height) + 12px);
-  border: var(--ring-width) solid var(--ring-color);
-  box-shadow: 0 0 60px var(--hover-shadow-color);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: all .3s ease-in-out 0s;
-}
 
-button:hover, .button:focus {
-  color: var(--hover-fg-color);
-  transform: translateY(-6px);
-}
 
-button:active {
-  color: var(--main-fg-color);
-  transform: scale(0.95);
-}
 
-button:active::before {
-  border: 0px solid var(--ring-color);
-}
 
-button:hover::before, button:focus::before {
-  opacity: 1;
-}
 
-/* ring */
-button::after {
-  content: '';
-  width: var(--ring-min-size);
-  height: var(--ring-min-size);
-  border-radius: 100%;
-  border: var(--ring-width) solid var(--ring-color);
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: ring 1.5s infinite;
-}
-
-button:hover::after, button:focus::after {
-  animation: none;
-  display: none;
-}
-
-@keyframes ring {
-  0% {
-    width: var(--ring-min-size);
-    height: var(--ring-min-size);
-    opacity: 0.5;
-  }
-
-  100% {
-    width: var(--ring-max-size);
-    height: var(--ring-max-size);
-    opacity: 0;
-  }
-}
-</style>

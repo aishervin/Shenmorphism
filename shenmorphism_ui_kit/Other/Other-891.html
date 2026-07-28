@@ -1,54 +1,43 @@
-<div class="loader"></div>
+<div class="progress-loader">
+  <div class="progress"></div>
+</div>
+
 <style>
-/* From SHΞN™ Morphism by JaydipPrajapati1910 - Tags: green, loader, circle loader, loader circle */
-.loader {
-  background: linear-gradient(to right, #2cc16f 50%, #fafafa 50%);
-  border-radius: 100%;
-  height: 70px;
-  width: 70px;
-  animation: loader-circle-time 8s steps(800, start) infinite;
-}
-
-.loader:after {
-  content: "";
-  border-radius: 100% 0 0 100% / 50% 0 0 50%;
-  height: 100%;
-  left: 0;
+/* From SHΞN™ Morphism by SteveBloX  - Tags: loading, progress, progress bar, loader, dark, animated, loader, background, gray, white, minimal, bar, progress, horizontal */
+.progress-loader {
+  top: 50%;
+  left: 50%;
   position: absolute;
-  top: 0;
-  width: 50%;
-  animation: loader-circle-mask 8s steps(250, start) infinite;
-  transform-origin: 100% 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  background: rgba(236, 236, 238, 0.253);
+  height: 10px;
+  border-radius: 7px;
+  overflow: hidden;
 }
 
-@keyframes loader-circle-time {
-  100% {
-    transform: rotate(360deg);
-  }
+.progress {
+  width: 1px;
+  height: 10px;
+  border-radius: 7px;
+  background: rgb(255, 255, 255);
+  transition: 0.5s;
+  animation: loading_44 5s cubic-bezier(0.4, 1.01, 1, 1) infinite;
 }
 
-@keyframes loader-circle-mask {
+@keyframes loading_44 {
   0% {
-    background: #fafafa;
-    transform: rotate(0deg);
+    width: 0%;
   }
 
   50% {
-    background: #fafafa;
-    transform: rotate(-180deg);
-  }
-
-  50.01% {
-    background: #2cc16f;
-    transform: rotate(0deg);
+    width: 100%;
   }
 
   100% {
-    background: #2cc16f;
-    transform: rotate(-180deg);
+    width: 0%;
   }
 }
 
- 
-
 </style>
+    

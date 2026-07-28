@@ -1,55 +1,69 @@
 <div class="loader">
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
 </div>
 
-
 <style>
-/* From SHΞN™ Morphism by ahmed150up - Tags: loader */
+/* From SHΞN™ Morphism by AbanoubMagdy1 - Tags: loader */
 .loader {
-  display: flex;
-  justify-content: center;
+  --dim: 3rem;
+  width: var(--dim);
+  height: var(--dim);
+  position: relative;
+  animation: spin988 2s linear infinite;
 }
 
-.bar {
-  width: 7px;
-  height: 18px;
-  margin: 0 9px;
-  border-radius: 10px;
-  animation: loading_5192 1s ease-in-out infinite;
-  background-color: aqua;
+.loader .circle {
+  --color: #333;
+  --dim: 1.2rem;
+  width: var(--dim);
+  height: var(--dim);
+  background-color: var(--color);
+  border-radius: 50%;
+  position: absolute;
 }
 
-.bar:nth-child(1) {
-  animation-delay: 0.01s;
+.loader .circle:nth-child(1) {
+  top: 0;
+  left: 0;
 }
 
-.bar:nth-child(2) {
-  animation-delay: 0.09s;
+.loader .circle:nth-child(2) {
+  top: 0;
+  right: 0;
 }
 
-.bar:nth-child(3) {
-  animation-delay: 0.19s;
+.loader .circle:nth-child(3) {
+  bottom: 0;
+  left: 0;
 }
 
-.bar:nth-child(4) {
-  animation-delay: 0.29s;
+.loader .circle:nth-child(4) {
+  bottom: 0;
+  right: 0;
 }
 
-@keyframes loading_5192 {
+@keyframes spin988 {
   0% {
-    transform: scale(1);
+    transform: scale(1) rotate(0);
   }
 
-  20% {
-    transform: scale(1, 2.5);
+  20%, 25% {
+    transform: scale(1.3) rotate(90deg);
   }
 
-  40% {
-    transform: scale(1);
+  45%, 50% {
+    transform: scale(1) rotate(180deg);
+  }
+
+  70%, 75% {
+    transform: scale(1.3) rotate(270deg);
+  }
+
+  95%, 100% {
+    transform: scale(1) rotate(360deg);
   }
 }
-
 </style>

@@ -1,61 +1,57 @@
-<div class="container">
-    <input type="text" name="text" class="input" required="" placeholder="Type to search...">
-    <div class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
-            <title>Search</title>
-            <path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path>
-            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path>
-        </svg>
+ <div class="container">
+        <input type="text" required="required">
+        <label>You'r name</label>
+        <i></i>
     </div>
-</div>
 <style>
-/* From SHΞN™ Morphism by krlozCJ - Tags: input, search */
+/* From SHΞN™ Morphism by Akshdeep74644 - Tags: input */
 .container {
   position: relative;
-  --size-button: 40px;
-  color: white;
-}
-
-.input {
-  padding-left: var(--size-button);
-  height: var(--size-button);
-  font-size: 15px;
-  border: none;
-  color: #fff;
-  outline: none;
-  width: var(--size-button);
-  transition: all ease 0.3s;
-  background-color: #191A1E;
-  box-shadow: 1.5px 1.5px 3px #0e0e0e, -1.5px -1.5px 3px rgb(95 94 94 / 25%), inset 0px 0px 0px #0e0e0e, inset 0px -0px 0px #5f5e5e;
-  border-radius: 50px;
-  cursor: pointer;
-}
-
-.input:focus,
-.input:not(:invalid) {
   width: 200px;
-  cursor: text;
-  box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%), inset 1.5px 1.5px 3px #0e0e0e, inset -1.5px -1.5px 3px #5f5e5e;
 }
 
-.input:focus + .icon,
-.input:not(:invalid) + .icon {
-  pointer-events: all;
-  cursor: pointer;
-}
-
-.container .icon {
-  position: absolute;
-  width: var(--size-button);
-  height: var(--size-button);
-  top: 0;
-  left: 0;
+.container input {
+  width: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: #222;
   padding: 8px;
-  pointer-events: none;
 }
 
-.container .icon svg {
+.container label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(105, 105, 105, 0.7);
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: .5s;
+  font-weight: bold;
+}
+
+.container input:valid ~ label,
+.container input:focus ~ label {
+  color: rgb(10, 131, 212);
+  transform: translateY(-15px);
+  font-size: .6rem;
+}
+
+.container i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #222;
+}
+
+.container i:before {
+  content: '';
+  position: absolute;
   width: 100%;
   height: 100%;
+  background: linear-gradient(90deg, #ff1b69, #ff0, #2196f3, #9c27b0, #ff1b69);
+  animation: animate 3s linear infinite;
 }
 </style>

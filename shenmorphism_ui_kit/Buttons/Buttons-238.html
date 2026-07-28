@@ -1,55 +1,48 @@
-<button class="button">Button</button>
+<button class="box">
+  Button
+</button>
 <style>
-/* From SHΞN™ Morphism by kosedagyazilim - Tags: button */
-.button {
-  display: inline-block;
-  padding: 12px 28px;
-  margin: 10px;
-  font-size: 24px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #fff;
-  background-image: linear-gradient(to bottom right, #00c6ff, #0072ff);
-  border: none;
-  border-radius: 40px;
-  box-shadow: 0px 4px 0px #0072ff;
-  transition: all 0.2s ease-in-out;
+/* From SHΞN™ Morphism by vikas7754 - Tags: 3d, button, 3d button */
+.box {
+  background: linear-gradient(to right, gold, darkorange);
+  color: white;
+  --width: 200px;
+  --height: calc(var(--width) / 3);
+  width: var(--width);
+  height: var(--height);
+  text-align: center;
+  line-height: var(--height);
+  font-size: calc(var(--height) / 2.5);
+  font-family: sans-serif;
+  letter-spacing: 0.2em;
+  border: 1px solid darkgoldenrod;
+  border-radius: 2em;
+  transform: perspective(500px) rotateY(-15deg);
+  text-shadow: 6px 3px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 0 0 5px rgba(76, 255, 97, 0.8);
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0px 6px 0px #0072ff;
+.box:hover {
+  transform: perspective(500px) rotateY(15deg);
+  text-shadow: -6px 3px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: -2px 0 0 5px rgba(35, 255, 218, 0.8);
 }
 
-.button:active {
-  transform: translateY(0px);
-  box-shadow: none;
-  background-image: linear-gradient(to bottom right, #0072ff, #00c6ff);
-}
-
-.button:before,
-.button:after {
-  content: "";
+.box::before {
+  content: '';
   position: absolute;
-  width: 0;
-  height: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, white, transparent);
+  left: -100%;
+  transition: 0.5s;
 }
 
-.button:before {
-  top: -3px;
-  left: -3px;
-  border-radius: 40px;
-  border-top: 3px solid #fff;
-  border-left: 3px solid #fff;
+.box:hover::before {
+  left: 100%;
 }
-
-.button:after {
-  bottom: -3px;
-  right: -3px;
-  border-radius: 40px;
-  border-bottom: 3px solid #fff;
-  border-right: 3px solid #fff;
-}
-
-
 </style>

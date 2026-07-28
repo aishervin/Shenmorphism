@@ -1,34 +1,69 @@
-<button class="cssbuttons-io-button">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
-  <span>Add</span>
+<button>
+  <span class="txt">click me</span>
+  <span class="txt2">You did it</span>
+  <span class="gradient"></span>
 </button>
 <style>
-/* From SHΞN™ Morphism by adamgiebl - Tags: icon, button */
-.cssbuttons-io-button {
-  display: flex;
-  align-items: center;
-  font-family: inherit;
-  font-weight: 500;
-  font-size: 16px;
-  padding: 0.7em 1.4em 0.7em 1.1em;
+/* From SHΞN™ Morphism by KINGFRESS - Tags: gradient, button */
+button {
+  background-color: transparent;
   color: white;
-  background: #ad5389;
-  background: linear-gradient(0deg, rgba(20,167,62,1) 0%, rgba(102,247,113,1) 100%);
+  font-weight: bold;
+  height: 3.3em;
+  width: 12em;
   border: none;
-  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
-  letter-spacing: 0.05em;
-  border-radius: 20em;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: .4s ease;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.cssbuttons-io-button svg {
-  margin-right: 6px;
+button .gradient {
+  height: 100%;
+  width: 350%;
+  background: linear-gradient(to right, #156aa3 25%, #64EAE7 65%, #16a085 90%);
+  position: absolute;
+  top: 0;
+  left: 60%;
+  transform: translateX(-50%);
+  z-index: -1;
+  transition: .4s ease;
 }
 
-.cssbuttons-io-button:hover {
-  box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+button .txt {
+  transition: .4s ease .5s;
 }
 
-.cssbuttons-io-button:active {
-  box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+button .txt2 {
+  position: absolute;
+  opacity: 0;
+  transition: .4s;
+}
+
+button:hover .gradient {
+  transition: .4s ease;
+  transform: translateX(-40%);
+}
+
+button:focus .gradient {
+  background-size: 200%;
+  background-position: right;
+  transform: translateX(-88%);
+  transition: 1s ease;
+}
+
+button:focus .txt {
+  opacity: 0;
+  transition: .4s ease;
+}
+
+button:focus .txt2 {
+  opacity: 1;
+  transition: 1s ease .5s;
 }
 </style>

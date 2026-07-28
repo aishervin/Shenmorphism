@@ -1,22 +1,71 @@
-
-<div class="spinner"></div>
+<div class="loader">
+  <div class="item1"></div>
+  <div class="item2"></div>
+  <div class="item3"></div>
+</div>
 <style>
-/* From SHΞN™ Morphism by AqFox - Tags: loader */
-.spinner {
- width: 56px;
- height: 56px;
- border-radius: 50%;
- padding: 7px;
- background: conic-gradient(from 135deg at top,#004dff 90deg, #0000 0) 0 calc(50% - 4px)/19px 9.5px,
-          radial-gradient(farthest-side at bottom left,#0000 calc(100% - 7px),#004dff calc(100% - 6px) 99%,#0000) top right/50%  50% content-box content-box,
-          radial-gradient(farthest-side at top,#0000 calc(100% - 7px),#004dff calc(100% - 6px) 99%,#0000) bottom   /100% 50% content-box content-box;
- background-repeat: no-repeat;
- animation: spinner-v8og74 1s infinite linear;
+/* From SHΞN™ Morphism by Markoslc - Tags: loader */
+.item1, .item2, .item3 {
+  position: absolute;
+  background-color: transparent;
+  left: calc(50% - (var(--size) / 2));
+  top: calc(50% - (var(--size) / 2));
+  height: var(--size);
+  width: var(--size);
+  border-radius: 50%;
 }
 
-@keyframes spinner-v8og74 {
- 100% {
-  transform: rotate(1turn);
- }
+.loader .item1 {
+  --size: 90px;
+  animation: size1_1 2.5s infinite alternate;
+  z-index: 1;
+}
+
+.loader .item2 {
+  --size: 60px;
+  animation: size1_2 2.5s infinite alternate;
+  z-index: 2;
+}
+
+.loader .item3 {
+  --size: 30px;
+  animation: size1_3 2.5s infinite alternate;
+  z-index: 3;
+}
+
+@keyframes size1_1 {
+  0%,
+  10% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 8px 8px 14px #c5c5c5, -8px -8px 14px #ffffff;
+  }
+}
+
+@keyframes size1_2 {
+  0%,
+  40% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 8px 8px 14px #c5c5c5, -8px -8px 14px #ffffff;
+  }
+}
+
+@keyframes size1_3 {
+  0%,
+  70% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 8px 8px 14px #c5c5c5, -8px -8px 14px #ffffff;
+  }
 }
 </style>

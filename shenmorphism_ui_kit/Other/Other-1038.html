@@ -1,42 +1,90 @@
-<div id="col">
-  <div id="img-wrap">
-    <span class="loader"></span>
-</div></div>
+<div class="spinner-box">
+  <div class="configure-border-1">  
+    <div class="configure-core"></div>
+  </div>  
+  <div class="configure-border-2">
+    <div class="configure-core"></div>
+  </div> 
+</div>
 <style>
-/* From SHΞN™ Morphism by JkHuger - Tags: loader */
-#col {
-  width: 50%;
-  margin: 0 auto;
-}
+/* From SHΞN™ Morphism by csozidev - Source: https://codepen.io/AlexWarnes/pen/jXYYKL - Tags: simple, loader, modern, animated, repost */
+/*
+ I DID NOT MAKE THIS! THIS IS JUST A REPOST FROM: 
+ codepen.io/AlexWarnes/pen/jXYYKL 
+ My website: english.csozi.hu*/
 
-.loader {
-  content: ' ';
-  border: 5px solid #333;
-  border-radius: 30px;
-  height: 30px;
-  left: 50%;
-  margin: -15px 0 0 -15px;
-  opacity: 0;
+.configure-border-1 {
+  width: 50px;
+  height: 50px;
+  padding: 3px;
   position: absolute;
-  top: 50%;
-  width: 30px;
-  animation: pulsate 1s ease-out;
-  animation-iteration-count: infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fb5b53;
+  animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
 }
 
-@keyframes pulsate {
+.configure-border-2 {
+  width: 50px;
+  height: 50px;
+  padding: 3px;
+  left: -50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(63,249,220);
+  transform: rotate(45deg);
+  animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+}
+
+.configure-core {
+  width: 100%;
+  height: 100%;
+  background-color: #1d2630;
+}
+
+@keyframes configure-clockwise {
   0% {
-    transform: scale(.1);
-    opacity: 0.0;
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(90deg);
   }
 
   50% {
-    opacity: 1;
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(270deg);
   }
 
   100% {
-    transform: scale(1.2);
-    opacity: 0;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes configure-xclockwise {
+  0% {
+    transform: rotate(45deg);
+  }
+
+  25% {
+    transform: rotate(-45deg);
+  }
+
+  50% {
+    transform: rotate(-135deg);
+  }
+
+  75% {
+    transform: rotate(-225deg);
+  }
+
+  100% {
+    transform: rotate(-315deg);
   }
 }
 </style>

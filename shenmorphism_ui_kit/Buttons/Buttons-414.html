@@ -1,88 +1,180 @@
-<button class="button">
-  <span>Contact</span>
-</button>
+<div class="container-button">
+  <div class="hover bt-1"></div>
+  <div class="hover bt-2"></div>
+  <div class="hover bt-3"></div>
+  <div class="hover bt-4"></div>
+  <div class="hover bt-5"></div>
+  <div class="hover bt-6"></div>
+  <button></button>
+</div>
 <style>
-/* From SHΞN™ Morphism by gharsh11032000 - Tags: gradient, button, hover effect */
-.button {
+/* From SHΞN™ Morphism by MuhammadHasann - Tags: complex, 3d, button, hover */
+.container-button {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "bt-1 bt-2 bt-3"
+    "bt-4 bt-5 bt-6";
   position: relative;
-  text-decoration: none;
-  color: #e8e8e8;
-  padding: 15px 30px;
-  width: 170px;
-  height: 60px;
-  font-weight: 600;
-  font-size: 18px;
-  cursor: pointer;
-  border: none;
-  overflow: hidden;
-  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
-  transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  perspective: 800;
+  padding: 0;
+  width: 135px;
+  height: 47px;
+  transition: all 0.3s ease-in-out;
 }
 
-.button span , .button span::before {
+.container-button:active {
+  transform: scale(0.95);
+}
+
+.hover {
   position: absolute;
-  top: 0%;
-  left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  pointer-events: none;
-  justify-content: center;
-  transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  z-index: 200;
 }
 
-.button span::before {
-  content: 'Hello!';
-  top: -100%;
+.bt-1 {
+  grid-area: bt-1;
 }
 
-.button:before {
-  top: 0;
-  left: 0;
-  border-top: 2px solid #e8e8e8;
-  border-left: 2px solid #e8e8e8;
+.bt-2 {
+  grid-area: bt-2;
 }
 
-.button:after {
-  bottom: 0;
-  right: 0;
-  border-bottom: 2px solid #e8e8e8;
-  border-right: 2px solid #e8e8e8;
+.bt-3 {
+  grid-area: bt-3;
 }
 
-.button:after,
-.button:before {
+.bt-4 {
+  grid-area: bt-4;
+}
+
+.bt-5 {
+  grid-area: bt-5;
+}
+
+.bt-6 {
+  grid-area: bt-6;
+}
+
+.bt-1:hover ~ button {
+  transform: rotateX(15deg) rotateY(-15deg) rotateZ(0deg);
+  box-shadow: -2px -2px #18181888;
+}
+
+.bt-1:hover ~ button::after {
+  animation: shake 0.5s ease-in-out 0.3s;
+  text-shadow: -2px -2px #18181888;
+}
+
+.bt-3:hover ~ button {
+  transform: rotateX(15deg) rotateY(15deg) rotateZ(0deg);
+  box-shadow: 2px -2px #18181888;
+}
+
+.bt-3:hover ~ button::after {
+  animation: shake 0.5s ease-in-out 0.3s;
+  text-shadow: 2px -2px #18181888;
+}
+
+.bt-4:hover ~ button {
+  transform: rotateX(-15deg) rotateY(-15deg) rotateZ(0deg);
+  box-shadow: -2px 2px #18181888;
+}
+
+.bt-4:hover ~ button::after {
+  animation: shake 0.5s ease-in-out 0.3s;
+  text-shadow: -2px 2px #18181888;
+}
+
+.bt-6:hover ~ button {
+  transform: rotateX(-15deg) rotateY(15deg) rotateZ(0deg);
+  box-shadow: 2px 2px #18181888;
+}
+
+.bt-6:hover ~ button::after {
+  animation: shake 0.5s ease-in-out 0.3s;
+  text-shadow: 2px 2px #18181888;
+}
+
+.hover:hover ~ button::before {
+  background: transparent;
+}
+
+.hover:hover ~ button::after {
+  content: "Click";
+  top: -150%;
+  transform: translate(-50%, 0);
+  font-size: 34px;
+  color: #f19c2b;
+}
+
+button {
+  position: absolute;
+  padding: 0;
+  width: 135px;
+  height: 47px;
+  background: transparent;
+  font-size: 17px;
+  font-weight: 900;
+  border: 3px solid #f39923;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+button::before {
   content: "";
   position: absolute;
-  width: 24px;
-  height: 24px;
-  pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 135px;
+  height: 47px;
+  background-color: #f5ae51;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
 }
 
-.button:hover {
-  box-shadow: 0 0 30px rgba(248 ,155, 41,0.4),
-  0 0 30px rgba(255, 15, 123,0.4);
-  ;
+button::after {
+  content: "Hover";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 135px;
+  height: 47px;
+  background-color: transparent;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 47px;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
 }
 
-.button:hover:before,
-.button:hover:after {
-  width: 100%;
-  height: 100%;
+@keyframes shake {
+  0% {
+    left: 45%;
+  }
+
+  25% {
+    left: 54%;
+  }
+
+  50% {
+    left: 48%;
+  }
+
+  75% {
+    left: 52%;
+  }
+
+  100% {
+    left: 50%;
+  }
 }
-
-.button:hover span {
-  top: 100%;
-}
-
-.button:active {
-  scale: 0.95;
-  box-shadow: 0 0 10px rgba(248 ,155, 41,0.4),
-  0 0 10px rgba(255, 15, 123,0.4);
-  ;
-}
-
-
 </style>

@@ -1,63 +1,61 @@
-<div class="box-input">
-  <div class="border">
-    <input type="text" name="text" class="input" placeholder="Name">
-  </div>
+<div class="container">
+    <input type="text" name="text" class="input" required="" placeholder="Type to search...">
+    <div class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <title>Search</title>
+            <path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path>
+        </svg>
+    </div>
 </div>
-
 <style>
-/* From SHΞN™ Morphism by Rodrypaladin - Tags: animation, form, input, animated, colorful */
-.box-input {
+/* From SHΞN™ Morphism by krlozCJ - Tags: input, search */
+.container {
   position: relative;
-}
-
-.border {
-  background-image: linear-gradient(to right bottom, #e300ff, #ff00aa, #ff5956, #ffb900, #fffe00);
-  box-shadow: -25px -10px 30px -5px rgba(225, 0, 255, 0.5),
-    25px -10px 30px -5px rgba(255, 0, 212, 0.5),
-    25px 10px 30px -5px rgba(255, 174, 0, 0.5),
-    -25px 10px 30px -5px rgba(255, 230, 0, 0.5);
-  padding: 4px;
+  --size-button: 40px;
+  color: white;
 }
 
 .input {
-  background-color: #212121;
-  max-width: 250px;
-  height: 40px;
-  padding: 0 19px 0 10px;
-  font-size: 1.1em;
-  position: relative;
+  padding-left: var(--size-button);
+  height: var(--size-button);
+  font-size: 15px;
   border: none;
-  color: white;
-  outline: 0;
-  overflow: hidden;
+  color: #fff;
+  outline: none;
+  width: var(--size-button);
+  transition: all ease 0.3s;
+  background-color: #191A1E;
+  box-shadow: 1.5px 1.5px 3px #0e0e0e, -1.5px -1.5px 3px rgb(95 94 94 / 25%), inset 0px 0px 0px #0e0e0e, inset 0px -0px 0px #5f5e5e;
+  border-radius: 50px;
+  cursor: pointer;
 }
 
-.box-input::after,
-.box-input::before {
-  content: "";
-  width: 130px;
-  height: 30px;
+.input:focus,
+.input:not(:invalid) {
+  width: 200px;
+  cursor: text;
+  box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%), inset 1.5px 1.5px 3px #0e0e0e, inset -1.5px -1.5px 3px #5f5e5e;
+}
+
+.input:focus + .icon,
+.input:not(:invalid) + .icon {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.container .icon {
   position: absolute;
-  z-index: -1;
-}
-
-.box-input::after {
-  bottom: 0;
-  right: 0;
-}
-
-.box-input::before {
+  width: var(--size-button);
+  height: var(--size-button);
   top: 0;
   left: 0;
+  padding: 8px;
+  pointer-events: none;
 }
 
-.input::placeholder {
-  transition: all 0.5s ease-in, transform 0.2s ease-in 0.6s;
+.container .icon svg {
+  width: 100%;
+  height: 100%;
 }
-
-.input:focus::placeholder {
-  padding-left: 165px;
-  transform: translateY(-50px);
-}
-
 </style>

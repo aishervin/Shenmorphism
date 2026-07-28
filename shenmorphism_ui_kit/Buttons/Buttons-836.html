@@ -1,45 +1,28 @@
-
-<a href="#" class="btn"> Click Me</a>
+<button class="button">
+  NEON
+</button>
 <style>
-/* From SHΞN™ Morphism by Zena4L - Tags: button */
-.btn:link,
-.btn:visited {
- text-transform: uppercase;
- text-decoration: none;
- color: rgb(27, 27, 27);
- padding: 10px 30px;
- border: 1px solid;
- border-radius: 1000px;
- display: inline-block;
- transition: all .2s;
- position: relative;
+/* From SHΞN™ Morphism by mayurd8862 - Tags: neon, #button */
+.button {
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  background-color: rgb(40, 40, 40);
+  border-radius: 10px;
+  border: 1px solid rgb(232, 97, 124);
+  color: aliceblue;
+  box-shadow: 0 0 25px rgb(232, 97, 124),
+              0 0 25px rgb(232, 97, 124),
+              0 0 5px rgb(232, 97, 124) inset;
+  cursor: pointer;
 }
 
-.btn:hover {
- transform: translateY(-5px);
- box-shadow: 0 10px 20px rgba(27, 27, 27, .5);
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgb(232, 97, 124),
+              0 0 30px rgb(232, 97, 124),
+              0 0 10px rgb(232, 97, 124) inset;
 }
 
-.btn:active {
- transform: translateY(-3px);
-}
 
-.btn::after {
- content: "";
- display: inline-block;
- height: 100%;
- width: 100%;
- border-radius: 100px;
- top: 0;
- left: 0;
- position: absolute;
- z-index: -1;
- transition: all .3s;
-}
-
-.btn:hover::after {
- background-color: rgb(0, 238, 255);
- transform: scaleX(1.4) scaleY(1.5);
- opacity: 0;
-}
 </style>

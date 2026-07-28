@@ -1,182 +1,54 @@
-<label class="checkbox__label" for="checkbox">
-  <span class="checkbox__container">
-    <input class="checkbox" id="checkbox" type="checkbox" />
-
-    <span class="checkbox__label--text"> Check box. </span>
-  </span>
-</label>
-
+<div class="checkbox-wrapper-37">
+  <input id="terms-checkbox-37" name="checkbox" type="checkbox">
+  <label class="terms-label" for="terms-checkbox-37">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200" class="checkbox-svg">
+      <mask fill="white" id="path-1-inside-1_476_5-37">
+        <rect height="200" width="200"></rect>
+      </mask>
+      <rect mask="url(#path-1-inside-1_476_5-37)" stroke-width="40" class="checkbox-box" height="200" width="200"></rect>
+      <path stroke-width="15" d="M52 111.018L76.9867 136L149 64" class="checkbox-tick"></path>
+    </svg>
+    <span class="label-text">Checkbox</span>
+  </label>
+</div>
 <style>
-/* From SHΞN™ Morphism by Timbar09  - Tags: checkbox */
-.checkbox__container {
-  --primary-clr-1: #2bbee7;
-  --primary-clr-2: #0e728e;
-  --text-clr-1: #8f8f8f;
+/* From SHΞN™ Morphism by Shoh2008 - Tags: checkbox */
+.checkbox-wrapper-37 input[type="checkbox"] {
+  display: none;
+}
 
-  --checkbox-bg-clr: #33333367;
-  --checkbox-border-clr: #55555575;
-
-  color: var(--text-clr-1);
+.checkbox-wrapper-37 .terms-label {
+  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.5em;
 }
 
-.checkbox {
-  --dimension: 1.5em;
-  --tick-dimension: 0.15em;
-
-  appearance: none;
-  margin: 0;
-  position: relative;
-  width: var(--dimension);
-  height: var(--dimension);
-  border: 1px solid transparent;
-  border-radius: 50%;
-  cursor: pointer;
-  rotate: 45deg;
+.checkbox-wrapper-37 .terms-label .label-text {
+  margin-left: 10px;
 }
 
-.checkbox:checked {
-  animation: shrink 0.5s ease forwards;
+.checkbox-wrapper-37 .checkbox-svg {
+  width: 30px;
+  height: 30px;
 }
 
-.checkbox:not(:checked) {
-  animation: grow 0.5s 0.75s ease forwards;
+.checkbox-wrapper-37 .checkbox-box {
+  fill: #fff;
+  stroke: #ff7a00;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  transition: stroke-dashoffset 0.6s ease-in;
 }
 
-@keyframes shrink {
-  0% {
-    scale: 1;
-    background-color: var(--checkbox-bg-clr);
-    border: solid 1px var(--checkbox-border-clr);
-  }
-  50% {
-    scale: 0;
-    background-color: var(--checkbox-bg-clr);
-    border: solid 1px var(--checkbox-border-clr);
-  }
-  51% {
-    scale: 0;
-    background-color: transparent;
-    border: solid 1px transparent;
-  }
-  100% {
-    scale: 1;
-    background-color: transparent;
-    border: solid 1px transparent;
-  }
+.checkbox-wrapper-37 .checkbox-tick {
+  stroke: #ff7a00;
+  stroke-dasharray: 172;
+  stroke-dashoffset: 172;
+  transition: stroke-dashoffset 0.6s ease-in;
 }
 
-@keyframes grow {
-  0% {
-    scale: 0;
-    background-color: transparent;
-    border: solid 1px transparent;
-  }
-
-  100% {
-    scale: 1;
-    background-color: var(--checkbox-bg-clr);
-    border: solid 1px var(--checkbox-border-clr);
-  }
+.checkbox-wrapper-37 input[type="checkbox"]:checked + .terms-label .checkbox-box,
+  .checkbox-wrapper-37 input[type="checkbox"]:checked + .terms-label .checkbox-tick {
+  stroke-dashoffset: 0;
 }
-
-.checkbox:before,
-.checkbox:after {
-  content: "";
-  position: absolute;
-  top: calc(50% - var(--tick-dimension) / 2);
-  left: calc(50% - var(--tick-dimension) / 2);
-  width: var(--tick-dimension);
-  height: var(--tick-dimension);
-  border-radius: 10rem;
-}
-
-.checkbox::before {
-  background-color: transparent;
-  top: calc(var(--dimension) * 0.65);
-  left: 0;
-  width: var(--tick-dimension);
-}
-
-.checkbox:not(:checked)::before {
-  transition: background-color 0.3s 0.5s ease-in-out, width 0.5s ease-in-out;
-}
-
-.checkbox:checked::before {
-  background-color: var(--primary-clr-1);
-  top: calc(var(--dimension) * 0.65);
-  left: 0;
-  width: calc(var(--dimension) / 2);
-  transition: background-color 0.3s 0.3s ease-in-out,
-    width 0.5s 0.75s ease-in-out;
-}
-
-.checkbox::after {
-  background-color: transparent;
-  top: 0;
-  left: calc((var(--dimension) * 0.5) - var(--tick-dimension));
-  height: var(--tick-dimension);
-}
-
-.checkbox:not(:checked)::after {
-  transition: background-color 0.3s 0.5s ease-in-out, height 0.5s ease-in-out;
-}
-
-.checkbox:checked::after {
-  background-color: var(--primary-clr-2);
-  top: 0;
-  left: calc((var(--dimension) * 0.5) - var(--tick-dimension));
-  height: calc(var(--dimension) * 0.75);
-  transition: background-color 0.3s 0.3s ease-in-out, height 0.5s 1s ease-in-out;
-}
-
-.checkbox__label {
-  --hover: #cdcdcd;
-  --checked: #8f8f8f49;
-  --stroke-dimension: 0.05em;
-
-  cursor: pointer;
-  user-select: none;
-  scale: 1.5;
-  transition: color 0.3s;
-}
-
-.checkbox__label:hover {
-  color: var(--hover);
-}
-
-.checkbox:checked + .checkbox__label--text {
-  color: var(--checked);
-}
-
-.checkbox__label--text {
-  position: relative;
-}
-
-.checkbox__label--text::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: calc(-1 * var(--stroke-dimension));
-  width: var(--stroke-dimension);
-  height: var(--stroke-dimension);
-  margin-right: 0.5em;
-  border-radius: 1em;
-}
-
-.checkbox__label--text::before {
-  background-color: var(--primary-clr-1);
-  width: 0;
-  transition: width 0.5s, background-color 0.3s 0.5s;
-}
-
-.checkbox:checked + .checkbox__label--text::before {
-  background-color: var(--checked);
-  width: calc(100% + var(--stroke-dimension));
-  transition: width 1.25s 0.75s, background-color 0.5s 2s;
-}
-
 </style>
-    

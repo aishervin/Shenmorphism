@@ -1,137 +1,94 @@
-<label class="container" id="left">
-  <input type="radio" name="my-radio-button">
-  <div class="selected" id="leftradio"></div>
-</label>
-<label class="container" id="middle">
-  <input type="radio" name="my-radio-button">
-  <div class="selected" id="middleradio"></div>
-</label>
-<label class="container" id="right">
-  <input type="radio" name="my-radio-button">
-  <div class="selected" id="rightradio"></div>
-</label>
+<input value="is_hot" name="temperature" type="checkbox" class="ch">
+
 <style>
-/* From SHΞN™ Morphism by aadium - Tags: cyberpunk, radio, futuristic */
-.container input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+/* From SHΞN™ Morphism by JkHuger - Tags: switch */
+.ch, .ch:before, .ch:after {
+  transition: all 0.3s ease-in-out;
 }
 
-.container {
-  display: inline-block;
+.ch {
+  background-color: rgb(27,123,145);
+  border-radius: 0.2em;
+  box-shadow: 0 0.05em 0 0.05em rgba(0,0,0,0.3) inset;
+  font-size: 20px;
+  overflow: hidden;
   position: relative;
-  cursor: pointer;
-  font-size: 17px;
-  width: 5em;
-  height: 2.5em;
-  user-select: none;
-  border: none;
+  width: 3em;
+  height: 1.5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  z-index: 0;
 }
 
-.selected {
+.ch:before, .ch:after {
+  content: "";
+  display: block;
   position: absolute;
-  top: 0;
+}
+
+.ch:before {
+  background-color: currentColor;
+  border-radius: 0.125em;
+  box-shadow: 0 0 0 0.05em inset,
+		-0.12em -0.12em 0 rgb(109,148,184) inset,
+		-0.4em -0.3em 0 0.05em inset,
+		0.12em 0.12em 0 rgb(255,255,255) inset;
+  color: rgb(149,188,224);
+  opacity: 0.9;
+  bottom: 0;
+  left: 0.125em;
+  width: 1.25em;
+  height: 1.25em;
+  z-index: 2;
+}
+
+.ch:after {
+  background-image: /* white */radial-gradient(0.2em 0.5em at 38% 95%, rgb(255,255,255) 49%, rgba(255,255,255,0) 50%),
+		radial-gradient(0.3em 0.8em at 52% 95%, rgb(255,255,255) 49%, rgba(255,255,255,0) 50%),
+		radial-gradient(0.25em 0.4em at 67% 95%, rgb(255,255,255) 49%, rgba(255,255,255,0) 50%),
+		/* yellow */
+		radial-gradient(0.25em 0.7em at 36% 95%, rgb(255,224,0) 49%, rgba(255,224,0,0) 50%),
+		radial-gradient(0.4em 1.2em at 52% 95%, rgb(255,224,0) 49%, rgba(255,224,0,0) 50%),
+		radial-gradient(0.25em 0.6em at 70% 93%, rgb(255,224,0) 49%, rgba(255,224,0,0) 50%),
+		/* orange */
+		radial-gradient(0.3em 0.8em at 32% 81%, rgb(255,144,0) 49%, rgba(255,144,0,0) 50%),
+		radial-gradient(0.5em 1.6em at 52% 95%, rgb(255,144,0) 49%, rgba(255,144,0,0) 50%),
+		radial-gradient(0.3em 0.9em at 74% 86%, rgb(255,144,0) 49%, rgba(255,144,0,0) 50%),
+		/* red-orange */
+		radial-gradient(0.4em 1em at 25% 70%, rgb(255,76,0) 49%, rgba(255,76,0,0) 50%),
+		radial-gradient(0.7em 2.75em at 52% 100%, rgb(255,76,0) 49%, rgba(255,76,0,0) 50%),
+		radial-gradient(0.4em 1.2em at 79% 75%, rgb(255,76,0) 49%, rgba(255,76,0,0) 50%);
+  background-position: 100% 1.5em;
+  background-size: 1.5em 1.5em;
+  background-repeat: no-repeat;
+  border-radius: 0 0 0 0.1em / 0 0 0 0;
+  box-shadow: 0 0 0 0 rgb(169,208,244) inset;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 1.5em;
+  height: 1.5em;
+  z-index: 1;
+}
+/* Checked */
+.ch:checked {
+  background-color: rgb(92,8,8);
 }
 
-#leftradio {
-  border-bottom-left-radius: 2.5em;
-  border-top-left-radius: 2.5em;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-  border: 3px solid #78cce2;
-  background-color: transparent;
-  transition: 0.2s ease-in;
+.ch:checked:before {
+  border-radius: 50%;
+  transform: translate(1.5em,1.5em) rotate(45deg) scale(0.5);
 }
 
-#rightradio {
-  border-bottom-right-radius: 2.5em;
-  border-top-right-radius: 2.5em;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-  border: 3px solid #defe47;
-  background-color: transparent;
-  transition: 0.2s linear;
+.ch:checked:after {
+  background-position: 100% 0;
+  box-shadow: 0 -0.15em 0 0 rgb(169,208,244) inset;
+  width: 3em;
 }
 
-#middleradio {
-  border: 3px solid #f887ff;
-  background-color: transparent;
-  transition: 0.2s linear;
+/* Other States */
+.ch:focus {
+	/* Usually an anti-A11Y practice but set to remove an annoyance just for this demo */
+  outline: 0;
 }
-
-.selected:after {
-  content: '';
-  position: absolute;
-  background-color: 78cce2;
-  width: 100%;
-  height: 90%;
-  transform: scale(0);
-  transition: 0.2s ease-out;
-}
-
-#leftradio:hover {
-  border-bottom-left-radius: 2.5em;
-  border-top-left-radius: 2.5em;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-  border: 3px solid #78cce2;
-  background-color: #78cce2;
-}
-
-#leftradio::after {
-  top: 0%;
-  height: 100%;
-  border-bottom-left-radius: 2.5em;
-  border-top-left-radius: 2.5em;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-  border: none;
-  background-color: #78cce2;
-  box-shadow: 0em 0em 4em 0.1em #78cce2;
-}
-
-#rightradio:hover {
-  border-bottom-right-radius: 2.5em;
-  border-top-right-radius: 2.5em;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-  border: 3px solid #defe47;
-  background-color: #defe47;
-}
-
-#rightradio::after {
-  left: -3%;
-  top: -1%;
-  border-bottom-right-radius: 2.5em;
-  border-top-right-radius: 2.5em;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-  border: 3px solid #defe47;
-  background-color: #defe47;
-  box-shadow: 0em 0em 4em 0.1em #defe47;
-}
-
-#middleradio:hover {
-  border: 3px solid #f887ff;
-  background-color: #f887ff;
-}
-
-#middleradio::after {
-  left: -3%;
-  top: -3%;
-  border: 3px solid #f887ff;
-  background-color: #f887ff;
-  box-shadow: 0em 0em 4em 0.1em #f887ff;
-}
-
-.container input[type="radio"]:checked ~ .selected:after {
-  transform: scale(1);
-}
-
 </style>

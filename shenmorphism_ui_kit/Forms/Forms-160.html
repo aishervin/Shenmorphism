@@ -1,22 +1,116 @@
-<!-- From SHΞN™ Morphism by themrsami - Tags: purple, white, form, light, tailwind, tailwindcss, feedback form, product feedback form -->
-<div class="flex flex-col items-center justify-center h-screen light">
-  <div class="w-full max-w-md bg-white rounded-lg shadow-md p-6">
-    <h2 class="text-2xl font-bold text-gray-800 mb-4">Product Feedback Form</h2>
+<div class="body">
+        <div class="container">
+            <form>
+                <div class="head">
+                    <span>Sign up</span>
+                    <p>Create a free account with your email.</p>
+                </div>
+                <div class="inputs">
+                    <input type="text" placeholder="Full Name">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                </div>
+                <button>Sign up</button>
+            </form>
+            <div class="form-footer">
+                <p>Have an account? <a href="#">Log in</a></p> 
+            </div>
+    
+        </div>
 
-    <form class="flex flex-col">
-      <input placeholder="Full Name" class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="text">
-      <input placeholder="Email" class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="email">
-      <select class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" id="product">
-        <option value="product-1">Product 1</option>
-        <option value="product-2">Product 2</option>
-        <option value="product-3">Product 3</option>
-      </select>
-      <input placeholder="Rating (1-5)" class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" type="number">
-      <textarea placeholder="Feedback" class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" name="feedback"></textarea>
+    </div>
+    
+<style>
+/* From SHΞN™ Morphism by TasneemHatem97 - Tags: form, password, login form */
+.container {
+  max-width: 300px;
+  background-color: #F1F7FE;
+  border-radius: 15px;
+  overflow: hidden;
+}
 
-      <button class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150" type="submit">Submit</button>
-    </form>
-  </div>
-</div>
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 32px 24px 24px;
+  gap: 16px;
+  text-align: center;
+}
 
+form .head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
+form .head span {
+  font-size: 1.6rem;
+  font-weight: bolder;
+  color: black;
+}
+
+form .head p {
+  font-size: 1.1rem;
+  color: #7C6666;
+}
+
+form .inputs {
+  overflow: hidden;
+  background-color: #fff;
+  width: 100%;
+  margin: 1rem 0.5rem;
+  border-radius: 8px;
+  border-bottom: none;
+  outline: 0;
+}
+
+form .inputs input {
+  border: none;
+  outline: none;
+  padding: 8px 15px;
+    /* علشان اقدر اخلي البلاس هولدر من اول الفورم بديله نفس الويدس */
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.299);
+  font-weight: 200;
+}
+
+form button {
+  background-color: #4287ef;
+  color: white;
+  width: 100%;
+  height: 40px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: 0;
+  overflow: hidden;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+}
+
+form button:hover {
+  background-color: #005ce6;
+}
+
+.form-footer {
+  background-color: #e0ecfb;
+  padding: 16px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.form-footer a {
+  font-weight: bolder;
+  color: #0066ff;
+  transition: all 3s ease-in-out;
+}
+
+.form-footer a:hover {
+  color: #005ce6;
+}
+
+</style>

@@ -1,97 +1,78 @@
-<button class="button">
-      <span class="top">
-        <p>Explore More</p>
-        <p class="before">&nbsp;</p>
-      </span>
-      <span class="bottom"> &nbsp; </span>
-    </button>
+<button class="btn-57">Button</button>
+
 <style>
-/* From SHΞN™ Morphism by bociKond - Source: https://www.leagueoflegends.com/en-gb/ I designed the button from the client application which button is for the Soul Fighter event - Tags: button, transition, transform */
-.button {
-  --white: #e8e8e8;
-  --border-clr: #fff;
-  --button-bg-clr: #151515;
-  display: grid;
-  grid-template-rows: 80% 20%;
-  background-color: var(--button-bg-clr);
-  border-width: 10px 3px 3px 3px;
-  border-color: var(--border-clr);
-  border-style: solid;
-  font-family: sans-serif;
-  font-weight: bolder;
-  font-size: 1.5rem;
+/* From SHΞN™ Morphism by doniaskima - Tags: button, offset */
+.btn-57,
+.btn-57 *,
+.btn-57 :after,
+.btn-57 :before,
+.btn-57:after,
+.btn-57:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-57 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
   cursor: pointer;
-  transition: 350ms ease-in-out;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
 }
 
-button:hover {
-  --border-clr: #f55c1b;
-  transform: translate(-7px, -7px);
+.btn-57:disabled {
+  cursor: default;
 }
 
-button:hover .top::before {
-  filter: saturate(1);
-  opacity: 1;
+.btn-57:-moz-focusring {
+  outline: auto;
 }
 
-button:hover .top::after {
-  opacity: 0;
+.btn-57 svg {
+  display: block;
+  vertical-align: middle;
 }
 
-.top {
-  color: var(--white);
-  /* background-color: white; */
-  margin: 0.75rem 0.5rem;
-  padding: 0.5rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.btn-57 [hidden] {
+  display: none;
+}
+
+.btn-57 {
+  background: none;
+  border: 3px solid;
+  border-radius: 999px;
+  box-sizing: border-box;
+  color: #000;
+  display: block;
+  font-weight: 900;
+  -webkit-mask-image: none;
+  padding: 20px 60px;
   position: relative;
-  isolation: isolate;
-  z-index: 1;
+  text-transform: uppercase;
 }
 
-.top::before {
+.btn-57:before {
+  background: #fff;
+  border-radius: 999px;
   content: "";
-  position: absolute;
   inset: 0;
-  background: #f55c1b;
-  background: linear-gradient(0deg, #f55c1b 0%, #ffffff 100%);
-  filter: saturate(0);
-  z-index: -2;
-  transition: 350ms ease-in-out;
-  opacity: 0;
-}
-
-.top .before {
   position: absolute;
-  inset: 2px;
+  transform: translate(10px, 10px);
+  transition: transform 0.2s;
   z-index: -1;
-  background-color: var(--button-bg-clr);
 }
 
-.top::after {
-  content: "";
-  position: absolute;
-  inset: 0px;
-  background: var(--button-bg-clr);
-  filter: saturate(0);
-  z-index: -1;
-  transition: 350ms ease-in-out;
-  border: 2px solid var(--white);
-  transition: 350ms ease-in-out;
+.btn-57:hover:before {
+  transform: translate(0);
 }
 
-.bottom {
-  background: repeating-conic-gradient(
-    from 45deg,
-    #616161 0% 25%,
-    #3f3f3f 0% 50%
-  );
-  background-size: 16px 16px;
-  background-color: #3f3f3f;
-  background-position: center;
-  width: 100%;
-  height: 100%;
-}
 </style>

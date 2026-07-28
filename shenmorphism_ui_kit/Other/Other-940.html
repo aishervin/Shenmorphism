@@ -1,51 +1,106 @@
-<span class="loader"></span>
-
+<div class="container">
+  <div class="square">
+    <span style="--i:0;"></span>
+    <span style="--i:1;"></span>
+    <span style="--i:2;"></span>
+    <span style="--i:3;"></span>
+  </div>
+  <div class="square">
+    <span style="--i:0;"></span>
+    <span style="--i:1;"></span>
+    <span style="--i:2;"></span>
+    <span style="--i:3;"></span>
+  </div>
+  <div class="square">
+    <span style="--i:0;"></span>
+    <span style="--i:1;"></span>
+    <span style="--i:2;"></span>
+    <span style="--i:3;"></span>
+  </div>
+</div>
 <style>
-/* From SHΞN™ Morphism by vikramsinghnegi  - Tags: loader, heart, smooth */
-.loader {
+/* From SHΞN™ Morphism by codebykay101 - Tags: animation, neon, css, effects */
+.container {
   position: relative;
-  width: 40px;
-  height: 60px;
-  animation: heartBeat 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.loader:before,
-.loader:after {
-  content: "";
-  background: red;
-  width: 40px;
-  height: 60px;
-  border-radius: 50px 50px 0 0;
+.container .square {
   position: absolute;
-  left: 0;
-  bottom: 0;
-  transform: rotate(45deg);
-  transform-origin: 50% 68%;
-  box-shadow: 5px 4px 5px #0004 inset;
+  width: 200px;
+  height: 200px;
 }
-.loader:after {
-  transform: rotate(-45deg);
+
+.container .square:nth-child(2) {
+  transform: translate(-25%, -25%) rotateX(180deg);
+  filter: hue-rotate(60deg);
 }
-@keyframes heartBeat {
+
+.container .square:nth-child(3) {
+  transform: translate(25%, 25%) rotate(180deg);
+  filter: hue-rotate(180deg);
+}
+
+.container .square::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #0f0;
+  box-shadow: 0 0 0 8px #0f03, 0 0 0 15px #0f01;
+  animation: animateSquare 4s linear infinite;
+}
+
+@keyframes animateSquare {
   0% {
-    transform: scale(0.95);
+    transform: translate(2px,2px);
   }
-  5% {
-    transform: scale(1.1);
+
+  25% {
+    transform: translate(178px,2px);
   }
-  39% {
-    transform: scale(0.85);
+
+  50% {
+    transform: translate(178px,178px);
   }
-  45% {
-    transform: scale(1);
+
+  75% {
+    transform: translate(2px,178px);
   }
-  60% {
-    transform: scale(0.95);
-  }
+
   100% {
-    transform: scale(0.9);
+    transform: translate(2px,2px);
   }
 }
 
+.container .square span {
+  position: absolute;
+  inset: 10px;
+  overflow: hidden;
+  transform: rotate(calc(90deg * var(--i)));
+}
+
+.container .square span::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: #0f0;
+  transform: translateX(-100%);
+  animation: animate 4s linear infinite;
+  animation-delay: calc(1s * var(--i));
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50%,100% {
+    transform: translateX(100%);
+  }
+}
 </style>
-    

@@ -1,42 +1,49 @@
-
-<button>
-  HOVER ME!
+<button data-text="Awesome" class="button">
+    <span class="actual-text">&nbsp;SHΞN™ Morphism&nbsp;</span>
+    <span class="hover-text" aria-hidden="true">&nbsp;SHΞN™ Morphism&nbsp;</span>
 </button>
-
 <style>
-/* From SHΞN™ Morphism by sheptalo - Tags: button */
-button {
-  border-style: outset;
-  font-weight: 1000;
-  height: 50px;
-  width: 150px;
-  background: inherit;
-  border: 7px solid orange;
-  transition: all 900ms;
+/* From SHΞN™ Morphism by satyamchaudharydev - Tags: button */
+/* === removing default button style ===*/
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
 }
 
-button::before {
-  content: "";
-  z-index: -1;
+/* button styling */
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #37FF8B;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
   position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0%;
-  height: 100%;
-  width: 0;
-  background-color: yellow;
-  transition-timing-function: ease-in;
-  transition: all 1.3s;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
 }
-
-button:hover {
-  color: rgb(78, 78, 78);
-  border: 2px solid yellow;
-  transform: scale(1.2);
-}
-
-button:hover::before {
-  left: 0%;
+/* hover */
+.button:hover .hover-text {
   width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
 }
 </style>

@@ -1,95 +1,67 @@
-<label for="cbx" class="cbx">
-  <div class="checkmark">
-  <input checked="" type="checkbox" id="cbx">
-  <div class="flip">
-    <div class="front"></div>
-      <div class="back">
-        <svg viewBox="0 0 16 14" height="14" width="16">
-          <path d="M2 8.5L6 12.5L14 1.5"></path>
-        </svg>
-      </div>
-    </div>
-  </div>
+<label class="container">
+  <input checked="checked" type="checkbox" />
+  <div class="checkmark"></div>
 </label>
+
 <style>
-/* From SHΞN™ Morphism by SharpTH - Tags: checkbox, flip */
-.cbx {
-  -webkit-perspective: 20;
-  perspective: 20;
+/* From SHΞN™ Morphism by IndexOC  - Tags: minimalist, black, checkbox, box-shadow */
+/* Hide the default checkbox */
+.container input {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -12px;
-  border: 2px solid #e8e8eb;
-  background: #e8e8eb;
-  border-radius: 4px;
-  transform: translate3d(0, 0, 0);
+  opacity: 0;
   cursor: pointer;
-  transition: all 0.3s ease;
+  height: 0;
+  width: 0;
 }
 
-.cbx:hover {
-  border-color: #0b76ef;
-}
-
-.flip {
+.container {
   display: block;
-  transition: all 0.4s ease;
-  transform-style: preserve-3d;
   position: relative;
-  width: 20px;
-  height: 20px;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
 }
 
-#cbx {
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  background-color: #ccc;
+  border-radius: 0.25em;
+  box-shadow: 0.1em 0.1em 0.1em 0.1em rgb(41, 40, 40) inset;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: rgb(41, 40, 40);
+  border-radius: 0.25em;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
   display: none;
 }
 
-#cbx:checked + .cbx {
-  border-color: #0b76ef;
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
 }
 
-#cbx:checked + .flip {
-  transform: rotateY(180deg);
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 0.45em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
 }
-
-.front,
-.back {
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 2px;
-}
-
-.front {
-  background: #fff;
-  z-index: 1;
-}
-
-.back {
-  transform: rotateY(180deg);
-  background: #0b76ef;
-  text-align: center;
-  color: #fff;
-  line-height: 20px;
-  box-shadow: 0 0 0 1px #0b76ef;
-}
-
-.back svg {
-  margin-top: 3px;
-  fill: none;
-}
-
-.back svg path {
-  stroke: #fff;
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-
 
 </style>
+    

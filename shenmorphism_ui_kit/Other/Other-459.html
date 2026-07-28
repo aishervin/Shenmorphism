@@ -1,42 +1,30 @@
-<div class="card">
-  <div class="card__skeleton card__title"></div>
-  <div class="card__skeleton card__description">         </div>
-</div>
+
+<div class="ball"></div>
 <style>
-/* From SHΞN™ Morphism by vk-uiux - Tags: animation, loading, card, loader, placeholder, animated, css, css effect, skeleton loading  */
-.card {
-  width: 18rem;
-  padding: 1rem;
-  text-align: center;
-  border-radius: .8rem;
-  background-color: white;
+/* From SHΞN™ Morphism by satyamchaudharydev - Tags: loader */
+.ball {
+ --size: 20px;
+ --timing: 0.7s;
+ --displace: 70px;
+ border-radius: 50%;
+ width: var(--size);
+ height: var(--size);
+ background: #000;
+ margin-right: var(--displace);
+ animation: animation321 var(--timing) infinite alternate
+    cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.card__skeleton {
-  background-image: linear-gradient(
-		90deg,
-		#ccc 0px,
-		rgb(229 229 229 / 90%) 40px,
-		#ccc 80px
-	);
-  background-size: 300%;
-  background-position: 100% 0;
-  border-radius: inherit;
-  animation: shimmer 1.5s infinite;
+@keyframes animation321 {
+ 0% {
+  background: #4284f3;
+  transform: translateX(var(--displace));
+ }
+
+ 100% {
+  background: #ea4335;
+  transform: translateX(00px);
+ }
 }
 
-.card__title {
-  height: 15px;
-  margin-bottom: 15px;
-}
-
-.card__description {
-  height: 100px;
-}
-
-@keyframes shimmer {
-  to {
-    background-position: -100% 0;
-  }
-}
 </style>

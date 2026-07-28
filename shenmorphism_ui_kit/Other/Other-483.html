@@ -1,73 +1,111 @@
-<div class="container">
-  <div class="loader"></div>
-  <div class="loader"></div>
-  <div class="loader"></div>
-  <div class="loader"></div>
-  <div class="loader"></div>
+<div class="terminal">
+  <div class="terminal-header">
+    <div class="buttons">
+      <span class="close"></span>
+      <span class="minimize"></span>
+      <span class="maximize"></span>
+    </div>
+    <div class="title">Status</div>
+  </div>
+  <div class="terminal-body">
+    <div class="terminal-loader">
+      <span class="loader-text">Loading</span>
+      <span id="dot1" class="dot">.</span>
+      <span id="dot2" class="dot">.</span>
+      <span id="dot3" class="dot">.</span>
+    </div>
+  </div>
 </div>
 
 <style>
-/* From SHΞN™ Morphism by Zadrus  - Tags: simple, material design, animation, green, minimalist, loader, colorful, clean */
-.container {
-  width: 200px;
-  height: 200px;
+/* From SHΞN™ Morphism by jeremyssocial  - Tags: loader, dark, code */
+/* Terminal Window */
+.terminal {
+  width: 500px;
+  background-color: #000;
+  color: #0f0;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Terminal Header */
+.terminal-header {
+  background-color: #333;
+  padding: 5px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  color: #fff;
+}
+
+.buttons {
+  display: flex;
+  margin-right: 15px;
+}
+
+.buttons span {
+  height: 15px;
+  width: 15px;
   border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
 }
 
-.loader {
-  width: 20px;
-  height: 40px;
-  border-radius: 10px 50px;
-  box-shadow: 0px 0px 5px black;
-  animation: dominos 1s ease infinite;
+.close {
+  background-color: #ff605c;
+}
+.minimize {
+  background-color: #ffbd44;
+}
+.maximize {
+  background-color: #00ca4e;
 }
 
-.loader:nth-child(1) {
-  --left: 80px;
-  animation-delay: 0.325s;
-  background-color: #5d9960;
+.title {
+  flex-grow: 1;
+  text-align: center;
 }
 
-.loader:nth-child(2) {
-  --left: 70px;
-  animation-delay: 0.5s;
-  background-color: #82a587;
+/* Terminal Body */
+.terminal-body {
+  padding: 10px;
 }
 
-.loader:nth-child(3) {
-  left: 60px;
-  animation-delay: 0.625s;
-  background-color: #8bac74;
+.terminal-loader {
+  display: inline-flex;
+  align-items: center;
 }
 
-.loader:nth-child(4) {
-  animation-delay: 0.74s;
-  left: 50px;
-  background-color: #b9bf90;
+.loader-text {
+  margin-right: 5px;
 }
 
-.loader:nth-child(5) {
-  animation-delay: 0.865s;
-  left: 40px;
-  background-color: #e7d2ab;
+.dot {
+  opacity: 0;
+  animation: dotFadeInOut 1.5s infinite;
 }
 
-@keyframes dominos {
+@keyframes dotFadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
   50% {
-    opacity: 0.7;
-  }
-
-  75% {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-  }
-
-  80% {
     opacity: 1;
   }
+}
+
+#dot1 {
+  animation-delay: 0.5s;
+}
+
+#dot2 {
+  animation-delay: 0.6s;
+}
+
+#dot3 {
+  animation-delay: 0.7s;
 }
 
 </style>

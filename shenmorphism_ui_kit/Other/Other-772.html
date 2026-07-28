@@ -1,64 +1,55 @@
 <div class="loader">
-  <div class="loader__circle"></div>
-  <div class="loader__circle"></div>
-  <div class="loader__circle"></div>
-  <div class="loader__circle"></div>
-  <div class="loader__circle"></div>
+        <span></span>
 </div>
+
 <style>
-/* From SHΞN™ Morphism by EddyBel - Tags: loader */
+/* From SHΞN™ Morphism by JkHuger - Tags: loader */
 .loader {
   position: relative;
-  display: flex;
-  gap: 0.3em;
-}
-
-.loader::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 2em;
-  filter: blur(45px);
-  background-color: #e299ff;
-  background-image: radial-gradient(at 52% 57%, hsla(11,83%,72%,1) 0px, transparent 50%),
-  radial-gradient(at 37% 57%, hsla(175,78%,66%,1) 0px, transparent 50%);
-}
-
-.loader__circle {
-  --size__loader: 0.6em;
-  width: var(--size__loader);
-  height: var(--size__loader);
+  overflow: hidden;
+  box-shadow: -5px -5px -5px rgba(255, 255, 255, 0.1),
+                10px 10px 10px rgba(0, 0, 0, 0.4),
+                inset -5px -5px -5px rgba(255, 255, 255, 0.2),
+                inset 10px 10px 10px rgba(0, 0, 0, 0.4);
+  height: 100px;
+  width: 100px;
   border-radius: 50%;
-  animation: loader__circle__jumping 2s infinite;
-  background-color: #b499ff;
 }
 
-.loader__circle:nth-child(2n) {
-  animation-delay: 300ms;
-  background-color: #e499ff;
+.loader:before {
+  position: absolute;
+  content: '';
+  z-index: 10;
+  opacity: 10;
+  top: 25px;
+  left: 25px;
+  right: 25px;
+  bottom: 25px;
+  background-color: #010113;
+  border-radius: 50%;
+  box-shadow: -5px -5px -5px rgba(255, 255, 255, 0.1),
+    10px 10px 10px rgba(0, 0, 0, 0.4),
+    inset -5px -5px -5px rgba(255, 255, 255, 0.2),
+    inset 10px 10px 10px rgba(0, 0, 0, 0.4);
 }
 
-.loader__circle:nth-child(3n) {
-  animation-delay: 600ms;
+.loader span {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  filter: blur(20px);
+  border-radius: 50%;
+  background: linear-gradient(#0e11d4, #0b8f84, #d81587);
+  animation: loader_41 0.6s linear infinite;
 }
 
-@keyframes loader__circle__jumping {
-  0%, 100% {
-    transform: translateY(0px);
+@keyframes loader_41 {
+  0% {
+    transform: rotate(0deg);
   }
 
-  25% {
-    transform: translateY(-15px) scale(0.5);
-  }
-
-  50% {
-    transform: translateY(0px);
-  }
-
-  75% {
-    transform: translateY(5px) scale(0.9);
+  100% {
+    transform: rotate(360deg);
   }
 }
 </style>

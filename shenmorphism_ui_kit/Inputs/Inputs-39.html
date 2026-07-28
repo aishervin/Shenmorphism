@@ -1,35 +1,60 @@
-<div class="container-input">
-  <input type="text" placeholder="Search" name="text" class="input">
-  <svg fill="#000000" width="20px" height="20px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
-    <path d="M790.588 1468.235c-373.722 0-677.647-303.924-677.647-677.647 0-373.722 303.925-677.647 677.647-677.647 373.723 0 677.647 303.925 677.647 677.647 0 373.723-303.924 677.647-677.647 677.647Zm596.781-160.715c120.396-138.692 193.807-319.285 193.807-516.932C1581.176 354.748 1226.428 0 790.588 0S0 354.748 0 790.588s354.748 790.588 790.588 790.588c197.647 0 378.24-73.411 516.932-193.807l516.028 516.142 79.963-79.963-516.142-516.028Z" fill-rule="evenodd"></path>
-</svg>
+<div class="search">
+  <input placeholder="Search" class="search__input" type="text" />
+  <button class="search__button">
+    <svg
+      viewBox="0 0 16 16"
+      class="bi bi-search"
+      fill="currentColor"
+      height="16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+      ></path>
+    </svg>
+  </button>
 </div>
 
 <style>
-/* From SHΞN™ Morphism by garerim - Tags: input, search */
-.container-input {
-  position: relative;
+/* From SHΞN™ Morphism by xetrov47  - Tags: simple, input, search */
+.search {
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
-.input {
-  width: 150px;
-  padding: 10px 0px 10px 40px;
-  border-radius: 9999px;
-  border: solid 1px #333;
-  transition: all .2s ease-in-out;
+.search__input {
+  font-family: inherit;
+  font-size: inherit;
+  border: 1px solid #767676;
+  color: #767676;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-right: -1.5rem;
+  height: 30px;
+  width: 15rem;
+}
+
+.search__input::-webkit-input-placeholder {
+  font-weight: 400;
+  color: #767676;
+  font-size: 14px;
+}
+
+.search__button {
+  border: none;
+  background-color: #fff;
+  margin-top: 0.1em;
+}
+
+.search__button:hover {
+  cursor: pointer;
+}
+
+.search input:focus {
   outline: none;
-  opacity: 0.8;
 }
 
-.container-input svg {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translate(0, -50%);
-}
-
-.input:focus {
-  opacity: 1;
-  width: 250px;
-}
 </style>
+    

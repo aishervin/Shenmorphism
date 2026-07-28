@@ -1,60 +1,61 @@
-<div class="bauble_box">
-	<input class="bauble_input" id="bauble_check" name="bauble" type="checkbox">
-	<label class="bauble_label" for="bauble_check">Toggle</label>
-</div>
+<fieldset>
+  <legend>Frameworks</legend>
+
+  <div class="button-group">
+    <input type="radio" id="svelt" name="frameworks" checked="" />
+    <label for="svelt">Svelt</label>
+  </div>
+
+  <div class="button-group">
+    <input type="radio" id="react" name="frameworks" />
+    <label for="react">React</label>
+  </div>
+
+  <div class="button-group">
+    <input type="radio" id="vue" name="frameworks" />
+    <label for="vue">Vue</label>
+  </div>
+</fieldset>
+
 <style>
-/* From SHΞN™ Morphism by Pradeepsaranbishnoi - Tags: switch */
-.bauble_box .bauble_label {
-  background: #2c2;
-  background-position: 62px 5px;
-  background-repeat: no-repeat;
-  background-size: auto 5px;
-  border: 0;
-  border-radius: 50px;
-  box-shadow: inset 0 10px 20px rgba(0,0,0,.4), 0 -1px 0px rgba(0,0,0,.2), inset 0 -1px 0px #fff;
-  cursor: pointer;
+/* From SHΞN™ Morphism by spj2401Dev  - Tags:  */
+.button-group {
+  flex-grow: 1;
+  margin: auto;
+}
+
+.button-group input[type="radio"] {
+  display: none;
+}
+
+.button-group label {
   display: inline-block;
-  font-size: 0;
-  height: 40px;
-  position: relative;
-  -webkit-transition: all 500ms ease;
-  transition: all 500ms ease;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid #2b426d;
+  background-color: #385c7e;
+  color: white;
+  border-radius: 15px;
+  transition: all ease 0.2s;
+  text-align: center;
+  flex-grow: 1;
+  flex-basis: 0;
   width: 90px;
+  font-size: 13px;
+  margin: 5px;
+  box-shadow: 0px 0px 50px -15px #000000;
 }
 
-.bauble_box .bauble_label:before {
-  background-color: rgba(255,255,255,.2);
-  background-position: 0 0;
-  background-repeat: repeat;
-  background-size: 30% auto;
-  border-radius: 50%;
-  box-shadow: inset 0 -5px 25px #050, 0 10px 20px rgba(0,0,0,.4);
-  content: '';
-  display: block;
-  height: 30px;
-  left: 5px;
-  position: absolute;
-  top: 6px;
-  -webkit-transition: all 500ms ease;
-  transition: all 500ms ease;
-  width: 30px;
-  z-index: 2;
+.button-group input[type="radio"]:checked + label {
+  background-color: white;
+  color: #02375a;
+  border: 1px solid #2b426d;
 }
 
-.bauble_box input.bauble_input {
-  opacity: 0;
-  z-index: 0;
-}
-
-/* Checked */
-.bauble_box input.bauble_input:checked + .bauble_label {
-  background-color: #c22;
-}
-
-.bauble_box input.bauble_input:checked + .bauble_label:before {
-  background-position: 150% 0;
-  box-shadow: inset 0 -5px 25px #500, 0 10px 20px rgba(0,0,0,.4);
-  left: calc( 100% - 35px );
+fieldset {
+  border: 0;
+  display: flex;
 }
 
 </style>
+    

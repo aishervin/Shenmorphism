@@ -1,57 +1,150 @@
 <div class="card">
-    <div class="icon">
+  <div class="card__body">
+    <div class="card__icon">
+      <svg
+        height="32"
+        width="32"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+        ></path>
+      </svg>
     </div>
 
-    <div class="content">
-        <h3>Title</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur </p>
-    </div>
+    <p class="card__title">Abstract Design</p>
+    <p class="card__paragraph">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus
+      perferendis eaque dolore repellat numquam. Dolores.
+    </p>
+  </div>
+
+  <div class="card__ribbon">
+    <label class="card__ribbon-label">01</label>
+  </div>
 </div>
+
 <style>
-/* From SHΞN™ Morphism by david-mohseni - Tags: neumorphism, card */
+/* From SHΞN™ Morphism by Creatlydev  - Tags: card */
 .card {
-  width: 190px;
-  height: 120px;
-  background-color: #eee;
+  width: min(300px, 100%);
+  margin: auto;
+  background-color: #f4f5f2;
   text-align: center;
-  border: 10px solid #eee;
-  border-radius: 20px;
-  box-shadow: inset 5px 5px 10px #bbb, inset -5px -5px 10px #fff;
-  transition: 0.5s;
+  border-top-left-radius: 4rem;
+  border: 2px solid #fff;
+  position: relative;
 }
 
-.card:hover {
-  height: 254px;
+.card::before {
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: 120px;
+  background-color: #393e7f;
+  top: 32px;
+  right: -2.5px;
+  -webkit-clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
 }
 
-.icon {
-  width: 60px;
-  height: 60px;
-  color: red;
-  font-size: 30px;
-  background-color: #eee;
-  margin: 20px auto;
-  padding: 5px;
+.card__body {
+  padding: 2rem 1.5rem;
+  max-width: 25ch;
+  margin: auto;
+}
+
+.card__title {
+  font-weight: 800;
+  color: #121513;
+  font-size: 1.25rem;
+  margin-block: 1.5rem 0.75rem;
+}
+
+.card__paragraph {
+  color: #303830;
+  font-size: 0.875rem;
+}
+
+.card__ribbon {
+  margin-top: 1.5rem;
+  display: grid;
+  place-items: center;
+  height: 50px;
+  background-color: #393e7f;
+  position: relative;
+  width: 110%;
+  left: -5%;
+  top: 10px;
+  position: relative;
+  border-radius: 0 0 2rem 2rem;
+}
+
+.card__ribbon::after,
+.card__ribbon::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  aspect-ratio: 1/1;
+  bottom: 100%;
+  z-index: -2;
+  background-color: #191c39;
+}
+
+.card__ribbon::before {
+  left: 0;
+  transform-origin: left bottom;
+  transform: rotate(45deg);
+}
+
+.card__ribbon::after {
+  right: 0;
+  transform-origin: right bottom;
+  transform: rotate(-45deg);
+}
+
+.card__ribbon-label {
+  display: block;
+  width: 84px;
+  aspect-ratio: 1/1;
+  background-color: #fff;
+  position: relative;
+  transform: translateY(-50%);
   border-radius: 50%;
-  box-shadow: 8px 8px 10px #ddd, -8px -8px 10px #fff;
+  border: 8px solid #393e7f;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  line-height: 1;
+  font-size: 1.5rem;
 }
 
-.content {
-  color: #999;
-  background-color: #eee;
-  padding: 10px;
-  margin: 5px 20px;
-  border-radius: 8px;
-  box-shadow: 8px 8px 10px #ddd, -8px -8px 10px #fff;
-  transform: translateY(-80px) scale(0);
-  transition: all 0.5s;
+.card__ribbon-label::before,
+.card__ribbon-label::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  bottom: 50%;
 }
 
-.card:hover .content {
-  transform: translateY(0) scale(1)
+.card__ribbon-label::before {
+  right: calc(100% + 4px);
+  border-bottom-right-radius: 20px;
+  box-shadow: 5px 5px 0 #393e7f;
 }
 
-.content h3 {
-  text-shadow: 2px 2px 0px #fff;
+.card__ribbon-label::after {
+  left: calc(100% + 4px);
+  border-bottom-left-radius: 20px;
+  box-shadow: -5px 5px 0 #393e7f;
 }
+
 </style>
+    

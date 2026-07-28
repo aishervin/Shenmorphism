@@ -1,61 +1,58 @@
 <div class="loader"></div>
+
 <style>
-/* From SHΞN™ Morphism by alexruix - Tags: loader, circle */
+/* From SHΞN™ Morphism by vikramsinghnegi  - Tags: animation, loader, refresh loading */
+/* HTML: <div class="loader"></div> */
 .loader {
-  position: relative;
-  margin: auto;
-  box-sizing: border-box;
-  background-clip: padding-box;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.1);
-  -webkit-mask: linear-gradient(rgba(24, 24, 24, 0.2), rgba(24, 24, 24,0.9) 90%);
-  transform-origin: 50% 60%;
-  transform: perspective(200px) rotateX(66deg);
+  font-weight: bold;
+  font-family: monospace;
+  display: inline-grid;
+  font-size: 30px;
 }
-
-.loader:before, .loader:after {
-  content: "";
-  position: absolute;
-  margin: -4px;
-  box-sizing: inherit;
-  width: inherit;
-  height: inherit;
-  border-radius: inherit;
-  opacity: 0.05;
-  border: inherit;
-  border-color: transparent;
-  animation: spinner-spin 1.2s cubic-bezier(0.6, 0.2, 0, 0.8) infinite, spinner-fade 1.2s linear infinite;
-}
-
-.loader:before {
-  border-top-color: #66e6ff;
-}
-
+.loader:before,
 .loader:after {
-  border-top-color: #f0db75;
-  animation-delay: 0.3s;
+  content: "Refresh....";
+  grid-area: 1/1;
+  -webkit-mask-size: 1.5ch 100%, 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: l36-1 1s infinite;
+}
+.loader:before {
+  -webkit-mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+}
+.loader:after {
+  -webkit-mask-image: linear-gradient(#000 0 0);
+  animation: l36-1 1s infinite,
+    l36-2 0.2s infinite cubic-bezier(0.5, 200, 0.5, -200);
 }
 
-@keyframes spinner-spin {
-  100% {
-    transform: rotate(360deg);
+@keyframes l36-1 {
+  0% {
+    -webkit-mask-position: 0 0, 0 0;
   }
-}
-
-@keyframes spinner-fade {
   20% {
-    opacity: 0.1;
+    -webkit-mask-position: 0.5ch 0, 0 0;
   }
-
   40% {
-    opacity: 1;
+    -webkit-mask-position: 100% 0, 0 0;
   }
-
   60% {
-    opacity: 0.1;
+    -webkit-mask-position: 4.5ch 0, 0 0;
+  }
+  80% {
+    -webkit-mask-position: 6.5ch 0, 0 0;
+  }
+  100% {
+    -webkit-mask-position: 2.5ch 0, 0 0;
   }
 }
- 
+@keyframes l36-2 {
+  100% {
+    transform: translateY(0.2px);
+  }
+}
+
 </style>
+    

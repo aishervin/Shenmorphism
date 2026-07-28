@@ -1,116 +1,44 @@
-<button class="btn-11"><span>Button</span></button>
+<button class="button">
+  <span class="text">
+    <svg viewBox="0 0 24 24" height="22px" width="22px">
+      <g fill="none">
+        <path
+          d="m18.636 15.67l1.716-5.15c1.5-4.498 2.25-6.747 1.062-7.934c-1.187-1.187-3.436-.438-7.935 1.062L8.33 5.364C4.7 6.574 2.885 7.18 2.37 8.067a2.717 2.717 0 0 0 0 2.73c.515.888 2.33 1.493 5.96 2.704c.584.194.875.291 1.119.454c.236.158.439.361.597.597c.163.244.26.535.454 1.118c1.21 3.63 1.816 5.446 2.703 5.962a2.72 2.72 0 0 0 2.731 0c.887-.516 1.492-2.331 2.703-5.962Z"
+          stroke-width="1.5"
+          stroke="currentColor"
+        ></path>
+        <path
+          d="M16.212 8.848a.75.75 0 0 0-1.055-1.066zm-5.55 5.488l5.55-5.488l-1.055-1.066l-5.55 5.488z"
+          fill="currentColor"
+        ></path>
+      </g>
+    </svg>
+    Send Message
+  </span>
+</button>
 
 <style>
-/* From SHΞN™ Morphism by doniaskima - Tags: button, design, Button design */
-.btn-11,
-.btn-11 *,
-.btn-11 :after,
-.btn-11 :before,
-.btn-11:after,
-.btn-11:before {
-  border: 0 solid;
-  box-sizing: border-box;
-}
-
-.btn-11 {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-appearance: button;
-  background-color: #000;
-  background-image: none;
-  color: #fff;
+/* From SHΞN™ Morphism by Cobp  - Tags: material design, 3d, button, rounded, light */
+.button {
   cursor: pointer;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
-    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  font-size: 100%;
-  font-weight: 900;
-  line-height: 1.5;
-  margin: 0;
-  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
-  padding: 0;
-  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 600;
+  outline: 2px solid rgba(225, 225, 225, 0.9);
+  padding: 4px;
+  border: 3px solid #bfbfbf;
+  border-radius: 12px;
+  box-shadow: 0px 30px 50px 10px rgba(0, 0, 0, 0.2);
 }
-
-.btn-11:disabled {
-  cursor: default;
-}
-
-.btn-11:-moz-focusring {
-  outline: auto;
-}
-
-.btn-11 svg {
-  display: block;
-  vertical-align: middle;
-}
-
-.btn-11 [hidden] {
-  display: none;
-}
-
-.btn-11 {
-  border-radius: 99rem;
-  border-width: 2px;
-  overflow: hidden;
-  padding: 0.8rem 3rem;
-  position: relative;
-}
-
-.btn-11 span {
-  mix-blend-mode: difference;
-}
-
-.btn-11:before {
-  -webkit-animation: bg-scroll 3s linear infinite;
-  animation: bg-scroll 3s linear infinite;
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
-  background: repeating-linear-gradient(
-    45deg,
-    hsla(0, 0%, 100%, 0.2),
-    hsla(0, 0%, 100%, 0.2) 0.7%,
-    transparent 0,
-    transparent 4%
-  );
-  content: "";
-  display: block;
-  height: 300%;
-  left: -100%;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  transition: opacity 0.3s, background-color 0.2s;
-  width: 300%;
-}
-
-.btn-11:hover:before {
-  -webkit-animation-play-state: running;
-  animation-play-state: running;
-  opacity: 1;
-}
-
-.btn-11:active:before {
-  background-color: #fff;
-}
-
-@-webkit-keyframes bg-scroll {
-  0% {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(33%);
-  }
-}
-
-@keyframes bg-scroll {
-  0% {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(33%);
-  }
+.text {
+  padding: 16px 10px;
+  display: flex;
+  aling-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 50px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1),
+    inset 0px 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 </style>
+    

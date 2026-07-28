@@ -1,56 +1,116 @@
-  <div class="stats shadow">
-  
-  <div class="stat">
-    <div class="stat-title">Total Page Views</div>
-    <div class="stat-value">89,400</div>
-    <div class="stat-desc">21% more than last month</div>
-  </div>
-  
-</div>
+<div class="one-div"></div>
 <style>
-/* From SHΞN™ Morphism by Yaya12085 - Source: https://daisyui.com/components/stat/ - Tags: stats, card, dark */
-.stats {
-  display: inline-grid;
-  background-color: #111111;
-  color: #fff;
-  border-radius: 1rem;
-  border: 1px solid gray;
+/* From SHΞN™ Morphism by andrew-demchenk0 - Tags: gradient, spinner, animated, SHΞN™ Morphism, transition, spin, ui, points, creator points */
+.one-div {
+  cursor: help;
+  position: relative;
+  width: 185px;
+  height: 30px;
+  border-radius: 10px;
+  background: linear-gradient(120deg,
+    #BF66FF 0%, 
+    #6248FF 3%,
+    #00DDEB 95%
+    );
+  animation: spin 4s linear infinite;
+  transform: translateY(100px);
+  box-shadow: 0px 10px 25px -10px #4E67FB;
+  transform-style: preserve-3d;
+  transition: all 0.4s;
 }
 
-.shadow {
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+.one-div::before {
+  content: 'U';
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 900;
+  font-size: 200px;
+  display: inline-block;
+  background-image: linear-gradient(140deg,
+    #BF66FF 10%, 
+    #6248FF 70%,
+    #00DDEB 100%
+    );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  position: absolute;
+  bottom: 10px;
+  left: -10px;
 }
 
-.stat {
-  display: inline-grid;
-  width: 100%;
-  grid-template-columns: repeat(1, 1fr);
-  column-gap: 1rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.one-div::after {
+  display: block;
+  content: '';
+  width: 35px;
+  height: 147px;
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(140deg,
+    #BF66FF -100%, 
+    #6248FF 40%,
+    #00DDEB 100%
+    );
+  position: absolute;
+  bottom: 50px;
+  right: 0;
 }
 
-.stat-title {
-  grid-column-start: 1;
-  white-space: nowrap;
-  color: rgb(197, 194, 194);
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg) translateY(100%);
+  }
+
+  100% {
+    transform: rotateY(360deg) translateY(100%);
+  }
 }
 
-.stat-value {
-  grid-column-start: 1;
-  white-space: nowrap;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-  font-weight: 800;
+@keyframes spin2 {
+  0% {
+    transform: translateY(-20%) rotateY(0);
+  }
+
+  100% {
+    transform: translateY(-20%) rotateY(360deg);
+  }
 }
 
-.stat-desc {
-  grid-column-start: 1;
-  white-space: nowrap;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: rgb(197, 194, 194);
+.one-div:active {
+  cursor: wait;
+  width: 100px;
+  height: 100px;
+  border-radius: 200px;
+  animation: spin2 2.5s linear infinite;
+  background: linear-gradient(145deg,
+    #BF66FF 10%, 
+    #6248FF 50%,
+    #00DDEB 100%
+  );
+}
+
+.one-div:active::before {
+  font-size: 0px;
+  left: 10px;
+  top: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  /* background: #e8e8e8; */
+  background: #212121;
+}
+
+.one-div:active::after {
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  transform: rotate(45deg);
+  border: 10px solid;
+  border-image: linear-gradient(85deg,
+    #BF66FF -50%, 
+    #6248FF 80%,
+    #00DDEB 150%
+    )1;
+  border-radius: 0;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
 }
 </style>

@@ -1,99 +1,50 @@
-<button class="toggle-btn">
-  <div class="sun-rays"></div>
-  <div class="main-circle"></div>
-</button>
-
+<label class="tgl">
+    <input type="checkbox">
+    <span class="slider"></span>
+</label>
 <style>
-/* From SHΞN™ Morphism by aymenthedeveloper  - Tags: icon, animation, button, toggle, light&dark, toggle switch */
-.toggle-btn {
-  --bg: #e8e8e8;
-  --fg: #212121;
-  background-color: var(--bg);
-  border-radius: 10px;
-  --dimensions: 50px;
-  width: var(--dimensions);
-  height: var(--dimensions);
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
+/* From SHΞN™ Morphism by Saiyed-Tanvir - Tags: switch, animated, lever */
+.tgl {
+  position: relative;
+  display: inline-block;
+  width: 5em;
+  height: 1em;
+}
+
+.tgl input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
   cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 30px;
 }
 
-.toggle-btn .main-circle {
-  --dimensions: 20px;
-  width: var(--dimensions);
-  height: var(--dimensions);
-  background-color: var(--fg);
-  border-radius: 50%;
+.slider:before {
   position: absolute;
-  transition: transform 0.4s ease 0.2s;
-}
-
-.toggle-btn .main-circle::after {
   content: "";
-  background-color: var(--bg);
-  border-radius: 50%;
-  --dimensions: 15px;
-  width: var(--dimensions);
-  height: var(--dimensions);
-  position: absolute;
-  top: 1px;
-  right: -1px;
-  transform-origin: right top;
-  transform: scale(0);
-  transition: transform 0.4s ease 0.2s;
+  height: 3.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.3em;
+  bottom: -1.3em;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px #0009;
+  transition: 1s cubic-bezier(0.49, -1.3, 0.45, 2.44);
 }
 
-.toggle-btn .sun-rays {
-  display: grid;
-  place-items: center;
-  transition: transform 0.4s ease 0.2s;
+.tgl input:checked + .slider {
+  background-color: #2196F3;
 }
 
-.toggle-btn .sun-rays,
-.toggle-btn .sun-rays::after,
-.toggle-btn .sun-rays::before {
-  --width: 3px;
-  --height: 6px;
-  width: var(--width);
-  height: var(--height);
-  background-color: var(--fg);
-  position: absolute;
-  box-shadow: 0 16px 0 var(--fg), 0 -16px 0 var(--fg);
+.tgl input:checked + .slider:before {
+  transform: translateX(2.5em) rotateZ(-180deg);
 }
-
-.toggle-btn .sun-rays::after {
-  content: "";
-  transform: rotate(120deg);
-}
-
-.toggle-btn .sun-rays::before {
-  content: "";
-  transform: rotate(240deg);
-}
-
-.toggle-btn:focus .main-circle {
-  transform: scale(1.2);
-}
-
-.toggle-btn:focus .main-circle::after {
-  transform: scale(1);
-}
-
-.toggle-btn:focus .sun-rays {
-  transition: transform 0.4s;
-  transform: scale(0);
-}
-
-@media (prefers-color-scheme: dark) {
-  .toggle-btn {
-    --bg: #212121;
-    --fg: #e8e8e8;
-  }
-}
-
 </style>
-    

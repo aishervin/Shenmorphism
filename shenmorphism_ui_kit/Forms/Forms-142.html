@@ -1,72 +1,67 @@
-<!-- From SHΞN™ Morphism by themrsami - Tags: form, tailwind, tailwindcss, themrsami, shipping form, address form -->
-<div class="mt-4 flex flex-col bg-gray-900 rounded-lg p-4 shadow-sm">
-    <h2 class="text-white font-bold text-lg">Shipping Label Address Form</h2>
+<form class="colorful-form">
+  <div class="form-group">
+    <label class="form-label" for="name">Name:</label>
+    <input required="" placeholder="Enter your name" class="form-input" type="text">
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="email">Email:</label>
+    <input required="" placeholder="Enter your email" class="form-input" name="email" id="email" type="email">
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="message">Message:</label>
+    <textarea required="" placeholder="Enter your message" class="form-input" name="message" id="message"></textarea>
+  </div>
+  <button class="form-button" type="submit">Submit</button>
+</form>
 
-    <div class="mt-4">
-        <label class="text-white" for="name">Name</label>
-        <input placeholder="Your name" class="w-full bg-gray-800 rounded-md border-gray-700 text-white px-2 py-1" type="text">
-    </div>
+<style>
+/* From SHΞN™ Morphism by StefanR1901 - Tags: form, input, discount form */
+.colorful-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
 
-    <div class="mt-4">
-        <label class="text-white" for="address">Address</label>
-        <textarea placeholder="Your address" class="w-full bg-gray-800 rounded-md border-gray-700 text-white px-2 py-1" id="address"></textarea>
-    </div>
+.form-group {
+  margin-bottom: 20px;
+}
 
-    <div class="mt-4 flex flex-row space-x-2">
-        <div class="flex-1">
-            <label class="text-white" for="city">City</label>
-            <input placeholder="Your city" class="w-full bg-gray-800 rounded-md border-gray-700 text-white px-2 py-1" id="city" type="text">
-        </div>
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
 
-        <div class="flex-1">
-            <label class="text-white" for="state">State</label>
-            <input placeholder="Your state" class="w-full bg-gray-800 rounded-md border-gray-700 text-white px-2 py-1" id="state" type="text">
-        </div>
-    </div>
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #fff;
+  color: #333;
+  border-radius: 5px;
+}
 
-    <div class="mt-4 flex flex-row space-x-2">
-        <div class="flex-1">
-            <label class="text-white" for="zip">ZIP</label>
-            <input placeholder="Your ZIP code" class="w-full bg-gray-800 rounded-md border-gray-700 text-white px-2 py-1" id="zip" type="text">
-        </div>
+textarea.form-input {
+  height: 100px;
+}
 
-        <div class="flex flex-row space-x-2">
-            <div class="flex-1">
-                <label class="text-white" for="country">Country</label>
-                <select class="w-full bg-gray-800 rounded-md border-gray-700 text-white px-2 py-1" id="country">
-            <option value="">Select a country</option>
+.form-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #ff6f69;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-            <optgroup label="Africa">
-                <option value="AF">Afghanistan</option>
-                <option value="DZ">Algeria</option>
-                <option value="AO">Angola</option>
-                ...
-                <option value="ZW">Zimbabwe</option>
-            </optgroup>
+.form-button:hover {
+  background-color: #ff5f59;
+}
 
-            <optgroup label="Asia">
-                <option value="AM">Armenia</option>
-                <option value="AZ">Azerbaijan</option>
-                <option value="BH">Bahrain</option>
-                ...
-                <option value="YE">Yemen</option>
-            </optgroup>
-
-            <optgroup label="South America">
-                <option value="AR">Argentina</option>
-                <option value="BO">Bolivia</option>
-                <option value="BR">Brazil</option>
-                ...
-                <option value="VE">Venezuela</option>
-            </optgroup>
-
-            ...
-            </select>
-            </div>
-        </div>
-    </div>
-    <div class="mt-4 flex justify-end">
-        <button class="bg-white text-black rounded-md px-4 py-1 hover:bg-blue-500 hover:text-white transition-all duration-200" type="submit">Submit</button>
-    </div>
-</div>
-
+</style>

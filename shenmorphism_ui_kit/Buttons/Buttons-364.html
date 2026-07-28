@@ -1,24 +1,60 @@
-<button class="button">Hover me</button>
+<button class="space-button">
+  <span>Explore space</span>
+  <svg viewBox="0 0 24 24">
+    <path d="M5.5 16.5l5-5-5-5"></path>
+    <path d="M11 11h8v2h-8z"></path>
+    <path d="M16.5 7.5l5-5-5-5"></path>
+    <path d="M19 4v8h-2v-8z"></path>
+  </svg>
+</button>
 
 <style>
-/* From SHΞN™ Morphism by nishikalewis  - Tags: button */
-button {
-  background: none;
-  color: cyan;
-  border: 2px solid cyan;
-  padding: 1em 2em;
-  font-size: 1em;
-  border-radius: 0.5em;
+/* From SHΞN™ Morphism by BHARGAVPATEL1244 - Tags: button */
+.space-button {
+  display: inline-block;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 32px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
-  transition: all 0.25s ease-in-out;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  border-color: magenta;
-  color: white;
-  box-shadow: 0 0.6em 0.6em -0.3em magenta;
-  transform: translateY(-0.3em);
+.space-button span {
+  position: relative;
+  z-index: 1;
+}
+
+.space-button svg {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+  transition: transform 0.3s ease;
+}
+
+.space-button:hover {
+  background-color: #f8f8f8;
+  color: #111;
+}
+
+.space-button:hover svg {
+  transform: translateX(4px);
+}
+
+.space-button:active {
+  background-color: #f94b4c;
+  color: #fff;
 }
 
 </style>
-    

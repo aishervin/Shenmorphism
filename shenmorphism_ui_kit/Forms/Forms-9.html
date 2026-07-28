@@ -1,100 +1,149 @@
-<div class="form-box">
-<form class="form">
-    <span class="title">Sign up</span>
-    <span class="subtitle">Create a free account with your email.</span>
-    <div class="form-container">
-      <input type="text" class="input" placeholder="Full Name">
-			<input type="email" class="input" placeholder="Email">
-			<input type="password" class="input" placeholder="Password">
+<div class="container">
+  <div class="heading">SignIn to your account</div>
+  <form class="form" action="">
+    <div class="input-field">
+      <input
+        required=""
+        autocomplete="off"
+        type="text"
+        name="text"
+        id="username"
+      />
+      <label for="username">Full Name</label>
     </div>
-    <button>Sign up</button>
-</form>
-<div class="form-section">
-  <p>Have an account? <a href="">Log in</a> </p>
+    <div class="input-field">
+      <input
+        required=""
+        autocomplete="off"
+        type="email"
+        name="email"
+        id="email"
+      />
+      <label for="email">Email</label>
+    </div>
+    <div class="input-field">
+      <input
+        required=""
+        autocomplete="off"
+        type="password"
+        name="text"
+        id="password"
+      />
+      <label for="username">Password</label>
+    </div>
+
+    <div class="btn-container">
+      <button class="btn">Submit</button>
+      <div class="acc-text">
+        New here ?
+        <span style="color : #0000ff; cursor : pointer;">Create Account</span>
+      </div>
+    </div>
+  </form>
 </div>
-</div>
+
 <style>
-/* From SHΞN™ Morphism by alexruix - Tags: form, sign-up */
-.form-box {
-  max-width: 300px;
-  background: #f1f7fe;
-  overflow: hidden;
-  border-radius: 16px;
-  color: #010101;
+/* From SHΞN™ Morphism by Spacious74  - Tags: simple, login, subscription, email, minimalist, form, register, signin */
+.container {
+  border: solid 1px #8d8d8d;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.container .heading {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  font-weight: bolder;
 }
 
 .form {
-  position: relative;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
-  padding: 32px 24px 24px;
-  gap: 16px;
-  text-align: center;
+  gap: 20px;
 }
 
-/*Form text*/
-.title {
-  font-weight: bold;
-  font-size: 1.6rem;
+.form .btn-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.subtitle {
+.form .btn {
+  padding: 10px 20px;
   font-size: 1rem;
-  color: #666;
-}
-
-/*Inputs box*/
-.form-container {
-  overflow: hidden;
-  border-radius: 8px;
-  background-color: #fff;
-  margin: 1rem 0 .5rem;
-  width: 100%;
-}
-
-.input {
-  background: none;
-  border: 0;
-  outline: 0;
-  height: 40px;
-  width: 100%;
-  border-bottom: 1px solid #eee;
-  font-size: .9rem;
-  padding: 8px 15px;
-}
-
-.form-section {
-  padding: 16px;
-  font-size: .85rem;
-  background-color: #e0ecfb;
-  box-shadow: rgb(0 0 0 / 8%) 0 -1px;
-}
-
-.form-section a {
-  font-weight: bold;
-  color: #0066ff;
-  transition: color .3s ease;
-}
-
-.form-section a:hover {
-  color: #005ce6;
-  text-decoration: underline;
-}
-
-/*Button*/
-.form button {
-  background-color: #0066ff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 10px;
+  border: solid 1px #1034aa;
+  border-bottom: solid 1px #90c2ff;
+  background: linear-gradient(135deg, #0034de, #006eff);
   color: #fff;
-  border: 0;
-  border-radius: 24px;
-  padding: 10px 16px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color .3s ease;
+  font-weight: bolder;
+  transition: all 0.2s ease;
+  box-shadow: 0px 2px 3px #000d3848, inset 0px 4px 5px #0070f0,
+    inset 0px -4px 5px #002cbb;
 }
 
-.form button:hover {
-  background-color: #005ce6;
+.form .btn:active {
+  box-shadow: inset 0px 4px 5px #0070f0, inset 0px -4px 5px #002cbb;
+  transform: scale(0.995);
 }
+
+.input-field {
+  position: relative;
+}
+
+.input-field label {
+  position: absolute;
+  color: #8d8d8d;
+  pointer-events: none;
+  background-color: transparent;
+  left: 15px;
+  transform: translateY(0.6rem);
+  transition: all 0.3s ease;
+}
+
+.input-field input {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: solid 1px #8d8d8d;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+.input-field input:focus,
+.input-field input:valid {
+  outline: none;
+  border: solid 1px #0034de;
+}
+
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+  transform: translateY(-51%) translateX(-10px) scale(0.8);
+  background-color: #fff;
+  padding: 0px 5px;
+  color: #0034de;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 100px;
+}
+
+.form .passicon {
+  cursor: pointer;
+  font-size: 1.3rem;
+  position: absolute;
+  top: 6px;
+  right: 8px;
+}
+
+.form .close {
+  display: none;
+}
+
 </style>
+    

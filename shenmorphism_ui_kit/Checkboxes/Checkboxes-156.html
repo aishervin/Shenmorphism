@@ -1,64 +1,79 @@
 <label class="container">
-  <input type="checkbox" />
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 75 100"
-    class="pin"
-  >
-    <line
-      stroke-width="12"
-      stroke="black"
-      y2="100"
-      x2="37"
-      y1="64"
-      x1="37"
-    ></line>
-    <path
-      stroke-width="10"
-      stroke="black"
-      d="M16.5 36V4.5H58.5V36V53.75V54.9752L59.1862 55.9903L66.9674 67.5H8.03256L15.8138 55.9903L16.5 54.9752V53.75V36Z"
-    ></path>
-  </svg>
+  <input checked="checked" type="checkbox">
+  <div class="checkmark"></div>
 </label>
-
 <style>
-/* From SHΞN™ Morphism by vinodjangid07  - Tags: hover, checkbox, toggle, save, hover effect, pin, bookmark */
+/* From SHΞN™ Morphism by ercnersoy - Tags: checkbox */
+/* Hide the default checkbox */
 .container input {
-  display: none;
-}
-.pin {
-  width: 15px;
-  height: auto;
-  transform: rotate(35deg);
-}
-.container {
-  width: 45px;
-  height: 45px;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: 10px;
-}
-.container input:checked ~ .pin {
-  fill: rgb(179, 139, 255);
-  stroke: white;
-}
-.container input:checked ~ .pin line {
-  stroke: rgb(179, 139, 255);
-}
-.container input:checked ~ .pin path {
-  stroke: rgb(179, 139, 255);
-}
-.container:hover {
-  background-color: rgb(244, 238, 255);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.041);
-}
-.container:active {
-  transform: scale(0.9);
+ position: absolute;
+ opacity: 0;
+ cursor: pointer;
+ height: 0;
+ width: 0;
 }
 
+.container {
+ display: block;
+ position: relative;
+ cursor: pointer;
+ font-size: 20px;
+ user-select: none;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+ position: relative;
+ top: 0;
+ left: 0;
+ height: 1.4em;
+ width: 1.4em;
+ border: 2px solid #2196F3;
+ border-radius: 1rem 0rem 1rem;
+ transform: rotate(45deg);
+ transition: all .5s ease-in-out;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+ box-shadow: 0px 0px 40px 5px #2196F3;
+ border-radius: 1rem 0rem 1rem;
+ background-color: #2195f31f;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+ content: "";
+ position: absolute;
+ display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+ display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+ left: 0.35em;
+ top: 0.20em;
+ width: 0.25em;
+ height: 0.5em;
+ border: solid #2196F3;
+ border-width: 0 0.15em 0.15em 0;
+ transform: rotate(-5deg);
+ animation: upAnimate 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes upAnimate {
+ from {
+  transform: translate(-20px, -20px) rotate(-5deg);
+  opacity: 0;
+ }
+
+ to {
+  transform: translate(0, 0) rotate(-5deg);
+  opacity: 1;
+ }
+}
 </style>
-    

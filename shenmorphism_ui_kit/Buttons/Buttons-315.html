@@ -1,58 +1,32 @@
-<button class="button">
-  Button
+<button>
+  BUTTON
 </button>
 <style>
-/* From SHΞN™ Morphism by Remon125 - Tags: button, smooth button */
+/* From SHΞN™ Morphism by Praashoo7 - Tags: neumorphism, button, hover */
 button {
-  padding: 15px 60px;
-  background: transparent;
-  border: 2px solid #6528F7;
-  font-size: 15px;
+  padding: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  border-radius: 15px;
   font-weight: bold;
-  color: #ffffff;
-  border-radius: 6px;
-  cursor: pointer;
-  position: relative;
-  display: flex;
-  overflow: hidden;
-  transition: all 0.5s;
-  text-transform: uppercase;
+  transition: .4s ease-in-out;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.2);
+  letter-spacing: 0.2em;
+  border: none;
 }
 
-button span {
-  transition: all 0.5s;
-  z-index: -1;
+button:hover {
+  letter-spacing: 0.5em;
+  transform: translateY(-0.8em);
+  background: #171717;
+  color: white;
 }
 
-button::after,
-button::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 100%;
-  background: #6528F7;
-  top: 0;
-  transform: skewX(35deg);
-  transition: all 0.5s;
-  z-index: -1;
+button:active {
+  letter-spacing: 0.4em;
+  transition: 0.1s all;
+  transform: translateY(-0.6em);
+  background: #171717;
+  color: white;
 }
-
-button::after {
-  left: -20px;
-}
-
-button::before {
-  right: -20px;
-}
-
-button:hover::after {
-  width: 50%;
-  left: 0;
-}
-
-button:hover::before {
-  width: 50%;
-  right: 0;
-}
-
 </style>

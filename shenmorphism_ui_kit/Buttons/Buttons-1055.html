@@ -1,56 +1,22 @@
-<button class="box">
-  <p class="text-button">Button</p>
-</button>
+<button class="button">Simple button</button>
 
 <style>
-/* From SHΞN™ Morphism by Boosterrohit - Tags: active, about me */
-.box {
-  position: relative;
-  width: 120px;
-  height: 45px;
-  overflow: hidden;
-  border: none;
-  background-color: rgb(218, 203, 177);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border-top-left-radius: 20px;
+/* From SHΞN™ Morphism by VassoD  - Tags: minimalist, button, dark, simple button */
+.button {
   cursor: pointer;
-  border-bottom-right-radius: 20px;
-  box-shadow: 0 0 10px rgb(104, 134, 218);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 0.5rem;
+  transition: background 0.3s ease-in-out;
 }
 
-.box::before {
-  content: "";
-  position: absolute;
-  width: 15px;
-  height: 200px;
-  margin-top: -92px;
-  background: linear-gradient(#00ccff,#d400d4);
-  animation: amm 4s linear infinite;
+.button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  text-decoration: underline;
 }
 
-@keyframes amm {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.text-button {
-  position: relative;
-  font-size: 1.2rem;
-  font-weight: bold;
-  z-index: 1;
-}
-
-.box::after {
-  content: "";
-  position: absolute;
-  inset: 4px;
-  background-color: rgb(218, 203, 177);
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
 </style>
+    

@@ -1,69 +1,24 @@
-<button>
-  <span class="txt">click me</span>
-  <span class="txt2">You did it</span>
-  <span class="gradient"></span>
-</button>
+<button class="neu-button">Press me</button>
 <style>
-/* From SHΞN™ Morphism by KINGFRESS - Tags: gradient, button */
-button {
-  background-color: transparent;
-  color: white;
-  font-weight: bold;
-  height: 3.3em;
-  width: 12em;
-  border: none;
-  border-radius: 25px;
+/* From SHΞN™ Morphism by adamgiebl - Tags: neumorphism, button */
+.neu-button {
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+  color: #4d4d4d;
   cursor: pointer;
-  transition: .4s ease;
-  position: relative;
-  overflow: hidden;
-  text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 18px;
+  padding: 15px 40px;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid rgb(206, 206, 206);
 }
 
-button .gradient {
-  height: 100%;
-  width: 350%;
-  background: linear-gradient(to right, #156aa3 25%, #64EAE7 65%, #16a085 90%);
-  position: absolute;
-  top: 0;
-  left: 60%;
-  transform: translateX(-50%);
-  z-index: -1;
-  transition: .4s ease;
+.neu-button:hover {
+  box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
 }
 
-button .txt {
-  transition: .4s ease .5s;
-}
-
-button .txt2 {
-  position: absolute;
-  opacity: 0;
-  transition: .4s;
-}
-
-button:hover .gradient {
-  transition: .4s ease;
-  transform: translateX(-40%);
-}
-
-button:focus .gradient {
-  background-size: 200%;
-  background-position: right;
-  transform: translateX(-88%);
-  transition: 1s ease;
-}
-
-button:focus .txt {
-  opacity: 0;
-  transition: .4s ease;
-}
-
-button:focus .txt2 {
-  opacity: 1;
-  transition: 1s ease .5s;
+.neu-button:focus {
+  outline: none;
+  box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
 }
 </style>

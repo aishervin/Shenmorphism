@@ -1,99 +1,120 @@
-<label class="switch">
-  <input type="checkbox" />
-  <span class="slider"></span>
-</label>
+<div class="fx-block">
+	<div class="toggle">
+		<div>
+			<input type="checkbox" id="toggles">
+			<div data-unchecked="On" data-checked="Off">
+			</div>
+		</div>
+	</div>
+</div>
+
 
 <style>
-/* From SHΞN™ Morphism by Subaashbala  - Tags: switch */
-/* The switch - the box around the slider */
-.switch {
-  --INITIAL-SWITCH-TRACK-COLOR: #fffbeb;
-  --INITIAL-THUMB-COLOR: #ff5722;
-  --OVERALL-TRANSITION-DURATION: 500ms; /* Overall transition speed */
-  font-size: 17px;
+/* From SHΞN™ Morphism by JaydipPrajapati1910 - Tags: switch, toggle switch, light switch */
+.toggle > div {
   position: relative;
-  display: inline-block;
-  width: 3.75em;
-  height: 2em;
+  padding: 10px;
+  width: 150px;
+  height: 75px;
+  border-radius: 50px;
+  box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, .5), 0px 1px 1px 0 rgba(255, 255, 255, 1);
+  background: rgb(189, 191, 193);
+  background: linear-gradient(to bottom, rgba(189, 191, 193, 1) 0%, rgba(249, 251, 254, 1) 100%);
 }
 
-/* Hide default HTML checkbox */
-.switch input {
+.toggle > div > input[type=checkbox] {
+  position: absolute;
   opacity: 0;
-  width: 0;
-  height: 0;
+  top: -3px;
+  left: 17px;
+  width: 130px;
+  height: 55px;
+  z-index: 5;
 }
 
-/* The slider */
-.slider {
+.toggle > div > input[type=checkbox] ~ div {
+  width: 130px;
+  height: 55px;
+  border-radius: 50px;
+  border: 1px solid #979797;
+  box-shadow: inset 5px 0 0 0 rgba(0, 0, 0, .1), inset -5px 0 0 0 rgba(0, 0, 0, .1), inset -6px 0 0 0 rgba(255, 255, 255, .5), inset -4px 6px 11px -5px rgba(0, 0, 0, .2), inset 1px 1px 0 0 rgba(255, 255, 255, 1), -6px 4px 11px -7px rgba(0, 0, 0, .5);
+  background: rgb(253, 252, 251);
+  background: linear-gradient(to right, rgba(253, 252, 251, 1) 37%, rgba(229, 229, 229, 1) 61%);
+}
+
+.toggle > div > input[type=checkbox]:checked ~ div {
+  box-shadow: inset -5px 0 0 0 rgba(0, 0, 0, .1), inset 5px 0 0 0 rgba(0, 0, 0, .1), inset 6px 0 0 0 rgba(255, 255, 255, .5), inset -4px 6px 11px -5px rgba(0, 0, 0, .2), inset 1px 1px 0 0 rgba(255, 255, 255, 1), -6px 4px 11px -7px rgba(0, 0, 0, .5);
+  background: rgb(229, 229, 229);
+  background: linear-gradient(to right, rgba(229, 229, 229, 1) 39%, rgba(253, 252, 251, 1) 63%);
+}
+
+.toggle > div > input[type=checkbox] ~ div:before {
+  content: attr(data-unchecked);
+  display: block;
   position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--INITIAL-SWITCH-TRACK-COLOR);
-  transition: var(--OVERALL-TRANSITION-DURATION);
-  border-radius: 30px;
-  overflow: hidden;
+  border-radius: 10px;
+  top: 27px;
+  left: 30px;
 }
 
-/* Thumb */
-.slider:before {
+.toggle > div > input[type=checkbox] ~ div:after {
+  content: attr(data-checked);
+  color: #df0000;
+  text-shadow: 0 1px 0 #fff, 0px 0 7px #df0000;
+  filter: dropshadow(color=#df0000, offx=0, offy=0);
+  display: block;
   position: absolute;
-  content: "";
-  height: 100%;
-  aspect-ratio: 1;
-  border-radius: 20px;
-  left: 0;
-  bottom: 0;
-  background-color: var(--INITIAL-THUMB-COLOR);
-  transition: var(--OVERALL-TRANSITION-DURATION);
+  border-radius: 10px;
+  top: 27px;
+  left: 100px;
 }
 
-.switch input:checked + .slider {
-  background-color: var(--INITIAL-THUMB-COLOR);
+.toggle > div > input[type=checkbox]:checked ~ div:before {
+  color: #119400;
+  text-shadow: 0 1px 0 #fff, 0px 0 7px #007a08;
+  filter: dropshadow(color=#007a08, offx=0, offy=0);
 }
 
-/* Actions to be performed when the switch is TOGGLED ON */
-.switch input:checked + .slider::before {
-  transform-origin: left;
-  background-color: var(--INITIAL-SWITCH-TRACK-COLOR);
-  animation: wobble var(--OVERALL-TRANSITION-DURATION)
-    cubic-bezier(0.075, 0.82, 0.165, 1);
-  transform: scale(1, 1) translateX(2rem);
+.toggle > div > input[type=checkbox]:checked ~ div:after {
+  color: #000;
+  text-shadow: none;
+  filter: dropshadow(none);
 }
 
-/* Actions to be performed when the switch is TOGGLED OFF */
-.switch input:not(:checked) + .slider::before {
-  transform-origin: right;
-  animation: reverse-wobble var(--OVERALL-TRANSITION-DURATION)
-    cubic-bezier(0.075, 0.82, 0.165, 1);
-}
 
-@keyframes wobble {
-  0% {
-    transform: scale(1, 1);
-  }
-  50% {
-    transform: scale(3, 1);
-  }
-  100% {
-    transform: scale(1, 1) translateX(2rem);
-  }
-}
 
-@keyframes reverse-wobble {
-  0% {
-    transform: scale(1, 1) translateX(2rem);
-  }
-  50% {
-    transform: scale(3, 1);
-  }
-  100% {
-    transform: scale(1, 1) translateX(0);
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </style>
-    

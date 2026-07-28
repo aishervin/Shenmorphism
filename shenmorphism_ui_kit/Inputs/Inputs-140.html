@@ -1,55 +1,38 @@
-<div id="dateDiv">
-  <input
-    type="text"
-    id="dateInput"
-    class="dateInput"
-    placeholder="Date:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MMYYYY"
-  />
-</div>
+<input placeholder="NAME" type="text" name="text" class="custom-input" />
 
 <style>
-/* From SHΞN™ Morphism by BlackisPlay  - Tags: simple, animation, 3d, minimalist, white, active, input, shadow */
-.dateInput {
-  margin-left: auto;
-  margin-right: auto;
-  height: 2.5em;
-  width: 12.5em;
-  border-radius: 2.5em;
-  border: none;
-  background-color: rgb(255, 255, 255);
-  -webkit-filter: drop-shadow(1px 1px 10px #000);
-  filter: drop-shadow(7px 7px 10px #00000059);
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(77, 77, 77);
-  text-align: center;
-  font-size: 14px;
-  outline: 2px solid rgba(0, 0, 0, 0);
-  transition: outline-offset 0.5s ease, outline-color 0.5s ease,
-    height 0.5s ease, width 0.5s ease, filter 0.5s ease;
+/* From SHΞN™ Morphism by BurgiSimon  - Tags: simple, black, input, dark, modern, border, hover effect, css */
+.custom-input {
+  max-width: 190px;
+  background-color: #121212;
+  border: 0px solid;
+  box-shadow: 1px 1px 1px 1px rgb(131, 133, 129),
+    -1px -1px 1px 1px rgb(100, 100, 100);
+  border-radius: 4px;
+  padding: 10px;
+  color: whitesmoke;
+  caret-color: white;
+  outline: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-.dateInput:focus {
-  outline-offset: 0.5em;
-  outline-color: rgba(0, 0, 0, 0.228);
-  transition: 0.2s;
-  height: 3em;
-  width: 13em;
-  -webkit-filter: drop-shadow(1px 1px 10px #000);
-  filter: drop-shadow(-7px 7px 10px #00000059);
+.custom-input:focus {
+  background-color: #222;
+  border: 1.5px solid rgb(189, 189, 189);
 }
 
-.dateInput::placeholder {
-  padding-left: 0.8em;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 500;
-  letter-spacing: 1px;
-  transform: translateX(-6px);
-  transition: transform 0.5s ease;
+.custom-input:hover {
+  box-shadow: 1px 1px 1px 1px rgb(149, 151, 147),
+    -1px -1px 1px 1px rgb(124, 124, 124);
 }
 
-.dateInput:focus::placeholder {
-  transform: translateX(-85px);
-  transition: 0.5s;
+.custom-input:hover::placeholder {
+  color: #999999;
+}
+
+.custom-input::placeholder {
+  color: #727272;
 }
 
 </style>

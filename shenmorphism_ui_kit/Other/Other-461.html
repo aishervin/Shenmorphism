@@ -1,20 +1,87 @@
-<div class="loader"></div>
+<div class="container">
+  <div class="ball"></div>
+  <div class="ball"></div>
+  <div class="ball"></div>
+  <div class="ball"></div>
+  <div class="ball"></div>
+  <div class="ball"></div>
+  <div class="ball"></div>
+</div>
 <style>
-/* From SHΞN™ Morphism by JesusRafaelNavaCruz - Source: Mr Frontend - https://instagram.com/mr__frontend?igshid=MzRlODBiNWFlZA== - Tags: loader, circle loader, loader circle */
-.loader {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  box-sizing: border-box;
-  border-top: 8px solid #fff;
-  border-left: 8px solid #fff;
-  border-right: 8px solid #ff00;
-  animation: loader .7s infinite linear;
+/* From SHΞN™ Morphism by Nawsome - Tags: loader */
+.container {
+  width: 200px;
+  height: 150px;
+  margin: 0 auto;
 }
 
-@keyframes loader {
-  to {
-    transform: rotate(360deg);
+.ball {
+  width: 10px;
+  height: 10px;
+  margin: 10px auto;
+  border-radius: 50px;
+}
+
+.ball:nth-child(1) {
+  background: #ffffff;
+  animation: right2 1s infinite ease-in-out;
+}
+
+.ball:nth-child(2) {
+  background: #ffffff;
+  animation: left2 1.1s infinite ease-in-out;
+}
+
+.ball:nth-child(3) {
+  background: #ffffff;
+  animation: right2 1.05s infinite ease-in-out;
+}
+
+.ball:nth-child(4) {
+  background: #ffffff;
+  animation: left2 1.15s infinite ease-in-out;
+}
+
+.ball:nth-child(5) {
+  background: #ffffff;
+  animation: right2 1.1s infinite ease-in-out;
+}
+
+.ball:nth-child(6) {
+  background: #ffffff;
+  animation: left2 1.05s infinite ease-in-out;
+}
+
+.ball:nth-child(7) {
+  background: #ffffff;
+  animation: right2 1s infinite ease-in-out;
+}
+
+@keyframes right2 {
+  0% {
+    transform: translate(-15px);
+  }
+
+  50% {
+    transform: translate(15px);
+  }
+
+  100% {
+    transform: translate(-15px);
+  }
+}
+
+@keyframes left2 {
+  0% {
+    transform: translate(15px);
+  }
+
+  50% {
+    transform: translate(-15px);
+  }
+
+  100% {
+    transform: translate(15px);
   }
 }
 </style>

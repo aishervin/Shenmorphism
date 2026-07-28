@@ -1,56 +1,73 @@
-<button class="btn">
-  Button
-</button>
+<div class="button">
+  Button<span class="button-border"></span>
+</div>
 <style>
-/* From SHΞN™ Morphism by LeHuyHieu - Tags: button, box */
-.btn {
-  outline: none;
-  display: inline-block;
-  border: 1px solid #fff;
-  padding: .8rem 2rem;
-  border-radius: 5px;
-  background: transparent;
-  color: #fff;
+/* From SHΞN™ Morphism by TaniaDou - Tags: gradient, button, modern, neon */
+.button {
+  padding: 1rem 2rem;
+  border-radius: .5rem;
+  border: none;
   font-size: 1rem;
-  transition: .3s;
+  font-weight: 400;
+  color: #f4f0ff;
+  text-align: center;
+  backdrop-filter: blur(10px);
   cursor: pointer;
-  position: relative;
 }
 
-.btn::before {
-  content: '';
+.button::before {
+  content: "";
+  display: block;
   position: absolute;
-  left: 5px;
-  top: 5px;
-  border-top: 2px solid #fff;
-  border-left: 2px solid #fff;
-  width: 0px;
-  height: 0px;
-  opacity: 0;
-  transition: .3s;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: .5rem;
+  background: linear-gradient(180deg, rgba(8, 77, 126, 0) 0%, rgba(8, 77, 126, 0.42) 100%),rgba(47,255,255,.24);
+  box-shadow: inset 0 0 12px rgba(151,200,255,.44);
+  z-index: -1;
 }
 
-.btn::after {
-  content: '';
+.button::after {
+  content: "";
+  display: block;
   position: absolute;
-  right: 5px;
-  bottom: 5px;
-  border-bottom: 2px solid #fff;
-  border-right: 2px solid #fff;
-  width: 0px;
-  height: 0px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(8, 77, 126, 0) 0%, rgba(8, 77, 126, 0.42) 100%),rgba(47,255,255,.24);
+  box-shadow: inset 0 0 12px rgba(151,200,255,.44);
+  border-radius: .5rem;
   opacity: 0;
-  transition: .3s;
+  z-index: -1;
+  transition: all .3s ease-in;
 }
 
-.btn:hover {
-  box-shadow: 4px 4px 10px rgb(184, 184, 184);
-  transform: translateY(-5px);
-}
-
-.btn:hover::after, .btn:hover::before {
-  height: 20px;
-  width: 20px;
+.button:hover::after {
   opacity: 1;
+}
+
+.button-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: .5rem;
+  z-index: -1;
+}
+
+.button-border::before {
+  content: "";
+  position: absolute;
+  border-radius: .5rem;
+  padding: 1px;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(184, 238, 255, 0.24) 0%, rgba(184, 238, 255, 0) 100%),linear-gradient(0deg, rgba(184, 238, 255, 0.32), rgba(184, 238, 255, 0.32));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
 }
 </style>

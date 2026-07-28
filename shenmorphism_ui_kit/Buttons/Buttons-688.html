@@ -1,180 +1,68 @@
-<div class="back">
-  <div class="button_base b_3d">
-    <div>button</div>
-    <div>button</div>
-    <div>button</div>
-    <div>button</div>
-  </div>
+<div class="container">
+  <button class="button">Button</button>
+  <span class="arrow first">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+    </svg>
+  </span>
+  <span class="arrow second">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+    </svg>
+  </span>
+  <span class="arrow third">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+    </svg>
+  </span>
 </div>
-
 <style>
-/* From SHΞN™ Morphism by nima-mollazadeh  - Tags: button, button, text, yellow, purple, centered, rectangular, contrast, split, bicolor */
-.button_base {
-  margin: 0;
-  border: 0;
-  font-size: 18px;
+/* From SHΞN™ Morphism by benjimich - Tags: icon, button, arrow */
+.container {
+  display: flex;
   position: relative;
-  top: 50%;
-  left: 50%;
-  margin-top: -25px;
-  margin-left: -100px;
-  width: 200px;
-  height: 50px;
-  text-align: center;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  cursor: default;
 }
 
-.button_base:hover {
+.button {
   cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  padding: .5em 1.5em;
+  font-size: 20px;
+  font-weight: 600;
+  color: #7f5af0;
+  transition: all .3s ease;
 }
 
-.b_3d {
-  perspective: 500px;
-  -webkit-perspective: 500px;
-  -moz-perspective: 500px;
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-}
-
-.b_3d div {
+.arrow {
+  fill: #94a1b2;
   position: absolute;
-  text-align: center;
-  padding: 10px;
-  border: #000000 solid 1px;
   pointer-events: none;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  width: 24px;
+  right: 0;
+  top: 25%;
+  transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.b_3d div:nth-child(1) {
-  color: #ffffff;
-  background-color: #7c00fe;
-  z-index: 0;
-  width: 100%;
-  height: 50px;
-  clip: rect(0px, 100px, 50px, 0px);
-  position: absolute;
-  transition: all 0.2s ease;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  transform: rotateX(0deg);
-  -webkit-transform: rotateX(0deg);
-  -moz-transform: rotateX(0deg);
-  transform-origin: 50% 50% -25px;
-  -webkit-transform-origin: 50% 50% -25px;
-  -moz-transform-origin: 50% 50% -25px;
+.button:hover {
+  letter-spacing: 2px;
 }
 
-.b_3d div:nth-child(2) {
-  color: #000000;
-  background-color: #f9e400;
-  z-index: -1;
-  width: 100%;
-  height: 50px;
-  clip: rect(0px, 100px, 50px, 0px);
-  position: absolute;
-  transform: rotateX(90deg);
-  -webkit-transform: rotateX(90deg);
-  -moz-transform: rotateX(90deg);
-  transition: all 0.2s ease;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  transform-origin: 50% 50% -25px;
-  -webkit-transform-origin: 50% 50% -25px;
-  -moz-transform-origin: 50% 50% -25px;
+.button:hover ~.second {
+  opacity: .66;
+  right: -20px;
+  transition-delay: 50ms;
 }
 
-.b_3d div:nth-child(3) {
-  color: #000000;
-  background-color: #f9e400;
-  z-index: 0;
-  width: 100%;
-  height: 50px;
-  clip: rect(0px, 200px, 50px, 100px);
-  position: absolute;
-  transition: all 0.2s ease 0.1s;
-  -webkit-transition: all 0.2s ease 0.1s;
-  -moz-transition: all 0.2s ease 0.1s;
-  transform: rotateX(0deg);
-  -webkit-transform: rotateX(0deg);
-  -moz-transform: rotateX(0deg);
-  transform-origin: 50% 50% -25px;
-  -webkit-transform-origin: 50% 50% -25px;
-  -moz-transform-origin: 50% 50% -25px;
+.button:hover ~.third {
+  opacity: .33;
+  right: -40px;
+  transition-delay: 100ms;
 }
 
-.b_3d div:nth-child(4) {
-  color: #ffffff;
-  background-color: #7c00fe;
-  z-index: -1;
-  width: 100%;
-  height: 50px;
-  clip: rect(0px, 200px, 50px, 100px);
-  position: absolute;
-  transform: rotateX(-90deg);
-  -webkit-transform: rotateX(-90deg);
-  -moz-transform: rotateX(-90deg);
-  transition: all 0.2s ease 0.1s;
-  -webkit-transition: all 0.2s ease 0.1s;
-  -moz-transition: all 0.2s ease 0.1s;
-  transform-origin: 50% 50% -25px;
-  -webkit-transform-origin: 50% 50% -25px;
-  -moz-transform-origin: 50% 50% -25px;
+.second, 
+.third {
+  opacity: 0;
 }
-
-.b_3d:hover div:nth-child(1) {
-  background-color: #7c00fe;
-  transition: all 0.2s ease;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  transform: rotateX(-90deg);
-  -webkit-transform: rotateX(-90deg);
-  -moz-transform: rotateX(-90deg);
-}
-
-.b_3d:hover div:nth-child(2) {
-  color: #000000;
-  transition: all 0.2s ease;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  transform: rotateX(0deg);
-  -webkit-transform: rotateX(0deg);
-  -moz-transform: rotateX(0deg);
-}
-
-.b_3d:hover div:nth-child(3) {
-  background-color: #f9e400;
-  transition: all 0.2s ease 0.1s;
-  -webkit-transition: all 0.2s ease 0.1s;
-  -moz-transition: all 0.2s ease 0.1s;
-  transform: rotateX(90deg);
-  -webkit-transform: rotateX(90deg);
-  -moz-transform: rotateX(90deg);
-}
-
-.b_3d:hover div:nth-child(4) {
-  color: #ffffff;
-  transition: all 0.2s ease 0.1s;
-  -webkit-transition: all 0.2s ease 0.1s;
-  -moz-transition: all 0.2s ease 0.1s;
-  transform: rotateX(0deg);
-  -webkit-transform: rotateX(0deg);
-  -moz-transform: rotateX(0deg);
-}
-
-.back {
-  height: 200px;
-  float: left;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  counter-increment: bc;
-  padding: 0px 5px 5px 5px;
-}
-
 </style>
-    

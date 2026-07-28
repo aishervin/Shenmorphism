@@ -1,65 +1,125 @@
-<label class="container">
-  <input checked="checked" type="checkbox">
-  <div class="checkmark"></div>
-</label>
+<div class="container">
+      <label>
+        <input class="play-btn" type="checkbox">
+        <div class="play-icon"></div>
+        <div class="pause-icon"></div>
+      </label>
+    </div>
 <style>
-/* From SHΞN™ Morphism by Alaner-xs - Tags: checkbox */
-/* Hide the default checkbox */
-.container input {
- position: absolute;
- opacity: 0;
- cursor: pointer;
- height: 0;
- width: 0;
-}
-
+/* From SHΞN™ Morphism by csemszepp - Source: https://codepen.io/RitikaAgrawal08/pen/eYGXQLz - Tags: checkbox, play, music player */
 .container {
- display: block;
- position: relative;
- cursor: pointer;
- font-size: 20px;
- user-select: none;
+  width: 120px;
+  height: 120px;
+  position: relative;
+  border-radius: 50%;
 }
 
-/* Create a custom checkbox */
-.checkmark {
- position: relative;
- top: 0;
- left: 0;
- height: 1.3em;
- width: 1.3em;
- background-color: #ccc;
- border-bottom-left-radius: 15px;
- border-top-right-radius: 15px;
- box-shadow: 0px 0px 17px #c7bbb8;
+.play-btn {
+  position: absolute;
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(#ff6347, #ff6347);
+  cursor: pointer;
+  outline: none;
 }
 
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
- background-color: #f34b21;
- box-shadow: 0px 0px 17px #f34b21;
+.play-btn::before {
+  content: "";
+  position: absolute;
+  width: 93%;
+  height: 93%;
+  background-color: #000;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
- content: "";
- position: absolute;
- display: none;
+.play-btn:checked {
+  animation: borderAnimate 700ms ease-in-out 1;
+  animation-fill-mode: forwards;
 }
 
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
- display: block;
+@keyframes borderAnimate {
+  0% {
+    transform: rotate(0);
+    background: conic-gradient(#ff6347, transparent 20%);
+  }
+
+  80% {
+    background: conic-gradient(#ff6347, transparent 90%);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    background: conic-gradient(#ff6347, #ff6347);
+  }
 }
 
-/* Style the checkmark/indicator */
-.container .checkmark:after {
- left: 0.45em;
- top: 0.25em;
- width: 0.25em;
- height: 0.5em;
- border: solid rgb(233, 222, 222);
- border-width: 0 0.15em 0.15em 0;
- transform: rotate(45deg);
+.play-icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 60%;
+  top: 50%;
+  background-color: #ff6347;
+  transform: translate(-60%, -50%) rotate(90deg);
+  clip-path: polygon(50% 15%, 0% 100%, 100% 100%);
+  transition: all 400ms ease-in-out;
+  cursor: pointer;
+}
+
+.play-btn:checked + .play-icon {
+  clip-path: polygon(0 100%, 0% 100%, 100% 100%);
+}
+
+.pause-icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.pause-icon::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: #ff6347;
+  left: 0;
+}
+
+.pause-icon::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: #ff6347;
+  right: 0;
+}
+
+.play-btn:checked ~ .pause-icon::before {
+  animation: reveal 300ms ease-in-out 350ms 1;
+  animation-fill-mode: forwards;
+}
+
+.play-btn:checked ~ .pause-icon::after {
+  animation: reveal 300ms ease-in-out 600ms 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes reveal {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 35%;
+  }
 }
 </style>

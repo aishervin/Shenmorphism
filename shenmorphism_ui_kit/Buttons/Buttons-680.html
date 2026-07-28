@@ -1,112 +1,113 @@
-<button>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span>Button</span>
-</button>
+<ul class="wrapper">
+    <li class="icon black">
+        <span class="tooltip">UP</span>
+        <span><svg viewBox="0 0 16 16" class="bi bi-chevron-double-up" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+  <path d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z" fill-rule="evenodd"></path>
+  <path d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" fill-rule="evenodd"></path>
+</svg></span>
+    </li>
+    <li class="icon black">
+        <span class="tooltip">Down</span>
+        <span><svg viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" fill-rule="evenodd"></path>
+  <path d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" fill-rule="evenodd"></path>
+</svg></span>
+    </li>
+    <li class="icon black">
+        <span class="tooltip">Left</span>
+        <span><svg viewBox="0 0 16 16" class="bi bi-chevron-double-left" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+  <path d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" fill-rule="evenodd"></path>
+  <path d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" fill-rule="evenodd"></path>
+</svg></span>
+    </li>
+     <li class="icon black">
+        <span class="tooltip">Right</span>
+        <span><svg viewBox="0 0 16 16" class="bi bi-chevron-double-right" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+  <path d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" fill-rule="evenodd"></path>
+  <path d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" fill-rule="evenodd"></path>
+</svg></span>
+    </li>
+</ul>
 <style>
-/* From SHΞN™ Morphism by adamgiebl - Tags: button */
-button {
-  transform: rotate(-25deg) skew(25deg);
-  transform-style: preserve-3d;
-  position: relative;
+/* From SHΞN™ Morphism by JaydipPrajapati1910 - Tags: button, hover effect, buttons */
+.wrapper {
+  display: inline-flex;
   list-style: none;
-  width: 100px;
-  height: 32px;
-  border: none;
-  background: transparent;
-  font-family: inherit;
-  cursor: pointer;
-}
-
-button:before {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: -5px;
+  height: 120px;
   width: 100%;
-  height: 10px;
-  background: #2a2a2a;
-  transform: skewX(-41deg);
+  padding-top: 40px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
 }
 
-button:after {
-  content: '';
-  position: absolute;
-  top: 5px;
-  left: -9px;
-  width: 9px;
-  height: 100%;
-  background: #2a2a2a;
-  transform: skewY(-49deg);
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-button span {
+.wrapper .tooltip {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #2a2a2a;
+  font-size: 14px;
+  background: #fff;
   color: #fff;
-  font-size: 25px;
-  transition: 1.1s ease-out;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-button:hover span {
-  z-index: 1000;
-  transition: .3s;
-  color: #fff;
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-button:hover span:nth-child(5) {
-  transform: translate(40px, -40px);
+.wrapper .icon:hover .tooltip {
+  top: -45px;
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
-button:hover span:nth-child(4) {
-  transform: translate(30px, -30px);
-  opacity: .8;
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
-button:hover span:nth-child(3) {
-  transform: translate(20px, -20px);
-  opacity: .6;
+.wrapper svg {
+  fill: green;
 }
 
-button:hover span:nth-child(2) {
-  transform: translate(10px, -10px);
-  opacity: .4;
+.wrapper span:hover,
+.wrapper svg:hover,
+.wrapper .black:hover,
+.wrapper .black:hover .tooltip,
+.wrapper .black:hover .tooltip::before {
+  background: #222;
+  color: white;
+  fill: white;
 }
 
-button:hover span:nth-child(1) {
-  transform: translate(0px, 0px);
-  opacity: .2;
-}
 
-button:active span:nth-child(5) {
-  transform: translate(20px, -20px);
-  opacity: 1;
-}
-
-button:active span:nth-child(4) {
-  transform: translate(15px, -15px);
-}
-
-button:active span:nth-child(3) {
-  transform: translate(10px, -10px);
-}
-
-button:active span:nth-child(2) {
-  transform: translate(5px, -5px);
-}
-
-button:active span:nth-child(1) {
-  transform: translate(0px, 0px);
-}
-
-button:nth-child(1):hover span {
-  background: #52E19F;
-}
 </style>

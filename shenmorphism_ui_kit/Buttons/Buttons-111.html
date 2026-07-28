@@ -1,43 +1,76 @@
-<button class="btn"> Button
+<button class="border-el-btn">
+  Button
+  <span class="b1"></span>
+  <span class="b2"></span>
+  <span class="b3"></span>
+  <span class="b4"></span>
 </button>
 <style>
-/* From SHΞN™ Morphism by CristianMontoya98 - Tags: button */
-.btn {
- width: 6.5em;
- height: 2.3em;
- margin: 0.5em;
- background: black;
- color: white;
- border: none;
- border-radius: 0.625em;
- font-size: 20px;
- font-weight: bold;
- cursor: pointer;
- position: relative;
- z-index: 1;
- overflow: hidden;
+/* From SHΞN™ Morphism by Dashrath-Sharma - Tags: button, hover, glow, code, border, box */
+button {
+  color: red;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  padding: 1em 2em;
+  position: relative;
+  background: none;
+  cursor: pointer;
 }
 
-button:hover {
- color: black;
+button:active {
+  transform: scale(.98);
+  box-shadow: .1px .1px 2px red;
 }
 
-button:after {
- content: "";
- background: white;
- position: absolute;
- z-index: -1;
- left: -20%;
- right: -20%;
- top: 0;
- bottom: 0;
- transform: skewX(-45deg) scale(0, 1);
- transition: all 0.5s;
+button span {
+  position: absolute;
+  background: red;
+  transition: .5s;
+  box-shadow: 1px 1px 20px red;
 }
 
-button:hover:after {
- transform: skewX(-45deg) scale(1, 1);
- -webkit-transition: all 0.5s;
- transition: all 0.5s;
+button span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 30%;
+}
+
+button:hover span:nth-child(1) {
+  height: 100%;
+}
+
+button span:nth-child(2) {
+  top: 0;
+  left: 0;
+  width: 15%;
+  height: 3px;
+}
+
+button:hover span:nth-child(2) {
+  width: 100%;
+}
+
+button span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 3px;
+  height: 30%;
+}
+
+button:hover span:nth-child(3) {
+  height: 100%;
+}
+
+button span:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  width: 15%;
+  height: 3px;
+}
+
+button:hover span:nth-child(4) {
+  width: 100%;
 }
 </style>

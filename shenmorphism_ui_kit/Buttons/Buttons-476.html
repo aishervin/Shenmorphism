@@ -1,39 +1,54 @@
 <button class="button">
- Shop now
- <svg class="cartIcon" viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg>
+  <svg class="svg-icon" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g stroke="#a649da" stroke-linecap="round" stroke-width="2"><path d="m20 20h-16"></path><path clip-rule="evenodd" d="m14.5858 4.41422c.781-.78105 2.0474-.78105 2.8284 0 .7811.78105.7811 2.04738 0 2.82843l-8.28322 8.28325-3.03046.202.20203-3.0304z" fill-rule="evenodd"></path></g></svg>
+  <span class="lable">Edit</span>
 </button>
 <style>
-/* From SHΞN™ Morphism by vinodjangid07 - Tags: purple, button, click effect, shop now */
+/* From SHΞN™ Morphism by andrew-demchenk0 - Tags: animation, purple, button, opacity, small, edit */
 .button {
-  width: 180px;
-  height: 40px;
-  background-image: linear-gradient(rgb(214, 202, 254), rgb(158, 129, 254));
-  border: none;
-  border-radius: 50px;
-  color: rgb(255, 255, 255);
-  font-weight: 600;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 5px;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 2px;
+  height: 40px;
+  width: 85px;
+  border: none;
+  background: #a549da3d;
+  border-radius: 20px;
   cursor: pointer;
-  box-shadow: 1px 3px 0px rgb(139, 113, 255);
-  transition-duration: .3s;
 }
 
-.cartIcon {
-  width: 14px;
-  height: fit-content;
+.lable {
+  line-height: 22px;
+  font-size: 19px;
+  color: #A649DA;
+  font-family: sans-serif;
+  letter-spacing: 1px;
 }
 
-.cartIcon path {
-  fill: white;
+.button:hover {
+  background: #a549da62;
 }
 
-.button:active {
-  transform: translate(2px ,0px);
-  box-shadow: 0px 1px 0px rgb(139, 113, 255);
-  padding-bottom: 1px;
+.button:hover .svg-icon {
+  animation: lr 1s linear infinite;
 }
 
+@keyframes lr {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-1px);
+  }
+
+  75% {
+    transform: translateX(1px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
 </style>

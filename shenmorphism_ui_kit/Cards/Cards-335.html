@@ -1,74 +1,86 @@
 <div class="card">
-  <div class="card__image"></div>
-  <div class="card__content">
-    <span class="title">Title card</span>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum blandit vitae orci quis dignissim.</p>
-  </div>
+<div class="header"></div>
+<div class="info">
+  <p class="title">How to make this material card ?</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+molestiae quas vel sint commodi. </p>
+</div>
+<div class="footer">
+  <p class="tag">#HTML #CSS </p>
+  <button type="button" class="action">Get started </button>
+</div>
 </div>
 <style>
-/* From SHΞN™ Morphism by Javierrocadev - Tags: card, cart, card hover */
+/* From SHΞN™ Morphism by Yaya12085 - Tags: card */
 .card {
-  width: 300px;
-  height: 350px;
-  background: #ffd166;
-  color: #073b4c;
-  font-weight: 600;
-  padding: 15px;
   display: flex;
   flex-direction: column;
-  align-items: left;
+  justify-content: space-between;
+  border-radius: 0.75rem;
+  background-color: white;
+  width: 300px;
+  height: 370px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),
+  0 2px 4px -2px rgba(0,0,0,.1);
+}
+
+.header {
   position: relative;
-  transition: all .5s ease;
+  background-clip: border-box;
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 0.75rem;
+  background-color: rgb(33 150 243);
+  box-shadow: 0 10px 15px -3px rgba(33,150,243,.4),0 4px 6px -4px rgba(33,150,243,.4);
+  height: 14rem;
 }
 
-.card::before {
-  content: "32,99$";
-  position: absolute;
-  width: 75px;
-  height: 75px;
-  top: 35%;
-  right: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: #ef476f;
-  color: aliceblue;
-  font-weight: 800;
-  transition: all .5s ease;
-}
-
-.card__image {
-  width: initial;
-  height: 150px;
-  background: rgb(6,214,160);
-  background: linear-gradient(163deg, #06d6a0 18%, rgba(17,138,178,1) 79%);
-  transition: all .5s ease;
+.info {
+  border: none;
+  padding: 1.5rem;
+  text-align: center;
 }
 
 .title {
-  font-weight: 800;
-  font-size: 1.4em;
+  color: rgb(38 50 56);
+  letter-spacing: 0;
+  line-height: 1.375;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
-.card__content {
+.footer {
+  padding: 0.75rem;
+  border: 1px solid rgb(236 239 241);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-grow: 1;
-  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 140, 255, 0.082);
 }
 
-.card:hover {
-  border-top-left-radius: 35px;
-  box-shadow: 5px 5px 0px 0px #06d6a0, 10px 10px 0px 0px #118ab2, 15px 15px 0px 0px #06d6a0, 5px 5px 15px 5px rgba(0,0,0,0);
+.tag {
+  font-weight: 300;
+  font-size: .75rem;
+  display: block;
 }
 
-.card:hover .card__image {
-  border-top-left-radius: 25px;
+.action {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 6px -1px rgba(33,150,243,.4),0 2px 4px -2px rgba(33,150,243,.4);
+  color: rgb(255 255 255);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .75rem;
+  padding: 0.75rem 1.5rem;
+  background-color: rgb(33 150 243);
+  border-radius: 0.5rem;
 }
 
-.card:hover::before {
-  transform: scale(1.3) rotate(-30deg);
-}
+
 </style>

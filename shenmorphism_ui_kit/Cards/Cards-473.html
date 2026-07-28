@@ -1,54 +1,27 @@
-<div class="firstAnimation">
-    <div class="secondAnimation">
-        <div class="card">
-        </div>
-    </div>
-</div>
-<style>
-/* From SHΞN™ Morphism by SantiagoBoS - Tags: card */
-.card {
-  width: 190px;
-  height: 254px;
-  background: rgb(0, 0, 0);
-  border: 2px solid rgb(255, 255, 255);
-  border-radius: 20px;
-}
+<div class="card"></div>
 
-.card:hover {
+<style>
+/* From SHΞN™ Morphism by SachinKumar666  - Tags: simple, material design, animation, card, shadow, glow, code */
+.card {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 190px;
   height: 254px;
   background: rgb(255, 255, 255);
-  border: 2px solid rgb(200, 200, 200);
-  border-radius: 20px;
-  background-color: #dfdfdf;
-  transition: all .5s;
+  border-radius: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  transition: all ease-in-out 0.3s;
 }
 
-.secondAnimation {
-  --hoverContorno: #959595;
+.card:hover {
+  background-color: #fdfdfd;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
-
-.secondAnimation:hover,
-.secondAnimation:focus {
-  -webkit-animation: cardAnimacion 1.4s;
-  animation: cardAnimacion 1.4s;
-  box-shadow: 0 0 0 0.8em rgba(255, 255, 255, 0);
-  border-radius: 20px;
-}
-
-@-webkit-keyframes cardAnimacion {
-  0% {
-    box-shadow: 0 0 0 0 var(--hoverContorno);
-  }
-}
-
-@keyframes cardAnimacion {
-  0% {
-    box-shadow: 0 0 0 0 var(--hoverContorno);
-  }
-}
-
-
-
 
 </style>
+    

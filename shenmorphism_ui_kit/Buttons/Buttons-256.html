@@ -1,36 +1,71 @@
 <button>
-  Hold that
+  <div>
+    <span>
+      <p>Hover Me</p><p>:)</p>
+    </span>
+  </div>
+  <div>
+    <span>
+      <p>Thanks</p><p>:D</p>
+    </span>
+  </div>
 </button>
 <style>
-/* From SHΞN™ Morphism by mrtqzbek11 - Tags: gradient, button, active, neon */
+/* From SHΞN™ Morphism by Sergestra - Tags: button */
 button {
-  width: 165px;
-  height: 62px;
-  cursor: pointer;
-  color: #fff;
-  font-size: 17px;
-  border-radius: 1rem;
-  border: none;
-  position: relative;
-  background: #100720;
-  transition: 0.1s;
+ outline: 0;
+ border: 0;
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+ max-width: 140px;
+ height: 50px;
+ border-radius: 0.5em;
+ box-shadow: 0 0.625em 1em 0 rgba(30, 143, 255, 0.35);
+ overflow: hidden;
 }
 
-button::after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
-  filter: blur(15px);
-  z-index: -1;
-  position: absolute;
-  left: 0;
-  top: 0;
+button div {
+ transform: translateY(0px);
+ width: 100%;
+}
+
+button,
+button div {
+ transition: 0.6s cubic-bezier(.16,1,.3,1);
+}
+
+button div span {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ height: 50px;
+ padding: 0.75em 1.125em;
+}
+
+button div:nth-child(1) {
+ background-color: #1e90ff;
+}
+
+button div:nth-child(2) {
+ background-color: #21dc62;
+}
+
+button:hover {
+ box-shadow: 0 0.625em 1em 0 rgba(33, 220, 98, 0.35);
+}
+
+button:hover div {
+ transform: translateY(-50px);
+}
+
+button p {
+ font-size: 17px;
+ font-weight: bold;
+ color: #ffffff;
 }
 
 button:active {
-  transform: scale(0.9) rotate(3deg);
-  background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
-  transition: 0.5s;
+ transform: scale(0.95);
 }
 </style>

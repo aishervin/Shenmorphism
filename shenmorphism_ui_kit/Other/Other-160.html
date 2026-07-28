@@ -1,59 +1,64 @@
-<label class="switch-container">
-  <input type="checkbox">
-  <span class="slider"></span>
-</label>
-
+<input type="checkbox" name="check-toggle" id="checkbox" hidden="">
+        <label for="checkbox" class="toggle">
+            <div class="toggle__circle"></div>
+        </label>
 <style>
-/* From SHΞN™ Morphism by KshitijAdhikaree - Tags: switch, moon, sun, toggle switch */
-/* The switch - the box around the slider */
-.switch-container {
-  position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
+/* From SHΞN™ Morphism by Creatlydev - Tags: switch, creative, toggle switch */
+.toggle {
+  --bg-toggle: hsl(0, 0%, 96%);
+  --bg-circle: hsl(96, 85%, 34%);
+  width: 120px;
+  height: 60px;
+  background-color: var(--bg-toggle);
+  box-shadow: 0 .3rem 5rem 0 rgba(125, 125, 125, 0.25);
+  border-radius: 4rem;
+  display: flex;
+  align-items: center;
+  padding: 0 .3rem;
+  transition: background-color 400ms;
 }
 
-/* Hide default HTML checkbox */
-.switch-container input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.switch-container .slider {
-  --background: linear-gradient(to right, #090613ef, #18151f);
-  position: absolute;
+.toggle__circle {
+  width: 50px;
+  height: 50px;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--background);
-  transition: background-color 0.5s;
-  border-radius: 30px;
-}
-
-.switch-container .slider:before {
-  position: absolute;
-  content: "";
-  height: 1.4em;
-  width: 1.4em;
+  background-color: var(--bg-circle);
   border-radius: 50%;
-  left: 10%;
-  bottom: 15%;
-  box-shadow: inset 15px -4px 0px 15px #f8ea27;
-  background: var(--background);
-  transition: transform 0.5s, box-shadow 0.5s;
+  position: relative;
+  transition: margin 400ms ease-in-out, background-color 1000ms;
 }
 
-.switch-container input:checked + .slider {
-  background-color: #000;
+.toggle__circle::after,
+.toggle__circle::before {
+  content: '';
+  position: absolute;
+  background-color: var(--bg-toggle);
+  bottom: 118%;
+  transform-origin: bottom left;
 }
 
-.switch-container input:checked + .slider:before {
-  transform: translateX(100%);
-  box-shadow: inset 8px -4px 0px 0px #f8f8f4;
+.toggle__circle::before {
+  width: 15px;
+  height: 25px;
+  left: 32%;
+  border-radius: 0% 100% 0% 100% / 0% 27% 73% 100%;
+  transform: translateX(-70%) rotate(-2deg);
 }
 
+.toggle__circle::after {
+  width: 25px;
+  height: 30px;
+  left: 48%;
+  border-radius: 100% 0% 100% 0% / 100% 0% 100% 0%;
+  transform: rotate(-20deg);
+}
+
+#checkbox:checked + .toggle > .toggle__circle {
+  margin-left: calc(120px - (.3rem * 2) - 50px);
+}
+
+#checkbox:checked + .toggle {
+  --bg-toggle: hsl(96, 85%, 34%);
+  --bg-circle: hsl(0, 0%, 96%);
+}
 </style>

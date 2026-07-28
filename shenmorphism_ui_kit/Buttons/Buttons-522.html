@@ -1,9 +1,58 @@
-<!-- From SHΞN™ Morphism by Melo034  - Tags: simple, material design, button -->
-<button
-  class="relative px-8 py-2 rounded-md bg-white isolation-auto z-10 border-2 border-red-700 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-[#A12347] before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 inline-flex items-center justify-center px-4 py-3 text-sm font-semibold text-black bg-white border border-gray-200 rounded-lg shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
->
-  Button
+<button class="button type1">
 </button>
+<style>
+/* From SHΞN™ Morphism by cosnametv - Tags: button, infinite, subscribe */
+.button {
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
 
+.button:hover {
+  box-shadow: .5px .5px 150px #252525;
+}
 
-    
+.type1::after {
+  content: "THANK YOU";
+  height: 50px;
+  width: 150px;
+  background-color: #4617ec;
+  color: #fff;
+  transform: translateY(100px);
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+
+.type1::before {
+  content: "SUBSCRIBE";
+  height: 50px;
+  width: 150px;
+  background-color: rgb(240, 9, 9);
+  color: #f5f8f8;
+  position: absolute;
+  transform: translateY(0px) scale(1.1);
+  font-size: 1.2rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+
+.type1:hover::after {
+  transform: translateY(-2px) scale(1.2) rotate(0deg);
+}
+
+.type1:hover::before {
+  transform: translateY(-50px)  rotate(290deg);
+}
+</style>

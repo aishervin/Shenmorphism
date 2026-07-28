@@ -1,93 +1,112 @@
-<button class="deleteButton">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 50 59"
-    class="bin"
-  >
-    <path
-      fill="#B5BAC1"
-      d="M0 7.5C0 5.01472 2.01472 3 4.5 3H45.5C47.9853 3 50 5.01472 50 7.5V7.5C50 8.32843 49.3284 9 48.5 9H1.5C0.671571 9 0 8.32843 0 7.5V7.5Z"
-    ></path>
-    <path
-      fill="#B5BAC1"
-      d="M17 3C17 1.34315 18.3431 0 20 0H29.3125C30.9694 0 32.3125 1.34315 32.3125 3V3H17V3Z"
-    ></path>
-    <path
-      fill="#B5BAC1"
-      d="M2.18565 18.0974C2.08466 15.821 3.903 13.9202 6.18172 13.9202H43.8189C46.0976 13.9202 47.916 15.821 47.815 18.0975L46.1699 55.1775C46.0751 57.3155 44.314 59.0002 42.1739 59.0002H7.8268C5.68661 59.0002 3.92559 57.3155 3.83073 55.1775L2.18565 18.0974ZM18.0003 49.5402C16.6196 49.5402 15.5003 48.4209 15.5003 47.0402V24.9602C15.5003 23.5795 16.6196 22.4602 18.0003 22.4602C19.381 22.4602 20.5003 23.5795 20.5003 24.9602V47.0402C20.5003 48.4209 19.381 49.5402 18.0003 49.5402ZM29.5003 47.0402C29.5003 48.4209 30.6196 49.5402 32.0003 49.5402C33.381 49.5402 34.5003 48.4209 34.5003 47.0402V24.9602C34.5003 23.5795 33.381 22.4602 32.0003 22.4602C30.6196 22.4602 29.5003 23.5795 29.5003 24.9602V47.0402Z"
-      clip-rule="evenodd"
-      fill-rule="evenodd"
-    ></path>
-    <path fill="#B5BAC1" d="M2 13H48L47.6742 21.28H2.32031L2 13Z"></path>
-  </svg>
-
-  <span class="tooltip">Delete</span>
+<button>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span>Button</span>
 </button>
-
 <style>
-/* From SHΞN™ Morphism by vinodjangid07  - Tags: tooltip, button, hover, trash, delete, hover effect, bin */
-.deleteButton {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
-  background-color: transparent;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s;
+/* From SHΞN™ Morphism by adamgiebl - Tags: button */
+button {
+  transform: rotate(-25deg) skew(25deg);
+  transform-style: preserve-3d;
   position: relative;
-  overflow: hidden;
+  list-style: none;
+  width: 100px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
 }
-.deleteButton svg {
-  width: 44%;
-}
-.deleteButton:hover {
-  background-color: rgb(237, 56, 56);
-  overflow: visible;
-}
-.bin path {
-  transition: all 0.2s;
-}
-.deleteButton:hover .bin path {
-  fill: #fff;
-}
-.deleteButton:active {
-  transform: scale(0.98);
-}
-.tooltip {
-  --tooltip-color: rgb(41, 41, 41);
+
+button:before {
+  content: '';
   position: absolute;
-  top: -40px;
-  background-color: var(--tooltip-color);
-  color: white;
-  border-radius: 5px;
-  font-size: 12px;
-  padding: 8px 12px;
-  font-weight: 600;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.105);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: all 0.5s;
-}
-.tooltip::before {
-  position: absolute;
-  width: 10px;
+  bottom: -10px;
+  left: -5px;
+  width: 100%;
   height: 10px;
-  transform: rotate(45deg);
-  content: "";
-  background-color: var(--tooltip-color);
-  bottom: -10%;
+  background: #2a2a2a;
+  transform: skewX(-41deg);
 }
-.deleteButton:hover .tooltip {
+
+button:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: -9px;
+  width: 9px;
+  height: 100%;
+  background: #2a2a2a;
+  transform: skewY(-49deg);
+}
+
+button span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 25px;
+  transition: 1.1s ease-out;
+}
+
+button:hover span {
+  z-index: 1000;
+  transition: .3s;
+  color: #fff;
+}
+
+button:hover span:nth-child(5) {
+  transform: translate(40px, -40px);
   opacity: 1;
 }
 
+button:hover span:nth-child(4) {
+  transform: translate(30px, -30px);
+  opacity: .8;
+}
+
+button:hover span:nth-child(3) {
+  transform: translate(20px, -20px);
+  opacity: .6;
+}
+
+button:hover span:nth-child(2) {
+  transform: translate(10px, -10px);
+  opacity: .4;
+}
+
+button:hover span:nth-child(1) {
+  transform: translate(0px, 0px);
+  opacity: .2;
+}
+
+button:active span:nth-child(5) {
+  transform: translate(20px, -20px);
+  opacity: 1;
+}
+
+button:active span:nth-child(4) {
+  transform: translate(15px, -15px);
+}
+
+button:active span:nth-child(3) {
+  transform: translate(10px, -10px);
+}
+
+button:active span:nth-child(2) {
+  transform: translate(5px, -5px);
+}
+
+button:active span:nth-child(1) {
+  transform: translate(0px, 0px);
+}
+
+button:nth-child(1):hover span {
+  background: #52E19F;
+}
 </style>
-    

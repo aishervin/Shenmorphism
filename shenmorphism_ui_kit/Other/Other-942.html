@@ -1,35 +1,63 @@
+<div class="loader">
+  <div class="loader-bar bar-1"></div>
+  <div class="loader-bar bar-2"></div>
+  <div class="loader-bar bar-3"></div>
+  <div class="loader-bar bar-4"></div>
+</div>
 
-<div class="spinner"></div>
 <style>
-/* From SHΞN™ Morphism by AqFox - Tags: loader */
-.spinner {
- width: 56px;
- height: 56px;
- display: grid;
- color: #004dff;
- background: radial-gradient(farthest-side, currentColor calc(100% - 7px),#0000 calc(100% - 6px) 0);
- -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 15px),#000 calc(100% - 13px));
- border-radius: 50%;
- animation: spinner-sm4bhi 2s infinite linear;
+/* From SHΞN™ Morphism by funkyjuice213 - Tags: loader, glow */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-.spinner::before,
-.spinner::after {
- content: "";
- grid-area: 1/1;
- background: linear-gradient(currentColor 0 0) center,
-          linear-gradient(currentColor 0 0) center;
- background-size: 100% 11px,11px 100%;
- background-repeat: no-repeat;
+.loader-bar {
+  height: 25px;
+  width: 6px;
+  margin: 0 3px;
+  border-radius: 20px;
+  animation: loader 2s ease-in-out infinite;
 }
 
-.spinner::after {
- transform: rotate(45deg);
+.bar-1 {
+  background: linear-gradient(to right, #00e6e6, #00ccff, #0099ff, #0066ff);
+  animation-delay: 0s;
+  box-shadow: 0px 0px 15px 3px #00e6e6;
 }
 
-@keyframes spinner-sm4bhi {
- 100% {
-  transform: rotate(1turn);
- }
+.bar-2 {
+  background: linear-gradient(to right, #00ccff, #0099ff, #0066ff, #00e6e6);
+  animation-delay: 0.1s;
+  box-shadow: 0px 0px 15px 3px #00ccff;
 }
+
+.bar-3 {
+  background: linear-gradient(to right, #0099ff, #0066ff, #00e6e6, #00ccff);
+  animation-delay: 0.2s;
+  box-shadow: 0px 0px 15px 3px #0099ff;
+}
+
+.bar-4 {
+  background: linear-gradient(to right, #0066ff, #00e6e6, #00ccff, #0099ff);
+  animation-delay: 0.3s;
+  box-shadow: 0px 0px 15px 3px #0066ff;
+}
+
+@keyframes loader {
+  0% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(2);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
 </style>

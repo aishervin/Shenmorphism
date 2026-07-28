@@ -1,83 +1,68 @@
-<div id="box-outer">
-  <div id="box-inner">
-    <div id="box"></div>
-  </div>
-</div>
+<div class="loader"></div>
 <style>
-/* From SHΞN™ Morphism by aadil-01 - Tags: loader */
-#box-outer {
-  width: 80px;
-  height: 80px;
-  border-radius: 16px;
-  animation: rotate_29 5s infinite;
-  background-color: #5ACEF2;
+/* From SHΞN™ Morphism by Ankesh2002 - Tags: loader */
+.loader {
+  position: relative;
+  width: 164px;
+  height: 164px;
 }
 
-#box-inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 12px;
-  rotate: 45deg;
-  animation: revolve_29 5s infinite;
-  background-color: #FF8062;
-}
-
-#box {
+.loader::before , .loader::after {
+  content: '';
+  position: absolute;
   width: 40px;
   height: 40px;
-  border-radius: 8px;
-  animation: rotate_29 5s infinite;
-  background-color: #FEFEFE;
+  background-color: #00bd26;
+  left: 50%;
+  top: 50%;
+  animation: rotate 1s ease-in infinite;
 }
 
-@keyframes revolve_29 {
-  0% {
-    transform: translateX(0);
-  }
-
-  25% {
-    transform: translateY(100%);
-  }
-
-  50% {
-    transform: translateX(100%) translateY(100%);
-  }
-
-  75% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
+.loader::after {
+  width: 20px;
+  height: 20px;
+  background-color: #00bd26;
+  animation: rotate 1s ease-in infinite, moveY 1s ease-in infinite;
 }
 
-@keyframes rotate_29 {
-  0% {
-    transform: rotate(0deg);
+@keyframes moveY {
+  0% , 100% {
+    top: 10%
   }
 
-  20% {
-    transform: rotate(90deg);
-  }
-
-  40% {
-    transform: rotate(180deg);
+  45% , 55% {
+    top: 59%
   }
 
   60% {
-    transform: rotate(270deg);
+    top: 40%
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -100%) rotate(0deg) scale(1 , 1)
   }
 
-  80% {
-    transform: rotate(360deg);
+  25% {
+    transform: translate(-50%, 0%) rotate(180deg) scale(1 , 1)
+  }
+
+  45% , 55% {
+    transform: translate(-50%, 100%) rotate(180deg) scale(3 , 0.5)
+  }
+
+  60% {
+    transform: translate(-50%, 100%) rotate(180deg) scale(1, 1)
+  }
+
+  75% {
+    transform: translate(-50%, 0%) rotate(270deg) scale(1 , 1)
   }
 
   100% {
-    transform: rotate(0deg);
+    transform: translate(-50%, -100%) rotate(360deg) scale(1 , 1)
   }
 }
+    
 </style>

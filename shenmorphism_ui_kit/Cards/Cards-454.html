@@ -1,203 +1,96 @@
-<div class="card">
-  <div class="top">
-    <div class="metal"></div>
-    <div class="plastic"></div>
+<div class="container">
+  <div class="box">
+    <span class="title">GLASS EFFECT</span>
+    <div>
+      <strong>JOE WATSON SBF</strong>
+      <p>0000 000 000 0000</p>
+      <span>VALID</span> <span>01/28</span>
+    </div>
   </div>
-  <div class="bottom">
-    <div class="line1"></div>
-    <div class="yellow"></div>
-  </div>
-  <div class="minicuadro1"></div>
-  <div class="minicuadro2"></div>
-  <div class="line1"></div>
-  <div class="line2"></div>
-  <div class="line3"></div>
-  <div class="line4"></div>
-  <div class="line5"></div>
-  <p class="index">Index</p>
 </div>
+
 <style>
-/* From SHΞN™ Morphism by Rodrypaladin - Tags: card, hover, about me, custom, creative, click animation */
-.card {
-  width: 300px;
-  height: 300px;
-  background-image: linear-gradient(to right bottom, #252324, #292728, #2d2c2d, #313031, #353535);
+/* From SHΞN™ Morphism by joe-watson-sbf  - Tags: glassmorphism, animation, card, hover, card template, cardhover , card animation, card hover */
+.container {
+  color: white;
   position: relative;
-  border-radius: 5px;
-  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.307);
+  font-family: sans-serif;
 }
 
-.top {
+.container::before,
+.container::after {
+  content: "";
+  background-color: #fab5704c;
   position: absolute;
-  width: 65%;
-  height: 37%;
-  top: 0;
-  left: 37px;
-  background-image: linear-gradient(to right bottom, #202020, #222222, #232323, #252525, #272727);
-  z-index: 500;
-  border-top: 4px solid #e8e8e8;
-  border-right: 3px solid #121212;
-  border-bottom: 3px solid #121212;
-  border-left: 3px solid #121212;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
-.plastic {
+.container::before {
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  top: 30%;
+  right: 7%;
+}
+
+.container::after {
+  content: "";
   position: absolute;
-  top: 0;
-  right: 60px;
-  width: 60px;
-  background-color: black;
-  height: 100%;
-  z-index: 1000;
-  border-top: 25px solid white;
+  height: 3rem;
+  top: 8%;
+  right: 5%;
+  border: 1px solid;
 }
 
-.bottom {
-  z-index: 1000;
-  position: absolute;
-  bottom: 1px;
-  right: 50%;
-  transform: translate(50%,0);
-  width: 75%;
-  height: 52%;
-  background-color: #ecebe0;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-top: 3px solid #121212;
-  border-left: 3px solid #121212;
-  border-right: 3px solid #121212;
-  border-radius: 10px;
+.container .box {
+  width: 11.875em;
+  height: 15.875em;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 0.7rem;
+  transition: all ease 0.3s;
 }
 
-.metal {
-  z-index: 2000;
-  position: absolute;
-  top: -3px;
-  right: 0;
-  width: 77%;
-  height: 103%;
-  background-image: linear-gradient(to right bottom, #bdbdbd, #cacaca, #d7d7d7, #e5e5e5, #f2f2f2);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  transition: transform 0.2s ease-in;
-  clip-path: polygon(0% 0%, 0% 100%, 60% 100%, 60% 18%, 85% 18%, 85% 93%, 25% 93%, 25% 100%, 100% 100%, 100% 0%);
+.container .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.cuadro-metal {
-  position: absolute;
-  top: 15px;
-  right: 45px;
-  width: 40px;
-  transform: translate(50%,0);
-  height: 80px;
-  background-color: #252324;
-  z-index: 2000;
-  transition: transform 0.2s ease-in;
-  border-radius: 3px;
+.container .box .title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
 }
 
-.card:hover .metal {
-  transform: translateX(-44px);
+.container .box div strong {
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
-.card:hover .cuadro-metal {
-  transform: translateX(-30px);
+.container .box div p {
+  margin: 0;
+  font-size: 0.9em;
+  font-weight: 300;
+  letter-spacing: 0.1em;
 }
 
-.minicuadro1 {
-  bottom: 25px;
-  right: 12px;
-  position: absolute;
-  width: 17px;
-  height: 17px;
-  background-color: #d7d7d7;
-  border: 2px solid #191919;
+.container .box div span {
+  font-size: 0.7rem;
+  font-weight: 300;
 }
 
-.minicuadro2 {
-  bottom: 25px;
-  left: 12px;
-  position: absolute;
-  width: 17px;
-  height: 17px;
-  background-image: linear-gradient(to right bottom, #191919, #202020, #272727, #2e2e2e, #353535);
-  border: 2px solid #191919;
+.container .box div span:nth-child(3) {
+  font-weight: 500;
+  margin-right: 0.2rem;
 }
 
-.yellow {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 23px;
-  background-color: rgb(255, 157, 0);
+.container .box:hover {
+  box-shadow: 0px 0px 20px 1px #ffbb763f;
+  border: 1px solid rgba(255, 255, 255, 0.454);
 }
-
-.line1 {
-  position: absolute;
-  bottom: 42px;
-  right: 61.5%;
-  transform: translate(50%,0);
-  width: 125px;
-  height: 2px;
-  background-color: rgb(192, 33, 33);
-}
-
-.line2 {
-  position: absolute;
-  bottom: 64px;
-  right: 50%;
-  transform: translate(50%,0);
-  width: 175px;
-  height: 2px;
-  background-color: rgb(192, 33, 33);
-  z-index: 2000;
-}
-
-.line3 {
-  position: absolute;
-  bottom: 86px;
-  right: 50%;
-  transform: translate(50%,0);
-  width: 175px;
-  height: 2px;
-  background-color: rgb(192, 33, 33);
-  z-index: 2000;
-}
-
-.line4 {
-  position: absolute;
-  bottom: 108px;
-  right: 50%;
-  transform: translate(50%,0);
-  width: 175px;
-  height: 2px;
-  background-color: rgb(192, 33, 33);
-  z-index: 2000;
-}
-
-.line5 {
-  position: absolute;
-  bottom: 130px;
-  right: 50%;
-  transform: translate(50%,0);
-  width: 175px;
-  height: 2px;
-  background-color: rgb(192, 33, 33);
-  z-index: 2000;
-}
-
-.index {
-  position: absolute;
-  bottom: 35px;
-  right: 62px;
-  font-size: 11px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: rgb(192, 33, 33);
-  z-index: 2000;
-}
-
 
 </style>
+    

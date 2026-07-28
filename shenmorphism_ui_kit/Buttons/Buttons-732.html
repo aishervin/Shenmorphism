@@ -1,103 +1,118 @@
-<button>
-  Button
-</button>
+<input type="checkbox" id="send-checkbox" class="send-checkbox" />
+<label for="send-checkbox" class="send-button">
+  <svg
+    class="svg-style"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    height="20px"
+    width="20px"
+  >
+    <path
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      stroke-width="1.5"
+      stroke="#292D32"
+      d="M7.39999 6.32003L15.89 3.49003C19.7 2.22003 21.77 4.30003 20.51 8.11003L17.68 16.6C15.78 22.31 12.66 22.31 10.76 16.6L9.91999 14.08L7.39999 13.24C1.68999 11.34 1.68999 8.23003 7.39999 6.32003Z"
+    ></path>
+    <path
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      stroke-width="1.5"
+      stroke="#292D32"
+      d="M10.11 13.6501L13.69 10.0601"
+    ></path>
+  </svg>
+  <span class="message">Send Message</span>
+  <span class="message-sent">Message Sent</span>
+</label>
+
 <style>
-/* From SHΞN™ Morphism by MuhammadHasann - Tags: button */
-button {
-  position: relative;
-  padding: 18px 55px;
-  font-size: 15px;
-  font-weight: bold;
-  color: #fff;
-  background: linear-gradient(87deg, #6d67e4, #7743db, #4e31aa, #6d67e4, #6d67e4);
-  background-size: 600% 600%;
-  border: 3px solid #7743db;
-  border-radius: 8px;
-  /* filter: drop-shadow(0 0 4px #9F73AB); */
-  box-shadow: inset 0 0 10px 1px #7743db, 0 0 10px 5px #7743db;
+/* From SHΞN™ Morphism by KingHendrie  - Tags: simple, icon, animation, action, button, rounded, social media, button hover effect  */
+.send-checkbox {
+  display: none;
+}
+
+.send-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  background-color: #f9f9f9;
+  color: #2c2c2c;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.5s;
-  animation: GradientAnimation 25s ease infinite;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+    2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-button::after {
-  content: "";
+.send-checkbox:checked + .send-button .message {
+  opacity: 0;
+}
+
+.send-checkbox:checked + .send-button .message-sent {
+  animation: fadeIn 3s forwards;
+}
+
+.send-checkbox:checked + .send-button svg {
+  animation: send 1s forwards;
+}
+
+@keyframes rotate-hover {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes send {
+  0% {
+    transform: translateX(0) rotate(40deg);
+  }
+  100% {
+    transform: translateX(150px) rotate(40deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.send-button .message-sent {
   position: absolute;
-  width: 202px;
-  height: 54px;
-  top: 0;
-  left: -17px;
-  border: 5px solid #453c67;
-  border-width: 0 2px 4px 0;
-  border-radius: 100%;
-  filter: drop-shadow(0px 0px 6px rgba(78, 49, 180, 1));
-  transform: rotate(-30deg);
-  animation: LinerAfter 15s ease infinite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  color: #125b96;
 }
 
-button::before {
-  content: "";
-  position: absolute;
-  width: 200px;
-  height: 50px;
-  top: 0;
-  left: -20px;
-  border: 5px solid #6d67e4;
-  border-width: 0 12px 8px 4px;
-  border-radius: 100%;
-  filter: drop-shadow(0px 0px 6px rgba(109, 103, 228, 1));
-  /* box-shadow: inset 0 0 10px 1px #4E31AA, 0 0 10px 5px #4E31AA; */
-  transform: rotate(-30deg);
-  transition: all 0.5s;
-  animation: LinerBefore 15s ease infinite;
+.send-button:hover {
+  background-color: #e0e0e0;
+  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.1),
+    3px 3px 7px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }
 
-@keyframes GradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes LinerAfter {
-  0% {
-    left: -27px;
-    height: 54px;
-  }
-
-  50% {
-    left: -7px;
-    height: 37px;
-  }
-
-  100% {
-    left: -27px;
-    height: 54px;
-  }
-}
-
-@keyframes LinerBefore {
-  0% {
-    left: -30px;
-    height: 50px;
-  }
-
-  50% {
-    left: -10px;
-    height: 33px;
-  }
-
-  100% {
-    left: -30px;
-    height: 50px;
-  }
+.send-button:hover svg {
+  animation: rotate-hover 0.2s;
+  transform: rotate(40deg);
 }
 
 </style>
+    

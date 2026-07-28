@@ -1,71 +1,40 @@
-<div class="loader">
-    <div class="quater i"></div>
-    <div class="quater ii"></div>
+<div aria-label="Loading..." role="status" class="loader">
+  <svg class="icon" viewBox="0 0 256 256">
+    <line x1="128" y1="32" x2="128" y2="64" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+    <line x1="195.9" y1="60.1" x2="173.3" y2="82.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+    <line x1="224" y1="128" x2="192" y2="128" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+    <line x1="195.9" y1="195.9" x2="173.3" y2="173.3" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+    <line x1="128" y1="224" x2="128" y2="192" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+    <line x1="60.1" y1="195.9" x2="82.7" y2="173.3" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+    <line x1="32" y1="128" x2="64" y2="128" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+    <line x1="60.1" y1="60.1" x2="82.7" y2="82.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+  </svg>
+  <span class="loading-text">Loading...</span>
 </div>
 <style>
-/* From SHΞN™ Morphism by Saiyed-Tanvir - Tags: loader, animated, circle loader, circular */
-.quater {
-  height: 1.5cm;
-  width: 1.5cm;
-  background-color: skyblue;
-  float: left;
-  position: relative;
-  bottom: 1.25cm;
+/* From SHΞN™ Morphism by Yaya12085 - Tags: loader */
+.loader {
+  display: flex;
+  align-items: center;
 }
 
-.i {
-  border-top-left-radius: 100%;
-  animation: spin1 2s ease-in-out infinite;
-  transform-origin: 1.5cm 1.5cm;
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  animation: spin 1s linear infinite;
+  stroke: rgba(107, 114, 128, 1);
 }
 
-.ii {
-  border-top-right-radius: 100%;
-  animation: spin2 2s ease-in-out infinite;
-  transform-origin: 0 1.5cm;
+.loading-text {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  color: rgba(107, 114, 128, 1);
 }
 
-@keyframes spin1 {
-  0% {
-    transform: rotateZ(0deg);
-  }
-
-  25% {
-    transform: rotateZ(0deg);
-  }
-
-  50% {
-    transform: rotateZ(180deg);
-  }
-
-  75% {
-    transform: rotateZ(180deg);
-  }
-
-  100% {
-    transform: rotateZ(360deg);
-  }
-}
-
-@keyframes spin2 {
-  0% {
-    transform: rotateZ(0deg);
-  }
-
-  25% {
-    transform: rotateZ(180deg);
-  }
-
-  50% {
-    transform: rotateZ(180deg);
-  }
-
-  75% {
-    transform: rotateZ(360deg);
-  }
-
-  100% {
-    transform: rotateZ(360deg);
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 </style>

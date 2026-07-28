@@ -1,88 +1,99 @@
-<label class="container">
-  <input checked="checked" type="checkbox">
-  <div class="checkmark"></div>
-  <div class="glass-effect"></div>
-</label>
+<div class="burger-icon">
+  <label class="burger" for="burger">
+    <input class="line" type="checkbox" id="burger" />
+  </label>
+</div>
+
 <style>
-/* From SHΞN™ Morphism by TechByElijah - Tags: glassmorphism, blue, checkbox, pulse */
-/* Hide the default checkbox */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.container {
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  font-size: 20px;
+/* From SHΞN™ Morphism by 3bdel3ziz-T  - Tags: material design, animation, checkbox, hamburger, menu, click effect, click animation, close */
+.burger {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   user-select: none;
-  width: 24px;
-  height: 24px;
+  cursor: pointer;
+  transition: 300ms;
+  border-radius: 10px;
+}
+.burger input[type="checkbox"] {
+  appearance: none;
+  transition: 300ms;
 }
 
-  /* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #fff;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: background-color 0.3s ease;
-  z-index: 1;
-}
-
-.glass-effect {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  height: 14px;
-  width: 14px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-  z-index: 2;
-}
-
-  /* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-
-  /* Show the glass effect when checked */
-.container input:checked ~ .glass-effect {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-  /* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+.burger::before,
+.burger::after {
   content: "";
-  position: absolute;
-  display: none;
+  transition: 300ms;
+  transform-origin: center center;
 }
 
-  /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.burger::before {
+  transform: translateY(8px);
+}
+.burger::after {
+  transform: translateY(-8px);
+}
+.burger .line,
+.burger::before,
+.burger::after {
+  width: 25px;
+  height: 2.1px;
   display: block;
+  background-color: black;
+  border-radius: 5px;
+  position: absolute;
 }
 
-  /* Style the checkmark/indicator */
-.container .checkmark:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  transform: translate(-50%, -50%) rotate(45deg);
+.burger .line:checked {
+  width: 0;
+  transition-delay: 100ms;
 }
+.burger:has(.line:checked)::before {
+  animation: animation1 400ms ease-out 0s 1 both;
+}
+.burger:has(.line:checked)::after {
+  animation: animation2 400ms ease-out 0s 1 both;
+}
+
+.burger:hover {
+  background: #aeaeae;
+  border-radius: 50%;
+}
+
+.burger:hover .line,
+.burger:hover::before,
+.burger:hover::after {
+  background: #e8e8e8;
+}
+
+.burger:active {
+  scale: 0.95;
+}
+@keyframes animation1 {
+  0% {
+    transform: translateY(8px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(45deg);
+  }
+}
+@keyframes animation2 {
+  0% {
+    transform: translateY(-8px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(-45deg);
+  }
+}
+
 </style>
+    

@@ -1,15 +1,15 @@
-<div class="theme_switcher">
-  <label id="switch" class="switch">
-    <input type="checkbox"><span class="slider round"></span>
-  </label>
-</div>
+<label class="switch modern-switch">
+  <input type="checkbox">
+  <span class="slider round"></span>
+</label>
+
 <style>
-/* From SHΞN™ Morphism by YaroslavFilipenko - Tags: slider, input, toggle switch */
+/* From SHΞN™ Morphism by WriestTavo - Tags: switch, 3d switch, cool switch */
 .switch {
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 20px;
+  height: 34px;
 }
 
 .switch input {
@@ -25,19 +25,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #b1b9c3;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: '';
-  height: 30px;
-  width: 30px;
-  bottom: -5px;
-  background: #18333E;
-  -webkit-transition: 0.4s;
+  background-color: #ccc;
+  border-radius: 34px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
   transition: 0.4s;
 }
 
@@ -45,18 +35,35 @@
   border-radius: 34px;
 }
 
-.slider.round:before {
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
   border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+  transition: 0.4s;
 }
 
-input:checked+.slider {
-  background-color: #b1b9c3;
+.switch input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: #81da8f;
 }
 
-input:checked+.slider:before {
-  -webkit-transform: translateX(35px);
-  -ms-transform: translateX(35px);
-  transform: translateX(35px);
-  background: #F2F8FD;
+.switch input:checked + .slider {
+  background-color: #86d993;
 }
+
+.switch input:not(:checked) + .slider:before {
+  background-color: #e66a6a;
+}
+
+.switch input:not(:checked) + .slider {
+  background-color: #e57373;
+}
+
+/* WriestTavo */
 </style>

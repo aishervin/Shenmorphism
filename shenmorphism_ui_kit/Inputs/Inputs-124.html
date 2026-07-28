@@ -1,76 +1,46 @@
-<div class="input-container">
-  <input required="" placeholder="Email Address" type="email">
-  <button class="invite-btn" type="button">
-    Invite
+<!-- From SHΞN™ Morphism by ahmedyasserdev  - Tags: input, search, input effect  -->
+<form class="form relative">
+  <button class="absolute left-2 -translate-y-1/2 top-1/2 p-1">
+    <svg
+      width="17"
+      height="16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-labelledby="search"
+      class="w-5 h-5 text-gray-700"
+    >
+      <path
+        d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9"
+        stroke="currentColor"
+        stroke-width="1.333"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      ></path>
+    </svg>
   </button>
- 
-</div>
-<style>
-/* From SHΞN™ Morphism by Yaya12085 - Tags: email, input */
-.input-container {
-  position: relative;
-  display: flex;
-  height: 2.8rem;
-  width: 100%;
-  min-width: 200px;
-  max-width: 250px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 20px 20px 30px rgba(0, 0, 0, .05);
-}
+  <input
+    class="input rounded-full px-8 py-3 border-2 border-transparent focus:outline-none focus:border-blue-500 placeholder-gray-400 transition-all duration-300 shadow-md"
+    placeholder="Search..."
+    required=""
+    type="text"
+  />
+  <button type="reset" class="absolute right-3 -translate-y-1/2 top-1/2 p-1">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-5 h-5 text-gray-700"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M6 18L18 6M6 6l12 12"
+      ></path>
+    </svg>
+  </button>
+</form>
 
-.input-container input {
-  height: 100%;
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid  rgb(176 190 197);
-  background-color: transparent;
-  padding: 0.625rem 70px 0.625rem 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 400;
-  color: rgb(69 90 100);
-  outline: none;
-  transition: all .15s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.input-container input:focus {
-  border: 1px solid rgb(236 72 153 );
-}
-
-.invite-btn {
-  position: absolute;
-  width: 65px;
-  right: 4px;
-  top: 4px;
-  bottom: 4px;
-  z-index: 10;
-  border-radius: 4px;
-  background-color: rgb(236 72 153 );
-  color: #fff;
-  padding-top: .25rem;
-  padding-bottom: .25rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  border: none;
-  transition: .6s ease;
-}
-
-.invite-btn:hover {
-  right: 2px;
-  top: 2px;
-  bottom: 2px;
-  border-radius: 8px;
-}
-
-.input-container input:placeholder-shown ~ .invite-btn {
-  pointer-events: none;
-  background-color: gray;
-  opacity: 0.5;
-}
-</style>
+    

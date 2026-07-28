@@ -1,68 +1,99 @@
-<label class="switch">
-  <input class="toggle" type="checkbox">
-  <span class="slider"></span>
-  <span class="card-side"></span>
-</label>
+<button class="toggle-btn">
+  <div class="sun-rays"></div>
+  <div class="main-circle"></div>
+</button>
+
 <style>
-/* From SHΞN™ Morphism by andrew-demchenk0 - Tags: blue, switch, toggle, animated, toggle switch */
-.switch {
-  --input-focus: #2d8cf0;
-  --font-color: #323232;
-  --font-color-sub: #666;
-  --bg-color: #fff;
-  --bg-color-alt: #666;
-  --main-color: #323232;
-  position: relative;
+/* From SHΞN™ Morphism by aymenthedeveloper  - Tags: icon, animation, button, toggle, light&dark, toggle switch */
+.toggle-btn {
+  --bg: #e8e8e8;
+  --fg: #212121;
+  background-color: var(--bg);
+  border-radius: 10px;
+  --dimensions: 50px;
+  width: var(--dimensions);
+  height: var(--dimensions);
+  border: none;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 30px;
-  width: 50px;
-  height: 20px;
-}
-
-.toggle {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  box-sizing: border-box;
-  border-radius: 5px;
-  border: 2px solid var(--main-color);
-  box-shadow: 4px 4px var(--main-color);
-  position: absolute;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--bg-colorcolor);
-  transition: 0.3s;
 }
 
-.slider:before {
-  box-sizing: border-box;
+.toggle-btn .main-circle {
+  --dimensions: 20px;
+  width: var(--dimensions);
+  height: var(--dimensions);
+  background-color: var(--fg);
+  border-radius: 50%;
   position: absolute;
+  transition: transform 0.4s ease 0.2s;
+}
+
+.toggle-btn .main-circle::after {
   content: "";
-  height: 20px;
-  width: 20px;
-  border: 2px solid var(--main-color);
-  border-radius: 5px;
-  left: -2px;
-  bottom: 2px;
-  background-color: var(--bg-color);
-  box-shadow: 0 3px 0 var(--main-color);
-  transition: 0.3s;
+  background-color: var(--bg);
+  border-radius: 50%;
+  --dimensions: 15px;
+  width: var(--dimensions);
+  height: var(--dimensions);
+  position: absolute;
+  top: 1px;
+  right: -1px;
+  transform-origin: right top;
+  transform: scale(0);
+  transition: transform 0.4s ease 0.2s;
 }
 
-.toggle:checked + .slider {
-  background-color: var(--input-focus);
+.toggle-btn .sun-rays {
+  display: grid;
+  place-items: center;
+  transition: transform 0.4s ease 0.2s;
 }
 
-.toggle:checked + .slider:before {
-  transform: translateX(30px);
+.toggle-btn .sun-rays,
+.toggle-btn .sun-rays::after,
+.toggle-btn .sun-rays::before {
+  --width: 3px;
+  --height: 6px;
+  width: var(--width);
+  height: var(--height);
+  background-color: var(--fg);
+  position: absolute;
+  box-shadow: 0 16px 0 var(--fg), 0 -16px 0 var(--fg);
 }
+
+.toggle-btn .sun-rays::after {
+  content: "";
+  transform: rotate(120deg);
+}
+
+.toggle-btn .sun-rays::before {
+  content: "";
+  transform: rotate(240deg);
+}
+
+.toggle-btn:focus .main-circle {
+  transform: scale(1.2);
+}
+
+.toggle-btn:focus .main-circle::after {
+  transform: scale(1);
+}
+
+.toggle-btn:focus .sun-rays {
+  transition: transform 0.4s;
+  transform: scale(0);
+}
+
+@media (prefers-color-scheme: dark) {
+  .toggle-btn {
+    --bg: #212121;
+    --fg: #e8e8e8;
+  }
+}
+
 </style>
+    

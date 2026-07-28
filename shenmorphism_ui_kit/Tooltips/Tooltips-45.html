@@ -1,79 +1,66 @@
 <div class="tooltip-container">
-  <span class="tooltip">45k</span>
-  <span class="text">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 95 114"
-      class="svgIcon"
-    >
-      <rect fill="black" rx="28.5" height="57" width="57" x="19"></rect>
-      <path
-        fill="black"
-        d="M0 109.5C0 83.2665 21.2665 62 47.5 62V62C73.7335 62 95 83.2665 95 109.5V114H0V109.5Z"
-      ></path>
-    </svg>
-    Follow</span
-  >
+  <span class="tooltip">SHΞN™ Morphism</span>
+  <span class="text">Tooltip</span>
 </div>
 
 <style>
-/* From SHΞN™ Morphism by vinodjangid07  - Tags: tooltip, animation, social, hover, social media, follow, hover effect */
+/* From SHΞN™ Morphism by johnliter  - Tags: simple, flashy, tooltip, button, theme-switch, code, gradients, light&dark */
+/* Style for the tooltip container */
 .tooltip-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  --background-light: #ff5555; /* Red */
+  --background-dark: #000000; /* Black */
+  --text-color-light: #ffffff;
+  --text-color-dark: #ffffff;
+  --bubble-size: 12px;
+  --glow-color: rgba(255, 255, 255, 0.5); /* Brighter glow color */
+
   position: relative;
-  transition: all 0.3s;
-  background-color: rgb(255, 255, 255);
-  padding: 11px 18px;
-  border-radius: 12px;
+  background: var(--background-light);
   cursor: pointer;
-  border: 1px solid rgb(211, 211, 211);
+  transition: all 0.2s;
+  font-size: 17px;
+  padding: 0.7em 1.8em;
+  color: var(--text-color-light);
+  border-radius: 8px; /* Rounded edges */
 }
 
-.text {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-size: 14px;
-  font-weight: 600;
-  color: rgb(0, 0, 0);
-}
-.svgIcon {
-  width: 16px;
-  height: auto;
-}
+/* Style for the bubble tooltip */
 .tooltip {
   position: absolute;
-  top: 0;
+  top: -100%; /* Initially hidden above the container */
   left: 50%;
   transform: translateX(-50%);
-  padding: 0.3em 0.6em;
+  padding: 0.6em 1em;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
   transition: all 0.3s;
-  background-color: rgb(255, 255, 255);
-  border-radius: 12px;
-  color: rgb(34, 34, 34);
+  border-radius: var(--bubble-size);
+  background: var(--background-light);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Triangle arrow for the bubble tooltip */
 .tooltip::before {
-  position: absolute;
   content: "";
-  height: 0.6em;
-  width: 0.6em;
-  bottom: -0.2em;
+  position: absolute;
+  top: 100%;
   left: 50%;
-  transform: translate(-50%) rotate(45deg);
-  background-color: rgb(255, 255, 255);
+  transform: translate(-50%);
+  border-style: solid;
+  border-width: 8px 8px 0;
+  border-color: var(--background-light) transparent transparent;
+}
+
+/* Tooltip appearance on hover */
+.tooltip-container:hover {
+  background: var(--background-dark);
+  color: var(--text-color-dark);
+  box-shadow: 0 0 20px var(--glow-color); /* Brighter glow effect */
 }
 
 .tooltip-container:hover .tooltip {
-  top: -100%;
+  top: -120%; /* Adjusted position for the bubble tooltip */
   opacity: 1;
   visibility: visible;
   pointer-events: auto;

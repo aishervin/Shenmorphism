@@ -1,65 +1,73 @@
-<div class="one-div"></div>
+ <div class="card">
+        <div class="txt">Hover Me :)</div>
+        <div class="shadow"></div>
+    </div>
 <style>
-/* From SHΞN™ Morphism by Yaya12085 - Tags: green, card, animated, colorful */
-.one-div {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  background: repeating-radial-gradient(circle at 50%, rgba(10, 222, 61,.4), rgba(10, 222, 61,.4) 2px, #000  2px, #000 12px);
-  border-radius: 50%;
-  border: 1px dotted rgba(10, 222, 61,.4);
-  overflow: hidden;
-}
-
-.one-div::before {
+/* From SHΞN™ Morphism by htwarriors108 - Tags: hover effect, hoverme, multicolor, blur, animation, gradient, card, shadow, blur filter, colorful */
+.card {
   position: absolute;
-  content: "";
-  top: calc(100% - 25%);
-  left: 50%;
-  transform-origin: 5px 0;
-  transform: translate(-50%, -50%);
-  width: 10px;
-  height: 50%;
-  border-radius: 10px;
-  filter: blur(3px);
-  background-image: linear-gradient(to left, rgba(10, 222, 61, .3) 50% , rgb(10, 222, 61) 50%);
-  opacity: .7;
-  animation: radar-animation 2.5s infinite linear;
-}
-
-.one-div::after {
-  content: "";
-  position: absolute;
-  bottom: 24%;
+  width: 190px;
+  height: 254px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.5s;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 6px;
-  height: 6px;
-  border-radius: 3px;
-  background-color: rgba(10, 222, 61,1);
-  animation: dot-animation 2.5s infinite ease-in-out;
 }
 
-@keyframes radar-animation {
+.card:hover {
+  scale: 1.05;
+  rotate: 3deg;
+}
+
+.card::after {
+  content: '';
+  width: 93%;
+  height: 95%;
+  position: absolute;
+  border-radius: 0.7em;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+}
+
+.shadow {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(315deg, #03a9f4, #ff0058);
+  z-index: -1;
+  filter: blur(25px);
+}
+
+.txt {
+  position: absolute;
+  font-weight: 800;
+  font-size: 1.6em;
+  color: #fff;
+}
+
+.card:hover .shadow {
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
   0% {
-    transform: translate(-50%, -50%) rotate(0);
+    rotate: 0deg;
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
   }
 
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
-@keyframes dot-animation {
   50% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(2);
+    rotate: 180deg;
+    background: linear-gradient(45deg, #ffbc00, #ff0058);
   }
 
   100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1);
+    rotate: 360deg;
+    background: linear-gradient(315deg, #4dff03, #00d0ff);
   }
 }
-
 </style>

@@ -1,61 +1,35 @@
-<div class="dot-wave">
-    <div class="dot-wave__dot"></div>
-    <div class="dot-wave__dot"></div>
-    <div class="dot-wave__dot"></div>
-    <div class="dot-wave__dot"></div>
+<div class="moon">
+  <div class="shadow"></div>
 </div>
 <style>
-/* From SHΞN™ Morphism by G4b413l - Tags: loader */
-.dot-wave {
-  --uib-size: 50px;
-  --uib-speed: 0.6s;
-  --uib-color: #0d0909;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: space-between;
-  width: var(--uib-size);
-  height: calc(var(--uib-size) * 0.17);
-  padding-top: calc(var(--uib-size) * 0.34);
-}
-
-.dot-wave__dot {
-  flex-shrink: 0;
-  width: calc(var(--uib-size) * 0.17);
-  height: calc(var(--uib-size) * 0.17);
+/* From SHΞN™ Morphism by JkHuger - Tags: loader */
+.moon, .shadow {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgb(216, 216, 216);
   border-radius: 50%;
-  background-color: var(--uib-color);
-  will-change: transform;
+  height: 50px;
+  width: 50px;
 }
 
-.dot-wave__dot:nth-child(1) {
-  animation: jump824 var(--uib-speed) ease-in-out
-    calc(var(--uib-speed) * -0.45) infinite;
+.shadow {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  background: #212121;
+ /*Change these color to the bg of your website*/
+  transition: all .3s ease;
+  animation: move_4123 1.2s infinite alternate ease-in-out;
+  transform: translate3d(8px, -8px, 0);
 }
 
-.dot-wave__dot:nth-child(2) {
-  animation: jump824 var(--uib-speed) ease-in-out
-    calc(var(--uib-speed) * -0.3) infinite;
-}
-
-.dot-wave__dot:nth-child(3) {
-  animation: jump824 var(--uib-speed) ease-in-out
-    calc(var(--uib-speed) * -0.15) infinite;
-}
-
-.dot-wave__dot:nth-child(4) {
-  animation: jump824 var(--uib-speed) ease-in-out infinite;
-}
-
-@keyframes jump824 {
-  0%,
+@keyframes move_4123 {
   100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-200%);
+    transform: translate3d(36px, -36px, 0);
   }
 }
-
 </style>

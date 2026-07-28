@@ -1,7 +1,75 @@
-<!-- From SHΞN™ Morphism by Javierrocadev - Tags: green, gradient, checkbox, rounded, blur filter, tailwind -->
-<label class="cursor-pointer duration-300 relative overflow-hidden w-12 h-12 flex justify-center items-center border rounded-lg bg-gray-50 before:absolute before:w-8 before:h-8 before:content[''] before:right-0 before:bg-violet-500 before:rounded-full before:blur-sm  after:absolute after:z-10 after:w-4 after:h-4 after:content['']  after:bg-rose-300 after:left-1 after:bottom-1 after:rounded-full after:blur-sm">
-  <input class="peer  hidden" type="checkbox">
-  <div class="w-8 h-8  rounded-md opacity-0 peer-checked:opacity-100 bg-gradient-to-tr from-emerald-800 via-emerald-700 to-emerald-500 scale-0 transition-all z-20 duration-300  peer-checked:transition-all rounded-md top-2 left-2 peer-checked:scale-100 peer-checked:duration-300 peer-checked:bg-gradient-to-tr from-emerald-800 via-emerald-700 to-emerald-500"></div>
+<label class="container">
+  <input type="checkbox" checked="checked">
+  <div class="checkmark"></div>
 </label>
+<style>
+/* From SHΞN™ Morphism by Praashoo7 - Tags: neumorphism, checkbox */
+/* Hide the default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
 
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+}
 
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 2.3em;
+  width: 2.3em;
+  background-color: #ccc;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+.checkmark:hover {
+  box-shadow: inset 17px 17px 16px #b3b3b3,
+            inset -17px -17px 16px #ffffff;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  box-shadow: none;
+  background-color: limegreen;
+  transform: rotateX(360deg);
+}
+
+.container input:checked ~ .checkmark:hover {
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 0.96em;
+  top: 0.7em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  box-shadow: 0.1em 0.1em 0em 0 rgba(0,0,0,0.3);
+  transform: rotate(45deg);
+}
+</style>

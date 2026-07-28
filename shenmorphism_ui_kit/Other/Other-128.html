@@ -1,20 +1,20 @@
 <label class="switch">
-  <input class="chk" type="checkbox">
+  <input type="checkbox">
   <span class="slider"></span>
 </label>
 <style>
-/* From SHΞN™ Morphism by Praashoo7 - Tags: switch, rounded, smooth */
+/* From SHΞN™ Morphism by WrongCodeU - Tags: simple, green, black, switch, dark */
 /* The switch - the box around the slider */
 .switch {
   font-size: 17px;
   position: relative;
   display: inline-block;
-  width: 2em;
+  width: 3.5em;
   height: 2em;
 }
 
 /* Hide default HTML checkbox */
-.switch .chk {
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -30,7 +30,8 @@
   bottom: 0;
   background-color: #ccc;
   transition: .4s;
-  border-radius: 50%;
+  border-radius: 30px;
+  box-shadow: 0.2em 0.2em black;
 }
 
 .slider:before {
@@ -38,23 +39,22 @@
   content: "";
   height: 1.4em;
   width: 1.4em;
-  border-radius: 2.5px;
+  border-radius: 20px;
   left: 0.3em;
   bottom: 0.3em;
   background-color: white;
   transition: .4s;
-  scale: 0;
 }
 
-.chk:checked + .slider {
-  background-color: limegreen;
-  transform: scale(0.7);
-  border-radius: 50%;
+.switch input:checked + .slider {
+  background-color: #09ff00b0;
 }
 
-.chk:checked + .slider:before {
-  transform: rotateZ(360deg);
-  scale: 1;
-  border-radius: 50%;
+.switch input:focus + .slider {
+  box-shadow: 0.2em 0.2em black;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.5em);
 }
 </style>

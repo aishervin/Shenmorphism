@@ -1,47 +1,53 @@
 <div class="loader">
-  <div class="loader-text">Loading...</div>
-  <div class="loader-bar"></div>
-</div>
-
+        <li class="dots" id="dot-1"></li>
+        <li class="dots" id="dot-2"></li>
+        <li class="dots" id="dot-3"></li>
+    </div>
 <style>
-/* From SHΞN™ Morphism by Satwinder04 - Tags: loader */
+/* From SHΞN™ Morphism by ashish-yadv - Tags: loader, simple loader, dot loader */
 .loader {
-  /* background-color: blue; */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  gap: 0.6em;
+  list-style: none;
 }
 
-.loader-text {
-  font-size: 24px;
-  color: rgb(0, 0, 0);
-  margin-bottom: 20px;
-  align-self: center;
+.dots {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ffffff;
 }
 
-.loader-bar {
-  width: 30%;
-  height: 10px;
-  border-radius: 5px;
-  background-color: rgb(0, 0, 0);
-  animation: loader-bar-animation 2s ease-in-out infinite;
+#dot-1 {
+  animation: loader-1 0.6s infinite ease-in-out;
 }
 
-@keyframes loader-bar-animation {
-  0% {
-    /* transform: translateX(-100%) rotate(270deg); */
-    transform: translateX(-100%);
-  }
-
+@keyframes loader-1 {
   50% {
-    /* transform: translateX(100%) rotate(-90deg); */
-    transform: translateX(100%);
+    opacity: 0;
+    transform: translateY(-0.3em);
   }
+}
 
-  100% {
-    /* transform: translateX(-100%) rotate(270deg); */
-    transform: translateX(-100%);
+#dot-2 {
+  animation: loader-2 0.6s 0.3s infinite ease-in-out;
+}
+
+@keyframes loader-2 {
+  50% {
+    opacity: 0;
+    transform: translateY(-0.3em);
+  }
+}
+
+#dot-3 {
+  animation: loader-3 0.6s 0.6s infinite ease-in-out;
+}
+
+@keyframes loader-3 {
+  50% {
+    opacity: 0;
+    transform: translateY(-0.3em);
   }
 }
 </style>

@@ -1,89 +1,65 @@
-<div class="bookmark-checkbox">
-  <input
-    type="checkbox"
-    id="bookmark-toggle"
-    class="bookmark-checkbox__input"
-  />
-  <label for="bookmark-toggle" class="bookmark-checkbox__label">
-    <svg class="bookmark-checkbox__icon" viewBox="0 0 24 24">
-      <path
-        class="bookmark-checkbox__icon-back"
-        d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
-      ></path>
-      <path class="bookmark-checkbox__icon-check" d="M8 11l3 3 5-5"></path>
-    </svg>
-  </label>
-</div>
-
+<label class="container">
+  <input type="checkbox" checked="checked">
+  <div class="checkmark"></div>
+</label>
 <style>
-/* From SHΞN™ Morphism by LeonKohli  - Tags: icon, animation, active, checkbox, glow, svg, cool checkbox */
-.bookmark-checkbox {
-  display: inline-block;
+/* From SHΞN™ Morphism by martinval9 - Tags: checkbox, circle */
+/* Hide the default checkbox */
+.container input {
+ position: absolute;
+ opacity: 0;
+ cursor: pointer;
+ height: 0;
+ width: 0;
 }
 
-.bookmark-checkbox__input {
-  display: none;
+.container {
+ display: block;
+ position: relative;
+ cursor: pointer;
+ font-size: 20px;
+ user-select: none;
 }
 
-.bookmark-checkbox__label {
-  cursor: pointer;
+/* Create a custom checkbox */
+.checkmark {
+ position: relative;
+ top: 0;
+ left: 0;
+ height: 1.3em;
+ width: 1.3em;
+ background-color: #ccc;
+ border-radius: 25px;
+ transition: 0.15s;
 }
 
-.bookmark-checkbox__icon {
-  width: 2em;
-  height: 2em;
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: stroke 0.3s, fill 0.3s;
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+ background-color: limegreen;
+ border-radius: 25px;
+ transition: 0.15s;
 }
 
-.bookmark-checkbox__icon-back {
-  stroke: #333;
-  transition: transform 0.3s;
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+ content: "";
+ position: absolute;
+ display: none;
 }
 
-.bookmark-checkbox__icon-check {
-  stroke: #fff;
-  stroke-dasharray: 16;
-  stroke-dashoffset: 16;
-  transition: stroke-dashoffset 0.3s, transform 0.3s;
-  transform: translateX(2px);
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+ display: block;
 }
 
-.bookmark-checkbox__input:checked
-  + .bookmark-checkbox__label
-  .bookmark-checkbox__icon {
-  fill: #ff5a5f;
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+ left: 0.45em;
+ top: 0.25em;
+ width: 0.25em;
+ height: 0.5em;
+ border: solid white;
+ border-width: 0 0.15em 0.15em 0;
+ transform: rotate(45deg);
 }
-
-.bookmark-checkbox__input:checked
-  + .bookmark-checkbox__label
-  .bookmark-checkbox__icon-back {
-  stroke: #ff5a5f;
-  transform: scale(1.1);
-  animation: bookmark-pop 0.4s ease;
-}
-
-.bookmark-checkbox__input:checked
-  + .bookmark-checkbox__label
-  .bookmark-checkbox__icon-check {
-  stroke-dashoffset: 0;
-  transition-delay: 0.2s;
-}
-
-@keyframes bookmark-pop {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-
 </style>
-    

@@ -1,43 +1,54 @@
-<div class="loader">
-    <div></div>
-
-    <div></div>
+<div class="loading">
+    <div class="d1"></div>
+    <div class="d2"></div>
 </div>
 <style>
-/* From SHΞN™ Morphism by tilakjain123 - Tags: loader */
-.loader {
+/* From SHΞN™ Morphism by Ali-Tahmazi99 - Tags: loader */
+.loading {
+  width: 60px;
+  height: 60px;
   position: relative;
-  width: 64px;
-  height: 64px;
 }
 
-.loader div {
+.d1 , .d2 {
+  border: 5px solid #6c757d;
+  border-radius: 50px;
+}
+
+.loading .d1 {
+  width: 55px;
+  height: 55px;
   position: absolute;
-  border: 4px solid #454ade;
-  border-radius: 50%;
-  animation: loader8435 1s ease-out infinite;
+  border-left-color: transparent;
+  animation: load161 1s linear infinite;
 }
 
-.loader div:nth-child(2) {
-  animation-delay: -0.5s;
+.loading .d2 {
+  width: 40px;
+  height: 40px;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  margin: 7.5px;
+  animation: load2812 1.5s linear infinite;
 }
 
-@keyframes loader8435 {
+@keyframes load161 {
   0% {
-    top: 32px;
-    left: 32px;
-    width: 0;
-    height: 0;
-    opacity: 1;
+    transform: rotate(0);
   }
 
   100% {
-    top: 0;
-    left: 0;
-    width: 64px;
-    height: 64px;
-    opacity: 0;
+    transform: rotate(360deg);
   }
 }
 
+@keyframes load2812 {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 </style>

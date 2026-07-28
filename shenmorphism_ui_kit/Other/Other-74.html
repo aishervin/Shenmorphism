@@ -1,90 +1,48 @@
-<div class="radio-buttons">
-  <label class="radio-button">
-    <input type="radio" name="option" value="option1">
-    <div class="radio-circle"></div>
-    <span class="radio-label">Option 1</span>
-  </label>
-  <label class="radio-button">
-    <input type="radio" name="option" value="option2">
-    <div class="radio-circle"></div>
-    <span class="radio-label">Option 2</span>
-  </label>
-  <label class="radio-button">
-    <input type="radio" name="option" value="option3">
-    <div class="radio-circle"></div>
-    <span class="radio-label">Option 3</span>
-  </label>
-</div>
-
+ <input type="checkbox" id="checkboxInput">
+    <label for="checkboxInput" class="toggleSwitch">
+    </label>
 <style>
-/* From SHΞN™ Morphism by coding-masala - Tags: radio */
-.radio-buttons {
-  display: flex;
-  flex-direction: column;
-  color: white;
-}
-
-.radio-button {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-.radio-button input[type="radio"] {
+/* From SHΞN™ Morphism by vinodjangid07 - Tags: switch, toggle, click effect */
+/* To hide the checkbox */
+#checkboxInput {
   display: none;
 }
 
-.radio-circle {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid #aaa;
+.toggleSwitch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  margin-right: 10px;
+  width: 50px;
+  height: 30px;
+  background-color: rgb(82, 82, 82);
+  border-radius: 20px;
+  cursor: pointer;
+  transition-duration: .2s;
 }
 
-.radio-circle::before {
+.toggleSwitch::after {
   content: "";
-  display: block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #ddd;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: all 0.2s ease-in-out;
+  height: 10px;
+  width: 10px;
+  left: 5px;
+  background-color: transparent;
+  border-radius: 50%;
+  transition-duration: .2s;
+  box-shadow: 5px 2px 7px rgba(8, 8, 8, 0.26);
+  border: 5px solid white;
 }
 
-.radio-button input[type="radio"]:checked + .radio-circle::before {
-  transform: translate(-50%, -50%) scale(1);
+#checkboxInput:checked+.toggleSwitch::after {
+  transform: translateX(100%);
+  transition-duration: .2s;
+  background-color: white;
 }
-
-.radio-button:nth-of-type(1) input[type="radio"]:checked + .radio-circle::before {
-  background-color: #ff6600;
-}
-
-.radio-button:nth-of-type(2) input[type="radio"]:checked + .radio-circle::before {
-  background-color: #ffffff;
-}
-
-.radio-button:nth-of-type(3) input[type="radio"]:checked + .radio-circle::before {
-  background-color: #26be00;
-}
-
-.radio-label {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.radio-button:hover .radio-circle {
-  border-color: #555;
-}
-
-.radio-button:hover input[type="radio"]:checked + .radio-circle::before {
-  background-color: #555;
+/* Switch background change */
+#checkboxInput:checked+.toggleSwitch {
+  background-color: rgb(148, 118, 255);
+  transition-duration: .2s;
 }
 
 </style>

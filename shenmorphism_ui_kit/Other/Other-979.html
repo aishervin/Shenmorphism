@@ -1,102 +1,157 @@
 <div class="loader">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+  <div class="cubes">
+    <div class="cube">
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+    </div>
+    <div class="cube">
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+    </div>
+    <div class="cube">
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+    </div>
+    <div class="cube">
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+    </div>
+  </div>
 </div>
 <style>
-/* From SHΞN™ Morphism by mrhyddenn - Tags: loader */
+/* From SHΞN™ Morphism by Pradeepsaranbishnoi - Tags: loader */
+/* The loader container */
 .loader {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  overflow: hidden;
-  animation: mac0123 1s linear infinite;
+  width: 200px;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
 }
 
-.loader span {
+
+/* The cubes */
+.cubes {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: #f00;
+  transform-style: preserve-3d;
+  transform: rotateY(45deg) rotateZ(45deg);
+}
+
+
+/* The cube */
+.cube {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  transform-origin: 50% 50%;
+  transform-style: preserve-3d;
+  transform: translateZ(-50px);
+  animation: cube 2500ms cubic-bezier(.66,.14,.56,.75) infinite;
+}
+
+.cube:nth-child(2) {
+  top: 0;
   left: 50%;
-  border-radius: 50%;
-  transform-origin: left;
+  animation-delay: 50ms;
 }
 
-.loader span:nth-child(1) {
-  background: #0fa503;
-  transform: rotate(0deg);
-  z-index: 2;
+.cube:nth-child(3) {
+  top: 50%;
+  left: 0;
+  animation-delay: 100ms;
 }
 
-.loader span:nth-child(2) {
-  background: #ffd203;
-  transform: rotate(60deg);
-  z-index: 3;
+.cube:nth-child(4) {
+  top: 50%;
+  left: 50%;
+  animation-delay: 150ms;
 }
 
-.loader span:nth-child(3) {
-  background: #54cd28;
-  transform: rotate(120deg);
-  z-index: 4;
-}
-
-.loader span:nth-child(4) {
-  background: #129cf5;
-  transform: rotate(180deg);
-  z-index: 5;
-}
-
-.loader span:nth-child(5) {
-  background: #bb5ed3;
-  transform: rotate(240deg);
-  z-index: 6;
-}
-
-.loader span:nth-child(6) {
-  background: #ff4f45;
-  transform: rotate(300deg);
-  z-index: 7;
-  overflow: hidden;
-}
-
-.loader span:nth-child(6):before {
-  content: '';
-  position: absolute;
-  top: 45px;
-  left: -72px;
-  width: 100%;
-  height: 100%;
-  background: #ffd203;
-  border-radius: 50%;
-  z-index: 2;
-}
-
-.loader span:nth-child(6):after {
-  content: '';
-  position: absolute;
-  top: 42px;
-  left: -23px;
-  width: 100%;
-  height: 100%;
-  background: #fea503;
-  border-radius: 50%;
-}
-
-@keyframes mac0123 {
-  0% {
-    transform: translate(-50%, -50%) rotate(359deg);
+@keyframes cube {
+  0%, 75%, 100% {
+    transform: translate3d(0px, 0px, 50px) rotateY(0deg) scale3d(0.9, 0.9, 0.1);
   }
 
-  100% {
-    transform: translate(-50%, -50%) rotate(0deg);
+  25%, 50% {
+    transform: translate3d(0px, 0px, -50px) rotateY(180deg) scale3d(0.9, 0.9, 0.1);
   }
 }
+
+
+
+
+
+/* The side */
+.side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* back */
+.side:nth-child(1) {
+  transform: rotateX(-180deg) translateZ(50px);
+  background-color: #1e3f57;
+}
+
+/* left side */
+.side:nth-child(2) {
+  transform: rotateY(-90deg) translateZ(50px);
+  background-color: #6bb2cd;
+}
+
+/* right side */
+.side:nth-child(3) {
+  transform: rotateY(90deg) translateZ(50px);
+  background-color: #6bb2cd;
+}
+
+/* top side */
+.side:nth-child(4) {
+  transform: rotateX(90deg) translateZ(50px);
+  background-color: #3c617d;
+}
+
+/* bottom side */
+.side:nth-child(5) {
+  transform: rotateX(-90deg) translateZ(50px);
+  background-color: #3c617d;
+}
+
+/* top */
+.side:nth-child(6) {
+  transform: translateZ(50px);
+  background-color: #1e3f57;
+}
+
 </style>

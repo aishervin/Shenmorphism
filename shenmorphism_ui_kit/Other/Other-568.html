@@ -1,92 +1,59 @@
-<div class="window">
-  <div class="logo">
-    <p class="top">Microsoft</p>
-    <p class="mid">Windows<span>XP</span></p>
-    <p class="bottom">Professional</p>
+  <div class="loader">     
+         <div class="shape"></div>
   </div>
-  <div class="container">
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-  </div>
-</div>
 <style>
-/* From SHΞN™ Morphism by Pradeepsaranbishnoi - Tags: loader, retro, windows, xp */
-.container {
-  width: 150px;
-  height: 10px;
-  border: 2px solid #b2b2b2;
-  border-radius: 7px;
-  margin: 0 auto;
-  padding: 2px 1px;
-  overflow: hidden;
-  font-size: 0;
-}
-
-.box {
-  width: 9px;
-  height: 100%;
-  background: linear-gradient(to bottom, #2838c7 0%,#5979ef 17%,#869ef3 32%,#869ef3 45%,#5979ef 59%,#2838c7 100%);
+/* From SHΞN™ Morphism by guilhermeyohan - Tags: loader */
+.loader {
   display: inline-block;
-  margin-right: 2px;
-  animation: loader 2s infinite;
-  animation-timing-function: linear;
-}
-
-.logo {
-  width: 220px;
-  margin: 50px auto;
-  margin-top: 20px;
-}
-
-.logo p {
-  margin: 0;
-  padding: 0;
-}
-
-.top {
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 16px;
-}
-
-.top:after {
-  content: "\00a9";
-  font-size: 10px;
   position: relative;
-  top: -5px;
-  margin-left: 2px;
+  width: 80px;
+  height: 80px;
+  animation: loader_513 2s linear infinite;
 }
 
-.mid {
-  font-size: 46px;
-  font-weight: 700;
-  line-height: 36px;
+.shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
 }
 
-.mid span {
-  font-size: 22px;
-  display: inline-block;
-  vertical-align: top;
-  color: #FF6821;
-  margin-top: -8px;
+.shape {
+  background-color: rgb(31, 1, 164);
+  animation: rectangle_513 4s linear infinite;
+  animation-delay: 2s;
 }
 
-.logo .bottom {
-  font-size: 30px;
-  font-weight: 300;
-  line-height: 30px;
-  margin-left: 5px;
-}
-
-@keyframes loader {
+@keyframes loader_513 {
   0% {
-    transform: translate(-30px);
+    transform: rotate(0deg);
   }
 
   100% {
-    transform: translate(150px);
+    transform: rotate(360deg);
   }
 }
 
+@keyframes rectangle_513 {
+  0% {
+    transform: scale(1, 1);
+    border-radius: 15px;
+  }
+
+  25% {
+    border-radius: 30px;
+    box-shadow: 0px 0px 5px rgba(133, 133, 133, 0.523);
+    background-color: rgb(13, 60, 189);
+    transform: scale(0.9);
+  }
+
+  50% {
+    border-radius: 20px;
+    transform: scale(1.4);
+    box-shadow: 2px 5px 50px rgba(90, 90, 90, 0.206);
+  }
+}
+  
 </style>

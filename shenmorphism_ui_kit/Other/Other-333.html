@@ -1,110 +1,123 @@
-<div class="checkbox">
-  <input class="tgl" id="toggle" type="checkbox" />
-  <label class="tgl-btn" for="toggle"></label>
+<div class="radio-input">
+  <div class="glass">
+    <div class="glass-inner">
+    </div>
+  </div>
+  <div class="selector">
+    <div class="choice">
+      <div>
+        <input class="choice-circle" checked="true" value="one" name="number-selector" id="one" type="radio">
+        <div class="ball"></div>
+      </div>
+      <label for="one" class="choice-name">1</label>
+    </div>
+    <div class="choice">
+      <div>
+        <input class="choice-circle" value="two" name="number-selector" id="two" type="radio">
+        <div class="ball"></div>
+      </div>
+      <label class="choice-name">2</label>
+    </div>
+    <div class="choice">
+      <div>
+        <input class="choice-circle" value="three" name="number-selector" id="three" type="radio">
+        <div class="ball"></div>
+      </div>
+      <label for="three" class="choice-name">3</label>
+    </div>
+  </div>
 </div>
-
 <style>
-/* From SHΞN™ Morphism by elijahgummer  - Tags: simple, animation, blue, switch, transition, click effect, click animation */
-.checkbox {
-  --blue: #0d7eff;
-  --g08: #e1e5eb;
-  --g04: #848ea1;
-  text-align: center;
+/* From SHΞN™ Morphism by LilaRest - Tags:  */
+.radio-input {
+  display: flex;
+  height: 210px;
+  align-items: center;
 }
 
-.checkbox .tgl {
-  display: none;
+.glass {
+  z-index: 2;
+  height: 110%;
+  width: 95px;
+  margin-right: 25px;
+  padding: 8px;
+  background-color: rgba(190, 189, 189, 0.5);
+  border-radius: 35px;
+  box-shadow: rgba(50, 50, 93, 0.2) 0px 25px 50px -10px,
+   rgba(0, 0, 0, 0.25) 0px 10px 30px -15px,
+    rgba(10, 37, 64, 0.26) 0px -2px 6px 0px inset;
+  backdrop-filter: blur(8px);
 }
-.checkbox .tgl,
-.checkbox .tgl:after,
-.checkbox .tgl:before,
-.checkbox .tgl *,
-.checkbox .tgl *:after,
-.checkbox .tgl *:before,
-.checkbox .tgl + .tgl-btn {
-  box-sizing: border-box;
-}
-.checkbox .tgl::selection,
-.checkbox .tgl:after::selection,
-.checkbox .tgl:before::selection,
-.checkbox .tgl *::selection,
-.checkbox .tgl *:after::selection,
-.checkbox .tgl *:before::selection,
-.checkbox .tgl + .tgl-btn::selection {
-  background: none;
-}
-.checkbox .tgl + .tgl-btn {
-  outline: 0;
-  display: block;
-  width: 57px;
-  height: 27px;
-  position: relative;
-  cursor: pointer;
-  user-select: none;
-  font-size: 12px;
-  font-weight: 400;
-  color: #fff;
-}
-.checkbox .tgl + .tgl-btn:after,
-.checkbox .tgl + .tgl-btn:before {
-  position: relative;
-  display: block;
-  content: "";
-  width: 44%;
+
+.glass-inner {
+  width: 100%;
   height: 100%;
+  border-color: rgba(245, 245, 245, 0.45);
+  border-width: 9px;
+  border-style: solid;
+  border-radius: 30px
 }
-.checkbox .tgl + .tgl-btn:after {
-  left: 0;
+
+.selector {
+  display: flex;
+  flex-direction: column;
 }
-.checkbox .tgl + .tgl-btn:before {
-  display: inline;
+
+.choice {
+  margin: 10px 0 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.choice > div {
+  position: relative;
+  width: 41px;
+  height: 41px;
+  margin-right: 15px;
+  z-index: 0;
+}
+
+.choice-circle {
+  appearance: none;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  border-width: 9px;
+  border-style: solid;
+  border-color: rgba(245, 245, 245, 0.45);
+  cursor: pointer;
+  box-shadow: 0px 0px 20px -13px gray,
+  0px 0px 20px -14px gray inset;
+}
+
+.ball {
+  z-index: 1;
   position: absolute;
-  top: 7px;
-}
-.checkbox .tgl:checked + .tgl-btn:after {
-  left: 56.5%;
-}
-
-.checkbox .tgl + .tgl-btn {
-  background: var(--g08);
-  border-radius: 20rem;
-  padding: 2px;
-  transition: all 0.4s ease;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
-}
-.checkbox .tgl + .tgl-btn:after {
-  border-radius: 2em;
-  background: #fff;
-  transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-    padding 0.3s ease, margin 0.3s ease;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-}
-.checkbox .tgl + .tgl-btn:before {
-  content: "No";
-  left: 28px;
-  color: var(--g04);
-  transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-.checkbox .tgl + .tgl-btn:active {
-  box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0.1);
-}
-.checkbox .tgl + .tgl-btn:active:after {
-  padding-right: 0.4em;
-}
-.checkbox .tgl:checked + .tgl-btn {
-  background: var(--blue);
-}
-.checkbox .tgl:checked + .tgl-btn:active {
-  box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0.1);
-}
-.checkbox .tgl:checked + .tgl-btn:active:after {
-  margin-left: -0.4em;
-}
-.checkbox .tgl:checked + .tgl-btn:before {
-  content: "Yes";
-  left: 4px;
-  color: #fff;
+  inset: 0px;
+  transform: translateX(-95px);
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -10px 10px 0px inset,
+   rgba(0, 0, 0, 0.15) 0px -15px 15px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -40px 20px 0px inset,
+     rgba(0, 0, 0, 0.06) 0px 2px 1px, 
+     rgba(0, 0, 0, 0.09) 0px 4px 2px, 
+     rgba(0, 0, 0, 0.09) 0px 8px 4px, 
+     rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px,
+       0px -1px 15px -8px rgba(0, 0, 0, 0.09);
+  border-radius: 100%;
+  transition: transform 800ms cubic-bezier(1,-0.4,0,1.4);
+  background-color: rgb(232, 232, 232, 1);
 }
 
+.choice-circle:checked + .ball {
+  transform: translateX(0px);
+}
+
+.choice-name {
+  color: rgb(177, 176, 176);
+  font-size: 35px;
+  font-weight: 900;
+  font-family: monospace;
+  cursor: pointer;
+}
 </style>
-    

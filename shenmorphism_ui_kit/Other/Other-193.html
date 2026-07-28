@@ -1,110 +1,173 @@
-<div class="toggler">
-    <input id="toggler-1" name="toggler-1" type="checkbox" value="1">
-    <label for="toggler-1">
-        <svg class="toggler-on" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
-            <polyline class="path check" points="100.2,40.2 51.5,88.8 29.8,67.5"></polyline>
-        </svg>
-        <svg class="toggler-off" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
-            <line class="path line" x1="34.4" y1="34.4" x2="95.8" y2="95.8"></line>
-            <line class="path line" x1="95.8" y1="34.4" x2="34.4" y2="95.8"></line>
-        </svg>
-    </label>
+<div class="wrapper">
+<input type="checkbox" name="checkbox" class="switch">
 </div>
 <style>
-/* From SHΞN™ Morphism by mobinkakei - Tags: checkbox */
-.toggler {
-  width: 72px;
-  margin: 40px auto;
-}
-
-.toggler input {
-  display: none;
-}
-
-.toggler label {
-  display: block;
+/* From SHΞN™ Morphism by JkHuger - Tags: switch, dark, theme, light, moon, sun, theme-switch */
+.switch {
   position: relative;
-  width: 72px;
-  height: 36px;
-  border: 1px solid #d6d6d6;
-  border-radius: 36px;
-  background: #e4e8e8;
+  width: 130px;
+  height: 50px;
+  margin: 0px;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: rgb(4,52,73);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  transition: background-image .7s ease-in-out;
+  outline: none;
   cursor: pointer;
+  overflow: hidden;
 }
 
-.toggler label::after {
-  display: block;
-  border-radius: 100%;
-  background-color: #d7062a;
+.switch:checked {
+  background-color: rgb(0, 195, 255);
+  background-size: cover;
+  transition: background-image 1s ease-in-out;
+}
+
+.switch:after {
   content: '';
-  animation-name: toggler-size;
-  animation-duration: 0.15s;
-  animation-timing-function: ease-out;
-  animation-direction: forwards;
-  animation-iteration-count: 1;
-  animation-play-state: running;
-}
-
-.toggler label::after, .toggler label .toggler-on, .toggler label .toggler-off {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #fff;
   position: absolute;
-  top: 50%;
-  left: 25%;
-  width: 26px;
-  height: 26px;
-  transform: translateY(-50%) translateX(-50%);
-  transition: left 0.15s ease-in-out, background-color 0.2s ease-out, width 0.15s ease-in-out, height 0.15s ease-in-out, opacity 0.15s ease-in-out;
+  left: 2px;
+  top: 2px;
+  transform: translateX(0px);
+  animation: off .7s forwards cubic-bezier(.8, .5, .2, 1.4);
+  box-shadow: inset 5px -5px 4px rgba(53, 53, 53, 0.3);
 }
 
-.toggler input:checked + label::after, .toggler input:checked + label .toggler-on, .toggler input:checked + label .toggler-off {
-  left: 75%;
-}
-
-.toggler input:checked + label::after {
-  background-color: #50ac5d;
-  animation-name: toggler-size2;
-}
-
-.toggler .toggler-on, .toggler .toggler-off {
-  opacity: 1;
-  z-index: 2;
-}
-
-.toggler input:checked + label .toggler-off, .toggler input:not(:checked) + label .toggler-on {
-  width: 0;
-  height: 0;
-  opacity: 0;
-}
-
-.toggler .path {
-  fill: none;
-  stroke: #fefefe;
-  stroke-width: 7px;
-  stroke-linecap: round;
-  stroke-miterlimit: 10;
-}
-
-@keyframes toggler-size {
-  0%, 100% {
-    width: 26px;
-    height: 26px;
+@keyframes off {
+  0% {
+    transform: translateX(80px);
+    width: 46px;
   }
 
   50% {
-    width: 20px;
-    height: 20px;
+    width: 75px;
+    border-radius: 25px;
+  }
+
+  100% {
+    transform: translateX(0px);
+    width: 46px;
   }
 }
 
-@keyframes toggler-size2 {
-  0%, 100% {
-    width: 26px;
-    height: 26px;
+.switch:checked:after {
+  animation: on .7s forwards cubic-bezier(.8, .5, .2, 1.4);
+  box-shadow: inset -5px -5px 4px rgba(53, 53, 53, 0.3);
+}
+
+@keyframes on {
+  0% {
+    transform: translateX(0px);
+    width: 46px;
   }
 
   50% {
-    width: 20px;
-    height: 20px;
+    width: 75px;
+    border-radius: 25px;
+  }
+
+  100% {
+    transform: translateX(80px);
+    width: 46px;
   }
 }
- 
+
+.switch:checked:before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  left: 15px;
+  top: 5px;
+  transform-origin: 53px 10px;
+  background-color: transparent;
+  box-shadow: 5px -1px 0px #fff;
+  filter: blur(0px);
+  animation: sun .7s forwards ease;
+}
+
+@keyframes sun {
+  0% {
+    transform: rotate(170deg);
+    background-color: transparent;
+    box-shadow: 5px -1px 0px #fff;
+    filter: blur(0px);
+  }
+
+  50% {
+    background-color: transparent;
+    box-shadow: 5px -1px 0px #fff;
+    filter: blur(0px);
+  }
+
+  90% {
+    background-color: #f5daaa;
+    box-shadow: 0px 0px 10px #f5deb4,
+    0px 0px 20px #f5deb4,
+    0px 0px 30px #f5deb4,
+     inset 0px 0px 2px #efd3a3;
+    filter: blur(1px);
+  }
+
+  100% {
+    transform: rotate(0deg);
+    background-color: #f5daaa;
+    box-shadow: 0px 0px 10px #f5deb4,
+    0px 0px 20px #f5deb4,
+    0px 0px 30px #f5deb4,
+     inset 0px 0px 2px #efd3a3;
+    filter: blur(1px);
+  }
+}
+
+.switch:before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  left: 15px;
+  top: 5px;
+  filter: blur(1px);
+  background-color: #f5daaa;
+  box-shadow: 0px 0px 10px #f5deb4,
+0px 0px 20px #f5deb4,
+0px 0px 30px #f5deb4,
+ inset 0px 0px 2px #efd3a3;
+  transform-origin: 53px 10px;
+  animation: moon .7s forwards ease;
+}
+
+@keyframes moon {
+  0% {
+    transform: rotate(0deg);
+    filter: blur(1px);
+  }
+
+  50% {
+    filter: blur(1px);
+  }
+
+  90% {
+    background-color: transparent;
+    box-shadow: 5px -1px 0px #fff;
+    filter: blur(0px);
+  }
+
+  100% {
+    transform: rotate(170deg);
+    background-color: transparent;
+    box-shadow: 5px -1px 0px #fff;
+    filter: blur(0px);
+  }
+}
+
 </style>

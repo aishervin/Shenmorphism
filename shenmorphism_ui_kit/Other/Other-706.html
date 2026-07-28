@@ -1,51 +1,63 @@
-
-<div class="loader"></div>
+<div class="loader">
+<div class="in"></div>
+<div class="out-1"></div>
+<div class="out-2"></div>
+<div class="out-3"></div>
+</div>
 <style>
-/* From SHΞN™ Morphism by JulioCodesSM - Tags: loader */
-/* From SHΞN™ Morphism by @JulioCodesSM */
+/* From SHΞN™ Morphism by felipesntr - Tags: loader */
 .loader {
- width: 50px;
- height: 50px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
  position: relative;
- transform: translateX(-25px);
- /* Compensating for the left of 50px in the keyframe. */
 }
 
-.loader::before,
-.loader::after {
- content: '';
+.out-1 {
  position: absolute;
- width: inherit;
- height: inherit;
- border-radius: 50%;
- mix-blend-mode: multiply;
- animation: rotate9 1s infinite cubic-bezier(0.77, 0, 0.175, 1);
+ width: 4em;
+ height: 4em;
+ border-radius: 100%;
+ border: 0.2em solid transparent;
+ border-top-color: rgb(43, 226, 83);
+ animation: rec 2s infinite;
+ transition: all ease-in-out 0.3s;
 }
 
-.loader::before {
- background-color: #fc3f9e;
+.out-2 {
+ position: absolute;
+ width: 4em;
+ height: 4em;
+ border-radius: 100%;
+ border: 0.2em solid transparent;
+ border-left-color: rgb(226, 223, 43);
+ animation: rec 2s infinite;
+ transition: all ease-in-out 0.3s;
 }
 
-.loader::after {
- background-color: #50e8f3;
- animation-delay: .5s;
+.out-3 {
+ position: absolute;
+ width: 4em;
+ height: 4em;
+ border-radius: 100%;
+ border: 0.2em solid transparent;
+ border-bottom-color: rgb(51, 105, 252);
+ animation: rec 2s infinite;
+ transition: all ease-in-out 0.3s;
 }
 
-@keyframes rotate9 {
- 0%,100% {
-  left: 50px;
- }
+.in {
+ position: absolute;
+ border-radius: 100%;
+ border: 0.2em solid rgba(43, 226, 83, 0.11);
+ width: 4em;
+ height: 4em;
+ transition: all ease-in-out 0.3s;
+}
 
- 25% {
-  transform: scale(.3);
- }
-
- 50% {
-  left: 0;
- }
-
- 75% {
-  transform: scale(1);
+@keyframes rec {
+ 0% {
+  transform: rotate(360deg);
  }
 }
 </style>

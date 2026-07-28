@@ -1,115 +1,87 @@
-<div class="loader">
-  <div class="dot"></div>
-  <div class="dot"></div>
-  <div class="dot"></div>
-</div>
+    <div class="container">
+        <div class="loader"><span></span></div>
+        <div class="loader"><span></span></div>
+        <div class="loader"><i></i></div>
+        <div class="loader"><i></i></div>
+    </div>
 <style>
-/* From SHΞN™ Morphism by Pradeepsaranbishnoi - Tags: loader */
-/* The loader container */
-.loader {
+/* From SHΞN™ Morphism by omriluz - Source: online tutorials - https://www.youtube.com/watch?v=n6ojK2HmROE&list=PL5e68lK9hEzeeXtsQCQYd9SAzj6u6wZpi&index=153&ab_channel=OnlineTutorials - Tags: flashy, animation, loader, colorful, multicolor */
+.container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, #0005);
+}
+
+.container .loader {
+  position: absolute;
   width: 200px;
   height: 200px;
-  perspective: 200px;
+  border-radius: 50%;
+  animation: animate 2s linear infinite;
 }
 
+.container .loader:nth-child(2),
+.container .loader:nth-child(4) {
+  animation-delay: -1s;
+}
 
-/* The dot */
-.dot {
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+    filter: hue-rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    filter: hue-rotate(0deg);
+  }
+}
+
+.container .loader:nth-child(1)::before,
+.container .loader:nth-child(2)::before {
+  content: '';
   position: absolute;
-  top: 50%;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to top, transparent, rgba(0,255,249, 0.4));
+  background-size: 100px 180px;
+  background-repeat: no-repeat;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+.container .loader i {
+  position: absolute;
+  top: 0;
   left: 50%;
-  width: 120px;
-  height: 120px;
-  margin-top: -60px;
-  margin-left: -60px;
-  border-radius: 100px;
-  border: 40px outset #1e3f57;
-  transform-origin: 50% 50%;
-  transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-  background-color: transparent;
-  animation: dot1 1000ms cubic-bezier(.49,.06,.43,.85) infinite;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: #00fff9;
+  border-radius: 50%;
+  z-index: 100;
+  box-shadow: 0 0 10px #00fff9,
+    0 0 30px #00fff9,
+    0 0 40px #00fff9,
+    0 0 50px #00fff9,
+    0 0 60px #00fff9,
+    0 0 70px #00fff9,
+    0 0 80px #00fff9,
+    0 0 90px #00fff9,
+    0 0 100px #00fff9;
 }
 
-.dot:nth-child(2) {
-  width: 140px;
-  height: 140px;
-  margin-top: -70px;
-  margin-left: -70px;
-  border-width: 30px;
-  border-color: #447891;
-  animation-name: dot2;
-  animation-delay: 75ms;
-  box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
-  transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-}
-
-.dot:nth-child(3) {
-  width: 160px;
-  height: 160px;
-  margin-top: -80px;
-  margin-left: -80px;
-  border-width: 20px;
-  border-color: #6bb2cd;
-  animation-name: dot3;
-  animation-delay: 150ms;
-  box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
-  transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-}
-
-@keyframes dot1 {
-  0% {
-    border-color: #1e3f57;
-    transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-  }
-
-  50% {
-    border-color: #1e574f;
-    transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg) translateZ(0px);
-  }
-
-  100% {
-    border-color: #1e3f57;
-    transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-  }
-}
-
-@keyframes dot2 {
-  0% {
-    border-color: #447891;
-    box-shadow: inset 0 0 15px 0 rgba(255, 255, 255, 0.2);
-    transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-  }
-
-  50% {
-    border-color: #449180;
-    box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.8);
-    transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg) translateZ(0px);
-  }
-
-  100% {
-    border-color: #447891;
-    box-shadow: inset 0 0 15px 0 rgba(255, 255, 255, 0.2);
-    transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-  }
-}
-
-@keyframes dot3 {
-  0% {
-    border-color: #6bb2cd;
-    box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
-    transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-  }
-
-  50% {
-    border-color: #6bcdb2;
-    box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.8);
-    transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg) translateZ(0px);
-  }
-
-  100% {
-    border-color: #6bb2cd;
-    box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
-    transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
-  }
+.container .loader span {
+  position: absolute;
+  inset: 20px;
+  background: #e8e8e8;
+  border-radius: 50%;
+  z-index: 1;
 }
 </style>

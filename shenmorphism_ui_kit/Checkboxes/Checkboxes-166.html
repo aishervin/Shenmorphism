@@ -1,110 +1,106 @@
 <div class="checkbox-wrapper">
-  <input style="display: none;" type="checkbox" id="cbx" class="inp-cbx" />
-  <label for="cbx" class="cbx">
-    <span>
-      <svg viewBox="0 0 12 9" height="9px" width="12px">
-        <polyline points="1 5 4 8 11 1"></polyline>
-      </svg>
-    </span>
-    <span>To-do</span>
-  </label>
-</div>
+  <input id="cbtest-19" type="checkbox">
+  <label class="check-box" for="cbtest-19">
+</label></div>
+
+
+  
+
 
 <style>
-/* From SHΞN™ Morphism by UmangLadha  - Tags: tooltip, action, checkbox, code, box, cool checkbox */
-.checkbox-wrapper .cbx {
-  -webkit-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
+/* From SHΞN™ Morphism by PriyanshuGupta28 - Tags: checkbox, cool checkbox, checkmark, tick switchbox */
+.checkbox-wrapper {
+  box-sizing: border-box;
+  --background-color: #fff;
+  --checkbox-height: 25px;
+}
+
+.checkbox-wrapper input[type=checkbox] {
+  display: none;
+}
+
+.checkbox-wrapper .check-box {
+  height: var(--checkbox-height);
+  width: var(--checkbox-height);
+  background-color: transparent;
+  border: calc(var(--checkbox-height) * .1) solid #000;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: border-color ease 0.2s;
+  -o-transition: border-color ease 0.2s;
+  -webkit-transition: border-color ease 0.2s;
+  transition: border-color ease 0.2s;
   cursor: pointer;
 }
-.checkbox-wrapper .cbx span {
+
+.checkbox-wrapper .check-box::before,
+  .checkbox-wrapper .check-box::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  height: 0;
+  width: calc(var(--checkbox-height) * .2);
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
   display: inline-block;
-  vertical-align: middle;
-  transform: translate3d(0, 0, 0);
-}
-.checkbox-wrapper .cbx span:first-child {
-  position: relative;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  transform: scale(1);
-  vertical-align: middle;
-  border: 1px solid #b9b8c3;
-  transition: all 0.2s ease;
-}
-.checkbox-wrapper .cbx span:first-child svg {
-  position: absolute;
-  z-index: 1;
-  top: 8px;
-  left: 6px;
-  fill: none;
-  stroke: white;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 16px;
-  stroke-dashoffset: 16px;
-  transition: all 0.3s ease;
-  transition-delay: 0.1s;
-  transform: translate3d(0, 0, 0);
-}
-.checkbox-wrapper .cbx span:first-child:before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: #506eec;
-  display: block;
-  transform: scale(0);
-  opacity: 1;
-  border-radius: 50%;
-  transition-delay: 0.2s;
-}
-.checkbox-wrapper .cbx span:last-child {
-  margin-left: 8px;
-}
-.checkbox-wrapper .cbx span:last-child:after {
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 0;
-  height: 1px;
-  width: 100%;
-  background: #b9b8c3;
-  transform-origin: 0 0;
-  transform: scaleX(0);
-}
-.checkbox-wrapper .cbx:hover span:first-child {
-  border-color: #3c53c7;
+  -moz-transform-origin: left top;
+  -ms-transform-origin: left top;
+  -o-transform-origin: left top;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  border-radius: 5px;
+  content: " ";
+  -webkit-transition: opacity ease 0.5;
+  -moz-transition: opacity ease 0.5;
+  transition: opacity ease 0.5;
 }
 
-.checkbox-wrapper .inp-cbx:checked + .cbx span:first-child {
-  border-color: #3c53c7;
-  background: #3c53c7;
-  animation: check-15 0.6s ease;
-}
-.checkbox-wrapper .inp-cbx:checked + .cbx span:first-child svg {
-  stroke-dashoffset: 0;
-}
-.checkbox-wrapper .inp-cbx:checked + .cbx span:first-child:before {
-  transform: scale(2.2);
-  opacity: 0;
-  transition: all 0.6s ease;
-}
-.checkbox-wrapper .inp-cbx:checked + .cbx span:last-child {
-  color: #b9b8c3;
-  transition: all 0.3s ease;
-}
-.checkbox-wrapper .inp-cbx:checked + .cbx span:last-child:after {
-  transform: scaleX(1);
-  transition: all 0.3s ease;
+.checkbox-wrapper .check-box::before {
+  top: calc(var(--checkbox-height) * .72);
+  left: calc(var(--checkbox-height) * .41);
+  box-shadow: 0 0 0 calc(var(--checkbox-height) * .05) var(--background-color);
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
 }
 
-@keyframes check-15 {
-  50% {
-    transform: scale(1.2);
-  }
+.checkbox-wrapper .check-box::after {
+  top: calc(var(--checkbox-height) * .37);
+  left: calc(var(--checkbox-height) * .05);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
+.checkbox-wrapper input[type=checkbox]:checked + .check-box,
+  .checkbox-wrapper .check-box.checked {
+  border-color: #5900ff;
+}
+
+.checkbox-wrapper input[type=checkbox]:checked + .check-box::after,
+  .checkbox-wrapper .check-box.checked::after {
+  height: calc(var(--checkbox-height) / 2);
+  -moz-animation: dothabottomcheck-19 0.2s ease 0s forwards;
+  -o-animation: dothabottomcheck-19 0.2s ease 0s forwards;
+  -webkit-animation: dothabottomcheck-19 0.2s ease 0s forwards;
+  animation: dothabottomcheck-19 0.2s ease 0s forwards;
+}
+
+.checkbox-wrapper input[type=checkbox]:checked + .check-box::before,
+  .checkbox-wrapper .check-box.checked::before {
+  height: calc(var(--checkbox-height) * 1.2);
+  -moz-animation: dothatopcheck-19 0.4s ease 0s forwards;
+  -o-animation: dothatopcheck-19 0.4s ease 0s forwards;
+  -webkit-animation: dothatopcheck-19 0.4s ease 0s forwards;
+  animation: dothatopcheck-19 0.4s ease 0s forwards;
+}
 </style>
-    

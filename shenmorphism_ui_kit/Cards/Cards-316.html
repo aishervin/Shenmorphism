@@ -1,98 +1,78 @@
 <div class="card">
-  <div>
-    <p class="Name-9999">Abo</p>
-    <p class="Price-9999">10$</p>
-    <svg viewBox="0 0 20 20" class="svg-icon">
-			<path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" fill="none"></path>
-		</svg>
-    <p class="YouGet-9999">lorem-impus</p>
-    <svg viewBox="0 0 20 20" class="svg-icon2">
-							<path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" fill="none"></path>
-						</svg>
-    <p class="Description-9999">lorem-ipsum</p>
+  <div class="card-details">
+    <p class="text-title">Card Title</p>
+    <p class="text-body">Card Details</p>
   </div>
+  <a class="card-button" href="#link">More info</a>
 </div>
 <style>
-/* From SHΞN™ Morphism by WrongCodeU - Tags: subscription, blue, card, box-shadow */
+/* From SHΞN™ Morphism by VD232004 - Tags: profilecard, card template, product card */
 .card {
-  width: 12em;
-  height: 15em;
-  background: lightblue;
-  border-radius: 1em;
-  border-color: black;
-  border-style: solid;
-  border-width: 0.4em;
-  box-shadow: 0.3em 0.3em black;
-}
-
-.svg-icon {
-  margin-top: 0.3em;
-  margin-left: 0.5em;
-  width: 2em;
-  height: 2.5em;
-}
-
-.svg-icon path,
-.svg-icon polygon,
-.svg-icon rect {
-  fill: rgb(0, 110, 255);
-}
-
-.svg-icon circle {
-  stroke: #000;
-  stroke-width: 1;
-}
-
-.Name-9999 {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: 900;
-  font-size: 2em;
-  margin-left: 0.5em;
-}
-
-.Price-9999 {
-  margin-bottom: 0.3em;
-  margin-top: -0.3em;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: 900;
-  font-size: 3em;
-  margin-left: 0.3em;
-}
-
-.Description-9999 {
-  font-size: 1.1em;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: 900;
+  width: 190px;
+  height: 254px;
+  border-radius: 20px;
+  background: #f5f5f5;
   position: relative;
-  margin-left: 4em;
-  margin-top: -2.4em;
+  padding: 1.8rem;
+  border: 2px solid #c3c6ce;
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+  overflow: visible;
 }
 
-.YouGet-9999 {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: 900;
-  position: relative;
-  margin-left: 4em;
-  margin-top: -2.4em;
-  font-size: 1.1em;
+.card-details {
+  color: rgb(162, 0, 255);
+  height: 100%;
+  gap: .5em;
+  display: grid;
+  place-content: center;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.svg-icon2 {
-  margin-top: 1em;
-  margin-left: 0.5em;
-  width: 2em;
-  height: 2em;
+.card-button {
+  text-decoration: none;
+  text-align: center;
+  -webkit-transform: translate(-50%, 125%);
+  -ms-transform: translate(-50%, 125%);
+  transform: translate(-50%, 125%);
+  width: 70%;
+  border-radius: 1rem;
+  border: none;
+  background-color: #6c00f8;
+  color: #fff;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  opacity: 0;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.svg-icon2 path,
-.svg-icon2 polygon,
-.svg-icon2 rect {
-  fill: rgb(0, 110, 255);
+.text-body {
+  color: rgb(134, 134, 134);
 }
 
-.svg-icon2 circle {
-  stroke: #000;
-  stroke-width: 1;
+/*Text*/
+.text-title {
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
+/*Hover*/
+.card:hover {
+  border-color: #6c00f8;
+  -webkit-box-shadow: 10px 5px 18px 0 rgba(255, 255, 255, 0.877);
+  box-shadow: 10px 5px 18px 0 rgba(255, 255, 255, 0.877);
+}
+
+.card:hover .card-button {
+  -webkit-transform: translate(-50%, 50%);
+  -ms-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
+  opacity: 1;
+}
 </style>

@@ -1,88 +1,105 @@
-<div class="loader-box">
-    <div class="loading-wrapper">
-        <div class="loader">
-            <div class="loader-inner">
-            </div>
-        </div>
+<div class="card">
+  <div class="loader">
+    <p>loading</p>
+    <div class="words">
+      <span class="word">buttons</span>
+      <span class="word">forms</span>
+      <span class="word">switches</span>
+      <span class="word">cards</span>
+      <span class="word">buttons</span>
     </div>
+  </div>
 </div>
+
 <style>
-/* From SHΞN™ Morphism by mrhyddenn - Tags: loader */
-loader-box {
-  background: #fff;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
+/* From SHΞN™ Morphism by kennyotsu - Tags: simple */
+.card {
+  /* color used to softly clip top and bottom of the .words container */
+  --bg-color: #212121;
+  background-color: var(--bg-color);
+  padding: 1rem 2rem;
+  border-radius: 1.25rem;
 }
-
-.loading-wrapper {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-}
-
-.loading-wrapper .loader {
-  height: 80px;
-  width: 80px;
-  border: 3px solid #e5e5e5;
-  border-radius: 50%;
-  -webkit-animation: pulse1572 1200ms ease-in-out;
-  animation: pulse1572 1200ms ease-in-out;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-
-.loading-wrapper .loader .loader-inner {
-  display: block;
+.loader {
+  color: rgb(124, 124, 124);
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
   height: 40px;
-  width: 40px;
+  padding: 10px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 8px;
+}
+
+.words {
+  overflow: hidden;
+  position: relative;
+}
+.words::after {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  background: linear-gradient(180deg, rgb(0, 140, 255) 0%, rgb(218, 67, 218) 100%);
-  -webkit-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  border-radius: 50%;
-  -webkit-animation: innerPulse934 1200ms ease-in-out;
-  animation: innerPulse934 1200ms ease-in-out;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-delay: 600ms;
-  animation-delay: 600ms;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  inset: 0;
+  background: linear-gradient(
+    var(--bg-color) 10%,
+    transparent 30%,
+    transparent 70%,
+    var(--bg-color) 90%
+  );
+  z-index: 20;
 }
 
-@keyframes pulse1572 {
-  0% {
-    border: 3px solid #fff;
+.word {
+  display: block;
+  height: 100%;
+  padding-left: 6px;
+  color: #956afa;
+  animation: spin_4991 4s infinite;
+}
+
+@keyframes spin_4991 {
+  10% {
+    -webkit-transform: translateY(-102%);
+    transform: translateY(-102%);
+  }
+
+  25% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+
+  35% {
+    -webkit-transform: translateY(-202%);
+    transform: translateY(-202%);
   }
 
   50% {
-    border: 40px solid #fff;
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%);
+  }
+
+  60% {
+    -webkit-transform: translateY(-302%);
+    transform: translateY(-302%);
+  }
+
+  75% {
+    -webkit-transform: translateY(-300%);
+    transform: translateY(-300%);
+  }
+
+  85% {
+    -webkit-transform: translateY(-402%);
+    transform: translateY(-402%);
   }
 
   100% {
-    border: 3px solid #fff;
+    -webkit-transform: translateY(-400%);
+    transform: translateY(-400%);
   }
 }
 
-@keyframes innerPulse934 {
-  0% {
-    height: 30px;
-    width: 30px;
-  }
-
-  50% {
-    height: 53.33333px;
-    width: 53.33333px;
-  }
-
-  100% {
-    height: 30px;
-    width: 30px;
-  }
-}
 </style>

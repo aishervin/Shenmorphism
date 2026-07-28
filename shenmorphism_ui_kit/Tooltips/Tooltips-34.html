@@ -1,132 +1,109 @@
-<div class="container">
-  <input type="checkbox" id="showCheckbox" class="toggle-checkbox" />
-  <label for="showCheckbox" class="toggle-label">Show Tooltip</label>
-
-  <div id="popup" class="popup">
-    <label for="showCheckbox" class="close-label"></label>
-    <p>I am looking for a job. Trainee/junior React dev. <br />📍Ukraine.</p>
-  </div>
+<div class="tooltip-container">
+  <span class="tooltip">SHΞN™ Morphism</span>
+  <span class="text">@</span>
 </div>
 
 <style>
-/* From SHΞN™ Morphism by andrew-demchenk0  - Tags: tooltip, animation, action, green, button, hover, click, border */
-.container {
-  position: relative;
-  --main-color: #19e68c;
-  --dark-color: #222;
-  --bg-light: #fff;
-  --dark-alternative: #666;
-}
-
-.popup {
-  display: none;
-  padding: 10px 20px;
-  position: absolute;
-  width: 200px;
-  top: -100%;
-  left: -25%;
-  background-color: var(--bg-light);
-  border: 1.5px solid var(--dark-alternative);
-  border-radius: 2px;
-  animation: slideIn 1s;
-}
-
-.toggle-checkbox {
-  display: none;
-}
-
-.toggle-label {
-  position: relative;
-  padding: 10px;
-  background-color: var(--main-color);
-  color: var(--dark-color);
-  font-weight: 600;
-  cursor: help;
-  display: inline-block;
-  border: 2px solid var(--dark-color);
-  border-radius: 3px;
-  box-shadow: 2px 2px var(--dark-color);
-  transition: 0.5s;
-}
-
-.toggle-label::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  animation: pulsate 0.7s infinite;
-}
-
-.toggle-label:hover::before {
-  animation: none;
-}
-
-.toggle-label:active {
-  transform: translate(2px, 2px);
-  box-shadow: 0px 0px var(--dark-color);
-}
-
-.close-label {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  width: 20px;
-  height: 20px;
-}
-.close-label::before {
-  content: "⊗";
-  font-size: 22px;
-  position: absolute;
-  top: -7px;
-  left: 0;
-  color: var(--dark-alternative);
+/* From SHΞN™ Morphism by neerajbaniwal  - Tags: simple, neumorphism, glassmorphism, tooltip, hover, hover effect */
+.tooltip-container {
+  height: 70px;
+  width: 110px;
+  border-radius: 5px;
+  background-color: #fff;
+  background-image: linear-gradient(
+    to left bottom,
+    #f2f5f8,
+    #ecf1f2,
+    #e7eceb,
+    #e3e7e4,
+    #e1e2de
+  );
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.151);
+  position: relative;
+  transition: transform 0.3s ease;
+  z-index: 1;
 }
-.toggle-checkbox:checked ~ .popup {
-  display: block;
+
+.tooltip-container::before {
+  position: absolute;
+  content: "";
+  top: -50%;
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  border-radius: 5px;
+  background-color: fff;
+  background-image: linear-gradient(
+    to left bottom,
+    #1288ff,
+    #e4eaec,
+    #d8dfde,
+    #cdd3cf,
+    #c5c7c1
+  );
+  width: 100%;
+  height: 50%;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(-150deg) translateY(-110%);
+  transition: transform 0.3s ease;
+  z-index: -1;
 }
-.toggle-checkbox:checked ~ .toggle-label {
+
+.tooltip-container .text {
+  color: rgb(32, 30, 30);
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.tooltip {
+  position: absolute;
+  top: -20px;
   opacity: 0;
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 0.05) 1px, white 1px),
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, white 1px),
+    linear-gradient(-90deg, rgba(0, 0, 0, 0.04) 1px, white 1px),
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, white 1px),
+    linear-gradient(white 3px, #f2f2f2 3px, #f2f2f2 78px, white 78px),
+    linear-gradient(-90deg, #aaa 1px, white 1px),
+    linear-gradient(-90deg, white 3px, #f2f2f2 3px, #f2f2f2 78px, white 78px),
+    linear-gradient(#aaa 1px, white 1px), #f2f2f2;
+  background-size: 4px 4px, 4px 4px, 80px 80px, 80px 80px, 80px 80px, 80px 80px,
+    80px 80px, 80px 80px;
+  padding: 5px 10px;
+  border: 1px solid rgb(206, 204, 204);
+
+  height: 70px;
+  width: 110px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.2s;
+  pointer-events: none;
+  letter-spacing: 0.5px;
+  font-size: 18px;
+  font-weight: 600;
+  text-shadow: 10px salmon;
+  z-index: ;
+}
+.tooltip-container:hover {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
-@keyframes slideIn {
-  0% {
-    transform: translateX(200%);
-    opacity: 0;
-  }
-  50% {
-    transform: translateX(200%);
-    opacity: 0;
-  }
-  70% {
-    transform: translateX(-10%);
-    opacity: 0.5;
-  }
-  80% {
-    transform: translateX(5%);
-  }
-  90% {
-    transform: translateX(-5%);
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.tooltip-container:hover::before {
+  transform: rotateY(0);
+  background-image: none;
+  background-color: white;
 }
 
-@keyframes pulsate {
-  0% {
-    box-shadow: 0 0 -5px rgba(255, 255, 255, 1);
-  }
-  50% {
-    box-shadow: 0 0 10px var(--dark-color);
-  }
-  100% {
-    box-shadow: 0 0 -5px rgb(255, 255, 255);
-  }
+.tooltip-container:hover .tooltip {
+  top: -90px;
+  opacity: 1;
+  transition-duration: 0.3s;
 }
 
 </style>

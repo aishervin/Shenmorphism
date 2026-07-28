@@ -1,7 +1,44 @@
-<!-- From SHΞN™ Morphism by catraco - Tags: icon, button, back arrow, goback -->
-<button class="cursor-pointer duration-200 hover:scale-125 active:scale-100" title="Go Back">
-  <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24" class="stroke-blue-300">
-    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" d="M11 6L5 12M5 12L11 18M5 12H19"></path>
-  </svg>
+<button class="button">
+  Button
 </button>
+<style>
+/* From SHΞN™ Morphism by Brian-Pob - Tags: button, css animation, button hover effect  */
+button {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  font-size: 20px;
+  font-family: sans-serif;
+  background-color: purple;
+  color: white;
+  transition: all .7s ease-in-out;
+}
 
+button:hover {
+  color: purple;
+}
+
+button::before {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 5px;
+  width: 0;
+  height: 100%;
+  content: "";
+  background-color: white;
+  transition: all 700ms ease-in-out;
+}
+
+button:hover::before {
+  left: unset;
+  right: 0;
+  width: 100%;
+  transform: rotate(180deg);
+}
+</style>

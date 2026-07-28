@@ -1,112 +1,63 @@
-<div class="loader">
-  <div class="panWrapper">
-    <div class="pan">
-      <div class="food"></div>
-      <div class="panBase"></div>
-      <div class="panHandle"></div>
-    </div>
-    <div class="panShadow"></div>
-  </div>
-</div>
+<section class="dots-container">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</section>
 
 <style>
-/* From SHΞN™ Morphism by vinodjangid07  - Tags: animation, loading, loader, flip, loading animation */
-.loader {
+/* From SHΞN™ Morphism by adamgiebl - Tags: blue, loader, dots, pulse */
+.dots-container {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.panWrapper {
-  width: 200px;
-  height: fit-content;
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.pan {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  height: 100%;
   width: 100%;
-  height: fit-content;
-  animation: cooking 1.7s infinite;
-}
-@keyframes cooking {
-  0% {
-    transform: rotate(0deg);
-    transform-origin: top right;
-  }
-  10% {
-    transform: rotate(-4deg);
-    transform-origin: top right;
-  }
-  50% {
-    transform: rotate(20deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
 }
 
-.food {
-  position: absolute;
-  width: 40%;
-  height: 6px;
-  background: linear-gradient(to bottom, rgb(82, 33, 33), rgb(200, 106, 106));
-  left: 10px;
-  border-radius: 50%;
-  animation: flip 1.7s infinite;
-  z-index: 2;
-}
-@keyframes flip {
-  0% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-100px) rotate(180deg);
-  }
-  100% {
-    transform: translateY(0px) rotate(360deg);
-  }
-}
-.panBase {
-  z-index: 3;
-  width: 50%;
-  height: 22px;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-  background: linear-gradient(to top, rgb(3, 156, 156), rgb(10, 191, 191));
-}
-.panHandle {
-  width: 40%;
-  background: linear-gradient(to bottom, rgb(18, 18, 18), rgb(74, 74, 74));
-  height: 10px;
+.dot {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
   border-radius: 10px;
-}
-.panShadow {
-  width: 70px;
-  height: 8px;
-  background-color: rgba(0, 0, 0, 0.21);
-  margin-left: 15px;
-  border-radius: 10px;
-  animation: shadow 1.7s infinite;
-  filter: blur(5px);
-}
-@keyframes shadow {
-  0% {
-    transform: scaleX(0.7);
-  }
-  50% {
-    transform: scaleX(1);
-  }
-  100% {
-    transform: scaleX(0.7);
-  }
+  background-color: #b3d4fc;
+  animation: pulse 1.5s infinite ease-in-out;
 }
 
+.dot:last-child {
+  margin-right: 0;
+}
+
+.dot:nth-child(1) {
+  animation-delay: -0.3s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: -0.1s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    background-color: #b3d4fc;
+    box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color: #6793fb;
+    box-shadow: 0 0 0 10px rgba(178, 212, 252, 0);
+  }
+
+  100% {
+    transform: scale(0.8);
+    background-color: #b3d4fc;
+    box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+  }
+}
 </style>
-    

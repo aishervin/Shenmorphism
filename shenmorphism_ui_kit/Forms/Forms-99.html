@@ -1,51 +1,89 @@
 <form class="form">
-Sign Up
-    <input type="text" class="input" placeholder="Name">
-    <input type="text" class="input" placeholder="Password"> 
-    <button>Submit</button>
+  <span class="heading">Sign In</span>
+
+  <span class="Mail">E-Mail</span>
+  <input placeholder="Enter E-Mail" type="text" class="input" />
+  <span class="Password">Password</span>
+  <input placeholder="Enter Password" type="text" class="input" />
+  <span class="forgot"><a href="">forgot password?</a></span>
+  <button>Submit</button>
 </form>
+
 <style>
-/* From SHΞN™ Morphism by Shoh2008 - Tags: form, sign-up */
+/* From SHΞN™ Morphism by vishal2231179  - Tags:  */
 .form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background: #1e1e1e;
-  padding: 20px;
-  border: 1px solid #3d3c3c;
-  border-radius: 10px;
-  color: white;
+  background-color: rgb(241, 241, 130);
+  padding: 60px;
+  padding-inline: 28px;
+  border-radius: 20px;
+  box-shadow: 4px 4px rgb(0, 2, 65);
+  font-family: cursive;
+}
+
+.heading {
+  font-size: 25px;
   text-align: center;
-  font-size: 20px;
-}
-
-.form input {
-  height: 35px;
-  outline: none;
-  border: 2px solid orange;
-  background: transparent;
-  padding: 20px 10px;
-  border-radius: 5px;
-  transition: .5s;
-  color: white;
-  font-size: 20px;
-}
-
-.form input:focus {
-  background: orange;
+  font-weight: 600;
+  font-family: cursive;
 }
 
 .form button {
-  width: 100%;
-  color: white;
-  transition: .5s;
-  font-size: 20px;
-  outline: none;
-  border: none;
-  height: 45px;
-  border-radius: 5px;
-  background: orange;
-  align-self: flex-end;
+  /* align-self: flex-end; */
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: rgb(241, 241, 130);
+  box-shadow: 2px 3px rgb(0, 2, 65);
+
+  color: rgb(0, 0, 0);
+  font-size: medium;
+  font-weight: 600;
+  transition: 400ms;
+  font-family: cursive;
 }
-    
+
+.form button:hover {
+  background-color: rgb(235, 255, 59);
+  transition: 400ms;
+  cursor: pointer;
+}
+
+.input {
+  padding: 10px;
+  width: 280px;
+  border-radius: 10px;
+  border-style: double;
+  border-color: black;
+  font-size: 15px;
+  box-shadow: 2px 3px rgb(0, 2, 65);
+
+  font-family: cursive;
+}
+
+.forgot,
+a {
+  padding-top: 10px;
+  /* font-weight: 600; */
+  color: rgba(0, 0, 0, 0.994);
+  font-family: cursive;
+  text-decoration: none;
+  transition: 400ms;
+}
+.forgot,
+a:hover {
+  color: rgba(0, 0, 0, 0.703);
+  transition: 400ms;
+}
+
+.Mail,
+.Password {
+  font-size: 16px;
+  /* font-weight: 600; */
+  font-family: cursive;
+}
+
 </style>
+    

@@ -1,149 +1,56 @@
-<div class="cube">
-  <div class="topD"></div>
-  <div>
-    <span style="--i:0"></span>
-    <span style="--i:1"></span>
-    <span style="--i:2"></span>
-    <span style="--i:3"></span>
-  </div>
-
-  <div class="cube2">
-    <div>
-      <span style="--i:0"></span>
-      <span style="--i:1"></span>
-      <span style="--i:2"></span>
-      <span style="--i:3"></span>
-    </div>
-
-    <div class="cube3">
-      <div class="top3"></div>
-      <div>
-        <span style="--i:0"></span>
-        <span style="--i:1"></span>
-        <span style="--i:2"></span>
-        <span style="--i:3"></span>
-      </div>
-
-    </div>
-
-  </div>
+<div class="loading">
+  <div class="diamond"></div>
+  <div class="diamond middle"></div>
+  <div class="diamond"></div>
 </div>
 
 <style>
-/* From SHΞN™ Morphism by Nawsome - Tags: 3d, loader, cube */
-.cube {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  transform-style: preserve-3d;
-  transform: rotateX(-30deg);
-  animation: animateD 8s linear infinite;
+/* From SHΞN™ Morphism by Zadrus  - Tags: simple, red, minimalist, gradient, loader, spinner, animated, gradients */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes animateD {
-  0% {
-    transform: rotateX(-15deg) rotateY(0deg);
-  }
+.diamond {
+  width: 50px;
+  height: 50px;
+  background-color: orange;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  margin: 5px;
+  opacity: 0;
+  animation: fade-in-out 1.5s ease-in-out infinite;
+}
 
+.diamond.middle {
+  transform: rotateY(180deg);
+}
+
+@keyframes fade-in-out {
+  0%,
   100% {
-    transform: rotateX(-15deg) rotateY(-360deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
 }
 
-.cube div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
+.diamond {
+  background: linear-gradient(45deg, #ffba00, #ff6c00);
 }
 
-.cube2 {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  transform-style: preserve-3d;
-  animation: animateD2 5s ease-out infinite alternate;
+.diamond:nth-child(1) {
+  animation-delay: 0s;
 }
 
-@keyframes animateD2 {
-  0% {
-    transform: rotateX(0deg) rotateY(0deg);
-  }
-
-  100% {
-    transform: rotateX(180deg) rotateY(-360deg);
-  }
+.diamond.middle {
+  animation-delay: 0.5s;
 }
 
-.cube2 div {
-  position: absolute;
-  top: 35px;
-  left: 0;
-  width: 65%;
-  height: 65%;
-  transform-style: preserve-3d;
+.diamond:nth-child(3) {
+  animation-delay: 1s;
 }
-
-.cube2 div span {
-  position: absolute;
-  top: 20%;
-  left: 20%;
-  width: 65%;
-  height: 65%;
-  background: transparent;
-  border: 2px solid #7dff99;
-  transform: rotateY(calc(90deg * var(--i))) translateZ(62px);
-}
-
-.cube3 {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  transform-style: preserve-3d;
-  transform: rotateX(-30deg);
-  animation: animateD3 1s ease-in-out infinite alternate;
-}
-
-@keyframes animateD3 {
-  0% {
-    transform: rotateX(-90deg) rotateY(0deg);
-  }
-
-  100% {
-    transform: rotateX(90deg) rotateY(45deg);
-  }
-}
-
-.cube3 div {
-  position: absolute;
-  top: 70px;
-  left: 70px;
-  width: 15%;
-  height: 15%;
-  transform-style: preserve-3d;
-}
-
-.cube3 div span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #7dff99;
-  transform: rotateY(calc(90deg * var(--i))) translateZ(14px);
-  box-shadow: 0px 0px 7px #7dff99;
-}
-
-.top3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #7dff99;
-  transform: rotateX(90deg) translateZ(14px);
-  box-shadow: 0px 0px 10px #7dff99;
-}
-
 
 </style>
+    

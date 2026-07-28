@@ -1,49 +1,37 @@
-<button data-text="Awesome" class="button">
-    <span class="actual-text">&nbsp;SHΞN™ Morphism&nbsp;</span>
-    <span class="hover-text" aria-hidden="true">&nbsp;SHΞN™ Morphism&nbsp;</span>
-</button>
+<button class="button">Button</button>
+
 <style>
-/* From SHΞN™ Morphism by satyamchaudharydev - Tags: button */
-/* === removing default button style ===*/
+/* From SHΞN™ Morphism by TanimMahbub  - Tags: simple, button, shadow, retro, click, click effect, box-shadow */
 .button {
-  margin: 0;
-  height: auto;
-  background: transparent;
-  padding: 0;
+  /* typography */
+  font-size: 22px;
+  font-weight: 600;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  /* ui */
   border: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 12px 35px;
+  border-radius: 8px;
+  background: #f6781e;
+  color: #fff;
+  box-shadow: 0 0 0 3px #2f2e41, 0 6px 0 #2f2e41;
+  transition: all 0.1s ease, background 0.3s ease;
 }
 
-/* button styling */
-.button {
-  --border-right: 6px;
-  --text-stroke-color: rgba(255,255,255,0.6);
-  --animation-color: #37FF8B;
-  --fs-size: 2em;
-  letter-spacing: 3px;
-  text-decoration: none;
-  font-size: var(--fs-size);
-  font-family: "Arial";
-  position: relative;
-  text-transform: uppercase;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--text-stroke-color);
+/* ux */
+.button:hover,
+.button:focus {
+  background: #df6108;
 }
-/* this is the text, when you hover on button */
-.hover-text {
-  position: absolute;
-  box-sizing: border-box;
-  content: attr(data-text);
-  color: var(--animation-color);
-  width: 0%;
-  inset: 0;
-  border-right: var(--border-right) solid var(--animation-color);
-  overflow: hidden;
-  transition: 0.5s;
-  -webkit-text-stroke: 1px var(--animation-color);
+
+.button:active {
+  box-shadow: 0 0 0 3px #2f2e41, 0 4px 0 #2f2e41;
+  transform: translateY(2px);
 }
-/* hover */
-.button:hover .hover-text {
-  width: 100%;
-  filter: drop-shadow(0 0 23px var(--animation-color))
-}
+
 </style>
+    

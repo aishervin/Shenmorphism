@@ -1,46 +1,40 @@
-<div class="container">
-  <input required="required" class="inp" />
-  <span class="content">Content</span>
+<div class="inputs">
+  <input type="text" name="text" class="input" placeholder="Enter Text" required="">
 </div>
+  
 
 <style>
-/* From SHΞN™ Morphism by jamaldine-hub  - Tags: animation, active, input, dark, light, modern */
-.container {
-  position: relative;
-  width: 250px;
-}
-.container .inp {
+/* From SHΞN™ Morphism by SARAN2004 - Tags: active, input, click */
+.input {
+  max-width: 190px;
+  height: 45px;
   width: 100%;
-  padding: 10px;
-  border: 1.5px solid rgba(0, 167, 161, 0.272);
   outline: none;
-  margin-top: 20px;
+  font-size: 16px;
   border-radius: 5px;
-  color: rgba(0, 167, 181, 0.62);
-  background: rgba(41, 41, 41);
-  font-size: 1em;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  position: relative;
 }
-.container .content {
-  position: absolute;
-  left: 0;
-  margin-top: 20px;
-  padding: 10px;
-  text-transform: uppercase;
-  font-size: 1em;
-  pointer-events: none;
-  color: rgba(0, 167, 161, 0.272);
-  transition: 0.5s;
+
+.input:valid {
+  border-color: #00ff2a;
+  color: #00ff2a;
+  box-shadow: 2px 2px 8px 1px #00ff2a;
 }
-.container input:valid ~ span,
-.container input:focus ~ span {
-  color: rgb(10, 164, 159);
-  transform: translateX(10px) translateY(-7px);
-  font-size: 0.9em;
-  padding: 0 10px;
-  background: rgb(41, 41, 41);
-  border-left: 2px solid rgba(0, 167, 161, 0.272);
-  border-right: 2px solid rgba(0, 167, 161, 0.272);
+
+.input:invalid {
+  border-color: #ff0000;
+  color: #ff0000;
+  box-shadow: 2px 2px 8px 1px #ff0000;
+  /* translate: -8px 8px 0px 0px; */
+}
+
+.text {
+  margin-top: 10px;
+  color: black;
 }
 
 </style>
-    

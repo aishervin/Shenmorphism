@@ -1,125 +1,92 @@
-<div class="checkbox-wrapper-16">
-  <label class="checkbox-wrapper">
-    <input class="checkbox-input" type="checkbox">
-    <span class="checkbox-tile">
-      <span class="checkbox-icon">
-        <svg viewBox="0 0 256 256" fill="currentColor" height="192" width="192" xmlns="http://www.w3.org/2000/svg">
-          <rect fill="none" height="256" width="256"></rect>
-          <polygon stroke-width="12" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" fill="none" points="72 40 184 40 240 104 128 224 16 104 72 40"></polygon>
-          <polygon stroke-width="12" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" fill="none" points="177.091 104 128 224 78.909 104 128 40 177.091 104"></polygon>
-          <line stroke-width="12" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" fill="none" y2="104" x2="240" y1="104" x1="16"></line>
-        </svg>
-      </span>
-      <span class="checkbox-label">Sketch</span>
-    </span>
+<div class="checkbox-wrapper-46">
+  <input type="checkbox" id="cbx-46" class="inp-cbx" />
+  <label for="cbx-46" class="cbx"
+    ><span>
+      <svg viewBox="0 0 12 10" height="10px" width="12px">
+        <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
+    ><span>Checkbox</span>
   </label>
 </div>
 
 <style>
-/* From SHΞN™ Morphism by Bodyhc - Tags: checkbox, cool checkbox, circle-checkbox */
-.checkbox-wrapper-16 *,
-  .checkbox-wrapper-16 *:after,
-  .checkbox-wrapper-16 *:before {
-  box-sizing: border-box;
+/* From SHΞN™ Morphism by vishnupprajapat  - Tags: button, checkbox, switcher, click effect, cool checkbox */
+.checkbox-wrapper-46 input[type="checkbox"] {
+  display: none;
+  visibility: hidden;
 }
 
-.checkbox-wrapper-16 .checkbox-input {
-  clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(100%);
-  clip-path: inset(100%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile {
-  border-color: #2260ff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  color: #2260ff;
-}
-
-.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile:before {
-  transform: scale(1);
-  opacity: 1;
-  background-color: #2260ff;
-  border-color: #2260ff;
-}
-
-.checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile .checkbox-icon,
-  .checkbox-wrapper-16 .checkbox-input:checked + .checkbox-tile .checkbox-label {
-  color: #2260ff;
-}
-
-.checkbox-wrapper-16 .checkbox-input:focus + .checkbox-tile {
-  border-color: #2260ff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
-}
-
-.checkbox-wrapper-16 .checkbox-input:focus + .checkbox-tile:before {
-  transform: scale(1);
-  opacity: 1;
-}
-
-.checkbox-wrapper-16 .checkbox-tile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 7rem;
-  min-height: 7rem;
-  border-radius: 0.5rem;
-  border: 2px solid #b5bfd9;
-  background-color: #fff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  transition: 0.15s ease;
+.checkbox-wrapper-46 .cbx {
+  margin: auto;
+  -webkit-user-select: none;
+  user-select: none;
   cursor: pointer;
+}
+.checkbox-wrapper-46 .cbx span {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translate3d(0, 0, 0);
+}
+.checkbox-wrapper-46 .cbx span:first-child {
   position: relative;
-}
-
-.checkbox-wrapper-16 .checkbox-tile:before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 1.25rem;
-  height: 1.25rem;
-  border: 2px solid #b5bfd9;
-  background-color: #fff;
-  border-radius: 50%;
-  top: 0.25rem;
-  left: 0.25rem;
-  opacity: 0;
-  transform: scale(0);
-  transition: 0.25s ease;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='://www.w3.org/2000/svg' width='192' height='192' fill='%23FFFFFF' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72.005 104 184 48 128.005' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='32'%3E%3C/polyline%3E%3C/svg%3E");
-  background-size: 12px;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-}
-
-.checkbox-wrapper-16 .checkbox-tile:hover {
-  border-color: #2260ff;
-}
-
-.checkbox-wrapper-16 .checkbox-tile:hover:before {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
   transform: scale(1);
+  vertical-align: middle;
+  border: 1px solid #9098a9;
+  transition: all 0.2s ease;
+}
+.checkbox-wrapper-46 .cbx span:first-child svg {
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 16px;
+  stroke-dashoffset: 16px;
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+  transform: translate3d(0, 0, 0);
+}
+.checkbox-wrapper-46 .cbx span:first-child:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #506eec;
+  display: block;
+  transform: scale(0);
   opacity: 1;
+  border-radius: 50%;
+}
+.checkbox-wrapper-46 .cbx span:last-child {
+  padding-left: 8px;
+}
+.checkbox-wrapper-46 .cbx:hover span:first-child {
+  border-color: #506eec;
 }
 
-.checkbox-wrapper-16 .checkbox-icon {
-  transition: 0.375s ease;
-  color: #494949;
+.checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child {
+  background: #506eec;
+  border-color: #506eec;
+  animation: wave-46 0.4s ease;
+}
+.checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child svg {
+  stroke-dashoffset: 0;
+}
+.checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child:before {
+  transform: scale(3.5);
+  opacity: 0;
+  transition: all 0.6s ease;
 }
 
-.checkbox-wrapper-16 .checkbox-icon svg {
-  width: 3rem;
-  height: 3rem;
+@keyframes wave-46 {
+  50% {
+    transform: scale(0.9);
+  }
 }
 
-.checkbox-wrapper-16 .checkbox-label {
-  color: #707070;
-  transition: 0.375s ease;
-  text-align: center;
-}
 </style>
+    

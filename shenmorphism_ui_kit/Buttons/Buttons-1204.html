@@ -1,82 +1,221 @@
-<div class="centralize">
-  <div>
-    <button>
-      <span><svg viewBox="0 0 467 512.22" clip-rule="evenodd" fill-rule="evenodd" image-rendering="optimizeQuality" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg" fill="#0E418F" height="12" width="12"><path d="M131.07 372.11c.37 1 .57 2.08.57 3.2 0 1.13-.2 2.21-.57 3.21v75.91c0 10.74 4.41 20.53 11.5 27.62s16.87 11.49 27.62 11.49h239.02c10.75 0 20.53-4.4 27.62-11.49s11.49-16.88 11.49-27.62V152.42c0-10.55-4.21-20.15-11.02-27.18l-.47-.43c-7.09-7.09-16.87-11.5-27.62-11.5H170.19c-10.75 0-20.53 4.41-27.62 11.5s-11.5 16.87-11.5 27.61v219.69zm-18.67 12.54H57.23c-15.82 0-30.1-6.58-40.45-17.11C6.41 356.97 0 342.4 0 326.52V57.79c0-15.86 6.5-30.3 16.97-40.78l.04-.04C27.51 6.49 41.94 0 57.79 0h243.63c15.87 0 30.3 6.51 40.77 16.98l.03.03c10.48 10.48 16.99 24.93 16.99 40.78v36.85h50c15.9 0 30.36 6.5 40.82 16.96l.54.58c10.15 10.44 16.43 24.66 16.43 40.24v302.01c0 15.9-6.5 30.36-16.96 40.82-10.47 10.47-24.93 16.97-40.83 16.97H170.19c-15.9 0-30.35-6.5-40.82-16.97-10.47-10.46-16.97-24.92-16.97-40.82v-69.78zM340.54 94.64V57.79c0-10.74-4.41-20.53-11.5-27.63-7.09-7.08-16.86-11.48-27.62-11.48H57.79c-10.78 0-20.56 4.38-27.62 11.45l-.04.04c-7.06 7.06-11.45 16.84-11.45 27.62v268.73c0 10.86 4.34 20.79 11.38 27.97 6.95 7.07 16.54 11.49 27.17 11.49h55.17V152.42c0-15.9 6.5-30.35 16.97-40.82 10.47-10.47 24.92-16.96 40.82-16.96h170.35z" fill-rule="nonzero"></path></svg> Copy link</span>
-      <span>Copied</span>
-    </button>
-  <div>
-  <div class="description">
-    <p>Click to see what happens</p>
-  <div>
-<div></div></div></div></div></div></div>
+<a href="/" class="brutalist-button">
+  <div class="content-wrapper">
+    <div class="claude-logo">
+      <span class="starburst">✷</span>
+    </div>
+    <div class="button-text">
+      <span>Powered By</span>
+      <span>Claude 3.5</span>
+    </div>
+  </div>
+</a>
+
 <style>
-/* From SHΞN™ Morphism by fabiodevbr - Tags: button, click, animated, copy, click effect */
-button {
-  background-color: #F2F7FA;
-  width: 100px;
-  height: 30px;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  overflow: hidden;
-  transition-duration: 700ms;
-}
-
-button span:first-child {
-  color: #0E418F;
-  position: absolute;
-  transform: translate(-50%, -50%)
-}
-
-button span:last-child {
-  position: absolute;
-  color: #B5CCF3;
-  opacity: 0;
-  transform: translateY(100%) translateX(-50%);
-  height: 14px;
-  line-height: 13px;
-}
-
-button:focus {
-  background-color: #0E418F;
-  width: 120px;
-  height: 40px;
-  transition-delay: 100ms;
-  transition-duration: 500ms;
-}
-
-button:focus span:first-child {
-  color: #B5CCF3;
-  transform: translateX(-50%) translateY(-150%);
-  opacity: 0;
-  transition-duration: 500ms;
-}
-
-button:focus span:last-child {
-  transform: translateX(-50%) translateY(-50%);
-  opacity: 1;
-  transition-delay: 300ms;
-  transition-duration: 500ms;
-}
-
-button:focus:end {
-  background-color: #FFFFFF;
-  width: 120px;
-  height: 40px;
-  transition-duration: 900ms;
-}
-
-.centralize {
-  width: 100%;
-  height: 100%;
+/* From SHΞN™ Morphism by 0xnihilism  - Tags: button, microsoft, animated, brutalism, brutalist, glare effect */
+.brutalist-button {
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  background-color: #e3d19c;
+  border: 3px solid #000000;
+  border-radius: 8px;
+  padding: 20px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  position: relative;
+  box-shadow: 4px 4px 0px #000000;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 166px;
+  height: 150px;
 }
 
-.description {
-  margin-top: 10px;
-  color: #B5CCF3;
+.brutalist-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000000;
 }
+
+.brutalist-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-delay: 0.8s;
+}
+
+.claude-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #eb6c22;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    margin-bottom 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-delay: 0.8s;
+  transform: rotate(0deg) scale(1);
+}
+
+.starburst {
+  font-size: 48px;
+  color: #ffffff;
+  line-height: 1;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-delay: 0.8s;
+}
+
+.button-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+  text-align: center;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-delay: 0.8s;
+}
+
+.button-text span:first-child {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.button-text span:last-child {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.brutalist-button:hover .content-wrapper {
+  transform: translateY(-10px);
+}
+
+@keyframes slow-spin {
+  from {
+    transform: rotate(0deg) scale(0.8);
+  }
+  to {
+    transform: rotate(360deg) scale(0.8);
+  }
+}
+
+.brutalist-button:hover .claude-logo {
+  animation: slow-spin 12s linear infinite;
+  margin-bottom: 5px;
+}
+
+.brutalist-button:not(:hover) .claude-logo {
+  transform: rotate(0deg) scale(1);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    margin-bottom 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin-bottom: 0;
+}
+
+.brutalist-button:hover .starburst {
+  font-size: 38px;
+}
+
+.brutalist-button:hover .button-text {
+  opacity: 1;
+  max-height: 50px;
+  margin-top: 2px;
+}
+
+.brutalist-button:not(:hover) .content-wrapper,
+.brutalist-button:not(:hover) .starburst,
+.brutalist-button:not(:hover) .button-text {
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-delay: 0s;
+}
+
+.brutalist-button::before,
+.brutalist-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(200, 183, 128, 0.7);
+  border-radius: 50%;
+  transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 0;
+  z-index: 1;
+}
+
+.brutalist-button::before {
+  left: -20px;
+  transform: translate(-50%, -50%);
+}
+
+.brutalist-button::after {
+  right: -20px;
+  transform: translate(50%, -50%);
+}
+
+.brutalist-button:hover::before {
+  animation: criss-cross-left 0.8s both;
+  animation-direction: alternate;
+  opacity: 1;
+}
+
+.brutalist-button:hover::after {
+  animation: criss-cross-right 0.8s both;
+  animation-direction: alternate;
+  opacity: 1;
+}
+
+@keyframes criss-cross-left {
+  0% {
+    left: -20px;
+  }
+  50% {
+    left: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    left: 50%;
+    width: 375px;
+    height: 375px;
+  }
+}
+
+@keyframes criss-cross-right {
+  0% {
+    right: -20px;
+  }
+  50% {
+    right: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    right: 50%;
+    width: 375px;
+    height: 375px;
+  }
+}
+
+.brutalist-button:hover .button-text {
+  color: #ffffff;
+}
+
+.brutalist-button:hover .button-text span:last-child {
+  color: #4e432d;
+}
+
 </style>
+    

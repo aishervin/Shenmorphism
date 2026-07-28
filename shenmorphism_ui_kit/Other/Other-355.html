@@ -1,59 +1,104 @@
-<label class="switch">
-  <input type="checkbox">
-  <span class="slider"></span>
-</label>
+<div class="container">
+  <label>
+    <input name="list" type="radio" />
+    <span>
+      <p class="a">Yes</p>
+      <p class="b">No</p>
+    </span>
+    Easy
+  </label>
+  <label>
+    <input checked="" name="list" type="radio" />
+    <span>
+      <p class="a">Yes</p>
+      <p class="b">No</p>
+    </span>
+    Normal
+  </label>
+  <label>
+    <input name="list" type="radio" />
+    <span>
+      <p class="a">Yes</p>
+      <p class="b">No</p>
+    </span>
+    Hard
+  </label>
+</div>
+
 <style>
-/* From SHΞN™ Morphism by G4b413l - Tags: minimalist, switch */
-.switch {
- position: relative;
- width: 55px;
- height: 15px;
+/* From SHΞN™ Morphism by javierBarroso  - Tags: animation, 3d, button, modern, radio, toggle */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.switch input {
- opacity: 0;
- width: 0;
- height: 0;
+.container label {
+  transform-style: preserve-3d;
+  perspective: 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+.container label span {
+  position: relative;
+  margin-right: 0px;
+  width: 60px;
+  height: 40px;
+  transform: rotateY(180deg);
+  transition-duration: 0.6s;
+  margin: 0 10px 0 10px;
+  transform-style: preserve-3d;
+  perspective: 100px;
+  padding: 0px;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  background: #111;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow:
+    inset 2px 2px 2px #fff9,
+    5px 5px 5px #2225;
+}
+.container label span p {
+  position: absolute;
+  transform-origin: 50% 50%;
+  left: 0%;
+  right: 0%;
+  transform: translateX(50px) translateY(50px);
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  font-size: 12px;
+  text-shadow: 0 0 2px;
+}
+.container label span .a {
+  backface-visibility: visible;
+  color: green;
+  transform: translateX(0%) translateY(0%) translateZ(10px) rotateY(0deg);
+}
+.container label span .b {
+  backface-visibility: visible;
+  color: red;
+  transform: translateX(0%) translateY(0%) translateZ(-10px) rotateY(180deg);
 }
 
-.slider {
- position: absolute;
- cursor: pointer;
- top: 0;
- left: 0;
- right: 0;
- bottom: 0;
- border-radius: 34px;
- background-color: #ccc;
- -webkit-transition: .4s;
- transition: .4s;
+.container label input[type="radio"] {
+  appearance: none;
 }
 
-.slider:before {
- position: absolute;
- content: "";
- height: 26px;
- width: 26px;
- left: 0px;
- bottom: -5px;
- background-color: red;
- -webkit-transition: .4s;
- transition: .4s;
- box-sizing: border-box;
- border: 10px solid white;
- border-radius: 50%;
+.container label input[type="radio"]:checked ~ span {
+  box-shadow:
+    inset -2px 2px 2px #fff9,
+    -5px 5px 5px #2225;
+  transform: rotateY(0deg);
 }
 
-input:checked + .slider {
- background-color: #06a606;
-}
-
-input:checked + .slider:before {
- -webkit-transform: translateX(26px);
- -ms-transform: translateX(26px);
- transform: translateX(30px);
- background: limegreen;
- box-sizing: border-box;
- border: 10px solid white;
-}
 </style>
+    

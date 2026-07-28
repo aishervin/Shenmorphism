@@ -1,72 +1,51 @@
-<div tabindex="0" class="plusButton">
-  <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
-    <g mask="url(#mask0_21_345)">
-      <path d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z"></path>
-    </g>
-  </svg>
-</div>
+<button>
+    Hover me
+</button>
 <style>
-/* From SHΞN™ Morphism by OnCloud125252 - Tags: simple, black, button, simple button, more info, read more */
-/* Note that you only needs to edit the config to customize the button! */
-
-.plusButton {
-  /* Config start */
-  --plus_sideLength: 2.5rem;
-  --plus_topRightTriangleSideLength: 0.9rem;
-  /* Config end */
+/* From SHΞN™ Morphism by Navarog21 - Tags: button */
+button {
+  width: 10em;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid white;
-  width: var(--plus_sideLength);
-  height: var(--plus_sideLength);
-  background-color: #000000;
-  overflow: hidden;
+  height: 3.5em;
+  border: 3px ridge #149CEA;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  transition: 1s;
+  border-radius: 0.3em;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.plusButton::before {
-  position: absolute;
+button::after {
   content: "";
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0;
-  border-style: solid;
-  border-color: transparent white transparent transparent;
-  transition-timing-function: ease-in-out;
-  transition-duration: 0.2s;
+  position: absolute;
+  top: -10px;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: #212121;
+  transition: 0.5s;
+  transform-origin: center;
 }
 
-.plusButton:hover {
-  cursor: pointer;
+button::before {
+  content: "";
+  transform-origin: center;
+  position: absolute;
+  top: 80%;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: #212121;
+  transition: 0.5s;
 }
 
-.plusButton:hover::before {
-  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+button:hover::before, button:hover::after {
+  transform: scale(0)
 }
 
-.plusButton:focus-visible::before {
-  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
-}
-
-.plusButton>.plusIcon {
-  fill: white;
-  width: calc(var(--plus_sideLength) * 0.7);
-  height: calc(var(--plus_sideLength) * 0.7);
-  z-index: 1;
-  transition-timing-function: ease-in-out;
-  transition-duration: 0.2s;
-}
-
-.plusButton:hover>.plusIcon {
-  fill: black;
-  transform: rotate(180deg);
-}
-
-.plusButton:focus-visible>.plusIcon {
-  fill: black;
-  transform: rotate(180deg);
+button:hover {
+  box-shadow: inset 0px 0px 25px #1479EA;
 }
 </style>

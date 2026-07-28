@@ -1,202 +1,50 @@
-<div class="container">
-  <div class="palette">
-    <div id="color1" class="color">
-      <span>#CECE5A</span>
-    </div>
-    <div id="color2" class="color">
-      <span>#FFE17B</span>
-    </div>
-    <div id="color3" class="color">
-      <span>#FD8D14</span>
-    </div>
-    <div id="color4" class="color">
-      <span>#C51605</span>
-    </div>
-    <div id="color-code">
-      <div id="color-code-bg"></div>
-      <div id="color-code-text"></div>
+<!-- From SHΞN™ Morphism by Uncannypotato69  - Tags: glassmorphism, purple, white, card, card hover, tailwindcss -->
+<div
+  class="relative flex h-[12em] w-[18em] items-center justify-center rounded-[1.5em] border-[1px] border-[rgba(107,33,168,1)] bg-[rgba(107,33,168,0.24)] p-[1.5em] text-lime-300"
+>
+  <div
+    class="group absolute left-1/2 top-1/2 flex h-[3em] w-[3em] -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-[1.5em] border-[1px] border-[#ffffffaa] bg-[#8988885c] backdrop-blur-[6px] duration-[500ms] hover:h-[10em] hover:w-[16em] hover:rounded-[1.5em]"
+  >
+    <svg
+      class="h-[1.5em] w-[1.5em] duration-300 group-hover:opacity-0"
+      viewBox="0 0 48 48"
+      fill="none"
+      height="48"
+      width="48"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#a)">
+        <path
+          clip-rule="evenodd"
+          d="M21.6 36h4.8V21.6h-4.8V36ZM24 0C10.8 0 0 10.8 0 24s10.8 24 24 24 24-10.8 24-24S37.2 0 24 0Zm0 43.2C13.44 43.2 4.8 34.56 4.8 24 4.8 13.44 13.44 4.8 24 4.8c10.56 0 19.2 8.64 19.2 19.2 0 10.56-8.64 19.2-19.2 19.2Zm-2.4-26.4h4.8V12h-4.8v4.8Z"
+          fill-rule="evenodd"
+          fill="#fff"
+        ></path>
+      </g>
+      <defs>
+        <clipPath id="a">
+          <path d="M0 0h48v48H0z" fill="#fff"></path>
+        </clipPath>
+      </defs>
+    </svg>
+    <div
+      class="items-left duration-600 absolute left-0 top-0 flex h-[10em] w-[16em] translate-y-[100%] flex-col justify-between p-[1.5em] font-nunito text-[hsl(0,0%,85%)] group-hover:translate-y-0"
+    >
+      <div class="items-left flex flex-col justify-center">
+        <h1 class="text-[1.5em] font-bold leading-[0.8em]">Heading</h1>
+        <p class="text-[0.9em] font-light">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+          magni repudiandae tenetur odio
+        </p>
+      </div>
+
+      <p class="cursor-pointer text-[0.7em] underline">learn more</p>
     </div>
   </div>
-<div id="footer">
-<div id="bookmarks">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-</svg>
-    <span>53421</span>
-    </div>
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="12" cy="12" r="1"></circle>
-  <circle cx="19" cy="12" r="1"></circle>
-  <circle cx="5" cy="12" r="1"></circle>
-</svg>
-  </div>
+  <h1 class="text-center font-nunito text-[2em] font-black text-purple-950">
+    hover over the info icon
+  </h1>
 </div>
-<style>
-/* From SHΞN™ Morphism by arshshaikh06 - Tags: card, fluid, animated, colorful, palette, card hover */
-.container {
-  width: 300px;
-  height: 340px;
-  border-radius: 1em;
-  overflow: hidden;
-  box-shadow: 0 10px 20px #dbdbdb;
-  font-family: sans-serif;
-  background: white;
-  pointer-events: none;
-}
 
-.palette {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  border-radius: 1rem;
-  overflow: hidden;
-  pointer-events: auto;
-}
 
-.palette:hover > #color-code {
-  opacity: 0;
-}
-
-.color {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  transform-origin: center;
-  transition: 0.3s ease-in-out;
-  box-sizing: inline-block;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.color span {
-  color: white;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-#color1 {
-  background: #CECE5A;
-  rotate: 45deg;
-  translate: 212.13px 0;
-  outline: 0 solid #CECE5A;
-  z-index: 9;
-}
-
-#color1:hover {
-  translate: 0 0;
-  rotate: 0deg;
-  z-index: 99;
-  outline: 20px solid #CECE5A;
-}
-
-#color2 {
-  background: #FFE17B;
-  rotate: 45deg;
-  translate: 0 212.13px;
-  outline: 0 solid #FFE17B;
-  z-index: 9;
-}
-
-#color2:hover {
-  translate: 0 0;
-  rotate: 0deg;
-  z-index: 99;
-  outline: 20px solid #FFE17B;
-}
-
-#color2 span {
-  color: #1A1A1A;
-}
-
-#color3 {
-  background: #FD8D14;
-  rotate: 45deg;
-  translate: -212.13px 0;
-  outline: 0 solid #FD8D14;
-  z-index: 9;
-}
-
-#color3:hover {
-  translate: 0 0;
-  rotate: 0deg;
-  z-index: 99;
-  outline: 20px solid #FD8D14;
-}
-
-#color4 {
-  background: #C51605;
-  rotate: 45deg;
-  translate: 0 -212.13px;
-  outline: 0 solid #C51605;
-  z-index: 9;
-}
-
-#color4:hover {
-  translate: 0 0;
-  rotate: 0deg;
-  z-index: 99;
-  outline: 20px solid #C51605;
-}
-
-#color-code {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  translate: 130px 130px;
-  border-radius: 20px;
-  overflow: hidden;
-  z-index: 199;
-  opacity: 1;
-  transition: 0.3s ease-in-out;
-}
-
-#color-code-bg {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-color: rgba(255, 255, 255, 0.8);
-  filter: blur(10px);
-}
-
-#color-code-text {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#color-code-text::after {
-  content: "v2";
-  font-weight: 600;
-  font-family: sans-serif;
-  color: #1a1a1a;
-}
-
-#footer {
-  height: 12%;
-  width: 100%;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1em;
-  box-sizing: border-box;
-  color: #bebebe;
-}
-
-#footer svg {
-  scale: 0.75;
-}
-
-#footer #bookmarks {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: smaller;
-}
-</style>
+    

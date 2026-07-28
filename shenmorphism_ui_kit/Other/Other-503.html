@@ -1,32 +1,79 @@
-<div class="progress">
-      <div class="inner"></div>
+<div class="loader">
+  <span class="item"></span>
+  <span class="item"></span>
+  <span class="item"></span>
+  <span class="item"></span>
 </div>
 <style>
-/* From SHΞN™ Morphism by sabbircoder07 - Tags: loader, animated, css3 */
-.progress {
-  background-color: #ffffff;
-  width: 220px;
-  height: 20px;
-  border-radius: 100px;
-  overflow: hidden;
-  backface-visibility: hidden;
+/* From SHΞN™ Morphism by RoninLJY - Tags: loader, css, easy to use */
+.loader {
+  width: 85px;
+  height: 85px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  animation: loading-rotate 3s linear infinite;
 }
 
-.inner {
-  background-image: linear-gradient(to left, #00cdac, #00c2c9, #00b4e3, #00a2f1, #008cef, #0088eb, #0085e6, #0081e2, #0090de, #009bd2, #00a3c1, #02aab0);
-  height: 100%;
-  transform-origin: left;
-  animation: progress 2s infinite;
+.item {
+  width: 40px;
+  height: 40px;
+  display: block;
+  box-sizing: border-box;
 }
 
-@keyframes progress {
+.item:nth-of-type(1) {
+  background-color: #50DE68;
+  border-radius: 20px 20px 0 20px;
+  border-left: #ffffff 4px solid;
+  border-top: #f7f7f7 4px solid;
+}
+
+.item:nth-of-type(2) {
+  background-color: rgb(32, 80, 46);
+  border-radius: 20px 20px 20px 0;
+  border-right: #ffffff 4px solid;
+  border-top: #f7f7f7 4px solid;
+}
+
+.item:nth-of-type(3) {
+  background-color: rgb(0, 255, 55);
+  border-radius: 20px 0 20px 20px;
+  border-left: #ffffff 4px solid;
+  border-bottom: #f7f7f7 4px solid;
+}
+
+.item:nth-of-type(4) {
+  background-color: rgb(32, 182, 32);
+  border-radius: 0 20px 20px 20px;
+  border-right: #ffffff 4px solid;
+  border-bottom: #f7f7f7 4px solid;
+}
+
+@keyframes loading-rotate {
   0% {
-    transform: scaleX(10%) translateX(-10%);
+    transform: scale(1) rotate(0);
+  }
+
+  20% {
+    transform: scale(1) rotate(72deg);
+  }
+
+  40% {
+    transform: scale(0.5) rotate(144deg);
+  }
+
+  60% {
+    transform: scale(0.5) rotate(216deg);
+  }
+
+  80% {
+    transform: scale(1) rotate(288deg);
   }
 
   100% {
-    transform: scaleX(80%) translateX(150%);
+    transform: scale(1) rotate(360deg);
   }
 }
-
 </style>

@@ -1,32 +1,47 @@
-<button class="button">
-  <b>
-  Button
-  </b>
-</button>
+<a class="swipe">Get Started <span class="container"><svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path></svg></span> </a>
 <style>
-/* From SHΞN™ Morphism by JamesAchiver - Tags: button */
-.button {
+/* From SHΞN™ Morphism by xantha01 - Tags: button, arrow, startbutton  */
+.swipe {
   position: relative;
-  padding: 0.5em 1.2em;
-  font-size: 1.8em;
-  font-family: Calibri;
-  background-color: #5b04bf;
-  border: none;
-  color: #FFF;
-  cursor: pointer;
+  background-color: #F1F7F7;
+  width: 200px;
+  height: 60px;
+  color: rgba(255, , 204, 1);
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  box-shadow: inset 0px 38px 25px 0 #5b04bf, inset 0 0px 0px 0px #084748a8, inset 0 69px 0px 0px #d74589af;
-  border-radius: 0.6em;
+  text-decoration: none;
+  letter-spacing: 2px;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.35);
+  border-left: 0.5px solid rgba(0, 0, 0, 0.35);
+  padding-left: 40px;
+  cursor: pointer;
+  transition: 0.35s ease;
 }
 
-.button:hover {
-  padding: 0.7em 1.4em;
-  transition: 0.4s ease-in-out;
-  box-shadow: inset 0px 38px 25px 5px #5b04bf, inset 10px 40px 10px 0px #084748a8, inset 0 69px 0px 0px #31b0d7de;
+.swipe:hover {
+  padding-left: 0;
+  padding-right: 40px;
+  color: #324B4C;
 }
 
-.button:active {
-  box-shadow: 0.2em 0.2em 0.3em rgba(0,0,0,0.3);
-  transform: translate(0.1em , 0.1em);
+.container {
+  position: absolute;
+  left: 5px;
+  width: 50px;
+  height: 50px;
+  background: #7AB5B7;
+  border-radius: 50%;
+  transition: 0.35s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f1f4f7;
+}
+
+.swipe:hover .container {
+  left: calc(100% - 55px);
+  color: #324B4C;
 }
 </style>

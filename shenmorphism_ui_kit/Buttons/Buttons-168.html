@@ -1,42 +1,38 @@
-<div class="links">
-  <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" id="instagram" class="icons-social-media"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
-<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="twitch" class="icons-social-media"><path d="M391.17,103.47H352.54v109.7h38.63ZM285,103H246.37V212.75H285ZM120.83,0,24.31,91.42V420.58H140.14V512l96.53-91.42h77.25L487.69,256V0ZM449.07,237.75l-77.22,73.12H294.61l-67.6,64v-64H140.14V36.58H449.07Z"></path></svg>
-<svg viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg" id="youtube" class="icons-social-media"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></div>
+<button class="btn-space space">
+  Button
+</button>
 <style>
-/* From SHΞN™ Morphism by CPC23 - Tags: button, hover effect, hoverme, hover button */
-.icons-social-media {
-  align-items: center;
-  margin-top: 10px;
-  padding: 5px;
-  width: 32px;
-  cursor: pointer !important;
-  transition: 300ms all ease-in-out;
-  position: relative;
+/* From SHΞN™ Morphism by watchakorn-18k - Tags: gradient, button, transition */
+.btn-space {
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-size: 500% auto;
+  font-weight: bold;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.103);
+  border-radius: 10px;
 }
 
-.icons-social-media:hover {
-  translate: -0px -10px;
+.btn-space:hover {
+  background-position: right center;
+  border-image-source: linear-gradient(90deg, #d53a9d,#743ad5 );
+  -webkit-box-shadow: 0 0 20px #743ad5;
+  box-shadow: 0 0 20px #743ad5;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 10px #d53a9d;
 }
 
-#instagram,
-    #youtube,#twitch {
-  transition: 300ms all ease-in-out;
-  clip-path: circle(65%);
+.space {
+  background-image: -webkit-gradient(linear, left top, right top, from(#743ad5), color-stop(51%, #d53a9d), to(#743ad5));
+  background-image: linear-gradient(to right, #743ad5 0%, #d53a9d 51%, #743ad5 100%);
+  border-image-source: linear-gradient(45deg, #743ad5, #d53a9d );
+  border-image-outset: 1em;
 }
 
-#instagram:hover {
-  background-color: rgb(221, 157, 189);
-}
 
-#youtube {
-  height: 35px;
-}
 
-#youtube:hover {
-  background-color: rgb(241, 96, 96);
-}
 
-#twitch:hover {
-  background-color: rgb(196, 143, 245);
-}
 </style>

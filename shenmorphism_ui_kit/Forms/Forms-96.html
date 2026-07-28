@@ -1,95 +1,115 @@
-<form class="form">
-  <div class="content">
-    <p align="center">Enter your OTP Code</p>
-    <div class="inp">
-    <input maxlength="1" class="input" type="text" placeholder="">
-    <input maxlength="1" class="input" type="text" placeholder=""> 
-    <input maxlength="1" class="input" type="text" placeholder=""> 
-    <input maxlength="1" class="input" type="text" placeholder=""> 
+<div class="login-box">
+ 
+  <form>
+    <div class="user-box">
+      <input type="text" name="" required="">
+      <label>Username</label>
     </div>
-    <button>Verify</button>
-  </div>
-  
-</form>
+    <div class="user-box">
+      <input type="password" name="" required="">
+      <label>Password</label>
+    </div><center>
+    <a href="#">
+           SEND
+       <span></span>
+    </a></center>
+  </form>
+</div>
 <style>
-/* From SHΞN™ Morphism by reshades - Tags: OTP, form, verify, Verification */
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: #333333;
-  border-radius: 5px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8.2px);
-  -webkit-backdrop-filter: blur(8.2px);
-  border: 1px solid #fff;
-  width: 17em;
-  height: 12em;
+/* From SHΞN™ Morphism by guilhermeyohan - Tags: form */
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(24, 20, 20, 0.987);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: auto;
-  margin-bottom: auto;
+.login-box .user-box {
+  position: relative;
 }
 
-.form p {
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
   color: #fff;
-  font-weight: bolder;
-}
-
-.inp {
-  margin-left: auto;
-  margin-right: auto;
-  white-space: 4px;
-}
-
-.input + .input {
-  margin-left: 0.5em
-}
-
-.input {
-  color: #fff;
-  height: 2em;
-  width: 2em;
-  float: left;
-  text-align: center;
-  background: #00000000;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
   outline: none;
-  border: 1px #fff solid;
-  border-radius: 5px;
-  transition: all 0.6s ease;
-  font-size: larger;
+  background: transparent;
 }
 
-.input:focus {
-  outline: none;
-  border: 1px #fff solid;
-}
-
-.input:not(:placeholder-shown) {
-  background-color: #fff;
-  width: 1em;
-  height: 1em
-}
-
-.form button {
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #00000000;
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
   color: #fff;
-  width: 8.5em;
-  height: 2.3em;
-  border: #fff 0.1em solid;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #bdb8b8;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.login-box a:hover {
+  background: #03f40f;
+  color: #fff;
   border-radius: 5px;
-  transition: all 0.5s ease;
+  box-shadow: 0 0 5px #03f40f,
+              0 0 25px #03f40f,
+              0 0 50px #03f40f,
+              0 0 100px #03f40f;
 }
 
-.form button:hover {
-  background-color: #fff;
-  color: #000
+.login-box a span {
+  position: absolute;
+  display: block;
 }
 
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(1) {
+  bottom: 2px;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03f40f);
+  animation: btn-anim1 2s linear infinite;
+}
 </style>

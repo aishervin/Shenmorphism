@@ -1,149 +1,162 @@
-<div class="container">
-  <div class="heading">SignIn to your account</div>
-  <form class="form" action="">
-    <div class="input-field">
-      <input
-        required=""
-        autocomplete="off"
-        type="text"
-        name="text"
-        id="username"
-      />
-      <label for="username">Full Name</label>
-    </div>
-    <div class="input-field">
-      <input
-        required=""
-        autocomplete="off"
-        type="email"
-        name="email"
-        id="email"
-      />
-      <label for="email">Email</label>
-    </div>
-    <div class="input-field">
-      <input
-        required=""
-        autocomplete="off"
-        type="password"
-        name="text"
-        id="password"
-      />
-      <label for="username">Password</label>
-    </div>
-
-    <div class="btn-container">
-      <button class="btn">Submit</button>
-      <div class="acc-text">
-        New here ?
-        <span style="color : #0000ff; cursor : pointer;">Create Account</span>
+	<div class="container">
+      <div class="nav-bar">
+      	<a>Chat</a>
+        <div class="close">
+         	<div class="line one"></div>
+         	<div class="line two"></div>
+        </div>
       </div>
-    </div>
-  </form>
-</div>
-
+      <div class="messages-area">
+        
+        <div class="message one"></div>
+        <div class="message two"></div>
+        <div class="message three"></div>
+        <div class="message four"></div>
+        <div class="message five"></div>
+        <div class="message six"></div>
+      </div>
+      <div class="sender-area">
+        <div class="input-place">
+        	<input placeholder="Send a message." class="send-input" type="text">
+            <div class="send">
+				<svg class="send-icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><g><path fill="#6B6C7B" d="M481.508,210.336L68.414,38.926c-17.403-7.222-37.064-4.045-51.309,8.287C2.86,59.547-3.098,78.551,1.558,96.808 L38.327,241h180.026c8.284,0,15.001,6.716,15.001,15.001c0,8.284-6.716,15.001-15.001,15.001H38.327L1.558,415.193 c-4.656,18.258,1.301,37.262,15.547,49.595c14.274,12.357,33.937,15.495,51.31,8.287l413.094-171.409 C500.317,293.862,512,276.364,512,256.001C512,235.638,500.317,218.139,481.508,210.336z"></path></g></g></svg>
+        	</div>
+      	</div>
+      </div>
+    <div></div></div>
 <style>
-/* From SHΞN™ Morphism by Spacious74  - Tags: simple, login, subscription, email, minimalist, form, register, signin */
+/* From SHΞN™ Morphism by shadowmurphy - Tags: form, message, arrow, chat, chatgpt, close, colors */
 .container {
-  border: solid 1px #8d8d8d;
-  padding: 20px;
-  border-radius: 20px;
-  background-color: #fff;
-}
-
-.container .heading {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-  font-weight: bolder;
-}
-
-.form {
-  max-width: 300px;
+  width: 300px;
+  height: 320px;
+  background-color: #343541;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
-.form .btn-container {
+.nav-bar {
   width: 100%;
+  height: 40px;
+  background-color: none;
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
 }
 
-.form .btn {
-  padding: 10px 20px;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  border-radius: 10px;
-  border: solid 1px #1034aa;
-  border-bottom: solid 1px #90c2ff;
-  background: linear-gradient(135deg, #0034de, #006eff);
-  color: #fff;
-  font-weight: bolder;
-  transition: all 0.2s ease;
-  box-shadow: 0px 2px 3px #000d3848, inset 0px 4px 5px #0070f0,
-    inset 0px -4px 5px #002cbb;
+.nav-bar a {
+  color: #6B6C7B;
+  white-space: nowrap;
+  margin-left: 10px;
+  user-select: none;
 }
 
-.form .btn:active {
-  box-shadow: inset 0px 4px 5px #0070f0, inset 0px -4px 5px #002cbb;
-  transform: scale(0.995);
-}
-
-.input-field {
+.close {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-}
-
-.input-field label {
-  position: absolute;
-  color: #8d8d8d;
-  pointer-events: none;
-  background-color: transparent;
-  left: 15px;
-  transform: translateY(0.6rem);
-  transition: all 0.3s ease;
-}
-
-.input-field input {
-  padding: 10px 15px;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: solid 1px #8d8d8d;
-  letter-spacing: 1px;
-  width: 100%;
-}
-
-.input-field input:focus,
-.input-field input:valid {
-  outline: none;
-  border: solid 1px #0034de;
-}
-
-.input-field input:focus ~ label,
-.input-field input:valid ~ label {
-  transform: translateY(-51%) translateX(-10px) scale(0.8);
-  background-color: #fff;
-  padding: 0px 5px;
-  color: #0034de;
-  font-weight: bold;
-  letter-spacing: 1px;
-  border: none;
-  border-radius: 100px;
-}
-
-.form .passicon {
   cursor: pointer;
-  font-size: 1.3rem;
+}
+
+.line {
   position: absolute;
-  top: 6px;
-  right: 8px;
+  width: 20px;
+  height: 3px;
+  background-color: #6B6C7B;
+  border-radius: 30px;
 }
 
-.form .close {
-  display: none;
+.line.one {
+  transform: rotate(45deg)
 }
 
+.line.two {
+  transform: rotate(135deg)
+}
+
+.messages-area {
+  background-color: green;
+  width: 100%;
+  height: 210px;
+}
+
+.sender-area {
+  background-color: #343541;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  border-radius: 8px;
+}
+
+.message {
+  width: 100%;
+  height: 40px;
+}
+
+.message.one,
+.message.three,
+.message.five {
+  background-color: #2E2F3A;
+}
+
+.message.two,
+.message.four,
+.message.six {
+  background-color: #343541;
+}
+
+.send-img {
+  width: 30px;
+}
+
+.send-input {
+  outline: none;
+  display: flex;
+  border: none;
+  background: none;
+  height: 40px;
+  width: 230px;
+  border-radius: 7px;
+  background: none;
+  color: white;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-left: 5px;
+}
+
+.send-input::placeholder {
+  color: #828E9E;
+}
+
+.input-place {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  margin-left: 10px;
+  align-items: center;
+  background-color: #40414F;
+  border-radius: 7px;
+  height: 40px;
+  width: 280px;
+  gap: 5px;
+  border: 1px solid #2E2F3A;
+}
+
+.send {
+  width: 30px;
+  height: 30px;
+  background-color: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.send-icon {
+  width: 17px;
+}
 </style>
-    

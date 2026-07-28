@@ -1,110 +1,95 @@
-  <div class="card">
-      <p class="card-title">Card Title</p>
-      <p class="card-des">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis,
-        deleniti officia. Aliquam repellendus illum pariatur nesciunt dolor et
-        natus consectetur repudiandae suscipit autem distinctio commodi vel sed,
-        id inventore modi.
-      </p>
-      <p class="card-text">
-        <span>View More</span>
-        <svg class="arrow-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
-        </svg>
-      </p>
-    </div>
+<div class="container">
+  <div class="palette">
+    <div class="color"><span>264653</span></div>
+    <div class="color"><span>2A9D8F</span></div>
+    <div class="color"><span>E9C46A</span></div>
+    <div class="color"><span>F4A261</span></div>
+    <div class="color"><span>E76F51</span></div>
+  </div>
+  <div id="stats">
+    <span>53421 saves</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+      <path d="M4 7.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5S5.5 9.83 5.5 9 4.83 7.5 4 7.5zm10 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm-5 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5S9.83 7.5 9 7.5z"></path>
+    </svg>
+  </div>
+</div>
 <style>
-/* From SHΞN™ Morphism by akshat-patel28 - Tags: card, html, css, card animation, simple cards */
-.card {
-  position: relative;
+/* From SHΞN™ Morphism by arshshaikh06 - Source: https://codepen.io/arsh-shaikh/pen/ZELZwWq?editors=1100 - Tags: card, palette, ui, card hover */
+.container {
+  height: 200px;
   width: 350px;
-  height: 180px;
-  box-sizing: border-box;
-  background-color: #212121;
-  border: 5px solid #222;
-  border-radius: 8px;
+  border-radius: 1em;
+  overflow: hidden;
+  box-shadow: 0 10px 20px #dbdbdb;
+  font-family: sans-serif;
+}
+
+.palette {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
-          rgba(0, 0, 0, 0.23) 0px 6px 6px,
-          inset rgba(0, 0, 0, 0.19) 0px 10px 20px,
-          inset rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  transition: all ease-in-out 0.3s;
-  overflow: hidden;
+  height: 86%;
+  width: 100%;
 }
 
-.card:hover {
-  box-shadow: rgba(193, 44, 223, 0.19) 0px 10px 20px,
-          rgba(193, 44, 223, 0.23) 0px 6px 6px,
-          inset rgba(0, 0, 0, 0.19) 0px 10px 20px,
-          inset rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  border: 5px solid #b671d6;
-}
-
-.card-title {
-  margin: 0;
-  font-size: 18px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-weight: 600;
-  color: #fff;
-  cursor: default;
-}
-
-.card-des {
-  margin: 0;
-  font-size: 15px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-weight: 600;
-  color: #fff;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  display: -webkit-box;
-  word-break: break-all;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  cursor: default;
-}
-
-.card-text {
-  position: absolute;
-  margin: 0;
-  font-size: 14px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-weight: 400;
-  color: #fff;
-  right: 20px;
-  bottom: 5px;
+.color {
+  height: 100%;
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: 3px;
-  opacity: 0;
-  transition: all ease-in-out 0.3s;
-  animation: textanimate 0.8s alternate infinite;
-  cursor: pointer;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: flex 0.1s linear;
 }
 
-.card:hover > .card-text {
+.color span {
+  opacity: 0;
+  transition: opacity 0.1s linear;
+}
+
+.color:nth-child(1) {
+  background: #264653;
+}
+
+.color:nth-child(2) {
+  background: #2a9d8f;
+}
+
+.color:nth-child(3) {
+  background: #e9c46a;
+}
+
+.color:nth-child(4) {
+  background: #f4a261;
+}
+
+.color:nth-child(5) {
+  background: #e76f51;
+}
+
+.color:hover {
+  flex: 2;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.color:hover span {
   opacity: 1;
 }
 
-@keyframes textanimate {
-  0% {
-    right: 20px;
-  }
-
-  100% {
-    right: 10px;
-  }
+#stats {
+  height: 14%;
+  width: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5em;
+  box-sizing: border-box;
+  color: #bebebe;
 }
 
-.arrow-icon {
-  font-size: 15px;
-  font-weight: 500;
+#stats svg {
+  fill: #bebebe;
+  transform: scale(1.2);
 }
 </style>

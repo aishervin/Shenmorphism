@@ -1,78 +1,47 @@
 <button>
-    <span>Button</span><i></i>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+    <path
+      d="M0 256L28.5 28c2-16 15.6-28 31.8-28H228.9c15 0 27.1 12.1 27.1 27.1c0 3.2-.6 6.5-1.7 9.5L208 160H347.3c20.2 0 36.7 16.4 36.7 36.7c0 7.4-2.2 14.6-6.4 20.7l-192.2 281c-5.9 8.6-15.6 13.7-25.9 13.7h-2.9c-15.7 0-28.5-12.8-28.5-28.5c0-2.3 .3-4.6 .9-6.9L176 288H32c-17.7 0-32-14.3-32-32z"
+    ></path>
+  </svg>
+  Join Now
 </button>
+
 <style>
-/* From SHΞN™ Morphism by mrhyddenn - Tags: button */
+/* From SHΞN™ Morphism by Bodyhc  - Tags: button, buttons, simple button, hover button, #button, tailwindbutton, 3d button, button hover effect  */
 button {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 10px 30px;
-  transition: 0.5s;
-  position: relative;
-  font-size: 17px;
-  background: #333;
-  border: none;
-  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border-radius: 20px;
+  background-image: linear-gradient(
+    90deg,
+    #fa7fe6 0%,
+    #ff8e61 50%,
+    #fa7fe6 100%
+  );
+  border: 2px solid #9d098431;
+  color: #000000;
+  font-weight: 600;
+  padding: 20px 40px; /* increase padding to make button bigger */
+  cursor: pointer;
 }
-
+button svg {
+  font-size: 24px; /* increase font size to make lightning bolt bigger */
+  margin-right: 10px;
+  width: 30px;
+  height: 20px;
+  color: black;
+}
 button:hover {
-  letter-spacing: 0.25em;
-  background: #ff1867;
-  color: #ff1867;
-  box-shadow: 0 0 45px #ff1867;
+  background-image: linear-gradient(
+    90deg,
+    #ff8e61 0%,
+    #fa7fe6 50%,
+    #fe9b74 100%
+  );
 }
 
-button::before {
-  content: '';
-  position: absolute;
-  inset: 2px;
-  background: #222222;
-}
-
-button span {
-  position: relative;
-  z-index: 1;
-}
-
-button i {
-  position: absolute;
-  inset: 0;
-  display: block;
-}
-
-button i::before {
-  content: '';
-  position: absolute;
-  border: 2px solid #ff1867;
-  width: 7px;
-  height: 4px;
-  top: -3.5px;
-  left: 80%;
-  background: #222222;
-  transform: translateX(-50%);
-  transition: 0.5s;
-}
-
-button:hover i::before {
-  width: 20px;
-  left: 20%;
-}
-
-button i::after {
-  content: '';
-  position: absolute;
-  border: 2px solid #ff1867;
-  width: 7px;
-  height: 4px;
-  bottom: -3.5px;
-  left: 20%;
-  background: #222222;
-  transform: translateX(-50%);
-  transition: 0.5s;
-}
-
-button:hover i::after {
-  width: 20px;
-  left: 80%;
-}
 </style>
+    

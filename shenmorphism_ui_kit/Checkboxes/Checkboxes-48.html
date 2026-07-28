@@ -1,47 +1,41 @@
-<div><input type="checkbox" id="ni">
-<label for="ni" class="ni"></label></div>
-
+<input type="checkbox" id="star">
+<label for="star">
+  <svg viewBox="0 0 24 24">
+    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
+  </svg>
+</label>
 
 <style>
-/* From SHΞN™ Morphism by AnthonyPreite - Tags: red, green, minimalist, checkbox */
-/* ni means name input*/
-
-.ni {
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  padding: 8px 20px;
-  border-radius: .8rem;
-  min-width: 124px;
-  text-align: center;
-  background: rgba(78, 190, 150, 0.1);
-  border: 0.5px solid rgba(22, 179, 124, 0.2);
-  cursor: pointer;
+/* From SHΞN™ Morphism by ahmed150up - Tags: checkbox, star */
+input[type="checkbox"] {
+  display: none;
 }
 
-.ni:before {
-  content: "Check";
-  color: #4EBE96;
+label svg {
+  width: 44px;
+  height: 44px;
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
 }
 
-.ni:active {
-  transform: scale(0.94);
+input[type="checkbox"]:checked + label svg {
+  fill: #FFC107;
+  animation: pop_42 0.5s ease-out;
 }
 
-#ni {
-  position: fixed;
-  opacity: 0;
-  visibility: hidden;
+@keyframes pop_42 {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
-#ni:checked + .ni {
-  background: rgba(216, 79, 104, 0.1);
-  border-color: rgba(216, 79, 104, 0.2);
-}
-
-#ni:checked + .ni:before {
-  content: "Uncheck";
-  color: #D84F68;
-}
 </style>

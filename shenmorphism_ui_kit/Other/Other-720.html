@@ -1,128 +1,61 @@
-<div class="container">
-  <div class="top">
-    <div class="square">
-      <div class="square">
-        <div class="square">
-          <div class="square">
-            <div class="square"><div class="square">
-            </div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="bottom">
-    <div class="square">
-      <div class="square">
-        <div class="square">
-          <div class="square">
-            <div class="square"><div class="square">
-            </div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="left">
-    <div class="square">
-      <div class="square">
-        <div class="square">
-          <div class="square">
-            <div class="square"><div class="square">
-            </div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="right">
-    <div class="square">
-      <div class="square">
-        <div class="square">
-          <div class="square">
-            <div class="square"><div class="square">
-            </div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<div aria-live="assertive" role="alert" class="loader"></div>
+
 <style>
-/* From SHΞN™ Morphism by NlghtM4re - Tags: blue, loader, smooth, shadow, glow, neon */
-.container {
+/* From SHΞN™ Morphism by VashonG - Tags: loader, disney, magical, wand */
+.loader {
+  --hue: 210;
+  --size: 100px;
+  --border: 10px;
+  --speed: 1s;
+  --blur: var(--border);
+}
+
+.loader {
+  width: var(--border);
+  aspect-ratio: 1;
+  background: white;
+  border-radius: 50%;
   position: absolute;
-  top: 45%;
-  left: 48%;
+  --y: calc((var(--size) * -0.5) + (var(--border) * 0.5));
+  transform: rotate(0deg) translateY(var(--y));
+  animation: spin var(--speed) infinite linear;
 }
 
-.square {
-  width: 8px;
-  height: 30px;
-  background: rgb(71, 195, 248);
-  border-radius: 10px;
-  display: block;
-  /*margin:10px;*/
-  -webkit-animation: turn 2.5s ease infinite;
-  animation: turn 2.5s ease infinite;
-  box-shadow: rgb(71, 195, 248) 0px 1px 15px 0px;
-}
-
-.top {
+.loader::before {
+  content: "";
   position: absolute;
-  left: 40%;
-  top: 50%;
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
+  inset: calc(var(--border) * -0.5);
+  border-radius: 50%;
+  background: white;
+  filter: blur(var(--blur));
+  z-index: -1;
 }
 
-.bottom {
+.loader::after {
+  content: "";
+  width: var(--size);
+  aspect-ratio: 1;
   position: absolute;
-  left: 40%;
-  top: 50%;
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
+  top: 0%;
+  left: 50%;
+  translate: -50% 0;
+  background: conic-gradient(
+    white,
+    hsl(var(--hue), 100%, 70%),
+    hsl(var(--hue), 100%, 10%),
+    transparent 65%
+  );
+  border-radius: 50%;
+  mask: radial-gradient(
+    transparent calc(((var(--size) * 0.5) - var(--border)) - 1px),
+    white calc((var(--size) * 0.5) - var(--border))
+  );
 }
 
-.left {
-  position: absolute;
-  left: 40%;
-  top: 50%;
-}
-
-.right {
-  position: absolute;
-  left: 40%;
-  top: 50%;
-  -webkit-transform: rotate(-180deg);
-  transform: rotate(-180deg);
-}
-
-@-webkit-keyframes turn {
-  0% {
-    transform: translateX(0) translateY(0) rotate(0);
-  }
-
-  50% {
-    transform: translateX(400%) translateY(100%) rotate(90deg);
-  }
-
-  100% {
-    transform: translateX(0) translateY(0) rotate(0);
+@keyframes spin {
+  to {
+    transform: rotate(-360deg) translateY(var(--y));
   }
 }
 
-@keyframes turn {
-  0% {
-    transform: translateX(0) translateY(0) rotate(0);
-  }
-
-  70% {
-    transform: translateX(400%) translateY(100%) rotate(90deg);
-  }
-
-  100% {
-    transform: translateX(0) translateY(0) rotate(0);
-  }
-}
 </style>

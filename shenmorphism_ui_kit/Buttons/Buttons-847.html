@@ -1,56 +1,67 @@
-<button class="button">
-<p class="submit">submit</p>
-
-</button>
+<button class="button"></button>
 <style>
-/* From SHΞN™ Morphism by Sujanthapast0 - Source: Sujanthapast0 - Tags: animation, subscription, minimalist, success, button, smooth, submit, 3d button */
+/* From SHΞN™ Morphism by gharsh11032000 - Tags: button */
 .button {
-  width: 90px;
-  height: 40px;
   position: relative;
-  font-family: var(--font);
-  color: #3b82f6;
+  background-color: #333;
+  color: #e8e8e8;
+  font-size: 17px;
   font-weight: 600;
-  background-color: #fff;
+  width: 150px;
+  height: 60px;
+  border-radius: 50em;
   border: none;
+  cursor: pointer;
+  text-transform: uppercase;
   overflow: hidden;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-  transition: all ease 100ms;
+  box-shadow: 0 10px 20px rgba(51, 51, 51, 0.2);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-button:hover {
-  background-color: #cbdcf8;
+.button::before {
+  content: "Hello!";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 50em;
+  background: linear-gradient(135deg,#7b4397,#dc2430 );
+  transform: translate(-100%, 0%);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-button:focus {
-  background-color: #cbdcf8;
+.button::after {
+  content: "Hover me";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 50em;
+  transform: translate(0%,-100%);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-button::before {
-  content: 'done✅';
-  position: absolute;
-  color: #3b82f6;
-  left: 0;
-  top: -14px;
-  right: 0;
-  transition: all ease 300ms;
-  opacity: 0%;
+.button:hover::before {
+  transform: translate(0%, 0%);
 }
 
-button:focus::before {
-  opacity: 100%;
-  transform: translatey(26px);
+.button:hover::after {
+  transform: translate(100%,-100%);
 }
 
-.submit {
-  transition: all ease 100ms;
-  opacity: 100%;
+.button:focus {
+  outline: none;
 }
 
-button:focus > .submit {
-  opacity: 0%;
+.button:active {
+  scale: 0.95;
 }
+
 
 
 </style>

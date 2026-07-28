@@ -1,54 +1,77 @@
-<div class="checkbox-wrapper-37">
-  <input id="terms-checkbox-37" name="checkbox" type="checkbox">
-  <label class="terms-label" for="terms-checkbox-37">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200" class="checkbox-svg">
-      <mask fill="white" id="path-1-inside-1_476_5-37">
-        <rect height="200" width="200"></rect>
-      </mask>
-      <rect mask="url(#path-1-inside-1_476_5-37)" stroke-width="40" class="checkbox-box" height="200" width="200"></rect>
-      <path stroke-width="15" d="M52 111.018L76.9867 136L149 64" class="checkbox-tick"></path>
+<label class="checkbox">
+  <input type="checkbox">
+  <div class="checkbox-circle">
+    <svg viewBox="0 0 52 52" class="checkmark">
+      <circle fill="none" r="25" cy="26" cx="26" class="checkmark-circle"></circle>
+      <path d="M16 26l9.2 8.4 17.4-21.4" class="checkmark-kick"></path>
     </svg>
-    <span class="label-text">Checkbox</span>
-  </label>
-</div>
+  </div>
+</label>
+
 <style>
-/* From SHΞN™ Morphism by Shoh2008 - Tags: checkbox */
-.checkbox-wrapper-37 input[type="checkbox"] {
-  display: none;
+/* From SHΞN™ Morphism by mrpumps31232 - Tags: green, minimalist, checkbox, circle, animated, clean */
+.checkbox {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
 }
 
-.checkbox-wrapper-37 .terms-label {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+.checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
 }
 
-.checkbox-wrapper-37 .terms-label .label-text {
-  margin-left: 10px;
-}
-
-.checkbox-wrapper-37 .checkbox-svg {
+.checkbox-circle {
+  position: relative;
+  display: inline-block;
   width: 30px;
   height: 30px;
+  border-radius: 50%;
+  border: 2px solid #aaa;
+  transition: all 0.3s;
 }
 
-.checkbox-wrapper-37 .checkbox-box {
-  fill: #fff;
-  stroke: #ff7a00;
-  stroke-dasharray: 800;
-  stroke-dashoffset: 800;
-  transition: stroke-dashoffset 0.6s ease-in;
+.checkbox input[type="checkbox"]:checked ~ .checkbox-circle {
+  background: #4CAF50;
+  border-color: #4CAF50;
 }
 
-.checkbox-wrapper-37 .checkbox-tick {
-  stroke: #ff7a00;
-  stroke-dasharray: 172;
-  stroke-dashoffset: 172;
-  transition: stroke-dashoffset 0.6s ease-in;
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transition: all 0.3s;
 }
 
-.checkbox-wrapper-37 input[type="checkbox"]:checked + .terms-label .checkbox-box,
-  .checkbox-wrapper-37 input[type="checkbox"]:checked + .terms-label .checkbox-tick {
+.checkbox input[type="checkbox"]:checked ~ .checkbox-circle .checkmark {
+  opacity: 1;
+}
+
+.checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  transition: stroke-dashoffset 0.3s;
+}
+
+.checkbox input[type="checkbox"]:checked ~ .checkbox-circle .checkmark-circle {
   stroke-dashoffset: 0;
 }
+
+.checkmark-kick {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  transition: stroke-dashoffset 0.3s;
+}
+
+.checkbox input[type="checkbox"]:checked ~ .checkbox-circle .checkmark-kick {
+  stroke-dashoffset: 0;
+}
+
 </style>

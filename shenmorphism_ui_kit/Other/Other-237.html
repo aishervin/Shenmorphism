@@ -3,7 +3,7 @@
   <span class="slider"></span>
 </label>
 <style>
-/* From SHΞN™ Morphism by WrongCodeU - Tags: simple, green, black, switch, dark */
+/* From SHΞN™ Morphism by gharsh11032000 - Tags: switch, checkbox, click effect, toggle switch */
 /* The switch - the box around the slider */
 .switch {
   font-size: 17px;
@@ -24,14 +24,9 @@
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-  border-radius: 30px;
-  box-shadow: 0.2em 0.2em black;
+  inset: 0;
+  background: #9fccfa;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .slider:before {
@@ -39,22 +34,21 @@
   content: "";
   height: 1.4em;
   width: 1.4em;
-  border-radius: 20px;
   left: 0.3em;
   bottom: 0.3em;
   background-color: white;
-  transition: .4s;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .switch input:checked + .slider {
-  background-color: #09ff00b0;
+  background: #0974f1;
 }
 
 .switch input:focus + .slider {
-  box-shadow: 0.2em 0.2em black;
+  box-shadow: 0 0 1px #0974f1;
 }
 
 .switch input:checked + .slider:before {
-  transform: translateX(1.5em);
+  transform: translateX(1.5em) rotate(90deg);
 }
 </style>

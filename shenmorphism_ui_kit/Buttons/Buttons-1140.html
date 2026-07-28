@@ -1,65 +1,62 @@
-<button data-quantity="0" class="btn-cart">
-          <svg class="icon-cart" viewBox="0 0 24.38 30.52" height="30.52" width="24.38" xmlns="http://www.w3.org/2000/svg">
-            <title>icon-cart</title>
-            <path transform="translate(-3.62 -0.85)" d="M28,27.3,26.24,7.51a.75.75,0,0,0-.76-.69h-3.7a6,6,0,0,0-12,0H6.13a.76.76,0,0,0-.76.69L3.62,27.3v.07a4.29,4.29,0,0,0,4.52,4H23.48a4.29,4.29,0,0,0,4.52-4ZM15.81,2.37a4.47,4.47,0,0,1,4.46,4.45H11.35a4.47,4.47,0,0,1,4.46-4.45Zm7.67,27.48H8.13a2.79,2.79,0,0,1-3-2.45L6.83,8.34h3V11a.76.76,0,0,0,1.52,0V8.34h8.92V11a.76.76,0,0,0,1.52,0V8.34h3L26.48,27.4a2.79,2.79,0,0,1-3,2.44Zm0,0"></path>
-          </svg>
-          <span class="quantity"></span>
-        </button>
-<style>
-/* From SHΞN™ Morphism by Julian956 - Tags: button, buy now, cart */
-.btn-cart {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  border: none;
-  background-color: transparent;
-  position: relative;
-}
+<!-- From SHΞN™ Morphism by StealthWorm - Tags: button, marvel, spiderman, miles morales -->
+<button class="group cursor-pointer w-32 h-32 bg-red-600 active:bg-black group-active:bg-black rounded-full border-4 border-black flex relative items-center justify-center duration-300 transition-all hover:w-[8.4rem] hover:h-[8.4rem] ease-in-out">
+  <div class="absolute border-b-4 border-black w-full group-active:border-red-600 group-active:border-[2px]"></div>
+  <div class="absolute border-b-4 border-black w-full rotate-45 group-active:border-red-600 group-active:border-[1px]"></div>
+  <div class="absolute border-b-4 border-black w-full rotate-90 group-active:border-red-600 group-active:border-[1px]"></div>
+  <div class="absolute border-b-4 border-black w-full -rotate-45 group-active:border-red-600 group-active:border-[1px]"></div>
 
-.btn-cart::after {
-  content: attr(data-quantity);
-  width: fit-content;
-  height: fit-content;
-  position: absolute;
-  font-size: 15px;
-  color: white;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  opacity: 0;
-  visibility: hidden;
-  transition: .2s linear;
-  top: 115%;
-}
+  <div class="absolute border-4 border-black w-4 h-4 bg-red-500 rounded-full group-active:bg-black"></div>
+  <div class="absolute border-[.2rem] border-black w-8 h-8 bg-transparent rounded-full group-active:border-red-600 group-active:border-[1px]"></div>
+  <div class="absolute border-[.2rem] border-black w-12 h-12 bg-transparent rounded-full group-active:border-red-600 group-active:border-[1px]"></div>
+  <div class="absolute border-[.2rem] border-black w-16 h-16 bg-transparent rounded-full group-active:border-red-600 group-active:border-[1px]"></div>
+  <div class="absolute border-[.2rem] border-black w-20 h-20 bg-transparent rounded-full group-active:border-red-600 group-active:border-[1px]"></div>
+  <div class="absolute border-[.2rem] border-black w-24 h-24 bg-transparent rounded-full group-active:border-red-600 group-active:border-[1px]"></div>
+  <div class="absolute border-[.2rem] border-black w-28 h-28 bg-transparent rounded-full group-active:border-red-600 group-active:border-[1px]"></div>
+  <div class="flex space-x-4 z-0">
+    <div class="bg-white w-12 h-12 rotate-45 border-t-[.6rem] border-b-[.4rem] border-l-8 border-r-2 border-black after:border-3 after:border-black rounded-full group-hover:border-t-[1rem] group-hover:border-b-[.6rem] group-active:border-red-600 group-active:border-y-[.4rem] group-active:border-x-[.1rem]">
+      <div class="border-b-3 border-black"></div>
+    </div>
+    <div class="bg-white  w-12 h-12 -rotate-45  border-t-[.6rem] border-b-[.4rem] border-l-[.1rem] border-r-8 border-black after:border-3 after:border-black rounded-full group-hover:border-t-[1rem] group-hover:border-b-[.6rem] group-active:border-red-600 group-active:border-y-[.4rem] group-active:border-x-[.1rem]">
+      <div class="border-b-3 border-black"></div>
+    </div>
+  </div>
 
-.icon-cart {
-  width: 24.38px;
-  height: 30.52px;
-  transition: .2s linear;
-}
+  <div class="invisible absolute -top-14 group-hover:visible transition-all duration-200 delay-400">
+    <div class="absolute bg-gradient-to-b from-yellow-500 to-yellow-400 w-12 h-12 rotate-[25deg] left-4 top-2">
+      <div class="absolute w-10 h-10 bg-[#212121] animate-spin -left-4 -top-4"></div>
+      <div class="absolute w-8 h-8 bg-[#212121] animate-spin -left-4 top-2"></div>
+      <div class="absolute w-4 h-4 bg-[#212121] animate-spin -left-2  top-8"></div>
+      <div class="absolute w-10 h-10 bg-[#212121] animate-spin -right-4 -top-4"></div>
+      <div class="absolute w-8 h-8 bg-[#212121] animate-spin -right-4 top-2"></div>
+      <div class="absolute w-4 h-4 bg-[#212121] animate-spin -right-2  top-8"></div>
+    </div>
 
-.icon-cart path {
-  fill: rgb(240, 8, 8);
-  transition: .2s linear;
-}
+    <div class="absolute bg-gradient-to-b from-yellow-500 to-yellow-400 w-12 h-12 -rotate-[25deg] -left-16 top-2">
+      <div class="absolute w-10 h-10 bg-[#212121] animate-spin -left-4 -top-4"></div>
+      <div class="absolute w-8 h-8 bg-[#212121] animate-spin -left-4 top-2"></div>
+      <div class="absolute w-4 h-4 bg-[#212121] animate-spin -left-2  top-8"></div>
+      <div class="absolute w-10 h-10 bg-[#212121] animate-spin -right-4 -top-4"></div>
+      <div class="absolute w-8 h-8 bg-[#212121] animate-spin -right-4 top-2"></div>
+      <div class="absolute w-4 h-4 bg-[#212121] animate-spin -right-2  top-8"></div>
+    </div>
 
-.btn-cart:hover > .icon-cart {
-  transform: scale(1.2);
-}
+    <div class="absolute bg-gradient-to-b from-yellow-500 to-yellow-400 w-12 h-12 -rotate-[60deg] -left-[6.7rem] top-[3rem]">
+      <div class="absolute w-10 h-10 bg-[#212121] animate-spin -left-4 -top-4"></div>
+      <div class="absolute w-8 h-8 bg-[#212121] animate-spin -left-4 top-2"></div>
+      <div class="absolute w-4 h-4 bg-[#212121] animate-spin -left-2  top-8"></div>
+      <div class="absolute w-10 h-10 bg-[#212121] animate-spin -right-4 -top-4"></div>
+      <div class="absolute w-8 h-8 bg-[#212121] animate-spin -right-4 top-2"></div>
+      <div class="absolute w-4 h-4 bg-[#212121] animate-spin -right-2  top-8"></div>
+    </div>
 
-.btn-cart:hover > .icon-cart path {
-  fill: rgb(186, 34, 233);
-}
+    <div class="absolute bg-gradient-to-b from-yellow-500 to-yellow-400 w-12 h-12 rotate-[60deg] left-[3.6rem] top-[3rem]">
+      <div class="absolute w-10 h-10 bg-[#212121] animate-spin -left-4 -top-4"></div>
+      <div class="absolute w-8 h-8 bg-[#212121] animate-spin -left-4 top-2"></div>
+      <div class="absolute w-4 h-4 bg-[#212121] animate-spin -left-2  top-8"></div>
+      <div class="absolute w-10 h-10 bg-[#212121] animate-spin -right-4 -top-4"></div>
+      <div class="absolute w-8 h-8 bg-[#212121] animate-spin -right-4 top-2"></div>
+      <div class="absolute w-4 h-4 bg-[#212121] animate-spin -right-2  top-8"></div>
+    </div>
+  </div>
+</button>
 
-.btn-cart:hover::after {
-  visibility: visible;
-  opacity: 1;
-  top: 105%;
-}
-
-.quantity {
-  display: none;
-}
-
-</style>

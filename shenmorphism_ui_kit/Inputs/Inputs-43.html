@@ -1,86 +1,27 @@
-<div class="wave-group">
-  <input required="" type="text" class="input">
-  <span class="bar"></span>
-  <label class="label">
-    <span class="label-char" style="--index: 0">N</span>
-    <span class="label-char" style="--index: 1">a</span>
-    <span class="label-char" style="--index: 2">m</span>
-    <span class="label-char" style="--index: 3">e</span>
-  </label>
-</div>
+<input placeholder="Type here..." class="styled-input" type="text" />
+
 <style>
-/* From SHΞN™ Morphism by AbanoubMagdy1 - Tags: input */
-.wave-group {
+/* From SHΞN™ Morphism by vikramsinghnegi  - Tags: simple, material design, flashy, alert, input, modern */
+.styled-input {
   position: relative;
-}
-
-.wave-group .input {
-  font-size: 16px;
-  padding: 10px 10px 10px 5px;
-  display: block;
-  width: 200px;
-  border: none;
-  border-bottom: 1px solid #515151;
-  background: transparent;
-}
-
-.wave-group .input:focus {
-  outline: none;
-}
-
-.wave-group .label {
-  color: #999;
-  font-size: 18px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 10px;
-  display: flex;
-}
-
-.wave-group .label-char {
-  transition: 0.2s ease all;
-  transition-delay: calc(var(--index) * .05s);
-}
-
-.wave-group .input:focus ~ label .label-char,
-.wave-group .input:valid ~ label .label-char {
-  transform: translateY(-20px);
+  cursor: text;
   font-size: 14px;
-  color: #5264AE;
+  line-height: 20px;
+  padding: 0 16px;
+  height: 48px;
+  background-color: #fff;
+  border: 1px solid #d6d6e7;
+  border-radius: 3px;
+  color: rgb(35, 38, 59);
+  box-shadow: inset 0 1px 4px 0 rgb(119 122 175 / 30%);
+  overflow: hidden;
+  transition: all 100ms ease-in-out;
 }
 
-.wave-group .bar {
-  position: relative;
-  display: block;
-  width: 200px;
+.styled-input:focus {
+  border-color: #3c4fe0;
+  box-shadow: 0 1px 0 0 rgb(35 38 59 / 5%);
 }
-
-.wave-group .bar:before,.wave-group .bar:after {
-  content: '';
-  height: 2px;
-  width: 0;
-  bottom: 1px;
-  position: absolute;
-  background: #5264AE;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-
-.wave-group .bar:before {
-  left: 50%;
-}
-
-.wave-group .bar:after {
-  right: 50%;
-}
-
-.wave-group .input:focus ~ .bar:before,
-.wave-group .input:focus ~ .bar:after {
-  width: 50%;
-}
-
 
 </style>
+    

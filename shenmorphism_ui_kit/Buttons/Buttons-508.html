@@ -1,57 +1,22 @@
 <button class="button">
-  Hover Me!
+  Button
 </button>
 <style>
-/* From SHΞN™ Morphism by KhaledMatalkah - Tags: button, hover, transition */
+/* From SHΞN™ Morphism by roufkp - Tags: gradient, button, light, hover effect */
 .button {
-  display: inline-block;
-  padding: 15px 32px;
-  font-size: 17px;
-  font-weight: bold;
-  color: rgb(0, 0, 0);
-  background: transparent;
-  border-radius: 50px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  position: relative;
+  width: fit-content;
+  padding: 12px 24px;
+  border-radius: 100px;
   border: none;
-  z-index: 1;
+  box-shadow: inset 0px 22px 20px 10px rgb(0, 0, 0);
+  font-weight: 800;
+  color: antiquewhite;
+  letter-spacing: .1rem;
+  transition: all 0.51s ease-in-out;
 }
 
-.button {
-  overflow: hidden;
-}
-
-.button:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(255, 255, 255);
-  transition: left 0.8s ease-in-out;
-  z-index: -1;
-}
-
-.button:hover:before {
-  left: 0%;
-}
-
-.button:after {
-  content: "";
-  position: absolute;
-  bottom: 50%;
-  right: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(255, 255, 255);
-  transition: right 0.8s ease-in-out;
-  z-index: -1;
-}
-
-.button:hover:after {
-  right: 0%;
+.button:hover {
+  transform: translateY(5px);
+  box-shadow: inset 1px -11px 25px 10px rgb(91, 88, 240);
 }
 </style>

@@ -1,68 +1,109 @@
-<div class="loader"></div>
+<div class="lds-roller"><div></div><div></div><div></div><div></div></div>
 <style>
-/* From SHΞN™ Morphism by Ankesh2002 - Tags: loader */
-.loader {
+/* From SHΞN™ Morphism by Shoh2008 - Tags: loader */
+.lds-roller {
+  display: inline-block;
   position: relative;
-  width: 164px;
-  height: 164px;
+  width: 80px;
+  height: 80px;
 }
 
-.loader::before , .loader::after {
-  content: '';
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+
+.lds-roller div:after {
+  content: " ";
+  display: block;
   position: absolute;
-  width: 40px;
-  height: 40px;
-  background-color: #00bd26;
-  left: 50%;
-  top: 50%;
-  animation: rotate 1s ease-in infinite;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: yellow;
+  margin: -4px 0 0 -4px;
 }
 
-.loader::after {
-  width: 20px;
-  height: 20px;
-  background-color: #00bd26;
-  animation: rotate 1s ease-in infinite, moveY 1s ease-in infinite;
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
 }
 
-@keyframes moveY {
-  0% , 100% {
-    top: 10%
-  }
-
-  45% , 55% {
-    top: 59%
-  }
-
-  60% {
-    top: 40%
-  }
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
 }
 
-@keyframes rotate {
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+
+@keyframes lds-roller {
   0% {
-    transform: translate(-50%, -100%) rotate(0deg) scale(1 , 1)
-  }
-
-  25% {
-    transform: translate(-50%, 0%) rotate(180deg) scale(1 , 1)
-  }
-
-  45% , 55% {
-    transform: translate(-50%, 100%) rotate(180deg) scale(3 , 0.5)
-  }
-
-  60% {
-    transform: translate(-50%, 100%) rotate(180deg) scale(1, 1)
-  }
-
-  75% {
-    transform: translate(-50%, 0%) rotate(270deg) scale(1 , 1)
+    transform: rotate(0deg);
   }
 
   100% {
-    transform: translate(-50%, -100%) rotate(360deg) scale(1 , 1)
+    transform: rotate(360deg);
   }
 }
-    
+
 </style>

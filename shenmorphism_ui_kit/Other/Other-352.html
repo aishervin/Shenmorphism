@@ -1,66 +1,54 @@
-<label class="switch">
-  <input type="checkbox">
-  <span class="slider"></span>
-</label>
+<div class="radio-input">
+  <input name="radio" type="radio" class="input" checked="">
+  <input name="radio" type="radio" class="input">
+  <input name="radio" type="radio" class="input">
+</div>
 <style>
-/* From SHΞN™ Morphism by G4b413l - Tags: switch */
-.switch input {
- display: none;
+/* From SHΞN™ Morphism by Shoh2008 - Tags: radio */
+.input {
+  -webkit-appearance: none;
+ /* remove default */
+  display: block;
+  margin: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  vertical-align: middle;
+  box-shadow: hsla(0,0%,100%,.15) 0 1px 1px, inset hsla(0,0%,0%,.5) 0 0 0 1px;
+  background-color: hsla(0,0%,0%,.2);
+  background-image: -webkit-radial-gradient( hsla(200,100%,90%,1) 0%, hsla(200,100%,70%,1) 15%, hsla(200,100%,60%,.3) 28%, hsla(200,100%,30%,0) 70% );
+  background-repeat: no-repeat;
+  -webkit-transition: background-position .15s cubic-bezier(.8, 0, 1, 1),
+    -webkit-transform .25s cubic-bezier(.8, 0, 1, 1);
+  outline: none;
 }
 
-.switch {
- width: 60px;
- height: 30px;
- position: relative;
+.input:checked {
+  -webkit-transition: background-position .2s .15s cubic-bezier(0, 0, .2, 1),
+    -webkit-transform .25s cubic-bezier(0, 0, .2, 1);
 }
 
-.slider {
- position: absolute;
- top: 0;
- bottom: 0;
- left: 0;
- right: 0;
- border-radius: 30px;
- box-shadow: 0 0 0 2px #777, 0 0 4px #777;
- cursor: pointer;
- border: 4px solid transparent;
- overflow: hidden;
- transition: 0.2s;
+.input:active {
+  -webkit-transform: scale(1.5);
+  -webkit-transition: -webkit-transform .1s cubic-bezier(0, 0, .2, 1);
 }
 
-.slider:before {
- position: absolute;
- content: "";
- width: 100%;
- height: 100%;
- background-color: #777;
- border-radius: 30px;
- transform: translateX(-30px);
- /*translateX(-(w-h))*/
- transition: 0.2s;
+
+
+/* The up/down direction logic */
+
+.input,
+.input:active {
+  background-position: 0 24px;
 }
 
-input:checked + .slider:before {
- transform: translateX(30px);
- /*translateX(w-h)*/
- background-color: limeGreen;
+.input:checked {
+  background-position: 0 0;
 }
 
-input:checked + .slider {
- box-shadow: 0 0 0 2px limeGreen, 0 0 8px limeGreen;
-}
-
-.switch200 .slider:before {
- width: 200%;
- transform: translateX(-82px);
- /*translateX(-(w-h))*/
-}
-
-.switch200 input:checked + .slider:before {
- background-color: red;
-}
-
-.switch200 input:checked + .slider {
- box-shadow: 0 0 0 2px red, 0 0 8px red;
+.input:checked ~ .input,
+.input:checked ~ .input:active {
+  background-position: 0 -24px;
 }
 </style>

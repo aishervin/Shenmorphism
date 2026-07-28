@@ -1,11 +1,10 @@
 <label class="container">
-  <input type="checkbox" checked="checked">
+  <input checked="checked" type="checkbox">
   <div class="checkmark"></div>
 </label>
 <style>
-/* From SHΞN™ Morphism by csozidev - Tags: checkbox */
-/* Green glow checkbox made by: csozi | Website: www.csozi.hu*/
-
+/* From SHΞN™ Morphism by gharsh11032000 - Tags: checkbox, toggle, click effect */
+/* Hide the default checkbox */
 .container input {
   position: absolute;
   opacity: 0;
@@ -20,24 +19,51 @@
   cursor: pointer;
   font-size: 20px;
   user-select: none;
-  background-color: #676767;
-  padding: 4px;
-  border-radius: 25px;
 }
 
+/* Create a custom checkbox */
 .checkmark {
   position: relative;
   top: 0;
   left: 0;
   height: 1.3em;
   width: 1.3em;
-  border-radius: 1rem;
-  background-color: #004000;
-  transition: 0.1s;
+  border: 2px solid #414141;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
+/* When the checkbox is checked */
 .container input:checked ~ .checkmark {
-  background-color: #00de00;
-  box-shadow: 0 0 10px #00ff00;
+  background: #0974f1;
+  border-color: #0974f1;
+  filter: drop-shadow(5px 5px);
 }
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+}
+
+.container .checkmark:after {
+  inset: 0;
+  margin: auto;
+  width: 0.5em;
+  height: 0.5em;
+  background-color: #414141;
+  border-width: 0 0.15em 0.15em 0;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  width: 0.25em;
+  height: 0.5em;
+  border: solid #414141;
+  border-width: 0 0.15em 0.15em 0;
+  border-color: white;
+  background-color: transparent;
+  transform: rotate(45deg);
+}
+
+
 </style>

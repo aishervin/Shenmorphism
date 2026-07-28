@@ -1,17 +1,58 @@
-<!-- From SHΞN™ Morphism by andrew-demchenk0 - Tags: button, send, hover effect, click effect, click animation, tailwind -->
-<button class="group relative z-1 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br flex items-center font-medium text-white transition-all duration-200 ease-in-out rounded-lg px-4 py-2 active:scale-95 active:shadow-inner">
-  <div class="absolute -z-10 -inset-0.5 bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-xl group-hover:opacity-100 animate-pulse group-hover:inset-10"></div>
-  <div class="svg-wrapper transform group-hover:translate-x-5 group-hover:rotate-45 transition-all duration-400">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="">
-      <path fill="none" d="M0 0h24v24H0z"></path>
-      <path fill="#fff" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
-    </svg>
-  </div>
-  <span class="ml-1 text-white transition-all duration-300 group-hover:text-transparent">Send</span>
+<button>
+  click me
 </button>
+<style>
+/* From SHΞN™ Morphism by ercnersoy - Tags: button */
+button {
+  padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+  box-shadow: 0px 0px 0px 3px black;
+  border: 0;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: #ffc83d;
+  color: black;
+  font-weight: bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+  transition: all .9s ease-in-out;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
 
+button:hover {
+  background-color: #f03a17;
+  color: white;
+}
 
+button::before {
+  content: "😍";
+  position: absolute;
+  left: -0rem;
+  top: 0rem;
+  opacity: 1;
+  font-size: 1.55rem;
+  transition: all .9s ease-in-out;
+  transform: rotate(0deg);
+}
 
+button:hover::before {
+  content: "😘";
+  opacity: 1;
+  visibility: visible;
+  transform: rotate(40deg);
+  font-size: 2.5rem;
+  top: -0.75rem;
+  transition: all .9s ease-in-out;
+  animation: rightRun 2s forwards;
+}
 
+button:active::before {
+  content: "🥰";
+}
 
-
+@keyframes rightRun {
+  100% {
+    transform: translateX(140px);
+  }
+}
+</style>

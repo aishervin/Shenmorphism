@@ -1,146 +1,100 @@
-<button class="bn">Hover!</button>
+<button class="rainbow-btn">
+  <div class="content">
+    <svg
+      viewBox="0 0 16 16"
+      class="bi bi-lightning-charge-fill"
+      fill="currentColor"
+      height="25"
+      width="25"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"
+      ></path>
+    </svg>
+
+    Join now
+  </div>
+</button>
+
 <style>
-/* From SHΞN™ Morphism by Amir10Amir - Tags: gradient, button */
-button {
-  --border-radius: 25px;
-  --border-width: 7px;
-  appearance: none;
+/* From SHΞN™ Morphism by zebra76966  - Tags: animation, gradient, button, click animation */
+.rainbow-btn {
+  border: 2px;
+  border-radius: 35px;
+  width: 18em;
+  font-size: 2rem;
+  padding: 28px 28px;
+  color: black;
+  background: transparent;
   position: relative;
-  padding: 1em 2em;
-  border: 0;
-  background-color: #212121;
-  font-family: "Roboto", Arial, "Segoe UI", sans-serif;
-  font-size: 18px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.rainbow-btn::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  content: "";
+  height: 4.3em;
+  border-radius: 35px;
+  width: 18em;
+  filter: blur(1px);
+  background: radial-gradient(
+      at 0% 0%,
+      hsla(312, 66%, 67%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 28% 79%, hsla(355, 80%, 64%, 1) 0px, transparent 50%),
+    radial-gradient(at 100% 1%, hsla(279, 96%, 65%, 1) 0px, transparent 50%),
+    radial-gradient(at 5% 91%, hsla(289, 80%, 70%, 1) 0px, transparent 50%),
+    radial-gradient(at 50% 37%, hsla(28, 100%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 27% 38%, hsla(189, 0%, 100%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 1) 0px, transparent 50%),
+    radial-gradient(at 64% 78%, hsla(340, 100%, 76%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 1) 0px, transparent 50%),
+    radial-gradient(at 72% 55%, hsla(240, 68%, 97%, 1) 0px, transparent 50%),
+    radial-gradient(at 51% 14%, hsla(28, 100%, 74%, 1) 0px, transparent 50%);
+}
+
+.rainbow-btn .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 8px;
   font-weight: 500;
-  color: #ffff;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  box-shadow: inset 0 0 1px 2px rgba(255, 255, 255, 0.712);
+}
+.rainbow-btn .content::before {
+  content: " ";
+  border: 10px double rgba(247, 201, 232, 0.5);
+  border-radius: 35px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 17em;
+  height: 3em;
+  padding: 10px 8px;
+  position: absolute;
   z-index: 2;
 }
 
-button::after {
-  --m-i: linear-gradient(#000, #000);
-  --m-o: content-box, padding-box;
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  padding: var(--border-width);
-  background-image: conic-gradient(
-		#ff0080,
-		#ff0080,
-		#ff0080,
-		#ff0080,
-		#ff0080,
-		#ff0080,
-		#ff0080
-	);
-  -webkit-mask-image: var(--m-i), var(--m-i);
-  mask-image: var(--m-i), var(--m-i);
-  -webkit-mask-origin: var(--m-o);
-  mask-origin: var(--m-o);
-  mask-clip: var(--m-o);
-  mask-composite: exclude;
-  -webkit-mask-composite: destination-out;
-  filter: hue-rotate(0);
-  animation: rotate-hue634 linear 500ms infinite;
-  animation-play-state: paused;
-  border-radius: 20px;
-  border-color: #000;
+.rainbow-btn .content svg {
+  margin-right: 10px;
 }
 
-button:hover::after {
-  animation-play-state: running;
-  border-radius: 10px;
+.rainbow-btn:hover {
+  scale: 1.1;
+}
+.rainbow-btn:focus {
+  scale: 0.9;
 }
 
-@keyframes rotate-hue634 {
-  to {
-    filter: hue-rotate(1turn);
-  }
-}
-
-button,
-button::after {
-  box-sizing: border-box;
-  border-radius: 20px;
-}
-
-button:active {
-  --border-width: 5px;
-}
-
-.bn {
-  padding: 0.9em 1.6em;
-  border: none;
-  outline: none;
-  color: #FFF;
-  font-family: inherit;
-  font-weight: 500;
-  font-size: 17px;
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 32px;
-}
-
-.bn::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(46, 46, 46);
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
-
-.bn::before {
-  content: "";
-  background: linear-gradient(
-    45deg,
-    #07d888, #e40851, #2f00ff, #00ff37,
-      #ec0808, #2600ff, #0bd157, #2f00ff
-);
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 600%;
-  z-index: -1;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  filter: blur(8px);
-  animation: glowing345 20s linear infinite;
-  transition: opacity .3s ease-in-out;
-  border-radius: 20px;
-  opacity: 0;
-}
-
-@keyframes glowing345 {
-  0% {
-    background-position: 0 0;
-  }
-
-  50% {
-    background-position: 400% 0;
-  }
-
-  100% {
-    background-position: 0 0;
-  }
-}
-
-.bn:hover::before {
-  opacity: 1;
-}
-
-.bn:active:after {
-  background: transparent;
-}
-
-.bn:active {
-  color: #000;
-  font-weight: bold;
-}
 </style>
+    

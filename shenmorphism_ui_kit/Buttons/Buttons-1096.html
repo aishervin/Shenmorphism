@@ -1,76 +1,75 @@
-<button class="Btn">
-  <span class="leftContainer">
-    <svg fill="white" viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"></path></svg>
-    <span class="like">Like</span>
-  </span>
-  <span class="likeCount">
-    2,050
-  </span>
+<button class="botao">
+  <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mysvg"><g id="SVGRepo_bgCarrier" stroke-width="0">
+    </g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+       <g id="Interface / Download"> 
+       <path id="Vector" d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" stroke="#f1f1f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+       </path>
+    </g> </g>
+  </svg>
+  <span class="texto">Download</span>
 </button>
 <style>
-/* From SHΞN™ Morphism by vinodjangid07 - Tags: button, like, click effect */
-.Btn {
-  width: 140px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+/* From SHΞN™ Morphism by Tsiangana - Tags: animation, button, hover, space, download, futuristic, gradients, hover button */
+.botao {
+  width: 125px;
+  height: 45px;
+  border-radius: 20px;
   border: none;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.089);
+  box-shadow: 1px 1px rgba(107, 221, 215, 0.37);
+  padding: 5px 10px;
+  background: rgb(47,93,197);
+  background: linear-gradient(160deg, rgba(47,93,197,1) 0%, rgba(46,86,194,1) 5%, rgba(47,93,197,1) 11%, rgba(59,190,230,1) 57%, rgba(0,212,255,1) 71%);
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  font-weight: 505;
+  font-size: 16px;
+  line-height: 1;
   cursor: pointer;
-  background-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(59, 190, 230, 0.568));
+  transition: .5s linear;
 }
 
-.leftContainer {
-  width: 60%;
-  height: 100%;
-  background-color: rgb(238, 0, 0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+.botao .mysvg {
+  display: none;
 }
 
-.leftContainer .like {
-  color: white;
-  font-weight: 600;
+.botao:hover {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: .5s linear;
 }
 
-.likeCount {
-  width: 40%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(238, 0, 0);
-  font-weight: 600;
-  position: relative;
-  background-color: white;
+.botao:hover .texto {
+  display: none;
 }
 
-.likeCount::before {
-  height: 8px;
-  width: 8px;
+.botao:hover .mysvg {
+  display: inline;
+}
+
+.botao:hover::before {
+  content: '';
   position: absolute;
-  content: "";
-  background-color: rgb(255, 255, 255);
-  transform: rotate(45deg);
-  left: -4px;
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border: 3.5px solid transparent;
+  border-top: 3.5px solid #fff;
+  border-right: 3.5px solid #fff;
+  border-radius: 50%;
+  animation: animateC 2s linear infinite;
 }
 
-.Btn:hover .leftContainer {
-  background-color: rgb(219, 0, 0);
-}
+@keyframes animateC {
+  0% {
+    transform: rotate(0deg);
+  }
 
-.Btn:active .leftContainer {
-  background-color: rgb(201, 0, 0);
-}
-
-.Btn:active .leftContainer svg {
-  transform: scale(1.15);
-  transform-origin: top;
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 </style>

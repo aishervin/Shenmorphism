@@ -1,70 +1,68 @@
-<div class="pinwheel">
-    <div class="pinwheel__line"></div>
-    <div class="pinwheel__line"></div>
-    <div class="pinwheel__line"></div>
-    <div class="pinwheel__line"></div>
-    <div class="pinwheel__line"></div>
-    <div class="pinwheel__line"></div>
-</div>
+<div class="loader"></div>
 <style>
-/* From SHΞN™ Morphism by G4b413l - Tags: loader */
-.pinwheel {
-  --uib-size: 45px;
-  --uib-speed: 0.8s;
-  --uib-color: #312f2b;
-  --uib-line-weight: 4px;
+/* From SHΞN™ Morphism by Avishek255874 - Tags: loader */
+.loader {
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: var(--uib-size);
-  width: var(--uib-size);
 }
 
-.pinwheel__line {
+.loader::before , .loader::after {
+  content: '';
   position: absolute;
-  top: calc(50% - var(--uib-line-weight) / 2);
-  left: 0;
-  height: var(--uib-line-weight);
-  width: 100%;
-  border-radius: calc(var(--uib-line-weight) / 2);
-  background-color: var(--uib-color);
-  animation: rotate81232 var(--uib-speed) ease-in-out infinite;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% , -50%);
+  width: 48em;
+  height: 48em;
+  background-image: radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0),
+    radial-gradient(circle 10px, #FFF 100%, transparent 0);
+  background-position: 0em -18em, 0em 18em, 18em 0em, -18em 0em,
+                       13em -13em, -13em -13em, 13em 13em, -13em 13em;
+  background-repeat: no-repeat;
+  font-size: 0.5px;
+  border-radius: 50%;
+  animation: blast 1s ease-in infinite;
 }
 
-.pinwheel__line:nth-child(2) {
-  animation-delay: calc(var(--uib-speed) * 0.075);
-  opacity: 0.8;
+.loader::after {
+  font-size: 1px;
+  background: #fff;
+  animation: bounce 1s ease-in infinite;
 }
 
-.pinwheel__line:nth-child(3) {
-  animation-delay: calc(var(--uib-speed) * 0.15);
-  opacity: 0.6;
+@keyframes bounce {
+  0% , 100% {
+    font-size: 0.75px
+  }
+
+  50% {
+    font-size: 1.5px
+  }
 }
 
-.pinwheel__line:nth-child(4) {
-  animation-delay: calc(var(--uib-speed) * 0.225);
-  opacity: 0.4;
-}
+@keyframes blast {
+  0% , 40% {
+    font-size: 0.5px;
+  }
 
-.pinwheel__line:nth-child(5) {
-  animation-delay: calc(var(--uib-speed) * 0.3);
-  opacity: 0.2;
-}
-
-.pinwheel__line:nth-child(6) {
-  animation-delay: calc(var(--uib-speed) * 0.375);
-  opacity: 0.1;
-}
-
-@keyframes rotate81232 {
-  0% {
-    transform: rotate(0deg);
+  70% {
+    opacity: 1;
+    font-size: 4px;
   }
 
   100% {
-    transform: rotate(180deg);
+    font-size: 6px;
+    opacity: 0;
   }
 }
-
 </style>

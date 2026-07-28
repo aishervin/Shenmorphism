@@ -1,101 +1,43 @@
 <div class="loader">
- <div class="dot-one"></div> 
- <div class="dot-two">-  -</div> 
- <div class="dot-three"></div> 
+  <div class="box-load1"></div>
+  <div class="box-load2"></div>
+  <div class="box-load3"></div>
 </div>
 <style>
-/* From SHΞN™ Morphism by Rkyz - Tags: animation, loader, animal */
+/* From SHΞN™ Morphism by Lmickk2 - Tags: loading, loader, light&dark */
 .loader {
-  height: 50px;
-  width: 20rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
+  transition: all 0.4s;
 }
 
-.dot-two {
-  background-color: black;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  padding: 4px;
-  color: white;
+.loader div {
+  margin-left: 0.8rem;
+  background-color: rgb(34, 34, 34);
+  box-shadow: inset 2px 2px 10px black;
+  border-radius: 100%;
+  height: 1rem;
+  width: 1rem;
 }
 
-.dot-one,
-.dot-three {
-  background-color: black;
-  height: 30px;
-  width: 20px;
-  border-radius: 50%;
-  text-align: center;
-  animation: flap-wings 1s infinite ease-in-out;
+.box-load1 {
+  animation: brighten 1.2s infinite;
 }
 
-.dot-two {
-  position: relative;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  background-color: black;
-  animation: flap-wings 1s infinite ease-in-out;
-  animation-delay: 0.1s;
+.box-load2 {
+  animation: brighten 1.2s infinite;
+  animation-delay: .2s;
 }
 
-.dot-two::before,
-.dot-two::after {
-  content: "";
-  position: absolute;
-  background-color: black;
+.box-load3 {
+  animation: brighten 1.2s infinite;
+  animation-delay: .4s;
 }
 
-.dot-two::before {
-  height: 20px;
-  width: 10px;
-  bottom: 20px;
-  left: 1px;
-  border-radius: 50% 50% 0 0;
-  transform: rotate(-20deg);
-}
-
-.dot-two::after {
-  height: 20px;
-  width: 10px;
-  bottom: 20px;
-  left: 19px;
-  transform: rotate(20deg);
-  border-radius: 50% 50% 0 0;
-}
-
-.dot-one::before,
-.dot-one::after,
-.dot-three::before,
-.dot-three::after {
-  content: "";
-  position: absolute;
-  background-color: white;
-}
-
-.dot-one::before,
-.dot-three::before {
-  height: 30px;
-  width: 20px;
-  top: 10px;
-  left: 0;
-  background-color: #e8e8e8;
- /*chnage this if u need dark mode to #212121 if need light mode #e8e8e8*/
-  border-radius: 50% 50% 0 0;
-}
-
-@keyframes flap-wings {
-  0%,
+@keyframes brighten {
   100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
+    background-color: rgb(165, 165, 165);
+    box-shadow: none;
   }
 }
+
 </style>

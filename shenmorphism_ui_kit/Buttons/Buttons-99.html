@@ -1,63 +1,52 @@
-<button class="button">Button</button>
-
+<button>
+  <span class="text">Button</span>
+</button>
 <style>
-/* From SHΞN™ Morphism by Dashrath-Sharma  - Tags: glassmorphism, flashy, button, shadow, glow, border, box-shadow, buttons */
+/* From SHΞN™ Morphism by cssbuttons-io - Tags: gradient, button */
 button {
-  cursor: pointer;
-  padding: 1em 2em;
-  font-weight: bold;
-  font-size: 20px;
-  color: #fff;
-  position: relative;
-  overflow: hidden;
-  background: rgba(60, 73, 203, 0.35);
-  box-shadow: 0 0px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(14.5px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  -webkit-backdrop-filter: blur(14.5px);
+ align-items: center;
+ background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+ border: 0;
+ border-radius: 8px;
+ box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+ box-sizing: border-box;
+ color: #FFFFFF;
+ display: flex;
+ font-family: Phantomsans, sans-serif;
+ font-size: 18px;
+ justify-content: center;
+ line-height: 1em;
+ max-width: 100%;
+ min-width: 140px;
+ padding: 3px;
+ text-decoration: none;
+ user-select: none;
+ -webkit-user-select: none;
+ touch-action: manipulation;
+ white-space: nowrap;
+ cursor: pointer;
+ transition: all .3s;
 }
 
+button:active,
 button:hover {
-  box-shadow: 0px 0 32px 0 rgba(31, 38, 135, 0.37),
-    0px 0 32px 0 rgba(31, 38, 135, 0.37), 0 0 42px 0px rgba(31, 38, 135, 0.37),
-    0 0 52px 0 rgba(31, 38, 135, 0.37);
-  border: 1px solid rgba(255, 255, 255, 0.58);
+ outline: 0;
 }
 
-button,
-button::before {
-  display: grid;
-  place-items: center;
-  border-radius: 10px;
-  box-shadow: 0 0px 32px 0 rgba(31, 38, 135, 0.37);
+button span {
+ background-color: rgb(5, 6, 45);
+ padding: 16px 24px;
+ border-radius: 6px;
+ width: 100%;
+ height: 100%;
+ transition: 300ms;
 }
 
-button::before {
-  content: "Button";
-  position: absolute;
-  background: blue;
-  width: 90%;
-  height: 80%;
-  background: rgba(26, 18, 241, 0.25);
-  backdrop-filter: blur(18.5px);
-  -webkit-backdrop-filter: blur(18.5px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  transition: 0.4s;
+button:hover span {
+ background: none;
 }
 
-button:hover::before {
-  background: rgba(51, 57, 236, 0.4);
-  box-shadow: 1px 1px 2px 0 rgba(31, 38, 135, 0.37),
-    2px 2px 2px 0 rgba(31, 38, 135, 0.37), 0 0px 32px 0 rgba(31, 38, 135, 0.37),
-    0 0px 32px 1px rgba(31, 38, 135, 0.37), 0 0px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(5.5px);
-  -webkit-backdrop-filter: blur(5.5px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+button:active {
+ transform: scale(0.9);
 }
-button:active::before {
-  transform: scale(0.67);
-}
-
 </style>
-    

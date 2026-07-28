@@ -1,54 +1,58 @@
-<div class="loader">
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
+<div class="loader3">
+  <div class="circle1"></div>
+  <div class="circle1"></div>
+  <div class="circle1"></div>
+  <div class="circle1"></div>
+  <div class="circle1"></div>
 </div>
 
 <style>
-/* From SHΞN™ Morphism by coding-masala - Tags: loader */
-.loader {
+/* From SHΞN™ Morphism by Satwinder04 - Tags: loader */
+.loader3 {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100px;
+  align-items: center;
 }
 
-.box {
+.circle1 {
   width: 20px;
   height: 20px;
-  margin: 0 8px;
   border-radius: 50%;
-  animation: jump_4123 1s ease-in-out infinite;
+  margin: 0 10px;
+  background-color: #333;
+  animation: circle1 1s ease-in-out infinite;
 }
 
-.box:nth-child(1) {
-  background-color: #4e4e4e;
+.circle1:nth-child(2) {
   animation-delay: 0.2s;
 }
 
-.box:nth-child(2) {
-  background-color: #bdbdbd;
+.circle1:nth-child(3) {
   animation-delay: 0.4s;
 }
 
-.box:nth-child(3) {
-  background-color: #4e4e4e;
+.circle1:nth-child(4) {
   animation-delay: 0.6s;
 }
 
-.box:nth-child(4) {
-  background-color: #bdbdbd;
+.circle1:nth-child(5) {
   animation-delay: 0.8s;
 }
 
-@keyframes jump_4123 {
-  0%, 100% {
-    transform: translateY(0);
+@keyframes circle1 {
+  0% {
+    transform: scale(1);
+    opacity: 1;
   }
 
   50% {
-    transform: translateY(-30px);
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 

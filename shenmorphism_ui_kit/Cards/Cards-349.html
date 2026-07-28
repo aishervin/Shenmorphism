@@ -1,41 +1,23 @@
-    <div class="border"><div class="content"></div></div>
+
+<div class="card">Good morning</div>
 <style>
-/* From SHΞN™ Morphism by yariklnv - Tags: card, box, div */
-@keyframes rotate {
-  from {
-    transform: rotateZ(0deg);
-  }
-
-  to {
-    transform: rotateZ(360deg);
-  }
+/* From SHΞN™ Morphism by pedertanberg - Tags: card */
+.card {
+ width: 150px;
+ height: 200px;
+ background: #ffffff;
+ transform: rotate(20deg) skew(-10deg, -5deg);
+ transition: box_shadow .25s ease-in;
+ display: flex;
+ justify-content: center;
+ text-align: center;
+ font-size: 20px;
+ line-height: 200px;
 }
 
-.border {
-  background-image: linear-gradient(to left, red, blue);
-  width: 100px;
-  height: 100px;
-  border-radius: 20px;
-}
-
-.border::before {
-  background-image: linear-gradient(to left, red, blue);
-  content: "";
-  position: absolute;
-  z-index: -1;
-  height: 100px;
-  width: 100px;
-  scale: 1.1;
-  filter: blur(25px);
-  animation: rotate 4s linear infinite;
-  border-radius: 100px;
-}
-
-.content {
-  background-color: #111;
-  width: 100px;
-  height: 100px;
-  border-radius: 19px;
-  scale: 0.9;
+.card:hover {
+ box-shadow: rgba(255,255,255,0.5) 5px 3px,
+  rgba(255,255,255,0.4) 10px 6px,
+  rgba(255,255,255,0.3) 15px 9px;
 }
 </style>

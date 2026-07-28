@@ -1,124 +1,103 @@
-<div class="container">
-  <div class="cloud front">
-    <span class="left-front"></span>
-    <span class="right-front"></span>
+<div class="loader">
+  <div class="clockLoader">
+    <div class="clockHand minuteHand"></div>
+    <div class="clockHand hourHand"></div>
   </div>
-  <span class="sun sunshine"></span>
-  <span class="sun"></span>
-  <div class="cloud back">
-    <span class="left-back"></span>
-    <span class="right-back"></span>
+  <div class="decorativeElementContainer">
+    <div class="decorativeElement decorativeElement1"></div>
+    <div class="decorativeElement decorativeElement2"></div>
   </div>
 </div>
+
 <style>
-/* From SHΞN™ Morphism by zanina-yassine - Tags: loader */
-.container {
-  width: 250px;
-  height: 250px;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* From SHΞN™ Morphism by Subaashbala  - Tags: glassmorphism, animation, loader, circle loader, box-shadow, loading animation */
+.loader {
+  position: relative;
+  --duration: 1500ms; /* minute hand's rotation time duration */
 }
-
-.cloud {
-  width: 250px;
+.clockLoader {
+  width: 15em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 0.25em solid black;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.171);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  animation: floatEffect 15s linear infinite alternate;
 }
-
-.front {
-  padding-top: 45px;
-  margin-left: 25px;
-  display: inline;
+.clockLoader::after {
+  content: "";
   position: absolute;
-  z-index: 11;
-  animation: clouds 8s infinite;
-  animation-timing-function: ease-in-out;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -65%);
+  width: 0.5em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: black;
 }
-
-.back {
-  margin-top: -30px;
-  margin-left: 150px;
-  z-index: 12;
-  animation: clouds 12s infinite;
-  animation-timing-function: ease-in-out;
-}
-
-.right-front {
-  width: 45px;
-  height: 45px;
-  border-radius: 50% 50% 50% 0%;
-  background-color: #4c9beb;
-  display: inline-block;
-  margin-left: -25px;
-  z-index: 5;
-}
-
-.left-front {
-  width: 65px;
-  height: 65px;
-  border-radius: 50% 50% 0% 50%;
-  background-color: #4c9beb;
-  display: inline-block;
-  z-index: 5;
-}
-
-.right-back {
-  width: 50px;
-  height: 50px;
-  border-radius: 50% 50% 50% 0%;
-  background-color: #4c9beb;
-  display: inline-block;
-  margin-left: -20px;
-  z-index: 5;
-}
-
-.left-back {
-  width: 30px;
-  height: 30px;
-  border-radius: 50% 50% 0% 50%;
-  background-color: #4c9beb;
-  display: inline-block;
-  z-index: 5;
-}
-
-.sun {
-  width: 120px;
-  height: 120px;
-  background: -webkit-linear-gradient(to right, #fcbb04, #fffc00);
-  background: linear-gradient(to right, #fcbb04, #fffc00);
-  border-radius: 60px;
-  display: inline;
+.clockHand {
   position: absolute;
+  background-color: black;
+  border-radius: 5em;
+  width: 0.25em;
+  transform-origin: bottom;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -100%);
 }
-
-.sunshine {
-  animation: sunshines 2s infinite;
+.hourHand {
+  height: 20%;
+  animation: rotateHand calc(12 * var(--duration)) linear infinite;
 }
-
-@keyframes sunshines {
+.minuteHand {
+  height: 30%;
+  animation: rotateHand var(--duration) linear infinite;
+}
+.decorativeElementContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  animation: rotate calc(50 * var(--duration)) linear infinite;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+}
+.decorativeElement {
+  position: relative;
+  width: 7em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  z-index: -1;
+}
+.decorativeElement1 {
+  left: 50% !important;
+  background: orangered;
+  animation: floatEffect 16ss linear infinite;
+}
+.decorativeElement2 {
+  right: 55%;
+  background: hotpink;
+}
+@keyframes rotateHand {
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+@keyframes rotate {
+  to {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+@keyframes floatEffect {
   0% {
-    transform: scale(1);
-    opacity: 0.6;
+    transform: translate(0);
   }
-
   100% {
-    transform: scale(1.4);
-    opacity: 0;
-  }
-}
-
-@keyframes clouds {
-  0% {
-    transform: translateX(15px);
-  }
-
-  50% {
-    transform: translateX(0px);
-  }
-
-  100% {
-    transform: translateX(15px);
+    transform: translate(0, 2em);
   }
 }
 
 </style>
+    

@@ -1,120 +1,68 @@
-<div class="checkbox-wrapper-13">
-  <input type="checkbox" id="c1-13"> 
-</div>
-
+<label class="burger" for="burger">
+  <input type="checkbox" id="burger">
+  <span></span>
+  <span></span>
+  <span></span>
+</label>
 <style>
-/* From SHΞN™ Morphism by guilhermeyohan - Tags: checkbox */
-@supports (-webkit-appearance: none) or (-moz-appearance: none) {
-  .checkbox-wrapper-13 input[type=checkbox] {
-    --active: #275EFE;
-    --active-inner: #fff;
-    --focus: 2px rgba(39, 94, 254, .3);
-    --border: #BBC1E1;
-    --border-hover: #275EFE;
-    --background: #fff;
-    --disabled: #F6F8FF;
-    --disabled-inner: #E1E6F9;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    height: 21px;
-    outline: none;
-    display: inline-block;
-    vertical-align: top;
-    position: relative;
-    margin: 0;
-    cursor: pointer;
-    border: 1px solid var(--bc, var(--border));
-    background: var(--b, var(--background));
-    transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
-  }
-
-  .checkbox-wrapper-13 input[type=checkbox]:after {
-    content: "";
-    display: block;
-    left: 0;
-    top: 0;
-    position: absolute;
-    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
-  }
-
-  .checkbox-wrapper-13 input[type=checkbox]:checked {
-    --b: var(--active);
-    --bc: var(--active);
-    --d-o: .3s;
-    --d-t: .6s;
-    --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
-  }
-
-  .checkbox-wrapper-13 input[type=checkbox]:disabled {
-    --b: var(--disabled);
-    cursor: not-allowed;
-    opacity: 0.9;
-  }
-
-  .checkbox-wrapper-13 input[type=checkbox]:disabled:checked {
-    --b: var(--disabled-inner);
-    --bc: var(--border);
-  }
-
-  .checkbox-wrapper-13 input[type=checkbox]:disabled + label {
-    cursor: not-allowed;
-  }
-
-  .checkbox-wrapper-13 input[type=checkbox]:hover:not(:checked):not(:disabled) {
-    --bc: var(--border-hover);
-  }
-
-  .checkbox-wrapper-13 input[type=checkbox]:focus {
-    box-shadow: 0 0 0 var(--focus);
-  }
-
-  .checkbox-wrapper-13 input[type=checkbox]:not(.switch) {
-    width: 21px;
-  }
-
-  .checkbox-wrapper-13 input[type=checkbox]:not(.switch):after {
-    opacity: var(--o, 0);
-  }
-
-  .checkbox-wrapper-13 input[type=checkbox]:not(.switch):checked {
-    --o: 1;
-  }
-
-  .checkbox-wrapper-13 input[type=checkbox] + label {
-    display: inline-block;
-    vertical-align: middle;
-    cursor: pointer;
-    margin-left: 4px;
-  }
-
-  .checkbox-wrapper-13 input[type=checkbox]:not(.switch) {
-    border-radius: 7px;
-  }
-
-  .checkbox-wrapper-13 input[type=checkbox]:not(.switch):after {
-    width: 5px;
-    height: 9px;
-    border: 2px solid var(--active-inner);
-    border-top: 0;
-    border-left: 0;
-    left: 7px;
-    top: 4px;
-    transform: rotate(var(--r, 20deg));
-  }
-
-  .checkbox-wrapper-13 input[type=checkbox]:not(.switch):checked {
-    --r: 43deg;
-  }
+/* From SHΞN™ Morphism by Cevorob - Tags: hamburger */
+.burger {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
 }
 
-.checkbox-wrapper-13 * {
-  box-sizing: inherit;
+.burger input {
+  display: none;
 }
 
-.checkbox-wrapper-13 *:before,
-  .checkbox-wrapper-13 *:after {
-  box-sizing: inherit;
+.burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: black;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
 }
 
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
 
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
 </style>

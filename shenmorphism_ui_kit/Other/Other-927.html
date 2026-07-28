@@ -1,59 +1,177 @@
-<div class="glitch" data-text="Loading ...">Loading ...</div>
-
+<div class="container">
+  <div class="dash first"></div>
+  <div class="dash seconde"></div>
+  <div class="dash third"></div>
+  <div class="dash fourth"></div>
+</div>
 <style>
-/* From SHΞN™ Morphism by youngjid  - Tags: loader, dark, glitch, text animation, css effect, glitch Effect */
-.glitch {
-  position: relative;
-  font-size: 60px;
-  font-weight: bold;
-  color: #ffffff;
-  letter-spacing: 3px;
-  z-index: 1;
-}
-
-.glitch:before,
-.glitch:after {
-  display: block;
-  content: attr(data-text);
+/* From SHΞN™ Morphism by NlghtM4re - Tags: loader */
+.container {
   position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.8;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
 }
 
-.glitch:before {
-  animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-  color: #00ffff;
-  z-index: -1;
+.dash {
+  margin: 0 15px;
+  width: 35px;
+  height: 15px;
+  border-radius: 8px;
+  background: rgb(82, 159, 246);
+  box-shadow: rgb(82, 159, 246) 0 0 15px 0;
 }
 
-.glitch:after {
-  animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both
-    infinite;
-  color: #ff00ff;
-  z-index: -2;
+.first {
+  margin-right: -18px;
+  transform-origin: center left;
+  animation: spin 3s linear infinite;
 }
 
-@keyframes glitch-it {
+.seconde {
+  transform-origin: center right;
+  animation: spin2 3s linear infinite;
+  animation-delay: .2s;
+}
+
+.third {
+  transform-origin: center right;
+  animation: spin3 3s linear infinite;
+  animation-delay: .3s;
+}
+
+.fourth {
+  transform-origin: center right;
+  animation: spin4 3s linear infinite;
+  animation-delay: .4s;
+}
+
+@keyframes spin {
   0% {
-    transform: translate(0);
+    transform: rotate(0deg);
   }
-  20% {
-    transform: translate(-2px, 2px);
+
+  25% {
+    transform: rotate(360deg);
   }
-  40% {
-    transform: translate(-2px, -2px);
+
+  30% {
+    transform: rotate(370deg);
   }
-  60% {
-    transform: translate(2px, 2px);
+
+  35% {
+    transform: rotate(360deg);
   }
-  80% {
-    transform: translate(2px, -2px);
-  }
-  to {
-    transform: translate(0);
+
+  100% {
+    transform: rotate(360deg);
   }
 }
 
+@keyframes spin2 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(0deg);
+  }
+
+  30% {
+    transform: rotate(-180deg);
+  }
+
+  35% {
+    transform: rotate(-190deg);
+  }
+
+  40% {
+    transform: rotate(-180deg);
+  }
+
+  78% {
+    transform: rotate(-180deg);
+  }
+
+  95% {
+    transform: rotate(-360deg);
+  }
+
+  98% {
+    transform: rotate(-370deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes spin3 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  27% {
+    transform: rotate(0deg);
+  }
+
+  40% {
+    transform: rotate(180deg);
+  }
+
+  45% {
+    transform: rotate(190deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  62% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(360deg);
+  }
+
+  80% {
+    transform: rotate(370deg);
+  }
+
+  85% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin4 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  38% {
+    transform: rotate(0deg);
+  }
+
+  60% {
+    transform: rotate(-360deg);
+  }
+
+  65% {
+    transform: rotate(-370deg);
+  }
+
+  75% {
+    transform: rotate(-360deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 </style>
-    

@@ -1,71 +1,71 @@
-<div class="loader"></div>
+
+<div class="momentum"></div>
 <style>
-/* From SHΞN™ Morphism by Shoh2008 - Tags: loader, bear */
-.loader {
-  width: 160px;
-  height: 185px;
-  position: relative;
-  background: #fff;
-  border-radius: 100px 100px 0 0;
+/* From SHΞN™ Morphism by G4b413l - Tags: loader */
+.momentum {
+ --uib-size: 40px;
+ --uib-speed: 1s;
+ --uib-color: rgb(221, 255, 242);
+ position: relative;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: var(--uib-size);
+ width: var(--uib-size);
+ animation: rotate01561 var(--uib-speed) linear infinite;
 }
 
-.loader:after {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 125px;
-  left: 50%;
-  top: 25px;
-  transform: translateX(-50%);
-  background-image: radial-gradient(circle, #000 48%, transparent 55%),
-    radial-gradient(circle, #000 48%, transparent 55%),
-    radial-gradient(circle, #fff 30%, transparent 45%),
-    radial-gradient(circle, #000 48%, transparent 51%),
-    linear-gradient(#000 20px, transparent 0),
-    linear-gradient(#cfecf9 60px, transparent 0),
-    radial-gradient(circle, #cfecf9 50%, transparent 51%),
-    radial-gradient(circle, #cfecf9 50%, transparent 51%);
-  background-repeat: no-repeat;
-  background-size: 16px 16px, 16px 16px, 10px 10px, 42px 42px, 12px 3px,
-    50px 25px, 70px 70px, 70px 70px;
-  background-position: 25px 10px, 55px 10px, 36px 44px, 50% 30px, 50% 85px,
-    50% 50px, 50% 22px, 50% 45px;
-  animation: faceLift 3s linear infinite alternate;
+.momentum::before,
+.momentum::after {
+ content: '';
+ height: 25%;
+ width: 25%;
+ border-radius: 50%;
+ background-color: var(--uib-color);
 }
 
-.loader:before {
-  content: "";
-  position: absolute;
-  width: 140%;
-  height: 125px;
-  left: -20%;
-  top: 0;
-  background-image: radial-gradient(circle, #fff 48%, transparent 50%),
-    radial-gradient(circle, #fff 48%, transparent 50%);
-  background-repeat: no-repeat;
-  background-size: 65px 65px;
-  background-position: 0px 12px, 145px 12px;
-  animation: earLift 3s linear infinite alternate;
+.momentum::before {
+ animation: wobble290123 calc(var(--uib-speed) * 1.25) ease-in-out infinite;
 }
 
-@keyframes faceLift {
-  0% {
-    transform: translateX(-60%);
-  }
+.momentum::after {
+ animation: wobble9123 calc(var(--uib-speed) * 1.25) ease-in-out infinite;
+}
 
+.momentum::before {
+ margin-right: 10%;
+}
+
+@keyframes wobble9123 {
+ 0%,
   100% {
-    transform: translateX(-30%);
-  }
+  transform: translateX(0);
+ }
+
+ 50% {
+  transform: translateX(calc(var(--uib-size) * 0.2)) scale(1.1);
+ }
 }
 
-@keyframes earLift {
-  0% {
-    transform: translateX(10px);
-  }
-
+@keyframes wobble290123 {
+ 0%,
   100% {
-    transform: translateX(0px);
-  }
+  transform: translateX(0);
+ }
+
+ 50% {
+  transform: translateX(calc(var(--uib-size) * -0.2)) scale(1.1);
+ }
 }
-  
+
+@keyframes rotate01561 {
+ 0% {
+  transform: rotate(0deg);
+ }
+
+ 100% {
+  transform: rotate(360deg);
+ }
+}
+
 </style>

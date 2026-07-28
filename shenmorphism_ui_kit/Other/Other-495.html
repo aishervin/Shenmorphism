@@ -1,79 +1,49 @@
-
-<div class="loader"></div>
+<div class="spinner">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 <style>
-/* From SHΞN™ Morphism by SchawnnahJ - Tags: loader */
-.loader {
- position: relative;
- width: 2.5em;
- height: 2.5em;
- transform: rotate(165deg);
+/* From SHΞN™ Morphism by satyamchaudharydev - Tags: loader */
+.spinner {
+ --gap: 5px;
+ --clr: #d62d20;
+ --height: 23px;
+ width: 100px;
+ height: 100px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: var(--gap);
 }
 
-.loader:before, .loader:after {
- content: "";
- position: absolute;
- top: 50%;
- left: 50%;
- display: block;
- width: 0.5em;
- height: 0.5em;
- border-radius: 0.25em;
- transform: translate(-50%, -50%);
+.spinner span {
+ background: var(--clr);
+ width: 6px;
+ height: var(--height);
+ animation: grow 1s ease-in-out infinite;
 }
 
-.loader:before {
- animation: before8 2s infinite;
+.spinner span:nth-child(2) {
+ animation: grow 1s ease-in-out 0.15s infinite;
 }
 
-.loader:after {
- animation: after6 2s infinite;
+.spinner span:nth-child(3) {
+ animation: grow 1s ease-in-out 0.3s infinite;
 }
 
-@keyframes before8 {
- 0% {
-  width: 0.5em;
-  box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
- }
-
- 35% {
-  width: 2.5em;
-  box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
- }
-
- 70% {
-  width: 0.5em;
-  box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
- }
-
- 100% {
-  box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
- }
+.spinner span:nth-child(4) {
+ animation: grow 1s ease-in-out 0.475s infinite;
 }
 
-@keyframes after6 {
- 0% {
-  height: 0.5em;
-  box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+@keyframes grow {
+ 0%,100% {
+  transform: scaleY(1);
  }
 
- 35% {
-  height: 2.5em;
-  box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+ 50% {
+  transform: scaleY(1.8);
  }
-
- 70% {
-  height: 0.5em;
-  box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
- }
-
- 100% {
-  box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
- }
-}
-
-.loader {
- position: absolute;
- top: calc(50% - 1.25em);
- left: calc(50% - 1.25em);
 }
 </style>

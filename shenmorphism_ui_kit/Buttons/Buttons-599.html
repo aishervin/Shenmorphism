@@ -1,65 +1,100 @@
-<button class="button" type="button">
-  <span class="button__text">Refresh</span>
-  <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" viewBox="0 0 48 48" height="48" class="svg"><path d="M35.3 12.7c-2.89-2.9-6.88-4.7-11.3-4.7-8.84 0-15.98 7.16-15.98 16s7.14 16 15.98 16c7.45 0 13.69-5.1 15.46-12h-4.16c-1.65 4.66-6.07 8-11.3 8-6.63 0-12-5.37-12-12s5.37-12 12-12c3.31 0 6.28 1.38 8.45 3.55l-6.45 6.45h14v-14l-4.7 4.7z"></path><path fill="none" d="M0 0h48v48h-48z"></path></svg></span>
-</button>
+<div class="notification">
+  <div class="bell-container">
+    <div class="bell"></div>
+  </div>
+</div>
+
 <style>
-/* From SHΞN™ Morphism by andrew-demchenk0 - Tags: blue, button, refresh */
-.button {
+/* From SHΞN™ Morphism by 3bdel3ziz-T  - Tags: icon, animation, notification, button, rotate, light&dark, hover effect, hover button */
+/*making bell shape with one div */
+.bell {
+  border: 2.17px solid white;
+  border-radius: 10px 10px 0 0;
+  width: 15px;
+  height: 17px;
+  background: transparent;
+  display: block;
   position: relative;
-  width: 150px;
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  border: 1px solid #0078E8;
-  background-color: #0082FC;
-  overflow: hidden;
+  top: -3px;
 }
-
-.button, .button__icon, .button__text {
-  transition: all 0.3s;
-}
-
-.button .button__text {
-  transform: translateX(30px);
-  color: #fff;
-  font-weight: 600;
-}
-
-.button .button__icon {
+.bell::before,
+.bell::after {
+  content: "";
+  background: white;
+  display: block;
   position: absolute;
-  transform: translateX(109px);
-  height: 100%;
-  width: 39px;
-  background-color: #0078E8;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2.17px;
+}
+.bell::before {
+  top: 100%;
+  width: 20px;
+}
+.bell::after {
+  top: calc(100% + 4px);
+  width: 7px;
+}
+/*container main styling*/
+.notification {
+  background: transparent;
+  border: none;
+  padding: 15px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 300ms;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+/*notifications number with before*/
+.notification::before {
+  content: "1";
+  color: white;
+  font-size: 10px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+/*container background hover effect*/
+.notification:hover {
+  background: rgba(170, 170, 170, 0.062);
+}
+/*container animations*/
+.notification:hover > .bell-container {
+  animation: bell-animation 650ms ease-out 0s 1 normal both;
+}
+/*bell ring and scale animation*/
+@keyframes bell-animation {
+  20% {
+    transform: rotate(15deg);
+  }
 
-.button .svg {
-  width: 20px;
-  fill: #fff;
+  40% {
+    transform: rotate(-15deg);
+    scale: 1.1;
+  }
+  60% {
+    transform: rotate(10deg);
+    scale: 1.1;
+  }
+  80% {
+    transform: rotate(-10deg);
+  }
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
-.button:hover {
-  background: #0078E8;
-}
-
-.button:hover .button__text {
-  color: transparent;
-}
-
-.button:hover .button__icon {
-  width: 148px;
-  transform: translateX(0);
-}
-
-.button:active .button__icon {
-  background-color: #006cd0;
-}
-
-.button:active {
-  border: 1px solid #006cd0;
-}
 </style>
+    

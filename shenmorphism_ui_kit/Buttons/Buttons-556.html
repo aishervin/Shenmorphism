@@ -1,33 +1,58 @@
-<button class="button">Hover Me!</button>
+<button class="button">
+  Button
+</button>
 <style>
-/* From SHΞN™ Morphism by KhaledMatalkah - Tags: button, hover, transition */
-.button {
-  display: inline-block;
-  position: relative;
-  padding: 13px 20px;
-  border: none;
-  background: rgba(51, 50, 50, 0.287);
+/* From SHΞN™ Morphism by Remon125 - Tags: button, smooth button */
+button {
+  padding: 15px 60px;
+  background: transparent;
+  border: 2px solid #6528F7;
+  font-size: 15px;
+  font-weight: bold;
   color: #ffffff;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  text-transform: uppercase;
-  cursor: crosshair;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
   overflow: hidden;
+  transition: all 0.5s;
+  text-transform: uppercase;
 }
 
-.button:before {
-  content: '';
+button span {
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+button::after,
+button::before {
+  content: "";
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
+  width: 0;
   height: 100%;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.14) 50%, transparent 100%);
-  transition: left 0.3s ease;
+  background: #6528F7;
+  top: 0;
+  transform: skewX(35deg);
+  transition: all 0.5s;
+  z-index: -1;
 }
 
-.button:hover:before {
-  left: 100%;
+button::after {
+  left: -20px;
+}
+
+button::before {
+  right: -20px;
+}
+
+button:hover::after {
+  width: 50%;
+  left: 0;
+}
+
+button:hover::before {
+  width: 50%;
+  right: 0;
 }
 
 </style>

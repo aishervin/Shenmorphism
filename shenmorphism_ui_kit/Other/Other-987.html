@@ -1,79 +1,33 @@
-<ul>
-  <li>
-    <div class="loader">
-      <div class="child"></div>
-    </div>
-  </li>
-
-  <li>
-    <div class="text"></div>
-  </li>
-</ul>
+<div class="spinner"></div>
 
 <style>
-/* From SHΞN™ Morphism by asgardOP  - Tags: simple, purple, loading, loader, modern, css, effect loader, loading animation */
-.loader {
-  width: 100px;
-  height: 3px;
-  background-color: rgb(15, 15, 15);
-  border-radius: 20px;
-  overflow: hidden;
+/* From SHΞN™ Morphism by preshpi  - Website: https://10015.io/tools/css-loader-generator - Name: 10015 - Tags: loader, spinner, css */
+.spinner {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  animation: spinner-plncf9 3s infinite;
 }
 
-.child {
-  width: 60px;
-  height: 3px;
-  background-color: rgb(107, 27, 255);
-  border-radius: 20px;
-  z-index: 0;
-  margin-left: -60px;
-  animation: go 1s 0s infinite;
+.spinner::before,
+.spinner::after {
+  content: "";
+  grid-area: 1/1;
+  border: 9px solid;
+  border-radius: 50%;
+  border-color: #474bff #474bff #0000 #0000;
+  mix-blend-mode: darken;
+  animation: spinner-plncf9 1s infinite linear;
 }
 
-@keyframes go {
-  from {
-    margin-left: -100px;
-    width: 80px;
-  }
-  to {
-    width: 30px;
-    margin-left: 110px;
-  }
+.spinner::after {
+  border-color: #0000 #0000 #dbdcef #dbdcef;
+  animation-direction: reverse;
 }
 
-ul {
-  list-style: none;
-}
-
-.text {
-  width: 100px;
-  height: 30px;
-  background-color: transparent;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.text::before {
-  content: "Loading";
-  color: white;
-  animation: text 1s 0s infinite;
-}
-
-@keyframes text {
-  0% {
-    content: "Loading";
-  }
-
-  30% {
-    content: "Loading.";
-  }
-
-  60% {
-    content: "Loading..";
-  }
-
+@keyframes spinner-plncf9 {
   100% {
-    content: "Loading...";
+    transform: rotate(1turn);
   }
 }
 

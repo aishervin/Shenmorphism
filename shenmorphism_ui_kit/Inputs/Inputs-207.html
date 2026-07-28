@@ -1,60 +1,103 @@
-<div class="input-container">
-  <input placeholder="Enter text" class="input-field" type="text">
-  <label for="input-field" class="input-label">Enter text</label>
-  <span class="input-highlight"></span>
+<div class="input-wrapper">
+  <input placeholder="Search..." type="text" class="input" />
+  <svg
+    stroke-width="2"
+    stroke="currentColor"
+    fill="none"
+    viewBox="0 0 24 24"
+    height="24"
+    width="24"
+    class="search-icon"
+  >
+    <circle r="8" cy="11" cx="11"></circle>
+    <line y2="16.65" x2="16.65" y1="21" x1="21"></line>
+  </svg>
+  <svg
+    stroke-width="2"
+    stroke="currentColor"
+    fill="none"
+    viewBox="0 0 1792 1792"
+    height="24"
+    width="24"
+    class="filter-icon"
+  >
+    <path
+      d="M1595 295q17 41-14 70l-493 493v742q0 42-39 59-13 5-25 5-27 0-45-19l-256-256q-19-19-19-45v-486l-493-493q-31-29-14-70 17-39 59-39h1280q42 0 59 39z"
+    ></path>
+  </svg>
 </div>
 
 <style>
-/* From SHΞN™ Morphism by Satwinder04 - Tags: input */
-/* Input container */
-.input-container {
+/* From SHΞN™ Morphism by TemRevil  - Tags:  */
+.input-wrapper {
   position: relative;
-  margin: 20px;
+  display: flex;
+  align-items: center;
 }
 
-/* Input field */
-.input-field {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  border-bottom: 2px solid #ccc;
+.input {
+  min-width: 300px;
+  padding: 20px 40px 20px 60px;
+  background: #14213d;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
   outline: none;
-  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 60px 40px 80px 0px #2d00f75b, -100px -40px 100px #db00b65b,
+    inset -40px -20px 1000px -150px #db00b65b,
+    inset 40px 20px 1000px -160px #2d00f7;
+  transition: 0.2s 0s ease-in-out;
 }
 
-/* Input label */
-.input-label {
+.input::placeholder {
+  color: #f0f8ff9c;
+  font-size: 20px;
+}
+
+.input:hover,
+.input:focus {
+  background: #dfe7fd;
+  box-shadow: -100px -40px 100px 30px #2d00f75b, 60px 40px 100px 5px #db00b65b,
+    inset 40px 20px 1000px -150px #f20089,
+    inset -40px -20px 1000px -160px #2d00f7;
+}
+
+.search-icon {
+  width: 30px;
+  height: 30px;
   position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 16px;
-  color: rgba(204, 204, 204, 0);
-  pointer-events: none;
-  transition: all 0.3s ease;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.8);
+  fill: #fff;
+  stroke: #fff;
 }
 
-/* Input highlight */
-.input-highlight {
+.filter-icon {
+  width: 30px;
+  height: 30px;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 0;
-  background-color: #007bff;
-  transition: all 0.3s ease;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.8);
+  fill: #fff;
+  stroke: #fff;
+  cursor: pointer;
+  transition: 0.15s 0s ease-in-out;
+}
+.filter-icon:active {
+  scale: 0.9;
 }
 
-/* Input field:focus styles */
-.input-field:focus + .input-label {
-  top: -20px;
-  font-size: 12px;
-  color: #007bff;
-}
-
-.input-field:focus + .input-label + .input-highlight {
-  width: 100%;
+.input:hover.search-icon,
+.input:focus.search-icon,
+.input:hover.filter-icon,
+.input:focus.filter-icon {
+  fill: #14213d;
+  stroke: #14213d;
 }
 
 </style>
+    

@@ -1,46 +1,39 @@
-<div class="container">
-  <button class="button">Hover me</button>
-</div>
-
+<button class="btn">
+  DOWNLOAD
+</button>
 <style>
-/* From SHΞN™ Morphism by Spacious74  - Tags: minimalist, gradient, button, hover, dark, gradients, border, click effect */
-button {
-  font-size: 1.4em;
-  padding: 0.6em 0.8em;
-  border-radius: 0.5em;
-  border: none;
-  background-color: #000;
-  color: #fff;
-  cursor: pointer;
-  box-shadow: 2px 2px 3px #000000b4;
+/* From SHΞN™ Morphism by KSAplay - Tags: button */
+.btn {
+  padding: 0.8em 2em 0.8em 2.5em;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 15px;
+  color: #f6fff6;
+  letter-spacing: 0.3em;
+  text-shadow: -2px 2px 5px #33fd30;
+  background-color: transparent;
+  border: 2px solid #bbfeb1;
+  box-shadow: 0 0 0px 1px #42f112,
+    0 0 10px 2px #33fd30,
+    inset 0 0 0px 1px #42f112,
+    inset 0 0 10px 2px #33fd30;
+  transition: 100ms;
 }
 
-.container {
-  position: relative;
-  padding: 3px;
-  background: linear-gradient(90deg, #03a9f4, #f441a5);
-  border-radius: 0.9em;
-  transition: all 0.4s ease;
+.btn:hover {
+  box-shadow: 0 0 0px 1px #42f112,
+    0 0 10px 2px #33fd30,
+    inset 0 0 0px 1px #42f112,
+    inset 0 0 30px 2px #33fd30;
+  text-shadow: 0 0 10px #33fd30;
+  transform: translateY(-5px);
 }
 
-.container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  border-radius: 0.9em;
-  z-index: -10;
-  filter: blur(0);
-  transition: filter 0.4s ease;
+.btn:active {
+  box-shadow: 0 0 0px 1px #42f112,
+    0 0 25px 2px #33fd30,
+    inset 0 0 0px 1px #42f112,
+    inset 0 0 30px 2px #33fd30;
+  transform: translateY(1px);
 }
-
-.container:hover::before {
-  background: linear-gradient(90deg, #03a9f4, #f441a5);
-  filter: blur(1.2em);
-}
-.container:active::before {
-  filter: blur(0.2em);
-}
-
 </style>
-    

@@ -1,59 +1,44 @@
-<div class="meteor"></div>
 
+<div class="spinner"></div>
 <style>
-/* From SHΞN™ Morphism by Z4drus  - Tags: simple, glassmorphism, minimalist, white, black, loading, loader, loading animation */
-@keyframes spin {
-  0% {
-    transform: rotateY(0deg) translateZ(0);
-  }
-  100% {
-    transform: rotateY(360deg) translateZ(0);
-  }
+/* From SHΞN™ Morphism by AqFox - Tags: loader */
+.spinner {
+ --R: 28px;
+ --g1: #004dff 96%, #0000;
+ --g2: #d6d6fc 96%, #0000;
+ width: calc(2*var(--R));
+ height: calc(2*var(--R));
+ border-radius: 50%;
+ display: grid;
+ -webkit-mask: linear-gradient(#000 0 0);
+ animation: spinner-maxc6n 2s infinite linear;
 }
 
-body,
-html {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.spinner::before,
+.spinner::after {
+ content: "";
+ grid-area: 1/1;
+ width: 50%;
+ background: radial-gradient(farthest-side,var(--g1)) calc(var(--R) + 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R)   - var(--R)),
+        radial-gradient(farthest-side,var(--g1)) calc(var(--R) + 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R)   - var(--R)),
+        radial-gradient(farthest-side,var(--g2)) calc(var(--R) + 0.5*var(--R)   - var(--R)) calc(var(--R) - 0.866*var(--R) - var(--R)),
+        radial-gradient(farthest-side,var(--g1)) 0 calc(-1*var(--R)),
+        radial-gradient(farthest-side,var(--g2)) calc(var(--R) - 0.5*var(--R)   - var(--R)) calc(var(--R) - 0.866*var(--R) - var(--R)),
+        radial-gradient(farthest-side,var(--g1)) calc(var(--R) - 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R)   - var(--R)),
+        radial-gradient(farthest-side,var(--g2)) calc(-1*var(--R))  0,
+        radial-gradient(farthest-side,var(--g1)) calc(var(--R) - 0.866*var(--R) - var(--R)) calc(var(--R) + 0.5*var(--R)   - var(--R));
+ background-size: calc(2*var(--R)) calc(2*var(--R));
+ background-repeat: no-repeat;
 }
 
-.meteor {
-  width: 150px;
-  height: 150px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.6) 0%,
-    rgba(0, 0, 0, 0.6) 100%
-  );
-  border-radius: 50%;
-  position: relative;
-  animation: spin 3s linear infinite;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-  transform-style: preserve-3d;
+.spinner::after {
+ transform: rotate(180deg);
+ transform-origin: right;
 }
 
-.meteor::before,
-.meteor::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 50%;
-  background: inherit;
+@keyframes spinner-maxc6n {
+ 100% {
+  transform: rotate(-1turn);
+ }
 }
-
-.meteor::before {
-  transform: translateZ(-15px);
-}
-
-.meteor::after {
-  transform: translateZ(15px);
-}
-
 </style>
-    

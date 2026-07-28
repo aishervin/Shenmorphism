@@ -1,96 +1,61 @@
-<div class="sun">
-  <div class="center"></div>
-  <div class="ray r-1"></div>
-  <div class="ray r-2"></div>
-  <div class="ray r-3"></div>
-  <div class="ray r-4"></div>
-  <div class="ray r-5"></div>
-  <div class="ray r-6"></div>
-  <div class="ray r-7"></div>
-  <div class="ray r-8"></div>
+<div class="bg">
+  <div class="loader"></div>
 </div>
 <style>
-/* From SHΞN™ Morphism by Ratinax - Tags: loader, sun, rotate */
-.sun {
+/* From SHΞN™ Morphism by SanthoshSJ-Dev - Tags: loader, spinner, gears, small, two */
+.bg {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--base-color);
+  --base-color: #212121;
+ /*use your base color*/
+}
+
+.loader {
+  width: 60px;
+  height: 40px;
   position: relative;
-  animation: rotate 4s linear infinite;
-  --color: yellow;
-  --scale: 0.4;
+  display: inline-block;
+  background-color: var(--base-color);
 }
 
-.center {
-  height: calc(var(--scale) * 10em);
-  width: calc(var(--scale) * 10em);
-  transition: background-color 2s linear, box-shadow 2s linear;
-  background-color: var(--color);
-  border-radius: 50%;
-  box-shadow: 0 0 calc(var(--scale) * 3em) var(--color);
-}
-
-.ray {
+.loader::before {
+  content: '';
+  left: 0;
+  top: 0;
   position: absolute;
-  height: calc(var(--scale) * 3em);
-  width: calc(var(--scale) * 0.5em);
-  transition: background-color 2s ease-in-out, box-shadow 2s ease-in-out;
-  box-shadow: 0 0 calc(var(--scale) * 1em) var(--color);
-  background-color: var(--color);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #FFF;
+  background-image: radial-gradient(circle 8px at 18px 18px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 18px 0px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 0px 18px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 36px 18px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 18px 36px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 30px 5px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 30px 5px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 30px 30px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 5px 30px, var(--base-color) 100%, transparent 0), radial-gradient(circle 4px at 5px 5px, var(--base-color) 100%, transparent 0);
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  animation: rotationBack 3s linear infinite;
 }
 
-.r-1 {
-  margin-left: calc(var(--scale) * 4.75em);
-  margin-top: calc(var(--scale) * 1em);
+.loader::after {
+  content: '';
+  left: 35px;
+  top: 15px;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #FFF;
+  background-image: radial-gradient(circle 5px at 12px 12px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 12px 0px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 0px 12px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 24px 12px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 12px 24px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 20px 3px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 20px 3px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 20px 20px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 3px 20px, var(--base-color) 100%, transparent 0), radial-gradient(circle 2.5px at 3px 3px, var(--base-color) 100%, transparent 0);
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  animation: rotationBack 4s linear infinite reverse;
 }
 
-.r-2 {
-  margin-left: calc(var(--scale) * 12.25em);
-  margin-top: calc(var(--scale) * -6.25em);
-  transform: rotate(90deg);
-}
-
-.r-3 {
-  margin-left: calc(var(--scale) * 4.75em);
-  margin-top: calc(var(--scale) * -14em);
-}
-
-.r-4 {
-  margin-left: calc(var(--scale) * -2.75em);
-  margin-top: calc(var(--scale) * -6.25em);
-  transform: rotate(90deg);
-}
-
-.r-5 {
-  margin-left: calc(var(--scale) * -0.5em);
-  margin-top: calc(var(--scale) * -1em);
-  transform: rotate(45deg);
-}
-
-.r-6 {
-  margin-left: calc(var(--scale) * 9.75em);
-  margin-top: calc(var(--scale) * -1em);
-  transform: rotate(-45deg);
-}
-
-.r-7 {
-  margin-left: calc(var(--scale) * 10.25em);
-  margin-top: calc(var(--scale) * -11.75em);
-  transform: rotate(45deg);
-}
-
-.r-8 {
-  margin-left: calc(var(--scale) * -0.5em);
-  margin-top: calc(var(--scale) * -11.75em);
-  transform: rotate(-45deg);
-}
-
-@keyframes rotate {
+@keyframes rotationBack {
   0% {
     transform: rotate(0deg);
-    --color: yellow;
   }
 
   100% {
-    transform: rotate(360deg);
-    --color: orange;
+    transform: rotate(-360deg);
   }
-}
+}  
 </style>

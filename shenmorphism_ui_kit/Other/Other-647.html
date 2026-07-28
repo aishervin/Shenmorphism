@@ -1,81 +1,23 @@
-<div class="center">
-    <div class="wave"></div>
-    <div class="wave"></div>
-    <div class="wave"></div>
-    <div class="wave"></div>
-    <div class="wave"></div>
-    <div class="wave"></div>
-    <div class="wave"></div>
-    <div class="wave"></div>
-    <div class="wave"></div>
-    <div class="wave"></div>
-</div>
+<div class="loader"></div>
 <style>
-/* From SHΞN™ Morphism by fanishah - Tags: loader */
-.center {
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* From SHΞN™ Morphism by Rodrypaladin - Tags: animation, red, loading, loader, modern, creative, multicolor, bounce animation */
+.loader {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  border-radius: 50%;
+  box-shadow: -15px -15px 15px #ff6600, 15px -15px 15px #ff9100, 15px 15px 15px #ff5500, -15px 15px 15px #ffa600, -15px 0 15px #ff6600, 15px 0 15px #ffcc00;
+  animation: rotate 1s infinite;
+  transform: rotate(0) scale(0.8);
 }
 
-.wave {
-  width: 6px;
-  height: 50px;
-  background: linear-gradient(45deg, cyan, #fff);
-  margin: 10px;
-  animation: wave 1s linear infinite;
-  border-radius: 20px;
-}
-
-.wave:nth-child(2) {
-  animation-delay: 0.1s;
-}
-
-.wave:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
-.wave:nth-child(4) {
-  animation-delay: 0.3s;
-}
-
-.wave:nth-child(5) {
-  animation-delay: 0.4s;
-}
-
-.wave:nth-child(6) {
-  animation-delay: 0.5s;
-}
-
-.wave:nth-child(7) {
-  animation-delay: 0.6s;
-}
-
-.wave:nth-child(8) {
-  animation-delay: 0.7s;
-}
-
-.wave:nth-child(9) {
-  animation-delay: 0.8s;
-}
-
-.wave:nth-child(10) {
-  animation-delay: 0.9s;
-}
-
-@keyframes wave {
+@keyframes rotate {
   0% {
-    transform: scale(0);
+    transform: rotate(360deg) scale(0.8);
   }
 
   50% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(0);
+    transform: rotate(0) scale(1.2);
   }
 }
-
 </style>

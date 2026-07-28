@@ -1,75 +1,65 @@
-<div class="card">
-  <div class="card-front">
-    <p class="title">John Doe</p>
-    <p class="subtitle">Web Dev</p>
-  </div>
-  <div class="card-back">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  </div>
-</div>
+<div class="one-div"></div>
 <style>
-/* From SHΞN™ Morphism by alexruix - Tags: simple, gradient, card, hover, smooth, dark, about me */
-.card {
-  color: #1b1b1b;
-  width: 190px;
-  height: 254px;
+/* From SHΞN™ Morphism by Yaya12085 - Tags: green, card, animated, colorful */
+.one-div {
   position: relative;
-  outline: 6px solid #f5f5f5;
-  border-radius: 8px;
-  line-height: 150%;
-  padding: 16px;
-  background: #ff930f;
-  background-blend-mode: multiply;
-  background: linear-gradient(to top, #ff930f, #ffcc33);
-  transition: background-color 1s ease-in-out;
+  width: 200px;
+  height: 200px;
+  background: repeating-radial-gradient(circle at 50%, rgba(10, 222, 61,.4), rgba(10, 222, 61,.4) 2px, #000  2px, #000 12px);
+  border-radius: 50%;
+  border: 1px dotted rgba(10, 222, 61,.4);
   overflow: hidden;
 }
 
-.card-front {
-  bottom: 16px;
-  left: 0;
+.one-div::before {
   position: absolute;
-  width: 100%;
-  text-align: center;
-  transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
-}
-
-.card-back {
-  transform: translateX(120%);
-  transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
-}
-
-
-/*Text*/
-.title {
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-/*Text divider*/
-.title::after {
   content: "";
-  display: block;
-  width: 50%;
-  border-radius: 50%;
-  height: 2px;
-  margin: 2px auto;
-  background-color: #1b1b1b;
+  top: calc(100% - 25%);
+  left: 50%;
+  transform-origin: 5px 0;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 50%;
+  border-radius: 10px;
+  filter: blur(3px);
+  background-image: linear-gradient(to left, rgba(10, 222, 61, .3) 50% , rgb(10, 222, 61) 50%);
+  opacity: .7;
+  animation: radar-animation 2.5s infinite linear;
 }
 
-
-/*Hover*/
-.card:hover {
-  background-color: #1b1b1b25;
+.one-div::after {
+  content: "";
+  position: absolute;
+  bottom: 24%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: rgba(10, 222, 61,1);
+  animation: dot-animation 2.5s infinite ease-in-out;
 }
 
-.card:hover .card-front {
-  transform: translateX(-100%);
+@keyframes radar-animation {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
-.card:hover .card-back {
-  transform: translateX(0);
+@keyframes dot-animation {
+  50% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
-
-
 
 </style>

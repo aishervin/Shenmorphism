@@ -1,112 +1,48 @@
-<div class="terminal">
-  <div class="terminal-header">
-    <div class="buttons">
-      <span class="close"></span>
-      <span class="minimize"></span>
-      <span class="maximize"></span>
-    </div>
-    <div class="title">Status</div>
-  </div>
-  <div class="terminal-body">
-    <div class="terminal-loader">
-      <span class="loader-text">Loading</span>
-      <span id="dot1" class="dot">.</span>
-      <span id="dot2" class="dot">.</span>
-      <span id="dot3" class="dot">.</span>
-    </div>
-  </div>
-</div>
-
+<div class="mover"></div>
 <style>
-/* From SHΞN™ Morphism by jeremyssocial  - Tags: loader, dark, code */
-/* Terminal Window */
-.terminal {
-  width: 500px;
-  background-color: #000;
-  color: #0f0;
-  font-family: "Courier New", Courier, monospace;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+/* From SHΞN™ Morphism by mrhyddenn - Tags: loader */
+.mover {
+  background: rgba(248, 25, 25, 0.979);
+  height: 10px;
+  width: 80px;
+  border-radius: 10px;
+  position: relative;
+  animation: mover5 2s ease-in-out infinite;
 }
 
-/* Terminal Header */
-.terminal-header {
-  background-color: #333;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  color: #fff;
+.mover::before,
+.mover::after {
+  content: '';
+  position: absolute;
+  height: 10px;
+  border-radius: 10px;
+  left: 20px;
+  animation: mover5 2s ease-in-out infinite;
 }
 
-.buttons {
-  display: flex;
-  margin-right: 15px;
+.mover::before {
+  background: rgb(201, 1, 1);
+  top: 20px;
+  width: 50px;
 }
 
-.buttons span {
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 5px;
+.mover::after {
+  background: rgb(255, 116, 106);
+  top: -20px;
+  width: 60px;
 }
 
-.close {
-  background-color: #ff605c;
-}
-.minimize {
-  background-color: #ffbd44;
-}
-.maximize {
-  background-color: #00ca4e;
-}
-
-.title {
-  flex-grow: 1;
-  text-align: center;
-}
-
-/* Terminal Body */
-.terminal-body {
-  padding: 10px;
-}
-
-.terminal-loader {
-  display: inline-flex;
-  align-items: center;
-}
-
-.loader-text {
-  margin-right: 5px;
-}
-
-.dot {
-  opacity: 0;
-  animation: dotFadeInOut 1.5s infinite;
-}
-
-@keyframes dotFadeInOut {
-  0%,
-  100% {
-    opacity: 0;
+@keyframes mover5 {
+  0% {
+    transform: translateX(30px) scale(1);
   }
+
   50% {
-    opacity: 1;
+    transform: translateX(-30px) scale(1.1);
+  }
+
+  100% {
+    transform: translateX(30px) scale(1);
   }
 }
-
-#dot1 {
-  animation-delay: 0.5s;
-}
-
-#dot2 {
-  animation-delay: 0.6s;
-}
-
-#dot3 {
-  animation-delay: 0.7s;
-}
-
 </style>
-    

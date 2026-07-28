@@ -1,47 +1,73 @@
-<button>Notification By HTML Data attribute</button>
+<button class="button">
+Get in touch
+<div class="hoverEffect">
+<div>
+</div>
+</div></button>
 <style>
-/* From SHΞN™ Morphism by mostafabazyar - Tags: button */
-button {
+/* From SHΞN™ Morphism by Wendell47 - Tags: button, blur filter */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+  border: 0;
   position: relative;
-  margin: 1rem;
-  z-index: 2;
-  border-radius: 8px;
-  appearance: none;
-  padding: 1em 2em;
-  transition: all 0.2s;
+  overflow: hidden;
+  border-radius: 10rem;
+  transition: all 0.02s;
+  font-weight: bold;
+  color: rgb(37, 37, 37);
+  z-index: 0;
+  box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
 }
 
-button {
-  padding: 1.2rem;
-  position: relative;
+.button:hover {
+  background: rgb(193, 228, 248);
+  color: rgb(33, 0, 85);
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+.hoverEffect {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1;
 }
 
-button::before {
-  content: "6";
-  position: absolute;
-  display: flex;
-  top: -0.75em;
-  right: -0.75em;
-  height: 1.8em;
-  width: 1.8em;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  background-color: red;
-  color: white;
-  z-index: 999;
-  transition: all 0.2s;
+.hoverEffect div {
+  background: rgb(222,0,75);
+  background: linear-gradient(90deg, rgba(222,0,75,1) 0%, rgba(191,70,255,1) 49%, rgba(0,212,255,1) 100%);
+  border-radius: 40rem;
+  width: 10rem;
+  height: 10rem;
+  transition: 0.4s;
+  filter: blur(20px);
+  animation: effect infinite 3s linear;
+  opacity: 0.5;
 }
 
-button:hover {
-  border-radius: 3px;
-  border-color: red;
+.button:hover .hoverEffect div {
+  width: 8rem;
+  height: 8rem;
 }
 
-button:hover::before {
-  height: 2em;
-  width: 2em;
-  font-size: 1.5em;
+@keyframes effect {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>

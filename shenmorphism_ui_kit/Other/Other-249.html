@@ -1,23 +1,26 @@
-<label class="switch modern-switch">
+<label class="switch">
   <input type="checkbox">
-  <span class="slider round"></span>
+  <span class="slider"></span>
 </label>
-
 <style>
-/* From SHΞN™ Morphism by WriestTavo - Tags: switch, 3d switch, cool switch */
+/* From SHΞN™ Morphism by DawidMazurek4 - Tags: switch, theme-switch */
+/* The switch - the box around the slider */
 .switch {
+  font-size: 17px;
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 3.5em;
+  height: 2em;
 }
 
+/* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
+/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -25,45 +28,50 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
-  border-radius: 34px;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-  transition: 0.4s;
-}
-
-.slider.round {
-  border-radius: 34px;
+  background-color: rgb(0, 0, 0);
+  transition: .4s;
+  border-radius: 30px;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: rgb(219, 198, 2);
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #000000;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #000000;
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.5em);
+}
+
+.slider::after {
+  width: 20px;
+  height: 20px;
+  left: 20%;
+  top: 10%;
   border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
-  transition: 0.4s;
+  position: absolute;
+  content: "";
+  background-color: rgb(0, 0, 0);
+  transition: ease 0.4s;
 }
 
-.switch input:checked + .slider:before {
-  transform: translateX(26px);
-  background-color: #81da8f;
+input:checked + .slider::after {
+  left: 80%;
+  width: 0px;
+  height: 0px;
 }
-
-.switch input:checked + .slider {
-  background-color: #86d993;
-}
-
-.switch input:not(:checked) + .slider:before {
-  background-color: #e66a6a;
-}
-
-.switch input:not(:checked) + .slider {
-  background-color: #e57373;
-}
-
-/* WriestTavo */
 </style>

@@ -1,83 +1,51 @@
-<div>
-
-  <label class="rad-label">
-    <input type="radio" class="rad-input" name="rad">
-    <div class="rad-design"></div>
-    <div class="rad-text">Air</div>
-  </label>
-
-  <label class="rad-label">
-    <input type="radio" class="rad-input" name="rad">
-    <div class="rad-design"></div>
-    <div class="rad-text">Earth</div>
-  </label>
-
-  <label class="rad-label">
-    <input type="radio" class="rad-input" name="rad">
-    <div class="rad-design"></div>
-    <div class="rad-text">Water</div>
-  </label>
-
-</div>
+<input type="checkbox" class="theme-checkbox">
 <style>
-/* From SHΞN™ Morphism by SlowLess0 - Tags: radio */
-.rad-label {
-  display: flex;
-  padding: 14px 16px;
-  margin: 10px 0;
-  border-radius: 100px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.rad-label:hover, .rad-label:focus-within {
-  background: hsla(0, 0%, 40%, .14);
-}
-
-.rad-input {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  z-index: -1;
-}
-
-.rad-design {
-  width: 22px;
-  height: 22px;
-  border-radius: 100px;
-  background: linear-gradient(to right bottom, hsl(172, 97%, 62%), hsl(251, 97%, 62%));
+/* From SHΞN™ Morphism by cuzpq - Tags: switch, theme, light&dark */
+.theme-checkbox {
+  --toggle-size: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 6.25em;
+  height: 3.125em;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+  background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 0;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 99em;
   position: relative;
+  cursor: pointer;
+  font-size: var(--toggle-size);
 }
 
-.rad-design::before {
-  content: '';
-  display: inline-block;
-  width: inherit;
-  height: inherit;
-  border-radius: inherit;
-  background: hsl(0, 0%, 80%);
-  transform: scale(1.1);
-  transition: .3s;
+.theme-checkbox::before {
+  content: "";
+  width: 2.25em;
+  height: 2.25em;
+  position: absolute;
+  top: 0.438em;
+  left: 0.438em;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+  background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 100%;
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
-.rad-input:checked+.rad-design::before {
-  transform: scale(0);
+.theme-checkbox:checked::before {
+  left: calc(100% - 2.25em - 0.438em);
+  background-position: 0;
 }
 
-.rad-text {
-  color: hsl(0, 0%, 60%);
-  margin-left: 14px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-size: 18px;
-  font-weight: 900;
-  transition: .3s;
-}
-
-.rad-input:checked~.rad-text {
-  color: hsl(0, 0%, 40%);
+.theme-checkbox:checked {
+  background-position: 100%;
 }
 </style>

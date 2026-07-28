@@ -1,43 +1,59 @@
-<button class="button">hover me !</button>
-
+<button class="btn-class-name">
+  <span>Next</span>
+  <svg viewBox="0 0 320 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+    <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z">
+  </path>
+  </svg>
+</button>
 <style>
-/* From SHΞN™ Morphism by ercnersoy  - Tags: simple, purple, minimalist, button */
-.button {
+/* From SHΞN™ Morphism by catraco - Tags: button, ring, next, hover effect, startbutton , variables */
+.btn-class-name {
+  --color: 180,255, 100;
+  border-radius: .5em;
+  transition: .3s;
+  background-color: rgba(var(--color), .2);
+  color: rgb(var(--color));
+  fill: rgb(var(--color));
+  font-family: monospace;
+  font-weight: bolder;
+  font-size: x-large;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   cursor: pointer;
-  padding: 1rem 4rem;
-  border: 0;
-  background-color: rebeccapurple;
-  color: white;
-  box-shadow: 0px 10px 0px 0px rgb(68, 37, 99);
-  transition: all 0.9s ease-in-out;
-  font-weight: 600;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 1rem;
-  position: relative;
-}
-.button:hover {
-  box-shadow: 0px 10px 0px 0px rgb(122, 71, 173);
-  background-color: rgb(80, 31, 129);
-}
-.button:active {
-  box-shadow: 0px 5px 0px 0px rgb(122, 71, 173);
-  text-shadow: 0 0px 0px #000;
+  border: 2px solid rgb(var(--color));
+  box-shadow: 0 0 10px rgba(var(--color), .4);
+  outline: none;
+  display: flex;
+  align-items: center;
+  padding: .5em 1em;
 }
 
-.button::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0px;
-  box-shadow: 0px 10px 0px 0px rgb(229, 104, 9);
-  width: 0;
-  height: 10px;
-  transition: all 0.9s ease-in-out;
-}
-.button:hover::before {
-  width: 100%;
+.btn-class-name:hover {
+  box-shadow: 0 0 0 5px rgba(var(--color), .5);
 }
 
+.btn-class-name span {
+  transform: scale(.8);
+  transition: .3s;
+}
+
+.btn-class-name:hover span {
+  transform: scale(1);
+}
+
+.btn-class-name svg {
+  font-size: 0;
+  transform: scale(0.5) translateX(0%) rotate(-180deg);
+  transition: .3s;
+}
+
+.btn-class-name:hover svg {
+  font-size: 20px;
+  transform: scale(1) translateX(20%) rotate(0deg);
+}
+
+.btn-class-name:active {
+  transition: 0s;
+  box-shadow: 0 0 0 5px rgb(var(--color));
+}
 </style>
-    

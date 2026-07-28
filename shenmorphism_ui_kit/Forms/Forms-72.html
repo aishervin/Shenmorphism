@@ -1,84 +1,97 @@
-<!-- From SHΞN™ Morphism by Shamaun-Nabi  - Website: https://www.devui.io/components/signin - Name: Dev ui - Tags: simple, form, light -->
-<div class="">
-  <section class="rounded-md p-2 bg-white">
-    <div class="flex items-center justify-center my-3">
-      <div class="xl:mx-auto shadow-md p-4 xl:w-full xl:max-w-sm 2xl:max-w-md">
-        <div class="mb-2"></div>
-        <h2 class="text-2xl font-bold leading-tight">
-          Sign up to create account
-        </h2>
-        <p class="mt-2 text-base text-gray-600">
-          Already have an account? Sign In
-        </p>
-        <form class="mt-5">
-          <div class="space-y-4">
-            <div>
-              <label class="text-base font-medium text-gray-900">
-                User Name
-              </label>
-              <div class="mt-2">
-                <input
-                  placeholder="Full Name"
-                  type="text"
-                  class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                  name="user_name"
-                />
-              </div>
-            </div>
-            <div>
-              <label class="text-base font-medium text-gray-900">
-                Email address
-              </label>
-              <div class="mt-2">
-                <input
-                  placeholder="Email"
-                  type="email"
-                  class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                  name="email"
-                />
-              </div>
-            </div>
-            <div>
-              <div class="flex items-center justify-between">
-                <label class="text-base font-medium text-gray-900">
-                  Password
-                </label>
-              </div>
-              <div class="mt-2">
-                <input
-                  placeholder="Password"
-                  type="password"
-                  class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                  name="password"
-                />
-              </div>
-              <div class="flex items-center justify-between mt-3">
-                <label class="text-base font-medium text-gray-900">
-                  Profile Picture
-                </label>
-              </div>
-              <div class="mt-2">
-                <input
-                  class="file-input w-full max-w-xs"
-                  type="file"
-                  name="avatar"
-                />
-              </div>
-            </div>
-            <div>
-              <button
-                class="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
-                type="button"
-              >
-                Create Account
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-</div>
+<form action="" class="form">
+        <div class="Group">
+            <label for="Email">Email</label>
+            <input placeholder="abc@email.com" id="Email" type="email">
+        </div>
+        <div class="Group">
+            <label for="Password">Password</label>
+            <input id="Password" type="password">
+        </div>
+        <div class="Group">
+            <button class="btn">Log in</button>
+        </div>
+</form>
+<style>
+/* From SHΞN™ Morphism by LogariusIV - Tags: login, form */
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  height: 350px;
+  background-color: #FFF;
+  margin: 0;
+  box-shadow: -1px 0px 25px 0px #21719369;
+  padding: 2.25em;
+  box-sizing: border-box;
+  border: solid 1px #DDD;
+  border-radius: 0.5em;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
 
+.form .Group {
+  margin-bottom: 2em;
+}
 
-    
+.form label {
+  margin: 0 0 10px;
+  display: block;
+  font-size: 1.25em;
+  color: #217093;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.form input {
+  padding: 0.3em 0.5em 0.4em;
+  background-color: #f3fafd;
+  border: solid 2px #217093;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  font-size: 1.3em;
+  color: #353538;
+  font-weight: 600;
+  font-family: inherit;
+  transition: box-shadow 0.2s linear, border-color 0.25s ease-out;
+}
+
+.form input:focus {
+  outline: none;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #edf8fc;
+  border: solid 2px #4eb8dd;
+}
+
+.form input::placeholder {
+  color: #21719383;
+}
+
+.form .btn {
+  margin: 0;
+  padding: 0.5em;
+  background-color: #4eb8dd;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: none;
+  width: 100%;
+  height: 50px;
+  font-size: 1.4em;
+  color: #FFF;
+  font-weight: 600;
+  font-family: inherit;
+  transition: transforme 0.1s ease-in-out, background-color 0.2s ease-out;
+}
+
+.form .btn:hover {
+  cursor: pointer;
+  background-color: #217093;
+}
+
+.form .btn:active {
+  transform: scale(0.98);
+}  
+</style>

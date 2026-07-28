@@ -1,56 +1,327 @@
-<div class="loader">
-  <span class="hour"></span>
-  <span class="min"></span>
-  <span class="circel"></span>
-</div>
+
+	<div class="wrapper">
+		<div class="hoop"></div>
+		<div class="sphere1"></div>
+		<div class="sphere2"></div>	
+	</div>
 <style>
-/* From SHΞN™ Morphism by Ali-Tahmazi99 - Tags: loader */
-.loader {
- width: 65px;
- height: 65px;
- border: 8px solid #ee9b00a6;
- border-radius: 50px;
- position: relative;
+/* From SHΞN™ Morphism by csemszepp - Source: https://codepen.io/pcameron/pen/jENMKG - Tags: loader, animated */
+@-webkit-keyframes sphere1Move {
+  0% {
+    width: 50px;
+    height: 50px;
+    left: 116px;
+    top: 116px;
+    z-index: 0;
+  }
+
+  10% {
+    width: 40px;
+    height: 40px;
+  }
+
+  20% {
+    width: 30px;
+    height: 30px;
+  }
+
+  30% {
+    width: 40px;
+    height: 40px;
+  }
+
+  45% {
+    left: 15px;
+  }
+
+  49% {
+    z-index: 0;
+  }
+
+  50% {
+    width: 50px;
+    height: 50px;
+    left: 20px;
+    top: 116px;
+    z-index: 10;
+  }
+	/*55%{left:15px;}*/
+  60% {
+    width: 60px;
+    height: 60px;
+  }
+
+  80% {
+    width: 70px;
+    height: 70px;
+  }
+
+  90% {
+    width: 60px;
+    height: 60px;
+  }
+
+  99% {
+    z-index: 10;
+  }
+
+  100% {
+    width: 50px;
+    height: 50px;
+    left: 116px;
+    top: 116px;
+    z-index: 0;
+  }
 }
 
-.loader span {
- display: block;
- background: #ee9b00;
+@keyframes sphere1Move {
+  0% {
+    width: 50px;
+    height: 50px;
+    left: 116px;
+    top: 116px;
+    z-index: 0;
+  }
+
+  10% {
+    width: 40px;
+    height: 40px;
+  }
+
+  20% {
+    width: 30px;
+    height: 30px;
+  }
+
+  30% {
+    width: 40px;
+    height: 40px;
+  }
+
+  45% {
+    left: 15px;
+  }
+
+  49% {
+    z-index: 0;
+  }
+
+  50% {
+    width: 50px;
+    height: 50px;
+    left: 20px;
+    top: 116px;
+    z-index: 10;
+  }
+/*	55%{left:15px;}*/
+  60% {
+    width: 60px;
+    height: 60px;
+  }
+
+  80% {
+    width: 70px;
+    height: 70px;
+  }
+
+  90% {
+    width: 60px;
+    height: 60px;
+  }
+
+  99% {
+    z-index: 10;
+  }
+
+  100% {
+    width: 50px;
+    height: 50px;
+    left: 116px;
+    top: 116px;
+    z-index: 0;
+  }
 }
 
-.loader .hour ,
-.loader .min {
- width: 6px;
- height: 22px;
- border-radius: 50px;
- position: absolute;
- top: 24.5px;
- left: 21px;
- animation: load9243 1.2s linear infinite;
- transform-origin: top center;
+@-webkit-keyframes sphere2Move {
+  0% {
+    width: 50px;
+    height: 50px;
+    left: 116px;
+    top: 116px;
+    z-index: 0;
+  }
+
+  10% {
+    width: 40px;
+    height: 40px;
+  }
+
+  20% {
+    width: 30px;
+    height: 30px;
+  }
+
+  30% {
+    width: 40px;
+    height: 40px;
+  }
+
+  45% {
+    left: 217px;
+  }
+
+  49% {
+    z-index: 0;
+  }
+
+  50% {
+    width: 50px;
+    height: 50px;
+    left: 222px;
+    top: 116px;
+    z-index: 10;
+  }
+	/*55%{left:15px;}*/
+  60% {
+    width: 60px;
+    height: 60px;
+  }
+
+  80% {
+    width: 70px;
+    height: 70px;
+  }
+
+  90% {
+    width: 60px;
+    height: 60px;
+  }
+
+  99% {
+    z-index: 10;
+  }
+
+  100% {
+    width: 50px;
+    height: 50px;
+    left: 116px;
+    top: 116px;
+    z-index: 0;
+  }
 }
 
-.loader .min {
- height: 17px;
- animation: load9243 4s linear infinite;
+@keyframes sphere2Move {
+  0% {
+    width: 50px;
+    height: 50px;
+    left: 116px;
+    top: 116px;
+    z-index: 0;
+  }
+
+  10% {
+    width: 40px;
+    height: 40px;
+  }
+
+  20% {
+    width: 30px;
+    height: 30px;
+  }
+
+  30% {
+    width: 40px;
+    height: 40px;
+  }
+
+  45% {
+    left: 217px;
+  }
+
+  49% {
+    z-index: 0;
+  }
+
+  50% {
+    width: 50px;
+    height: 50px;
+    left: 222px;
+    top: 116px;
+    z-index: 10;
+  }
+	/*55%{left:15px;}*/
+  60% {
+    width: 60px;
+    height: 60px;
+  }
+
+  80% {
+    width: 70px;
+    height: 70px;
+  }
+
+  90% {
+    width: 60px;
+    height: 60px;
+  }
+
+  99% {
+    z-index: 10;
+  }
+
+  100% {
+    width: 50px;
+    height: 50px;
+    left: 116px;
+    top: 116px;
+    z-index: 0;
+  }
 }
 
-.loader .circel {
- width: 10px;
- height: 10px;
- border-radius: 50px;
- position: absolute;
- top: 19px;
- left: 19px;
+.wrapper {
+  width: 300px;
+  height: 300px;
+	/*border:1px solid red;*/
+  margin: 0 auto;
+  margin-top: 5%;
+  position: relative;
 }
 
-@keyframes load9243 {
- 0% {
-  transform: rotate(0deg);
- }
+.hoop {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 0 0 6px #96281B, 0 0 0 26px #D64541;
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  z-index: 5;
+}
 
- 100% {
-  transform: rotate(360deg);
- }
+.sphere1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #22A7F0;
+  position: absolute;
+  left: 116px;
+  top: 116px;
+  box-shadow: -7px -7px 0 #1E8BC3 inset;
+  -webkit-animation: sphere1Move 1.2s linear infinite;
+  animation: sphere1Move 1.2s linear infinite;
+}
+
+.sphere2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #22A7F0;
+  position: absolute;
+  left: 116px;
+  top: 116px;
+  box-shadow: -7px -7px 0 #1E8BC3 inset;
+  -webkit-animation: sphere2Move 1.2s linear 0.6s infinite;
+  animation: sphere2Move 1.2s linear 0.6s infinite;
 }
 </style>

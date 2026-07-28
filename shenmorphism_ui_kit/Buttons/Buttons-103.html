@@ -1,59 +1,87 @@
-<button class="button">
-  <svg class="svg-icon" width="24" viewBox="0 0 24 24" height="24" fill="none"><g stroke-width="2" stroke-linecap="round" stroke="#056dfa" fill-rule="evenodd" clip-rule="evenodd"><path d="m3 7h17c.5523 0 1 .44772 1 1v11c0 .5523-.4477 1-1 1h-16c-.55228 0-1-.4477-1-1z"></path><path d="m3 4.5c0-.27614.22386-.5.5-.5h6.29289c.13261 0 .25981.05268.35351.14645l2.8536 2.85355h-10z"></path></g></svg>
-  <span class="lable">Archive</span>
+<button class="btn-shape">
+    <span class="title">
+      hover me
+    </span>
 </button>
 <style>
-/* From SHΞN™ Morphism by andrew-demchenk0 - Tags: icon, button, archive */
-.button {
+/* From SHΞN™ Morphism by misaraadel - Tags: button, creative, 3d button, css animation, hover idea */
+.btn-shape {
+  transition: all .3s linear;
+  width: 168px;
+  height: 50px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 8px 12px 8px 16px;
-  gap: 8px;
-  height: 40px;
-  width: 128px;
-  border: none;
-  background: #056bfa27;
-  border-radius: 20px;
+  align-content: center;
+  justify-content: center;
+  outline: none;
+  background-color: #020202;
+  border-radius: 50px;
+  border: 0px;
+  position: relative;
+  z-index: 99;
   cursor: pointer;
 }
 
-.lable {
-  margin-top: 1px;
-  font-size: 19px;
-  line-height: 22px;
-  color: #056DFA;
-  font-family: sans-serif;
-  letter-spacing: 1px;
+.btn-shape::after,
+.btn-shape::before {
+  content: '';
+  position: absolute;
+  background-color: #020202;
+  width: 100%;
+  opacity: 0;
+  height: 100%;
+  left: 0;
+  border-radius: 100px;
+  bottom: 0;
+  z-index: -2;
+  transition: all .3s linear;
 }
 
-.button:hover {
-  background: #056bfa49;
+.btn-shape span {
+  font-size: 16px;
+  font-weight: 700;
+  transition: all .3s linear;
+  color: #fff;
+  text-transform: capitalize;
 }
 
-.button:hover .svg-icon {
-  animation: spin 1s linear infinite;
+.btn-shape:hover {
+  transform: translate(-12px, -12px);
 }
 
-@keyframes spin {
+.btn-shape:hover:after {
+  transform: translate(6px, 6px);
+  opacity: .5;
+}
+
+.btn-shape:hover::before {
+  transform: translate(12px, 12px);
+  opacity: .3;
+}
+
+.btn-shape:hover span {
+  animation: storm .4s linear both;
+}
+
+@keyframes storm {
   0% {
-    transform: rotate(0deg);
+    transform: translate3d(0, 0, 0) translateZ(0);
   }
 
   25% {
-    transform: rotate(-8deg);
+    transform: translate3d(4px, 0, 0) translateZ(0);
   }
 
   50% {
-    transform: rotate(0deg);
+    transform: translate3d(-3px, 0, 0) translateZ(0);
   }
 
   75% {
-    transform: rotate(8deg);
+    transform: translate3d(2px, 0, 0) translateZ(0);
   }
 
   100% {
-    transform: rotate(0deg);
+    transform: translate3d(0, 0, 0) translateZ(0);
   }
 }
 </style>

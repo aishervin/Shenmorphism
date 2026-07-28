@@ -1,78 +1,132 @@
-<button class="button">
-  <div class="inner">
-    <div class="svgs">
-      <svg
-        viewBox="0 0 256 256"
-        height="1em"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-        class="svg-l"
-      >
-        <path
-          d="M240 128a15.79 15.79 0 0 1-10.5 15l-63.44 23.07L143 229.5a16 16 0 0 1-30 0l-23.06-63.44L26.5 143a16 16 0 0 1 0-30l63.44-23.06L113 26.5a16 16 0 0 1 30 0l23.07 63.44L229.5 113a15.79 15.79 0 0 1 10.5 15"
-          fill="currentColor"
-        ></path>
-      </svg>
-      <svg
-        viewBox="0 0 256 256"
-        height="1em"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-        class="svg-s"
-      >
-        <path
-          d="M240 128a15.79 15.79 0 0 1-10.5 15l-63.44 23.07L143 229.5a16 16 0 0 1-30 0l-23.06-63.44L26.5 143a16 16 0 0 1 0-30l63.44-23.06L113 26.5a16 16 0 0 1 30 0l23.07 63.44L229.5 113a15.79 15.79 0 0 1 10.5 15"
-          fill="currentColor"
-        ></path>
-      </svg>
-    </div>
-    Generate
-  </div>
-</button>
+
+
+ <div class="container">
+    <div class="btn"><a href="#">Read More</a></div>
+ </div>
+
+
+
 
 <style>
-/* From SHΞN™ Morphism by Spacious74  - Tags: flashy, social, button, btn, 3d button */
-.button {
-  cursor: pointer;
-  border: solid 4px #161616;
-  border-top: none;
-  border-radius: 20px;
-  position: relative;
-  box-shadow: 0px 4px 10px #00000062, 0px 10px 40px -10px #000000a6,
-    0px 12px 45px -15px #00000071;
-  transition: all 0.3s ease;
-}
-.inner {
-  padding: 12px 30px;
-  font-size: 1.5rem;
+/* From SHΞN™ Morphism by VashonG - Tags: glassmorphism, button, glow */
+.container {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  border-bottom: solid 3px #374e72;
-  border-radius: 16px;
-  background: linear-gradient(180deg, #5771a5, #000);
-  color: #fff;
-  text-shadow: 1px 1px #000, 0 0 9px #fff;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 200px;
 }
-.svgs {
+
+.container .btn {
+  height: 50px;
+  margin: 20px;
+  margin-bottom: 40px;
   position: relative;
-  margin-top: 9px;
-  z-index: 10;
+  width: 155px;
 }
-.svgs > * {
-  filter: drop-shadow(0 0 6px #fff) drop-shadow(1px 1px 0px #000);
-}
-.svgs .svg-s {
+
+.container .btn a {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+  color: #fff;
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  left: 0;
+  top: 0;
   position: absolute;
-  font-size: 0.8rem;
-  left: 20px;
-  top: -4px;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
+  z-index: 1;
+  transition: 0.5s;
 }
-.button:active {
-  box-shadow: none;
+
+.container .btn:hover a {
+  letter-spacing: 2px;
+}
+
+.container .btn a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left,
+                rgba(255,255,255,0.15),
+                transparent);
+  transform: skewX(45deg) translateX(0);
+  transition: 0.5s;
+}
+
+.container .btn:hover a::before {
+  transform: skewX(45deg) translateX(200%);
+}
+
+.container .btn::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px;
+  height: 10px;
+  width: 30px;
+  background: rgb(8, 107, 183);
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+
+.container .btn:hover::before {
+  bottom: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+
+.container .btn::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -5px;
+  height: 10px;
+  width: 30px;
+  background: rgb(7, 95, 189);
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+
+.container .btn:hover::after {
+  top: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+
+.container .btn:nth-child(1):before,
+.container .btn:nth-child(1)::after {
+  background: #2bd2ff;
+  box-shadow: 0 0 5px #2bd2ff,
+    0 0 15px #2bd2ff,
+    0 0 30px #2bd2ff,
+    0 0 60px #2bd2ff;
+}
+
+.container .btn:active a {
+  color: #000;
 }
 
 </style>
-    

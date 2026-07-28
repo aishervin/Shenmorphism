@@ -1,107 +1,123 @@
-<div class="card">
-<div class="header">
-						<span class="title">Beginner</span>
-						<span class="price">Free</span>
-					</div>
-					<p class="desc">Etiam ac convallis enim, eget euismod dolor.</p>
-					<ul class="lists">
-						<li class="list">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-							</svg>
-							<span>Aenean quis</span>
-						</li>
-						<li class="list">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-							</svg>
-							<span>Morbi semper</span>
-						</li>
-						<li class="list">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-							</svg>
-							<span>Tristique enim nec</span>
-						</li>
-					</ul>
-					<button type="button" class="action">Get Started</button>
-				</div>
+<div class="container scroll-1">
+  <div class="card">
+    <div class="card__image"></div>
+    <div class="card__content">
+        <span class="card__title">Hello</span>
+        <p class="card__describe">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card__image"></div>
+    <div class="card__content">
+        <span class="card__title">Hello</span>
+        <p class="card__describe">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card__image"></div>
+    <div class="card__content">
+        <span class="card__title">Hello</span>
+        <p class="card__describe">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+    </div>
+  </div>
+</div>
 <style>
-/* From SHΞN™ Morphism by Yaya12085 - Source: https://mambaui.com/components/pricing - Tags: pricing, card, dark, price */
-.card {
-  margin-left: -1rem;
-  margin-right: -1rem;
+/* From SHΞN™ Morphism by eduardo-amaro-maciel - Tags: card, scroll snap, dynamic */
+.scroll-1::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scroll-1::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: #888;
+}
+
+.container * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+}
+
+.container {
   display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  margin-bottom: 2rem;
-  width: 320px;
+  overflow-x: scroll;
+  padding: 24px;
+  width: 300px;
+  scroll-snap-type: x mandatory;
+  scroll-padding-top: 24px;
+  border-radius: 8px;
+  gap: 20px;
+}
+
+.container .card {
+  flex: 0 0 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #141414;
+  scroll-snap-align: start;
+}
+
+.card .card__image {
+  flex: 1;
+  height: 140px;
+}
+
+.card:nth-child(1) .card__image {
+  background-image: linear-gradient(
+      to right top,
+      #051937, 
+      #004d7a, 
+      #008793, 
+      #00bf72, 
+      #a8eb12
+  );
+}
+
+.card:nth-child(2) .card__image {
+  background-image: linear-gradient(
+    to right top, 
+    #dc09a5, 
+    #ce00b4, 
+    #ba00c5, 
+    #9c00d8, 
+    #6f12eb
+  );
+}
+
+.card:nth-child(3) .card__image {
+  background-image: linear-gradient(
+    to right top, 
+    #dc1009, 
+    #e55f00, 
+    #e49200, 
+    #dac000, 
+    #c7eb12
+  );
+}
+
+.card .card__content {
   display: flex;
   flex-direction: column;
-  border-radius: 0.25rem;
-  background-color: rgba(17, 24, 39, 1);
-  padding: 1.5rem;
+  gap: 10px;
+  padding: 20px;
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
+.card .card__content .card__title {
+  font-size: 32px;
+  color: #fff;
+  text-transform: capitalize;
 }
 
-.title {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-  color: #fff
-}
-
-.price {
-  font-size: 3.75rem;
-  line-height: 1;
-  font-weight: 700;
-  color: #fff
-}
-
-.desc {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-  line-height: 1.625;
-  color: rgba(156, 163, 175, 1);
-}
-
-.lists {
-  margin-bottom: 1.5rem;
-  flex: 1 1 0%;
-  color: rgba(156, 163, 175, 1);
-}
-
-.lists .list {
-  margin-bottom: 0.5rem;
-  display: flex;
-  margin-left: 0.5rem
-}
-
-.lists .list svg {
-  height: 1.5rem;
-  width: 1.5rem;
-  flex-shrink: 0;
-  margin-right: 0.5rem;
-  color: rgba(167, 139, 250, 1);
-}
-
-.action {
-  border: none;
-  outline: none;
-  display: inline-block;
-  border-radius: 0.25rem;
-  background-color: rgba(167, 139, 250, 1);
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  text-align: center;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: rgba(17, 24, 39, 1);
+.card .card__content .card__describe {
+  color: #fff;
+  font-size: 16px;
 }
 </style>

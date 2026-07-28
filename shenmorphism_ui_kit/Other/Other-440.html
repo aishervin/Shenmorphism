@@ -1,74 +1,84 @@
 <div class="loader">
-  <span class="ball ball1"></span>
-  <span class="ball"></span>
-  <span class="ball"></span>
-  <span class="ball"></span>
-  <span class="ball"></span>
+  <div class="justify-content-center jimu-primary-loading"></div>
 </div>
-
 <style>
-/* From SHΞN™ Morphism by escannord  - Tags: animation, 3d, loader, light */
+/* From SHΞN™ Morphism by Donewenfu - Tags: loader */
 .loader {
-  text-align: center;
-  position: relative;
-  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-.loader .ball {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+.jimu-primary-loading:before,
+.jimu-primary-loading:after {
+  position: absolute;
+  top: 0;
+  content: '';
 }
 
-.ball {
-  display: block;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 8px 5px, white 5%, black);
-  position: relative;
-  transform-origin: 50% -100px;
+.jimu-primary-loading:before {
+  left: -19.992px;
 }
 
-.ball:last-child {
-  animation: balance-right 1.2s infinite linear;
+.jimu-primary-loading:after {
+  left: 19.992px;
+  -webkit-animation-delay: 0.32s !important;
+  animation-delay: 0.32s !important;
 }
 
-.ball:first-child {
-  animation: balance-left 1.2s infinite linear;
+.jimu-primary-loading:before,
+.jimu-primary-loading:after,
+.jimu-primary-loading {
+  background: #076fe5;
+  -webkit-animation: loading-keys-app-loading 0.8s infinite ease-in-out;
+  animation: loading-keys-app-loading 0.8s infinite ease-in-out;
+  width: 13.6px;
+  height: 32px;
 }
 
-@keyframes balance-right {
-  0% {
-    transform: rotate(0deg);
-    animation-timing-function: linear;
+.jimu-primary-loading {
+  text-indent: -9999em;
+  margin: auto;
+  position: absolute;
+  right: calc(50% - 6.8px);
+  top: calc(50% - 16px);
+  -webkit-animation-delay: 0.16s !important;
+  animation-delay: 0.16s !important;
+}
+
+@-webkit-keyframes loading-keys-app-loading {
+
+  0%,
+  80%,
+  100% {
+    opacity: .75;
+    box-shadow: 0 0 #076fe5;
+    height: 32px;
   }
 
-  50% {
-    transform: rotate(0deg);
-    animation-timing-function: ease-out;
-  }
-
-  75% {
-    transform: rotate(-30deg);
-    animation-timing-function: ease-in;
+  40% {
+    opacity: 1;
+    box-shadow: 0 -8px #076fe5;
+    height: 40px;
   }
 }
 
-@keyframes balance-left {
-  0% {
-    transform: rotate(0deg);
-    animation-timing-function: ease-out;
+@keyframes loading-keys-app-loading {
+
+  0%,
+  80%,
+  100% {
+    opacity: .75;
+    box-shadow: 0 0 #076fe5;
+    height: 32px;
   }
 
-  25% {
-    transform: rotate(30deg);
-    animation-timing-function: ease-in;
-  }
-
-  50% {
-    transform: rotate(0deg);
-    animation-timing-function: linear;
+  40% {
+    opacity: 1;
+    box-shadow: 0 -8px #076fe5;
+    height: 40px;
   }
 }
-
 </style>
-    

@@ -1,32 +1,51 @@
-<button class="button">Play it</button>
+  <button class="button">HOVER ME!</button>
 
 <style>
-/* From SHΞN™ Morphism by vishal2231179  - Tags: black, button, game, click animation, hover button, #button, 3d button, button hover effect  */
-.button {
-  cursor: pointer;
-  padding: 15px 40px 15px 40px;
-  border-radius: 10px;
-  border-style: double;
-  font-weight: 600;
-  background-image: linear-gradient(
-    rgb(54, 53, 53),
-    rgb(0, 0, 0),
-    rgb(54, 54, 54)
-  );
-  color: rgb(164, 164, 162);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  border-color: rgb(0, 0, 0);
-  transition: 400ms;
+/* From SHΞN™ Morphism by KhaledMatalkah - Tags: button, hover, animated */
+@keyframes glowing-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 30px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
 }
 
-.button:hover {
-  transition: 400ms;
-  border-style: double;
-  border-color: rgb(208, 207, 207);
-  color: rgb(219, 216, 216);
-  font-size: 16px;
-  text-shadow: 1px 10px 5px rgb(61, 61, 61);
+.button {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to right, #FFB900, #FF7730);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  animation: glowing-pulse 2s infinite;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 30px;
+  box-shadow: 0 0 20px #FF7730;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.button:hover::before {
+  opacity: 1;
 }
 
 </style>
-    

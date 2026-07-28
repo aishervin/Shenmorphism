@@ -1,45 +1,69 @@
-<!-- From SHΞN™ Morphism by Denon761  - Tags: input -->
-<div class="flex items-center justify-center">
-  <div class="relative w-80">
-    <input
-      class="w-full p-3 pl-10 pr-12 border-gray text-white bg-black rounded-2xl outline-none glowing-border"
-      placeholder="Search..."
-      type="text"
-    />
-    <button
-      class="absolute right-1 top-1 p-2 bg-gray-800 rounded-xl filter-btn"
-    >
-      <svg
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        fill="none"
-        class="h-6 w-6 text-white"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-.293.707l-7.414 7.414A1 1 0 0013 15v5a1 1 0 01-1 1h-2a1 1 0 01-1-1v-5a1 1 0 00-.293-.707L3.293 6.707A1 1 0 013 6V4z"
-          stroke-width="2"
-          stroke-linejoin="round"
-          stroke-linecap="round"
-        ></path>
-      </svg>
-    </button>
-    <svg
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      fill="none"
-      class="absolute left-3 top-3 h-6 w-6 text-white"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-        stroke-width="2"
-        stroke-linejoin="round"
-        stroke-linecap="round"
-      ></path>
-    </svg>
-  </div>
+<div class="mat-input">
+  <label for="food">Favorite food</label>
+  <input id="food" type="text" placeholder="Ex. Pizza" />
 </div>
 
+<style>
+/* From SHΞN™ Morphism by fbernack  - Tags: input */
+.mat-input {
+  position: relative;
+  font-size: inherit;
+}
 
+.mat-input input {
+  border-width: 0 0 1px;
+  outline: none;
+  background-color: #0000000a;
+  border-radius: 4px 4px 0 0;
+  padding: 1.8em 0.75em 0.75em;
+  border-color: #8c8c8c;
+  border-style: solid;
+  font-size: inherit;
+  transition: 0.1s;
+}
+
+.mat-input input:hover,
+.mat-input input:focus {
+  border-bottom-width: 2px;
+  padding-bottom: calc(0.75em - 1px);
+}
+
+.mat-input input:hover {
+  border-color: #121212;
+}
+
+.mat-input input:focus {
+  border-color: #2196f3;
+}
+
+.mat-input label {
+  position: absolute;
+  top: 1.4em;
+  left: 1em;
+  pointer-events: none;
+  transition: 0.2s;
+  color: #0009;
+}
+
+.mat-input:has(input:focus) label {
+  color: #2196f3;
+}
+
+.mat-input:has(input:focus) label,
+.mat-input:not(:has(input:placeholder-shown)) label {
+  top: 0.75em;
+  font-size: 0.8em;
+}
+
+.mat-input input::placeholder {
+  opacity: 0;
+  transition: 0.2s;
+  color: #aaa;
+}
+
+.mat-input input:focus::placeholder {
+  opacity: 1;
+}
+
+</style>
     

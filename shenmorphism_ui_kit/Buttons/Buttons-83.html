@@ -1,60 +1,47 @@
-<button class="btn"> Button
-</button>
+<a id="scroll-up" class="scroll-up" href="#">
+	<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+		<path d="M0 0h24v24H0z" fill="none"></path>
+		<path fill="rgba(255,255,255,1)" d="M11.9997 10.8284L7.04996 15.7782L5.63574 14.364L11.9997 8L18.3637 14.364L16.9495 15.7782L11.9997 10.8284Z">
+		</path>
+	</svg>
+</a>
 <style>
-/* From SHΞN™ Morphism by nikk7007 - Tags: button */
-.btn {
- --color: #00A97F;
- --color2: rgb(10, 25, 30);
- padding: 0.8em 1.75em;
- background-color: transparent;
- border-radius: 6px;
- border: .3px solid var(--color);
- transition: .5s;
- position: relative;
- overflow: hidden;
- cursor: pointer;
- z-index: 1;
- font-weight: 300;
- font-size: 17px;
- font-family: 'Roboto', 'Segoe UI', sans-serif;
- text-transform: uppercase;
- color: var(--color);
+/* From SHΞN™ Morphism by ArturCodeCraft - Tags: button, scroll to top, scroll */
+/* <reset-style> ============================ */
+a {
+  text-decoration: none;
+}
+/* <main-style> ============================ */
+.scroll-up {
+	/* position: fixed; */
+  right: 3rem;
+  bottom: -50%;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background-color: rgba(29, 29, 31, 0.7);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: bottom .4s, transform .4s;
 }
 
-.btn::after, .btn::before {
- content: '';
- display: block;
- height: 100%;
- width: 100%;
- transform: skew(90deg) translate(-50%, -50%);
- position: absolute;
- inset: 50%;
- left: 25%;
- z-index: -1;
- transition: .5s ease-out;
- background-color: var(--color);
+.scroll-up:hover {
+  transform: translateY(-.25rem);
 }
 
-.btn::before {
- top: -50%;
- left: -25%;
- transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+/* Show scroll-up */
+._show-scroll {
+  bottom: 3rem;
 }
 
-.btn:hover::before {
- transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
-}
-
-.btn:hover::after {
- transform: skew(45deg) translate(-50%, -50%);
-}
-
-.btn:hover {
- color: var(--color2);
-}
-
-.btn:active {
- filter: brightness(.7);
- transform: scale(.98);
+@media (max-width: 1199.98px) {
+  .scroll-up {
+    right: 1rem;
+  }
 }
 </style>

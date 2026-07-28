@@ -1,28 +1,48 @@
-<div class="animation">Text writing!</div>
+<div class="loader">
+
+</div>
 <style>
-/* From SHΞN™ Morphism by JkHuger - Tags: animation, text, writing */
-@keyframes typing {
-  from {
-    width: 0;
-  }
+/* From SHΞN™ Morphism by Cornerstone-04 - Tags: loader */
+.loader {
+  display: inline-block;
+  width: 190px;
+  height: 10px;
+  border-radius: 40px;
+  background-color: rgba(255, 255, 255, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-@keyframes blink-caret {
-  50% {
-    border-color: transparent;
-  }
+.loader span {
+  font: 700 22px monospace;
+  text-transform: uppercase;
+  margin: auto;
+  color: #fff;
+  letter-spacing: 5px;
 }
-/* When you change the amount of characters in the h1, you have to change 
-the with: 14ch and  steps(14, end), if there is 14 characters, put 14, 
-if there is 20 put 20 */
-.animation {
-  font: bold 200% Consolas, Monaco, monospace;
-  border-right: .1em solid black;
-  width: 13.20ch;
-  margin: 2em 2em;
-  white-space: nowrap;
-  overflow: hidden;
-  -webkit-animation: typing 5s steps(13, end),
-	           blink-caret .5s step-end infinite alternate;
+
+.loader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 150%;
+  height: 100%;
+  background-image: linear-gradient(332deg, #6bff7f, #32ff3c);
+  border-radius: inherit;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: load5123 1s infinite;
+}
+
+@keyframes load5123 {
+  50% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
 }
 </style>

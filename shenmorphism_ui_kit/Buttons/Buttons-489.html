@@ -1,64 +1,100 @@
-<button class="c-button">
-  <span class="c-main">
-    <span class="c-ico"><span class="c-blur"></span> <span class="ico-text">+</span></span>
-    button
-  </span>
+<button> HOVER ME
 </button>
-
 <style>
-/* From SHΞN™ Morphism by zebra76966 - Tags: button, dark, 3d button */
-button {
-  border: none;
+/* From SHΞN™ Morphism by namecho - Tags: button, glitch */
+button,
+button::after {
+ padding: 16px 20px;
+ font-size: 18px;
+ background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
+ border: 0;
+ color: #fff;
+ letter-spacing: 3px;
+ line-height: 1;
+ box-shadow: 6px 0px 0px #00e6f6;
+ outline: transparent;
+ position: relative;
 }
 
-.c-button {
-  background: linear-gradient(140deg, rgba(75, 118, 200, 1) 0%, rgba(31, 70, 145, 1) 100%);
-  border-radius: 45px;
-  font-size: 25px;
-  text-align: left;
-  padding: 11px 0px 11px 0px;
-  border: 4px solid rgb(37, 37, 37) !important;
-  border-style: outset;
-  box-shadow: -6px -5px 18px rgba(255, 255, 255, 0.1);
-  cursor: pointer;
+button::after {
+ --slice-0: inset(50% 50% 50% 50%);
+ --slice-1: inset(80% -6px 0 0);
+ --slice-2: inset(50% -6px 30% 0);
+ --slice-3: inset(10% -6px 85% 0);
+ --slice-4: inset(40% -6px 43% 0);
+ --slice-5: inset(80% -6px 5% 0);
+ content: "HOVER ME";
+ display: block;
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #ff013c 5%);
+ text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+ clip-path: var(--slice-0);
 }
 
-.c-button .c-main {
-  border-radius: 45px;
-  color: rgba(255, 255, 255, 1);
-  padding: 11px 25px 11px 2px;
-  box-shadow: inset 0px 0px 5px rgba(17, 17, 17, 0);
-  transition: all 0.5s ease-in-out;
-  border: 1px solid transparent;
+button:hover::after {
+ animation: 1s glitch;
+ animation-timing-function: steps(2, end);
 }
 
-.c-ico .c-blur {
-  background: linear-gradient(318deg, rgba(75, 118, 200, 1) 0%, rgba(31, 70, 145, 1) 100%);
-  border-radius: 100%;
-  margin-left: 0;
-  padding: 8px 23px;
-  filter: blur(1px);
-  text-align: center;
-}
+@keyframes glitch {
+ 0% {
+  clip-path: var(--slice-1);
+  transform: translate(-20px, -10px);
+ }
 
-.c-ico {
-  position: relative;
-  margin-right: 20px;
-}
+ 10% {
+  clip-path: var(--slice-3);
+  transform: translate(10px, 10px);
+ }
 
-.c-ico .ico-text {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
+ 20% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 10px);
+ }
 
-/* Hovering */
+ 30% {
+  clip-path: var(--slice-3);
+  transform: translate(0px, 5px);
+ }
 
-.c-button .c-main:hover {
-  box-shadow: inset 0px 0px 5px rgba(17, 17, 17, 0.6);
-  border: 1px solid rgba(26, 26, 26,0.5);
-  color: rgba(255, 255, 255, 0.5);
+ 40% {
+  clip-path: var(--slice-2);
+  transform: translate(-5px, 0px);
+ }
+
+ 50% {
+  clip-path: var(--slice-3);
+  transform: translate(5px, 0px);
+ }
+
+ 60% {
+  clip-path: var(--slice-4);
+  transform: translate(5px, 10px);
+ }
+
+ 70% {
+  clip-path: var(--slice-2);
+  transform: translate(-10px, 10px);
+ }
+
+ 80% {
+  clip-path: var(--slice-5);
+  transform: translate(20px, -10px);
+ }
+
+ 90% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 0px);
+ }
+
+ 100% {
+  clip-path: var(--slice-1);
+  transform: translate(0);
+ }
 }
 
 </style>

@@ -1,155 +1,55 @@
-<button class="btn">
-  <span>Ripple</span>
-  <div class="ripple-container">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</button>
+<button class="button10">Button</button>
+
 <style>
-/* From SHΞN™ Morphism by SelfMadeSystem - Tags: material design, button, ripple */
-.btn {
-  border-radius: 0.5em;
-  font-size: larger;
-  height: 3em;
-  width: 6em;
+/* From SHΞN™ Morphism by NomNomcats  - Tags: simple, flashy, button, hover */
+.button10 {
+  display: inline-block;
+  transition: all 0.3s ease;
   position: relative;
-  border: none;
-  background-color: hsl(218, 68%, 52%);
   overflow: hidden;
-  isolation: isolate;
-  color: white;
-  box-shadow: 1px 2px 4px #0007;
-  transition: background-color 0.2s;
+  z-index: 1;
+  color: #ffffff;
+  padding: 0.8em 2em;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 0.5em;
+  background: #000;
+  border: 2px solid #00ffea;
+  box-shadow: 0 0 20px rgba(0, 255, 234, 0.5);
 }
 
-.btn:hover {
-  background-color: hsl(218, 68%, 47%);
+.button10:active {
+  color: #ffffff;
+  box-shadow: inset 0 0 10px rgba(0, 255, 234, 0.7);
 }
 
-.btn > span {
-  position: relative;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.ripple-container {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: repeat(12, 0.5em);
-}
-
-.ripple-container > span {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.ripple-container > span::after {
+.button10:before,
+.button10:after {
   content: "";
-  pointer-events: none;
   position: absolute;
-  background-color: hsl(218, 68%, 65%);
-  transition: width 0.5s ease-out, height 0.5s ease-out, opacity 1s;
-  width: 13em;
-  height: 13em;
-  opacity: 0;
-  border-radius: 999em;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 255, 234, 0.2);
+  z-index: -1;
+  transform: scale(0);
+  transition: transform 0.5s;
+  border-radius: inherit;
 }
 
-.ripple-container > span:active::after {
-  transition: 0s;
-  width: 0em;
-  height: 0em;
-  opacity: 1;
+.button10:before {
+  transition-delay: 0s;
 }
 
-/*
-Use this instead if you want the ripple to start
-immediately on click but end abruptly on unclick:
-
-.ripple-container > span::after {
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  background-color: hsl(218, 68%, 65%);
-  width: 0em;
-  height: 0em;
-  border-radius: 999em;
-  opacity: 1;
+.button10:after {
+  transition-delay: 0.25s;
 }
 
-.ripple-container > span:active::after {
-  transition: width 0.25s ease-out, height 0.25s ease-out, opacity 0.75s;
-  width: 13em;
-  height: 13em;
-  opacity: 0;
+.button10:hover:before,
+.button10:hover:after {
+  transform: scale(1.2);
 }
 
-Your Global selectors gets triggered by this:
-*/
 </style>
+    

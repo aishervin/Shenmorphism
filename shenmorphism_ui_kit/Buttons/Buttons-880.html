@@ -1,62 +1,45 @@
-<button class="button">
-  Button
+<button>
+  <span>Button</span>
 </button>
 <style>
-/* From SHΞN™ Morphism by gharsh11032000 - Tags: gradient, button, dark, hover effect */
-.button {
-  position: relative;
-  width: 120px;
-  height: 40px;
-  background-color: #000;
-  display: flex;
-  align-items: center;
-  color: white;
-  flex-direction: column;
-  justify-content: center;
-  border: none;
-  padding: 12px;
-  gap: 12px;
-  border-radius: 8px;
-  cursor: pointer;
+/* From SHΞN™ Morphism by NorthFishHasNa - Tags: button */
+button {
+ display: inline-block;
+ border-radius: 4px;
+ background-color: #3d405b;
+ border: none;
+ color: #FFFFFF;
+ text-align: center;
+ font-size: 17px;
+ padding: 16px;
+ width: 130px;
+ transition: all 0.5s;
+ cursor: pointer;
+ margin: 5px;
 }
 
-.button::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  left: -4px;
-  top: -1px;
-  margin: auto;
-  width: 128px;
-  height: 48px;
-  border-radius: 10px;
-  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
-  z-index: -10;
-  pointer-events: none;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+button span {
+ cursor: pointer;
+ display: inline-block;
+ position: relative;
+ transition: 0.5s;
 }
 
-.button::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
-  transform: translate3d(0, 0, 0) scale(0.95);
-  filter: blur(20px);
+button span:after {
+ content: '»';
+ position: absolute;
+ opacity: 0;
+ top: 0;
+ right: -15px;
+ transition: 0.5s;
 }
 
-.button:hover::after {
-  filter: blur(30px);
+button:hover span {
+ padding-right: 15px;
 }
 
-.button:hover::before {
-  transform: rotate(-180deg);
+button:hover span:after {
+ opacity: 1;
+ right: 0;
 }
-
-.button:active::before {
-  scale: 0.7;
-}
-
-
 </style>

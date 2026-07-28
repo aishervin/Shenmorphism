@@ -1,56 +1,77 @@
-<div class="loader"></div>
+<div class="loader">
+  <svg
+    viewBox="0 0 256 256"
+    class="star star1"
+    height="32"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+    ></path>
+  </svg>
+  <svg
+    viewBox="0 0 256 256"
+    class="star star2"
+    height="32"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+    ></path>
+  </svg>
+  <svg
+    viewBox="0 0 256 256"
+    class="star star3"
+    height="32"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+    ></path>
+  </svg>
+</div>
+
 <style>
-/* From SHΞN™ Morphism by Shoh2008 - Tags: loader */
+/* From SHΞN™ Morphism by LightAndy1  - Tags: simple, icon, animation, yellow, loader, smooth, dark, stars */
 .loader {
-  width: 16px;
+  user-select: none;
+}
+
+.star {
+  opacity: 0;
+  fill: #f8de7e;
+  animation: loader 2s infinite alternate;
+}
+
+.star2 {
+  height: 20px;
+  margin-left: -10px;
+  animation-delay: 0.25s;
+}
+
+.star3 {
   height: 16px;
-  box-shadow: 0 30px, 0 -30px;
-  border-radius: 4px;
-  background: currentColor;
-  display: block;
-  position: relative;
-  transform: translate(-150%, -20px);
-  color: #FFF;
-  box-sizing: border-box;
-  animation: animloader 2s ease infinite;
+  margin-left: -15px;
+  animation-delay: 0.5s;
 }
 
-.loader::after,
-.loader::before {
-  content: '';
-  box-sizing: border-box;
-  width: 16px;
-  height: 16px;
-  box-shadow: 0 30px, 0 -30px;
-  border-radius: 4px;
-  background: currentColor;
-  color: #FFF;
-  position: absolute;
-  left: 30px;
-  top: 0;
-  animation: animloader 2s 0.2s ease infinite;
-}
-
-.loader::before {
-  animation-delay: 0.4s;
-  left: 60px;
-}
-
-@keyframes animloader {
+@keyframes loader {
   0% {
-    top: 0;
-    color: white;
+    opacity: 0;
+    transform: translateY(0) translateX(50px) rotate (0deg);
   }
-
-  50% {
-    top: 30px;
-    color: rgba(255, 255, 255, 0.2);
+  10% {
+    opacity: 0;
+    transform: translateY(0) translateX(50px) rotate(0deg);
   }
-
   100% {
-    top: 0;
-    color: white;
+    opacity: 1;
+    transform: translateY(-20px) translateX(0) rotate(360deg);
   }
 }
 
 </style>
+    

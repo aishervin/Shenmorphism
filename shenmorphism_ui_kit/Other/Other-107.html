@@ -1,92 +1,76 @@
 <label class="switch">
-  <input type="checkbox" />
+  <input type="checkbox">
   <span class="slider"></span>
 </label>
-
 <style>
-/* From SHΞN™ Morphism by Subaashbala  - Tags: switch */
-/* The switch - the box around the slider */
+/* From SHΞN™ Morphism by victoryamaykin - Tags: switch */
 .switch {
-  --INITIAL-SWITCH-TRACK-COLOR: #ffdd95;
-  --INITIAL-THUMB-COLOR: #ff9843;
-  --OVERALL-TRANSITION-DURATION: 500ms; /* Overall transition speed */
-  font-size: 17px;
-  position: relative;
-  display: inline-block;
-  width: 3.75em;
-  height: 2em;
+ position: relative;
+ display: inline-block;
+ width: 120px;
+ height: 34px;
 }
 
-/* Hide default HTML checkbox */
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+ display: none;
 }
 
-/* The slider */
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--INITIAL-SWITCH-TRACK-COLOR);
-  transition: var(--OVERALL-TRANSITION-DURATION);
-  border-radius: 30px;
-  overflow: hidden;
+ position: absolute;
+ cursor: pointer;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: #3C3C3C;
+ -webkit-transition: .4s;
+ transition: .4s;
+ border-radius: 34px;
 }
 
-/* Thumb */
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 100%;
-  aspect-ratio: 1;
-  border-radius: 20px;
-  left: 0;
-  bottom: 0;
-  background-color: var(--INITIAL-THUMB-COLOR);
-  transition: var(--OVERALL-TRANSITION-DURATION);
+ position: absolute;
+ content: "";
+ height: 26px;
+ width: 26px;
+ left: 4px;
+ bottom: 4px;
+ background-color: white;
+ -webkit-transition: .4s;
+ transition: .4s;
+ border-radius: 50%;
 }
 
-/* Actions to be performed when the switch is TOGGLED ON */
-.switch input:checked + .slider::before {
-  transform-origin: left;
-  animation: wobble var(--OVERALL-TRANSITION-DURATION);
-  transform: scale(1, 1) translateX(2rem);
+input:checked + .slider {
+ background-color: #0E6EB8;
 }
 
-/* Actions to be performed when the switch is TOGGLED OFF */
-.switch input:not(:checked) + .slider::before {
-  transform-origin: right;
-  animation: reverse-wobble var(--OVERALL-TRANSITION-DURATION);
+input:focus + .slider {
+ box-shadow: 0 0 1px #2196F3;
 }
 
-@keyframes wobble {
-  0% {
-    transform: scale(1, 1);
-  }
-  50% {
-    transform: scale(3, 1);
-  }
-  100% {
-    transform: scale(1, 1) translateX(2rem);
-  }
+input:checked + .slider:before {
+ -webkit-transform: translateX(26px);
+ -ms-transform: translateX(26px);
+ transform: translateX(85px);
 }
 
-@keyframes reverse-wobble {
-  0% {
-    transform: scale(1, 1) translateX(2rem);
-  }
-  50% {
-    transform: scale(3, 1);
-  }
-  100% {
-    transform: scale(1, 1) translateX(0);
-  }
+/*------ ADDED CSS ---------*/
+.slider:after {
+ content: 'DISABLED';
+ color: white;
+ display: block;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ top: 50%;
+ left: 50%;
+ font-size: 10px;
+ font-family: Verdana, sans-serif;
 }
 
+input:checked + .slider:after {
+ content: 'ENABLED';
+}
+
+/*--------- END --------*/
 </style>
-    

@@ -1,172 +1,298 @@
 <div class="notification">
-  <div class="shinner">
-    <div class="mover"></div>
-    <div class="mover2"></div>
-  </div>
-  <svg version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" height="121.46" width="122.88" class="wing">
- <g>
-  <g id="svg_1">
-   <path class="st0" d="m12.35,121.46c-8.01,-9.72 -11.92,-19.29 -12.31,-28.71c-0.82,-19.74 10.88,-34.47 28.26,-45.08c18.28,-11.16 37.08,-13.93 55.36,-22.25c9.13,-4.15 20.02,-10.95 38.14,-25.42c5.92,15.69 -12.92,40.9 -43.52,54.23c9.48,0.37 19.69,-2.54 30.85,-9.74c-0.76,19.94 -16.46,32.21 -51.3,36.95c7.33,2.45 16.09,2.58 27.27,-0.58c-10.77,35.95 -55.2,10.2 -72.75,40.6l0,0z" fill-rule="evenodd" clip-rule="evenodd" id="svg_2" fill="#fff"></path>
-  </g>
- </g>
-</svg>
+  	<div id="goku">
+      <div class="head"></div>
+      <div class="body"></div>
+      <div class="leg"></div>
+      <div class="shadow"></div>
+	  </div>
 
-<svg version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" height="121.46" width="122.88" class="wing1">
- <g>
-  <g id="svg_1">
-   <path class="st0" d="m12.35,121.46c-8.01,-9.72 -11.92,-19.29 -12.31,-28.71c-0.82,-19.74 10.88,-34.47 28.26,-45.08c18.28,-11.16 37.08,-13.93 55.36,-22.25c9.13,-4.15 20.02,-10.95 38.14,-25.42c5.92,15.69 -12.92,40.9 -43.52,54.23c9.48,0.37 19.69,-2.54 30.85,-9.74c-0.76,19.94 -16.46,32.21 -51.3,36.95c7.33,2.45 16.09,2.58 27.27,-0.58c-10.77,35.95 -55.2,10.2 -72.75,40.6l0,0z" fill-rule="evenodd" clip-rule="evenodd" id="svg_2" fill="#fff"></path>
-  </g>
- </g>
-</svg>
-  <div></div>
-  <p class="levelup">LEVEL UP!</p>
-  <p class="congrats">Congratulations!</p>
-  <div class="bg"></div>
-    
-</div>
+  <span class="dirt">
+  
+  <div class="text">
+    <span class="font hover">Level up!</span>
+    <span class="font-text hover">Your power:</span>
+    <span class="font-power hover">+8000!</span>
+  </div>
+  <div class="parchment">
+  </div>
+</span></div>
+  
+
 <style>
-/* From SHΞN™ Morphism by Sameer2244 - Tags: notification */
+/* From SHΞN™ Morphism by M4NT - Tags: notification */
 .notification {
   width: 250px;
   height: 60px;
-  background: rgb(255, 255, 255);
+  background: #18532c;
   border-radius: 14px;
+  margin-top: 250px;
+  user-select: none;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.notification:hover {
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  -ms-transform: translateY(-8px);
+  -o-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
+@-webkit-keyframes head {
+  0% {
+    top: 0px;
+  }
+
+  50% {
+    top: 6px;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
+@-webkit-keyframes body {
+  0% {
+    top: 220px;
+  }
+
+  50% {
+    top: 223px;
+  }
+
+  100% {
+    top: 220px;
+  }
+}
+
+@-webkit-keyframes leg {
+  0% {
+    top: 300px;
+  }
+
+  50% {
+    top: 300px;
+  }
+
+  100% {
+    top: 300px;
+  }
+}
+
+@keyframes head {
+  0% {
+    top: 0px;
+  }
+
+  50% {
+    top: 6px;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
+@keyframes body {
+  0% {
+    top: 220px;
+  }
+
+  50% {
+    top: 223px;
+  }
+
+  100% {
+    top: 220px;
+  }
+}
+
+@keyframes leg {
+  0% {
+    top: 300px;
+  }
+
+  50% {
+    top: 300px;
+  }
+
+  100% {
+    top: 300px;
+  }
+}
+
+#goku {
+  margin-top: -220px;
+  margin-left: -50px;
+  background: #fff;
   position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.377);
+  -ms-transform: scale(0.5);
+  /* IE 9 */
+  -webkit-transform: scale(0.5);
+  /* Chrome, Safari, Opera */
+  transform: scale(0.5);
+  z-index: 999999;
 }
 
-.shinner {
+.shadow {
   position: absolute;
-  width: 250px;
-  height: 60px;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  border-radius: 0.5rem;
+  top: 450px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: #005e2f;
+  box-shadow: -120px -10px #176d42, -110px -10px #005e2f, -100px -10px #005e2f, -90px -10px #005e2f, -80px -10px #005e2f, -70px -10px #005e2f, -60px -10px #005e2f, -50px -10px #005e2f, -40px -10px #005e2f, -30px -10px #005e2f, -20px -10px #005e2f, -10px -10px #005e2f, 0px -10px #005e2f, 10px -10px #005e2f, 20px -10px #005e2f, 30px -10px #005e2f, 40px -10px #005e2f, 50px -10px #005e2f, 60px -10px #005e2f, -130px 0px #176d42, -120px 0px #005e2f, -110px 0px #005e2f, -100px 0px #005e2f, -90px 0px #005e2f, -80px 0px #005e2f, -70px 0px #005e2f, -60px 0px #005e2f, -50px 0px #005e2f, -40px 0px #005e2f, -30px 0px #005e2f, -20px 0px #005e2f, -10px 0px #005e2f, 0px 0px #005e2f, 10px 0px #005e2f, 20px 0px #005e2f, 30px 0px #005e2f, 40px 0px #005e2f, 50px 0px #005e2f, 60px 0px #005e2f, -130px 10px #176d42, -120px 10px #005e2f, -110px 10px #005e2f, -100px 10px #005e2f, -90px 10px #005e2f, -80px 10px #005e2f, -70px 10px #005e2f, -60px 10px #005e2f, -50px 10px #005e2f, -40px 10px #005e2f, -30px 10px #005e2f, -20px 10px #005e2f, -10px 10px #005e2f, 0px 10px #005e2f, 10px 10px #005e2f, 20px 10px #005e2f, 30px 10px #005e2f, 40px 10px #005e2f, 50px 10px #005e2f, 60px 10px #005e2f, -130px 20px #176d42, -120px 20px #005e2f, -110px 20px #005e2f, -100px 20px #005e2f, -90px 20px #005e2f, -80px 20px #005e2f, -70px 20px #005e2f, -60px 20px #005e2f, -50px 20px #005e2f, -40px 20px #005e2f, -30px 20px #005e2f, -10px 20px #005e2f, 0px 20px #005e2f, 10px 20px #005e2f, 20px 20px #005e2f, 30px 20px #005e2f, 40px 20px #005e2f, 50px 20px #005e2f, 60px 20px #005e2f, 70px 20px #005e2f, -120px 30px #005e2f, -110px 30px #005e2f, -100px 30px #005e2f, -90px 30px #005e2f, -80px 30px #005e2f, -70px 30px #005e2f, -60px 30px #005e2f, -50px 30px #005e2f, -10px 0px transparent;
 }
 
-.mover {
+.leg {
+  -webkit-animation: leg 1s infinite;
+  -webkit-animation-timing-function: linear;
+  animation: leg 1s infinite;
+  animation-timing-function: linear;
   position: absolute;
-  border-top: 60px solid rgba(255, 255, 255, 0.4);
-  border-right: 30px solid transparent;
-  left: 50px;
-  filter: blur( 4px );
-  animation: shine 2s infinite ease-in-out;
+  z-index: 20;
+  top: 300px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: #000;
+  box-shadow: -50px 0px #000, -40px 0px #000, -30px 0px #000, -20px 0px #000, -10px 0px #000, 10px 0px #000, 20px 0px #000, 30px 0px #000, -50px 10px #000, -40px 10px #001e3d, -30px 10px #0055aa, -20px 10px #0080ff, -10px 10px #000, 0px 10px #0080ff, 10px 10px #000, 20px 10px #0055aa, 30px 10px #000, -50px 20px #000, -40px 20px #000, -30px 20px #000, -20px 20px #000, -10px 20px #0055aa, 0px 20px #000, 10px 20px #001e3d, 20px 20px #000, 30px 20px #000, 40px 20px #000, -70px 30px #000, -60px 30px #000, -50px 30px #3d1e00, -40px 30px #aa5500, -30px 30px #aa5500, -20px 30px #000, -10px 30px #0080ff, 0px 30px #001e3d, 10px 30px #0055aa, 20px 30px #000, 30px 30px #3d1e00, 40px 30px #000, -70px 40px #000, -60px 40px #000, -50px 40px #aa5500, -40px 40px #ff7700, -30px 40px #ff7700, -20px 40px #000, -10px 40px #0080ff, 0px 40px #001e3d, 10px 40px #0080ff, 20px 40px #000, 30px 40px #3d1e00, 40px 40px #000, -80px 50px #000, -70px 50px #000, -60px 50px #000, -50px 50px #ff7700, -40px 50px #ff7700, -30px 50px #ff7700, -20px 50px #000, -10px 50px #0080ff, 0px 50px #001e3d, 10px 50px #0080ff, 20px 50px #000, 30px 50px #aa5500, 40px 50px #000, 50px 50px #000, -80px 60px #000, -70px 60px #aa5500, -60px 60px #aa5500, -50px 60px #ff7700, -40px 60px #ff7700, -30px 60px #ff7700, -20px 60px #000, -10px 60px #0055aa, 0px 60px #001e3d, 10px 60px #0080ff, 20px 60px #000, 30px 60px #aa5500, 40px 60px #3d1e00, 50px 60px #000, -80px 70px #000, -70px 70px #aa5500, -60px 70px #ff7700, -50px 70px #ff7700, -40px 70px #ff7700, -30px 70px #ff7700, -20px 70px #000, -10px 70px #001e3d, 0px 70px #001e3d, 10px 70px #0080ff, 20px 70px #000, 30px 70px #aa5500, 40px 70px #aa5500, 50px 70px #000, -80px 80px #000, -70px 80px #3d1e00, -60px 80px #aa5500, -50px 80px #ff7700, -40px 80px #ff7700, -30px 80px #aa5500, -20px 80px #000, -10px 80px #000, 0px 80px #3d1e00, 10px 80px #000, 20px 80px #aa5500, 30px 80px #aa5500, 40px 80px #aa5500, 50px 80px #000, -90px 90px #000, -80px 90px #aa5500, -70px 90px #3d1e00, -60px 90px #3d1e00, -50px 90px #aa5500, -40px 90px #aa5500, -30px 90px #000, -20px 90px #000, -10px 90px #000, 0px 90px #3d1e00, 10px 90px #3d1e00, 20px 90px #3d1e00, 30px 90px #aa5500, 40px 90px #aa5500, 50px 90px #000, -90px 100px #000, -80px 100px #ff7700, -70px 100px #aa5500, -60px 100px #aa5500, -50px 100px #aa5500, -40px 100px #3d1e00, -30px 100px #000, -10px 100px #000, 0px 100px #000, 10px 100px #3d1e00, 20px 100px #aa5500, 30px 100px #aa5500, 40px 100px #3d1e00, 50px 100px #000, -100px 110px #000, -90px 110px #000, -80px 110px #000, -70px 110px #ff7700, -60px 110px #ff7700, -50px 110px #ff7700, -40px 110px #000, -10px 110px #000, 0px 110px #000, 10px 110px #000, 20px 110px #3d1e00, 30px 110px #3d1e00, 40px 110px #000, -100px 120px #000, -90px 120px #001e3d, -80px 120px #0080ff, -70px 120px #ffbb00, -60px 120px #0080ff, -50px 120px #000, -40px 120px #000, -10px 120px #000, 0px 120px #001e3d, 10px 120px #001e3d, 20px 120px #0080ff, 30px 120px #ffbb00, 40px 120px #000, -100px 130px #000, -90px 130px #0055aa, -80px 130px #ffff00, -70px 130px #ffbb00, -60px 130px #0055aa, -50px 130px #000, -10px 130px #000, 0px 130px #000, 10px 130px #001e3d, 20px 130px #000, 30px 130px #ff0000, 40px 130px #000, -110px 140px #000, -100px 140px #0055aa, -90px 140px #ff0000, -80px 140px #ff0000, -70px 140px #001e3d, -60px 140px #001e3d, -50px 140px #000, -10px 140px #000, 0px 140px #3d1e00, 10px 140px #ff0000, 20px 140px #0055aa, 30px 140px #0055aa, 40px 140px #ffbb00, 50px 140px #000, -110px 150px #000, -100px 150px #0055aa, -90px 150px #ffbb00, -80px 150px #0080ff, -70px 150px #ff0000, -60px 150px #000, 0px 150px #000, 10px 150px #001e3d, 20px 150px #0055aa, 30px 150px #0055aa, 40px 150px #0055aa, 50px 150px #ffbb00, 60px 150px #000, -110px 160px #000, -100px 160px #001e3d, -90px 160px #aa5500, -80px 160px #0080ff, -70px 160px #0080ff, -60px 160px #000, 0px 160px #000, 10px 160px #000, 20px 160px #000, 30px 160px #000, 40px 160px #000, 50px 160px #000, 60px 160px #000, -110px 170px #000, -100px 170px #000, -90px 170px #000, -80px 170px #000, -70px 170px #000, -60px 170px #000;
 }
 
-.mover2 {
-  content: "";
+.body {
+  -webkit-animation: body 1s infinite;
+  -webkit-animation-timing-function: linear;
+  animation: body 1s infinite;
+  animation-timing-function: linear;
   position: absolute;
-  border-top: 60px solid rgba(255, 255, 255, 0.4);
-  border-left: 30px solid transparent;
-  transform: scaleY(-1);
-  left: 20px;
-  filter: blur( 4px );
-  animation: shine2 2s infinite ease-in-out;
+  top: 220px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  box-shadow: -90px 0px #000, -80px 0px #3d1e00, -70px 0px #3d1e00, -60px 0px #aa5500, -50px 0px #aa5500, 40px 0px #000, -100px 10px #000, -90px 10px #001e3d, -80px 10px #0080ff, -70px 10px #0080ff, -60px 10px #3d1e00, -50px 10px #ff7700, -40px 10px #aa5500, 30px 10px #aa5500, 40px 10px #000, -100px 20px #000, -90px 20px #000, -80px 20px #0055aa, -70px 20px #0055aa, -60px 20px #0080ff, -50px 20px #ff7700, -40px 20px #ff7700, -30px 20px #000, -20px 20px #c66b49, -10px 20px #ffbb80, 0px 20px #c66b49, 10px 20px #ffbb80, 20px 20px #000, 30px 20px #ff7700, 40px 20px #000, -110px 30px #000, -100px 30px #3d1e00, -90px 30px #c66b49, -80px 30px #000, -70px 30px #0055aa, -60px 30px #0055aa, -50px 30px #aa5500, -40px 30px #ff7700, -30px 30px #aa5500, -20px 30px #0055aa, -10px 30px #0080ff, 0px 30px #0080ff, 10px 30px #0080ff, 20px 30px #000, 30px 30px #ff7700, 40px 30px #000, -110px 40px #000, -100px 40px #c66b49, -90px 40px #c66b49, -80px 40px #c66b49, -70px 40px #000, -60px 40px #000, -50px 40px #000, -40px 40px #ff7700, -30px 40px #ff7700, -20px 40px #000, -10px 40px #0055aa, 0px 40px #0055aa, 10px 40px #0080ff, 20px 40px #000, 30px 40px #808080, 40px 40px #000, -110px 50px #000, -100px 50px #c66b49, -90px 50px #ffbb80, -80px 50px #ffbb80, -70px 50px #000, -60px 50px #000, -50px 50px #3d1e00, -40px 50px #aa5500, -30px 50px #ff7700, -20px 50px #ff7700, -10px 50px #000, 0px 50px #0080ff, 10px 50px #000, 20px 50px #808080, 30px 50px #aa5500, 40px 50px #000, 50px 50px #000, -120px 60px #000, -110px 60px #c66b49, -100px 60px #3d1e00, -90px 60px #ffbb80, -80px 60px #3d1e00, -70px 60px #000, -60px 60px #000, -50px 60px #c66b49, -40px 60px #000, -30px 60px #aa5500, -20px 60px #ff7700, -10px 60px #ff7700, 0px 60px #000, 10px 60px #ff7700, 20px 60px #808080, 30px 60px #000, 40px 60px #c66b49, 50px 60px #000, -120px 70px #000, -110px 70px #0055aa, -100px 70px #c66b49, -90px 70px #c66b49, -80px 70px #3d1e00, -70px 70px #c66b49, -60px 70px #c66b49, -50px 70px #000, -40px 70px #3d1e00, -30px 70px #3d1e00, -20px 70px #aa5500, -10px 70px #ff7700, 0px 70px #ff7700, 10px 70px #ff7700, 20px 70px #aa5500, 30px 70px #000, 40px 70px #ffbb80, 50px 70px #000, -120px 80px #000, -110px 80px #0055aa, -100px 80px #0080ff, -90px 80px #0055aa, -80px 80px #000, 40px 80px #0080ff, 50px 80px #000, -120px 90px #000, -110px 90px #0055aa, -100px 90px #0080ff, -90px 90px #001e3d, 40px 90px #0055aa, 50px 90px #0080ff, 60px 90px #000, -130px 100px #000, -120px 100px #c66b49, -110px 100px #c66b49, -100px 100px #ffbb80, -90px 100px #c66b49, -80px 100px #3d1e00, 50px 100px #ffbb80, 60px 100px #000, -130px 110px #000, -120px 110px #c66b49, -110px 110px #ffbb80, -100px 110px #ffbb80, -90px 110px #ffbb80, -80px 110px #ffbb80, 50px 110px #ffbb80, 60px 110px #000, -130px 120px #000, -120px 120px #c66b49, -110px 120px #ffbb80, -100px 120px #ffbb80, -90px 120px #000, -80px 120px #c66b49, 50px 120px #c66b49, 60px 120px #000, -130px 130px #000, -120px 130px #c66b49, -110px 130px #000, -100px 130px #ffbb80, -90px 130px #000, -120px 140px #000, -110px 140px #000, -100px 140px #c66b49, -90px 140px #000, -100px 150px #000, -90px 150px #c66b49, -90px 160px #000;
 }
 
-.levelup {
-  color: rgb(18, 175, 4);
+.head {
+  -webkit-animation: head 1s infinite;
+  -webkit-animation-timing-function: linear;
+  animation: head 1s infinite;
+  animation-timing-function: linear;
+  position: absolute;
+  z-index: 999;
+  top: 0px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: #000;
+  box-shadow: 10px 0px #000, 20px 0px #000, 30px 0px #000, 40px 0px #000, 50px 0px #000, -20px 10px #000, -10px 10px #000, 0px 10px #000, 10px 10px #000, 20px 10px #000, 30px 10px #000, -30px 20px #000, -20px 20px #000, -10px 20px #000, 0px 20px #000, 10px 20px #000, 20px 20px #000, -40px 30px #000, -30px 30px #000, -20px 30px #000, -10px 30px #000, 0px 30px #000, 10px 30px #000, 20px 30px #000, -40px 40px #000, -30px 40px #000, -20px 40px #000, -10px 40px #000, 0px 40px #000, 10px 40px #000, 40px 40px #000, 50px 40px #000, 60px 40px #000, 70px 40px #000, -50px 50px #000, -40px 50px #000, -30px 50px #000, -20px 50px #000, -10px 50px #000, 0px 50px #000, 10px 50px #000, 30px 50px #000, 40px 50px #000, 50px 50px #000, 60px 50px #000, 70px 50px #000, 80px 50px #000, 90px 50px #000, -50px 60px #000, -40px 60px #000, -30px 60px #000, -20px 60px #000, -10px 60px #000, 0px 60px #000, 10px 60px #000, 20px 60px #000, 30px 60px #000, 40px 60px #000, 50px 60px #000, 60px 60px #000, 70px 60px #000, 80px 60px #000, 90px 60px #000, 100px 60px #000, -50px 70px #000, -40px 70px #000, -30px 70px #000, -20px 70px #000, -10px 70px #000, 0px 70px #000, 10px 70px #000, 20px 70px #000, 30px 70px #000, 40px 70px #000, 50px 70px #000, 60px 70px #000, 70px 70px #000, 80px 70px #000, 90px 70px #000, 100px 70px #000, 110px 70px #000, -50px 80px #000, -40px 80px #000, -30px 80px #000, -20px 80px #000, -10px 80px #000, 0px 80px #000, 10px 80px #000, 20px 80px #000, 30px 80px #000, 40px 80px #000, 50px 80px #000, 60px 80px #000, 70px 80px #000, 80px 80px #000, 90px 80px #000, 100px 80px #000, 110px 80px #000, 120px 80px #000, -70px 90px #000, -60px 90px #000, -50px 90px #000, -40px 90px #000, -30px 90px #000, -20px 90px #000, -10px 90px #000, 0px 90px #000, 10px 90px #000, 20px 90px #000, 30px 90px #000, 40px 90px #000, 50px 90px #000, 60px 90px #000, 70px 90px #000, 80px 90px #000, 90px 90px #000, 100px 90px #000, 110px 90px #000, 120px 90px #000, -80px 100px #000, -70px 100px #000, -60px 100px #000, -50px 100px #000, -40px 100px #000, -30px 100px #000, -20px 100px #000, -10px 100px #000, 0px 100px #000, 10px 100px #000, 20px 100px #000, 30px 100px #000, 40px 100px #000, 50px 100px #000, 60px 100px #000, 70px 100px #000, 80px 100px #000, 90px 100px #000, -90px 110px #000, -80px 110px #000, -70px 110px #000, -60px 110px #000, -50px 110px #000, -40px 110px #000, -30px 110px #000, -20px 110px #000, -10px 110px #000, 0px 110px #000, 10px 110px #000, 20px 110px #000, 30px 110px #000, 40px 110px #000, 50px 110px #000, 60px 110px #000, 70px 110px #000, -90px 120px #000, -80px 120px #000, -70px 120px #000, -60px 120px #000, -50px 120px #000, -40px 120px #000, -30px 120px #000, -20px 120px #000, -10px 120px #000, 0px 120px #000, 10px 120px #000, 20px 120px #000, 30px 120px #000, 40px 120px #000, 50px 120px #000, 60px 120px #000, -130px 130px #000, -120px 130px #000, -110px 130px #000, -100px 130px #000, -90px 130px #000, -80px 130px #000, -70px 130px #000, -60px 130px #000, -50px 130px #000, -40px 130px #000, -30px 130px #000, -20px 130px #000, -10px 130px #000, 0px 130px #000, 10px 130px #000, 20px 130px #000, 30px 130px #000, 40px 130px #000, 50px 130px #000, 60px 130px #000, 70px 130px #000, 80px 130px #000, -110px 140px #000, -100px 140px #000, -90px 140px #000, -80px 140px #000, -70px 140px #000, -60px 140px #000, -50px 140px #000, -40px 140px #000, -30px 140px #000, -20px 140px #000, -10px 140px #000, 0px 140px #c66b49, 10px 140px #000, 20px 140px #000, 30px 140px #000, 40px 140px #000, 50px 140px #000, 60px 140px #000, 70px 140px #000, 80px 140px #000, 90px 140px #000, 100px 140px #000, -130px 150px #000, -120px 150px #000, -110px 150px #000, -100px 150px #000, -90px 150px #000, -80px 150px #000, -70px 150px #000, -60px 150px #000, -50px 150px #000, -40px 150px #c66b49, -30px 150px #000, -20px 150px #000, -10px 150px #000, 0px 150px #c66b49, 10px 150px #c66b49, 20px 150px #c66b49, 30px 150px #000, 40px 150px #000, 50px 150px #000, 60px 150px #000, 70px 150px #000, 80px 150px #000, 90px 150px #000, 100px 150px #000, 110px 150px #000, -150px 160px #000, -140px 160px #000, -130px 160px #000, -120px 160px #000, -110px 160px #000, -100px 160px #000, -90px 160px #000, -80px 160px #000, -70px 160px #000, -60px 160px #000, -50px 160px #000, -40px 160px #c66b49, -30px 160px #c66b49, -20px 160px #000, -10px 160px #000, 0px 160px #c66b49, 10px 160px #ffbb80, 20px 160px #ffbb80, 30px 160px #c66b49, 40px 160px #000, 50px 160px #000, 60px 160px #000, 70px 160px #000, 80px 160px #000, -140px 170px #000, -130px 170px #000, -120px 170px #000, -110px 170px #000, -100px 170px #000, -90px 170px #000, -80px 170px #000, -70px 170px #ffbb80, -60px 170px #000, -50px 170px #000, -40px 170px #000, -30px 170px #000, -20px 170px #000, -10px 170px #000, 0px 170px #ffbb80, 10px 170px #ffbb80, 20px 170px #ffbb80, 30px 170px #ffbb80, 40px 170px #c66b49, 50px 170px #000, 60px 170px #000, -120px 180px #000, -110px 180px #000, -100px 180px #000, -90px 180px #000, -80px 180px #000, -70px 180px #ffbb80, -60px 180px #000, -50px 180px #47261a, -40px 180px #000, -30px 180px #bbb, -20px 180px #bbb, -10px 180px #000, 0px 180px #000, 10px 180px #ffbb80, 20px 180px #ffbb80, 30px 180px #000, 40px 180px #000, 50px 180px #000, 60px 180px #000, -130px 190px #000, -120px 190px #000, -110px 190px #000, -100px 190px #000, -90px 190px #000, -80px 190px #000, -70px 190px #c66b49, -60px 190px #000, -50px 190px #47261a, -40px 190px #c66b49, -30px 190px #bbb, -20px 190px #fff, -10px 190px #555555, 0px 190px #c66b49, 10px 190px #ffbb80, 20px 190px #ffbb80, 30px 190px #c66b49, 40px 190px #000, -100px 200px #000, -90px 200px #000, -80px 200px #000, -70px 200px #000, -60px 200px #000, -50px 200px #47261a, -40px 200px #c66b49, -30px 200px #c66b49, -20px 200px #ffbb80, -10px 200px #ffbb80, 0px 200px #ffbb80, 10px 200px #ffbb80, 20px 200px #ffbb80, 30px 200px #c66b49, 40px 200px #000, -110px 210px #000, -100px 210px #bba578, -90px 210px #000, -80px 210px #000, -70px 210px #000, -60px 210px #000, -50px 210px #000, -40px 210px #47261a, -30px 210px #c66b49, -20px 210px #ffbb80, -10px 210px #ffbb80, 0px 210px #ffbb80, 10px 210px #ffbb80, 20px 210px #c66b49, 30px 210px #000, -40px 220px #000, -30px 220px #000, -20px 220px #c66b49, -10px 220px #ffbb80, 0px 220px #ffbb80, 10px 220px #c66b49, 20px 220px #000, 30px 220px #000, -30px 230px #000, -20px 230px #000, -10px 230px #000, 0px 230px #000, 10px 230px #000, 20px 230px #000;
+}
+
+.font {
+  font-size: 16px;
+  font-family: 'VT323', monospace;
+  margin-bottom: 25px;
+  z-index: 999999;
+}
+
+.font-text {
+  font-size: 10px;
+  font-family: 'VT323', monospace;
+}
+
+.font-power {
+  font-family: 'VT323', monospace;
+  font-weight: 900;
+  z-index: 999999;
+}
+
+.text {
+  font-size: 22px;
+  color: #000;
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 160px;
   text-align: center;
-  padding-top: 0.6rem;
-  font-weight: bolder;
-  font-size: 1.8rem;
-  z-index: 3;
+  z-index: 999999;
 }
 
-.congrats {
-  font-family: cursive;
-  font-size: 1.5rem;
-  color: rgb(240, 240, 240);
-  text-align: center;
-  padding-top: 1rem;
-  text-shadow: 1px 4px 7px rgb(7, 7, 7);
+.parchment {
+  background: #FFFCD3;
+  border: 1px dashed #E99C54;
+  width: 100px;
+  height: 100px;
+  margin-left: 155px;
+  margin-top: -90px;
+  border-radius: 5px;
 }
 
-.wing {
-  transform: translate(150px,-100px);
-  position: absolute;
-  z-index: -1;
-  animation: winganime 2s ease-in-out infinite;
+.parchment {
+  /* -xpedu-transform: scale(1.3); */
+  /* -ms-transform: scale(1.3); */
+  /* transform: scale(1.05); */
+  z-index: -999 !important;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
 }
 
-.wing1 {
-  transform: translate(-30px,-100px) scaleX(-1);
-  position: absolute;
-  z-index: -1;
-  animation: winganime2 2s ease-in-out infinite;
+.parchment:hover {
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  -ms-transform: translateY(-8px);
+  -o-transform: translateY(-8px);
+  transform: translateY(-8px);
 }
 
-.bg {
-  background: rgb(223, 223, 105);
-  width: 130px;
-  height: 130px;
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  transform: translate(50%,-50%);
-  z-index: -2;
-  border-radius: 50%;
-  box-shadow: rgb(252, 255, 54,0.7) 0px 4px 105px, rgb(252, 255, 54,0.7) 0px -24px 130px, rgb(252, 255, 54,0.7) 0px 4px 446px, rgb(252, 255, 54,0.7) 0px 12px 13px, rgb(252, 255, 54,0.7) 0px -3px 5px;
-  animation: rot 2.5s infinite ease-in-out;
-  transform-origin: center;
+.font-text {
+  -xpedu-transform: scale(1.1);
+  -ms-transform: scale(1.3);
+  transform: scale(1.1);
+  z-index: 99999;
 }
 
-@keyframes rot {
-  0% {
-    transform: translate(50%,-50%) rotate(0deg);
-  }
-
-  100% {
-    transform: translate(50%,-50%) rotate(360deg);
-  }
+.hover {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
 }
 
-@keyframes winganime {
-  0% {
-    transform: translate(150px,-100px) rotateY(0deg);
-  }
-
-  50% {
-    transform: translate(150px,-95px) rotateY(25deg);
-  }
-
-  100% {
-    transform: translate(150px,-100px) rotateY(0deg);
-  }
+.hover:hover {
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  -ms-transform: translateY(-8px);
+  -o-transform: translateY(-8px);
+  transform: translateY(-8px);
 }
 
-@keyframes winganime2 {
-  0% {
-    transform: translate(-30px,-100px) rotateY(0deg) scaleX(-1);
-  }
-
-  50% {
-    transform: translate(-30px,-95px) rotateY(-25deg) scaleX(-1);
-  }
-
-  100% {
-    transform: translate(-30px,-100px) rotateY(0deg) scaleX(-1);
-  }
+.font-power:hover {
+  color: #ff7700;
+  text-decoration: wavy;
 }
 
-@keyframes shine {
-  0% {
-    left: -50px;
-  }
-
-  100% {
-    left: 300px;
-  }
-}
-
-@keyframes shine2 {
-  0% {
-    left: -20px;
-  }
-
-  100% {
-    left: 270px;
-  }
+.font:hover {
+  color: #ffbb00;
 }
 </style>

@@ -1,57 +1,117 @@
-<div class="radio-buttons">
-  <label>
-    <input type="radio" name="option" value="1" checked="">
-    <span class="option">Option 1</span>
-  </label>
-  <label>
-    <input type="radio" name="option" value="2">
-    <span class="option">Option 2</span>
-  </label>
-  <label>
-    <input type="radio" name="option" value="3">
-    <span class="option">Option 3</span>
-  </label>
-</div>
+<label class="switch">
+  <input type="checkbox" />
+  <span class="slider">
+    <span class="yolk"> </span>
+    <span class="back"> </span>
+  </span>
+</label>
 
 <style>
-/* From SHΞN™ Morphism by NlghtM4re - Tags: radio */
-.radio-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(164, 215, 246);
-  border-radius: 15px;
-  box-shadow: rgb(71, 175, 239) 0px 5px 29px 5px;
-}
-
-.radio-buttons label {
-  position: relative;
-  cursor: pointer;
-}
-
-.radio-buttons input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.option {
+/* From SHΞN™ Morphism by Na3ar-17  - Tags: simple, animation, action, switch, dark, modern, click, toggle switch */
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
   position: relative;
   display: inline-block;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border: none;
-  color: black;
-  border-radius: 14px;
-  padding: 10px;
+  width: 95px;
+  height: 50px;
+  background-color: #2a2a2a;
+  border-radius: 30px;
+  cursor: pointer;
 }
 
-.option:hover {
-  background-color: rgb(137, 207, 251);
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.radio-buttons input[type="radio"]:checked + .option {
-  background-color: rgb(71, 175, 239);
-  box-shadow: rgb(11, 70, 107) 0px 5px 29px 5px;
+/* The slider */
+.slider {
+  position: absolute;
+  top: 50%;
+  left: 26%;
+  transform: translate(-50%, -50%);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: white;
+  transition: 0.3s cubic-bezier(0.68, -0.25, 0.265, 1.1);
+  overflow: hidden;
 }
+
+.slider .yolk {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25px;
+  aspect-ratio: 1/1;
+  background-color: #f2a828;
+  border-radius: 50%;
+  -webkit-box-shadow: inset -2px -2px 43px -35px rgba(255, 255, 255, 1);
+  -moz-box-shadow: inset -2px -2px 43px -35px rgba(255, 255, 255, 1);
+  box-shadow: inset -2px -2px 43px -35px rgba(255, 255, 255, 1);
+}
+
+.slider .yolk::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -22px;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background-color: #cabea8;
+  border-radius: 50%;
+}
+
+.slider .yolk::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border-left: 6px solid #fff;
+  clip-path: circle(50% at 50% 50%);
+}
+
+.slider .back {
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  transform: translate(-50%, -50%);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #cabea8;
+  transition: 0.3s cubic-bezier(0, 0, 0.265, 1.1);
+  overflow: hidden;
+}
+
+.slider .back::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25px;
+  aspect-ratio: 1/1;
+  background-color: #eec076;
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+  left: 74%;
+}
+
+.switch input:checked + .slider .back {
+  left: 50%;
+}
+
 </style>
+    

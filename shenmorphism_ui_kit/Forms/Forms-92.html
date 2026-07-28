@@ -1,119 +1,86 @@
 <form class="form">
-  <div class="content">
-    <p align="center">OTP Verification</p>
-    <div class="inp">
-    <input placeholder="" type="text" class="input" maxlength="1">
-    <input placeholder="" type="text" class="input" maxlength="1"> 
-    <input placeholder="" type="text" class="input" maxlength="1"> 
-    <input placeholder="" type="text" class="input" maxlength="1"> 
-    </div>
-    <button>Verify</button>
-    <svg class="svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#4073ff" d="M56.8,-23.9C61.7,-3.2,45.7,18.8,26.5,31.7C7.2,44.6,-15.2,48.2,-35.5,36.5C-55.8,24.7,-73.9,-2.6,-67.6,-25.2C-61.3,-47.7,-30.6,-65.6,-2.4,-64.8C25.9,-64.1,51.8,-44.7,56.8,-23.9Z" transform="translate(100 100)" class="path"></path>
-  </svg>
-  </div>
-  
+  <input placeholder="Enter your name" class="input" type="text">
+  <input placeholder="Enter your email" class="input" type="text">
+    <input placeholder="*********" class="input" type="password">
+
+  <button>Submit</button>
 </form>
 <style>
-/* From SHΞN™ Morphism by reshades - Tags: OTP, form, animated, clean, verify, Verification */
+/* From SHΞN™ Morphism by aboalsim114 - Tags: 3d, form */
 .form {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background: #00000000;
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8.2px);
-  -webkit-backdrop-filter: blur(8.2px);
-  border: 1px solid #369eff66;
-  width: 14em;
-  height: 14em;
+  padding: 20px;
+  background: linear-gradient(to bottom, #0077be, #3b8df2);
+  border-radius: 10px;
+  overflow: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: rotateX(-10deg);
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  animation: form-animation 0.5s ease-in-out;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: auto;
-  margin-bottom: auto;
-}
+@keyframes form-animation {
+  from {
+    transform: rotateX(-30deg);
+    opacity: 0;
+  }
 
-.form p {
-  color: #fff;
-  font-weight: bolder;
-}
-
-.path {
-  fill: #369eff
-}
-
-.svg {
-  filter: blur(20px);
-  z-index: -1;
-  position: absolute;
-  opacity: 50%;
-  animation: anim 3s infinite;
-}
-
-.inp {
-  margin-left: auto;
-  margin-right: auto;
-  white-space: 4px;
-}
-
-.input + .input {
-  margin-left: 0.3em
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
 }
 
 .input {
-  color: #fff;
-  height: 2em;
-  width: 2em;
-  float: left;
-  text-align: center;
-  background: #00000000;
-  outline: none;
-  border: 1px #369eff solid;
-  border-radius: 10px;
-  transition: all 0.6s ease;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  color: rgb(255, 255, 255);
+  border: 2px solid #3b8df2;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
+.input::placeholder {
+  color: #fff;
+}
+
+.input:hover,
 .input:focus {
+  border-color: #3b8df2;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05) rotateY(20deg);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
   outline: none;
-  border: 1px #fff solid;
 }
 
-.input:not(:placeholder-shown) {
-  opacity: 40%
-}
-
-.form button {
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #00000000;
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3b8df2;
   color: #fff;
-  width: 8.5em;
-  height: 2.3em;
-  border: #369eff 0.2em solid;
-  border-radius: 11px;
-  transition: all 0.5s ease;
+  font-size: 16px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform: rotateX(-10deg);
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-.form button:hover {
-  background-color: #369eff;
+button:hover {
+  background-color: #0077be;
+  font-size: 17px;
+  transform: scale(1.05) rotateY(20deg) rotateX(10deg);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-@keyframes anim {
-  0% {
-    transform: translateY(-70px);
-  }
-
-  50% {
-    transform: translateY(-19px);
-  }
-
-  100% {
-    transform: translateY(-70px);
-  }
-}
 </style>

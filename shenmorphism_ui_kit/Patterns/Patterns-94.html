@@ -1,20 +1,34 @@
 <div class="container"></div>
 
 <style>
-/* From SHΞN™ Morphism by mobinkakei  - Tags: simple, blue, pattern */
+/* From SHΞN™ Morphism by Efrain2112  - Tags: simple, white, pattern */
 .container {
   width: 100%;
   height: 100%;
-  /* Add your background pattern here */
-  --s: 25px; /* control the size */
-  --c1: #1eaaee;
-  --c2: #171717;
+  --size: 150px; /* control the size */
+  --color: #d1bdbd;
 
-  --c: #0000 71%, var(--c1) 0 79%, #0000 0;
-  --_s: calc(var(--s) / 2) / calc(2 * var(--s)) calc(2 * var(--s));
-  background: linear-gradient(45deg, var(--c)) calc(var(--s) / -2) var(--_s),
-    linear-gradient(135deg, var(--c)) calc(var(--s) / 2) var(--_s),
-    radial-gradient(var(--c1) 35%, var(--c2) 37%) 0 0 / var(--s) var(--s);
+  background: radial-gradient(
+      circle at 15% 30%,
+      transparent 40%,
+      var(--color) 41%
+    ),
+    radial-gradient(circle at 85% 30%, transparent 40%, var(--color) 41%),
+    radial-gradient(circle at 50% 70%, transparent 40%, var(--color) 41%),
+    radial-gradient(circle at 15% 70%, transparent 40%, var(--color) 41%),
+    radial-gradient(circle at 85% 70%, transparent 40%, var(--color) 41%),
+    linear-gradient(
+      45deg,
+      var(--color) 25%,
+      rgba(0, 0, 0, 0.067) 0,
+      rgba(0, 0, 0, 0.067) 50%,
+      var(--color) 0,
+      var(--color) 75%,
+      #1111 0,
+      #1111 100%,
+      var(--color) 0
+    );
+  background-size: var(--size) var(--size);
 }
 
 </style>

@@ -1,49 +1,73 @@
-<div class="group">
-  <svg stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon">
-  <path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" stroke-linejoin="round" stroke-linecap="round"></path>
-</svg>
-<input class="input" type="password" placeholder="password">
+<div class="input-wrapper">
+  <button class="icon"> 
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="25px" width="25px">
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"></path>
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M22 22L20 20"></path>
+    </svg>
+  </button>
+  <input placeholder="search.." class="input" name="text" type="text">
 </div>
 <style>
-/* From SHΞN™ Morphism by ozgeozkaraa01 - Tags: input, input effect , hover input  */
-.group {
+/* From SHΞN™ Morphism by boryanakrasteva - Tags: input, search */
+.input-wrapper {
   display: flex;
-  line-height: 30px;
   align-items: center;
+  justify-content: center;
+  gap: 15px;
   position: relative;
-  max-width: 200px;
 }
 
 .input {
-  width: 100%;
-  height: 45px;
-  line-height: 30px;
-  padding: 0 5rem;
-  padding-left: 3rem;
-  border: 2px solid transparent;
-  border-radius: 10px;
+  border-style: none;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
   outline: none;
-  background-color: #f8fafc;
-  color: #0d0c22;
-  transition: .5s ease;
+  border-radius: 50%;
+  transition: .5s ease-in-out;
+  background-color: #7e4fd4;
+  box-shadow: 0px 0px 3px #f3f3f3;
+  padding-right: 40px;
+  color: #fff;
+}
+
+.input::placeholder,
+.input {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 17px;
 }
 
 .input::placeholder {
-  color: #94a3b8;
-}
-
-.input:focus, input:hover {
-  outline: none;
-  border-color: rgba(129, 140, 248);
-  background-color: #fff;
-  box-shadow: 0 0 0 5px rgb(129 140 248 / 30%);
+  color: #8f8f8f;
 }
 
 .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  left: 1rem;
-  fill: none;
-  width: 1rem;
-  height: 1rem;
+  right: 0px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border-style: none;
+  border-radius: 50%;
+  pointer-events: painted;
+  background-color: transparent;
+  transition: .2s linear;
 }
+
+.icon:focus ~ .input,
+.input:focus {
+  box-shadow: none;
+  width: 250px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 3px solid #7e4fd4;
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+
+
 </style>

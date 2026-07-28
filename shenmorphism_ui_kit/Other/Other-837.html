@@ -1,31 +1,28 @@
-<div class="loader"></div>
+<div class="animation">Text writing!</div>
 <style>
-/* From SHΞN™ Morphism by gagan-gv - Tags: loader */
-.loader {
-  width: 60px;
-  height: 60px;
-  background: #4285f4;
-  border-radius: 10%;
-  animation: dice3 7s ease-in-out infinite;
-  filter: drop-shadow(2px 3px 40px #444);
+/* From SHΞN™ Morphism by JkHuger - Tags: animation, text, writing */
+@keyframes typing {
+  from {
+    width: 0;
+  }
 }
 
-@keyframes dice3 {
-  from, to {
-    transform: translateX(-50px) rotateX(0deg);
-  }
-
-  25% {
-    background: #db4437;
-  }
-
+@keyframes blink-caret {
   50% {
-    background: #f4b400;
-    transform: translateX(50px) rotate(360deg);
+    border-color: transparent;
   }
-
-  75% {
-    background: #0f9d58;
-  }
+}
+/* When you change the amount of characters in the h1, you have to change 
+the with: 14ch and  steps(14, end), if there is 14 characters, put 14, 
+if there is 20 put 20 */
+.animation {
+  font: bold 200% Consolas, Monaco, monospace;
+  border-right: .1em solid black;
+  width: 13.20ch;
+  margin: 2em 2em;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: typing 5s steps(13, end),
+	           blink-caret .5s step-end infinite alternate;
 }
 </style>

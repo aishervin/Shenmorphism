@@ -1,62 +1,31 @@
-<div class="button-container">
-  <span class="text">
-    <span class="button-lines">
-      <span class="button-line-1"></span>
-      <span class="button-line-2"></span>
-    </span>
-  </span>
-</div>
+<button class="my-button">Click Me</button>
 
 <style>
-/* From SHΞN™ Morphism by SelfMadeSystem  - Tags: 3d, button, game, border, 3d button, illustrated */
-.button-container {
-  --background: #fefbff;
-  --inner-shadow: #9faef9;
-  --inner-outline: #34217d;
-  --inner-outline-bottom: #fafcfe;
-  --inner-outline-middle: #8880d5;
-  --inner-outline-outer-top: #fefcff;
-  --inner-outline-outer-bottom-1: #29107b;
-  --line-1: #8676c9;
-  --line-2: #5c69ca;
-  position: relative;
-  background: var(--background);
+/* From SHΞN™ Morphism by PriyanshuGupta28 - Tags: gradient, button */
+.my-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  transition: 0.2s ease-in-out;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.2s;
-  font-size: 17px;
-  padding: 0.7em 1.8em;
-  border-radius: 5px;
-  box-shadow: inset 0px 1px 8px 1px var(--inner-shadow),
-    0px 2px 0px 0px var(--inner-outline-bottom),
-    0px -2px 0px 0px var(--inner-outline),
-    -2px -2px 0px 0px var(--inner-outline),
-    2px -2px 0px 0px var(--inner-outline),
-    0px 0px 0px 6px var(--inner-outline-middle),
-    0px -2px 0px 7px var(--inner-outline-outer-top),
-    0px 4px 0px 7px var(--inner-outline-outer-bottom-1);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-.button-lines {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4em;
+.my-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
-.button-line-1 {
-  height: 0.2em;
-  width: 4em;
-  border-radius: 10em;
-  display: inline-block;
-  background: var(--line-1);
-}
-
-.button-line-2 {
-  height: 0.2em;
-  width: 3em;
-  border-radius: 10em;
-  display: inline-block;
-  background: var(--line-2);
+.my-button:active {
+  background-color: #00DBDE;
+  background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
 }
 
 </style>
-    

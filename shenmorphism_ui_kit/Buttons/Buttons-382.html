@@ -1,53 +1,30 @@
 <button class="button">
-  CLICK ME
+  <p class="text-inside">HOVER ME</p>
 </button>
 <style>
-/* From SHΞN™ Morphism by Bodyhc - Tags: button, bootsrap button, business, 3d button */
-button {
-  --color: #560bad;
-  background-color: #fff;
-  font-family: inherit;
-  display: inline-block;
-  width: 8em;
-  height: 2.6em;
-  line-height: 2.5em;
-  margin: 20px;
-  position: relative;
-  overflow: hidden;
-  border: 2px solid var(--color);
-  transition: color .5s;
-  z-index: 1;
-  font-size: 17px;
-  border-radius: 6px;
-  font-weight: 500;
-  cursor: pointer;
-  color: var(--color);
+/* From SHΞN™ Morphism by Bartek1238462 - Tags: button, hover, neon, hover effect */
+.button {
+  width: 120px;
+  height: 40px;
+  background-color: rgb(0, 0, 0);
+  border: 3px solid rgb(0, 0, 0);
+  color: white;
+  border-radius: 25px;
+  transition: 1.5s;
 }
 
-button:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  background: var(--color);
-  height: 150px;
-  width: 200px;
-  border-radius: 50px;
-  bottom: 100%;
-  right: 100%;
-  transition: .8s ease;
+text-inside. {
+  font-weight: bold;
 }
 
-button:hover {
-  color: #fff;
-}
-
-button:hover:before {
-  bottom: -30px;
-  left: -30px;
-}
-
-button:active:before {
-  background: #3a0ca3;
-  transition: background 2s;
+.button:hover {
+  box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px
+,rgba(240, 46, 170, 0.4) 5px -5px, rgba(240, 46, 170, 0.3) 10px -10px, rgba(240, 46, 170, 0.2) 15px -15px, rgba(240, 46, 170, 0.1) 20px -20px, rgba(240, 46, 170, 0.05) 25px -25px
+,rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px
+,rgba(240, 46, 170, 0.4) -5px -5px, rgba(240, 46, 170, 0.3) -10px -10px, rgba(240, 46, 170, 0.2) -15px -15px, rgba(240, 46, 170, 0.1) -20px -20px, rgba(240, 46, 170, 0.05) -25px -25px;
+  background-color: rgba(240, 46, 170, 0.4);
+  color: rgb(56, 0, 36);
+  border: 2px solid white;
+  transform: scale(1.2,1.2);
 }
 </style>

@@ -1,43 +1,31 @@
-<div class="input-field">
-  <input required="" name="text" type="text" />
-  <label>Enter your email</label>
-</div>
-
+<input type="password" placeholder="Password" name="text" class="input">
 <style>
-/* From SHΞN™ Morphism by elijahgummer  - Tags: animation, white, black, input, dark, text animation, transition, click effect */
-.input-field {
-  position: relative;
-  border-bottom: 2px solid #f0f424;
-  margin: 15px 0;
-}
-
-.input-field label {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  color: #fff;
-  font-size: 16px;
-  pointer-events: none;
-  transition: 0.15s ease;
-}
-
-.input-field input {
-  width: 100%;
+/* From SHΞN™ Morphism by andrew-demchenk0 - Tags: input, shadow, password */
+.input {
+  --input-focus: #2d8cf0;
+  --font-color: #323232;
+  --font-color-sub: #666;
+  --bg-color: #fff;
+  --main-color: #323232;
+  width: 200px;
   height: 40px;
-  background: transparent;
-  border: none;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 4px 4px var(--main-color);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--font-color);
+  padding: 5px 10px;
   outline: none;
-  font-size: 16px;
-  color: #fff;
 }
 
-.input-field input:focus ~ label,
-.input-field input:valid ~ label {
-  font-size: 0.8rem;
-  top: 10px;
-  transform: translateY(-120%);
+.input::placeholder {
+  color: var(--font-color-sub);
+  opacity: 0.8;
 }
 
+.input:focus {
+  border: 2px solid var(--input-focus);
+}
 </style>
-    

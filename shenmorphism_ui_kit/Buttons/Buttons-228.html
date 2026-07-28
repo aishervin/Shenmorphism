@@ -1,59 +1,62 @@
-<button class="button">
-  Button
-</button>
+<div class="button-container">
+  <span class="text">
+    <span class="button-lines">
+      <span class="button-line-1"></span>
+      <span class="button-line-2"></span>
+    </span>
+  </span>
+</div>
+
 <style>
-/* From SHΞN™ Morphism by JaydipPrajapati1910 - Tags: gradient, button, gradients, effects, css effect */
-.button {
-  width: 140px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 0px 15px;
-  background-color: red;
-  border-radius: 10px;
-  border: none;
-  color: white;
+/* From SHΞN™ Morphism by SelfMadeSystem  - Tags: 3d, button, game, border, 3d button, illustrated */
+.button-container {
+  --background: #fefbff;
+  --inner-shadow: #9faef9;
+  --inner-outline: #34217d;
+  --inner-outline-bottom: #fafcfe;
+  --inner-outline-middle: #8880d5;
+  --inner-outline-outer-top: #fefcff;
+  --inner-outline-outer-bottom-1: #29107b;
+  --line-1: #8676c9;
+  --line-2: #5c69ca;
   position: relative;
+  background: var(--background);
   cursor: pointer;
-  font-weight: 900;
-  transition-duration: .2s;
-  background: linear-gradient(0deg, #000, #272727);
+  transition: all 0.2s;
+  font-size: 17px;
+  padding: 0.7em 1.8em;
+  border-radius: 5px;
+  box-shadow: inset 0px 1px 8px 1px var(--inner-shadow),
+    0px 2px 0px 0px var(--inner-outline-bottom),
+    0px -2px 0px 0px var(--inner-outline),
+    -2px -2px 0px 0px var(--inner-outline),
+    2px -2px 0px 0px var(--inner-outline),
+    0px 0px 0px 6px var(--inner-outline-middle),
+    0px -2px 0px 7px var(--inner-outline-outer-top),
+    0px 4px 0px 7px var(--inner-outline-outer-bottom-1);
 }
 
-.button:before, .button:after {
-  content: '';
-  position: absolute;
-  left: -2px;
-  top: -2px;
-  border-radius: 10px;
-  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
-		#0000ff, #00ff00,#ffff00, #ff0000);
-  background-size: 400%;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  z-index: -1;
-  animation: steam 20s linear infinite;
+.button-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
 }
 
-@keyframes steam {
-  0% {
-    background-position: 0 0;
-  }
-
-  50% {
-    background-position: 400% 0;
-  }
-
-  100% {
-    background-position: 0 0;
-  }
+.button-line-1 {
+  height: 0.2em;
+  width: 4em;
+  border-radius: 10em;
+  display: inline-block;
+  background: var(--line-1);
 }
 
-.button:after {
-  filter: blur(50px);
+.button-line-2 {
+  height: 0.2em;
+  width: 3em;
+  border-radius: 10em;
+  display: inline-block;
+  background: var(--line-2);
 }
-
 
 </style>
+    

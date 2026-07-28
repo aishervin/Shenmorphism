@@ -1,95 +1,115 @@
-<div class="card">
-  <div class="tools">
-    <div class="circle">
-      <span class="red box"></span>
+<section class="container">
+  <div class="card">
+    <div class="content">
+    <p class="logo">Digital Way</p>
+      <div class="h6">Data &amp; Infrastructure Agility</div>
+      <div class="hover_content">
+        <p>mParticle’s customer data platform empowers you to Integrate all of your data and orchestrate it across channels, partners, and systems.</p>
+      </div>
     </div>
-    <div class="circle">
-      <span class="yellow box"></span>
-    </div>
-    <div class="circle">
-      <span class="green box"></span>
-    </div>
-  </div>
-  <div class="card__content">
-    <p class="title">Title</p>
-    <hr>
-    <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus pariatur animi praesentium
-    </p>
-  </div>
-</div>
+  </div>       
+</section>
 <style>
-/* From SHΞN™ Morphism by javierBarroso - Source: EmmaxPlay - Tags: card, radio, creative, cool card */
+/* From SHΞN™ Morphism by Admin12121 - Tags: cardgift, card template, cardhover , card animation */
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .card {
-  width: 190px;
-  height: 254px;
-  margin: 0 auto;
-  background-color: #f4f4f3;
-  border-radius: 8px;
-  z-index: 1;
   position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  width: 22em;
+  max-width: 80%;
+  padding: 2em 0;
+  background: #FFF;
+  box-shadow: 0 0 6px 0 rgba(32, 32, 36, 0.12);
+  transition: all 0.35s ease;
+}
+
+.card::before, .card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: orange;
+  height: 4px;
+}
+
+.card::before {
+  width: 0;
+  opacity: 0;
+  transition: opacity 0 ease, width 0 ease;
+  transition-delay: 0.5s;
 }
 
 .card::after {
-  position: absolute;
-  content: '';
-  background-color: #454a50;
-  width: 50px;
-  height: 100px;
-  z-index: -1;
-  border-radius: 8px;
+  width: 100%;
+  background: white;
+  transition: width 0.5s ease;
 }
 
-.tools {
-  display: flex;
-  align-items: center;
-  padding: 9px;
-  border-radius: 8px;
-  background: #454a50;
-  margin-top: -2px;
+.card .content {
+  width: 18em;
+  max-width: 80%;
 }
 
-.circle {
-  padding: 0 4px;
+.card .logo {
+  margin: 0 0 1em;
+  width: 10.625em;
+  transition: all 0.35s ease;
 }
 
-.card__content {
-  height: 100%;
-  margin: 0px;
-  border-radius: 8px;
-  background: #f4f4f3;
-  padding: 10px;
+.card .h6 {
+  color: #999;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 2px;
 }
 
-.title {
-  font-size: 20px;
+.card .hover_content {
+  overflow: hidden;
+  max-height: 0;
+  transform: translateY(1em);
+  transition: all 0.55s ease;
 }
 
-.content {
-  margin-top: 10px;
-  font-size: 14px;
+.card .hover_content p {
+  margin: 1.5em 0 0;
+  color: #6E6E70;
+  line-height: 1.4em;
 }
 
-.box {
-  display: inline-block;
-  align-items: center;
-  width: 10px;
-  height: 10px;
-  padding: 1px;
-  border-radius: 50%;
+.card:hover {
+  width: 24em;
+  box-shadow: 0 10px 20px 0 rgba(32, 32, 36, 0.12);
 }
 
-.red {
-  background-color: #ff605c;
+.card:hover::before {
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.5s ease, width 0.5s ease;
+  transition-delay: 0;
 }
 
-.yellow {
-  background-color: #ffbd44;
+.card:hover::after {
+  width: 0;
+  opacity: 0;
+  transition: width 0 ease;
 }
 
-.green {
-  background-color: #00ca4e;
+.card:hover .logo {
+  margin-bottom: 0.5em;
 }
 
+.card:hover .hover_content {
+  max-height: 10em;
+  transform: none;
+}
 </style>

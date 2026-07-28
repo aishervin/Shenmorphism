@@ -1,78 +1,92 @@
 <div class="card">
-  <div class="main-content">
-    <div class="header">
-      <span></span>
-      <span>03/01/2024</span>
-    </div>
-    <p class="heading">
-      Different ways to use HTML, CSS, JAVA SCRIPT, IN REACT
-    </p>
-    <div class="categories">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JAVA SCRIPT</span>
-      <span>REACT </span>
-    </div>
+  <div class="no-image">
+    <svg
+      class="icon"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.1"
+        d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+      ></path>
+    </svg>
   </div>
-  <div class="footer">By @iamabdulbasit___</div>
+  <div class="content">
+    <p class="name">SHΞN™ Morphism</p>
+    <p class="time">03.04.2024 - 04.04.2024</p>
+  </div>
 </div>
 
 <style>
-/* From SHΞN™ Morphism by mirbasit01  - Tags: 3d, card, hover, dark, code, html, css, css effect */
+/* From SHΞN™ Morphism by Na3ar-17  - Tags: simple, card, html, css */
 .card {
-  width: 330px;
-  height: 370px;
-  padding: 20px;
-  color: white;
-  background: linear-gradient(#212121, #212121) padding-box,
-    linear-gradient(145deg, transparent 35%, #0a89a8, #252e31) border-box;
-  border: 2px solid transparent;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 285px;
+  padding: 8px;
+  background-color: #282727;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  transform-origin: top bottom;
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  aspect-ratio: 16/12;
+  transition: all 0.3s ease;
 }
 
-.card .main-content {
-  flex: 1;
-}
-
-.card .header span:first-child {
-  font-weight: 600;
-  color: #717171;
-  margin-right: 4px;
-}
-
-.card .heading {
-  font-size: 24px;
-  margin: 24px 0 16px;
-  font-weight: 600;
-}
-
-.card .categories {
+.card .no-image {
+  border: 2px dashed #373737;
   display: flex;
-  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  aspect-ratio: 16/8;
 }
 
-.card .categories span {
-  background-color: #0a89a8;
-  padding: 4px 8px;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 12px;
-  border-radius: 50em;
+.card .no-image .icon {
+  width: 60px;
+  color: #373737;
 }
 
-.card .footer {
-  font-weight: 600;
-  color: #717171;
-  margin-right: 4px;
+.card .image {
+  width: 100%;
+  aspect-ratio: 16/8;
+}
+
+.card .image .picture {
+  border-radius: 8px;
+  width: inherit;
+  aspect-ratio: 16/8;
+}
+
+.card .content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 12px;
+  padding-left: 4px;
+}
+
+.card .content .name {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.card .content .time {
+  padding-top: 12px;
+  font-size: 0.875rem;
+  color: #c5c5c5;
 }
 
 .card:hover {
-  rotate: -6deg;
+  -webkit-box-shadow: 0px 0px 15px -8px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 0px 15px -8px rgba(66, 68, 90, 1);
+  box-shadow: 0px 0px 15px -8px rgba(66, 68, 90, 1);
 }
 
 </style>

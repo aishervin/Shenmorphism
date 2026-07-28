@@ -1,146 +1,97 @@
 <div class="loader">
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-</div>
-
-<div class="loader loader--reflect">
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
+  <div class="wrapper">
+    <div class="circle"></div>
+    <div class="line-1"></div>
+    <div class="line-2"></div>
+    <div class="line-3"></div>
+    <div class="line-4"></div>
+  </div>
 </div>
 <style>
-/* From SHΞN™ Morphism by Pradeepsaranbishnoi - Tags: loader */
-/* The loader container */
+/* From SHΞN™ Morphism by Nawsome - Tags: loader, placeholder */
 .loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200px;
-  height: 100px;
-  margin-top: -100px;
-  margin-left: -100px;
-  perspective: 1000px;
-  transform-style: preserv3d;
+  position: relative;
+  width: 240px;
+  height: 130px;
+  margin-bottom: 10px;
+  border: 1px solid #d3d3d3;
+  padding: 15px;
+  background-color: #e3e3e3;
+  overflow: hidden;
 }
 
-.loader--reflect {
-  margin-top: 0;
-}
-
-.loader--reflect:after {
-  content: '';
+.loader:after {
+  content: "";
   position: absolute;
+  width: 100%;
+  height: 100%;
   top: 0;
-  left: -25%;
-  width: 150%;
-  height: 110%;
-  background: linear-gradient(0deg, rgba(238, 238, 238, 1), rgba(238, 238, 238, 1) 20%, rgba(238, 238, 238, 0.3));
-}
-
-
-/* The bar */
-.bar {
-  position: absolute;
-  bottom: 0;
   left: 0;
-  width: 20px;
-  height: 100px;
-  background-color: #1e3f57;
-  transform: scaleY(0);
-  transform-style: preserve3d;
-  animation: bar 3s cubic-bezier(.81,.04,.4,.7) infinite;
+  background: linear-gradient(110deg, rgba(227, 227, 227, 0) 0%, rgba(227, 227, 227, 0) 40%, rgba(227, 227, 227, 0.5) 50%, rgba(227, 227, 227, 0) 60%, rgba(227, 227, 227, 0) 100%);
+  animation: gradient-animation_2 1.2s linear infinite;
 }
 
-.bar:nth-child(2) {
-  left: 20px;
-  background-color: #264a63;
-  animation-delay: 50ms;
+.loader .wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-.bar:nth-child(3) {
-  left: 40px;
-  background-color: #2d566f;
-  animation-delay: 100ms;
+.loader .wrapper > div {
+  background-color: #cacaca;
 }
 
-.bar:nth-child(4) {
-  left: 60px;
-  background-color: #35617a;
-  animation-delay: 150ms;
+.loader .circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
-.bar:nth-child(5) {
-  left: 80px;
-  background-color: #3d6d86;
-  animation-delay: 200ms;
+.loader .button {
+  display: inline-block;
+  height: 32px;
+  width: 75px;
 }
 
-.bar:nth-child(6) {
-  left: 100px;
-  background-color: #447892;
-  animation-delay: 250ms;
+.loader .line-1 {
+  position: absolute;
+  top: 11px;
+  left: 58px;
+  height: 10px;
+  width: 100px;
 }
 
-.bar:nth-child(7) {
-  left: 120px;
-  background-color: #4c849e;
-  animation-delay: 300ms;
+.loader .line-2 {
+  position: absolute;
+  top: 34px;
+  left: 58px;
+  height: 10px;
+  width: 150px;
 }
 
-.bar:nth-child(8) {
-  left: 140px;
-  background-color: #548fa9;
-  animation-delay: 350ms;
+.loader .line-3 {
+  position: absolute;
+  top: 57px;
+  left: 0px;
+  height: 10px;
+  width: 100%;
 }
 
-.bar:nth-child(9) {
-  left: 160px;
-  background-color: #5c9bb5;
-  animation-delay: 400ms;
+.loader .line-4 {
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  height: 10px;
+  width: 92%;
 }
 
-.bar:nth-child(10) {
-  left: 180px;
-  background-color: #63a6c1;
-  animation-delay: 450ms;
-}
-
-.loader--reflect .bar {
-  animation-name: bar-reflect;
-}
-
-@keyframes bar {
+@keyframes gradient-animation_2 {
   0% {
-    transform: rotateZ(-180deg) rotateX(-360deg);
+    transform: translateX(-100%);
   }
 
-  75%,100% {
-    transform: rotateZ(0) rotateX(0);
-  }
-}
-
-@keyframes bar-reflect {
-  0% {
-    transform: rotateZ(180deg) rotateX(360deg);
-  }
-
-  75%,100% {
-    transform: rotateZ(0) rotateX(0);
+  100% {
+    transform: translateX(100%);
   }
 }
 </style>

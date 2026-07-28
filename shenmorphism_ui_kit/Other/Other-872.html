@@ -1,63 +1,24 @@
-<div class="spinner">
-  <span>L</span>
-  <span>O</span>
-  <span>A</span>
-  <span>D</span>
-  <span>I</span>
-  <span>N</span>
-  <span>G</span>
-</div>
+<section class="area">
+  <div class="ball"></div>
+</section>
 <style>
-/* From SHΞN™ Morphism by gagan-gv - Tags: loading, loader, glow */
-.spinner {
- height: 50px;
- width: max-content;
- font-size: 18px;
- font-weight: 600;
- font-family: monospace;
- letter-spacing: 1em;
- color: #f5f5f5;
- filter: drop-shadow(0 0 10px);
- display: flex;
- justify-content: center;
- align-items: center;
+/* From SHΞN™ Morphism by bhaveshxrawat - Tags: loader */
+.ball {
+ position: relative;
+ height: 15px;
+ width: 15px;
+ background-color: rgb(255, 44, 44);
+ border-radius: 50%;
+ animation: bounce 0.5s ease-in-out infinite both;
 }
 
-.spinner span {
- animation: loading6454 1.75s ease infinite;
-}
-
-.spinner span:nth-child(2) {
- animation-delay: 0.25s;
-}
-
-.spinner span:nth-child(3) {
- animation-delay: 0.5s;
-}
-
-.spinner span:nth-child(4) {
- animation-delay: 0.75s;
-}
-
-.spinner span:nth-child(5) {
- animation-delay: 1s;
-}
-
-.spinner span:nth-child(6) {
- animation-delay: 1.25s;
-}
-
-.spinner span:nth-child(7) {
- animation-delay: 1.5s;
-}
-
-@keyframes loading6454 {
+@keyframes bounce {
  0%, 100% {
-  transform: translateY(0);
+  transform: translate(0px, 0px);
  }
 
  50% {
-  transform: translateY(-10px);
+  transform: translate(0px, 50px) scale(1, 0.77);
  }
 }
 </style>

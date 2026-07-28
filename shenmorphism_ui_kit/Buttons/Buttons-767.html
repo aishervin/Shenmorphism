@@ -1,122 +1,85 @@
-<button class="container">
-  <a href="#"></a>
-  <a href="#"></a>
-  <a href="#"></a>
-  <a href="#"></a>
-  <div class="card">
-    <div class="card-header">
-      HOVER
-    </div>
+<button class="c-button c-button--gooey"> Hover me
+  <div class="c-button__blobs">
+  <div></div>
+  <div></div>
+  <div></div>
   </div>
 </button>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: block; height: 0; width: 0;">
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+      <feBlend in="SourceGraphic" in2="goo"></feBlend>
+    </filter>
+  </defs>
+</svg>
 <style>
-/* From SHΞN™ Morphism by mi-series - Tags: simple, material design, 3d, purple, minimalist, button, hover effect, hover button */
-.container {
-  border: none;
-}
-
-.container .card {
-  background-color: white;
-  border-radius: 10px;
-  border: 1px solid black;
+/* From SHΞN™ Morphism by cssbuttons-io - Tags: button */
+.c-button {
+  color: #000;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 0.9em 1.6em;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
   position: relative;
-  z-index: 0;
-  transition: all 300ms ease-out;
-  transform-origin: center center;
-  width: 150px;
-  height: 50px;
-  box-shadow: 0px;
-  outline: none;
-}
-
-.card-header {
-  padding: 10px;
-  background: linear-gradient(90deg, #CB2D6F 20px, transparent 100%) center / 22px 22px,
-		linear-gradient(#CB2D6F 20px, transparent 100%) center / 22px 22px,
-		#fff;
-  color: white;
-  height: 100%;
-  font-size: 20px;
-  font-weight: 600;
-  border: 1px solid white;
-  border-radius: 10px;
-}
-
-.container .card .border {
-  transition: all 300ms ease-out;
-  transform-origin: center center;
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  width: calc(100% - 0px);
-  height: calc(100% - 0px);
-  border: 1px solid black;
-  border-radius: 9px;
-}
-
-.container a {
-  opacity: 0;
-  position: absolute;
   z-index: 1;
-  width: 50%;
-  height: 50%;
 }
 
-.container a:hover,
-.container a:focus {
-  transform: translateZ(50px);
+.c-button--gooey {
+  color: #06c8d9;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 4px solid #06c8d9;
+  border-radius: 0;
+  position: relative;
+  transition: all 700ms ease;
 }
 
-.container a:hover ~ .card .card-header,
-.container a:focus ~ .card .card-header {
-  transform: translateZ(24px);
-}
-
-.container a:nth-child(1) {
+.c-button--gooey .c-button__blobs {
+  height: 100%;
+  filter: url(#goo);
+  overflow: hidden;
+  position: absolute;
   top: 0;
   left: 0;
+  bottom: -3px;
+  right: -1px;
+  z-index: -1;
 }
 
-.container a:nth-child(1):hover ~ .card,
-.container a:nth-child(1):focus ~ .card {
-  transform: rotateX(10deg) rotateY(-10deg) translateZ(0);
-  transform-origin: right bottom;
-  box-shadow: 10px 20px;
+.c-button--gooey .c-button__blobs div {
+  background-color: #06c8d9;
+  width: 34%;
+  height: 100%;
+  border-radius: 100%;
+  position: absolute;
+  transform: scale(1.4) translateY(125%) translateZ(0);
+  transition: all 700ms ease;
 }
 
-.container a:nth-child(2) {
-  top: 0;
-  right: 0;
+.c-button--gooey .c-button__blobs div:nth-child(1) {
+  left: -5%;
 }
 
-.container a:nth-child(2):hover ~ .card,
-.container a:nth-child(2):focus ~ .card {
-  transform: rotateX(10deg) rotateY(10deg) translateZ(0);
-  transform-origin: left bottom;
-  box-shadow: -10px 20px;
+.c-button--gooey .c-button__blobs div:nth-child(2) {
+  left: 30%;
+  transition-delay: 60ms;
 }
 
-.container a:nth-child(3) {
-  bottom: 0;
-  right: 0;
+.c-button--gooey .c-button__blobs div:nth-child(3) {
+  left: 66%;
+  transition-delay: 25ms;
 }
 
-.container a:nth-child(3):hover ~ .card ,
-.container a:nth-child(3):focus ~ .card {
-  transform-origin: left top;
-  transform: rotateX(-10deg) rotateY(10deg) translateZ(0);
-  box-shadow: -10px -20px;
+.c-button--gooey:hover {
+  color: #fff;
 }
 
-.container a:nth-child(4) {
-  bottom: 0;
-  left: 0;
-}
-
-.container a:nth-child(4):hover ~ .card,
-.container a:nth-child(4):focus ~ .card {
-  transform-origin: right top;
-  transform: rotateX(-10deg) rotateY(-10deg) translateZ(0);
-  box-shadow: 10px -20px;
+.c-button--gooey:hover .c-button__blobs div {
+  transform: scale(1.4) translateY(0) translateZ(0);
 }
 </style>

@@ -1,40 +1,29 @@
 <div class="container"></div>
 
 <style>
-/* From SHΞN™ Morphism by jeremyssocial  - Tags: dark, animated, pattern */
+/* From SHΞN™ Morphism by csemszepp - Source: https://github.com/Afif13 - Website: https://github.com/Afif13  - Name: Afif13  - Tags: simple, material design, pattern */
 .container {
-  /* Basic dimensions and centering */
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  --s: 140px; /* control the size */
+  --c1: #ab3e5b;
+  --c2: #ffbe40;
 
-  /* Dark mode colors and gradient */
-  background: #121212; /* Fallback for browsers that don't support gradients */
-  background: linear-gradient(
-    135deg,
-    #121212 25%,
-    #1a1a1a 25%,
-    #1a1a1a 50%,
-    #121212 50%,
-    #121212 75%,
-    #1a1a1a 75%,
-    #1a1a1a
-  );
-  background-size: 40px 40px;
-
-  /* Animation */
-  animation: move 4s linear infinite;
-}
-
-@keyframes move {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 40px 40px;
-  }
+  --_g: #0000 25%, #0008 47%, var(--c1) 53% 147%, var(--c2) 153% 247%,
+    var(--c1) 253% 347%, var(--c2) 353% 447%, var(--c1) 453% 547%, #0008 553%,
+    #0000 575%;
+  --_s: calc(25% / 3) calc(25% / 4) at 50%;
+  background: radial-gradient(var(--_s) 100%, var(--_g)),
+    radial-gradient(var(--_s) 100%, var(--_g)) calc(var(--s) / 2)
+      calc(3 * var(--s) / 4),
+    radial-gradient(var(--_s) 0, var(--_g)) calc(var(--s) / 2) 0,
+    radial-gradient(var(--_s) 0, var(--_g)) 0 calc(3 * var(--s) / 4),
+    repeating-linear-gradient(
+      90deg,
+      #accec0 calc(25% / -6) calc(25% / 6),
+      #61a6ab 0 calc(25% / 2)
+    );
+  background-size: var(--s) calc(3 * var(--s) / 2);
 }
 
 </style>

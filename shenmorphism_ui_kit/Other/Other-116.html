@@ -1,57 +1,69 @@
-<div class="container">
-        <label class="toggle" for="switch">
-            <input id="switch" class="input" type="checkbox">
-            <div class="icon icon--moon">
-                <svg height="32" width="32" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path clip-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" fill-rule="evenodd"></path>
-                </svg>
-            </div>
-        
-            <div class="icon icon--sun">
-                <svg height="32" width="32" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"></path>
-                </svg>
-            </div>
-        </label>
-    </div>
+<label class="switch">
+  <input class="checkbox" type="checkbox" />
+  <span class="slider round"></span>
+</label>
+
 <style>
-/* From SHΞN™ Morphism by Creatlydev - Tags: switch, light&dark, toggle switch */
-.toggle {
-  background-color: #fff;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
+/* From SHΞN™ Morphism by AnthonyPreite  - Tags: minimalist, switch, theme-switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch .checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
   cursor: pointer;
-  box-shadow: 0 0 50px 20px rgba(0, 0, 0, .1);
-  line-height: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  box-shadow: 1px 1px 5px 0 #d84f68 inset;
 }
 
-.input {
-  display: none;
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #d84f68;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  box-shadow: inset 1px 1px 2px 0px #ff7ca7;
 }
 
-.icon {
-  grid-column: 1 / 1;
-  grid-row: 1 / 1;
-  transition: transform 500ms;
+.checkbox:checked + .slider {
+  box-shadow: 1px 1px 5px 0 #2a9d8f inset;
 }
 
-.icon--moon {
-  transition-delay: 200ms;
+.checkbox:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  background-color: #2a9d8f;
+  box-shadow: inset -1px 1px 2px 0px #a3fff4;
 }
 
-.icon--sun {
-  transform: scale(0);
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
 }
 
-#switch:checked + .icon--moon {
-  transform: rotate(360deg) scale(0);
+.slider.round:before {
+  border-radius: 50%;
 }
 
-#switch:checked ~ .icon--sun {
-  transition-delay: 200ms;
-  transform: scale(1) rotate(360deg);
-}
 </style>
+    

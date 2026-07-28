@@ -1,82 +1,70 @@
-<button class="btn">
-  <span class="default-text">New Level Unlocked!</span>
-  <span class="hover-text">Congrats!</span>
-</button>
+<div class="notification">
+  <svg viewBox="0 0 100 100" class="trophy">
+    <g>
+      <path d="M10,50 L40,50 L30,10 L20,10 Z"></path>
+      <path d="M60,50 L90,50 L80,10 L70,10 Z"></path>
+      <path d="M20,10 L80,10 L70,30 L30,30 Z"></path>
+      <path d="M30,30 L70,30 L60,50 L40,50 Z"></path>
+      <path d="M25,75 L75,75 L85,90 L15,90 Z"></path>
+      <path d="M40,50 L60,50 L55,70 L45,70 Z"></path>
+    </g>
+  </svg>
+  <p>Congratulations!
+  </p><p>You reached level 10!</p>
+</div>
 
 <style>
-/* From SHΞN™ Morphism by jyefu013 - Tags: notification */
-.btn {
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 15px;
-  background-color: black;
-  color: rgb(238, 255, 0);
-  position: relative;
-  overflow: hidden;
+/* From SHΞN™ Morphism by devsleonardo - Tags: notification */
+.notification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 50px;
+  color: white;
 }
 
-.default-text {
-  z-index: 1;
+.trophy {
+  fill: gold;
+  width: 80px;
+  height: 80px;
+  animation: bounce 0.5s ease-in-out 1;
 }
 
-.hover-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.btn:hover .default-text {
-  opacity: 0;
-}
-
-.btn:hover .hover-text {
-  opacity: 1;
-  animation: bounce 0.5s ease-in-out;
+.trophy:hover {
+  animation: spin 1s ease-in-out 1;
 }
 
 @keyframes bounce {
   0% {
-    transform: scale(1);
+    transform: translateY(0);
   }
 
   25% {
-    transform: scale(1.2);
+    transform: translateY(-20px);
+  }
+
+  50% {
+    transform: translateY(0);
   }
 
   75% {
-    transform: scale(1.1);
+    transform: translateY(-10px);
   }
 
   100% {
-    transform: scale(1);
+    transform: translateY(0);
   }
 }
 
-.btn:hover::after {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: calc(100% + 20px);
-  height: calc(100% + 20px);
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  opacity: 0;
-  animation: fireworks 1s linear forwards;
-}
-
-@keyframes fireworks {
+@keyframes spin {
   0% {
-    transform: scale(1);
-    opacity: 1;
+    transform: rotate(0);
   }
 
   100% {
-    transform: scale(4);
-    opacity: 0;
+    transform: rotate(360deg);
   }
 }
 

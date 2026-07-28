@@ -1,62 +1,64 @@
-<div class="loader"></div>
+<div class="wrapper">
+  <div class="cube">
+    <div class="side front"></div>
+    <div class="side back"></div>
+    <div class="side top"></div>
+    <div class="side bottom"></div>
+    <div class="side left"></div>
+    <div class="side right"></div>
+  </div>
+</div>
+
 <style>
-/* From SHΞN™ Morphism by Shoh2008 - Tags: loader */
-.loader {
-  width: 48px;
-  height: 48px;
-  display: block;
-  margin: 20px auto;
-  box-sizing: border-box;
+/* From SHΞN™ Morphism by Bodyhc  - Tags: loading, loader, cube, loading animation, 3d loader */
+.wrapper {
+  perspective: 1000px;
+}
+.cube {
   position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: animate 4s linear infinite;
 }
-
-.loader::after {
-  content: '';
-  width: 48px;
-  height: 48px;
-  left: 0;
-  bottom: 0;
+.side {
   position: absolute;
-  border-radius: 50% 50% 0;
-  border: 15px solid red;
-  transform: rotate(45deg) translate(0, 0);
-  box-sizing: border-box;
-  animation: animMarker 0.4s ease-in-out infinite alternate;
+  width: 200px;
+  height: 200px;
+  display: grid;
+  background-color: #01b4f9;
+  border-radius: 10px;
+  place-content: center;
+  border: 3px solid #fff;
 }
 
-.loader::before {
-  content: '';
-  box-sizing: border-box;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  top: 150%;
-  width: 24px;
-  height: 4px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.2);
-  animation: animShadow 0.4s ease-in-out infinite alternate;
+.front {
+  transform: translateZ(100px);
+}
+.back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+.top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.right {
+  transform: rotateY(90deg) translateZ(100px);
 }
 
-@keyframes animMarker {
+@keyframes animate {
   0% {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotateX(0deg) rotateY(0deg);
   }
-
   100% {
-    transform: rotate(45deg) translate(-5px, -5px);
+    transform: rotateX(360deg) rotateY(360deg);
   }
 }
 
-@keyframes animShadow {
-  0% {
-    transform: scale(0.5);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-    
 </style>
+    

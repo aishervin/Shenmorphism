@@ -1,25 +1,31 @@
-<div class="loader"></div>
-
+    <div class="spinner">
+    <div class="Spinner"></div>
+    </div>
 <style>
-/* From SHΞN™ Morphism by sonex-ICB  - Tags: simple, animation, loader, rotate, animated, creative, spin, loading animation */
-.loader {
-  border: 10px inset tomato;
-  padding: 12px;
-  transform: rotate(45deg);
-  animation: loader1 1s ease-in-out infinite;
-}
-@keyframes loader1 {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.5);
-  }
-  100% {
-    opacity: 0;
-  }
+/* From SHΞN™ Morphism by K2-dev21 - Tags: loader */
+.spinner {
+  background-image: linear-gradient(#acb6e5 35%, #86fde8);
+  width: 100px;
+  height: 100px;
+  animation: spinning21 1.7s linear infinite;
+  text-align: center;
+  border-radius: 50px;
+  filter: blur(1px);
+  box-shadow: 0px -5px 20px 0px rgb(186, 66, 255),
+        0px 5px 20px 0px rgb(0, 225, 255);
 }
 
+.Spinner {
+  background-color: rgb(36, 36, 36);
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  filter: blur(10px);
+}
+
+@keyframes spinning21 {
+  to {
+    transform: rotate(360deg);
+  }
+}
 </style>
-    

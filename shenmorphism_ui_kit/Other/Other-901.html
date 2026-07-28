@@ -1,44 +1,70 @@
-<div class="loader"></div>
+<div class="loader">
+  <p class="heading">Loading</p>
+  <div class="loading">
+    <div class="load"></div>
+    <div class="load"></div>
+    <div class="load"></div>
+    <div class="load"></div>
+  </div>
+</div>
 <style>
-/* From SHΞN™ Morphism by alexruix - Tags: loader, bars */
+/* From SHΞN™ Morphism by Praashoo7 - Tags: loader, smooth */
 .loader {
-  width: 8px;
-  height: 40px;
-  border-radius: 4px;
-  display: block;
-  background-color: currentColor;
-  margin: 20px auto;
-  position: relative;
-  color: #f2f2f2;
-  animation: animloader 0.3s 0.3s linear infinite alternate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.loader::after,
-.loader::before {
-  content: '';
-  width: 8px;
-  height: 40px;
-  border-radius: 4px;
-  background: currentColor;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 20px;
-  animation: animloader 0.3s 0.45s linear infinite alternate;
+.heading {
+  color: black;
+  letter-spacing: 0.2em;
+  margin-bottom: 1em;
 }
 
-.loader::before {
-  left: -20px;
-  animation-delay: 0s;
+.loading {
+  display: flex;
+  width: 5em;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes animloader {
+.load {
+  width: 23px;
+  height: 3px;
+  background-color: limegreen;
+  animation: 1s move_5011 infinite;
+  border-radius: 5px;
+  margin: 0.1em;
+}
+
+.load:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.load:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.load:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes move_5011 {
   0% {
-    height: 48px;
+    width: 0.2em;
+  }
+
+  25% {
+    width: 0.7em;
+  }
+
+  50% {
+    width: 1.5em;
   }
 
   100% {
-    height: 4px;
+    width: 0.2em;
   }
 }
 </style>

@@ -1,50 +1,60 @@
-<div class="toggle-switch">
-  <input class="toggle-input" id="toggle" type="checkbox">
-  <label class="toggle-label" for="toggle"></label>
-</div>
+<label class="switch">
+  <input type="checkbox" />
+  <span class="slider"></span>
+</label>
+
 <style>
-/* From SHΞN™ Morphism by ozgeozkaraa01 - Tags: switch, toggle switch, 3d switch */
-.toggle-switch {
+/* From SHΞN™ Morphism by alfoly1988 - Tags: simple, black, switch, toggle switch */
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 3.5em;
+  height: 2em;
 }
 
-.toggle-input {
-  display: none;
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.toggle-label {
+/* The slider */
+.slider {
   position: absolute;
+  cursor: pointer;
   top: 0;
   left: 0;
-  width: 60px;
-  height: 34px;
-  border-radius: 17px;
-  background-color: #ccc;
-  cursor: pointer;
-  transition: background-color 0.4s ease;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(75, 73, 74);
+  transition: 0.4s;
+  border-radius: 30px;
 }
 
-.toggle-label:before {
-  content: '';
+.slider:before {
   position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: transform 0.4s ease;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: black;
+  box-shadow: inset 8px -4px 0 0 white;
+  transition: 0.4s;
 }
 
-.toggle-input:checked + .toggle-label {
-  background-color: #86d993;
+.switch input:checked + .slider {
+  background-color: #2196f3;
 }
 
-.toggle-input:checked + .toggle-label:before {
-  transform: translateX(26px);
+.switch input:checked + .slider:before {
+  transform: translateX(1.5em);
+  background-color: yellow;
+  box-shadow: none;
 }
+
 </style>

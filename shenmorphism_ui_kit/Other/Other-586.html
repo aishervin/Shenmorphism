@@ -1,30 +1,54 @@
 <div class="loader"></div>
-<div class="loader2"></div>
 <style>
-/* From SHΞN™ Morphism by Victan78 - Tags: loader */
+/* From SHΞN™ Morphism by JaydipPrajapati1910 - Tags: green, loader, circle loader, loader circle */
 .loader {
-  width: 100px;
-  height: 100px;
-  border: solid 4px rgba(231, 231, 231, 0);
-  border-top: solid 5px rgb(241, 68, 68);
-  border-radius: 50%;
-  transition: all 0.5s;
-  animation: rotation_51512 1.2s infinite cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  background: linear-gradient(to right, #2cc16f 50%, #fafafa 50%);
+  border-radius: 100%;
+  height: 70px;
+  width: 70px;
+  animation: loader-circle-time 8s steps(800, start) infinite;
 }
 
-@keyframes rotation_51512 {
-  70% {
-    box-shadow: 0px 0px 10px 50px rgba(241, 57, 57, 0.526);
-  }
+.loader:after {
+  content: "";
+  border-radius: 100% 0 0 100% / 50% 0 0 50%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  animation: loader-circle-mask 8s steps(250, start) infinite;
+  transform-origin: 100% 50%;
+}
 
-  90% {
-    box-shadow: 0px 0px 10px 50px rgba(241, 57, 57, 0.04);
-  }
-
+@keyframes loader-circle-time {
   100% {
-    opacity: 0.5;
     transform: rotate(360deg);
   }
 }
+
+@keyframes loader-circle-mask {
+  0% {
+    background: #fafafa;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    background: #fafafa;
+    transform: rotate(-180deg);
+  }
+
+  50.01% {
+    background: #2cc16f;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    background: #2cc16f;
+    transform: rotate(-180deg);
+  }
+}
+
+ 
 
 </style>

@@ -1,59 +1,47 @@
-<label class="toggle">
-  <input class="input" type="checkbox">
-  <span class="slider"></span>
-</label>
-
+ <input id="checkboxInput" type="checkbox">
+    <label class="toggleSwitch" for="checkboxInput">
+    </label>
 <style>
-/* From SHΞN™ Morphism by PriyanshuGupta28 - Tags: switch, light, 3d switch */
-.toggle {
+/* From SHΞN™ Morphism by vinodjangid07 - Tags: switch, neon, toggle switch */
+/* To hide the checkbox */
+#checkboxInput {
+  display: none;
+}
+
+.toggleSwitch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.toggle input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-  transition: transform 0.2s ease-in-out;
-}
-
-.slider {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  position: absolute;
+  width: 50px;
+  height: 17px;
+  background-color: rgb(82, 82, 82);
+  border-radius: 20px;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #FF3CAC;
-  background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
-  transition: 0.2 ease-in-out;
-  border-radius: 34px;
+  transition-duration: .2s;
 }
 
-.slider:before {
-  position: absolute;
+.toggleSwitch::after {
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: #4158D0;
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-  transition: transform 0.3s ease-in-out;
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 0px;
+  background-color: rgb(41, 41, 41);
   border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition-duration: .2s;
+  border: 2px solid rgb(82, 82, 82);
 }
 
-.input:checked + .slider {
-  background-color: #8BC6EC;
-  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+#checkboxInput:checked+.toggleSwitch::after {
+  transform: translateX(100%);
+  transition-duration: .2s;
+  border: 2px solid rgb(165, 255, 105);
 }
-
-.input:checked + .slider:before {
-  transform: translateX(26px);
+/* Switch background change */
+#checkboxInput:checked+.toggleSwitch {
+  background-color: rgb(165, 255, 105);
+  transition-duration: .2s;
 }
 
 </style>

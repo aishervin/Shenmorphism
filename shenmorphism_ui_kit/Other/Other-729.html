@@ -1,88 +1,73 @@
-<div class="loader">
-  <svg class="svg-wrap" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg" version="1.1">
-    <circle stroke-linecap="round" stroke-width="2" class="svg-stroke" cy="25" cx="50" r="15"></circle>
-    <circle class="circle circle-one" cy="25" cx="35" r="1"></circle>
-    <circle class="circle circle-two" cy="25" cx="45" r="1"></circle>
-    <circle class="circle circle-three" cy="25" cx="55" r="1"></circle>
-  </svg>  
+<div id="Loading">
+  <div id="loading_div">
+    <div id="loading_bouncer"></div>
+    <div id="shadow"></div>
+  </div>
 </div>
+
 <style>
-/* From SHΞN™ Morphism by xopc333 - Tags: animation, loader, svg, creative, css, loading animation */
-.loader {
-  width: 500px;
-  height: 250px;
+/* From SHΞN™ Morphism by DSB2004  - Tags: simple, gradient, loader */
+#Loading {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
-
-.circle {
-  fill: #F25A33;
+#loading_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
-
-.circle-one {
-  opacity: 0;
-}
-
-.svg-stroke {
-  fill: transparent;
-  stroke-dasharray: 46.82, 93.64;
-  stroke-dashoffset: 46.82;
-  stroke: #F25A33;
-  opacity: 1;
-}
-
-.svg-wrap .svg-stroke {
-  animation: stroke-start 1.6s linear, stroke-end 1.6s 0.8s linear infinite;
-}
-
-.svg-wrap .circle-one {
-  animation: dot-one 0s 0.8s, move-dot 1.6s 0.8s linear infinite;
-}
-
-.svg-wrap .circle-two,
-.svg-wrap .circle-three {
-  animation: move-dot 1.6s 0.8s linear infinite;
-}
-
-@keyframes dot-one {
-  from {
-    opacity: 0;
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
   }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes stroke-start {
   50% {
-    stroke-dashoffset: 46.82;
+    transform: translateY(-50px);
   }
-
   100% {
-    stroke-dashoffset: 0;
+    transform: translateY(0px);
   }
 }
-
-@keyframes stroke-end {
+@keyframes shadow {
+  0% {
+    height: 50px;
+    width: 50px;
+  }
   50% {
-    stroke-dasharray: 46.82, 93.64;
-    stroke-dashoffset: 0;
-    transform: translateX(0);
+    height: 10px;
+    width: 10px;
   }
-
   100% {
-    stroke-dasharray: 0, 93.64;
-    stroke-dashoffset: -46.82;
-    transform: translateX(10px);
+    height: 50px;
+    width: 50px;
   }
 }
-
-@keyframes move-dot {
-  50% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(10px);
-  }
+#loading_bouncer {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgb(89, 0, 255),
+    rgb(0, 110, 255),
+    rgb(25, 0, 255)
+  );
+  animation: bounce 500ms ease-in-out infinite;
 }
+#shadow {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  background: black;
+  top: 30px;
+  transform: rotateX(80deg);
+  animation: shadow 500ms ease-in-out infinite;
+}
+
 </style>
+    

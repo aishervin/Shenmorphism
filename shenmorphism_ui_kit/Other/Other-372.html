@@ -1,87 +1,93 @@
-<div class="loader"> 
-      <span class="ani">L</span> 
-      <span class="ani">o</span>
-      <span class="ani">a</span>
-      <span class="ani">d</span> 
-      <span class="ani">i</span> 
-      <span class="ani">n</span> 
-      <span class="ani">g</span>
+<div class="center_div">
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
 </div>
+
 <style>
-/* From SHΞN™ Morphism by Tsiangana - Tags: simple, animation, loading, loader, text animation */
-.loader {
-  font-family: Roboto, sans-serif;
-  font-size: 25px;
-  font-weight: 600;
+/* From SHΞN™ Morphism by SmookyDev  - Tags: flashy, loader, smooth, gradients, wave, css effect, loading animation */
+.center_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
 }
 
-.ani:nth-child(1) {
-  animation: ani1 2.1s ease-in-out 14s infinite;
+.wave {
+  width: 1.8rem;
+  height: 150px;
+  background-color: #ff6b6b;
+  margin: 0 4px;
+  border-radius: 0.4rem;
+  animation: wave 1.5s linear infinite;
+  transform-origin: center;
 }
 
-@keyframes ani1 {
+@keyframes wave {
+  0% {
+    transform: scale(0);
+    filter: hue-rotate(90deg) blur(100px);
+  }
+  25% {
+    transform: scale(0);
+    filter: hue-rotate(120deg) blur(50px);
+  }
   50% {
-    font-size: 40px;
+    transform: scale(1);
+    filter: hue-rotate(180deg) blur(25px);
+  }
+  25% {
+    transform: scale(0);
+    filter: hue-rotate(360deg) blur(2px);
+  }
+  100% {
+    transform: scale(0);
+    filter: hue-rotate(0deg) blur(0);
   }
 }
 
-.ani:nth-child(2) {
-  animation: ani2 2.1s ease-in-out 12s infinite;
+.wave:nth-child(2) {
+  animation-delay: 0.1s;
 }
 
-@keyframes ani2 {
-  50% {
-    font-size: 40px;
-  }
+.wave:nth-child(3) {
+  animation-delay: 0.2s;
 }
 
-.ani:nth-child(3) {
-  animation: ani3 2.1s ease-in-out 10s infinite;
+.wave:nth-child(4) {
+  animation-delay: 0.3s;
 }
 
-@keyframes ani3 {
-  50% {
-    font-size: 40px;
-  }
+.wave:nth-child(5) {
+  animation-delay: 0.4s;
 }
 
-.ani:nth-child(4) {
-  animation: ani4 2.1s ease-in-out 8s infinite;
+.wave:nth-child(6) {
+  animation-delay: 0.5s;
 }
 
-@keyframes ani4 {
-  50% {
-    font-size: 40px;
-  }
+.wave:nth-child(7) {
+  animation-delay: 0.6s;
 }
 
-.ani:nth-child(5) {
-  animation: ani5 2.1s ease-in-out 6s infinite;
+.wave:nth-child(8) {
+  animation-delay: 0.7s;
 }
 
-@keyframes ani5 {
-  50% {
-    font-size: 40px;
-  }
+.wave:nth-child(9) {
+  animation-delay: 0.8s;
 }
 
-.ani:nth-child(6) {
-  animation: ani6 2.1s ease-in-out 4s infinite;
+.wave:nth-child(10) {
+  animation-delay: 0.9s;
 }
 
-@keyframes ani6 {
-  50% {
-    font-size: 40px;
-  }
-}
-
-.ani:nth-child(7) {
-  animation: ani7 2.1s ease-in-out 2s infinite;
-}
-
-@keyframes ani7 {
-  50% {
-    font-size: 40px;
-  }
-}
 </style>
+    

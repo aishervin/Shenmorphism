@@ -1,71 +1,61 @@
-
-<div class="momentum"></div>
+<div class="loader"></div>
 <style>
-/* From SHΞN™ Morphism by G4b413l - Tags: loader */
-.momentum {
- --uib-size: 40px;
- --uib-speed: 1s;
- --uib-color: rgb(221, 255, 242);
- position: relative;
- display: flex;
- align-items: center;
- justify-content: center;
- height: var(--uib-size);
- width: var(--uib-size);
- animation: rotate01561 var(--uib-speed) linear infinite;
+/* From SHΞN™ Morphism by alexruix - Tags: loader, circle */
+.loader {
+  position: relative;
+  margin: auto;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  -webkit-mask: linear-gradient(rgba(24, 24, 24, 0.2), rgba(24, 24, 24,0.9) 90%);
+  transform-origin: 50% 60%;
+  transform: perspective(200px) rotateX(66deg);
 }
 
-.momentum::before,
-.momentum::after {
- content: '';
- height: 25%;
- width: 25%;
- border-radius: 50%;
- background-color: var(--uib-color);
+.loader:before, .loader:after {
+  content: "";
+  position: absolute;
+  margin: -4px;
+  box-sizing: inherit;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  opacity: 0.05;
+  border: inherit;
+  border-color: transparent;
+  animation: spinner-spin 1.2s cubic-bezier(0.6, 0.2, 0, 0.8) infinite, spinner-fade 1.2s linear infinite;
 }
 
-.momentum::before {
- animation: wobble290123 calc(var(--uib-speed) * 1.25) ease-in-out infinite;
+.loader:before {
+  border-top-color: #66e6ff;
 }
 
-.momentum::after {
- animation: wobble9123 calc(var(--uib-speed) * 1.25) ease-in-out infinite;
+.loader:after {
+  border-top-color: #f0db75;
+  animation-delay: 0.3s;
 }
 
-.momentum::before {
- margin-right: 10%;
-}
-
-@keyframes wobble9123 {
- 0%,
+@keyframes spinner-spin {
   100% {
-  transform: translateX(0);
- }
-
- 50% {
-  transform: translateX(calc(var(--uib-size) * 0.2)) scale(1.1);
- }
+    transform: rotate(360deg);
+  }
 }
 
-@keyframes wobble290123 {
- 0%,
-  100% {
-  transform: translateX(0);
- }
+@keyframes spinner-fade {
+  20% {
+    opacity: 0.1;
+  }
 
- 50% {
-  transform: translateX(calc(var(--uib-size) * -0.2)) scale(1.1);
- }
+  40% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0.1;
+  }
 }
-
-@keyframes rotate01561 {
- 0% {
-  transform: rotate(0deg);
- }
-
- 100% {
-  transform: rotate(360deg);
- }
-}
-
+ 
 </style>

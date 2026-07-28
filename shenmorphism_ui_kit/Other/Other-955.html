@@ -1,35 +1,59 @@
-<div class="loader-container">
-  <div class="loader"></div>
+<div class="loader">
+    <span>Loading...</span>
 </div>
 <style>
-/* From SHΞN™ Morphism by Leoodaviid - Tags: loader */
-.loader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* From SHΞN™ Morphism by mobinkakei - Tags: loader */
 .loader {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  border-top: 5px solid #e74c3c;
+  position: relative;
+  animation: load 2s linear infinite;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.4);
-  }
+.loader::before,.loader::after {
+  content: '';
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
 
-  50% {
-    transform: rotate(180deg);
-    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.4);
-  }
+.loader::before {
+  border-top: 5px solid #e67e22;
+  transform: rotate(120deg);
+}
 
-  100% {
+.loader::after {
+  border-top: 5px solid #3498db;
+  transform: rotate(240deg);
+}
+
+.loader span {
+  position: absolute;
+  font-size: small;
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  text-align: center;
+  line-height: 100px;
+  animation: a2 2s linear infinite;
+}
+
+@keyframes load {
+  to {
     transform: rotate(360deg);
-    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.4);
+  }
+}
+
+@keyframes a2 {
+  to {
+    transform: rotate(-360deg);
   }
 }
 </style>

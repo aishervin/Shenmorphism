@@ -1,63 +1,81 @@
 <label class="switch">
   <input type="checkbox">
-  <span class="slider"></span>
+  <div class="slider">
+    <span>On</span>
+    <span>Off</span>
+  </div>
 </label>
 <style>
-/* From SHΞN™ Morphism by namecho - Tags: active, switch */
+/* From SHΞN™ Morphism by Yaya12085 - Tags: skeuomorphism, 3d, green, switch, on, off */
+/* The switch - the box around the slider */
 .switch {
- --button-width: 3.5em;
- --button-height: 2em;
- --toggle-diameter: 1.5em;
- --button-toggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
- --toggle-shadow-offset: 10px;
- --toggle-wider: 3em;
- --color-grey: #cccccc;
- --color-green: #4296f4;
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 2em;
 }
 
+
+/* The slider */
 .slider {
- display: inline-block;
- width: var(--button-width);
- height: var(--button-height);
- background-color: var(--color-grey);
- border-radius: calc(var(--button-height) / 2);
- position: relative;
- transition: 0.3s all ease-in-out;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  color: #000;
+  font-weight: 600;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: .4s;
 }
 
-.slider::after {
- content: "";
- display: inline-block;
- width: var(--toggle-diameter);
- height: var(--toggle-diameter);
- background-color: #fff;
- border-radius: calc(var(--toggle-diameter) / 2);
- position: absolute;
- top: var(--button-toggle-offset);
- transform: translateX(var(--button-toggle-offset));
- box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
- transition: 0.3s all ease-in-out;
+.slider:before {
+  position: absolute;
+  content: "On";
+  height: 90%;
+  width: 48%;
+  left: 2%;
+  border-radius: 20px;
+  background-color: white;
+  color: green;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 -1px 0 0 rgba(0, 0, 0, 0.1) inset, 0 -1.31em 1.31em -1.31em rgba(0, 0, 0, 0.3) inset, 0 0 1px 0 rgba(0, 0, 0, 0.1);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
+  transition: .4s;
 }
 
-.switch input[type="checkbox"]:checked + .slider {
- background-color: var(--color-green);
+.slider:after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  right: -7px;
+  bottom: -7px;
+  border-radius: 1.71em;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.1));
+  z-index: -1;
 }
 
-.switch input[type="checkbox"]:checked + .slider::after {
- transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)));
- box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+.switch input:checked + .slider {
+  background-color: #21f3a3;
+  color: #fff;
 }
 
-.switch input[type="checkbox"] {
- display: none;
+.switch input:checked + .slider:before {
+  content: "Off";
+  transform: translateX(100%);
+  color: red;
 }
 
-.switch input[type="checkbox"]:active + .slider::after {
- width: var(--toggle-wider);
+.switch input {
+  display: none;
 }
-
-.switch input[type="checkbox"]:checked:active + .slider::after {
- transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)));
-}
-
 </style>

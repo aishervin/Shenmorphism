@@ -1,44 +1,72 @@
-<svg viewBox="25 25 50 50">
-  <circle r="20" cy="50" cx="50"></circle>
-</svg>
+<div class="loader">
+  <div class="red bar"></div>
+  <div class="orange bar"></div>
+  <div class="yellow bar"></div>
+  <div class="green bar"></div>
+  <div class="blue bar"></div>
+  <div class="violet bar"></div>
+</div>
 <style>
-/* From SHΞN™ Morphism by barisdogansutcu - Tags: loader, spinner */
-svg {
- width: 3.25em;
- transform-origin: center;
- animation: rotate4 2s linear infinite;
+/* From SHΞN™ Morphism by Gianluks90 - Tags: loader, rainbow */
+.loader {
+  height: 50px;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
 }
 
-circle {
- fill: none;
- stroke: hsl(214, 97%, 59%);
- stroke-width: 2;
- stroke-dasharray: 1, 200;
- stroke-dashoffset: 0;
- stroke-linecap: round;
- animation: dash4 1.5s ease-in-out infinite;
+.bar {
+  height: 5px;
+  width: 12px;
+  animation-duration: 0.45s;
+  animation-name: changeHeight;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
-@keyframes rotate4 {
- 100% {
-  transform: rotate(360deg);
- }
+.red {
+  background-color: #E50000;
+  box-shadow: 1px 1px 10px #E50000;
+  animation-delay: 0.10s;
 }
 
-@keyframes dash4 {
- 0% {
-  stroke-dasharray: 1, 200;
-  stroke-dashoffset: 0;
- }
-
- 50% {
-  stroke-dasharray: 90, 200;
-  stroke-dashoffset: -35px;
- }
-
- 100% {
-  stroke-dashoffset: -125px;
- }
+.orange {
+  background-color: #FF8D00;
+  box-shadow: 1px 1px 10px #FF8D00;
+  animation-delay: 0.20s;
 }
 
+.yellow {
+  background-color: #FFEE00;
+  box-shadow: 1px 1px 10px #FFEE00;
+  animation-delay: 0.25s;
+}
+
+.green {
+  background-color: #008121;
+  box-shadow: 1px 1px 10px #008121;
+  animation-delay: 0.30s;
+}
+
+.blue {
+  background-color: #004CFF;
+  box-shadow: 1px 1px 10px #004CFF;
+  animation-delay: 0.35s;
+}
+
+.violet {
+  background-color: #760188;
+  box-shadow: 1px 1px 10px #760188;
+  animation-delay: 0.40s;
+}
+
+@keyframes changeHeight {
+  from {
+    height: 5px;
+  }
+
+  to {
+    height: 40px;
+  }
+}
 </style>

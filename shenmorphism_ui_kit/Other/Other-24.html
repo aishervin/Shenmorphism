@@ -1,78 +1,88 @@
-<div class="radio-input">
-  <input value="value-1" name="value-radio" id="value-1" type="radio">
-  <label for="value-1">Value 1</label>
-  <input value="value-2" name="value-radio" id="value-2" type="radio">
-  <label for="value-2">Value 2</label>
-  <input value="value-3" name="value-radio" id="value-3" type="radio">
-  <label for="value-3">Value 3</label>
-</div>
+<label class="toggle-switch" for="toggle-switch">
+  <input type="checkbox" id="toggle-switch">
+  <div class="slider"></div>
+</label>
+
 <style>
-/* From SHΞN™ Morphism by Yaya12085 - Tags: button, input, radio, select, animated, design */
-.radio-input {
-  display: flex;
-  flex-direction: row;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: white;
+/* From SHΞN™ Morphism by aboalsim114 - Tags: switch */
+/* Toggle Switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 5em;
+  height: 2.5em;
+  font-size: 1em;
+  border-radius: 3em;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-.radio-input input[type="radio"] {
+.toggle-switch input[type="checkbox"] {
   display: none;
 }
 
-.radio-input label {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border: 1px solid #ccc;
-  background-color: #212121;
-  border-radius: 5px;
-  margin-right: 12px;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.3s ease-in-out;
-}
-
-.radio-input label:before {
-  content: "";
+.toggle-switch label {
   display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.slider {
   position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #fff;
-  border: 2px solid #ccc;
-  transition: all 0.3s ease-in-out;
-}
-
-.radio-input input[type="radio"]:checked + label:before {
-  background-color: green;
+  cursor: pointer;
   top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border-radius: 3em;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.radio-input input[type="radio"]:checked + label {
-  background-color: royalblue;
-  color: #fff;
-  border-color: rgb(129, 235, 129);
-  animation: radio-translate 0.5s ease-in-out;
+.slider::before {
+  position: absolute;
+  content: "";
+  width: 2em;
+  height: 2em;
+  left: 0.25em;
+  bottom: 0.25em;
+  background-color: #38b8a7;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), background-color 0.3s ease;
+  transform: perspective(800px) rotateY(0deg) rotateX(0deg);
 }
 
-@keyframes radio-translate {
-  0% {
-    transform: translateX(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
+.slider::after {
+  position: absolute;
+  content: "";
+  width: 0.8em;
+  height: 0.8em;
+  left: 50%;
+  bottom: 0.5em;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, 50%) scale(0);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
 }
+
+.toggle-switch input[type="checkbox"]:checked + .slider {
+  background-color: #f2f2f2;
+  box-shadow: 0 0.3em 0.3em rgba(244, 68, 68, 0.2);
+}
+
+.toggle-switch input[type="checkbox"]:checked + .slider::before {
+  transform: translateX(2.5em) perspective(800px) rotateY(180deg) rotateX(360deg);
+  background-color: #f44;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.toggle-switch input[type="checkbox"]:checked + .slider::after {
+  transform: translate(-50%, 50%) scale(1);
+}
+
 
 </style>

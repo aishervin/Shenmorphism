@@ -1,83 +1,135 @@
-<div class="card">
-  <div class="card__content">
-    <div class="card__content-heading">
-      <h2>Title</h2>
-      <br>
+<div class="container">
+  <div class="cube">
+    <div style="--x:-1; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
     </div>
-    <div class="card__content-body">
-      <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      </p>
-      <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      </p>
+    <div style="--x:0; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
     </div>
-    <div class="card__content-footer">
-      <button> Yes
-      </button>
-      <button> No
-      </button>
+    <div style="--x:1; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
+    </div>
+  </div>
+  <div class="cube">
+    <div style="--x:-1; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
+    </div>
+    <div style="--x:0; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
+    </div>
+    <div style="--x:1; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
+    </div>
+  </div>
+  <div class="cube">
+    <div style="--x:-1; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
+    </div>
+    <div style="--x:0; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
+    </div>
+    <div style="--x:1; --y:0;">
+      <span style="--i:3;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:1;"></span>
     </div>
   </div>
 </div>
+
 <style>
-/* From SHΞN™ Morphism by alexreyes091 - Tags: card */
-.card {
- width: 190px;
- height: 254px;
- padding: 2%;
- background: rgb(255, 255, 255);
- border-bottom: 2px solid blueviolet;
- border-right: 2px solid blueviolet;
- border-top: 2px solid white;
- border-left: 2px solid white;
- transition-duration: 1s;
- transition-property: border-top, 
-    border-left, 
-    border-bottom,
-    border-right,
-    box-shadow;
+/* From SHΞN™ Morphism by csemszepp  - Website: https://codepen.io/gvissing/pen/QWBrzdB - Name: Greg Vissing - Tags: 3d, cube, fun */
+@keyframes animate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
 }
 
-.card:hover {
- border-top: 2px solid blueviolet;
- border-left: 2px solid blueviolet;
- border-bottom: 2px solid rgb(238, 103, 238);
- border-right: 2px solid rgb(238, 103, 238);
- box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+.container {
+  position: relative;
+  top: -80px;
+  transform: skewY(-20deg);
+  animation: animate 5s linear infinite;
+  .cube {
+    position: relative;
+    z-index: 2;
+    &:nth-child(2) {
+      z-index: 1;
+      translate: -60px -60px;
+    }
+    &:nth-child(3) {
+      z-index: 3;
+      translate: 60px 60px;
+    }
+    div {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      translate: calc(-70px * var(--x)) calc(-60px * var(--y));
+      span {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: #dcdcdc;
+        z-index: calc(1 * var(--i));
+        transition: 1.5s;
+        &:hover {
+          transition: 0s;
+          background: #ef4149;
+          filter: drop-shadow(0 0 30px #ef4149);
+          &:before,
+          &:after {
+            transition: 0s;
+            background: #ef4149;
+          }
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          left: -40px;
+          width: 40px;
+          height: 100%;
+          background: #fff;
+          transform-origin: right;
+          transform: skewY(45deg);
+          transition: 1.5s;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          top: -40px;
+          left: 0px;
+          width: 100%;
+          height: 40px;
+          background: #f2f2f2;
+          transform-origin: bottom;
+          transform: skewX(45deg);
+          transition: 1.5s;
+        }
+      }
+    }
+  }
 }
-
-.card__content {
- font-size: small;
- text-align: center;
-}
-
-.card__content-heading {
- color: blueviolet;
-}
-
-.card__content-body p {
- color: rgb(118, 104, 128);
- padding-bottom: 1rem;
-}
-
-.card__content-footer button {
- background-color: rgb(255, 255, 255);
- color: grey;
- font-weight: 700;
- border-radius: .2rem;
- border: 1px solid grey;
- padding: .5rem;
- margin: 1rem;
- transition-duration: 1s;
- transition-property: background-color, color, border;
-}
-
-button:hover {
- color: white;
- background-color: rgb(238, 103, 238);
- border: 1px solid white;
- box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
-}
-
-
 
 </style>
+    

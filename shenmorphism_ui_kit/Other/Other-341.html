@@ -1,62 +1,96 @@
-<label class="switch">
-    <input type="checkbox">
-    <span class="slider"></span>
-</label>
+<form class="my-form">
+  <div>
+    <input id="radio-1" type="radio" name="option" />
+    <label for="radio-1">Radio 1</label>
+  </div>
+  <div>
+    <input checked="" id="radio-2" type="radio" name="option" />
+    <label for="radio-2">Radio 2</label>
+  </div>
+  <div>
+    <input id="radio-3" type="radio" name="option" />
+    <label for="radio-3">Radio 3</label>
+  </div>
+  <div>
+    <input id="radio-4" type="radio" name="option" />
+    <label for="radio-4">Radio 4</label>
+  </div>
+</form>
+
 <style>
-/* From SHΞN™ Morphism by arghyaBiswasDev - Tags: switch */
-/* The switch - the box around the slider */
-.switch {
-  font-size: 17px;
-  position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
+/* From SHΞN™ Morphism by cbolson  - Tags: radio */
+/* From SHΞN™ Morphism by cbolson */
+.my-form {
+  --_clr-primary: #666;
+  --_clr-hover: #f33195;
+  --_clr-checked: #127acf;
 }
+.my-form > div {
+  --_clr-current: var(--_clr-primary);
 
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
-
-/* The slider */
-.slider {
-  position: absolute;
+.my-form > div + div {
+  margin-block-start: 0.5rem;
+}
+.my-form label {
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #fff;
-  border: 1px solid #adb5bd;
-  transition: .4s;
-  border-radius: 30px;
+  color: var(--_clr-current);
+  transition: color 150ms ease-in-out;
 }
-
-.slider:before {
-  position: absolute;
+/* styled radio */
+.my-form input[type="radio"] {
+  appearance: none;
+  outline: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  aspect-ratio: 1;
+  padding: 0.25rem;
+  background: transparent;
+  border: 1px solid var(--_clr-current);
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  position: relative;
+}
+.my-form input[type="radio"]::after {
   content: "";
-  height: 1.4em;
-  width: 1.4em;
-  border-radius: 20px;
-  left: 0.27em;
-  bottom: 0.25em;
-  background-color: #adb5bd;
-  transition: .4s;
+  position: absolute;
+  inset: 0.25rem;
+  opacity: 0;
+  scale: 0;
+  transition:
+    opacity 150ms ease-in-out,
+    scale 150ms ease-in-out;
+  background-color: var(--_clr-checked);
+  border-radius: inherit;
 }
 
-input:checked + .slider {
-  background-color: #007bff;
-  border: 1px solid #007bff;
+.my-form label:hover,
+.my-form input[type="radio"]:focus-visible,
+.my-form input[type="radio"]:focus-visible + label,
+.my-form input[type="radio"]:hover,
+.my-form input[type="radio"]:hover + label {
+  --_clr-current: var(--_clr-hover);
+}
+.my-form input[type="radio"]:focus-visible::after,
+.my-form input[type="radio"]:hover::after {
+  opacity: 0.5;
+  scale: 1;
+  background-color: var(--_clr-hover);
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #007bff;
+.my-form input[type="radio"]:checked + label:not(:hover),
+.my-form input[type="radio"]:checked:not(:hover) {
+  --_clr-current: var(--_clr-checked);
+}
+.my-form input[type="radio"]:checked::after {
+  opacity: 1;
+  scale: 1;
 }
 
-input:checked + .slider:before {
-  transform: translateX(1.4em);
-  background-color: #fff;
-}
 </style>
+    

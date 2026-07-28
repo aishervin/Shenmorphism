@@ -1,81 +1,40 @@
-<div class="body">
-<button class="btn btn-hover">
-  <span class="btn-text">Practice now</span>
+<button>
+  <span class="button_top"> Button
+  </span>
 </button>
-</div>
 <style>
-/* From SHΞN™ Morphism by itay1313 - Tags: button */
-.body {
-  --transition: all 0.55s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  --yellow-bg: transparent linear-gradient(114deg, #fdc100 0%, #dd7d00 100%) 0%
-    0% no-repeat padding-box;
-  color: white;
-  margin: 0;
+/* From SHΞN™ Morphism by Voxybuns - Tags: button */
+button {
+  /* Variables */
+  --button_radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #000000;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
 }
 
-.btn {
-  border-radius: 23px;
-  letter-spacing: 0.8px;
-  font-size: 14px;
-  font-weight: 300;
-  color: white;
-  white-space: nowrap;
-  margin: 20px auto;
-  width: 166px;
-  height: 45px;
-  cursor: pointer;
-  position: relative;
-  border: 1px solid #dd7d00;
-  background: transparent;
+.button_top {
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid var(--button_outline_color);
+  border-radius: var(--button_radius);
+  padding: 0.75em 1.5em;
+  background: var(--button_color);
+  color: var(--button_outline_color);
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
 }
 
-.btn::before {
-  -webkit-transition: var(--transition);
-  transition: var(--transition);
-  content: "";
-  width: 50%;
-  height: 100%;
-  background: black;
-  position: absolute;
-  top: 0;
-  right: 0;
+button:hover .button_top {
+  /* Pull the button upwards when hovered */
+  transform: translateY(-0.33em);
 }
 
-.btn:hover::before {
-  width: 100%;
+button:active .button_top {
+  /* Push the button downwards when pressed */
+  transform: translateY(0);
 }
-
-.btn.btn-hover {
-  border-radius: 50px;
-  position: relative;
-}
-
-.btn.btn-hover .btn-text {
-  color: white;
-  -webkit-transition: var(--transition);
-  transition: var(--transition);
-  mix-blend-mode: lighten;
-}
-
-.btn.btn-hover::before {
-  border-radius: 50px;
-  width: 100%;
-  background: conic-gradient(
-    transparent 240deg, #ac633697 240deg,
-    #fff2af6a 300deg, transparent 300deg
-  )
-  100% / 64%
-  no-repeat, var(--yellow-bg);
-}
-
-.btn.btn-hover:hover .btn-text {
-  margin-right: 30px;
-}
-
-.btn.btn-hover:hover::before {
-  background-position: right;
-  border-radius: 23px;
-  width: 25%;
-}
-
 </style>

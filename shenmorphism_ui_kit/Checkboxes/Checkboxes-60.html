@@ -1,81 +1,104 @@
-<input type="checkbox" id="checkboxInput">
-    <label for="checkboxInput" class="bookmark">
-<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512" class="svgIcon"><path d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"></path></svg>
-    </label>
-
-
-
-
-
+<input id="inpLock" type="checkbox">
+<label class="btn-lock" for="inpLock">
+    <svg width="36" height="40" viewBox="0 0 36 40">
+        <path class="lockb" d="M27 27C27 34.1797 21.1797 40 14 40C6.8203 40 1 34.1797 1 27C1 19.8203 6.8203 14 14 14C21.1797 14 27 19.8203 27 27ZM15.6298 26.5191C16.4544 25.9845 17 25.056 17 24C17 22.3431 15.6569 21 14 21C12.3431 21 11 22.3431 11 24C11 25.056 11.5456 25.9845 12.3702 26.5191L11 32H17L15.6298 26.5191Z"></path>
+        <path class="lock" d="M6 21V10C6 5.58172 9.58172 2 14 2V2C18.4183 2 22 5.58172 22 10V21"></path>
+        <path class="bling" d="M29 20L31 22"></path>
+        <path class="bling" d="M31.5 15H34.5"></path>
+        <path class="bling" d="M29 10L31 8"></path>
+    </svg>
+</label>
 <style>
-/* From SHΞN™ Morphism by vinodjangid07 - Tags: checkbox, save, click effect, bookmark */
-.bookmark {
-  position: relative;
+/* From SHΞN™ Morphism by mobinkakei - Tags: checkbox, lock */
+.btn-lock {
+  position: absolute;
+  top: calc(50% - 32px);
+  left: calc(50% - 32px);
+  display: inline-block;
+  background: #ff5b5b;
+  width: 64px;
+  height: 64px;
+  box-sizing: border-box;
+  padding: 12px 0 0 18px;
+  border-radius: 50%;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
-#checkboxInput {
+.btn-lock svg {
+  fill: none;
+  transform: translate3d(0, 0, 0);
+}
+
+.btn-lock svg .bling {
+  stroke: #fff;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 3;
+  stroke-dashoffset: 15;
+  transition: all 0.3s ease;
+}
+
+.btn-lock svg .lock {
+  stroke: #fff;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 36;
+  transition: all 0.4s ease;
+}
+
+.btn-lock svg .lockb {
+  fill: #fff;
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  transform: rotate(8deg);
+  transform-origin: 14px 20px;
+  transition: all 0.2s ease;
+}
+
+#inpLock {
   display: none;
 }
 
-.svgIcon {
-  height: 30px;
+#inpLock:checked + label {
+  background: #20cca5;
 }
 
-.svgIcon path {
-  fill: rgb(153, 153, 153);
+#inpLock:checked + label svg {
+  opacity: 1;
 }
 
-.bookmark::before {
-  content: "\002B";
-  position: absolute;
-  color: rgb(255, 255, 255);
-  font-size: 1.2em;
-  top: 1px;
+#inpLock:checked + label svg .bling {
+  animation: bling6132 0.3s linear forwards;
+  animation-delay: 0.2s;
 }
 
-#checkboxInput:checked + .bookmark::before {
-  content: "\2713";
-  font-size: 0.70em;
-  top: 5px;
+#inpLock:checked + label svg .lock {
+  stroke-dasharray: 48;
+  animation: locked 0.3s linear forwards;
 }
 
-#checkboxInput:checked + .bookmark .svgIcon path {
-  fill: rgb(121, 199, 3);
+#inpLock:checked + label svg .lockb {
+  transform: rotate(0);
+  transform-origin: 14px 22px;
 }
 
-#checkboxInput:active + .bookmark .svgIcon path {
-  fill: rgb(204, 204, 204);
-}
-
-.bookmark::after {
-  content: "";
-  background-color: rgba(56, 105, 0, 0.342);
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  z-index: -1;
-}
-
-#checkboxInput:checked + .bookmark::after {
-  animation: puff-out-center .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
-}
-
-@keyframes puff-out-center {
-  0% {
-    transform: scale(1);
-    filter: blur(0px);
-    opacity: 1;
+@keyframes bling6132 {
+  50% {
+    stroke-dasharray: 3;
+    stroke-dashoffset: 12;
   }
 
   100% {
-    transform: scale(9);
-    filter: blur(1px);
-    opacity: 0;
+    stroke-dasharray: 3;
+    stroke-dashoffset: 9;
+  }
+}
+
+@keyframes locked {
+  50% {
+    transform: translateY(1px);
   }
 }
 

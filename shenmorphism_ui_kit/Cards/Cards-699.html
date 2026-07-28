@@ -1,25 +1,57 @@
-<div class="one-div"></div>
+<div class="card">
+    <div class="icon">
+    </div>
+
+    <div class="content">
+        <h3>Title</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur </p>
+    </div>
+</div>
 <style>
-/* From SHΞN™ Morphism by vk-uiux - Tags: card, unique, challenge, css, design, one-div, coffee mug */
-.one-div {
-  top: -30px;
-  left: 0;
-  position: relative;
-  width: 100px;
-  height: 100px;
-  background-color: #3f2616;
-  border-radius: 50%;
-  box-shadow: 0px 0px 0px 10px #442918, 0 0 0 25px #3c2415, 0 0 0 44px #fe9407, 0 0 0 65px #ffae43, 0 115px 0 -20px #442918, 95px 70px 0 -25px #442918, 60px 115px 0 -10px #442918, 10px 170px 0 -35px #442918, 30px 200px 0 -42px #442918;
+/* From SHΞN™ Morphism by david-mohseni - Tags: neumorphism, card */
+.card {
+  width: 190px;
+  height: 120px;
+  background-color: #eee;
+  text-align: center;
+  border: 10px solid #eee;
+  border-radius: 20px;
+  box-shadow: inset 5px 5px 10px #bbb, inset -5px -5px 10px #fff;
+  transition: 0.5s;
 }
 
-.one-div::before {
-  content: "";
-  position: absolute;
-  width: 45px;
+.card:hover {
+  height: 254px;
+}
+
+.icon {
+  width: 60px;
   height: 60px;
-  background-color: #f79c25;
-  top: -80px;
-  right: -70px;
-  transform: rotate(45deg);
+  color: red;
+  font-size: 30px;
+  background-color: #eee;
+  margin: 20px auto;
+  padding: 5px;
+  border-radius: 50%;
+  box-shadow: 8px 8px 10px #ddd, -8px -8px 10px #fff;
+}
+
+.content {
+  color: #999;
+  background-color: #eee;
+  padding: 10px;
+  margin: 5px 20px;
+  border-radius: 8px;
+  box-shadow: 8px 8px 10px #ddd, -8px -8px 10px #fff;
+  transform: translateY(-80px) scale(0);
+  transition: all 0.5s;
+}
+
+.card:hover .content {
+  transform: translateY(0) scale(1)
+}
+
+.content h3 {
+  text-shadow: 2px 2px 0px #fff;
 }
 </style>

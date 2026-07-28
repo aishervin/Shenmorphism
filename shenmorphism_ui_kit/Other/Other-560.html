@@ -1,126 +1,82 @@
-<div class="loader">
-  <li class="orb"></li>
-  <li class="orb"></li>
-  <li class="orb"></li>
-  <li class="orb"></li>
-  <li class="orb"></li>
-  <li class="orb"></li>
-  <li class="orb"></li>
-  <li class="orb"></li>
-  <li class="orb"></li>
-</div>
-
+<div class="loader"></div>
 <style>
-/* From SHΞN™ Morphism by MiniJohan  - Tags: simple, animation, white, loader */
+/* From SHΞN™ Morphism by alexruix - Tags: loader */
 .loader {
-  display: flex;
-  max-width: 350;
-  position: relative;
-  gap: 20px;
-  justify-content: space-evenly;
-  animation: rotate 3s linear infinite;
-  color: white;
-}
-
-.loading {
-}
-
-.orb {
-  width: 25px;
-  height: 25px;
-  background-color: rgb(255, 255, 255);
+  --ballcolor: #f2f2f2;
+  --shadow: 0px 0 #ffffff00;
+  --shadowcolor: #ffffff00;
+  width: 10px;
+  height: 10px;
+  left: -120px;
   border-radius: 50%;
-  position: absolute;
+  position: relative;
+  color: var(--ballcolor);
+  animation: shadowRolling 2s linear infinite;
 }
 
-.orb:nth-child(1) {
-  top: 20px;
-  left: 20px;
-  animation: bounce2 1.5s ease 1s infinite;
-}
-
-.orb:nth-child(2) {
-  top: 20px;
-  right: 20px;
-  animation: bounce2 1.5s ease 1s infinite;
-}
-
-.orb:nth-child(3) {
-  bottom: 20px;
-  left: 20px;
-  animation: bounce2 1.5s ease 1s infinite;
-}
-
-.orb:nth-child(4) {
-  bottom: 20px;
-  right: 20px;
-  animation: bounce2 1.5s ease 1s infinite;
-}
-
-.orb:nth-child(5) {
-  top: 20px;
-  animation: bounce2 1.5s ease 1s infinite;
-}
-
-.orb:nth-child(6) {
-  bottom: 20px;
-  animation: bounce2 1.5s ease 1s infinite;
-}
-
-.orb:nth-child(7) {
-  left: 20px;
-  top: -12.5px;
-  animation: bounce2 1.5s ease 1s infinite;
-}
-
-.orb:nth-child(8) {
-  right: 20px;
-  top: -12.5px;
-  animation: bounce2 1.5s ease 1s infinite;
-}
-
-.orb:nth-child(9) {
-  top: -12.5px;
-  animation: bounce 1.5s ease 1.5s infinite;
-}
-
-@keyframes rotate {
+@keyframes shadowRolling {
+  
   0% {
-    transform: rotate(0);
+    box-shadow: var(--shadow),
+        var(--shadow),
+        var(--shadow),
+        var(--shadow);
+  }
+
+  12% {
+    box-shadow: 100px 0 var(--ballcolor),
+        var(--shadow),
+        var(--shadow), 
+        var(--shadow);
   }
 
   25% {
-    transform: rotate(90deg);
+    box-shadow: 110px 0 var(--ballcolor),
+        100px 0 var(--ballcolor),
+        var(--shadow), 
+        var(--shadow);
+  }
+
+  36% {
+    box-shadow: 120px 0 var(--ballcolor), 
+        110px 0 var(--ballcolor), 
+        100px 0 var(--ballcolor), 
+         var(--shadow);
   }
 
   50% {
-    transform: rotate(180deg);
+    box-shadow: 130px 0 var(--ballcolor),
+        120px 0 var(--ballcolor),
+        110px 0 var(--ballcolor),
+        100px 0 var(--ballcolor);
+  }
+
+  62% {
+    box-shadow: 200px 0 var(--shadowcolor),
+         130px 0 var(--ballcolor), 
+         120px 0 var(--ballcolor), 
+         110px 0 var(--ballcolor);
+  }
+
+  75% {
+    box-shadow: 200px 0 var(--shadowcolor),
+        200px 0 var(--shadowcolor),
+        130px 0 var(--ballcolor), 
+        120px 0 var(--ballcolor);
+  }
+
+  87% {
+    box-shadow: 200px 0 var(--shadowcolor), 
+        200px 0 var(--shadowcolor), 
+        200px 0 var(--shadowcolor), 
+        130px 0 var(--ballcolor);
   }
 
   100% {
-    transform: rotate(360deg);
+    box-shadow: 200px 0 var(--shadowcolor), 
+        200px 0 var(--shadowcolor),
+        200px 0 var(--shadowcolor),
+        200px 0 var(--shadowcolor);
   }
 }
-
-@keyframes bounce {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(0.5);
-  }
-}
-
-@keyframes bounce2 {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(0.5);
-  }
-}
-
 </style>
-    

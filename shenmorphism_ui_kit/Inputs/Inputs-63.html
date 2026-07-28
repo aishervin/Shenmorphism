@@ -1,38 +1,25 @@
-<input placeholder="type it" class="input" name="text" type="text" />
-
+<input placeholder="Username" type="text" name="text" class="input">
 <style>
-/* From SHΞN™ Morphism by tiagoadag1203  - Tags: animation, blue, purple, input, shadow */
+/* From SHΞN™ Morphism by JaydipPrajapati1910 - Tags: neumorphism, input */
 .input {
   max-width: 190px;
-  background-color: #1a1a1a;
   border: none;
-  padding: 10px;
-  border-radius: 10px;
   outline: none;
-  color: white;
+  background: none;
+  font-size: 18px;
+  color: #555;
+  padding: 15px 5px 10px 20px;
+  box-shadow: inset 8px 8px 8px #cbced1,
+              inset -8px -8px 8px #ffffff;
+  border-radius: 25px;
 }
 
-.input:focus {
-  animation: rotateShadow 2s infinite linear;
+.input::placeholder {
+  color: #555;
+  transition: all 0.3s ease;
 }
 
-@keyframes rotateShadow {
-  0% {
-    box-shadow: -2px -2px 8px 1px #aa00ff, 2px 2px 8px 1px #3700ff;
-  }
-  25% {
-    box-shadow: -2px 2px 8px 1px #aa00ff, 2px -2px 8px 1px #3700ff;
-  }
-  50% {
-    box-shadow: 2px 2px 8px 1px #aa00ff, -2px -2px 8px 1px #3700ff;
-  }
-  75% {
-    box-shadow: 2px -2px 8px 1px #aa00ff, -2px 2px 8px 1px #3700ff;
-  }
-  100% {
-    box-shadow: -2px -2px 8px 1px #aa00ff, 2px 2px 8px 1px #3700ff;
-  }
+.input:focus::placeholder {
+  color: #999;
 }
-
 </style>
-    

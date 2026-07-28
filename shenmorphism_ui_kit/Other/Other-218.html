@@ -1,144 +1,125 @@
-<label class="switch-button" for="switch">
-  <div class="switch-outer">
-    <input id="switch" type="checkbox">
-    <div class="button">
-      <span class="button-toggle"></span>
-      <span class="button-indicator"></span>
-    </div>
-  </div>
+<label class="switch">
+  <input type="checkbox" />
+  <span class="slider">
+    <span class="circle">
+      <span class="shine shine-1"></span>
+      <span class="shine shine-2"></span>
+      <span class="shine shine-3"></span>
+      <span class="shine shine-4"></span>
+      <span class="shine shine-5"></span>
+      <span class="shine shine-6"></span>
+      <span class="shine shine-7"></span>
+      <span class="shine shine-8"></span>
+      <span class="moon"></span>
+    </span>
+  </span>
 </label>
+
 <style>
-/* From SHΞN™ Morphism by Admin12121 - Tags: switch, animated, click effect */
-.switch-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  justify-content: center;
-  margin: auto;
-  height: 55px;
+/* From SHΞN™ Morphism by TahaShameli  - Tags:  */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
 }
 
-.switch-button .switch-outer {
-  height: 100%;
-  background: #252532;
-  width: 115px;
-  border-radius: 165px;
-  -webkit-box-shadow: inset 0px 5px 10px 0px #16151c, 0px 3px 6px -2px #403f4e;
-  box-shadow: inset 0px 5px 10px 0px #16151c, 0px 3px 6px -2px #403f4e;
-  border: 1px solid #32303e;
-  padding: 6px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.switch-button .switch-outer input[type="checkbox"] {
+.switch input {
   opacity: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  width: 0;
+  height: 0;
+}
+
+.slider {
   position: absolute;
-}
-
-.switch-button .switch-outer .button-toggle {
-  height: 42px;
-  width: 42px;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#3b3a4e),
-    to(#272733)
-  );
-  background: -o-linear-gradient(#3b3a4e, #272733);
-  background: linear-gradient(#3b3a4e, #272733);
-  border-radius: 100%;
-  -webkit-box-shadow: inset 0px 5px 4px 0px #424151, 0px 4px 15px 0px #0f0e17;
-  box-shadow: inset 0px 5px 4px 0px #424151, 0px 4px 15px 0px #0f0e17;
-  position: relative;
-  z-index: 2;
-  -webkit-transition: left 0.3s ease-in;
-  -o-transition: left 0.3s ease-in;
-  transition: left 0.3s ease-in;
+  cursor: pointer;
+  top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333;
+  transition: 0.4s;
+  border-radius: 30px;
+  overflow: hidden;
 }
 
-.switch-button
-  .switch-outer
-  input[type="checkbox"]:checked
-  + .button
-  .button-toggle {
-  left: 58%;
+.circle {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: #fff000;
+  transform: rotate(360deg) translateX(0);
+  transition: 0.4s;
 }
 
-.switch-button
-  .switch-outer
-  input[type="checkbox"]:checked
-  + .button
-  .button-indicator {
-  -webkit-animation: indicator 1s forwards;
-  animation: indicator 1s forwards;
+.switch input:checked + .slider .circle {
+  transform: rotate(0deg) translateX(1.5em) !important;
 }
 
-.switch-button .switch-outer .button {
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
+.switch input:checked + .slider .circle .shine {
+  transform: translate(0%, 0%) !important;
 }
 
-.switch-button .switch-outer .button-indicator {
-  height: 25px;
-  width: 25px;
+.switch input:checked + .slider .circle .moon {
+  left: -10%;
+  opacity: 1;
+  transform: translateY(-60%);
+}
+
+.moon {
+  position: absolute;
+  left: -100%;
   top: 50%;
-  -webkit-transform: translateY(-50%);
+  opacity: 0;
+  background-color: #333;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 99999px;
   transform: translateY(-50%);
-  border-radius: 50%;
-  border: 3px solid #ef565f;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  right: 10px;
-  position: relative;
+  transition: all 0.4s;
 }
 
-@-webkit-keyframes indicator {
-  30% {
-    opacity: 0;
-  }
-
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-    border: 3px solid #60d480;
-    left: -68%;
-  }
+.shine {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: #fff000;
+  border-radius: 1rem;
+  transition: all 0.4s;
 }
 
-@keyframes indicator {
-  30% {
-    opacity: 0;
-  }
-
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-    border: 3px solid #60d480;
-    left: -68%;
-  }
+.shine-1 {
+  transform: translate(-50%, -375%);
 }
+.shine-2 {
+  transform: translate(175%, -275%);
+}
+.shine-3 {
+  transform: translate(275%, -50%);
+}
+.shine-4 {
+  transform: translate(175%, 175%);
+}
+.shine-5 {
+  transform: translate(-50%, 275%);
+}
+.shine-6 {
+  transform: translate(-275%, 175%);
+}
+.shine-7 {
+  transform: translate(-375%, -50%);
+}
+.shine-8 {
+  transform: translate(-275%, -275%);
+}
+
 </style>
+    

@@ -1,115 +1,84 @@
-<div class="login-box">
- 
-  <form>
-    <div class="user-box">
-      <input type="text" name="" required="">
-      <label>Username</label>
+<!-- From SHΞN™ Morphism by Shamaun-Nabi  - Website: https://www.devui.io/components/signin - Name: Dev ui - Tags: simple, form, light -->
+<div class="">
+  <section class="rounded-md p-2 bg-white">
+    <div class="flex items-center justify-center my-3">
+      <div class="xl:mx-auto shadow-md p-4 xl:w-full xl:max-w-sm 2xl:max-w-md">
+        <div class="mb-2"></div>
+        <h2 class="text-2xl font-bold leading-tight">
+          Sign up to create account
+        </h2>
+        <p class="mt-2 text-base text-gray-600">
+          Already have an account? Sign In
+        </p>
+        <form class="mt-5">
+          <div class="space-y-4">
+            <div>
+              <label class="text-base font-medium text-gray-900">
+                User Name
+              </label>
+              <div class="mt-2">
+                <input
+                  placeholder="Full Name"
+                  type="text"
+                  class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                  name="user_name"
+                />
+              </div>
+            </div>
+            <div>
+              <label class="text-base font-medium text-gray-900">
+                Email address
+              </label>
+              <div class="mt-2">
+                <input
+                  placeholder="Email"
+                  type="email"
+                  class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                  name="email"
+                />
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center justify-between">
+                <label class="text-base font-medium text-gray-900">
+                  Password
+                </label>
+              </div>
+              <div class="mt-2">
+                <input
+                  placeholder="Password"
+                  type="password"
+                  class="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                  name="password"
+                />
+              </div>
+              <div class="flex items-center justify-between mt-3">
+                <label class="text-base font-medium text-gray-900">
+                  Profile Picture
+                </label>
+              </div>
+              <div class="mt-2">
+                <input
+                  class="file-input w-full max-w-xs"
+                  type="file"
+                  name="avatar"
+                />
+              </div>
+            </div>
+            <div>
+              <button
+                class="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
+                type="button"
+              >
+                Create Account
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="user-box">
-      <input type="password" name="" required="">
-      <label>Password</label>
-    </div><center>
-    <a href="#">
-           SEND
-       <span></span>
-    </a></center>
-  </form>
+  </section>
 </div>
-<style>
-/* From SHΞN™ Morphism by guilhermeyohan - Tags: form */
-.login-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  padding: 40px;
-  transform: translate(-50%, -50%);
-  background: rgba(24, 20, 20, 0.987);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
-  border-radius: 10px;
-}
 
-.login-box .user-box {
-  position: relative;
-}
 
-.login-box .user-box input {
-  width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  background: transparent;
-}
-
-.login-box .user-box label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  pointer-events: none;
-  transition: .5s;
-}
-
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
-  top: -20px;
-  left: 0;
-  color: #bdb8b8;
-  font-size: 12px;
-}
-
-.login-box form a {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  color: #ffffff;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: .5s;
-  margin-top: 40px;
-  letter-spacing: 4px
-}
-
-.login-box a:hover {
-  background: #03f40f;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #03f40f,
-              0 0 25px #03f40f,
-              0 0 50px #03f40f,
-              0 0 100px #03f40f;
-}
-
-.login-box a span {
-  position: absolute;
-  display: block;
-}
-
-@keyframes btn-anim1 {
-  0% {
-    left: -100%;
-  }
-
-  50%,100% {
-    left: 100%;
-  }
-}
-
-.login-box a span:nth-child(1) {
-  bottom: 2px;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #03f40f);
-  animation: btn-anim1 2s linear infinite;
-}
-</style>
+    

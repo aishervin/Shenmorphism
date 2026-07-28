@@ -1,27 +1,35 @@
-<span
-  data-active-content="🤨"
-  data-hover-content="😑"
-  data-content="😐"
-  class="💀"
-></span>
-
+<button class="button">
+  <span>Submit</span>
+</button>
 <style>
-/* From SHΞN™ Morphism by elijahgummer  - Tags: simple, button, emoji, minimalistic, ¯\_(ツ)_/¯ */
-.💀 {
-  font-size: 48px;
+/* From SHΞN™ Morphism by mi-series - Tags: simple, material design, 3d, green, minimalist, button, click, btn */
+.button {
+  width: 150px;
+  padding: 0;
+  border: none;
+  transform: rotate(5deg);
+  transform-origin: center;
+  font-family: "Gochi Hand", cursive;
+  text-decoration: none;
+  font-size: 15px;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  box-shadow: 0 2px 0 #494a4b;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background-color: #5CDB95;
 }
 
-.💀:after {
-  content: attr(data-content);
+.button span {
+  background: #f1f5f8;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 2px solid #494a4b;
 }
 
-.💀:hover:after {
-  content: attr(data-hover-content);
+.button:active {
+  transform: translateY(5px);
+  padding-bottom: 0px;
+  outline: 0;
 }
-
-.💀:active:after {
-  content: attr(data-active-content);
-}
-
 </style>
-    

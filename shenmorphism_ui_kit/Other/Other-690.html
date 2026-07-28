@@ -1,79 +1,37 @@
-<div class="spinner">
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
+<div class="loader"></div>
+
 <style>
-/* From SHΞN™ Morphism by bociKond - Source: https://10015.io - Tags: green, loader, spinner, custom, variables */
-.spinner {
-  position: relative;
-  width: 24.6px;
-  height: 24.6px;
-  animation-name: rotateSpin;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
-  --clr: #3E885B;
+/* From SHΞN™ Morphism by vikramsinghnegi  - Tags: loader, LOADER, TIME */
+/* HTML: <div class="loader"></div> */
+.loader {
+  display: inline-flex;
+  border: 10px solid #000;
+  border-radius: 5px;
 }
-
-@keyframes rotateSpin {
-  0% {
-    transform: rotate(0deg);
-  }
-
+.loader::before,
+.loader::after {
+  content: "0 1 2 3 4 5 6 7 8 9 0";
+  font-size: 30px;
+  font-family: monospace;
+  font-weight: bold;
+  line-height: 1em;
+  height: 1em;
+  width: 1.2ch;
+  text-align: center;
+  outline: 1px solid #000;
+  color: #0000;
+  text-shadow: 0 0 0 #000;
+  overflow: hidden;
+  animation: l4 2s infinite linear;
+}
+.loader::before {
+  animation-duration: 4s;
+}
+@keyframes l4 {
   100% {
-    transform: rotate(360deg);
+    text-shadow: 0 var(--t, -10em) 0 #000;
   }
 }
 
-.spinner div {
-  width: 100%;
-  height: 100%;
-  background-color: var(--clr);
-  border-radius: 50%;
-  animation: spinnerAni 1s infinite backwards;
-}
-
-.spinner div:nth-child(1) {
-  animation-delay: 0.12s;
-  background-color: var(--clr);
-  opacity: .9;
-}
-
-.spinner div:nth-child(2) {
-  animation-delay: 0.24s;
-  background-color: var(--clr);
-  opacity: .8;
-}
-
-.spinner div:nth-child(3) {
-  animation-delay: 0.36s;
-  background-color: var(--clr);
-  opacity: .7;
-}
-
-.spinner div:nth-child(4) {
-  animation-delay: 0.48s;
-  background-color: var(--clr);
-  opacity: .6;
-}
-
-.spinner div:nth-child(5) {
-  animation-delay: 0.60s;
-  background-color: var(--clr);
-  opacity: .5;
-}
-
-@keyframes spinnerAni {
-  0% {
-    transform: rotate(0deg) translateY(-200%);
-  }
-
-  60%, 100% {
-    transform: rotate(360deg) translateY(-200%);
-  }
-}
 </style>
+    

@@ -1,44 +1,35 @@
-<button class="button">
-    <span class="button-content">Download </span>
+<button>
+  <span> HOVER
+  </span>
 </button>
 <style>
-/* From SHΞN™ Morphism by Madflows - Tags: button, download */
-.button {
-  position: relative;
-  overflow: hidden;
-  height: 3rem;
-  padding: 0 2rem;
-  border-radius: 1.5rem;
-  background: #3d3a4e;
-  background-size: 400%;
-  color: #fff;
-  border: none;
+/* From SHΞN™ Morphism by Yashwanthnaini - Tags: button */
+button {
+ border: none;
+ border-radius: 20px;
+ background: linear-gradient(32deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+ transition: all 1.5s ease;
+ font-family: 'Ropa Sans', sans-serif;
+ font-weight: bold;
+ letter-spacing: 0.05rem;
+ padding: 0;
 }
 
-.button:hover::before {
-  transform: scaleX(1);
+button span {
+ display: inline-block;
+ padding: 15px 35px;
+ font-size: 17px;
+ border-radius: 20px;
+ background: #ffffff10;
+ backdrop-filter: blur(20px);
+ transition: 0.4s ease-in-out;
+ transition-property: color;
+ height: 100%;
+ width: 100%;
 }
 
-.button-content {
-  position: relative;
-  z-index: 1;
-}
-
-.button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: 0 50%;
-  width: 100%;
-  height: inherit;
-  border-radius: inherit;
-  background: linear-gradient(
-    82.3deg,
-    rgba(150, 93, 233, 1) 10.8%,
-    rgba(99, 88, 238, 1) 94.3%
-  );
-  transition: all 0.475s;
+button span:hover {
+ backdrop-filter: blur(0px);
+ color: #ffffff;
 }
 </style>

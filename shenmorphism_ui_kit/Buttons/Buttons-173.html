@@ -1,67 +1,36 @@
-<button>
-  <a href="#" class="btn2"><span class="spn2">HELLO !</span></a>
-</button>
+<button class="button">
+            <span class="btn__icon">
+                <svg stroke-linejoin="round" stroke-linecap="round" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="none" d="M0 0h24v24H0z" stroke="none"></path>
+                    <path d="M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-1"></path>
+                    <path d="M9 15l3 -3l3 3"></path>
+                    <path d="M12 12l0 9"></path>
+                </svg>
+            </span>
+            <span class="btn__text">Upload</span>
+        </button>
 <style>
-/* From SHΞN™ Morphism by TISEPSE - Tags: material design, button, css effect */
-.btn2 {
-  position: relative;
-  display: inline-block;
-  padding: 15px 30px;
-  border: 2px solid #fefefe;
-  text-transform: uppercase;
-  color: #fefefe;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 20px;
-  transition: 0.3s;
-}
-
-.btn2::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  width: calc(100% + 4px);
-  height: calc(100% - -2px);
-  background-color: #212121;
-  transition: 0.3s ease-out;
-  transform: scaleY(1);
-}
-
-.btn2::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  width: calc(100% + 4px);
-  height: calc(100% - 50px);
-  background-color: #212121;
-  transition: 0.3s ease-out;
-  transform: scaleY(1);
-}
-
-.btn2:hover::before {
-  transform: translateY(-25px);
-  height: 0;
-}
-
-.btn2:hover::after {
-  transform: scaleX(0);
-  transition-delay: 0.15s;
-}
-
-.btn2:hover {
-  border: 2px solid #fefefe;
-}
-
-.btn2 span {
-  position: relative;
-  z-index: 3;
-}
-
-button {
-  text-decoration: none;
-  border: none;
+/* From SHΞN™ Morphism by Creatlydev - Tags: neumorphism, button, simple button */
+.button {
+  --bg: linear-gradient(180deg,
+            hsla(0, 0%, 100%, .1),
+            hsla(0, 0%, 100%, 0)),
+        hsl(128, 52%, 45%);
+  box-shadow: 0 1px 2px #25114f66, 0 0 0 1px hsla(128, 50%, 45%, 0.761);
   background-color: transparent;
+  border: none;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .25rem .5rem;
+  cursor: pointer;
+  padding-right: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--bg);
+  white-space: nowrap;
+  border-radius: 6px;
+  border: 1px solid #fff3;
 }
 </style>

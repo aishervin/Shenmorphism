@@ -1,68 +1,51 @@
-<button class="button"></button>
+<button class="button">
+  <div class="similar-line line-1"></div>
+  <div class="similar-line line-2"></div>
+  <div class="similar-line line-3"></div>
+</button>
 
 <style>
-/* From SHΞN™ Morphism by 3bdel3ziz-T  - Tags: button, hover, smooth, dark, code, hover button, button hover effect , 2d button */
-.button,
-.button::before {
-  box-sizing: border-box;
-  --col-orange: #d17842;
-  --col-white: #fff;
-  --col-dark: #212121;
-  cursor: pointer;
-  text-transform: capitalize;
-  font-size: 20px;
-  font-weight: 600;
-  fill: var(--col-white);
-  color: var(--col-white);
-
-  color: var(col-dark);
-  font-family: "arial";
-}
+/* From SHΞN™ Morphism by AKAspidey01  - Tags: simple, flashy, animation, button, hover, smooth, hover effect, button hover effect  */
 .button {
-  width: 200px;
-  height: 50px;
+  cursor: pointer;
+  position: relative;
+  width: 5em;
+  height: 4em;
+  border: none;
+  background: rgb(248, 66, 42);
+  padding: 0.5em;
   display: flex;
-  align-items: center;
   justify-content: center;
-  border: 2px solid transparent;
-  background: var(--col-orange);
-  padding: 8px 50px;
-  position: relative;
-  transition: all 200ms;
-  border-radius: 25px;
-  z-index: 99;
+  gap: 0.7em;
+  flex-direction: column;
+  transition-duration: 0.5s;
 }
-
 .button:hover {
-  border-color: transparent;
-  color: var(--col-dark);
-  background: transparent;
+  background: rgb(7, 142, 253);
 }
-
-.button::before {
-  height: fit-content;
-  content: "great work🥳";
-  position: absolute;
-  left: 40px;
-  width: 0;
-  overflow: hidden;
-  transition: all 550ms;
-  text-wrap: nowrap;
-  z-index: -1;
+.similar-line {
+  height: 0.2em;
+  background: #fff;
+  border-radius: 1em;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
-
-.button:hover::before {
-  width: 135px;
-  color: var(--col-white);
+.line-1 {
+  width: 40%;
 }
-
-.button::after {
-  content: "hover me";
-  position: relative;
+.line-2 {
+  width: 70%;
 }
-
-.button:hover::after {
-  display: none;
+.line-3 {
+  width: 90%;
+}
+.button:hover .line-1 {
+  width: 90%;
+}
+.button:hover .line-2 {
+  width: 70%;
+}
+.button:hover .line-3 {
+  width: 40%;
 }
 
 </style>

@@ -1,15 +1,78 @@
-<!-- From SHΞN™ Morphism by Javierrocadev - Tags: blue, form, login form, tailwind -->
-<div id="login" class="w-64 h-80 bg-indigo-50 rounded shadow flex flex-col justify-between p-3">       
-    <form class="text-indigo-500" action="" method="post">
-        <fieldset class="border-4 border-dotted border-indigo-500 p-5">
-            <legend class="px-2 italic -mx-2">Welcome again!</legend>
-             <label class="text-xs font-bold after:content-['*'] after:text-red-400" for="email">Mail </label>     
-            <input class="w-full p-2 mb-2 mt-1 outline-none ring-none focus:ring-2 focus:ring-indigo-500" type="email" required="">   
-            <label class="text-xs font-bold after:content-['*'] after:text-red-400" for="password">Password  </label>
-            <input class="w-full p-2 mb-2 mt-1 outline-none ring-none focus:ring-2 focus:ring-indigo-500" type="password" required="">
-            <a href="#" class="block text-right text-xs text-indigo-500 text-right mb-4">Forgot Password?</a>
-            <button class="w-full rounded bg-indigo-500 text-indigo-50 p-2 text-center font-bold hover:bg-indigo-400">Log In</button>
-        </fieldset>
-         </form>
+<div class="login-card">
+  <div class="card-header">
+    <div class="log">Login</div>
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input required="" name="username" id="username" type="text">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input required="" name="password" id="password" type="password">
+    </div>
+    <div class="form-group">
+      <input value="Login" type="submit">
+    </div>
+  </form>
 </div>
 
+<style>
+/* From SHΞN™ Morphism by ahmed150up - Tags: login, form */
+.login-card {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #e8e8e8;
+  box-shadow: 2px 2px 10px #ccc;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 20px
+}
+
+.card-header .log {
+  margin: 0;
+  font-size: 24px;
+  color: black;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #ccc;
+  color: black;
+}
+
+</style>

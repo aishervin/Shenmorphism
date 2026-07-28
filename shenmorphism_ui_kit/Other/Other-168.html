@@ -1,301 +1,68 @@
-<div class="checkbox-wrapper-11">
-  <input value="2" name="r" type="checkbox" id="02-11">
-  <label for="02-11">To-do</label>
-</div>
+<label class="switch">
+  <input type="checkbox" class="input" />
+  <span class="slider"></span>
+</label>
+
 <style>
-/* From SHΞN™ Morphism by Shoh2008 - Tags: switch */
-.checkbox-wrapper-11 {
-  --text: #414856;
-  --check: #4F29F0;
-  --disabled: #C3C8DE;
-  --border-radius: 10px;
-  border-radius: var(--border-radius);
+/* From SHΞN™ Morphism by elijahgummer  - Tags: simple, animation, switch, modern, toggle, stretch, squish */
+/* Switch container styling */
+.switch {
   position: relative;
-  padding: 5px;
-  display: grid;
-  grid-template-columns: 30px auto;
-  align-items: center;
+  display: inline-block;
+  width: 3.5em; /* Width of the toggle switch */
+  height: 1.5em; /* Height of the toggle switch */
 }
 
-.checkbox-wrapper-11 label {
-  color: var(--text);
-  position: relative;
+/* Hide default checkbox appearance */
+.switch .input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider styling */
+.slider {
+  position: absolute;
   cursor: pointer;
-  display: grid;
-  align-items: center;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  transition: color 0.3s ease;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f0f0f0;
+  border-radius: 0.5em; /* Rounded corners for the slider */
+  box-shadow: inset 0 0.0625em 0 0 #f4f4f4, 0 0.0625em 0 0 #efefef,
+    0 0.125em 0 0 #ececec, 0 0.25em 0 0 #e0e0e0, 0 0.3125em 0 0 #dedede,
+    0 0.375em 0 0 #dcdcdc, 0 0.425em 0 0 #cacaca, 0 0.425em 0.5em 0 #cecece;
+  transition: 0.23s ease;
 }
 
-.checkbox-wrapper-11 label::before,
-  .checkbox-wrapper-11 label::after {
+/* Slider knob styling */
+.slider:before {
   content: "";
   position: absolute;
-}
-
-.checkbox-wrapper-11 label::before {
-  height: 2px;
-  width: 8px;
-  left: -27px;
-  background: var(--check);
-  border-radius: 2px;
-  transition: background 0.3s ease;
-}
-
-.checkbox-wrapper-11 label:after {
-  height: 4px;
-  width: 4px;
-  top: 8px;
-  left: -25px;
+  height: 1.1em;
+  width: 1.1em;
   border-radius: 50%;
+  background-color: #d3d3d3;
+  left: 0.2em;
+  bottom: 0.2em;
+  transition: 0.23s ease;
 }
 
-.checkbox-wrapper-11 input[type=checkbox] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  position: relative;
-  height: 15px;
-  width: 15px;
-  outline: none;
-  border: 0;
-  margin: 0 15px 0 0;
-  cursor: pointer;
-  background: var(--background);
-  display: grid;
-  align-items: center;
+/* Change slider background color when checked */
+.input:checked + .slider {
+  translate: 0 0.225em;
+  box-shadow: inset 0 0.03em 0 0 #f4f4f4, 0 0.03em 0 0 #efefef,
+    0 0.0625em 0 0 #ececec, 0 0.125em 0 0 #e0e0e0, 0 0.125em 0 0 #dedede,
+    0 0.2em 0 0 #dcdcdc, 0 0.225em 0 0 #cacaca, 0 0.225em 0.375em 0 #cecece;
+  transform: scale(1.2);
 }
 
-.checkbox-wrapper-11 input[type=checkbox]::before, .checkbox-wrapper-11 input[type=checkbox]::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  top: auto;
-  background: var(--check);
-  border-radius: 2px;
+/* Move the knob when checked */
+.input:checked + .slider:before {
+  transform: translateX(2em); /* Move knob to the right */
+  background-color: #87ceeb;
 }
 
-.checkbox-wrapper-11 input[type=checkbox]::before {
-  width: 0px;
-  right: 60%;
-  transform-origin: right bottom;
-}
-
-.checkbox-wrapper-11 input[type=checkbox]::after {
-  width: 0px;
-  left: 40%;
-  transform-origin: left bottom;
-}
-
-.checkbox-wrapper-11 input[type=checkbox]:checked::before {
-  -webkit-animation: check-01-11 0.4s ease forwards;
-  animation: check-01-11 0.4s ease forwards;
-}
-
-.checkbox-wrapper-11 input[type=checkbox]:checked::after {
-  -webkit-animation: check-02-11 0.4s ease forwards;
-  animation: check-02-11 0.4s ease forwards;
-}
-
-.checkbox-wrapper-11 input[type=checkbox]:checked + label {
-  color: var(--disabled);
-  -webkit-animation: move-11 0.3s ease 0.1s forwards;
-  animation: move-11 0.3s ease 0.1s forwards;
-}
-
-.checkbox-wrapper-11 input[type=checkbox]:checked + label::before {
-  background: var(--disabled);
-  -webkit-animation: slice-11 0.4s ease forwards;
-  animation: slice-11 0.4s ease forwards;
-}
-
-.checkbox-wrapper-11 input[type=checkbox]:checked + label::after {
-  -webkit-animation: firework-11 0.5s ease forwards 0.1s;
-  animation: firework-11 0.5s ease forwards 0.1s;
-}
-
-@-webkit-keyframes move-11 {
-  50% {
-    padding-left: 8px;
-    padding-right: 0px;
-  }
-
-  100% {
-    padding-right: 4px;
-  }
-}
-
-@keyframes move-11 {
-  50% {
-    padding-left: 8px;
-    padding-right: 0px;
-  }
-
-  100% {
-    padding-right: 4px;
-  }
-}
-
-@-webkit-keyframes slice-11 {
-  60% {
-    width: 100%;
-    left: 4px;
-  }
-
-  100% {
-    width: 100%;
-    left: -2px;
-    padding-left: 0;
-  }
-}
-
-@keyframes slice-11 {
-  60% {
-    width: 100%;
-    left: 4px;
-  }
-
-  100% {
-    width: 100%;
-    left: -2px;
-    padding-left: 0;
-  }
-}
-
-@-webkit-keyframes check-01-11 {
-  0% {
-    width: 4px;
-    top: auto;
-    transform: rotate(0);
-  }
-
-  50% {
-    width: 0px;
-    top: auto;
-    transform: rotate(0);
-  }
-
-  51% {
-    width: 0px;
-    top: 8px;
-    transform: rotate(45deg);
-  }
-
-  100% {
-    width: 5px;
-    top: 8px;
-    transform: rotate(45deg);
-  }
-}
-
-@keyframes check-01-11 {
-  0% {
-    width: 4px;
-    top: auto;
-    transform: rotate(0);
-  }
-
-  50% {
-    width: 0px;
-    top: auto;
-    transform: rotate(0);
-  }
-
-  51% {
-    width: 0px;
-    top: 8px;
-    transform: rotate(45deg);
-  }
-
-  100% {
-    width: 5px;
-    top: 8px;
-    transform: rotate(45deg);
-  }
-}
-
-@-webkit-keyframes check-02-11 {
-  0% {
-    width: 4px;
-    top: auto;
-    transform: rotate(0);
-  }
-
-  50% {
-    width: 0px;
-    top: auto;
-    transform: rotate(0);
-  }
-
-  51% {
-    width: 0px;
-    top: 8px;
-    transform: rotate(-45deg);
-  }
-
-  100% {
-    width: 10px;
-    top: 8px;
-    transform: rotate(-45deg);
-  }
-}
-
-@keyframes check-02-11 {
-  0% {
-    width: 4px;
-    top: auto;
-    transform: rotate(0);
-  }
-
-  50% {
-    width: 0px;
-    top: auto;
-    transform: rotate(0);
-  }
-
-  51% {
-    width: 0px;
-    top: 8px;
-    transform: rotate(-45deg);
-  }
-
-  100% {
-    width: 10px;
-    top: 8px;
-    transform: rotate(-45deg);
-  }
-}
-
-@-webkit-keyframes firework-11 {
-  0% {
-    opacity: 1;
-    box-shadow: 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0;
-  }
-
-  30% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    box-shadow: 0 -15px 0 0px #4F29F0, 14px -8px 0 0px #4F29F0, 14px 8px 0 0px #4F29F0, 0 15px 0 0px #4F29F0, -14px 8px 0 0px #4F29F0, -14px -8px 0 0px #4F29F0;
-  }
-}
-
-@keyframes firework-11 {
-  0% {
-    opacity: 1;
-    box-shadow: 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0;
-  }
-
-  30% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    box-shadow: 0 -15px 0 0px #4F29F0, 14px -8px 0 0px #4F29F0, 14px 8px 0 0px #4F29F0, 0 15px 0 0px #4F29F0, -14px 8px 0 0px #4F29F0, -14px -8px 0 0px #4F29F0;
-  }
-}
 </style>
+    

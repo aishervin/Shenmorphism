@@ -1,72 +1,122 @@
-<button class="button">
-  <span></span>
-  Button
-  <span></span>
-</button>
+
+	<div class="container">
+		<div class="btn"><a href="#">Read more</a></div>
+	</div>	
+
 <style>
-/* From SHΞN™ Morphism by MusKRI - Source: https://www.youtube.com/watch?v=e3w9liPXSi4 - Tags: button, active, ripple */
-.button {
-  padding: 15px 40px;
-  background: linear-gradient(to right, #09021c, #0c061d);
-  color: white;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 300ms ease-in-out;
+/* From SHΞN™ Morphism by csemszepp - Source: https://codepen.io/katarzynamarta/pen/rNdbbVq - Tags: simple, button, #button */
+.container {
+  width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.container .btn {
   position: relative;
-  isolation: isolate;
-  overflow: hidden;
-}
-
-.button > span {
-  position: absolute;
-  z-index: -1;
-  background: transparent;
-  opacity: 0.5;
-  width: 33.333%;
-  height: 100%;
-}
-
-.button > :first-child {
+  top: 0;
   left: 0;
-  top: 0;
+  width: 250px;
+  height: 50px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.button > :last-child {
-  right: 0;
+.container .btn a {
+  position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 10px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  color: #fff;
+  font-weight: 400px;
+  z-index: 1;
+  transition: 0.5s;
+  backdrop-filter: blur(15px);
 }
 
-.button::before {
+.container .btn:hover a {
+  letter-spacing: 3px;
+}
+
+.container .btn a::before {
   content: "";
   position: absolute;
-  z-index: -1;
-  background: hsl(236, 19%, 25%);
-  opacity: 0;
-  width: 10%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  inset: 0;
-  margin: auto;
-  transition: opacity 1000ms 200ms ease-in-out, transform 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+  transform: skewX(45deg) translate(0);
+  transition: 0.5s;
+  filter: blur(0px);
 }
 
-.button:active::before {
-  transform: scale(13);
-  opacity: 1;
-  transition: all 400ms ease-in-out;
+.container .btn:hover a::before {
+  transform: skewX(45deg) translate(200px);
 }
 
-.button:has(:first-child:active)::before {
-  margin-left: 0;
+.container .btn::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+  bottom: -5px;
+  width: 30px;
+  height: 10px;
+  background: #f00;
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0.5;
 }
 
-.button:has(:last-child:active)::before {
-  margin-right: 0;
+.container .btn:hover::before /*lightup button*/ {
+  bottom: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
 }
 
-.button:has(:first-child:active)::before,
-.button:has(:last-child:active)::before {
-  transition: all 400ms ease-in-out;
+.container .btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+  top: -5px;
+  width: 30px;
+  height: 10px;
+  background: #f00;
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0.5;
 }
+
+.container .btn:hover::after /*lightup button*/ {
+  top: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+}
+
+.container .btn:nth-child(1)::before,
+.container .btn:nth-child(1)::after {
+  background: #2db2ff;
+  box-shadow: 0 0 5px #2db2ff, 0 0 15px #2db2ff, 0 0 30px #2db2ff,
+		0 0 60px #2db2ff;
+}
+
 </style>

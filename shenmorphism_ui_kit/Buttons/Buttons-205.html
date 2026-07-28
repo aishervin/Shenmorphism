@@ -1,71 +1,122 @@
-<button class="bookmarkBtn">
-  <span class="IconContainer"> 
-   <svg fill="white" viewBox="0 0 512 512" height="1em"><path d="M123.6 391.3c12.9-9.4 29.6-11.8 44.6-6.4c26.5 9.6 56.2 15.1 87.8 15.1c124.7 0 208-80.5 208-160s-83.3-160-208-160S48 160.5 48 240c0 32 12.4 62.8 35.7 89.2c8.6 9.7 12.8 22.5 11.8 35.5c-1.4 18.1-5.7 34.7-11.3 49.4c17-7.9 31.1-16.7 39.4-22.7zM21.2 431.9c1.8-2.7 3.5-5.4 5.1-8.1c10-16.6 19.5-38.4 21.4-62.9C17.7 326.8 0 285.1 0 240C0 125.1 114.6 32 256 32s256 93.1 256 208s-114.6 208-256 208c-37.1 0-72.3-6.4-104.1-17.9c-11.9 8.7-31.3 20.6-54.3 30.6c-15.1 6.6-32.3 12.6-50.1 16.1c-.8 .2-1.6 .3-2.4 .5c-4.4 .8-8.7 1.5-13.2 1.9c-.2 0-.5 .1-.7 .1c-5.1 .5-10.2 .8-15.3 .8c-6.5 0-12.3-3.9-14.8-9.9c-2.5-6-1.1-12.8 3.4-17.4c4.1-4.2 7.8-8.7 11.3-13.5c1.7-2.3 3.3-4.6 4.8-6.9c.1-.2 .2-.3 .3-.5z"></path></svg>
-  </span>
-  <p class="text">Comment</p>
-</button>
+<label for="button" class="label">
+  <button id="button" class="button" name="button">
+    <div class="roundThing">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="33"
+        height="32"
+        fill="none"
+        viewBox="0 0 33 32"
+        class="svg"
+      >
+        <path
+          stroke="#161616"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m10.367 8.427 11.32-3.774c5.08-1.693 7.84 1.08 6.16 6.16l-3.774 11.32c-2.533 7.614-6.693 7.614-9.226 0l-1.12-3.36-3.36-1.12c-7.614-2.533-7.614-6.68 0-9.226ZM13.98 18.2l4.773-4.786"
+        ></path>
+      </svg>
+      <p>Send Message</p>
+    </div>
+  </button>
+</label>
+
 <style>
-/* From SHΞN™ Morphism by vinodjangid07 - Tags: button, comment, button hover effect  */
-.bookmarkBtn {
-  width: 130px;
-  height: 40px;
-  border-radius: 40px;
-  border: none;
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition-duration: .3s;
-  overflow: hidden;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.062);
-}
-
-.IconContainer {
-  width: 30px;
-  height: 30px;
-  background-color: rgb(103, 74, 228);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  z-index: 2;
-  transition-duration: .3s;
-}
-
-.icon {
-  border-radius: 1px;
-}
-
-.text {
-  height: 100%;
-  width: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(26, 26, 26);
+/* From SHΞN™ Morphism by Uncannypotato69  - Tags: simple, button, hover, light, modern, click, btn, simple button */
+.button {
+  height: fit-content;
+  width: fit-content;
+  background-color: #ebebeb;
+  border-radius: 1rem;
+  padding: 0.5em;
+  position: relative;
   z-index: 1;
-  transition-duration: .3s;
-  font-size: 1.04em;
-  font-weight: 600;
+  transition: all 200ms;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
-.bookmarkBtn:hover .IconContainer {
-  width: 120px;
-  border-radius: 40px;
-  transition-duration: .3s;
+.label {
+  --shadow-color: 0deg 0% 73%;
+  --shadow: 0px 0.3px 0.4px hsl(var(--shadow-color) / 0.21),
+    0.1px 1.7px 2px -0.3px hsl(var(--shadow-color) / 0.23),
+    0.1px 3.1px 3.7px -0.7px hsl(var(--shadow-color) / 0.24),
+    0.2px 5.2px 6.2px -1px hsl(var(--shadow-color) / 0.26),
+    0.3px 8.5px 10.2px -1.3px hsl(var(--shadow-color) / 0.27),
+    0.5px 13.6px 16.3px -1.7px hsl(var(--shadow-color) / 0.29),
+    0.7px 21px 25.2px -2px hsl(var(--shadow-color) / 0.3);
+  --shadow-hover: 0px 0.5px 0.6px hsl(var(--shadow-color) / 0.2),
+    -0.1px 1.6px 1.9px -0.7px hsl(var(--shadow-color) / 0.22),
+    -0.2px 3.7px 4.4px -1.3px hsl(var(--shadow-color) / 0.25);
+
+  height: fit-content;
+  width: fit-content;
+  padding: 3px;
+  background-image: linear-gradient(to bottom, #dddedd, #7a7b7a);
+  border-radius: calc(1rem + 3px);
+  transition: all 300ms;
+  box-shadow: 0px 0px 0px 1px #fff, var(--shadow);
+  color: #161616;
+  cursor: pointer;
 }
 
-.bookmarkBtn:hover .text {
-  transform: translate(10px);
-  width: 0;
-  font-size: 0;
-  transition-duration: .3s;
+.label:has(button:hover) {
+  transform: translate(0px, 4px);
+  box-shadow: 0px 0px 0px 1px #fff, var(--shadow-hover);
 }
 
-.bookmarkBtn:active {
-  transform: scale(0.95);
-  transition-duration: .3s;
+.label:has(button:active) {
+  transform: translate(0px, 8px);
+  box-shadow: 0px 0px 0px 1px #fff;
 }
+
+.roundThing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  width: fit-content;
+  gap: 0.5em;
+  padding: 1em;
+  border-radius: 2rem;
+  box-shadow: inset 0px 16px 16px 0px #d8dad8, inset 0px -16px 16px 0px #f4f6f5;
+  overflow: hidden;
+}
+
+.button:hover .roundThing {
+  box-shadow: inset 0px 8px 8px 0px #d8dad8, inset 0px -24px 24px 0px #f4f6f5;
+  transition: all 300ms;
+}
+
+.roundThing p {
+  font-weight: 700;
+  color: #161616;
+  letter-spacing: -0.03rem;
+}
+
+.svg {
+  height: 1.5rem;
+  aspect-ratio: 1/1;
+  transition: transform 300ms;
+}
+
+.button:hover .svg {
+  transform: rotate(45deg);
+  animation: onHover 750ms ease infinite both;
+  animation-delay: 300ms;
+}
+
+.button:active .svg {
+  animation-play-state: paused;
+}
+
+@keyframes onHover {
+  50% {
+    translate: 4px;
+  }
+}
+
 </style>
+    

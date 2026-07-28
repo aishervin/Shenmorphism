@@ -1,48 +1,78 @@
-<div class="YoutubeVideo">
-  <div class="Image"></div>
-  <div class="Icon"></div>
-  <div class="Title"></div>
-  <div class="Name"></div>
+<div class="cards">
+  <div class="card red">
+    <p class="tip">Hover Me</p>
+  </div>
+  <div class="card blue">
+    <p class="tip">Hover Me</p>
+  </div>
+  <div class="card green">
+    <p class="tip">Hover Me</p>
+  </div>
 </div>
+
 <style>
-/* From SHΞN™ Morphism by 1osm - Tags: card */
-.YoutubeVideo {
-  width: 250px;
-  height: 220px;
-  background: transparent;
+/* From SHΞN™ Morphism by mohamedkhire  - Tags: glassmorphism, card, box, transition, card template, cool card */
+.card::before {
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+  top: 20%;
 }
 
-.Image {
-  width: 250px;
-  height: 154px;
+.card::before,
+.card::after {
+  content: "";
+  background-color: #7090fa4b;
+  position: absolute;
+  filter: blur(10px);
+}
+
+.cards {
+  display: flex;
+  gap: 40px;
+}
+
+.cards .red,
+.cards .blue,
+.cards .green {
+  width: 200px;
+  height: 180px;
+  font-family: "CustomFont", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  backdrop-filter: blur(30px);
+  background-color: rgba(65, 65, 65, 0.11);
+  border: 1px solid rgba(144, 161, 255, 0.171);
+}
+
+.cards .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   border-radius: 10px;
-  background: #3a3a3a;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: 400ms;
 }
 
-.Icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 100px;
-  float: right;
-  background-color: #3a3a3a;
-  transform: translate(0px,10px);
+.cards .card p.tip {
+  font-size: 1em;
+  font-weight: 700;
 }
 
-.Title {
-  width: 180px;
-  height: 15px;
-  border-radius: 2px;
-  float: right;
-  background-color: #3a3a3a;
-  transform: translate(-15px,10px);
+.cards .card p.second-text {
+  font-size: 0.7em;
 }
 
-.Name {
-  width: 100px;
-  height: 15px;
-  border-radius: 2px;
-  float: right;
-  background-color: #3a3a3a;
-  transform: translate(-15px,20px);
+.cards .card:hover {
+  transform: scale(1.1, 1.1);
 }
+
+.cards:hover > .card:not(:hover) {
+  filter: blur(5px);
+  transform: scale(0.9, 0.9);
+}
+
 </style>
+    

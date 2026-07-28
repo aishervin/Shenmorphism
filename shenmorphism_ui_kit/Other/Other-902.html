@@ -1,80 +1,43 @@
-<div class="follow-the-leader-line">
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
+<div class="loader-wrapper">
+<div class="loader">
+  <div class="loader loader-inner"></div>
+  </div>
 </div>
 <style>
-/* From SHΞN™ Morphism by boryanakrasteva - Tags: loader */
-@-webkit-keyframes follow-the-leader {
-  0% {
-    -webkit-transform: rotate(0deg) translateY(-200%);
-    transform: rotate(0deg) translateY(-200%);
-  }
-
-  60%,
-  100% {
-    -webkit-transform: rotate(360deg) translateY(-200%);
-    transform: rotate(360deg) translateY(-200%);
-  }
+/* From SHΞN™ Morphism by Mike11jr - Tags: loader */
+.loader-wrapper {
+ width: 60px;
+ height: 60px;
 }
 
-@keyframes follow-the-leader {
-  0% {
-    -webkit-transform: rotate(0deg) translateY(-200%);
-    transform: rotate(0deg) translateY(-200%);
-  }
-
-  60%,
-  100% {
-    -webkit-transform: rotate(360deg) translateY(-200%);
-    transform: rotate(360deg) translateY(-200%);
-  }
+.loader {
+ box-sizing: border-box;
+ width: 100%;
+ height: 100%;
+ border: 10px solid #162534;
+ border-top-color: #4bc8eb;
+ border-bottom-color: #f13a8f;
+ border-radius: 50%;
+ animation: rotate0925 5s linear infinite;
 }
 
-.follow-the-leader-line {
-  height: 14px;
-  position: relative;
-  width: 14px;
+.loader-inner {
+ border-top-color: #36f372;
+ border-bottom-color: #fff;
+ animation-duration: 2.5s;
 }
 
-.follow-the-leader-line div {
-  -webkit-animation: follow-the-leader 1.25s infinite backwards;
-  animation: follow-the-leader 1.25s infinite backwards;
-  background-color: #ffffff;
-  border-radius: 100%;
-  height: 100%;
-  width: 100%;
-}
+@keyframes rotate0925 {
+ 0% {
+  transform: scale(1) rotate(360deg);
+ }
 
-.follow-the-leader-line div:nth-child(1) {
-  -webkit-animation-delay: 0.15s;
-  animation-delay: 0.15s;
-  background-color: rgba(255, 255, 255, 0.9);
-}
+ 50% {
+  transform: scale(.8) rotate(-360deg);
+ }
 
-.follow-the-leader-line div:nth-child(2) {
-  -webkit-animation-delay: 0.3s;
-  animation-delay: 0.3s;
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.follow-the-leader-line div:nth-child(3) {
-  -webkit-animation-delay: 0.45s;
-  animation-delay: 0.45s;
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
-.follow-the-leader-line div:nth-child(4) {
-  -webkit-animation-delay: 0.6s;
-  animation-delay: 0.6s;
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-.follow-the-leader-line div:nth-child(5) {
-  -webkit-animation-delay: 0.75s;
-  animation-delay: 0.75s;
-  background-color: rgba(255, 255, 255, 0.5);
+ 100% {
+  transform: scale(1) rotate(360deg);
+ }
 }
 </style>

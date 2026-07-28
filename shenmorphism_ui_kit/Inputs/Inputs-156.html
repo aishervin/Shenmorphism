@@ -1,160 +1,62 @@
-<div class="div">
-  <input type="checkbox" />
-  <span>
-    <svg
-      class="svgi"
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#909090"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-    </svg>
-
-    <svg
-      class="svgii"
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#3fc079"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-      <path d="M7 11V7a5 5 0 0 1 9.9-1"></path>
-    </svg>
-  </span>
-  <input type="text" placeholder="'Unlock' me by clicking the lock icon" />
-</div>
-
+<div class="input__container input__container--variant">
+        <div class="shadow__input shadow__input--variant"></div>
+        <input type="text" name="text" class="input__search input__search--variant" placeholder="Search...">
+        <button class="input__button__shadow input__button__shadow--variant">
+          <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="1.5em" width="13em">
+            <path d="M4 9a5 5 0 1110 0A5 5 0 014 9zm5-7a7 7 0 104.2 12.6.999.999 0 00.093.107l3 3a1 1 0 001.414-1.414l-3-3a.999.999 0 00-.107-.093A7 7 0 009 2z" fill-rule="evenodd" fill="#FFF"></path>
+          </svg>
+        </button>
+      </div>
 <style>
-/* From SHΞN™ Morphism by Admin12121  - Tags: input, toggle, futuristic, input effect  */
-.div {
-  --field-size: 50px;
-  --field-border-color: #ccc;
-  margin: 0 auto;
-  font-size: 1rem;
-  box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  background: #ffffff;
-  border-radius: 5px;
-  position: relative;
-  width: 300px;
-  overflow: hidden;
-  display: flex;
-  background: white;
+/* From SHΞN™ Morphism by Gautammsharma - Tags: clean, material design, minimalist, input, search, glow */
+.input__container--variant {
+  background: linear-gradient(to bottom, #F3FFF9, #F3FFF9);
+  border-radius: 30px;
+  max-width: 13em;
+  padding: 1em 1em;
 }
 
-.div input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  width: var(--field-size);
-  height: var(--field-size);
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
+.shadow__input--variant {
+  filter: blur(25px);
+  border-radius: 30px;
+  background-color: #F3FFF9;
+  opacity: 0.5;
 }
 
-.div input[type="checkbox"]:hover + span .svgi {
-  display: none;
-  /* Remove the background image */
-}
-.div input[type="checkbox"]:hover + span .svgii {
-  display: block;
-}
-
-.div input[type="checkbox"]:checked + span .svgi {
-  display: none; /* Remove the background image */
+.input__button__shadow--variant {
+  border-radius: 15px;
+  background-color: #07372C;
+  padding: 10px;
+  border: none;
 }
 
-.div input[type="checkbox"]:checked + span .svgii {
-  display: block;
+.input__button__shadow--variant:hover {
+  background-color: #3C6659;
 }
 
-.div input[type="checkbox"]:checked + span::before,
-.div input[type="checkbox"]:checked + span::after {
-  pointer-events: none;
-}
-
-.div input[type="checkbox"]:checked + span::after {
-  transform: translateY(-100%);
-}
-
-.div input[type="checkbox"]:checked + span::before {
-  transform: translateY(100%);
-}
-.div input[type="checkbox"] + span .svgii {
-  display: none;
-}
-.div input[type="checkbox"] + span,
-.svgi,
-.svgii {
-  width: var(--field-size);
-  height: var(--field-size);
-  padding: 5px;
-  display: flex;
+.input__search--variant {
+  width: 13em;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border-right: 1px solid var(--field-border-color);
-  cursor: pointer;
+  border-radius: 13em;
+  outline: none;
+  border: none;
+  padding: 0.8em;
+  font-size: 1.2em;
+  color: #002019;
+  background-color: transparent;
 }
 
-.div input[type="checkbox"] + span::after,
-.div input[type="checkbox"] + span::before {
-  content: "";
-  position: absolute;
-  right: 0;
-  height: 50%;
-  left: var(--field-size);
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  background: rgba(0, 0, 0, 0.075);
-  z-index: 2;
-  cursor: not-allowed;
+.input__search--variant::placeholder {
+  color: #002019;
+  opacity: 0.7;
 }
 
-.div input[type="checkbox"] + span::after {
-  top: 0;
-}
-
-.div input[type="checkbox"] + span::before {
-  bottom: 0;
-}
-
-.div input[type="text"] {
+.input__container--variant {
+  background: linear-gradient(to bottom, #F3FFF9, #F3FFF9);
+  border-radius: 1.5em;
+  max-width: 14em;
   padding: 1em;
-  border: 0;
-  flex: 1;
-  font-size: 1rem;
-  --placeholder-color: #ababab;
-  font-family: inherit;
-}
-
-.div input[type="text"]::-webkit-input-placeholder {
-  color: var(--placeholder-color);
-}
-
-.div input[type="text"]:-ms-input-placeholder {
-  color: var(--placeholder-color);
-}
-
-.div input[type="text"]::-moz-placeholder {
-  color: var(--placeholder-color);
-}
-
-.div input[type="text"]:-moz-placeholder {
-  color: var(--placeholder-color);
+  box-shadow: 0em 1em 3em #beecdc64;
 }
 
 </style>
-    

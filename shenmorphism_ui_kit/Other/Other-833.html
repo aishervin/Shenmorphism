@@ -1,48 +1,74 @@
 <div class="loader"></div>
 
 <style>
-/* From SHΞN™ Morphism by DevVaradPatil  - Tags: black, gradient, loader, dark */
+/* From SHΞN™ Morphism by elijahgummer  - Tags: simple, red, loader, diamond, fade, mitsubishi, appear */
 .loader {
-  position: relative;
   width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
-  animation: glow 2s linear infinite;
+  height: calc(50px * 0.866);
+  background: #fd135a;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  --c: at 50% 66%, #000 60deg, #0000 0;
+  -webkit-mask:
+    conic-gradient(from 30deg var(--c)) right,
+    conic-gradient(from 150deg var(--c)) bottom,
+    conic-gradient(from -90deg var(--c)) left,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  -webkit-mask-repeat: no-repeat;
+  animation: appear 1.5s infinite;
 }
-@keyframes glow {
+@keyframes appear {
   0% {
-    transform: rotate(0deg);
-    filter: hue-rotate(0deg);
+    -webkit-mask-size:
+      0 0,
+      0 0,
+      0 0,
+      auto;
+  }
+  13.33% {
+    -webkit-mask-size:
+      100% 100%,
+      0 0,
+      0 0,
+      auto;
+  }
+  26.67% {
+    -webkit-mask-size:
+      100% 100%,
+      100% 100%,
+      0 0,
+      auto;
+  }
+  40%,
+  60% {
+    -webkit-mask-size:
+      100% 100%,
+      100% 100%,
+      100% 100%,
+      auto;
+  }
+  73.33% {
+    -webkit-mask-size:
+      0 0,
+      100% 100%,
+      100% 100%,
+      auto;
+  }
+  86.67% {
+    -webkit-mask-size:
+      0 0,
+      0 0,
+      100% 100%,
+      auto;
   }
   100% {
-    transform: rotate(360deg);
-    filter: hue-rotate(360deg);
+    -webkit-mask-size:
+      0 0,
+      0 0,
+      0 0,
+      auto;
   }
-}
-.loader::before {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  right: 3px;
-  bottom: 3px;
-  background: #212121;
-  border-radius: 50%;
-  z-index: 1000;
-}
-.loader::after {
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
-  border-radius: 50%;
-  z-index: 1000;
-  z-index: 1;
-  filter: blur(30px);
 }
 
 </style>

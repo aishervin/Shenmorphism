@@ -1,22 +1,62 @@
-<button> Click me
+<button>
+  Button
 </button>
 <style>
-/* From SHΞN™ Morphism by ke1221 - Tags: neumorphism, button */
+/* From SHΞN™ Morphism by prince192000 - Tags: button */
 button {
- color: #090909;
- padding: 0.7em 1.7em;
- font-size: 18px;
- border-radius: 0.5em;
- background: #e8e8e8;
- border: 1px solid #e8e8e8;
- transition: all .3s;
- box-shadow: 6px 6px 12px #c5c5c5,
-             -6px -6px 12px #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 15px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background: black;
+  border: none;
+  letter-spacing: 2px;
+  font-size: 17px;
 }
 
-button:active {
- color: #666;
- box-shadow: inset 4px 4px 12px #c5c5c5,
-             inset -4px -4px 12px #ffffff;
+button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.226);
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: bottom right;
+  transform: scale(0);
+}
+
+button:hover:before {
+  transition: transform 0.5s;
+  transform-origin: top left;
+  transform: scale(1);
+}
+
+button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: bottom right;
+  transform: scale(1);
+}
+
+button:hover:after {
+  transition: transform 0.5s;
+  transform-origin: top left;
+  transform: scale(0);
 }
 </style>

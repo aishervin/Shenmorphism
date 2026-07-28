@@ -1,26 +1,22 @@
-<div class="loader"></div>
+
+<div class="spinner"></div>
 <style>
-/* From SHΞN™ Morphism by JaydipPrajapati1910 - Tags: animation, loader, ninja loader */
-.loader {
-  width: 160px;
-  height: 160px;
-  color: #0000F4;
-  background: conic-gradient(from  165deg at top   ,#0000, currentColor 1deg 30deg,#0000 31deg) top,
-    conic-gradient(from   75deg at left  ,#0000, currentColor 1deg 30deg,#0000 31deg) left,
-    conic-gradient(from  -15deg at bottom,#0000, currentColor 1deg 30deg,#0000 31deg) bottom, 
-    conic-gradient(from -105deg at right ,#0000, currentColor 1deg 30deg,#0000 31deg) right;
-  background-size: 100% 50%,50% 100%;
-  -webkit-mask: radial-gradient(circle 10px,#0000 90%,#000);
-  background-repeat: no-repeat;
-  animation: sh1 1.5s infinite linear;
+/* From SHΞN™ Morphism by AqFox - Tags: loader */
+.spinner {
+ width: 56px;
+ height: 56px;
+ border-radius: 50%;
+ padding: 7px;
+ background: conic-gradient(from 135deg at top,#004dff 90deg, #0000 0) 0 calc(50% - 4px)/19px 9.5px,
+          radial-gradient(farthest-side at bottom left,#0000 calc(100% - 7px),#004dff calc(100% - 6px) 99%,#0000) top right/50%  50% content-box content-box,
+          radial-gradient(farthest-side at top,#0000 calc(100% - 7px),#004dff calc(100% - 6px) 99%,#0000) bottom   /100% 50% content-box content-box;
+ background-repeat: no-repeat;
+ animation: spinner-v8og74 1s infinite linear;
 }
 
-@keyframes sh1 {
- 
-  100% {
-    transform: rotate(1turn)
-  }
+@keyframes spinner-v8og74 {
+ 100% {
+  transform: rotate(1turn);
+ }
 }
-  
-
 </style>

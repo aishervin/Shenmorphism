@@ -1,59 +1,6 @@
-<button class="button"> Button
+<!-- From SHΞN™ Morphism by catraco - Tags: red, button, dark, hover effect, tailwind, tailwindbutton -->
+<button class="bg-red-950 text-red-400 border border-red-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+  <span class="bg-red-400 shadow-red-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
+  Hover Me
 </button>
-<style>
-/* From SHΞN™ Morphism by nikk7007 - Tags: button */
-.button {
- --color: #00A97F;
- padding: 0.8em 1.7em;
- background-color: transparent;
- border-radius: .3em;
- position: relative;
- overflow: hidden;
- cursor: pointer;
- transition: .5s;
- font-weight: 400;
- font-size: 17px;
- border: 1px solid;
- font-family: inherit;
- text-transform: uppercase;
- color: var(--color);
- z-index: 1;
-}
 
-.button::before, .button::after {
- content: '';
- display: block;
- width: 50px;
- height: 50px;
- transform: translate(-50%, -50%);
- position: absolute;
- border-radius: 50%;
- z-index: -1;
- background-color: var(--color);
- transition: 1s ease;
-}
-
-.button::before {
- top: -1em;
- left: -1em;
-}
-
-.button::after {
- left: calc(100% + 1em);
- top: calc(100% + 1em);
-}
-
-.button:hover::before, .button:hover::after {
- height: 410px;
- width: 410px;
-}
-
-.button:hover {
- color: rgb(10, 25, 30);
-}
-
-.button:active {
- filter: brightness(.8);
-}
-
-</style>

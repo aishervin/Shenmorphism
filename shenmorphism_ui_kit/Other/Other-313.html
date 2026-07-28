@@ -1,56 +1,56 @@
-<label class="switch">
-  <input class="inpt" type="checkbox">
-  <span class="slider"></span>
-</label>
+<div class="radio-inputs">
+  <label class="radio">
+    <input type="radio" name="radio" checked="">
+    <span class="name">HTML</span>
+  </label>
+  <label class="radio">
+    <input type="radio" name="radio">
+    <span class="name">React</span>
+  </label>
+      
+  <label class="radio">
+    <input type="radio" name="radio">
+    <span class="name">Vue</span>
+  </label>
+</div>
 <style>
-/* From SHΞN™ Morphism by SujitAdroja - Tags: switch */
-/* The switch - the box around the slider */
-.switch {
-  font-size: 17px;
+/* From SHΞN™ Morphism by Yaya12085 - Tags: radio, select, tab */
+.radio-inputs {
   position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: #EEE;
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  padding: 0.25rem;
+  width: 300px;
+  font-size: 14px;
 }
 
-/* Hide default HTML checkbox */
-.switch .inpt {
-  opacity: 0;
-  width: 0;
-  height: 0;
+.radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
 }
 
-/* The slider */
-.slider {
-  position: absolute;
+.radio-inputs .radio input {
+  display: none;
+}
+
+.radio-inputs .radio .name {
+  display: flex;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #9dc4e6;
-  transition: .4s;
-  border-radius: 30px;
-  box-shadow: inset 3px 3px 5px rgba(0,0,0);
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: .5rem 0;
+  color: rgba(51, 65, 85, 1);
+  transition: all .15s ease-in-out;
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 1.4em;
-  width: 1.4em;
-  border-radius: 50px;
-  left: 0.3em;
-  bottom: 0.3em;
-  background-color: white;
-  transition: .4s;
-}
-
-.inpt:checked + .slider {
-  background-color: #2196F3;
-}
-
-.inpt:checked + .slider:before {
-  transform: translateX(1.5em);
+.radio-inputs .radio input:checked + .name {
+  background-color: #fff;
+  font-weight: 600;
 }
 </style>

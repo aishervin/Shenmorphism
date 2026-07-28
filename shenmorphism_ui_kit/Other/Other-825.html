@@ -1,69 +1,134 @@
-<div class="loader"></div>
+<div class="my-loader">
+  <div class="rubiks-cube">
+    <div class="face front">
+      <div style="background: #ff3d00;" class="cube"></div>
+      <div style="background: #ffeb3b;" class="cube"></div>
+      <div style="background: #4caf50;" class="cube"></div>
+      <div style="background: #2196f3;" class="cube"></div>
+      <div style="background: #ffffff;" class="cube"></div>
+      <div style="background: #ffeb3b;" class="cube"></div>
+      <div style="background: #4caf50;" class="cube"></div>
+      <div style="background: #2196f3;" class="cube"></div>
+      <div style="background: #ff3d00;" class="cube"></div>
+    </div>
+
+    <div class="face back">
+      <div style="background: #4caf50;" class="cube"></div>
+      <div style="background: #ff3d00;" class="cube"></div>
+      <div style="background: #ffeb3b;" class="cube"></div>
+      <div style="background: #2196f3;" class="cube"></div>
+      <div style="background: #ffffff;" class="cube"></div>
+      <div style="background: #ff3d00;" class="cube"></div>
+      <div style="background: #ffeb3b;" class="cube"></div>
+      <div style="background: #4caf50;" class="cube"></div>
+      <div style="background: #2196f3;" class="cube"></div>
+    </div>
+    <div class="face left">
+      <div style="background: #ffeb3b;" class="cube"></div>
+      <div style="background: #4caf50;" class="cube"></div>
+      <div style="background: #2196f3;" class="cube"></div>
+      <div style="background: #ff3d00;" class="cube"></div>
+      <div style="background: #ffffff;" class="cube"></div>
+      <div style="background: #4caf50;" class="cube"></div>
+      <div style="background: #2196f3;" class="cube"></div>
+      <div style="background: #ffeb3b;" class="cube"></div>
+      <div style="background: #ff3d00;" class="cube"></div>
+    </div>
+    <div class="face right">
+      <div style="background: #4caf50;" class="cube"></div>
+      <div style="background: #ff3d00;" class="cube"></div>
+      <div style="background: #ffeb3b;" class="cube"></div>
+      <div style="background: #2196f3;" class="cube"></div>
+      <div style="background: #ffffff;" class="cube"></div>
+      <div style="background: #ff3d00;" class="cube"></div>
+      <div style="background: #ffeb3b;" class="cube"></div>
+      <div style="background: #4caf50;" class="cube"></div>
+      <div style="background: #2196f3;" class="cube"></div>
+    </div>
+    <div class="face top">
+      <div style="background: #2196f3;" class="cube"></div>
+      <div style="background: #ffeb3b;" class="cube"></div>
+      <div style="background: #ff3d00;" class="cube"></div>
+      <div style="background: #4caf50;" class="cube"></div>
+      <div style="background: #ffffff;" class="cube"></div>
+      <div style="background: #ffeb3b;" class="cube"></div>
+      <div style="background: #ff3d00;" class="cube"></div>
+      <div style="background: #4caf50;" class="cube"></div>
+      <div style="background: #2196f3;" class="cube"></div>
+    </div>
+    <div class="face bottom">
+      <div style="background: #ffffff;" class="cube"></div>
+      <div style="background: #4caf50;" class="cube"></div>
+      <div style="background: #2196f3;" class="cube"></div>
+      <div style="background: #ff3d00;" class="cube"></div>
+      <div style="background: #ffeb3b;" class="cube"></div>
+      <div style="background: #4caf50;" class="cube"></div>
+      <div style="background: #2196f3;" class="cube"></div>
+      <div style="background: #ffffff;" class="cube"></div>
+      <div style="background: #ff3d00;" class="cube"></div>
+    </div>
+  </div>
+</div>
+
 <style>
-/* From SHΞN™ Morphism by ibrahimjlidi - Source: alexruix/white-cat-50 - Tags: loader, 3d loader */
-.loader {
-  width: 48px;
-  height: 48px;
-  margin: auto;
-  position: relative;
+/* From SHΞN™ Morphism by lukepadiachy  - Tags: simple, form, loader, cube, animated, pattern */
+.my-loader {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  margin: 100px auto;
 }
 
-.loader:before {
-  content: '';
-  width: 48px;
-  height: 5px;
-  background: #253050;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  border-radius: 50%;
-  animation: shadow324 0.5s linear infinite;
-}
-
-.loader:after {
-  content: '';
+.rubiks-cube {
   width: 100%;
   height: 100%;
-  background: #044080;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: my-rotateCube 5s infinite linear;
+}
+
+.my-loader .face {
   position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 40px;
-  animation: jump7456 0.5s linear infinite;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes jump7456 {
-  15% {
-    border-bottom-right-radius: px;
-  }
+.my-loader .face.front {
+  transform: translateZ(100px);
+}
+.my-loader .face.back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+.my-loader .face.left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.my-loader .face.right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+.my-loader .face.top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+.my-loader .face.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
 
-  25% {
-    transform: translateY(15px) rotate(22.5deg);
-  }
+.my-loader .cube {
+  width: calc(100% / 3);
+  height: calc(100% / 3);
+  box-sizing: border-box;
+  border: 1px solid #000;
+}
 
-  50% {
-    transform: translateY(17px) scale(1, .9) rotate(45deg);
-    border-bottom-right-radius: 40px;
+@keyframes my-rotateCube {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
   }
-
-  75% {
-    transform: translateY(4px) rotate(50.5deg);
-  }
-
   100% {
-    transform: translateY(4) rotate(90deg);
+    transform: rotateX(360deg) rotateY(360deg);
   }
 }
 
-@keyframes shadow324 {
-
-  0%,
-    100% {
-    transform: scale(2, 2);
-  }
-
-  50% {
-    transform: scale(2, );
-  }
-}
 </style>
+    

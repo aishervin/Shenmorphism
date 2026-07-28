@@ -1,123 +1,30 @@
-<div class="radio-input">
-  <div class="glass">
-    <div class="glass-inner">
-    </div>
-  </div>
-  <div class="selector">
-    <div class="choice">
-      <div>
-        <input class="choice-circle" checked="true" value="one" name="number-selector" id="one" type="radio">
-        <div class="ball"></div>
-      </div>
-      <label for="one" class="choice-name">1</label>
-    </div>
-    <div class="choice">
-      <div>
-        <input class="choice-circle" value="two" name="number-selector" id="two" type="radio">
-        <div class="ball"></div>
-      </div>
-      <label class="choice-name">2</label>
-    </div>
-    <div class="choice">
-      <div>
-        <input class="choice-circle" value="three" name="number-selector" id="three" type="radio">
-        <div class="ball"></div>
-      </div>
-      <label for="three" class="choice-name">3</label>
+<!-- From SHΞN™ Morphism by ajithrthampi  - Tags: animation, hover, shadow, toggle, hover effect, close, tailwind, tailwindcss -->
+<div
+  class="flex cursor-pointer items-center justify-center text-3xl text-white caret-transparent"
+>
+  <div
+    class="group relative inline-flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border-2 font-medium shadow-md md:h-20 md:w-20"
+  >
+    <span
+      class="ease absolute z-10 flex h-full w-full translate-y-full items-center justify-center rounded-full bg-[#d1b98a] text-white duration-300 group-hover:translate-y-0"
+    ></span>
+    <div
+      class="absolute z-50 flex h-full w-full items-center justify-center text-[#f6f2f2] group-hover:text-white"
+    >
+      <svg
+        height="40px"
+        width="40px"
+        viewBox="0 0 72 72"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill="white"
+          d="M 19 15 C 17.977 15 16.951875 15.390875 16.171875 16.171875 C 14.609875 17.733875 14.609875 20.266125 16.171875 21.828125 L 30.34375 36 L 16.171875 50.171875 C 14.609875 51.733875 14.609875 54.266125 16.171875 55.828125 C 16.951875 56.608125 17.977 57 19 57 C 20.023 57 21.048125 56.609125 21.828125 55.828125 L 36 41.65625 L 50.171875 55.828125 C 51.731875 57.390125 54.267125 57.390125 55.828125 55.828125 C 57.391125 54.265125 57.391125 51.734875 55.828125 50.171875 L 41.65625 36 L 55.828125 21.828125 C 57.390125 20.266125 57.390125 17.733875 55.828125 16.171875 C 54.268125 14.610875 51.731875 14.609875 50.171875 16.171875 L 36 30.34375 L 21.828125 16.171875 C 21.048125 15.391875 20.023 15 19 15 z"
+        ></path>
+      </svg>
     </div>
   </div>
 </div>
-<style>
-/* From SHΞN™ Morphism by LilaRest - Tags:  */
-.radio-input {
-  display: flex;
-  height: 210px;
-  align-items: center;
-}
 
-.glass {
-  z-index: 2;
-  height: 110%;
-  width: 95px;
-  margin-right: 25px;
-  padding: 8px;
-  background-color: rgba(190, 189, 189, 0.5);
-  border-radius: 35px;
-  box-shadow: rgba(50, 50, 93, 0.2) 0px 25px 50px -10px,
-   rgba(0, 0, 0, 0.25) 0px 10px 30px -15px,
-    rgba(10, 37, 64, 0.26) 0px -2px 6px 0px inset;
-  backdrop-filter: blur(8px);
-}
 
-.glass-inner {
-  width: 100%;
-  height: 100%;
-  border-color: rgba(245, 245, 245, 0.45);
-  border-width: 9px;
-  border-style: solid;
-  border-radius: 30px
-}
-
-.selector {
-  display: flex;
-  flex-direction: column;
-}
-
-.choice {
-  margin: 10px 0 10px 0;
-  display: flex;
-  align-items: center;
-}
-
-.choice > div {
-  position: relative;
-  width: 41px;
-  height: 41px;
-  margin-right: 15px;
-  z-index: 0;
-}
-
-.choice-circle {
-  appearance: none;
-  height: 100%;
-  width: 100%;
-  border-radius: 100%;
-  border-width: 9px;
-  border-style: solid;
-  border-color: rgba(245, 245, 245, 0.45);
-  cursor: pointer;
-  box-shadow: 0px 0px 20px -13px gray,
-  0px 0px 20px -14px gray inset;
-}
-
-.ball {
-  z-index: 1;
-  position: absolute;
-  inset: 0px;
-  transform: translateX(-95px);
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -10px 10px 0px inset,
-   rgba(0, 0, 0, 0.15) 0px -15px 15px 0px inset,
-    rgba(0, 0, 0, 0.1) 0px -40px 20px 0px inset,
-     rgba(0, 0, 0, 0.06) 0px 2px 1px, 
-     rgba(0, 0, 0, 0.09) 0px 4px 2px, 
-     rgba(0, 0, 0, 0.09) 0px 8px 4px, 
-     rgba(0, 0, 0, 0.09) 0px 16px 8px,
-      rgba(0, 0, 0, 0.09) 0px 32px 16px,
-       0px -1px 15px -8px rgba(0, 0, 0, 0.09);
-  border-radius: 100%;
-  transition: transform 800ms cubic-bezier(1,-0.4,0,1.4);
-  background-color: rgb(232, 232, 232, 1);
-}
-
-.choice-circle:checked + .ball {
-  transform: translateX(0px);
-}
-
-.choice-name {
-  color: rgb(177, 176, 176);
-  font-size: 35px;
-  font-weight: 900;
-  font-family: monospace;
-  cursor: pointer;
-}
-</style>
+    

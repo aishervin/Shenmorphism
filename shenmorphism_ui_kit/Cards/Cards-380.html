@@ -1,148 +1,19 @@
-<div class="card">
-  <span class="card__title">Newsletter</span>
-  <p class="card__content">
-    Get existential crisis delivered straight to your inbox every week.
-  </p>
-  <form class="card__form">
-    <input required="" type="email" placeholder="Your life" />
-    <button class="card__button">Click me</button>
-  </form>
+<!-- From SHΞN™ Morphism by Yaya12085 - Source: https://www.material-tailwind.com/docs/html/card#card - Tags: card, box-shadow, tailwind -->
+<div class="relative flex w-80 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+  <div class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+  </div>
+  <div class="p-6">
+    <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+     Tailwind card
+    </h5>
+    <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc felis ligula. 
+    </p>
+  </div>
+  <div class="p-6 pt-0">
+    <button data-ripple-light="true" type="button" class="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+      Read More
+    </button>
+  </div>
 </div>
 
-<style>
-/* From SHΞN™ Morphism by 0xnihilism  - Tags: newsletter, card, light, box-shadow, hover button, cool card, brutalism */
-.card {
-  width: 300px;
-  padding: 20px;
-  background: #fff;
-  border: 6px solid #000;
-  box-shadow: 12px 12px 0 #000;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-  transform: translate(-5px, -5px);
-  box-shadow: 17px 17px 0 #000;
-}
-
-.card__title {
-  font-size: 32px;
-  font-weight: 900;
-  color: #000;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  display: block;
-  position: relative;
-  overflow: hidden;
-}
-
-.card__title::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 90%;
-  height: 3px;
-  background-color: #000;
-  transform: translateX(-100%);
-  transition: transform 0.3s;
-}
-
-.card:hover .card__title::after {
-  transform: translateX(0);
-}
-
-.card__content {
-  font-size: 16px;
-  line-height: 1.4;
-  color: #000;
-  margin-bottom: 20px;
-}
-
-.card__form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.card__form input {
-  padding: 10px;
-  border: 3px solid #000;
-  font-size: 16px;
-  font-family: inherit;
-  transition: transform 0.3s;
-  width: calc(100% - 26px); /* Adjust for padding and border */
-}
-
-.card__form input:focus {
-  outline: none;
-  transform: scale(1.05);
-  background-color: #000;
-  color: #ffffff;
-}
-
-.card__button {
-  border: 3px solid #000;
-  background: #000;
-  color: #fff;
-  padding: 10px;
-  font-size: 18px;
-  left: 20%;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s;
-  width: 50%;
-  height: 100%;
-}
-
-.card__button::before {
-  content: "Sure?";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 105%;
-  background-color: #5ad641;
-  color: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(100%);
-  transition: transform 0.3s;
-}
-
-.card__button:hover::before {
-  transform: translateY(0);
-}
-
-.card__button:active {
-  transform: scale(0.95);
-}
-
-@keyframes glitch {
-  0% {
-    transform: translate(2px, 2px);
-  }
-  25% {
-    transform: translate(-2px, -2px);
-  }
-  50% {
-    transform: translate(-2px, 2px);
-  }
-  75% {
-    transform: translate(2px, -2px);
-  }
-  100% {
-    transform: translate(2px, 2px);
-  }
-}
-
-.glitch {
-  animation: glitch 0.3s infinite;
-}
-
-</style>
-    

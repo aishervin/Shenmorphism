@@ -1,81 +1,114 @@
+<button class="btn-23">
+  <span class="text">Button</span>
+  <span aria-hidden="" class="marquee">Button</span>
+</button>
 
-<button class="buttonDownload">Download</button>
 <style>
-/* From SHΞN™ Morphism by G4b413l - Tags: button, download */
-.buttonDownload {
- display: inline-block;
- position: relative;
- padding: 10px 25px;
- background-color: #4CC713;
- color: white;
- font-family: sans-serif;
- text-decoration: none;
- font-size: 0.9em;
- text-align: center;
- text-indent: 15px;
- border: none;
+/* From SHΞN™ Morphism by doniaskima - Tags: button, anime */
+.btn-23,
+.btn-23 *,
+.btn-23 :after,
+.btn-23 :before,
+.btn-23:after,
+.btn-23:before {
+  border: 0 solid;
+  box-sizing: border-box;
 }
 
-.buttonDownload:hover {
- background-color: #45a21a;
- color: white;
+.btn-23 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
 }
 
-.buttonDownload:before, .buttonDownload:after {
- content: ' ';
- display: block;
- position: absolute;
- left: 15px;
- top: 52%;
+.btn-23:disabled {
+  cursor: default;
 }
 
-.buttonDownload:before {
- width: 10px;
- height: 2px;
- border-style: solid;
- border-width: 0 2px 2px;
+.btn-23:-moz-focusring {
+  outline: auto;
 }
 
-.buttonDownload:after {
- width: 0;
- height: 0;
- margin-left: 3px;
- margin-top: -7px;
- border-style: solid;
- border-width: 4px 4px 0 4px;
- border-color: transparent;
- border-top-color: inherit;
- animation: downloadArrow 1s linear infinite;
- animation-play-state: paused;
+.btn-23 svg {
+  display: block;
+  vertical-align: middle;
 }
 
-.buttonDownload:hover:before {
- border-color: #cdefbd;
+.btn-23 [hidden] {
+  display: none;
 }
 
-.buttonDownload:hover:after {
- border-top-color: #cdefbd;
- animation-play-state: running;
+.btn-23 {
+  border-radius: 99rem;
+  border-width: 2px;
+  overflow: hidden;
+  padding: 0.8rem 3rem;
+  position: relative;
 }
 
-@keyframes downloadArrow {
- 0% {
-  margin-top: -7px;
+.btn-23 span {
+  display: grid;
+  inset: 0;
+  place-items: center;
+  position: absolute;
+  transition: opacity 0.2s ease;
+}
+
+.btn-23 .marquee {
+  --spacing: 5em;
+  --start: 0em;
+  --end: 5em;
+  -webkit-animation: marquee 1s linear infinite;
+  animation: marquee 1s linear infinite;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  opacity: 0;
+  position: relative;
+  text-shadow: #fff var(--spacing) 0, #fff calc(var(--spacing) * -1) 0,
+    #fff calc(var(--spacing) * -2) 0;
+}
+
+.btn-23:hover .marquee {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
   opacity: 1;
- }
-
- 0.001% {
-  margin-top: -15px;
-  opacity: 0.4;
- }
-
- 50% {
-  opacity: 1;
- }
-
- 100% {
-  margin-top: 0;
-  opacity: 0.4;
- }
 }
+
+.btn-23:hover .text {
+  opacity: 0;
+}
+
+@-webkit-keyframes marquee {
+  0% {
+    transform: translateX(var(--start));
+  }
+
+  to {
+    transform: translateX(var(--end));
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(var(--start));
+  }
+
+  to {
+    transform: translateX(var(--end));
+  }
+}
+
 </style>

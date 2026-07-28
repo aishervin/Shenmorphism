@@ -1,18 +1,45 @@
 <div class="loader"></div>
 <style>
-/* From SHΞN™ Morphism by eslam-hany - Tags: loader, circle loader */
+/* From SHΞN™ Morphism by Yaya12085 - Tags: loading, loader, colorful */
+.loader ,.loader::before,.loader::after {
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 10px;
+  animation: rotate 5s linear infinite;
+}
+
 .loader {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  animation: rotate 2.0s infinite linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-color: #5a4ff3;
+}
+
+.loader::before,.loader::after {
+  position: absolute;
+  content: "";
+}
+
+.loader::before {
+  border-color: #35a2d2;
+  width: 110%;
+  height: 110%;
+  animation-delay: .5s
+}
+
+.loader::after {
+  border-color: #9c40fc;
+  width: 120%;
+  height: 120%;
+  animation-delay: .10s;
 }
 
 @keyframes rotate {
-  100% {
-    transform: rotate(1turn);
+  to {
+    transform: rotate(360deg)
   }
 }
-
 </style>

@@ -1,25 +1,31 @@
-<button class="Btn">Click Me</button>
+<button> Button
+</button>
 <style>
-/* From SHΞN™ Morphism by 1osm - Tags: button */
-/* Button 1 */
-.Btn {
-  width: 150px;
-  height: 50px;
-  background-color: transparent;
+/* From SHΞN™ Morphism by adamgiebl - Tags: simple, button, hover */
+button {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #725AC1;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #725AC1;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #725AC1;
+}
+
+button:hover {
   color: white;
-  font-weight: bold;
-  border-width: 2px;
-  border-color: #FF5858;
-  border-radius: 20px;
-  transition: all 0.3s;
+  box-shadow: inset 0 -100px 0 0 #725AC1;
 }
 
-.Btn:hover {
-  transform: translateY(-10px);
-  background-color: #FF5858;
-}
-
-.Btn::after {
-  transform: translateY(0);
+button:active {
+  transform: scale(0.9);
 }
 </style>

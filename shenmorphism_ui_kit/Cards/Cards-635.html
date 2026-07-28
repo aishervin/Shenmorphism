@@ -1,60 +1,27 @@
-<div class="one-div"></div>
-<style>
-/* From SHΞN™ Morphism by Shohjahon3807 - Tags: card, hover, follow me */
-.one-div {
-  width: 300px;
-  height: 200px;
-  background-color: #f0f5f9;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-size: 24px;
-  color: #333;
-  position: relative;
-  overflow: hidden;
-}
+<!-- From SHΞN™ Morphism by kamehame-ha  - Tags: simple, purple, minimalist, gradient, card, cookie -->
+<div
+  class="bg-gradient-to-r from-blue-400 to-indigo-500 rounded-lg overflow-hidden shadow-xl max-w-sm"
+>
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-2 text-white">Hello Traveler,</h2>
+    <p class="text-sm mb-4 text-white">
+      This website uses cookies to enhance user experience and to analyze
+      performance and traffic on our website.
+    </p>
+    <div class="flex justify-end space-x-4">
+      <button
+        class="duration-300 bg-black/0 hover:bg-black/25 text-white font-bold py-2 px-4 rounded"
+      >
+        Accept
+      </button>
+      <button
+        class="duration-300 bg-black/0 hover:bg-black/25 text-white font-bold py-2 px-4 rounded"
+      >
+        Decline
+      </button>
+    </div>
+  </div>
+</div>
 
-.one-div::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  z-index: -1;
-  background-image: linear-gradient(45deg, #e1e8f2, #f0f5f9);
-  border-radius: 20px;
-  opacity: 0.8;
-  transform: scale(1.2);
-  filter: blur(10px);
-}
 
-.one-div:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.one-div:hover::before {
-  animation: gradient-animation 5s linear infinite;
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-</style>
+    

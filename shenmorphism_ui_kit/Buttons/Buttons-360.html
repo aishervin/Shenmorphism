@@ -1,59 +1,31 @@
-<button class="btn-class-name">
-  <span>Next</span>
-  <svg viewBox="0 0 320 512" height="1em" xmlns="http://www.w3.org/2000/svg">
-    <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z">
-  </path>
-  </svg>
+<button> Button
 </button>
 <style>
-/* From SHΞN™ Morphism by catraco - Tags: button, ring, next, hover effect, startbutton , variables */
-.btn-class-name {
-  --color: 180,255, 100;
-  border-radius: .5em;
-  transition: .3s;
-  background-color: rgba(var(--color), .2);
-  color: rgb(var(--color));
-  fill: rgb(var(--color));
-  font-family: monospace;
-  font-weight: bolder;
-  font-size: x-large;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+/* From SHΞN™ Morphism by adamgiebl - Tags: button */
+button {
+  font-size: 18px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
   cursor: pointer;
-  border: 2px solid rgb(var(--color));
-  box-shadow: 0 0 10px rgba(var(--color), .4);
-  outline: none;
-  display: flex;
-  align-items: center;
-  padding: .5em 1em;
+  will-change: box-shadow,transform;
+  background: radial-gradient( 100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100% );
+  box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+  padding: 0 2em;
+  border-radius: 0.3em;
+  color: #fff;
+  height: 2.6em;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
-.btn-class-name:hover {
-  box-shadow: 0 0 0 5px rgba(var(--color), .5);
+button:hover {
+  box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px #3c4fe0;
+  transform: translateY(-0.1em);
 }
 
-.btn-class-name span {
-  transform: scale(.8);
-  transition: .3s;
-}
-
-.btn-class-name:hover span {
-  transform: scale(1);
-}
-
-.btn-class-name svg {
-  font-size: 0;
-  transform: scale(0.5) translateX(0%) rotate(-180deg);
-  transition: .3s;
-}
-
-.btn-class-name:hover svg {
-  font-size: 20px;
-  transform: scale(1) translateX(20%) rotate(0deg);
-}
-
-.btn-class-name:active {
-  transition: 0s;
-  box-shadow: 0 0 0 5px rgb(var(--color));
+button:active {
+  box-shadow: inset 0px 0.1em 0.6em #3c4fe0;
+  transform: translateY(0em);
 }
 </style>

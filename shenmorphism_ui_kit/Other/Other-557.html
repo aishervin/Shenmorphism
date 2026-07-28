@@ -1,68 +1,52 @@
-<div class="container">
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
+<span class="loader"></span>
+
 <style>
-/* From SHΞN™ Morphism by terenceodonoghue - Tags: loader */
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+/* From SHΞN™ Morphism by Juanes200122  - Website: https://cssloaders.github.io/ - Name: css-loader - Tags: simple, animation, red, loading, loader */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px dotted #fff;
+  border-style: solid solid dotted dotted;
   border-radius: 50%;
-  height: 96px;
-  width: 96px;
-  animation: rotate_3922 1.2s linear infinite;
-  background-color: #9b59b6;
-  background-image: linear-gradient(#9b59b6, #84cdfa, #5ad1cd);
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
 }
-
-.container span {
-  position: absolute;
-  border-radius: 50%;
-  height: 100%;
-  width: 100%;
-  background-color: #9b59b6;
-  background-image: linear-gradient(#9b59b6, #84cdfa, #5ad1cd);
-}
-
-.container span:nth-of-type(1) {
-  filter: blur(5px);
-}
-
-.container span:nth-of-type(2) {
-  filter: blur(10px);
-}
-
-.container span:nth-of-type(3) {
-  filter: blur(25px);
-}
-
-.container span:nth-of-type(4) {
-  filter: blur(50px);
-}
-
-.container::after {
+.loader::after {
   content: "";
+  box-sizing: border-box;
   position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  background-color: #fff;
-  border: solid 5px #ffffff;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px dotted #ff3d00;
+  border-style: solid solid dotted;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
+  animation: rotationBack 1s linear infinite;
+  transform-origin: center center;
 }
 
-@keyframes rotate_3922 {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
   }
-
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
   }
 }
 
 </style>
+    

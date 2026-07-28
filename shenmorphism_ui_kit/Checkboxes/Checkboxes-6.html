@@ -1,62 +1,58 @@
-<label class="container">
-  <input type="checkbox" checked="checked" />
-  <div class="checkmark"></div>
-</label>
 
+<input checked="" class="check" type="checkbox">
 <style>
-/* From SHΞN™ Morphism by myshy13  - Tags: checkbox */
-.container input {
+/* From SHΞN™ Morphism by ke1221 - Tags: checkbox */
+.check {
+ position: relative;
+ width: 20px;
+ height: 20px;
+ border-radius: 2px;
+ appearance: none;
+ background-color: #bbb;
+ transition: all .3s;
+}
+
+.check::before {
+ content: '';
+ position: absolute;
+ border: solid #fff;
+ display: block;
+ width: .3em;
+ height: .6em;
+ border-width: 0 .2em .2em 0;
+ z-index: 1;
+ opacity: 0;
+ right: calc(50% - .3em);
+ top: calc(50% - .6em);
+ transform: rotate(0deg);
+ transition: all .3s;
+ transform-origin: center center;
+}
+
+.check:checked {
+ animation: a .3s ease-in forwards;
+ background-color: rgb(120, 190, 120);
+}
+
+.check:checked::before {
+ opacity: 1;
+ transform: rotate(405deg);
+}
+
+@keyframes a {
+ 0% {
+  opacity: 1;
+  transform: scale(1) rotateY(0deg);
+ }
+
+ 50% {
   opacity: 0;
-  cursor: pointer;
-  display: none;
-}
+  transform: scale(.8) rotateY(180deg);
+ }
 
-.container {
-  display: block;
-  position: relative;
-  cursor: pointer;
-  font-size: 20px;
-  user-select: none;
+ 100% {
+  opacity: 1;
+  transform: scale(1) rotateY(360deg);
+ }
 }
-
-.checkmark {
-  transition: 0.5s ease;
-  border-radius: 0.2em;
-}
-
-.checkmark {
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 1.3em;
-  width: 1.3em;
-  background-color: #ccc;
-}
-.container input:checked ~ .checkmark {
-  background-color: #b30000;
-  box-shadow: #ff2929 0px 0px 1em;
-  outline: rgb(139, 0, 0) 3px solid;
-}
-
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-.container input:checked ~ .checkmark::after {
-  display: block;
-}
-
-.container .checkmark::after {
-  left: 0.45em;
-  top: 0.25em;
-  width: 0.25em;
-  height: 0.5em;
-  border: solid white;
-  border-width: 0 0.15em 0.15em 0;
-  transform: rotate(45deg);
-}
-
 </style>
-    

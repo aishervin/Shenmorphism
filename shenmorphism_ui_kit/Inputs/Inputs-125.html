@@ -1,45 +1,40 @@
-<div class="input-wrapper">
-  <input class="input-box" type="text" placeholder="Enter your text">
-  <span class="underline"></span>
-</div>
+<input
+  type="text"
+  name="text"
+  class="search-bar"
+  placeholder="Type something"
+/>
 
 <style>
-/* From SHΞN™ Morphism by SanthoshSJ-Dev - Tags: simple, material design, input, animated, line, text */
-.input-wrapper {
-  position: relative;
+/* From SHΞN™ Morphism by shadowmurphy  - Tags: simple, material design, neumorphism, skeuomorphism, input */
+.search-bar {
   width: 200px;
-  margin: 50px auto;
-}
-
-.input-box {
-  font-size: 16px;
-  padding: 10px 0;
-  border: none;
-  border-bottom: 2px solid #ccc;
-  color: #08AEEA;
-  width: 100%;
-  background-color: transparent;
-  transition: border-color 0.3s ease-in-out;
-}
-
-.underline {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #08AEEA;
-  transform: scaleX(0);
-  transition: transform 0.3s ease-in-out;
-}
-
-.input-box:focus {
-  border-color: #08AEEA;
+  height: 35px;
+  border-radius: 5px;
   outline: none;
+  border: 1px solid #303030;
+  border-bottom: 2px solid #9a9a9a;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #2d2d2d;
+  color: white;
+  transition: all 0.3s ease;
 }
 
-.input-box:focus + .underline {
-  transform: scaleX(1);
+.search-bar::placeholder {
+  color: #9a9a9a;
+}
+
+.search-bar:hover {
+  background-color: #313131;
+}
+
+.search-bar:active,
+.search-bar:focus {
+  background-color: #1e1f20;
+  border: 1px solid #2d2d2d;
+  border-bottom: 2px solid #4cc2ff;
 }
 
 </style>
+    

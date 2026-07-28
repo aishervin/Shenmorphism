@@ -1,153 +1,110 @@
-<div class="switch-wrap">
-  <input
-    class="switch-input"
-    aria-label="switch"
-    name="switch"
-    id="switch"
-    type="checkbox"
-    hidden=""
-  />
-  <label class="switch-label" for="switch"></label>
-  <span class="switch-marbles"></span>
-</div>
-
+<label class="switch">
+    <div class="round"><input name="onoff" id="onoff" type="checkbox">
+        <div class="back"><label for="onoff" class="but"><span class="on">0</span><span class="off">I</span></label></div>
+    </div>
+</label>
 <style>
-/* From SHΞN™ Morphism by ilkhoeri  - Tags: switch */
-.switch-wrap {
-  z-index: 20;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  width: calc(var(--w-switch) + calc(var(--p) * 2));
-  height: calc(var(--h-switch) + calc(var(--p) * 2));
-  box-shadow: hsla(var(--pure-black), 0.25) 2px -5px 4px inset,
-    hsla(var(--pure-black), 0.25) 0px 2px 5px -1px,
-    hsla(var(--pure-black), 0.3) 0 1px 3px -1px,
-    0 70px 40px -20px hsla(var(--pure-black), 0.2),
-    hsla(var(--pure-black), 0.2) 0 0 0 1px inset;
-  --round: 4rem;
-  --pure-black: 0, 0%, 0%;
-  --pure-white: 0, 0%, 100%;
-  --scale-x: calc(1.35 * var(--round));
-  --p: calc(calc(6.25 / 100) * var(--round));
-  --checked: calc(100% - calc(var(--round) + var(--p)));
-  --sz-marbles: calc(var(--w-switch) + calc(var(--p) * 2));
-  --h-switch: calc(var(--round) + calc(var(--p) * 2));
-  --w-switch: calc(calc(var(--round) * 2) + calc(var(--p) * 2));
-  --bg-switch: var(--pure-black);
-  --box: var(--pure-white);
+/* From SHΞN™ Morphism by mrhyddenn - Tags: skeuomorphism, switch */
+input {
+  display: none
 }
 
-.switch-wrap .switch-input {
-  display: none;
-  background: transparent none;
-  visibility: hidden;
-}
-
-.switch-label {
-  cursor: pointer;
-  user-select: none;
-  position: relative;
-  z-index: 20;
-  width: var(--w-switch);
-  height: var(--h-switch);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  outline: none;
-  background-color: hsl(var(--pure-white));
-  border-radius: 9999px;
-  border-width: 0px;
-  transition: all linear 300ms;
-  box-shadow: var(--shadow);
-  --shadow: hsla(var(--pure-black), 0.4) 0 2px 4px,
-    hsla(var(--pure-black), 0.3) 0 7px 13px -3px,
-    hsla(var(--pure-black), 0.25) -2px -5px 4px inset,
-    hsla(var(--pure-black), 0.2) 0 0 0 1px inset;
-}
-
-.switch-label::after {
+.on,.off {
   position: absolute;
-  display: block;
-  content: "";
-  width: var(--round);
-  height: var(--round);
-  left: var(--p);
-  border-radius: 9999px;
-  background-color: hsl(0, 0%, 100%);
-  will-change: left, width, margin, padding;
-  box-shadow: var(--shadow);
-  transition: left 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
-    width 300ms ease, padding 300ms ease, margin 300ms ease,
-    background-color 300ms ease, box-shadow 300ms linear;
-}
-
-.switch-input + .switch-label:active::after {
-  width: var(--scale-x);
-  --shadow: hsla(var(--pure-black), 0.4) 0 2px 4px,
-    hsla(var(--pure-black), 0.3) 0 7px 13px -3px,
-    hsla(var(--pure-black), 0.25) 0px -2px 8px 6px inset,
-    hsla(var(--pure-black), 0.25) 0 0 0 1px inset;
-}
-
-.switch-input:checked + .switch-label {
-  --shadow: hsla(var(--pure-black), 0.4) 0 2px 4px,
-    hsla(var(--pure-black), 0.3) 0 7px 13px -3px,
-    hsla(var(--pure-black), 0.25) 2px -5px 4px inset,
-    hsla(var(--pure-black), 0.2) 0 0 0 1px inset;
-  --bg-switch: var(--pure-white);
-  --box: var(--pure-black);
-}
-
-.switch-input:checked + .switch-label::after {
-  background: white linear-gradient(-45deg, #f8acff 0%, #696eff 100%);
-  left: var(--checked);
-}
-
-.switch-input:checked + .switch-label:active::after {
-  margin-left: calc(calc(var(--checked) - var(--scale-x)) - var(--p));
-}
-
-.switch-marbles {
+  text-align: center;
+  text-shadow: inset 1px 1px 1px black;
   width: 100%;
-  height: 100%;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 9999px;
 }
 
-.switch-marbles::after {
-  height: var(--sz-marbles);
-  width: var(--sz-marbles);
-  z-index: 0;
-  content: "";
-  position: absolute;
-  border-radius: 9999px;
+.on {
+  color: #fff;
+  top: 10px;
+  transition: all 0.1s;
+  font-family: sans-serif
 }
 
-.switch-marbles::before {
-  content: "";
-  height: var(--sz-marbles);
-  width: var(--sz-marbles);
-  position: absolute;
-  border-radius: 9999px;
-  z-index: -1;
-  background-image: linear-gradient(-45deg, #f8acff 0%, #696eff);
-  filter: blur(20px);
-  opacity: var(0.7);
-  animation: rotate 4000ms linear running infinite;
+.off {
+  color: #636161;
+  bottom: 5px;
+  transition: all 0.1s;
+  transform: scaleY(0.85);
 }
 
-@keyframes rotate {
-  to {
-    rotate: 360deg;
-  }
+.but {
+  background-color: #000;
+  border-radius: 400px 400px 400px 400px / 400px 400px 300px 300px;
+  border-bottom-width: 0px;
+  box-shadow: inset 8px 6px 5px -7px rgba(0,0,0,1)
+    ,inset -8px 6px 5px -7px rgba(0,0,0,1)
+    ,inset 0 -3px 2px -2px rgba(200,200,200,.5)
+    ,0 3px 3px -2px rgba(0,0,0,1)
+    ,inset 0 -230px 60px -200px rgba(255,255,255,.2)
+    ,inset 0 220px 40px -200px rgba(0,0,0,.3);
+  display: block;
+  font-size: 17px;
+  height: 60px;
+  position: relative;
+  transition: all 0.2s;
+  width: 40px;
 }
 
+.back {
+  background-color: #000;
+  background-image: -webkit-linear-gradient(0deg, transparent 30%, transparent 65%)
+    ,-webkit-linear-gradient(0deg, rgba(245, 245, 245, 0) 30%, rgba(150,150,150,.1) 50%, rgba(150,150,150,0) 70%);
+  border-radius: 115px;
+  box-sizing: border-box;
+  height: 85px;
+  padding: 4px 4px;
+  transition: all 0.2s;
+  width: 50px;
+}
+
+input:checked + .back .on,input:checked + .back .off {
+  text-shadow: inset 1px 1px 1px black;
+}
+
+input:checked + .back .on {
+  color: rgb(141, 141, 141);
+  top: 10px;
+  transform: scaleY(0.85);
+}
+
+input:checked + .back .off {
+  color: #fff;
+  bottom: 5px;
+  transform: scaleY(1);
+}
+
+input:checked + .back .but {
+  background: #232323;
+  background-image: -webkit-radial-gradient(55% 18%,circle closest-corner,rgba(0,0,0,.3) ,rgba(0,0,0,0));
+  border-radius: 410px 410px 410px 410px / 310px 310px 410px 410px;
+  box-shadow: inset 8px -4px 5px -7px rgba(0,0,0,1)
+    ,inset -8px -4px 5px -7px rgba(0,0,0,1)
+    , 0 -3px 8px -4px rgba(250,250,250,.4)
+    ,inset 0 3px 4px -2px rgba(10,10,10,1)
+    ,inset 0 280px 40px -200px rgba(0,0,0,.2)
+    ,inset 0 -200px 40px -200px rgba(180,180,180,.2);
+  margin-top: 20px;
+}
+
+input:checked + .back {
+  background-image: -webkit-linear-gradient(90deg, black 30%, transparent 65%)
+    ,-webkit-linear-gradient(180deg, rgba(250,250,250,0) 0%, rgba(250,250,250,.4) 50%, rgba(150,150,150,0) 100%);
+  box-shadow: 28px 28px 28px -28px rgba(0,0,0,.1)
+    ,-28px 28px 28px -22px rgba(0,0,0,.1)
+    ,0 30px 30px 0px rgba(0,0,0,.2)
+    ,inset 0 1px 2px 0 rgba(0,0,0,.6);
+  padding: 2px 4px;
+}
+
+.l,.r {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.round,#onoff,.back,.but,.on,.off {
+  user-select: none;
+}
 </style>
-    

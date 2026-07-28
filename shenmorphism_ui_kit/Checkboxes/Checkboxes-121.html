@@ -1,63 +1,65 @@
-<div class="days-btn-container">
-  <input class="day-btn" id="monday" type="checkbox" checked="true" />
-  <label class="day-label" for="monday">M</label>
-
-  <input class="day-btn" id="tuesday" type="checkbox" checked="true" />
-  <label class="day-label" for="tuesday">T</label>
-
-  <input class="day-btn" id="wednesday" type="checkbox" checked="true" />
-  <label class="day-label" for="wednesday">W</label>
-
-  <input class="day-btn" id="thursday" type="checkbox" checked="true" />
-  <label class="day-label" for="thursday">T</label>
-
-  <input class="day-btn" id="friday" type="checkbox" checked="true" />
-  <label class="day-label" for="friday">F</label>
-
-  <input class="day-btn" id="saturday" type="checkbox" checked="true" />
-  <label class="day-label" for="saturday">S</label>
-
-  <input class="day-btn" id="sunday" type="checkbox" checked="true" />
-  <label class="day-label" for="sunday">S</label>
-</div>
-
+<label class="container">
+  <input checked="checked" type="checkbox">
+  <div class="checkmark"></div>
+</label>
 <style>
-/* From SHΞN™ Morphism by hayyangovinda  - Tags: flashy, checkbox, clock, days, alarm */
-.days-btn-container {
-  display: flex;
-  width: 300px;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 34px;
+/* From SHΞN™ Morphism by gagan-gv - Tags: gradient, checkbox */
+/* Hide the default checkbox */
+.container input {
+ position: absolute;
+ opacity: 0;
+ cursor: pointer;
+ height: 0;
+ width: 0;
 }
 
-.day-btn {
-  display: none; /* Hide the original checkbox */
+.container {
+ display: block;
+ position: relative;
+ cursor: pointer;
+ font-size: 25px;
+ user-select: none;
 }
 
-.day-label {
-  background-color: transparent;
-  font-size: 11px;
-  font-weight: 600;
-  color: #ff5b22;
-  cursor: pointer;
-  border: 2px solid #ff5b22;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 5px;
+/* Create a custom checkbox */
+.checkmark {
+ position: relative;
+ top: 0;
+ left: 0;
+ height: 1.3em;
+ width: 1.3em;
+ background: black;
+ border-radius: 50px;
+ transition: all 0.7s;
+ --spread: 20px;
 }
 
-/* Apply styles for the selected state */
-.day-btn:checked + .day-label {
-  background-color: #ffe53b;
-  background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
-  border: none;
-  color: white;
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+ background: black;
+ box-shadow: -10px -10px var(--spread) 0px #5B51D8, 0 -10px var(--spread) 0px #833AB4, 10px -10px var(--spread) 0px #E1306C, 10px 0 var(--spread) 0px #FD1D1D, 10px 10px var(--spread) 0px #F77737, 0 10px var(--spread) 0px #FCAF45, -10px 10px var(--spread) 0px #FFDC80;
 }
 
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+ content: "";
+ position: absolute;
+ display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+ display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+ left: 0.45em;
+ top: 0.25em;
+ width: 0.25em;
+ height: 0.5em;
+ border: solid #f0f0f0;
+ border-width: 0 0.15em 0.15em 0;
+ transform: rotate(45deg);
+}
 </style>
-    

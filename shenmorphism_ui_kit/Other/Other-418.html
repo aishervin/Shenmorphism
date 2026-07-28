@@ -1,62 +1,116 @@
-<div class="loader">
-  <div class="loader-bar bar-1"></div>
-  <div class="loader-bar bar-2"></div>
-  <div class="loader-bar bar-3"></div>
-  <div class="loader-bar bar-4"></div>
+<div class="dot-spinner">
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
 </div>
-
 <style>
-/* From SHΞN™ Morphism by funkyjuice213 - Tags: loader, glow */
-.loader {
+/* From SHΞN™ Morphism by abrahamcalsin - Tags: loader, spinner, dots */
+.dot-spinner {
+  --uib-size: 2.8rem;
+  --uib-speed: .9s;
+  --uib-color: #183153;
+  position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: flex-start;
+  height: var(--uib-size);
+  width: var(--uib-size);
+}
+
+.dot-spinner__dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   height: 100%;
+  width: 100%;
 }
 
-.loader-bar {
-  height: 25px;
-  width: 6px;
-  margin: 0 3px;
-  border-radius: 20px;
-  animation: loader 2s ease-in-out infinite;
+.dot-spinner__dot::before {
+  content: '';
+  height: 20%;
+  width: 20%;
+  border-radius: 50%;
+  background-color: var(--uib-color);
+  transform: scale(0);
+  opacity: 0.5;
+  animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(18, 31, 53, 0.3);
 }
 
-.bar-1 {
-  background: linear-gradient(to right, #00e6e6, #00ccff, #0099ff, #0066ff);
-  animation-delay: 0s;
-  box-shadow: 0px 0px 15px 3px #00e6e6;
+.dot-spinner__dot:nth-child(2) {
+  transform: rotate(45deg);
 }
 
-.bar-2 {
-  background: linear-gradient(to right, #00ccff, #0099ff, #0066ff, #00e6e6);
-  animation-delay: 0.1s;
-  box-shadow: 0px 0px 15px 3px #00ccff;
+.dot-spinner__dot:nth-child(2)::before {
+  animation-delay: calc(var(--uib-speed) * -0.875);
 }
 
-.bar-3 {
-  background: linear-gradient(to right, #0099ff, #0066ff, #00e6e6, #00ccff);
-  animation-delay: 0.2s;
-  box-shadow: 0px 0px 15px 3px #0099ff;
+.dot-spinner__dot:nth-child(3) {
+  transform: rotate(90deg);
 }
 
-.bar-4 {
-  background: linear-gradient(to right, #0066ff, #00e6e6, #00ccff, #0099ff);
-  animation-delay: 0.3s;
-  box-shadow: 0px 0px 15px 3px #0066ff;
+.dot-spinner__dot:nth-child(3)::before {
+  animation-delay: calc(var(--uib-speed) * -0.75);
 }
 
-@keyframes loader {
-  0% {
-    transform: scaleY(1);
+.dot-spinner__dot:nth-child(4) {
+  transform: rotate(135deg);
+}
+
+.dot-spinner__dot:nth-child(4)::before {
+  animation-delay: calc(var(--uib-speed) * -0.625);
+}
+
+.dot-spinner__dot:nth-child(5) {
+  transform: rotate(180deg);
+}
+
+.dot-spinner__dot:nth-child(5)::before {
+  animation-delay: calc(var(--uib-speed) * -0.5);
+}
+
+.dot-spinner__dot:nth-child(6) {
+  transform: rotate(225deg);
+}
+
+.dot-spinner__dot:nth-child(6)::before {
+  animation-delay: calc(var(--uib-speed) * -0.375);
+}
+
+.dot-spinner__dot:nth-child(7) {
+  transform: rotate(270deg);
+}
+
+.dot-spinner__dot:nth-child(7)::before {
+  animation-delay: calc(var(--uib-speed) * -0.25);
+}
+
+.dot-spinner__dot:nth-child(8) {
+  transform: rotate(315deg);
+}
+
+.dot-spinner__dot:nth-child(8)::before {
+  animation-delay: calc(var(--uib-speed) * -0.125);
+}
+
+@keyframes pulse0112 {
+  0%,
+  100% {
+    transform: scale(0);
+    opacity: 0.5;
   }
 
   50% {
-    transform: scaleY(2);
-  }
-
-  100% {
-    transform: scaleY(1);
+    transform: scale(1);
+    opacity: 1;
   }
 }
 

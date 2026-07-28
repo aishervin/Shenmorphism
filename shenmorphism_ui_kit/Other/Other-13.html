@@ -1,61 +1,63 @@
-<fieldset>
-  <legend>Frameworks</legend>
-
-  <div class="button-group">
-    <input type="radio" id="svelt" name="frameworks" checked="" />
-    <label for="svelt">Svelt</label>
-  </div>
-
-  <div class="button-group">
-    <input type="radio" id="react" name="frameworks" />
-    <label for="react">React</label>
-  </div>
-
-  <div class="button-group">
-    <input type="radio" id="vue" name="frameworks" />
-    <label for="vue">Vue</label>
-  </div>
-</fieldset>
-
+  <input id="checkbox_toggle" type="checkbox" class="check">
+<div class="checkbox">
+  <label class="slide" for="checkbox_toggle">
+    <label class="toggle" for="checkbox_toggle"></label>
+    <label class="text" for="checkbox_toggle">Day</label>
+    <label class="text" for="checkbox_toggle">Night</label>
+  </label>
+</div>
 <style>
-/* From SHΞN™ Morphism by spj2401Dev  - Tags:  */
-.button-group {
-  flex-grow: 1;
-  margin: auto;
+/* From SHΞN™ Morphism by AmIt-DasIT - Tags: switch, animated */
+.checkbox {
+  width: 223px;
+  height: 60px;
+  background-color: #d0d0d0;
+  border-radius: 30px;
+  position: relative;
+  color: black;
+  overflow: hidden;
 }
 
-.button-group input[type="radio"] {
+#checkbox_toggle {
   display: none;
 }
 
-.button-group label {
-  display: inline-block;
-  padding: 10px 20px;
+.checkbox .toggle {
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  border-radius: 30px;
+  left: 5px;
   cursor: pointer;
-  border: 1px solid #2b426d;
-  background-color: #385c7e;
-  color: white;
-  border-radius: 15px;
-  transition: all ease 0.2s;
-  text-align: center;
-  flex-grow: 1;
-  flex-basis: 0;
-  width: 90px;
-  font-size: 13px;
-  margin: 5px;
-  box-shadow: 0px 0px 50px -15px #000000;
+  background: linear-gradient(40deg, #FF0080,#FF8C00 70%);
+  transition: 0.4s;
+  box-shadow: 0px 0px 3px rgb(255, 255, 20), 0px 0px 5px rgb(255, 255, 20);
 }
 
-.button-group input[type="radio"]:checked + label {
-  background-color: white;
-  color: #02375a;
-  border: 1px solid #2b426d;
-}
-
-fieldset {
-  border: 0;
+.checkbox .slide {
+  width: 230px;
+  height: 60px;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
 }
 
+.checkbox .slide .text {
+  font-size: 16px;
+  font-weight: 700;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.check:checked + .checkbox .slide .toggle {
+  transform: translateX(113px);
+  background: linear-gradient(40deg, #8983F7, #A3DAFB 70%);
+  box-shadow: -0px -0px 10px #8983F7, -0px -0px 3px #8983F7;
+}
+
+.check:checked + .checkbox .slide {
+  background-color: #0a1929;
+  color: #fff;
+}
 </style>
-    

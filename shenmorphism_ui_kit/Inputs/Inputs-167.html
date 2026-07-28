@@ -1,18 +1,68 @@
-<!-- From SHΞN™ Morphism by kamehame-ha  - Tags: simple, login, input, tailwind, tailwindcss -->
-<div class="input flex flex-col w-fit static">
-  <label
-    for="input"
-    class="text-blue-500 text-xs font-semibold relative top-2 ml-[7px] px-[3px] bg-[#e8e8e8] w-fit"
-    >Password:</label
-  >
-  <input
-    id="password"
-    type="password"
-    placeholder="Write here..."
-    name="input"
-    class="border-blue-500 input px-[10px] py-[11px] text-xs bg-[#e8e8e8] border-2 rounded-[5px] w-[210px] focus:outline-none placeholder:text-black/25"
-  />
-</div>
-
-
+<div class="inp-border a1">
+      <input placeholder="Your Name" name="name1" type="text" class="input">
+  </div>
     
+<style>
+/* From SHΞN™ Morphism by SouravBandyopadhyay - Tags: input, light, transition */
+.inp-border {
+  padding: 5px;
+  margin: 2em 1em;
+  border-radius: 50px;
+  max-width: 300px;
+}
+
+.input {
+  text-align: center;
+  padding: 15px;
+  outline: none;
+  border: double 0;
+  background: #252525;
+  border-radius: 50px;
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.a1 {
+  background: linear-gradient(
+    330.28deg,
+    #ff6e1d 100%,
+    #ff6e1d 100%,
+    #ff6e1d 100%
+  );
+}
+
+.a1 > input {
+  color: #caab98;
+}
+
+.a1 > input::placeholder {
+  color: #ff6e1d;
+  opacity: 0.6;
+}
+
+.inp-border:focus-within {
+  background: linear-gradient(
+    330.28deg,
+    #2cfff2 0%,
+    #1e78ff 30.73%,
+    #ff54a6 55.73%,
+    #ff6e1d 79.17%,
+    #ff3e3e 100%
+  );
+}
+
+.inp-border:hover {
+  background: linear-gradient(
+    330.28deg,
+    #2cfff2 0%,
+    #1e78ff 30.73%,
+    #ff54a6 55.73%,
+    #ff6e1d 79.17%,
+    #ff3e3e 100%
+  );
+}
+
+</style>

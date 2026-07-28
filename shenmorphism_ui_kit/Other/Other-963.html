@@ -1,131 +1,86 @@
-<div class="honeycomb">
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
+<div class="loader"></div>
 <style>
-/* From SHΞN™ Morphism by boryanakrasteva - Tags: loader */
-@-webkit-keyframes honeycomb {
-  0%,
-  20%,
-  80%,
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
-
-  30%,
-  70% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
-@keyframes honeycomb {
-  0%,
-  20%,
-  80%,
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
-
-  30%,
-  70% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
-.honeycomb {
-  height: 24px;
+/* From SHΞN™ Morphism by FWDJc - Tags: animated, colorful, dvd, keyframes, css animation */
+.loader {
+  width: 150px;
+  height: 40px;
+  border-radius: 50%;
   position: relative;
-  width: 24px;
+  animation: bounce 5s infinite;
 }
 
-.honeycomb div {
-  -webkit-animation: honeycomb 2.1s infinite backwards;
-  animation: honeycomb 2.1s infinite backwards;
-  background: #f3f3f3;
-  height: 12px;
-  margin-top: 6px;
+.loader::before {
+  content: 'DVD';
   position: absolute;
-  width: 24px;
+  display: block;
+  left: 5%;
+  bottom: 55%;
+  color: green;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 4em;
+  font-weight: 900;
+  font-style: italic;
+  animation: div-color-change 5s infinite;
 }
 
-.honeycomb div:after, .honeycomb div:before {
-  content: '';
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
+.loader::after {
+  content: 'FWDJC';
   position: absolute;
-  left: 0;
-  right: 0;
+  top: 30%;
+  left: 21%;
+  color: #212121;
+  font-size: .5em;
+  font-weight: 800;
+  letter-spacing: 10px;
+  z-index: 1;
 }
 
-.honeycomb div:after {
-  top: -6px;
-  border-bottom: 6px solid #f3f3f3;
+@keyframes bounce {
+  0% {
+    background-color: red;
+    transform: translateX(0) translateY(60px);
+  }
+
+  25% {
+    background-color: blue;
+    transform: translateX(60px) translateY(0);
+  }
+
+  55% {
+    background-color: green;
+    transform: translateX(0) translateY(-60px);
+  }
+
+  75% {
+    background-color: yellow;
+    transform: translateX(-60px) translateY(0);
+  }
+
+  100% {
+    background-color: purple;
+    transform: translateX(0) translateY(60px);
+  }
 }
 
-.honeycomb div:before {
-  bottom: -6px;
-  border-top: 6px solid #f3f3f3;
-}
+@keyframes div-color-change {
+  0% {
+    color: red;
+  }
 
-.honeycomb div:nth-child(1) {
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-  left: -28px;
-  top: 0;
-}
+  25% {
+    color: blue;
+  }
 
-.honeycomb div:nth-child(2) {
-  -webkit-animation-delay: 0.1s;
-  animation-delay: 0.1s;
-  left: -14px;
-  top: 22px;
-}
+  55% {
+    color: green;
+  }
 
-.honeycomb div:nth-child(3) {
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-  left: 14px;
-  top: 22px;
-}
+  75% {
+    color: yellow;
+  }
 
-.honeycomb div:nth-child(4) {
-  -webkit-animation-delay: 0.3s;
-  animation-delay: 0.3s;
-  left: 28px;
-  top: 0;
-}
-
-.honeycomb div:nth-child(5) {
-  -webkit-animation-delay: 0.4s;
-  animation-delay: 0.4s;
-  left: 14px;
-  top: -22px;
-}
-
-.honeycomb div:nth-child(6) {
-  -webkit-animation-delay: 0.5s;
-  animation-delay: 0.5s;
-  left: -14px;
-  top: -22px;
-}
-
-.honeycomb div:nth-child(7) {
-  -webkit-animation-delay: 0.6s;
-  animation-delay: 0.6s;
-  left: 0;
-  top: 0;
+  100% {
+    color: purple;
+  }
 }
 </style>

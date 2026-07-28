@@ -1,35 +1,51 @@
-<div class="loader">
-  <div class="inner_loader"></div>
-</div>
+
+<div class="loader"></div>
 <style>
-/* From SHΞN™ Morphism by benjimich - Tags: loader, color */
+/* From SHΞN™ Morphism by JulioCodesSM - Tags: loader */
+/* From SHΞN™ Morphism by @JulioCodesSM */
 .loader {
-  width: 200px;
-  height: 10px;
-  background: #004643;
-  border-radius: 50px;
-  overflow: hidden;
+ width: 50px;
+ height: 50px;
+ position: relative;
+ transform: translateX(-25px);
+ /* Compensating for the left of 50px in the keyframe. */
 }
 
-.inner_loader {
-  width: 60%;
-  height: 100%;
-  background: #f9bc60;
-  border-radius: 50px;
-  animation: moveLeftRight 3s ease-in-out infinite;
+.loader::before,
+.loader::after {
+ content: '';
+ position: absolute;
+ width: inherit;
+ height: inherit;
+ border-radius: 50%;
+ mix-blend-mode: multiply;
+ animation: rotate9 1s infinite cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-@keyframes moveLeftRight {
-  0% {
-    transform: translateX(calc(-100% + 10px));
-  }
+.loader::before {
+ background-color: #fc3f9e;
+}
 
-  50% {
-    transform: translateX(calc(200px - 10px));
-  }
+.loader::after {
+ background-color: #50e8f3;
+ animation-delay: .5s;
+}
 
-  100% {
-    transform: translateX(calc(-100% + 10px));
-  }
+@keyframes rotate9 {
+ 0%,100% {
+  left: 50px;
+ }
+
+ 25% {
+  transform: scale(.3);
+ }
+
+ 50% {
+  left: 0;
+ }
+
+ 75% {
+  transform: scale(1);
+ }
 }
 </style>

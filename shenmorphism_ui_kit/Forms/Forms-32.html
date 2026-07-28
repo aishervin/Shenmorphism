@@ -1,49 +1,75 @@
-<!-- From SHΞN™ Morphism by themrsami  - Tags: login, twitter, form, login form -->
-<div class="flex items-center justify-center">
-  <div
-    class="bg-gray-900 border-[4px] border-blue-900 rounded-2xl hover:border-blue-500 transition-all duration-200"
-  >
-    <div
-      class="mx-auto flex items-center space-y-4 py-16 px-12 font-semibold text-gray-500 flex-col"
-    >
-      <svg viewBox="0 0 24 24" class="h-12 w-12 text-white" fill="currentColor">
-        <g>
-          <path
-            d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"
-          ></path>
-        </g>
-      </svg>
-      <h1 class="text-white text-2xl">Sign in to Twitter</h1>
-      <input
-        class="w-full p-2 bg-blue-900 rounded-md border border-gray-700 focus:border-blue-700 hover:border-blue-500 transition-all duration-200"
-        placeholder="Email"
-        type="email"
-        name="email"
-        id=""
-      />
-      <input
-        class="w-full p-2 bg-blue-900 rounded-md border border-gray-700 focus:border-blue-700 hover:border-blue-500 transition-all duration-200"
-        placeholder="Password"
-        type="password"
-        name="password"
-        id=""
-      />
-      <input
-        class="w-full p-2 bg-gray-50 rounded-full font-bold text-gray-900 border-[4px] border-gray-700 hover:border-blue-500 transition-all duration-200"
-        type="submit"
-        id=""
-      />
-      <p>
-        Don't have an account?
-        <a
-          class="font-semibold text-white hover:text-blue-500 transition-all duration-200"
-          href=""
-          >Sign up</a
-        >
-      </p>
-    </div>
-  </div>
+<div class="container">
+  <form class="form" action="">
+    <p class="title">Login Form</p>
+    <input placeholder="Username" class="username input" type="text" />
+    <input placeholder="Password" class="password input" type="password" />
+    <button class="btn" type="submit">Login</button>
+  </form>
 </div>
 
+<style>
+/* From SHΞN™ Morphism by HoseinParvaresh  - Tags: form, login , login form, dark, rounded, input, button, orange, gradient, minimalistic, password, form, username, centered, login */
+::selection {
+  background-color: gray;
+}
 
+.container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 400px;
+  height: 400px;
+  background-image: linear-gradient(to bottom, #424242, #212121);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.5rem;
+}
+
+.title {
+  color: wheat;
+  margin: 3rem 0;
+  font-size: 2rem;
+}
+
+.input {
+  margin: 0.5rem 0;
+  padding: 1rem 0.5rem;
+  width: 20rem;
+  background-color: inherit;
+  color: wheat;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid wheat;
+  transition: all 400ms;
+}
+.input:hover {
+  background-color: #424242;
+  border: none;
+  border-radius: 0.5rem;
+}
+.btn {
+  height: 3rem;
+  width: 20rem;
+  margin-top: 3rem;
+  background-color: wheat;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.2rem;
+  transition: all 400ms;
+  cursor: pointer;
+  box-shadow:
+    0 0 10px antiquewhite,
+    0 0 10px antiquewhite;
+}
+.btn:hover {
+  background-color: antiquewhite;
+  box-shadow: none;
+}
+
+</style>
     

@@ -1,31 +1,57 @@
-<input type="password" placeholder="Password" name="text" class="input">
+<div class="input-container">
+  <input type="text" id="input" required="">
+  <label for="input" class="label">Enter Text</label>
+  <div class="underline"></div>
+</div>
+
 <style>
-/* From SHΞN™ Morphism by andrew-demchenk0 - Tags: input, shadow, password */
-.input {
-  --input-focus: #2d8cf0;
-  --font-color: #323232;
-  --font-color-sub: #666;
-  --bg-color: #fff;
-  --main-color: #323232;
+/* From SHΞN™ Morphism by Satwinder04 - Tags: input */
+.input-container {
+  position: relative;
+  margin: 50px auto;
   width: 200px;
-  height: 40px;
-  border-radius: 5px;
-  border: 2px solid var(--main-color);
-  background-color: var(--bg-color);
-  box-shadow: 4px 4px var(--main-color);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--font-color);
-  padding: 5px 10px;
+}
+
+.input-container input[type="text"] {
+  font-size: 20px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 5px 0;
+  background-color: transparent;
   outline: none;
 }
 
-.input::placeholder {
-  color: var(--font-color-sub);
-  opacity: 0.8;
+.input-container .label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ccc;
+  transition: all 0.3s ease;
+  pointer-events: none;
 }
 
-.input:focus {
-  border: 2px solid var(--input-focus);
+.input-container input[type="text"]:focus ~ .label,
+.input-container input[type="text"]:valid ~ .label {
+  top: -20px;
+  font-size: 16px;
+  color: #333;
 }
+
+.input-container .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #333;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+
+.input-container input[type="text"]:focus ~ .underline,
+.input-container input[type="text"]:valid ~ .underline {
+  transform: scaleX(1);
+}
+
 </style>

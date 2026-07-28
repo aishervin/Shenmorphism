@@ -1,80 +1,106 @@
-<div class="wrapper">
-  <div class="container">
-    <button class="button">
-      <svg
-        class="imgSvg"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
-        <g
-          stroke-linejoin="round"
-          stroke-linecap="round"
-          id="SVGRepo_tracerCarrier"
-        ></g>
-        <g id="SVGRepo_iconCarrier">
-          <path
-            fill="#000"
-            d="M20.33 3.66996C20.1408 3.48213 19.9035 3.35008 19.6442 3.28833C19.3849 3.22659 19.1135 3.23753 18.86 3.31996L4.23 8.19996C3.95867 8.28593 3.71891 8.45039 3.54099 8.67255C3.36307 8.89471 3.25498 9.16462 3.23037 9.44818C3.20576 9.73174 3.26573 10.0162 3.40271 10.2657C3.5397 10.5152 3.74754 10.7185 4 10.85L10.07 13.85L13.07 19.94C13.1906 20.1783 13.3751 20.3785 13.6029 20.518C13.8307 20.6575 14.0929 20.7309 14.36 20.73H14.46C14.7461 20.7089 15.0192 20.6023 15.2439 20.4239C15.4686 20.2456 15.6345 20.0038 15.72 19.73L20.67 5.13996C20.7584 4.88789 20.7734 4.6159 20.7132 4.35565C20.653 4.09541 20.5201 3.85762 20.33 3.66996ZM4.85 9.57996L17.62 5.31996L10.53 12.41L4.85 9.57996ZM14.43 19.15L11.59 13.47L18.68 6.37996L14.43 19.15Z"
-          ></path>
-        </g>
-      </svg>
-
-      <span>Send Message</span>
-    </button>
-  </div>
-</div>
+<button class="animated-button">
+  <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+    ></path>
+  </svg>
+  <span class="text">Modern Button</span>
+  <span class="circle"></span>
+  <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+    ></path>
+  </svg>
+</button>
 
 <style>
-/* From SHΞN™ Morphism by benjimich  - Tags: skeuomorphism, animation, email, 3d, action, button, realistic, svg */
-.wrapper {
-  background-color: #fff;
-  padding: 0.5px;
-  border-radius: 10px;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-.wrapper:hover {
-  scale: 1.05;
-}
-.wrapper:active {
-  scale: 1;
-}
-.container {
-  cursor: pointer;
-  background-color: #fff;
-  padding: 5px;
-  border-radius: inherit;
-  border: 2px rgb(158, 158, 158) solid;
-  box-shadow: inset 0px -12px 20px -3px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-}
-.container:hover {
-  box-shadow: 0px 10px 25px -3px rgba(0, 0, 0, 0.1),
-    inset 0px -12px 20px -3px rgba(0, 0, 0, 0.1);
-}
-.button {
-  min-width: 200px;
+/* From SHΞN™ Morphism by gharsh11032000  - Tags: button, hover, active, animated, arrow, hover effect, click animation, pill */
+.animated-button {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  cursor: inherit;
-  font-size: 20px;
-  font-weight: 700;
-  background-color: #fff;
-  border-radius: 50px;
-  border: none;
-  padding: 14px;
-  box-shadow: inset 0px 12px 20px -3px rgba(0, 0, 0, 0.1);
+  gap: 4px;
+  padding: 16px 36px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: greenyellow;
+  box-shadow: 0 0 0 2px greenyellow;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.imgSvg {
+.animated-button svg {
+  position: absolute;
   width: 24px;
-  margin-right: 14px;
+  fill: greenyellow;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.wrapper:hover .imgSvg {
-  transform: rotate(405deg);
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.125);
+
+.animated-button .arr-1 {
+  right: 16px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: greenyellow;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: #212121;
+}
+
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px greenyellow;
+}
+
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
 }
 
 </style>

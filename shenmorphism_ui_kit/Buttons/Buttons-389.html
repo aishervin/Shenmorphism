@@ -1,48 +1,39 @@
-<button class="btn">
-    <div class="scroll"> </div>
+<button>
+    <svg class="css-i6dzq1" stroke-linejoin="round" stroke-linecap="round" fill="none" stroke-width="2" stroke="#FFFFFF" height="24" width="24" viewBox="0 0 24 24">
+        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+    </svg>
+    Edit
 </button>
 <style>
-/* From SHΞN™ Morphism by boryanakrasteva - Tags: button */
-.btn {
-  width: 30px;
-  height: 50px;
-  border-radius: 30px;
+/* From SHΞN™ Morphism by barisdogansutcu - Tags: button */
+button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
-  border: none;
-  outline: 2px solid rgb(105, 127, 255);
-  box-shadow: 0px 0px 10px rgb(105, 127, 255);
-  position: relative;
-}
-
-.scroll {
-  width: 5px;
-  height: 10px;
-  border-radius: 10px;
-  background-color: rgb(105, 127, 255);
-  box-shadow: 0px 0px 10px rgb(105, 127, 255);
-  animation: scroll_4013 2s linear infinite;
-  transform: translateY(40%);
-}
-
-.btn:after {
-  content: 'scroll';
-  position: absolute;
-  top: 140%;
-  color: whitesmoke;
+  gap: 10px;
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  border: solid 3px transparent;
+  background-clip: padding-box;
+  box-shadow: 0px 0px 0px 3px #ffffff00;
+  color: white;
+  min-height: 43px;
+  padding: 0 13px 0 13px;
+  border-radius: 50px;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
+  transition: all .5s ease;
 }
 
-@keyframes scroll_4013 {
-  0% {
-    transform: translateY(40%);
-  }
+button:active {
+  transform: scale(.9);
+  transition: all 100ms ease;
+}
 
-  50% {
-    transform: translateY(90%);
-  }
-};
+button:hover {
+  box-shadow: 0px 0px 0px 3px #30a1b8;
+}
+
+button svg {
+  width: 16px;
+}
 </style>

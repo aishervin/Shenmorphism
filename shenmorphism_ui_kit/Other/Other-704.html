@@ -1,228 +1,251 @@
 <div class="container">
-  <div class="slice"></div>
-  <div class="slice"></div>
-  <div class="slice"></div>
-  <div class="slice"></div>
-  <div class="slice"></div>
-  <div class="slice"></div>
+    <div class="top-left"></div>
+    <div class="top-right"></div>
+    <div class="bottom-left"></div>
+    <div class="bottom-right"></div>
 </div>
-
 <style>
-/* From SHΞN™ Morphism by Z4drus  - Tags: loader */
+/* From SHΞN™ Morphism by fanishah - Tags: loader */
 .container {
-  --uib-size: 150px;
-  --uib-speed: 2.5s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: var(--uib-size);
-  width: var(--uib-size);
-}
-
-.slice {
-  position: relative;
-  height: calc(var(--uib-size) / 6);
-  width: 100%;
-}
-
-.slice::before,
-.slice::after {
-  --uib-a: calc(var(--uib-speed) / -2);
-  --uib-b: calc(var(--uib-speed) / -6);
-  content: "";
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   position: absolute;
+}
+
+.container div {
+  width: 100px;
+  height: 100px;
+  top: 50px;
+  left: 50px;
+  display: block;
+  position: absolute;
+}
+
+.top-left {
+  animation: tl 7.5s ease infinite
+}
+
+.top-right {
+  animation: tr 7.5s ease infinite
+}
+
+.bottom-left {
+  animation: bl 7.5s ease infinite
+}
+
+.bottom-right {
+  animation: br 7.5s ease infinite
+}
+
+.container div:before,
+.container div:after {
+  display: block;
+  position: absolute;
+  content: ""
+}
+
+.container div:before {
+  width: 50px;
+  height: 50px
+}
+
+.top-left:before {
+  background: rgb(251, 189, 4);
   top: 0;
-  left: calc(50% - var(--uib-size) / 12);
-  height: 100%;
-  width: calc(100% / 6);
-  border-radius: 50%;
-  background-color: var(--uib-color);
-  flex-shrink: 0;
-  animation: orbit var(--uib-speed) linear infinite;
-  transition: background-color 0.3s ease;
+  left: 0;
+  border-radius: 100% 0 0 0
 }
 
-.slice:nth-child(1)::after {
-  animation-delay: var(--uib-a);
+.top-right:before {
+  background: rgb(234, 67, 52);
+  top: 0;
+  right: 0;
+  border-radius: 0 100% 0 0
 }
 
-.slice:nth-child(2)::before {
-  animation-delay: var(--uib-b);
+.bottom-left:before {
+  background: rgb(52, 168, 83);
+  bottom: 0;
+  left: 0;
+  border-radius: 0 0 0 100%
 }
 
-.slice:nth-child(2)::after {
-  animation-delay: calc(var(--uib-a) + var(--uib-b));
+.bottom-right:before {
+  background: rgb(67, 135, 244);
+  bottom: 0;
+  right: 0;
+  border-radius: 0 0 100% 0
 }
 
-.slice:nth-child(3)::before {
-  animation-delay: calc(var(--uib-b) * 2);
+.container div:after {
+  background: rgb(33, 33, 33);
+  width: 25px;
+  height: 25px;
+  z-index: 1
 }
 
-.slice:nth-child(3)::after {
-  animation-delay: calc(var(--uib-a) + var(--uib-b) * 2);
+.top-left:after {
+  top: 25px;
+  left: 25px;
+  border-radius: 100% 0 0 0
 }
 
-.slice:nth-child(4)::before {
-  animation-delay: calc(var(--uib-b) * 3);
+.top-right:after {
+  top: 25px;
+  right: 25px;
+  border-radius: 0 100% 0 0
 }
 
-.slice:nth-child(4)::after {
-  animation-delay: calc(var(--uib-a) + var(--uib-b) * 3);
+.bottom-left:after {
+  bottom: 25px;
+  left: 25px;
+  border-radius: 0 0 0 100%
 }
 
-.slice:nth-child(5)::before {
-  animation-delay: calc(var(--uib-b) * 4);
+.bottom-right:after {
+  bottom: 25px;
+  right: 25px;
+  border-radius: 0 0 100% 0
 }
 
-.slice:nth-child(5)::after {
-  animation-delay: calc(var(--uib-a) + var(--uib-b) * 4);
-}
-
-.slice:nth-child(6)::before {
-  animation-delay: calc(var(--uib-b) * 5);
-}
-
-.slice:nth-child(6)::after {
-  animation-delay: calc(var(--uib-a) + var(--uib-b) * 5);
-}
-
-@keyframes orbit {
-  0% {
-    transform: translateX(calc(var(--uib-size) * 0.25)) scale(0.73684);
-    opacity: 0.65;
+@keyframes tl {
+  0%,96%,100% {
+    transform: rotate(0deg)
   }
 
-  5% {
-    transform: translateX(calc(var(--uib-size) * 0.235)) scale(0.684208);
-    opacity: 0.58;
+  12% {
+    transform: rotate(-45deg)
   }
 
-  10% {
-    transform: translateX(calc(var(--uib-size) * 0.182)) scale(0.631576);
-    opacity: 0.51;
+  24% {
+    transform: rotate(-90deg)
   }
 
-  15% {
-    transform: translateX(calc(var(--uib-size) * 0.129)) scale(0.578944);
-    opacity: 0.44;
+  36% {
+    transform: rotate(-135deg)
   }
 
-  20% {
-    transform: translateX(calc(var(--uib-size) * 0.076)) scale(0.526312);
-    opacity: 0.37;
-  }
-
-  25% {
-    transform: translateX(0%) scale(0.47368);
-    opacity: 0.3;
-  }
-
-  30% {
-    transform: translateX(calc(var(--uib-size) * -0.076)) scale(0.526312);
-    opacity: 0.37;
-  }
-
-  35% {
-    transform: translateX(calc(var(--uib-size) * -0.129)) scale(0.578944);
-    opacity: 0.44;
-  }
-
-  40% {
-    transform: translateX(calc(var(--uib-size) * -0.182)) scale(0.631576);
-    opacity: 0.51;
-  }
-
-  45% {
-    transform: translateX(calc(var(--uib-size) * -0.235)) scale(0.684208);
-    opacity: 0.58;
-  }
-
-  50% {
-    transform: translateX(calc(var(--uib-size) * -0.25)) scale(0.73684);
-    opacity: 0.65;
-  }
-
-  55% {
-    transform: translateX(calc(var(--uib-size) * -0.235)) scale(0.789472);
-    opacity: 0.72;
+  48% {
+    left: 50px;
+    transform: rotate(-180deg)
   }
 
   60% {
-    transform: translateX(calc(var(--uib-size) * -0.182)) scale(0.842104);
-    opacity: 0.79;
-  }
-
-  65% {
-    transform: translateX(calc(var(--uib-size) * -0.129)) scale(0.894736);
-    opacity: 0.86;
-  }
-
-  70% {
-    transform: translateX(calc(var(--uib-size) * -0.076)) scale(0.947368);
-    opacity: 0.93;
-  }
-
-  75% {
-    transform: translateX(0%) scale(1);
+    left: 125px;
     opacity: 1;
+    transform: rotate(-135deg)
   }
 
-  80% {
-    transform: translateX(calc(var(--uib-size) * 0.076)) scale(0.947368);
-    opacity: 0.93;
-  }
-
-  85% {
-    transform: translateX(calc(var(--uib-size) * 0.129)) scale(0.894736);
-    opacity: 0.86;
-  }
-
-  90% {
-    transform: translateX(calc(var(--uib-size) * 0.182)) scale(0.842104);
-    opacity: 0.79;
-  }
-
-  95% {
-    transform: translateX(calc(var(--uib-size) * 0.235)) scale(0.789472);
-    opacity: 0.72;
-  }
-
-  100% {
-    transform: translateX(calc(var(--uib-size) * 0.25)) scale(0.73684);
-    opacity: 0.65;
+  61%,95% {
+    opacity: 0
   }
 }
 
-.slice:nth-child(1)::before,
-.slice:nth-child(1)::after {
-  background-color: #334dff;
+@keyframes tr {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  12% {
+    transform: rotate(-45deg)
+  }
+
+  24% {
+    transform: rotate(-90deg)
+  }
+
+  36% {
+    transform: rotate(-135deg)
+  }
+
+  48% {
+    transform: rotate(-180deg)
+  }
+
+  60% {
+    transform: rotate(-225deg)
+  }
+
+  72% {
+    transform: rotate(-270deg)
+  }
+
+  84% {
+    transform: rotate(-315deg)
+  }
+
+  96%,100% {
+    transform: rotate(-360deg)
+  }
 }
 
-.slice:nth-child(2)::before,
-.slice:nth-child(2)::after {
-  background-color: #333eff;
+@keyframes bl {
+  0%,100% {
+    transform: rotate(0deg)
+  }
+
+  12% {
+    transform: rotate(-45deg)
+  }
+
+  24% {
+    left: 50px;
+    transform: rotate(-90deg)
+  }
+
+  36% {
+    left: 125px;
+    opacity: 1;
+    transform: rotate(-45deg)
+  }
+
+  37%,83% {
+    opacity: 0
+  }
+
+  84% {
+    left: -25px;
+    opacity: 1;
+    transform: rotate(-45deg)
+  }
+
+  96% {
+    left: 50px;
+    transform: rotate(0deg)
+  }
 }
 
-.slice:nth-child(3)::before,
-.slice:nth-child(3)::after {
-  background-color: #3334ff;
-}
+@keyframes br {
+  0%,96%,100% {
+    transform: rotate(0deg)
+  }
 
-.slice:nth-child(4)::before,
-.slice:nth-child(4)::after {
-  background-color: #4433ff;
-}
+  12% {
+    left: 125px;
+    opacity: 1;
+    transform: rotate(45deg)
+  }
 
-.slice:nth-child(5)::before,
-.slice:nth-child(5)::after {
-  background-color: #6633ff;
-}
+  13%,59% {
+    opacity: 0
+  }
 
-.slice:nth-child(6)::before,
-.slice:nth-child(6)::after {
-  background-color: #9933ff;
-}
+  60% {
+    left: -25px;
+    opacity: 1;
+    transform: rotate(45deg)
+  }
 
+  72% {
+    left: 50px;
+    transform: rotate(90deg)
+  }
+
+  84% {
+    transform: rotate(45deg)
+  }
+}
 </style>
-    

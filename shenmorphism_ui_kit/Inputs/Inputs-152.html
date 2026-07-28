@@ -1,18 +1,23 @@
-
-<input type="text" name="text" class="input" placeholder="Type something here....">
+<input placeholder="First name" class="input" name="firstName" type="text">
 <style>
-/* From SHΞN™ Morphism by Yaseen549 - Tags: input */
+/* From SHΞN™ Morphism by lenfear23 - Tags: neumorphism, input */
 .input {
- color: #8707ff;
- border: 2px solid #8707ff;
- border-radius: 10px;
- padding: 10px 25px;
- background: transparent;
- max-width: 190px;
+  max-width: 200px;
+  min-height: 40px;
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  outline: none;
+  background: #e8e8e8;
+  box-shadow: 5px 5px 17px #c8c8c8,
+             -5px -5px 17px #ffffff;
+  border: none;
+  border-radius: 10px;
+  transition: all .5s;
 }
 
-.input:active {
- box-shadow: 2px 2px 15px #8707ff inset;
+.input:focus {
+  background: #e8e8e8;
+  box-shadow: inset 5px 5px 17px #c8c8c8,
+            inset -5px -5px 17px #ffffff;
 }
-
 </style>

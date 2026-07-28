@@ -1,100 +1,50 @@
-<button class="rainbow-btn">
-  <div class="content">
-    <svg
-      viewBox="0 0 16 16"
-      class="bi bi-lightning-charge-fill"
-      fill="currentColor"
-      height="25"
-      width="25"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"
-      ></path>
-    </svg>
-
-    Join now
-  </div>
-</button>
-
+<button> Click here </button>
 <style>
-/* From SHΞN™ Morphism by zebra76966  - Tags: animation, gradient, button, click animation */
-.rainbow-btn {
-  border: 2px;
-  border-radius: 35px;
-  width: 18em;
-  font-size: 2rem;
-  padding: 28px 28px;
-  color: black;
-  background: transparent;
+/* From SHΞN™ Morphism by Adir-SL - Tags: pink, button, toy */
+button {
+  --fontSize: 2rem;
+  --button: 356, 80%;
+  --buttonColor: hsl(var(--button), 70%);
+  --sideColor: hsl(var(--button), 40%);
+  --text: hsl(var(--button), 30%);
+  --bgColor: #e8e8e8;
   position: relative;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
+  font-size: 0;
+  font-family: sans-serif;
+  transition: all 300ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  border-radius: 999px;
+  padding: calc(var(--fontSize) / 2);
+  height: calc(var(--fontSize) * 2);
+  min-width: calc(var(--fontSize) * 2);
+  line-height: calc(var(--fontSize) * 0.75);
+  border: none;
+  outline: none;
+  background-color: var(--buttonColor);
+  transform: rotate(-25deg);
+  color: var(--text);
+  white-space: nowrap;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: calc(var(--fontSize) / -25) calc(var(--fontSize) / 25) calc(var(--fontSize) / 25) #ffffffbb inset, calc(var(--fontSize) / -25) calc(var(--fontSize) / -50) calc(var(--fontSize) / 25) #ffffff88 inset,
+    0 0 calc(var(--fontSize) / 5) #0f004a77 inset, 0 0 0 calc(var(--fontSize) / 3.6) var(--buttonColor) inset,
+    0 0 calc(var(--fontSize) / 6.25) calc(var(--fontSize) / 3.125) #0f004a44 inset, calc(var(--fontSize) / -25) calc(var(--fontSize) / 12.5) 0 var(--sideColor),
+    calc(var(--fontSize) / -8.33) calc(var(--fontSize) / 12.5) calc(var(--fontSize) / 6.25) #0f004a44, calc(var(--fontSize) / -16.666) calc(var(--fontSize) / 12.5) calc(var(--fontSize) / 25) #0f004a66;
 }
 
-.rainbow-btn::before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  content: "";
-  height: 4.3em;
-  border-radius: 35px;
-  width: 18em;
-  filter: blur(1px);
-  background: radial-gradient(
-      at 0% 0%,
-      hsla(312, 66%, 67%, 1) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 28% 79%, hsla(355, 80%, 64%, 1) 0px, transparent 50%),
-    radial-gradient(at 100% 1%, hsla(279, 96%, 65%, 1) 0px, transparent 50%),
-    radial-gradient(at 5% 91%, hsla(289, 80%, 70%, 1) 0px, transparent 50%),
-    radial-gradient(at 50% 37%, hsla(28, 100%, 74%, 1) 0px, transparent 50%),
-    radial-gradient(at 27% 38%, hsla(189, 0%, 100%, 1) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 1) 0px, transparent 50%),
-    radial-gradient(at 64% 78%, hsla(340, 100%, 76%, 1) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 1) 0px, transparent 50%),
-    radial-gradient(at 72% 55%, hsla(240, 68%, 97%, 1) 0px, transparent 50%),
-    radial-gradient(at 51% 14%, hsla(28, 100%, 74%, 1) 0px, transparent 50%);
+button:hover {
+  transform: rotate(0);
+  overflow: visible;
+  font-size: var(--fontSize);
 }
 
-.rainbow-btn .content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 8px;
-  font-weight: 500;
-  border: 3px solid rgba(255, 255, 255, 0.2);
-  border-radius: 25px;
-  box-shadow: inset 0 0 1px 2px rgba(255, 255, 255, 0.712);
+button::before,
+button::after {
+  content: ": ";
+  font-family: serif;
+  font-weight: bold;
+  text-shadow: calc(var(--fontSize) / 25) 0 0 var(--sideColor), 0 0 calc(var(--fontSize) / 12.5) #0f004a55,
+    calc(var(--fontSize) / 50) 0 0 var(--sideColor), calc(var(--fontSize) / 50) calc(var(--fontSize) / -50) 0 var(--sideColor);
+  color: var(--bgColor);
+  font-size: var(--fontSize);
 }
-.rainbow-btn .content::before {
-  content: " ";
-  border: 10px double rgba(247, 201, 232, 0.5);
-  border-radius: 35px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 17em;
-  height: 3em;
-  padding: 10px 8px;
-  position: absolute;
-  z-index: 2;
-}
-
-.rainbow-btn .content svg {
-  margin-right: 10px;
-}
-
-.rainbow-btn:hover {
-  scale: 1.1;
-}
-.rainbow-btn:focus {
-  scale: 0.9;
-}
-
 </style>
-    

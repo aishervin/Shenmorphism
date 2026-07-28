@@ -1,63 +1,64 @@
-<section class="container">
-  <label>
-    <input type="checkbox" name="check" />
-    <span></span>
-    <p>N</p>
-  </label>
-</section>
-
+<label class="container">
+  <input type="checkbox" checked="checked">
+  <span class="checkmark"></span>
+</label>
 <style>
-/* From SHΞN™ Morphism by mnikita7767  - Tags: checkbox */
+/* From SHΞN™ Morphism by magbanum - Tags: checkbox */
+/* Customize the label (the container) */
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+ display: block;
+ position: relative;
+ cursor: pointer;
+ font-size: 22px;
+ user-select: none;
 }
-.container label {
-  cursor: pointer;
-  position: relative;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-label input {
-  appearance: none;
-}
-label span {
+
+/* Hide the browser's default checkbox */
+.container input {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(#555353, #363535, #303030);
-  border: 2px solid #222;
-  border-top-width: 4px;
-  border-radius: 6px;
-  box-shadow: inset 0 5px 1px rgba(0, 0, 0, 0.23), 0 5px 5px rgba(0, 0, 0, 0.5),
-    0 15px 25px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
-.container label span::before {
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  height: 25px;
+  width: 25px;
+  background-color: #ccc;
+  border: solid gray 1px;
+  border-radius: 4px;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #666666;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
   content: "";
   position: absolute;
-  border-top: 1px solid #fff;
-  inset: 5px 3px;
-  filter: blur(5px);
-}
-.container label input:checked ~ span {
-  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.35),
-    inset 0 5px 5px rgba(0, 0, 0, 0.5), inset 0 15px 25px rgba(0, 0, 0, 0.35);
-}
-label p {
-  position: relative;
-  z-index: 10;
-  font-size: 3rem;
-  color: #111;
-}
-.container label input:checked ~ p {
-  color: #fff;
-  text-shadow: 0 0 5px #219cf3, 0 0 8px #219cf3;
+  display: none;
 }
 
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 0.4rem;
+  top: 0.2rem;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
 </style>
-    

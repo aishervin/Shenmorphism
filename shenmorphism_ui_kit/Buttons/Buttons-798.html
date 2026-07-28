@@ -1,63 +1,93 @@
-<button class="button">
-  <svg class="svg-icon" fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m9.99998 4.16667c1.38072 0 2.50002 1.11929 2.50002 2.5 0 .85577-.4293 1.6115-1.088 2.06341l-.4536.31125.1079.53934 1.2505 6.25263h-4.63366l1.25051-6.25263.10791-.53934-.45358-.31125c-.65876-.45191-1.088-1.20764-1.088-2.06341 0-1.38071 1.11925-2.5 2.5-2.5zm-2.31684 11.66663-.19934.9968-.81715-.1634v-.8334zm5.65016.8334v-.8334h-1.0165l.1993.9968zm.8172-.1634.1993.9967h-1.0165-6.66665-1.0165l.19935-.9967 1.35023-6.75127c.14013.12727.28892.24506.44536.35237l.47144-.68715-.81716-.16342-.09964.4982c-.83832-.76139-1.36642-1.86163-1.36642-3.08536 0-2.30119 1.86549-4.16667 4.16667-4.16667 2.30112 0 4.16662 1.86548 4.16662 4.16667 0 1.22374-.5281 2.32399-1.3664 3.08538l-.0996-.49822-.8172.16342-.4714-.68717.4714.68717-.8171.16342.8171-.16342.4715.68715c.1564-.1073.3052-.22509.4453-.35235z" fill="#fff" fill-rule="evenodd"></path></svg>
-  <span class="lable">Key</span>
+<button>
+  <svg class="empty" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill="none" d="M0 0H24V24H0z"></path><path d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2zm-3.566 15.604c.881-.556 1.676-1.109 2.42-1.701C18.335 14.533 20 11.943 20 9c0-2.36-1.537-4-3.5-4-1.076 0-2.24.57-3.086 1.414L12 7.828l-1.414-1.414C9.74 5.57 8.576 5 7.5 5 5.56 5 4 6.656 4 9c0 2.944 1.666 5.533 4.645 7.903.745.592 1.54 1.145 2.421 1.7.299.189.595.37.934.572.339-.202.635-.383.934-.571z"></path></svg>
+  <svg class="filled" height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H24V24H0z" fill="none"></path><path d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z"></path></svg>
+  Like
 </button>
 <style>
-/* From SHΞN™ Morphism by andrew-demchenk0 - Tags: animation, purple, button, opacity, key , small */
-.button {
+/* From SHΞN™ Morphism by LilaRest  - Tags: neumorphism, skeuomorphism, social, button, like, heart, realistic, favorite */
+button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6px 12px;
-  gap: 8px;
-  height: 32px;
-  width: 82px;
-  border: none;
-  background: #a549dacb;
-  border-radius: 20px;
-  cursor: pointer;
+  padding: 20px 25px 20px 22px;
+  box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-color: #e8e8e8;
+  border-color: #ffe2e2;
+  border-style: solid;
+  border-width: 9px;
+  border-radius: 35px;
+  font-size: 25px;
+  font-weight: 900;
+  color: rgb(134, 124, 124);
+  font-family: monospace;
+  transition: transform 400ms cubic-bezier(.68,-0.55,.27,2.5), 
+  border-color 400ms ease-in-out,
+  background-color 400ms ease-in-out;
+  word-spacing: -2px;
 }
 
-.lable {
-  line-height: 20px;
-  font-size: 17px;
-  color: #fff;
-  font-family: sans-serif;
-  letter-spacing: 1px;
-}
-
-.svg-icon {
-  width: 20px;
-  height: 20px;
-}
-
-.button:hover {
-  background: #A649DA;
-}
-
-.button:hover .svg-icon {
-  animation: rot 0.5s linear infinite;
-}
-
-@keyframes rot {
+@keyframes movingBorders {
   0% {
-    transform: rotate(0deg);
-  }
-
-  25% {
-    transform: rotate(-6deg);
+    border-color: #fce4e4;
   }
 
   50% {
-    transform: rotate(0deg);
+    border-color: #ffd8d8;
   }
 
-  75% {
-    transform: rotate(6deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
+  90% {
+    border-color: #fce4e4;
   }
 }
+
+button:hover {
+  background-color: #eee;
+  transform: scale(105%);
+  animation: movingBorders 3s infinite;
+}
+
+button svg {
+  margin-right: 11px;
+  fill: rgb(255, 110, 110);
+  transition: opacity 100ms ease-in-out;
+}
+
+.filled {
+  position: absolute;
+  opacity: 0;
+  top: 20px;
+  left: 22px;
+}
+
+@keyframes beatingHeart {
+  0% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.15);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.15);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+button:hover .empty {
+  opacity: 0;
+}
+
+button:hover .filled {
+  opacity: 1;
+  animation: beatingHeart 1.2s infinite;
+}
 </style>
+    

@@ -1,17 +1,31 @@
-<!-- From SHΞN™ Morphism by Shubh0408  - Tags: button, toggle, click effect, toggle switch, tailwindbutton -->
-<label
-  class="w-16 h-8 bg-black shadow-inner rounded-full flex justify-around items-center overflow-hidden outline outline-2 outline-offset-2"
->
-  <input class="peer hidden" type="checkbox" />
-  <div
-    class="w-6 h-6 flex justify-center items-center text-white bg-black border-[2px] duration-500 rounded-full peer-checked:translate-y-8"
-  ></div>
-  <div
-    class="w-6 h-6 flex justify-center items-center text-white duration-500 rounded-full -translate-y-8 peer-checked:translate-y-0 rotate-90"
-  >
-    𝝞
-  </div>
-</label>
+<button> Button
+</button>
+<style>
+/* From SHΞN™ Morphism by cssbuttons-io - Tags: green, button, hover, active */
+button {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
 
+button:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
 
-    
+button:active {
+  transform: translateY(-1px);
+}
+</style>

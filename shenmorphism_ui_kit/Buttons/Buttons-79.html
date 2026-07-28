@@ -1,103 +1,56 @@
-<div class="btn btn--huge">
-  <div class="btn--huge__text">
-    <div>
-      Explore More
-      <span>Explore More</span>
-    </div>
-  </div>
-</div>
+<button class="button">
+  Click here ..
+</button>
 <style>
-/* From SHΞN™ Morphism by z1789976172 - Source: https://www.respawn.com/ - Tags: button, animal, hover button */
-:after,:before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.btn--huge {
-  cursor: pointer;
+/* From SHΞN™ Morphism by rrr63 - Tags: button, hover, scale */
+.button {
+  padding: 10px 35px;
+  background-color: #EBF5EE;
+  font-weight: bolder;
+  border: 0px;
   position: relative;
-  height: 45px;
-  background-color: #ff4e33;
-  text-transform: uppercase;
-  display: inline-block;
-  color: fff;
-  font-family: Arial;
-  font-weight: 800;
-  font-size: 12px;
-  letter-spacing: 1px;
-  padding: 0 20px 0 50px;
-  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 5px;
+  transition: all .2s ease-in-out .1s;
 }
 
-.btn--huge:before {
-  -webkit-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  transition: all 0.5s cubic-bezier(0.785, 0.15 , 0.15, 0.86);
+.button:hover {
+  background-color: #EBF5EE;
+  transform: scale(1.2) rotate(5deg);
+}
+
+.button:before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 30px;
-  height: 100%;
-  background-color: #D6D4D3;
+  background-color: #78A1BB;
+  height: 180%;
+  top: -30%;
+  left: -40%;
+  transform: rotateZ(20deg);
+  width: 40px;
+  transition: left .2s ease-in-out, left 0s;
 }
 
-.btn--huge:after {
-  -webkit-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  transition: all 0.5s cubic-bezier(0.785, 0.15 , 0.15, 0.86);
-  content: '→';
-  font-size: 14px;
-  line-height: 1;
-  color: #D6D4D3;
+.button:after {
+  content: '';
   position: absolute;
-  left: 20px;
-  top: 50%;
-  width: 22px;
-  height: 22px;
-  margin-top: -11px;
-  background: #FF4E33;
-  z-index: 2;
-  border-radius: 50%;
-  border: 1px solid #D6D4D3;
+  background-color: #283044;
+  height: 180%;
+  top: -30%;
+  left: -40%;
+  transform: translateX(-40px) rotateZ(20deg);
+  width: 40px;
+  transition: left .2s ease-in-out, left 0s;
 }
 
-.btn--huge__text {
-  position: relative;
-  top: -1px;
-  -webkit-transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  height: 100%;
-  display: flex;
-  align-items: center;
+.button:hover:after {
+  left: 150%;
+  transition: left .3s ease-in-out;
 }
 
-.btn--huge__text div {
-  position: relative;
-  color: #fff;
-}
-
-.btn--huge__text span {
-  -webkit-transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  top: 0;
-  left: 0;
-  color: #000;
-  width: 0;
-}
-
-.btn--huge:hover:after {
-  -webkit-transform: translateX(-30px);
-  transform: translateX(-30px);
-}
-
-.btn--huge:hover:before {
-  width: 0;
-}
-
-.btn--huge:hover .btn--huge__text span {
-  width: 100%;
+.button:hover:before {
+  left: 150%;
+  transition: left .3s ease-in-out;
 }
 </style>

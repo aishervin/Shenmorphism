@@ -1,221 +1,63 @@
-<a href="/" class="brutalist-button">
-  <div class="content-wrapper">
-    <div class="claude-logo">
-      <span class="starburst">✷</span>
-    </div>
-    <div class="button-text">
-      <span>Powered By</span>
-      <span>Claude 3.5</span>
-    </div>
-  </div>
-</a>
-
+<button class="Btn">
+ <span class="svgContainer">
+   <svg fill="white" class="svgIcon" viewBox="0 0 448 512" height="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+ </span>
+ <span class="BG"></span>
+</button>
 <style>
-/* From SHΞN™ Morphism by 0xnihilism  - Tags: button, microsoft, animated, brutalism, brutalist, glare effect */
-.brutalist-button {
+/* From SHΞN™ Morphism by vinodjangid07 - Tags: instagram, gradient, button, social media */
+.Btn {
+  width: 45px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #e3d19c;
-  border: 3px solid #000000;
-  border-radius: 8px;
-  padding: 20px;
-  text-decoration: none;
-  color: #000000;
-  font-weight: bold;
+  border: none;
+  background-color: transparent;
   position: relative;
-  box-shadow: 4px 4px 0px #000000;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  width: 166px;
-  height: 150px;
+  /* overflow: hidden; */
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all .3s;
 }
 
-.brutalist-button:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px #000000;
-}
-
-.brutalist-button:active {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px #000000;
-}
-
-.content-wrapper {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-delay: 0.8s;
-}
-
-.claude-logo {
+.svgContainer {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: #eb6c22;
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
-    margin-bottom 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-delay: 0.8s;
-  transform: rotate(0deg) scale(1);
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+  transition: all .3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
 }
 
-.starburst {
-  font-size: 48px;
-  color: #ffffff;
-  line-height: 1;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-delay: 0.8s;
-}
-
-.button-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1.2;
-  text-align: center;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-delay: 0.8s;
-}
-
-.button-text span:first-child {
-  font-size: 14px;
-  font-weight: normal;
-}
-
-.button-text span:last-child {
-  font-size: 18px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.brutalist-button:hover .content-wrapper {
-  transform: translateY(-10px);
-}
-
-@keyframes slow-spin {
-  from {
-    transform: rotate(0deg) scale(0.8);
-  }
-  to {
-    transform: rotate(360deg) scale(0.8);
-  }
-}
-
-.brutalist-button:hover .claude-logo {
-  animation: slow-spin 12s linear infinite;
-  margin-bottom: 5px;
-}
-
-.brutalist-button:not(:hover) .claude-logo {
-  transform: rotate(0deg) scale(1);
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
-    margin-bottom 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
-  margin-bottom: 0;
-}
-
-.brutalist-button:hover .starburst {
-  font-size: 38px;
-}
-
-.brutalist-button:hover .button-text {
-  opacity: 1;
-  max-height: 50px;
-  margin-top: 2px;
-}
-
-.brutalist-button:not(:hover) .content-wrapper,
-.brutalist-button:not(:hover) .starburst,
-.brutalist-button:not(:hover) .button-text {
-  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-delay: 0s;
-}
-
-.brutalist-button::before,
-.brutalist-button::after {
-  content: "";
+.BG {
   position: absolute;
-  top: 50%;
-  width: 20px;
-  height: 20px;
-  background-color: rgba(200, 183, 128, 0.7);
-  border-radius: 50%;
-  transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
-  opacity: 0;
-  z-index: 1;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  z-index: -1;
+  border-radius: 9px;
+  pointer-events: none;
+  transition: all .3s;
 }
 
-.brutalist-button::before {
-  left: -20px;
-  transform: translate(-50%, -50%);
+.Btn:hover .BG {
+  transform: rotate(35deg);
+  transform-origin: bottom;
 }
 
-.brutalist-button::after {
-  right: -20px;
-  transform: translate(50%, -50%);
-}
-
-.brutalist-button:hover::before {
-  animation: criss-cross-left 0.8s both;
-  animation-direction: alternate;
-  opacity: 1;
-}
-
-.brutalist-button:hover::after {
-  animation: criss-cross-right 0.8s both;
-  animation-direction: alternate;
-  opacity: 1;
-}
-
-@keyframes criss-cross-left {
-  0% {
-    left: -20px;
-  }
-  50% {
-    left: 50%;
-    width: 20px;
-    height: 20px;
-  }
-  100% {
-    left: 50%;
-    width: 375px;
-    height: 375px;
-  }
-}
-
-@keyframes criss-cross-right {
-  0% {
-    right: -20px;
-  }
-  50% {
-    right: 50%;
-    width: 20px;
-    height: 20px;
-  }
-  100% {
-    right: 50%;
-    width: 375px;
-    height: 375px;
-  }
-}
-
-.brutalist-button:hover .button-text {
-  color: #ffffff;
-}
-
-.brutalist-button:hover .button-text span:last-child {
-  color: #4e432d;
+.Btn:hover .svgContainer {
+  background-color: rgba(156, 156, 156, 0.466);
 }
 
 </style>
-    

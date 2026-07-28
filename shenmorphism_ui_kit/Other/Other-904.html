@@ -1,160 +1,111 @@
 <div class="loader">
-  <div class="circle">
-    <div class="dot"></div>
-    <div class="outline"></div>
-  </div>
-  <div class="circle">
-    <div class="dot"></div>
-    <div class="outline"></div>
-  </div>
-  <div class="circle">
-    <div class="dot"></div>
-    <div class="outline"></div>
-  </div>
-  <div class="circle">
-    <div class="dot"></div>
-    <div class="outline"></div>
-  </div>
+  <div class="cell d-0"></div>
+  <div class="cell d-1"></div>
+  <div class="cell d-2"></div>
+
+  <div class="cell d-1"></div>
+  <div class="cell d-2"></div>
+  
+  
+  <div class="cell d-2"></div>
+  <div class="cell d-3"></div>
+  
+  
+  <div class="cell d-3"></div>
+  <div class="cell d-4"></div>
+  
+  
 </div>
 <style>
-/* From SHΞN™ Morphism by Li-Deheng - Tags: animation, loader, dots, animated, pulse, infinite, waves, dot loader */
+/* From SHΞN™ Morphism by alexruix - Tags: loader */
 .loader {
+  --cell-size: 52px;
+  --cell-spacing: 1px;
+  --cells: 3;
+  --total-size: calc(var(--cells) * (var(--cell-size) + 2 * var(--cell-spacing)));
   display: flex;
-  justify-content: center;
-  align-items: center;
-  --color: hsl(0, 0%, 87%);
-  --animation: 2s ease-in-out infinite;
+  flex-wrap: wrap;
+  width: var(--total-size);
+  height: var(--total-size);
 }
 
-.loader .circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 20px;
-  height: 20px;
-  border: solid 2px var(--color);
-  border-radius: 50%;
-  margin: 0 10px;
+.cell {
+  flex: 0 0 var(--cell-size);
+  margin: var(--cell-spacing);
   background-color: transparent;
-  animation: circle-keys var(--animation);
+  box-sizing: border-box;
+  border-radius: 4px;
+  animation: 1.5s ripple ease infinite;
 }
 
-.loader .circle .dot {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: var(--color);
-  animation: dot-keys var(--animation);
+.cell.d-1 {
+  animation-delay: 100ms;
 }
 
-.loader .circle .outline {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  animation: outline-keys var(--animation);
+.cell.d-2 {
+  animation-delay: 200ms;
 }
 
-.circle:nth-child(2) {
-  animation-delay: 0.3s;
+.cell.d-3 {
+  animation-delay: 300ms;
 }
 
-.circle:nth-child(3) {
-  animation-delay: 0.6s;
+.cell.d-4 {
+  animation-delay: 400ms;
 }
 
-.circle:nth-child(4) {
-  animation-delay: 0.9s;
+.cell:nth-child(1) {
+  --cell-color: #00FF87;
 }
 
-.circle:nth-child(5) {
-  animation-delay: 1.2s;
+.cell:nth-child(2) {
+  --cell-color: #0CFD95;
 }
 
-.circle:nth-child(2) .dot {
-  animation-delay: 0.3s;
+.cell:nth-child(3) {
+  --cell-color: #17FBA2;
 }
 
-.circle:nth-child(3) .dot {
-  animation-delay: 0.6s;
+.cell:nth-child(4) {
+  --cell-color: #23F9B2;
 }
 
-.circle:nth-child(4) .dot {
-  animation-delay: 0.9s;
+.cell:nth-child(5) {
+  --cell-color: #30F7C3;
 }
 
-.circle:nth-child(5) .dot {
-  animation-delay: 1.2s;
+.cell:nth-child(6) {
+  --cell-color: #3DF5D4;
 }
 
-.circle:nth-child(1) .outline {
-  animation-delay: 0.9s;
+.cell:nth-child(7) {
+  --cell-color: #45F4DE;
 }
 
-.circle:nth-child(2) .outline {
-  animation-delay: 1.2s;
+.cell:nth-child(8) {
+  --cell-color: #53F1F0;
 }
 
-.circle:nth-child(3) .outline {
-  animation-delay: 1.5s;
+.cell:nth-child(9) {
+  --cell-color: #60EFFF;
 }
 
-.circle:nth-child(4) .outline {
-  animation-delay: 1.8s;
-}
-
-.circle:nth-child(5) .outline {
-  animation-delay: 2.1s;
-}
-
-@keyframes circle-keys {
+/*Animation*/
+@keyframes ripple {
   0% {
-    transform: scale(1);
-    opacity: 1;
+    background-color: transparent;
   }
 
-  50% {
-    transform: scale(1.5);
-    opacity: 0.5;
+  30% {
+    background-color: var(--cell-color);
+  }
+
+  60% {
+    background-color: transparent;
   }
 
   100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes dot-keys {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(0);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes outline-keys {
-  0% {
-    transform: scale(0);
-    outline: solid 20px var(--color);
-    outline-offset: 0;
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1);
-    outline: solid 0 transparent;
-    outline-offset: 20px;
-    opacity: 0;
+    background-color: transparent;
   }
 }
 </style>

@@ -1,84 +1,61 @@
-<div class="spinner">
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
+<div class="loader">
+  <div class="shape">
+    <div class="numRowContainer">
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+    </div>
+  </div>
 </div>
+
 <style>
-/* From SHΞN™ Morphism by AqFox - Tags: loader */
-.spinner {
- position: relative;
- width: 56px;
- height: 56px;
- animation: spinner-3a5251 1.25s infinite linear;
+/* From SHΞN™ Morphism by Subaashbala  - Tags: animation, minimalist, loader, rotate, loading animation */
+.shape {
+  --BG-COLOR: #59d5e0;
+  --OUTLINE-COLOR: #068b97;
+  --OUTLINE-SIZE: 15px;
+  width: 7rem;
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  outline: var(--OUTLINE-SIZE) solid var(--OUTLINE-COLOR);
+  background: var(--BG-COLOR);
+  box-shadow: 0px 0px calc(var(--OUTLINE-SIZE) + 25px) rgba(0, 0, 0, 0.438);
+  animation: morph 2.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+.numRowContainer {
+  height: fit-content;
+  animation: infiniteScroll 2.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+@keyframes infiniteScroll {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(0, -50%);
+  }
+}
+@keyframes morph {
+  50% {
+    --BG-COLOR: PINK;
+    --OUTLINE-COLOR: #ff407d;
+    transform: rotate(150deg);
+    border-radius: 20%;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.spinner div {
- position: absolute;
- top: 50%;
- left: 50%;
- width: 0;
- height: 0;
- border-left: 3.6px solid transparent;
- border-right: 3.6px solid transparent;
- border-bottom: 10.8px solid #004dff;
- transform-origin: center 10.8px;
-}
-
-.spinner div:before,
-.spinner div:after {
- content: '';
- position: absolute;
- width: 0;
- height: 0;
- display: block;
- border-left: 10.8px solid transparent;
- border-right: 10.8px solid transparent;
- border-bottom: 7.2px solid #004dff;
-}
-
-.spinner div:before {
- transform: translate(-10.8px, 7.2px) rotate(35deg);
-}
-
-.spinner div:after {
- transform: translate(-10.8px, 7.2px) rotate(-35deg);
-}
-
-.spinner div:nth-child(1) {
- transform: translate(-50%, -10.8px) rotate(51.42857deg) translate(0, 320%);
-}
-
-.spinner div:nth-child(2) {
- transform: translate(-50%, -10.8px) rotate(102.85714deg) translate(0, 320%);
-}
-
-.spinner div:nth-child(3) {
- transform: translate(-50%, -10.8px) rotate(154.28571deg) translate(0, 320%);
-}
-
-.spinner div:nth-child(4) {
- transform: translate(-50%, -10.8px) rotate(205.71429deg) translate(0, 320%);
-}
-
-.spinner div:nth-child(5) {
- transform: translate(-50%, -10.8px) rotate(257.14286deg) translate(0, 320%);
-}
-
-.spinner div:nth-child(6) {
- transform: translate(-50%, -10.8px) rotate(308.57143deg) translate(0, 320%);
-}
-
-.spinner div:nth-child(7) {
- transform: translate(-50%, -10.8px) rotate(360deg) translate(0, 320%);
-}
-
-@keyframes spinner-3a5251 {
- to {
-  transform: rotate(360deg);
- }
-}
 </style>
+    

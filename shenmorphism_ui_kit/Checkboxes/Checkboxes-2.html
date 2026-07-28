@@ -1,77 +1,56 @@
-<!-- From SHΞN™ Morphism by Manish-Tamang  - Tags: checkbox, tailwind, tailwindcss -->
-<fieldset>
-  <legend class="sr-only">Checkboxes</legend>
+<label class="container">
+  <input checked="checked" type="checkbox">
+  <div class="checkmark"></div>
+</label>
+<style>
+/* From SHΞN™ Morphism by andrew-demchenk0 - Tags: blue, checkbox, transition, checkmark, box-shadow */
+.container {
+  --input-focus: #2d8cf0;
+  --input-out-of-focus: #ccc;
+  --bg-color: #fff;
+  --bg-color-alt: #666;
+  --main-color: #323232;
+  position: relative;
+  cursor: pointer;
+}
 
-  <div class="space-y-2">
-    <label
-      class="flex cursor-pointer items-start gap-4 rounded-lg border border-gray-200 p-4 transition hover:bg-gray-50 has-[:checked]:bg-blue-50"
-      for="Option1"
-    >
-      <div class="flex items-center">
-        ​
-        <input
-          id="Option1"
-          class="size-4 rounded border-gray-300"
-          type="checkbox"
-        />
-      </div>
+.container input {
+  position: absolute;
+  opacity: 0;
+}
 
-      <div>
-        <strong class="font-medium text-gray-900"> Manish Tamang</strong>
+.checkmark {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  box-shadow: 4px 4px var(--main-color);
+  background-color: var(--input-out-of-focus);
+  transition: all 0.3s;
+}
 
-        <p class="mt-1 text-pretty text-sm text-gray-700">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
-      </div>
-    </label>
+.container input:checked ~ .checkmark {
+  background-color: var(--input-focus);
+}
 
-    <label
-      class="flex cursor-pointer items-start gap-4 rounded-lg border border-gray-200 p-4 transition hover:bg-gray-50 has-[:checked]:bg-blue-50"
-      for="Option2"
-    >
-      <div class="flex items-center">
-        ​
-        <input
-          id="Option2"
-          class="size-4 rounded border-gray-300"
-          type="checkbox"
-        />
-      </div>
+.checkmark:after {
+  content: "";
+  width: 7px;
+  height: 15px;
+  position: absolute;
+  top: 2px;
+  left: 8px;
+  display: none;
+  border: solid var(--bg-color);
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
 
-      <div>
-        <strong class="font-medium text-gray-900"> Sajak Dhital </strong>
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
 
-        <p class="mt-1 text-pretty text-sm text-gray-700">
-          Lorem ipsum dolor sit amet consectetur.
-        </p>
-      </div>
-    </label>
-
-    <label
-      class="flex cursor-pointer items-start gap-4 rounded-lg border border-gray-200 p-4 transition hover:bg-gray-50 has-[:checked]:bg-blue-50"
-      for="Option3"
-    >
-      <div class="flex items-center">
-        ​
-        <input
-          id="Option3"
-          class="size-4 rounded border-gray-300"
-          type="checkbox"
-        />
-      </div>
-
-      <div>
-        <strong class="text-pretty font-medium text-gray-900">
-          Nishan Basnet</strong
-        >
-
-        <p class="mt-1 text-pretty text-sm text-gray-700">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
-      </div>
-    </label>
-  </div>
-</fieldset>
-
-
-    
+</style>

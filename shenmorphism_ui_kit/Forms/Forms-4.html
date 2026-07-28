@@ -1,72 +1,93 @@
-<!-- From SHΞN™ Morphism by themrsami - Tags: form, tailwind, tailwindcss, themrsami, shipping form, light version -->
-<div class="mt-4 flex flex-col bg-gray-100 rounded-lg p-4 shadow-sm">
-  <h2 class="text-black font-bold text-lg">Shipping Label Address Form</h2>
-
-  <div class="mt-4">
-    <label class="text-black" for="name">Name</label>
-    <input placeholder="Your name" class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1" type="text">
+<div class="card">
+  <div class="card-header">
+    <div class="text-header">Register</div>
   </div>
-
-  <div class="mt-4">
-    <label class="text-black" for="address">Address</label>
-    <textarea placeholder="Your address" class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1" id="address"></textarea>
-  </div>
-
-  <div class="mt-4 flex flex-row space-x-2">
-    <div class="flex-1">
-      <label class="text-black" for="city">City</label>
-      <input placeholder="Your city" class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1" id="city" type="text">
-    </div>
-
-    <div class="flex-1">
-      <label class="text-black" for="state">State</label>
-      <input placeholder="Your state" class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1" id="state" type="text">
-    </div>
-  </div>
-
-  <div class="mt-4 flex flex-row space-x-2">
-    <div class="flex-1">
-      <label class="text-black" for="zip">ZIP</label>
-      <input placeholder="Your ZIP code" class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1" id="zip" type="text">
-    </div>
-
-    <div class="flex-1">
-      <label class="text-black" for="country">Country</label>
-      <select class="w-full bg-white rounded-md border-gray-300 text-black px-2 py-1" id="country">
-        <option value="">Select a country</option>
-
-        <optgroup label="Africa">
-          <option value="AF">Afghanistan</option>
-          <option value="DZ">Algeria</option>
-          <option value="AO">Angola</option>
-          ...
-          <option value="ZW">Zimbabwe</option>
-        </optgroup>
-
-        <optgroup label="Asia">
-          <option value="AM">Armenia</option>
-          <option value="AZ">Azerbaijan</option>
-          <option value="BH">Bahrain</option>
-          ...
-          <option value="YE">Yemen</option>
-        </optgroup>
-
-        <optgroup label="South America">
-          <option value="AR">Argentina</option>
-          <option value="BO">Bolivia</option>
-          <option value="BR">Brazil</option>
-          ...
-          <option value="VE">Venezuela</option>
-        </optgroup>
-
-        ...
-      </select>
-    </div>
-  </div>
-
-  <div class="mt-4 flex justify-end">
-    <button class="bg-white text-black rounded-md px-4 py-1 hover:bg-gray-200 hover:text-gray-900" type="submit">Submit</button>
+  <div class="card-body">
+    <form action="#">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input required="" class="form-control" name="username" id="username" type="text">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input required="" class="form-control" name="email" id="email" type="email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input required="" class="form-control" name="password" id="password" type="password">
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password:</label>
+        <input required="" class="form-control" name="confirm-password" id="confirm-password" type="password">
+      </div>
+     <input type="submit" class="btn" value="submit">    </form>
   </div>
 </div>
 
+<style>
+/* From SHΞN™ Morphism by ahmed150up - Tags: form */
+.card {
+  width: 350px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin: 10px;
+}
 
+.card-header {
+  background-color: #333;
+  padding: 16px;
+  text-align: center;
+}
+
+.card-header .text-header {
+  margin: 0;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 1px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  padding: 12px 24px;
+  margin-left: 13px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer
+}
+
+.btn:hover {
+  background-color: #ccc;
+  color: #333;
+}
+</style>

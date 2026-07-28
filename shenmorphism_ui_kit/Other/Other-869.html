@@ -1,32 +1,35 @@
-<div class="loader"></div>
+<svg height="0" width="0">
+    <defs>
+        <filter color-interpolation-filters="sRGB" height="200%" y="-50%" width="200%" x="-50%" id="goo">
+            <feGaussianBlur result="blur" stdDeviation="8" in="SourceGraphic"></feGaussianBlur>
+            <feColorMatrix result="cm" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" mode="matrix" in="blur"></feColorMatrix>
+        </filter>
+    </defs>
+</svg>
+
+<svg height="180" width="320" viewBox="0 0 320 180">
+    <g filter="url(#goo)">
+        <circle cy="90" cx="160" r="24" fill="#275EFE" class="circle"></circle>
+        <circle cy="90" cx="160" r="24" fill="#275EFE" class="circle right"></circle>
+    </g>
+</svg>
 <style>
-/* From SHΞN™ Morphism by doniaskima - Tags: simple, material design, loader */
-/* HTML: <div class="loader"></div> */
-.loader {
-  width: 80px;
-  height: 70px;
-  border: 5px solid #000;
-  padding: 0 8px;
-  box-sizing: border-box;
-  background: linear-gradient(#fff 0 0) 0    0/8px 20px,
-    linear-gradient(#fff 0 0) 100% 0/8px 20px,
-    radial-gradient(farthest-side,#fff 90%,#0000) 0 5px/8px 8px content-box,
-    #000;
-  background-repeat: no-repeat;
-  animation: l3 2s infinite linear;
+/* From SHΞN™ Morphism by Nawsome - Tags: loader */
+.circle {
+  animation: move571 4s linear infinite;
 }
 
-@keyframes l3 {
-  25% {
-    background-position: 0 0   ,100% 100%,100% calc(100% - 5px)
-  }
+.circle.right {
+  animation-direction: reverse;
+}
 
-  50% {
-    background-position: 0 100%,100% 100%,0    calc(100% - 5px)
+@keyframes move571 {
+  25% {
+    transform: translateX(-32px);
   }
 
   75% {
-    background-position: 0 100%,100%    0,100% 5px
+    transform: translateX(32px);
   }
 }
 </style>

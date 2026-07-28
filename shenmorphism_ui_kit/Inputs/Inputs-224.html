@@ -1,61 +1,69 @@
-<div class="containerInput">
-    <input placeholder="Type for validate" type="text">
+<div class="input-box">
+  <label class="input-label">Email</label>
+  <input placeholder="user@mail.com" class="input" name="email" type="email">
+  <span class="input-helper">enter a valid email</span>
 </div>
 <style>
-/* From SHΞN™ Morphism by marcos700x - Tags: input */
-.containerInput {
-  background-color: #000;
+/* From SHΞN™ Morphism by rricol - Tags: email, input */
+.input {
   position: relative;
-  overflow: hidden;
-  margin: 0;
-  padding: 0 0 4px 0;
-  z-index: 1;
-  font-size: 15px;
-}
-
-.containerInput::before {
-  content: '';
-  width: 110%;
-  aspect-ratio: 1;
-  position: absolute;
-  inset: 0 0 0 0;
-  margin: auto;
-  animation: rotate6234 2.5s ease-in-out infinite;
-  z-index: -1;
-  background-image: conic-gradient(from 0deg at 50% 50%, #073AFF00 0%, #FF0000FF 25%, #073AFF00 25%);
-}
-
-.containerInput > input {
-  width: 210px;
-  height: 50px;
-  font-size: inherit;
-  color: #fff;
+  max-width: 190px;
   border: none;
-  padding: 12px;
-  background-color: #0a0a0a;
-  outline: 5px solid #0a0a0a;
+  box-shadow: 0px 1.5px 0px 0px #858585;
+  padding: .5rem;
+  transition: all 200ms ease-in-out;
+  opacity: .8;
 }
 
-.containerInput > input:focus {
+.input-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  font-size: .625rem;
+  font-weight: bold;
+  color: #858585;
+  margin-bottom: 4px;
+  margin-left: 1px;
+}
+
+.input-helper {
+  color: #858585;
+  font-size: .5rem;
+  margin-top: 6px;
+  margin-left: 1px;
+  visibility: hidden;
+  transform: translateY(-.5rem);
+  transition: all 100ms linear;
+  z-index: -1;
+}
+
+.input::placeholder {
+  color: rgb(145, 145, 145);
+  font-size: .75rem;
+}
+
+.input::after {
+  content: attr(placeholder);
+  position: absolute;
+  color: #161616;
+  top: 0;
+  left: 0;
+}
+
+.input:focus {
+  border: none;
+  box-shadow: 0px 1.5px 0px 0px #72E985;
   outline: none;
 }
 
-.containerInput > input:not(:placeholder-shown) {
-  outline: none;
+.input:focus + .input-helper {
+  visibility: visible;
+  transform: translateY(0rem);
 }
 
-.containerInput > input:not(:placeholder-shown):valid {
-  outline: 4px solid rgb(0, 255, 183);
-  border-radius: 0;
-}
-
-@keyframes rotate6234 {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.input:focus::placeholder {
+  visibility: hidden;
 }
 </style>

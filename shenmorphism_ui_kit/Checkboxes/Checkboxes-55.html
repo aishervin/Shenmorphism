@@ -1,125 +1,106 @@
-<div class="container">
-      <label>
-        <input class="play-btn" type="checkbox">
-        <div class="play-icon"></div>
-        <div class="pause-icon"></div>
-      </label>
-    </div>
+<label class="container">
+  <input type="checkbox" checked="checked">
+  <div class="checkmark"></div>
+</label>
 <style>
-/* From SHΞN™ Morphism by csemszepp - Source: https://codepen.io/RitikaAgrawal08/pen/eYGXQLz - Tags: checkbox, play, music player */
-.container {
-  width: 120px;
-  height: 120px;
-  position: relative;
-  border-radius: 50%;
-}
-
-.play-btn {
+/* From SHΞN™ Morphism by sujeet-12 - Tags: checkbox, fun-check, circle-checkbox */
+/* Hide the default checkbox */
+.container input {
   position: absolute;
-  appearance: none;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: conic-gradient(#ff6347, #ff6347);
+  opacity: 0;
   cursor: pointer;
-  outline: none;
-}
-
-.play-btn::before {
-  content: "";
-  position: absolute;
-  width: 93%;
-  height: 93%;
-  background-color: #000;
-  border-radius: 50%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.play-btn:checked {
-  animation: borderAnimate 700ms ease-in-out 1;
-  animation-fill-mode: forwards;
-}
-
-@keyframes borderAnimate {
-  0% {
-    transform: rotate(0);
-    background: conic-gradient(#ff6347, transparent 20%);
-  }
-
-  80% {
-    background: conic-gradient(#ff6347, transparent 90%);
-  }
-
-  100% {
-    transform: rotate(360deg);
-    background: conic-gradient(#ff6347, #ff6347);
-  }
-}
-
-.play-icon {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  left: 60%;
-  top: 50%;
-  background-color: #ff6347;
-  transform: translate(-60%, -50%) rotate(90deg);
-  clip-path: polygon(50% 15%, 0% 100%, 100% 100%);
-  transition: all 400ms ease-in-out;
-  cursor: pointer;
-}
-
-.play-btn:checked + .play-icon {
-  clip-path: polygon(0 100%, 0% 100%, 100% 100%);
-}
-
-.pause-icon {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-}
-
-.pause-icon::before {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 100%;
-  background-color: #ff6347;
-  left: 0;
-}
-
-.pause-icon::after {
-  content: "";
-  position: absolute;
+  height: 0;
   width: 0;
-  height: 100%;
-  background-color: #ff6347;
-  right: 0;
 }
 
-.play-btn:checked ~ .pause-icon::before {
-  animation: reveal 300ms ease-in-out 350ms 1;
-  animation-fill-mode: forwards;
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+  animation: jello-horizontal 0.9s both;
 }
 
-.play-btn:checked ~ .pause-icon::after {
-  animation: reveal 300ms ease-in-out 600ms 1;
-  animation-fill-mode: forwards;
+.checkmark:hover {
+  animation: jello-horizontal 0.9s both;
 }
 
-@keyframes reveal {
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  border-radius: 50%;
+  background-color: #eee;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: royalblue;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 0.45em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+
+@keyframes jello-horizontal {
   0% {
-    width: 0;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
   }
 
   100% {
-    width: 35%;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
   }
 }
+
+
 </style>

@@ -1,112 +1,66 @@
 <div class="card">
-  <div class="container">
-    <div class="left">
-      <div class="status-ind"></div>
-    </div>
-    <div class="right">
-      <div class="text-wrap">
-        <p class="text-content">
-          <a class="text-link" href="#">Jane Doe</a> invited you to edit the
-          <a class="text-link" href="#">Web Design</a> file.
-        </p>
-        <p class="time">2 hours ago</p>
-      </div>
-      <div class="button-wrap">
-        <button class="primary-cta">View file</button>
-        <button class="secondary-cta">Mark as read</button>
-      </div>
-    </div>
-  </div>
+<div class="card__content"></div>
+<div class="blob"></div>
+<div class="blob"></div>
+<div class="blob"></div>
+<div class="blob"></div>
 </div>
-
 <style>
-/* From SHΞN™ Morphism by anniekoop  - Tags: simple, neumorphism, action, alert, minimalist, notification, card, light */
+/* From SHΞN™ Morphism by adamgiebl - Tags: gradient, card */
 .card {
-  width: fit-content;
-  background-color: #f2f3f7;
-  border-radius: 0.75em;
-  cursor: pointer;
-  transition: ease 0.2s;
-  box-shadow: 1em 1em 1em #d8dae0b1, -0.75em -0.75em 1em #ffffff;
-  border: 1.5px solid #f2f3f7;
+  position: relative;
+  width: 190px;
+  height: 254px;
+  background: lightgrey;
+  box-shadow: #d11bff42 0 15px 40px -5px;
+  z-index: 1;
+  border-radius: 21px;
+  overflow: hidden;
 }
 
-.card:hover {
-  background-color: #d3ddf1;
-  border: 1.5px solid #1677ff;
+.card__content {
+  background: linear-gradient(rgba(255, 255, 255, 0.473), rgba(150, 150, 150, 0.25));
+  z-index: 1;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 21px;
 }
 
-.container {
-  margin-top: 1.25em;
-  margin-bottom: 1.375em;
-  margin-left: 1.375em;
-  margin-right: 2em;
-  display: flex;
-  flex-direction: row;
-  gap: 0.75em;
+.card .blob {
+  position: absolute;
+  z-index: -1;
+  border-radius: 5em;
+  width: 200px;
+  height: 200px;
 }
 
-.status-ind {
-  width: 0.625em;
-  height: 0.625em;
-  background-color: #ff0000;
-  margin: 0.375em 0;
-  border-radius: 0.5em;
+.card .blob:nth-child(2) {
+  left: -50px;
+  top: -90px;
+  background: #ff930f;
 }
 
-.text-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25em;
-  color: #333;
+.card .blob:nth-child(3) {
+  left: 110px;
+  top: -20px;
+  z-index: -1;
+  background: #bf0fff;
 }
 
-.time {
-  font-size: 0.875em;
-  color: #777;
+.card .blob:nth-child(4) {
+  left: -40px;
+  top: 100px;
+  background: #ff1b6b;
 }
 
-.text-link {
-  font-weight: 500;
-  text-decoration: none;
-  color: black;
+.card .blob:nth-child(5) {
+  left: 100px;
+  top: 180px;
+  background: #0061ff;
 }
-
-.button-wrap {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
-  align-items: center;
-}
-
-.secondary-cta {
-  background-color: transparent;
-  border: none;
-  font-size: 15px;
-  font-weight: 400;
-  color: #666;
-  cursor: pointer;
-}
-
-.primary-cta {
-  font-size: 15px;
-  background-color: transparent;
-  font-weight: 600;
-  color: #1677ff;
-  border: none;
-  border-radius: 1.5em;
-  cursor: pointer;
-}
-
-button:hover {
-  text-decoration: underline;
-}
-
-.right {
-  display: flex;
-  flex-direction: column;
-  gap: 0.875em;
-}
-
 </style>
-    

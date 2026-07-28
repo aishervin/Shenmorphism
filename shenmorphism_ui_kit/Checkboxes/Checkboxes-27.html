@@ -1,55 +1,75 @@
-<!-- From SHΞN™ Morphism by Javierrocadev  - Tags: simple, icon, hover, checkbox, dark, light, light&dark, tailwind -->
-<input
-  type="checkbox"
-  id="react-option"
-  value=""
-  class="hidden peer"
-  required=""
-/>
-
-<label
-  for="react-option"
-  class="flex z-10 items-center peer relative justify-center w-14 h-14 shadow-lg duration-300 [box-shadow:1px_1px_0px_1px_#eab92d] border-2 border-gray-800 peer-checked:border-2 peer-checked:border-gray-800 rounded-lg cursor-pointer text-neutral-50 peer-checked:[box-shadow:1px_1px_0px_1px_#075985] peer-checked:hover:[box-shadow:1px_1px_0px_1px_#1e1e1e] hover:[box-shadow:1px_1px_0px_1px_#1e1e1e]"
->
+<label class="container">
+  <input checked="checked" type="checkbox">
+  <div class="checkmark"></div>
 </label>
-<svg
-  class="absolute stroke-sky-800 w-12 h-23 duration-300 peer-checked:opacity-100 opacity-0"
-  height="100"
-  preserveAspectRatio="xMidYMid meet"
-  viewBox="0 0 100 100"
-  width="100"
-  x="0"
-  xmlns="http://www.w3.org/2000/svg"
-  y="0"
->
-  <path
-    class="svg-stroke-primary"
-    d="M82.1,61.2a31.9,31.9,0,0,1-12.4,2.4A33.3,33.3,0,0,1,36.4,30.3a31.9,31.9,0,0,1,2.4-12.4A33.3,33.3,0,1,0,82.1,61.2Z"
-    fill="none"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="8"
-  ></path>
-</svg>
-<svg
-  class="absolute stroke-yellow-500 w-12 h-23 duration-300 peer-checked:opacity-0 opacity-100"
-  height="100"
-  preserveAspectRatio="xMidYMid meet"
-  viewBox="0 0 100 100"
-  width="100"
-  x="0"
-  xmlns="http://www.w3.org/2000/svg"
-  y="0"
->
-  <path
-    class="svg-stroke-primary"
-    d="M50,18v3.6m0,56.8V82M82,50H78.4M21.6,50H18M72.6,72.6l-2.5-2.5M29.9,29.9l-2.5-2.5m45.2,0-2.5,2.5M29.9,70.1l-2.5,2.5M64.2,50A14.2,14.2,0,1,1,50,35.8,14.3,14.3,0,0,1,64.2,50Z"
-    fill="none"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="8"
-  ></path>
-</svg>
+<style>
+/* From SHΞN™ Morphism by gharsh11032000 - Tags: gradient, checkbox, toggle, click effect */
+/* Hide the default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
 
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+  overflow: hidden;
+}
 
-    
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  border: 2px solid #414141;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+/* When the checkbox is checked */
+.container input:checked ~ .checkmark {
+  border-image: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+  border-image-slice: 1;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 0.45em;
+  top: -2em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.container .checkmark::before {
+  left: 0.45em;
+  top: 2em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  top: 0.25em;
+}
+
+</style>

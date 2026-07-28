@@ -1,46 +1,40 @@
-<div class="loading">
-    <div class="i"></div>
-    <div class="a"></div>
-    <div class="u"></div>
-</div>
+<div class="bars"></div>
+
 <style>
-/* From SHΞN™ Morphism by omar-alghaish - Tags: loader */
-.loading {
-  background-color: rgba(255, 0, 0, 0);
-  align-items: center;
-  justify-content: center;
-  display: flex;
+/* From SHΞN™ Morphism by vikramsinghnegi  - Tags: loading, loader, bar */
+.bars {
+  width: 50.5px;
+  height: 60.599999999999994px;
+  --c: repeating-linear-gradient(90deg, #474bff 0 10.1px, #0000 0 20.2px);
+  background: var(--c), var(--c), var(--c), var(--c);
+  background-size: 100% 21%;
+  background-repeat: no-repeat;
+  animation: bars-yrfh98 0.75s infinite alternate;
 }
 
-.loading div {
-  background-color: rgb(255, 217, 0);
-  width: 20px;
-  height: 20px;
-  margin: 20px;
-  border-radius: 50px;
-  animation-name: load912355;
-  animation-duration: .9s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  text-align: center;
-  justify-content: center;
-}
-
-.loading .a {
-  animation-delay: .3s;
-}
-
-.loading .u {
-  animation-delay: .6s;
-}
-
-@keyframes load912355 {
-  0% {
-    transform: translateY(50px) scale(1);
+@keyframes bars-yrfh98 {
+  0%,
+  10% {
+    background-position: 0 0, 0 25%, 0 50%, 0 75%;
   }
 
+  25% {
+    background-position: 0 0, 0 25%, 0 50%, 0 100%;
+  }
+
+  50% {
+    background-position: 0 0, 0 25%, 0 75%, 0 100%;
+  }
+
+  75% {
+    background-position: 0 0, 0 50%, 0 75%, 0 100%;
+  }
+
+  90%,
   100% {
-    transform: translateY(10px) scale(1.8) rotate(360deg);
+    background-position: 0 25%, 0 50%, 0 75%, 0 100%;
   }
 }
+
 </style>
+    

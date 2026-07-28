@@ -1,150 +1,78 @@
-<label class="rocker rocker-small">
-    <input type="checkbox">
-    <span class="switch-left">Yes</span>
-    <span class="switch-right">No</span>
-</label>
+<div class="wrapper">
+  <div class="option">
+    <input class="input" type="radio" name="btn" value="option1" checked="">
+    <div class="btn">
+      <span class="span">Option</span>
+    </div>
+  </div>
+  <div class="option">
+    <input class="input" type="radio" name="btn" value="option2">
+    <div class="btn">
+      <span class="span">Option</span>
+    </div>  </div>
+  <div class="option">
+    <input class="input" type="radio" name="btn" value="option3">
+    <div class="btn">
+      <span class="span">Option</span>
+    </div>  
+  </div>
+</div>
+
 <style>
-/* From SHΞN™ Morphism by bandirevanth - Tags: switch */
-/* Switch starts here */
-.rocker {
-  display: inline-block;
+/* From SHΞN™ Morphism by andrew-demchenk0 - Tags: radio, select, radio-buttons, options  */
+.wrapper {
+  --font-color-dark: #323232;
+  --font-color-light: #FFF;
+  --bg-color: #fff;
+  --main-color: #323232;
   position: relative;
-  /*
-  SIZE OF SWITCH
-  ==============
-  All sizes are in em - therefore
-  changing the font-size here
-  will change the size of the switch.
-  See .rocker-small below as example.
-  */
-  font-size: 2em;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  color: #888;
-  width: 7em;
-  height: 4em;
-  overflow: hidden;
-  border-bottom: 0.5em solid #eee;
-}
-
-.rocker-small {
-  font-size: 0.75em;
- /* Sizes the switch */
-  margin: 1em;
-}
-
-.rocker::before {
-  content: "";
-  position: absolute;
-  top: 0.5em;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #999;
-  border: 0.5em solid #eee;
-  border-bottom: 0;
-}
-
-.rocker input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.switch-left,
-.switch-right {
-  cursor: pointer;
-  position: absolute;
+  width: 250px;
+  height: 36px;
+  background-color: var(--bg-color);
+  border: 2px solid var(--main-color);
+  border-radius: 34px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.5em;
-  width: 3em;
-  transition: 0.2s;
-  user-select: none;
+  flex-direction: row;
+  box-shadow: 4px 4px var(--main-color);
 }
 
-.switch-left {
-  height: 2.4em;
-  width: 2.75em;
-  left: 0.85em;
-  bottom: 0.4em;
-  background-color: #ddd;
-  transform: rotate(15deg) skewX(15deg);
+.option {
+  width: 80.5px;
+  height: 28px;
+  position: relative;
+  top: 2px;
+  left: 2px;
 }
 
-.switch-right {
-  right: 0.5em;
-  bottom: 0;
-  background-color: #bd5757;
-  color: #fff;
-}
-
-.switch-left::before,
-.switch-right::before {
-  content: "";
+.input {
+  width: 100%;
+  height: 100%;
   position: absolute;
-  width: 0.4em;
-  height: 2.45em;
-  bottom: -0.45em;
-  background-color: #ccc;
-  transform: skewY(-65deg);
+  left: 0;
+  top: 0;
+  appearance: none;
+  cursor: pointer;
 }
 
-.switch-left::before {
-  left: -0.4em;
+.btn {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.switch-right::before {
-  right: -0.375em;
-  background-color: transparent;
-  transform: skewY(65deg);
+.span {
+  color: var(--font-color-dark);
 }
 
-input:checked + .switch-left {
-  background-color: #0084d0;
-  color: #fff;
-  bottom: 0px;
-  left: 0.5em;
-  height: 2.5em;
-  width: 3em;
-  transform: rotate(0deg) skewX(0deg);
+.input:checked + .btn {
+  background-color: var(--main-color);
 }
 
-input:checked + .switch-left::before {
-  background-color: transparent;
-  width: 3.0833em;
-}
-
-input:checked + .switch-left + .switch-right {
-  background-color: #ddd;
-  color: #888;
-  bottom: 0.4em;
-  right: 0.8em;
-  height: 2.4em;
-  width: 2.75em;
-  transform: rotate(-15deg) skewX(-15deg);
-}
-
-input:checked + .switch-left + .switch-right::before {
-  background-color: #ccc;
-}
-
-/* Keyboard Users */
-input:focus + .switch-left {
-  color: #333;
-}
-
-input:checked:focus + .switch-left {
-  color: #fff;
-}
-
-input:focus + .switch-left + .switch-right {
-  color: #fff;
-}
-
-input:checked:focus + .switch-left + .switch-right {
-  color: #333;
+.input:checked + .btn .span {
+  color: var(--font-color-light);
 }
 </style>

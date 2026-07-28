@@ -1,34 +1,25 @@
-<div class="loader">
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-</div>
+<div class="loader"></div>
 <style>
-/* From SHΞN™ Morphism by satyamchaudharydev - Tags: loader */
+/* From SHΞN™ Morphism by Shoh2008 - Tags: loader */
 .loader {
- --size: 40px;
- display: flex;
- gap: 0.6rem;
+  width: 45px;
+  height: 40px;
+  background: linear-gradient(#0000 calc(1*100%/6),#fff 0 calc(3*100%/6),#0000 0),
+            linear-gradient(#0000 calc(2*100%/6),#fff 0 calc(4*100%/6),#0000 0),
+            linear-gradient(#0000 calc(3*100%/6),#fff 0 calc(5*100%/6),#0000 0);
+  background-size: 10px 400%;
+  background-repeat: no-repeat;
+  animation: matrix 1s infinite linear;
 }
 
-.box {
- width: var(--size);
- height: var(--size);
- background: #0270e1;
- animation: rotate 2s infinite;
-}
+@keyframes matrix {
+  0% {
+    background-position: 0% 100%, 50% 100%, 100% 100%
+  }
 
-.box:nth-child(2) {
- animation-delay: 0.25s;
+  100% {
+    background-position: 0% 0%, 50% 0%, 100% 0%
+  }
 }
-
-.box:nth-child(3) {
- animation-delay: 0.5s;
-}
-
-@keyframes rotate {
- 50% {
-  transform: rotate(180deg)
- }
-}
+    
 </style>
