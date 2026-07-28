@@ -1,0 +1,16 @@
+[build]
+command = "python shenmorphism_builder.py && python generate_ui_kit_json.py"
+publish = "."
+
+[site]
+bucket = "."
+entry-point = "index.html"
+
+[functions]
+# Enable Cloudflare Functions for API endpoints
+directory = "functions"
+
+[[redirects]]
+from = "/api/*"
+to = "/api/:splat"
+status = 200

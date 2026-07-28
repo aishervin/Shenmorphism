@@ -602,6 +602,471 @@
                 updatePagination();
             }
 
+            // --- Generate User ID (Fingerprint) ---
+            function getUserId() {
+                let userId = localStorage.getItem('shen_user_id');
+                if (!userId) {
+                    // Simple fingerprint: random + timestamp
+                    userId = 'user_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+                    localStorage.setItem('shen_user_id', userId);
+                }
+                return userId;
+            }
+
+            // --- Check/Request Gemini API Key ---
+            async function getGeminiKey() {
+                const userId = getUserId();
+                
+                // Check if key exists in Cloudflare KV
+                try {
+                    const response = await fetch(`/api/key-check?userId=${userId}`);
+                    const data = await response.json();
+                    
+                    if (data.exists && data.canUse) {
+                        // Key exists and user has remaining quota
+                        return { success: true, hasQuota: true, remaining: data.remaining };
+                    } else if (data.exists && !data.canUse) {
+                        // Key exists but quota exceeded
+                        return { 
+                            success: false, 
+                            error: `سهمیه روزانه شما به پایان رسیده. باقی‌مانده: ${data.remaining} از ${data.dailyLimit}`,
+                            limit: data.dailyLimit,
+                            used: data.usageCount
+                        };
+                    }
+                } catch (e) {
+                    console.warn('KV check failed, using localStorage fallback:', e);
+                }
+                
+                // Key not found or error - request from user
+                return requestGeminiKeyFromUser(userId);
+            }
+
+            async function requestGeminiKeyFromUser(userId) {
+                return new Promise((resolve) => {
+                    const modal = document.createElement('div');
+                    modal.className = 'api-key-modal';
+                    modal.innerHTML = `
+                        <div class="api-key-modal-content neu-flat">
+                            <div class="api-key-header">
+                                <h3>🔑 ثبت کلید Gemini API</h3>
+                                <button class="api-key-close\">✕</button>
+                            </div>
+                            <div class="api-key-body">
+                                <p>برای استفاده از قابلیت ویرایش کد با هوش مصنوعی، لطفاً کلید API شخصی خود را وارد کنید.</p>
+                                <p style="font-size: 0.85em; opacity: 0.8; margin-top: 8px;">
+                                    این کلید به صورت امن در سرور ذخیره شده و برای سهمیه‌بندی استفاده می‌شود.
+                                </p>
+                                <input type="password" id="gemini-api-input" placeholder="کلید API خود را اینجا وارد کنید..." class="neu-pressed api-key-input" />
+                                <div class="api-key-actions">
+                                    <button id="save-api-key" class="neu-convex api-key-save-btn">ذخیره و ادامه</button>
+                                    <button id="cancel-api-key" class="neu-pressed api-key-cancel-btn">انصراف</button>
+                                </div>
+                                <div id="api-key-error" class="api-key-error"></div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    document.body.appendChild(modal);
+                    
+                    // Styles for modal
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        .api-key-modal {
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: rgba(0, 0, 0, 0.6);
+                            backdrop-filter: blur(8px);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            z-index: 10000;
+                            animation: fadeIn 0.3s ease;
+                        }
+                        @keyframes fadeIn {
+                            from { opacity: 0; }
+                            to { opacity: 1; }
+                        }
+                        .api-key-modal-content {
+                            width: 90%;
+                            max-width: 500px;
+                            border-radius: 20px;
+                            padding: 24px;
+                            animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                        }
+                        @keyframes slideUp {
+                            from { transform: translateY(50px); opacity: 0; }
+                            to { transform: translateY(0); opacity: 1; }
+                        }
+                        .api-key-header {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin-bottom: 16px;
+                        }
+                        .api-key-header h3 {
+                            font-size: 1.3em;
+                            background: linear-gradient(135deg, var(--shen-accent), #0099cc);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-clip: text;
+                        }
+                        .api-key-close {
+                            background: none;
+                            border: none;
+                            font-size: 1.5em;
+                            cursor: pointer;
+                            color: var(--shen-text);
+                            opacity: 0.6;
+                            transition: opacity 0.2s;
+                        }
+                        .api-key-close:hover {
+                            opacity: 1;
+                        }
+                        .api-key-body p {
+                            margin-bottom: 12px;
+                            line-height: 1.6;
+                        }
+                        .api-key-input {
+                            width: 100%;
+                            padding: 14px 16px;
+                            border: none;
+                            border-radius: 12px;
+                            font-size: 1em;
+                            font-family: inherit;
+                            margin: 16px 0;
+                            outline: none;
+                            transition: box-shadow 0.2s;
+                        }
+                        .api-key-input:focus {
+                            box-shadow: inset 4px 4px 8px var(--shen-shadow-dark), inset -4px -4px 8px var(--shen-shadow-light), 0 0 0 2px var(--shen-accent);
+                        }
+                        .api-key-actions {
+                            display: flex;
+                            gap: 12px;
+                            justify-content: flex-end;
+                        }
+                        .api-key-save-btn, .api-key-cancel-btn {
+                            padding: 12px 24px;
+                            border: none;
+                            border-radius: 12px;
+                            font-size: 1em;
+                            cursor: pointer;
+                            transition: all 0.2s;
+                            font-family: inherit;
+                        }
+                        .api-key-save-btn {
+                            background: linear-gradient(135deg, var(--shen-accent), #0099cc);
+                            color: white;
+                            box-shadow: 4px 4px 8px var(--shen-shadow-dark), -4px -4px 8px var(--shen-shadow-light);
+                        }
+                        .api-key-save-btn:hover {
+                            transform: translateY(-2px);
+                            box-shadow: 6px 6px 12px var(--shen-shadow-dark), -6px -6px 12px var(--shen-shadow-light);
+                        }
+                        .api-key-cancel-btn {
+                            background: var(--shen-bg);
+                            color: var(--shen-text);
+                            box-shadow: 3px 3px 6px var(--shen-shadow-dark), -3px -3px 6px var(--shen-shadow-light);
+                        }
+                        .api-key-cancel-btn:hover {
+                            box-shadow: inset 2px 2px 4px var(--shen-shadow-dark), inset -2px -2px 4px var(--shen-shadow-light);
+                        }
+                        .api-key-error {
+                            color: var(--shen-error);
+                            font-size: 0.9em;
+                            margin-top: 12px;
+                            min-height: 20px;
+                        }
+                    `;
+                    document.head.appendChild(style);
+                    
+                    const closeBtn = modal.querySelector('.api-key-close');
+                    const saveBtn = modal.querySelector('#save-api-key');
+                    const cancelBtn = modal.querySelector('#cancel-api-key');
+                    const input = modal.querySelector('#gemini-api-input');
+                    const errorDiv = modal.querySelector('#api-key-error');
+                    
+                    const closeModal = () => {
+                        modal.style.animation = 'fadeOut 0.3s ease';
+                        setTimeout(() => {
+                            modal.remove();
+                            style.remove();
+                        }, 300);
+                        resolve({ success: false, error: 'User cancelled' });
+                    };
+                    
+                    closeBtn.addEventListener('click', closeModal);
+                    cancelBtn.addEventListener('click', closeModal);
+                    
+                    saveBtn.addEventListener('click', async () => {
+                        const apiKey = input.value.trim();
+                        if (!apiKey) {
+                            errorDiv.textContent = 'لطفاً کلید API را وارد کنید.';
+                            return;
+                        }
+                        
+                        if (!apiKey.startsWith('AI') && !apiKey.includes('.')) {
+                            errorDiv.textContent = 'فرمت کلید API معتبر نیست.';
+                            return;
+                        }
+                        
+                        saveBtn.disabled = true;
+                        saveBtn.textContent = 'درحال ذخیره...';
+                        
+                        try {
+                            // Register key in Cloudflare KV
+                            const response = await fetch('/api/key-register', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ userId, geminiKey: apiKey })
+                            });
+                            
+                            const result = await response.json();
+                            
+                            if (result.success) {
+                                // Also store in localStorage as backup
+                                localStorage.setItem('shen_gemini_key', apiKey);
+                                
+                                modal.style.animation = 'fadeOut 0.3s ease';
+                                setTimeout(() => {
+                                    modal.remove();
+                                    style.remove();
+                                }, 300);
+                                
+                                resolve({ 
+                                    success: true, 
+                                    hasQuota: true, 
+                                    remaining: 50,
+                                    message: 'کلید با موفقیت ثبت شد!'
+                                });
+                            } else {
+                                errorDiv.textContent = result.error || 'خطا در ثبت کلید';
+                            }
+                        } catch (e) {
+                            errorDiv.textContent = 'خطا در ارتباط با سرور. لطفاً دوباره تلاش کنید.';
+                            console.error('Key registration error:', e);
+                        } finally {
+                            saveBtn.disabled = false;
+                            saveBtn.textContent = 'ذخیره و ادامه';
+                        }
+                    });
+                    
+                    input.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter') saveBtn.click();
+                    });
+                    
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal) closeModal();
+                    });
+                });
+            }
+
+            // --- Increment Usage Counter ---
+            async function incrementUsage() {
+                const userId = getUserId();
+                try {
+                    const response = await fetch(`/api/usage?userId=${userId}`);
+                    const data = await response.json();
+                    return data;
+                } catch (e) {
+                    console.warn('Usage tracking failed:', e);
+                    return null;
+                }
+            }
+
+            // --- Edit Code with AI (Gemini Integration) ---
+            async function editCodeWithAI(comp) {
+                // Check/get API key first
+                const keyResult = await getGeminiKey();
+                
+                if (!keyResult.success) {
+                    showNotification(keyResult.error || 'عملیات لغو شد', 'error');
+                    return;
+                }
+                
+                if (!keyResult.hasQuota) {
+                    showNotification('سهمیه روزانه شما به پایان رسیده است.', 'error');
+                    return;
+                }
+                
+                // Show notification about remaining quota
+                if (keyResult.remaining <= 5) {
+                    showNotification(`هشدار: تنها ${keyResult.remaining} درخواست باقی مانده است.`, 'info');
+                }
+                
+                // Open edit modal
+                openEditModal(comp);
+            }
+
+            // --- Open Edit Modal ---
+            function openEditModal(comp) {
+                const modal = document.createElement('div');
+                modal.className = 'edit-modal';
+                modal.innerHTML = `
+                    <div class="edit-modal-content neu-flat">
+                        <div class="edit-modal-header">
+                            <h3>✏️ ویرایش کد: ${comp.name}</h3>
+                            <button class="edit-modal-close\">✕</button>
+                        </div>
+                        <div class="edit-modal-body">
+                            <textarea id="edit-code-area" class="neu-pressed edit-textarea">${comp.code || ''}</textarea>
+                            <div class="edit-modal-actions">
+                                <button id="apply-edit\" class="neu-convex edit-apply-btn\">اعمال تغییرات</button>
+                                <button id=\"copy-edit\" class="neu-pressed edit-copy-btn\">کپی کد</button>
+                                <button id=\"close-edit\" class="neu-pressed edit-cancel-btn\">بستن</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                const style = document.createElement('style');
+                style.textContent = `
+                    .edit-modal {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.5);
+                        backdrop-filter: blur(4px);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 9999;
+                    }
+                    .edit-modal-content {
+                        width: 90%;
+                        max-width: 800px;
+                        height: 80vh;
+                        border-radius: 20px;
+                        padding: 20px;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .edit-modal-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 16px;
+                    }
+                    .edit-modal-header h3 {
+                        font-size: 1.2em;
+                        background: linear-gradient(135deg, var(--shen-accent), #0099cc);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                    }
+                    .edit-modal-close {
+                        background: none;
+                        border: none;
+                        font-size: 1.4em;
+                        cursor: pointer;
+                        color: var(--shen-text);
+                        opacity: 0.6;
+                    }
+                    .edit-modal-close:hover {
+                        opacity: 1;
+                    }
+                    .edit-modal-body {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+                    }
+                    .edit-textarea {
+                        flex: 1;
+                        width: 100%;
+                        padding: 16px;
+                        border: none;
+                        border-radius: 12px;
+                        font-family: 'Courier New', monospace;
+                        font-size: 0.95em;
+                        resize: none;
+                        outline: none;
+                        direction: ltr;
+                    }
+                    .edit-textarea:focus {
+                        box-shadow: inset 4px 4px 8px var(--shen-shadow-dark), inset -4px -4px 8px var(--shen-shadow-light);
+                    }
+                    .edit-modal-actions {
+                        display: flex;
+                        gap: 12px;
+                        justify-content: flex-end;
+                    }
+                    .edit-apply-btn, .edit-copy-btn, .edit-cancel-btn {
+                        padding: 12px 20px;
+                        border: none;
+                        border-radius: 12px;
+                        font-size: 0.95em;
+                        cursor: pointer;
+                        transition: all 0.2s;
+                        font-family: inherit;
+                    }
+                    .edit-apply-btn {
+                        background: linear-gradient(135deg, var(--shen-accent), #0099cc);
+                        color: white;
+                        box-shadow: 4px 4px 8px var(--shen-shadow-dark), -4px -4px 8px var(--shen-shadow-light);
+                    }
+                    .edit-apply-btn:hover {
+                        transform: translateY(-2px);
+                    }
+                    .edit-copy-btn, .edit-cancel-btn {
+                        background: var(--shen-bg);
+                        color: var(--shen-text);
+                        box-shadow: 3px 3px 6px var(--shen-shadow-dark), -3px -3px 6px var(--shen-shadow-light);
+                    }
+                    .edit-copy-btn:hover, .edit-cancel-btn:hover {
+                        box-shadow: inset 2px 2px 4px var(--shen-shadow-dark), inset -2px -2px 4px var(--shen-shadow-light);
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                const closeBtn = modal.querySelector('.edit-modal-close');
+                const applyBtn = modal.querySelector('#apply-edit');
+                const copyBtn = modal.querySelector('#copy-edit');
+                const cancelBtn = modal.querySelector('#close-edit');
+                const textarea = modal.querySelector('#edit-code-area');
+                
+                const closeModal = () => {
+                    modal.remove();
+                    style.remove();
+                };
+                
+                closeBtn.addEventListener('click', closeModal);
+                cancelBtn.addEventListener('click', closeModal);
+                
+                copyBtn.addEventListener('click', () => {
+                    copyToClipboard(textarea.value, copyBtn);
+                });
+                
+                applyBtn.addEventListener('click', () => {
+                    // Update component code temporarily
+                    comp.code = textarea.value;
+                    showNotification('تغییرات اعمال شد (موقت)', 'success');
+                    
+                    // Increment usage counter
+                    incrementUsage();
+                    
+                    // Reload preview
+                    const card = document.querySelector(`[data-id="${comp.id}"]`);
+                    if (card) {
+                        loadComponentPreview(card, comp);
+                    }
+                    
+                    closeModal();
+                });
+                
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) closeModal();
+                });
+            }
+
             function createComponentCard(comp) {
                 const card = document.createElement('div');
                 card.className = 'component-card neu-convex';
@@ -618,15 +1083,259 @@
                     <div class="component-name">${comp.name}</div>
                     <div class="component-category">${comp.category}</div>
                     <div class="component-status ready">✓ آماده</div>
+                    <div class="component-actions">
+                        <button class="action-btn edit-btn" title="ویرایش کد" data-action="edit">✏️</button>
+                        <button class="action-btn preview-btn" title="پیش‌نمایش بزرگ" data-action="preview">🔍</button>
+                    </div>
                 `;
 
-                card.addEventListener('click', () => {
+                card.addEventListener('click', (e) => {
+                    if (e.target.closest('.action-btn')) return;
                     toggleComponent(comp);
+                });
+                
+                // Action buttons
+                card.querySelector('.edit-btn').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    editCodeWithAI(comp);
+                });
+                
+                card.querySelector('.preview-btn').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    showLargePreview(comp);
                 });
 
                 loadComponentPreview(card, comp);
 
                 return card;
+            }
+            
+            // --- Large Preview Modal ---
+            function showLargePreview(comp) {
+                const modal = document.createElement('div');
+                modal.className = 'preview-modal';
+                modal.innerHTML = `
+                    <div class="preview-modal-content neu-flat">
+                        <div class="preview-modal-header">
+                            <h3>${comp.name}</h3>
+                            <div class="preview-controls">
+                                <button class="zoom-btn\" data-zoom=\"out\">🔍-</button>
+                                <span class="zoom-level">100%</span>
+                                <button class="zoom-btn" data-zoom="in">🔍+</button>
+                                <button class="theme-toggle\" data-theme="dark">🌙</button>
+                                <button class="code-toggle\">📋</button>
+                                <button class="preview-close\">✕</button>
+                            </div>
+                        </div>
+                        <div class="preview-modal-body">
+                            <div class="preview-frame neu-pressed">
+                                <iframe class="preview-iframe" sandbox="allow-same-origin allow-scripts"></iframe>
+                            </div>
+                        </div>
+                        <div class="preview-code-panel" style="display:none;">
+                            <pre><code></code></pre>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                const style = document.createElement('style');
+                style.textContent = `
+                    .preview-modal {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.7);
+                        backdrop-filter: blur(10px);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 10001;
+                    }
+                    .preview-modal-content {
+                        width: 95%;
+                        height: 90vh;
+                        border-radius: 24px;
+                        padding: 20px;
+                        display: flex;
+                        flex-direction: column;
+                        overflow: hidden;
+                    }
+                    .preview-modal-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 16px;
+                        flex-wrap: wrap;
+                        gap: 12px;
+                    }
+                    .preview-modal-header h3 {
+                        font-size: 1.3em;
+                        background: linear-gradient(135deg, var(--shen-accent), #0099cc);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                    }
+                    .preview-controls {
+                        display: flex;
+                        gap: 8px;
+                        align-items: center;
+                    }
+                    .zoom-btn, .theme-toggle, .code-toggle, .preview-close {
+                        padding: 8px 12px;
+                        border: none;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        background: var(--shen-bg);
+                        color: var(--shen-text);
+                        box-shadow: 2px 2px 4px var(--shen-shadow-dark), -2px -2px 4px var(--shen-shadow-light);
+                        transition: all 0.2s;
+                    }
+                    .zoom-btn:hover, .theme-toggle:hover, .code-toggle:hover {
+                        box-shadow: inset 2px 2px 4px var(--shen-shadow-dark), inset -2px -2px 4px var(--shen-shadow-light);
+                    }
+                    .preview-close:hover {
+                        background: var(--shen-error);
+                        color: white;
+                    }
+                    .zoom-level {
+                        font-size: 0.9em;
+                        min-width: 50px;
+                        text-align: center;
+                    }
+                    .preview-modal-body {
+                        flex: 1;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: rgba(0,0,0,0.02);
+                        border-radius: 16px;
+                        margin-bottom: 16px;
+                    }
+                    .preview-frame {
+                        width: 100%;
+                        height: 100%;
+                        max-width: 1200px;
+                        border-radius: 16px;
+                        overflow: hidden;
+                        transition: transform 0.3s ease;
+                        transform-origin: center center;
+                    }
+                    .preview-iframe {
+                        width: 100%;
+                        height: 100%;
+                        border: none;
+                    }
+                    .preview-code-panel {
+                        height: 200px;
+                        border-radius: 12px;
+                        overflow: auto;
+                        background: var(--shen-bg);
+                        box-shadow: inset 3px 3px 6px var(--shen-shadow-dark), inset -3px -3px 6px var(--shen-shadow-light);
+                    }
+                    .preview-code-panel pre {
+                        margin: 0;
+                        padding: 16px;
+                        direction: ltr;
+                        text-align: left;
+                    }
+                    .preview-code-panel code {
+                        font-family: 'Courier New', monospace;
+                        font-size: 0.9em;
+                        white-space: pre-wrap;
+                        word-break: break-all;
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                const iframe = modal.querySelector('.preview-iframe');
+                const filePath = `shenmorphism_ui_kit/${comp.category}/${comp.id}.html`;
+                iframe.src = filePath;
+                
+                const closeBtn = modal.querySelector('.preview-close');
+                const codeToggle = modal.querySelector('.code-toggle');
+                const codePanel = modal.querySelector('.preview-code-panel');
+                const codeElement = codePanel.querySelector('code');
+                const themeToggle = modal.querySelector('.theme-toggle');
+                const zoomInBtn = modal.querySelector('[data-zoom="in"]');
+                const zoomOutBtn = modal.querySelector('[data-zoom="out"]');
+                const zoomLevelSpan = modal.querySelector('.zoom-level');
+                const previewFrame = modal.querySelector('.preview-frame');
+                
+                let currentZoom = 100;
+                let isDarkMode = false;
+                
+                closeBtn.addEventListener('click', () => {
+                    modal.remove();
+                    style.remove();
+                });
+                
+                codeToggle.addEventListener('click', () => {
+                    const isVisible = codePanel.style.display !== 'none';
+                    codePanel.style.display = isVisible ? 'none' : 'block';
+                    if (!isVisible && comp.code) {
+                        codeElement.textContent = comp.code;
+                    }
+                });
+                
+                themeToggle.addEventListener('click', () => {
+                    isDarkMode = !isDarkMode;
+                    themeToggle.textContent = isDarkMode ? '☀️' : '🌙';
+                    iframe.contentDocument.body.style.background = isDarkMode ? '#1a1a1a' : '#e0e5ec';
+                    iframe.contentDocument.body.style.color = isDarkMode ? '#ffffff' : '#2d3748';
+                });
+                
+                zoomInBtn.addEventListener('click', () => {
+                    if (currentZoom < 200) {
+                        currentZoom += 25;
+                        previewFrame.style.transform = `scale(${currentZoom / 100})`;
+                        zoomLevelSpan.textContent = `${currentZoom}%`;
+                    }
+                });
+                
+                zoomOutBtn.addEventListener('click', () => {
+                    if (currentZoom > 25) {
+                        currentZoom -= 25;
+                        previewFrame.style.transform = `scale(${currentZoom / 100})`;
+                        zoomLevelSpan.textContent = `${currentZoom}%`;
+                    }
+                });
+                
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.remove();
+                        style.remove();
+                    }
+                });
+            }
+
+            function loadComponentPreview(card, comp) {
+                const preview = card.querySelector('.component-preview');
+                const filePath = `shenmorphism_ui_kit/${comp.category}/${comp.id}.html`;
+                
+                setTimeout(() => {
+                    const iframe = document.createElement('iframe');
+                    iframe.sandbox.add('allow-same-origin');
+                    iframe.src = filePath;
+                    
+                    iframe.onload = () => {
+                        preview.classList.remove('loading');
+                        loadedCount++;
+                        loadedSpan.textContent = loadedCount;
+                    };
+                    
+                    iframe.onerror = () => {
+                        preview.innerHTML = '<span>⚠️ خطا</span>';
+                        preview.classList.add('error');
+                    };
+                    
+                    preview.innerHTML = '';
+                    preview.appendChild(iframe);
+                }, 100);
             }
 
             function loadComponentPreview(card, comp) {
